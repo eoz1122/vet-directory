@@ -98,6 +98,10 @@ export default function Home() {
 
     const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
 
+    if (!apiKey && import.meta.env.PROD) {
+        console.error('CRITICAL: Google Maps API Key is missing from the production build!');
+    }
+
     return (
         <APIProvider apiKey={apiKey} language="en">
             <div className="min-h-screen flex flex-col md:flex-row">
