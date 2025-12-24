@@ -11,6 +11,7 @@ import DogTaxGermany from './pages/DogTaxGermany';
 import CityVets from './pages/CityVets';
 import Impressum from './pages/Impressum';
 import Privacy from './pages/Privacy';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
     </HelmetProvider>
   );
