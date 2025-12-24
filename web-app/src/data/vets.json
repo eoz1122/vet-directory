@@ -1,0 +1,2157 @@
+[
+  {
+    "id": "Berlin-1",
+    "practice_name": "Berlin English Vet (Tierarztpraxis an den Allee-Arcaden)",
+    "city": "Berlin",
+    "district": "Prenzlauer Berg",
+    "address": "Greifswalder Str. 80c, 10405 Berlin (Prenzlauer Berg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.berlin-english-vet.com/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-2",
+    "practice_name": "The Berlin Veterinary Center (Zentrum für Tiermedizin / Dr. Rödiger)",
+    "city": "Berlin",
+    "district": "Reinickendorf",
+    "address": "Scharnweberstraße 136, 13405 Berlin (Reinickendorf)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.vetzentrum-berlin.de/en/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-3",
+    "practice_name": "Rex Tierarztpraxis (Multiple Locations)",
+    "city": "Berlin",
+    "district": "Friedrichshain) / Others",
+    "address": "Friedenstraße 94 (Friedrichshain) / Others",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.rex.app/en"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-4",
+    "practice_name": "Felmo Mobile Veterinarians",
+    "city": "Berlin",
+    "district": "Home Visits)*",
+    "address": "*Mobile Service (Home Visits)*",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://felmo.de/en"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-5",
+    "practice_name": "Klinik für kleine Haustiere (FU Berlin Small Animal Clinic)",
+    "city": "Berlin",
+    "district": "Düppel/Zehlendorf",
+    "address": "Oertzenweg 19b, 14163 Berlin (Düppel/Zehlendorf)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.vetmed.fu-berlin.de/einrichtungen/kliniken/we20/index.html"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-6",
+    "practice_name": "Dr. Jens Vöster",
+    "city": "Berlin",
+    "district": "Charlottenburg",
+    "address": "Hohenzollerndamm 185, 10713 Berlin (Charlottenburg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-7",
+    "practice_name": "Tierarztpraxis Anne Gamalski",
+    "city": "Berlin",
+    "district": "Charlottenburg",
+    "address": "Weimarer Str. 9, 10625 Berlin (Charlottenburg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "http://www.tierarztpraxis-gamalski.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-8",
+    "practice_name": "Kleintierspezialisten Berlin",
+    "city": "Berlin",
+    "district": "Tegel",
+    "address": "Wittestraße 30 P, 13509 Berlin (Tegel)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.kleintierspezialisten.de/en"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-9",
+    "practice_name": "Veterinary Practice Bärenwiese",
+    "city": "Berlin",
+    "district": "Wilmersdorf",
+    "address": "Frankenallee 10, 14052 Berlin (Wilmersdorf)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-baerenwiese.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-10",
+    "practice_name": "Veterinary Clinic Chung & Wahle",
+    "city": "Berlin",
+    "district": "Friedenau",
+    "address": "Lauterstraße 19-20, 12159 Berlin (Friedenau)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://tierarztpraxis-chung-wahle.com/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-11",
+    "practice_name": "Tierarztpraxis Peters",
+    "city": "Berlin",
+    "district": "Weißensee",
+    "address": "Lehderstraße 42, 13086 Berlin (Weißensee)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarztpraxis-peters-weissensee.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-12",
+    "practice_name": "Valera Veterinary Clinic",
+    "city": "Berlin",
+    "district": "Zehlendorf",
+    "address": "Potsdamer Str. 23/2, 14163 Berlin (Zehlendorf)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://valera.berlin/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-13",
+    "practice_name": "Dr. Peter Vogel",
+    "city": "Berlin",
+    "district": "Friedrichshain",
+    "address": "Ebelingstraße 1, 10249 Berlin (Friedrichshain)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-vogel.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-14",
+    "practice_name": "Tierarztpraxis Sarah Watson",
+    "city": "Berlin",
+    "district": "Neukölln",
+    "address": "Altenbraker Str. 29, 12051 Berlin (Neukölln)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-watson.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-15",
+    "practice_name": "Kleintierpraxis 4 Pfoten & Co",
+    "city": "Berlin",
+    "district": "Lichtenberg",
+    "address": "Fanningerstraße 27, 10365 Berlin (Lichtenberg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "http://www.4pfoten-berlin.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-16",
+    "practice_name": "Tierarztpraxis Dr. Renate Lorenz",
+    "city": "Berlin",
+    "district": "Lichterfelde",
+    "address": "Oberhofer Weg 68, 12209 Berlin (Lichterfelde)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "http://tier-arzt.berlin/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-17",
+    "practice_name": "Tierarztpraxis Bartels & Wende (formerly Heinemann)",
+    "city": "Berlin",
+    "district": "Wilmersdorf",
+    "address": "Mansfelder Straße 19, 10713 Berlin (Wilmersdorf)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.berliner-tierarztpraxis.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-18",
+    "practice_name": "Tierarztpraxis am Mauerpark",
+    "city": "Berlin",
+    "district": "Prenzlauer Berg",
+    "address": "Wolliner Str. 21, 10435 Berlin (Prenzlauer Berg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarztpraxis-am-mauerpark.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-19",
+    "practice_name": "Tierarztpraxis Dr. Stahlhut (Tierarzt Westend)",
+    "city": "Berlin",
+    "district": "Westend",
+    "address": "Reichsstraße 2, 14052 Berlin (Westend)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-westend.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-20",
+    "practice_name": "Tierarztpraxis Pastor (\"Tierärzte im Kiez\")",
+    "city": "Berlin",
+    "district": "Friedrichshagen",
+    "address": "Bölschestraße 8, 12587 Berlin (Friedrichshagen)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tieraerzte-im-kiez.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-21",
+    "practice_name": "Tierarztpraxis Dr. Rotgang",
+    "city": "Berlin",
+    "district": "Friedrichshain",
+    "address": "Karl-Marx-Allee 108, 10243 Berlin (Friedrichshain)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-rotgang.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-22",
+    "practice_name": "Tierarztpraxis Dr. Till Robl",
+    "city": "Berlin",
+    "district": "Prenzlauer Berg",
+    "address": "Husemannstraße 3, 10435 Berlin (Prenzlauer Berg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "http://www.tierarztpraxis-robl.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-23",
+    "practice_name": "Tierarztpraxis Grünau (Dr. Manuela Wight)",
+    "city": "Berlin",
+    "district": "Treptow-Köpenick",
+    "address": "Regattastraße 58, 12527 Berlin (Treptow-Köpenick)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarztpraxisgruenau.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-24",
+    "practice_name": "Tiermedizinzentrum Berlin (Schöneberg)",
+    "city": "Berlin",
+    "district": "Schöneberg",
+    "address": "Kufsteiner Str. 22, 10825 Berlin",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tiermedizinzentrum.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-25",
+    "practice_name": "Dr. med. vet. Katharina Dralle (Friedenau)",
+    "city": "Berlin",
+    "district": "Friedenau",
+    "address": "Rotdornstr. 7, 12161 Berlin",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-dralle-berlin.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-26",
+    "practice_name": "Tierarztpraxis am Schlosspark (Jana Czernutzky)",
+    "city": "Berlin",
+    "district": "Pankow",
+    "address": "Dietzgenstraße 28, 13156 Berlin (Pankow)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-schlosspark.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-27",
+    "practice_name": "Dr. Claudia Wegeler (Tempelhof)",
+    "city": "Berlin",
+    "district": "Tempelhof",
+    "address": "Rangsdorfer Str. 9, 12309 Berlin",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-28",
+    "practice_name": "Tierarztpraxis Dr. med. vet. Stephanie Adams (Bernau)",
+    "city": "Berlin",
+    "district": "Bernau",
+    "address": "Ladeburger Chaussee 73, 16321 Bernau",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-adams.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-29",
+    "practice_name": "Bernhard Alexander (Schöneberg)",
+    "city": "Berlin",
+    "district": "Schöneberg",
+    "address": "Hauptstr. 92, 10827 Berlin",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-30",
+    "practice_name": "Kleintierpraxis Dr. med. vet. S. Rotgang",
+    "city": "Berlin",
+    "district": "Zehlendorf",
+    "address": "Onkel-Tom-Str. 3, 14165 Berlin (Zehlendorf)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-31",
+    "practice_name": "Tierarztpraxis am Olivaer Platz (Dr. med. vet. S. Robl)",
+    "city": "Berlin",
+    "district": "Dr. med. vet. S. Robl",
+    "address": "Olivaer Platz 11, 10707 Berlin",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-32",
+    "practice_name": "AniCura Tierklinik Berlin-Biesdorf",
+    "city": "Berlin",
+    "district": "Biesdorf",
+    "address": "Alt-Biesdorf 22, 12683 Berlin (Biesdorf)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.anicura.de/standorte/tierklinik-berlin-biesdorf/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-33",
+    "practice_name": "Tierarztpraxis Sonnenallee",
+    "city": "Berlin",
+    "district": "Neukölln",
+    "address": "Sonnenallee 170, 12059 Berlin (Neukölln)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Community Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-34",
+    "practice_name": "Tierarztpraxis am Lietzenseepark (Dr. Layla Hourani)",
+    "city": "Berlin",
+    "district": "Charlottenburg",
+    "address": "Herbartstraße 18, 14057 Berlin (Charlottenburg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-35",
+    "practice_name": "Tierarztpraxis Dr. Demmler & Dr. Wehming",
+    "city": "Berlin",
+    "district": "Prenzlauer Berg",
+    "address": "Winsstraße 28, 10405 Berlin (Prenzlauer Berg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Community Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-36",
+    "practice_name": "Tierarztpraxis am Wasserturm",
+    "city": "Berlin",
+    "district": "Prenzlauer Berg",
+    "address": "Rykestraße 4, 10405 Berlin (Prenzlauer Berg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-37",
+    "practice_name": "Tierarztpraxis Gotthardt",
+    "city": "Berlin",
+    "district": "Grunewald",
+    "address": "Winkler Straße 2, 14193 Berlin (Grunewald)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-38",
+    "practice_name": "Marita Toepfer Veterinary Services",
+    "city": "Berlin",
+    "district": "Zehlendorf",
+    "address": "Beerenstraße 28, 14163 Berlin (Zehlendorf)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-39",
+    "practice_name": "Tierarztpraxis Dr. C. S. Alexander",
+    "city": "Berlin",
+    "district": "Steglitz",
+    "address": "Steglitzer Damm 48, 12169 Berlin (Steglitz)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-40",
+    "practice_name": "Tierarztpraxis Ellen Laskawy",
+    "city": "Berlin",
+    "district": "Friedrichshain",
+    "address": "Bänschstraße 70, 10247 Berlin (Friedrichshain)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-41",
+    "practice_name": "Tierarztpraxis am Urbanhafen",
+    "city": "Berlin",
+    "district": "Kreuzberg",
+    "address": "Blücherstraße 69, 10961 Berlin (Kreuzberg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-42",
+    "practice_name": "Praxis Tierzuliebe (Dr. Bertram)",
+    "city": "Berlin",
+    "district": "Charlottenburg",
+    "address": "Friedbergstraße 4, 14057 Berlin (Charlottenburg)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-43",
+    "practice_name": "Dr. Pascal Klunder (Mobile Vet)",
+    "city": "Berlin",
+    "district": "Mobile Vet",
+    "address": "*Mobile*",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-44",
+    "practice_name": "Dr. Wolfgang Beck",
+    "city": "Berlin",
+    "district": "Neukölln",
+    "address": "Weichselstraße 25, 12045 Berlin (Neukölln)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Community Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-45",
+    "practice_name": "Medivet Berlin-Pankow",
+    "city": "Berlin",
+    "district": "Unknown",
+    "address": "Pasewalker Straße 25, 13127 Berlin",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.medivetgroup.com/de/tierarztpraxis-suche/berlin/medivet-berlin-pankow/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-46",
+    "practice_name": "Filu Vet Nordend",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Weberstraße 59, 60318 Frankfurt am Main",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.filu.vet"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-47",
+    "practice_name": "Rex Tierarzt Frankfurt Ostend",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Wittelsbacherallee 26, 60316 Frankfurt am Main",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.rex.app/clinics/frankfurt-ostend"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-48",
+    "practice_name": "Tierarztpraxis Sonja Krämer",
+    "city": "Frankfurt",
+    "district": "Sossenheim",
+    "address": "Westerbachstraße 226, 65936 Frankfurt am Main (Sossenheim)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-kraemer.de/en/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-49",
+    "practice_name": "Tierarztpraxis Dr. Maike Höch",
+    "city": "Frankfurt",
+    "district": "Eckenheim",
+    "address": "Eckenheimer Landstraße 340, 60435 Frankfurt (Eckenheim)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.dr-hoech.de/en/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-50",
+    "practice_name": "Tierklinik Hofheim (Specialist Center)",
+    "city": "Frankfurt",
+    "district": "Specialist Center",
+    "address": "Im Ried 12, 65719 Hofheim am Taunus",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierklinik-hofheim.de"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-51",
+    "practice_name": "AniCura Kleintierzentrum (Juliusstraße)",
+    "city": "Frankfurt",
+    "district": "Bockenheim",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main (Bockenheim)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierklinik-bockenheim.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Community Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-52",
+    "practice_name": "Dr. Andrea Töpfer",
+    "city": "Frankfurt",
+    "district": "Ginnheim",
+    "address": "Füllerstraße 100, 60431 Frankfurt am Main (Ginnheim)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarztpraxis-toepfer.de"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-53",
+    "practice_name": "Dr. Cavalcanti (VetPetCare)",
+    "city": "Frankfurt",
+    "district": "Frankfurt) & Bad Homburg",
+    "address": "Riedberg (Frankfurt) & Bad Homburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://kleintierpraxis-vetpetcare.de"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-54",
+    "practice_name": "Tierarztpraxis Maja Firlé",
+    "city": "Frankfurt",
+    "district": "Gallus/City West",
+    "address": "Weberstraße 77 (Nordend) / Hamburger Allee 14 (Gallus/City West)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarztpraxis-frankfurt.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-55",
+    "practice_name": "Tierarztpraxis Sachsenhausen (Dr. Jan Kullen / Dr. Elena Panova)",
+    "city": "Frankfurt",
+    "district": "Dr. Jan Kullen / Dr. Elena Panova",
+    "address": "Textorstraße 93, 60596 Frankfurt am Main",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-sachsenhausen.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-56",
+    "practice_name": "Kleintierklinik Frankfurt Bockenheim",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Ginnheimer Landstraße 11, 60487 Frankfurt am Main",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierklinik-frankfurt.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-57",
+    "practice_name": "Tierarztpraxis am Kurfürstenplatz (Bockenheim)",
+    "city": "Frankfurt",
+    "district": "Bockenheim",
+    "address": "Kurfürstenstraße 3, 60486 Frankfurt am Main",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-bockenheim.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-58",
+    "practice_name": "Tierarztpraxis Bornheim (Dr. Katrin Witt)",
+    "city": "Frankfurt",
+    "district": "Dr. Katrin Witt",
+    "address": "Heisterstraße 1, 60385 Frankfurt am Main",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarztpraxis-bornheim.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-59",
+    "practice_name": "Tierarztpraxis Dr. Joachim & Katja Gross",
+    "city": "Frankfurt",
+    "district": "Sachsenhausen",
+    "address": "Mörfelder Landstraße 263, 60598 Frankfurt (Sachsenhausen)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-frankfurt-sachsenhausen.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-60",
+    "practice_name": "Tierklinik Kalbach (Kleintierklinik am Nordpark)",
+    "city": "Frankfurt",
+    "district": "Am Nordpark 10), 60437 Frankfurt am Main",
+    "address": "Max-Holder-Straße 4 (Am Nordpark 10), 60437 Frankfurt am Main",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://tierklinik-kalbach.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-61",
+    "practice_name": "Tierarztpraxis Berger (Melanie Berger)",
+    "city": "Frankfurt",
+    "district": "Sachsenhausen",
+    "address": "Darmstädter Landstraße 48, 60594 Frankfurt (Sachsenhausen)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://tierarztpraxis-berger.com/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Community Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-62",
+    "practice_name": "Tierklinik Trillig (Obertshausen)",
+    "city": "Frankfurt",
+    "district": "Obertshausen",
+    "address": "Birkenwaldstr. 42, 63179 Obertshausen",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierklinik-trillig.de"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-63",
+    "practice_name": "Kleintierpraxis Frankfurt (Dr. Moudrianakis)",
+    "city": "Frankfurt",
+    "district": "Dr. Moudrianakis",
+    "address": "Leerbachstraße 122, 60322 Frankfurt am Main",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-frankfurt.com"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-64",
+    "practice_name": "Dr. med. vet. Sandra Härtter",
+    "city": "Frankfurt",
+    "district": "Bergen-Enkheim",
+    "address": "Leuchte 47, 60388 Frankfurt am Main (Bergen-Enkheim)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarztpraxis-haertter.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-65",
+    "practice_name": "Tierarztpraxis Dr. med. vet. Moormann",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Frankfurter Str. 11, 61462 Königstein im Taunus",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-moormann.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Community Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-66",
+    "practice_name": "Praxis Dr. med. vet. Anette Fach (Oberursel)",
+    "city": "Frankfurt",
+    "district": "Taunus",
+    "address": "Dornbachstr. 33 a, 61440 Oberursel (Taunus)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.kleintierpraxis-oberursel.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-67",
+    "practice_name": "Kleintierpraxis am Zauberberg (Dr. Katja Feuerbacher)",
+    "city": "Frankfurt",
+    "district": "Taunus",
+    "address": "Robert-Koch-Str. 116, 65779 Kelkheim (Taunus)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarzt-kelkheim.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-68",
+    "practice_name": "Felmo Mobiler Tierarzt (Frankfurt)",
+    "city": "Frankfurt",
+    "district": "Frankfurt",
+    "address": "Unknown Address",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://felmo.de/tierarzt/frankfurt"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-69",
+    "practice_name": "filu Tierarztpraxis Winterhude",
+    "city": "Hamburg",
+    "district": "Unknown",
+    "address": "Mühlenkamp 21A, 22303 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://filu.vet/hamburg/winterhude"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-70",
+    "practice_name": "Rex Tierarztpraxis (Winterhude & Ottensen)",
+    "city": "Hamburg",
+    "district": "Winterhude & Ottensen",
+    "address": "Winterhuder Marktplatz 1, 22299 Hamburg / Ottensen",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.rex.app/en"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-71",
+    "practice_name": "VetZentrum Hafencity",
+    "city": "Hamburg",
+    "district": "Unknown",
+    "address": "Baakenallee 90, 20457 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.vetzentrum-hafencity.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-72",
+    "practice_name": "Tierarztpraxis am Millerntor",
+    "city": "Hamburg",
+    "district": "St. Pauli",
+    "address": "B4 31, 20359 Hamburg (St. Pauli)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tierarztpraxis-am-millerntor.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Community Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-73",
+    "practice_name": "Tierarztpraxis ElbVet Hamburg",
+    "city": "Hamburg",
+    "district": "Bahrenfeld/Altona",
+    "address": "Friedensallee 290, 22763 Hamburg (Bahrenfeld/Altona)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.elbvet-hamburg.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-74",
+    "practice_name": "AniCura Kleintierzentrum (Niendorf)",
+    "city": "Hamburg",
+    "district": "Niendorf",
+    "address": "Garstedter Weg 274, 22455 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.anicura.de/hamburg-niendorf"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-75",
+    "practice_name": "Medivet Tierarztpraxis Hamburg-Stellingen",
+    "city": "Hamburg",
+    "district": "Unknown",
+    "address": "Kieler Straße 336, 22525 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.medivetgroup.com/de/tierarztpraxis-suche/hamburg/medivet-hamburg-stellingen/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-76",
+    "practice_name": "Dr. med. vet. Fabian von Manteuffel",
+    "city": "Hamburg",
+    "district": "Bramfeld",
+    "address": "Hülsdornweg 24, 22179 Hamburg (Bramfeld)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "http://www.tierarzt-manteuffel.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-77",
+    "practice_name": "Dr. med. vet. Michael Gervers",
+    "city": "Hamburg",
+    "district": "Barmbek-Nord",
+    "address": "Fuhlsbüttler Str. 344, 22307 Hamburg (Barmbek-Nord)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "http://www.tierarzt-gervers.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-78",
+    "practice_name": "Tierärztliche Gemeinschaftspraxis St. Pauli (Dr. Svenja Korth)",
+    "city": "Hamburg",
+    "district": "Dr. Svenja Korth",
+    "address": "Feldstraße 22, 20357 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-79",
+    "practice_name": "Dr. med. vet. Dagmar H. Vogel",
+    "city": "Hamburg",
+    "district": "Eimsbüttel",
+    "address": "Tresckowstr. 6, 20259 Hamburg (Eimsbüttel)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-80",
+    "practice_name": "AniCura Fachzentrum Hamburg (Jenfeld)",
+    "city": "Hamburg",
+    "district": "Jenfeld",
+    "address": "Rodigallee 85, 22043 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.anicura.de/hamburg"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-81",
+    "practice_name": "Dr. Martin Bucksch (Tierärzte am Grandweg)",
+    "city": "Hamburg",
+    "district": "Lokstedt",
+    "address": "Grandweg 68, 22529 Hamburg (Lokstedt)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://www.tieraerztegmbh-hamburg.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-82",
+    "practice_name": "Tierarztpraxis Dr. Stefanie Möller",
+    "city": "Hamburg",
+    "district": "Harvestehude",
+    "address": "Isestraße 49, 20144 Hamburg (Harvestehude)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-83",
+    "practice_name": "Dr. med. vet. Imke Tammena",
+    "city": "Hamburg",
+    "district": "Sasel",
+    "address": "Waldweg 42, 22393 Hamburg (Sasel)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support",
+        "Jameda Verified",
+        "Community Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-84",
+    "practice_name": "Tierarztpraxis Sülldorf (Gwendolien Lehmann)",
+    "city": "Hamburg",
+    "district": "Gwendolien Lehmann",
+    "address": "Sülldorfer Kirchenweg 2, 22587 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-85",
+    "practice_name": "Tierarztpraxis Simon",
+    "city": "Hamburg",
+    "district": "Rahlstedt",
+    "address": "Bargteheider Str. 156, 22143 Hamburg (Rahlstedt)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://simon.hamburg/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-86",
+    "practice_name": "Dr. med. vet. Eva Tutlies",
+    "city": "Hamburg",
+    "district": "Unknown",
+    "address": "Schiffbeker Weg 46, 22119 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": []
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-87",
+    "practice_name": "Dr. med. vet. Nicolai Mannstaedt",
+    "city": "Hamburg",
+    "district": "Unknown",
+    "address": "Neugrabener Bahnhofstraße 5a, 21149 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-88",
+    "practice_name": "Tierklinik Lademannbogen",
+    "city": "Hamburg",
+    "district": "Unknown",
+    "address": "Lademannbogen 126, 22339 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-89",
+    "practice_name": "Dr. med. vet. Klaus-Henning von Kuenheim",
+    "city": "Hamburg",
+    "district": "Unknown",
+    "address": "Bramfelder Chaussee 10, 22177 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-90",
+    "practice_name": "Dr. Mirja Fenske",
+    "city": "Hamburg",
+    "district": "Lohbrügge",
+    "address": "Osterrade 36 a, 21031 Hamburg (Lohbrügge)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Jameda Verified"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-91",
+    "practice_name": "Tierarztpraxis Dr. von Marnitz",
+    "city": "Hamburg",
+    "district": "Schnelsen",
+    "address": "Holsteiner Chaussee 38, 22523 Hamburg (Schnelsen)",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-92",
+    "practice_name": "Tierarztpraxis St. Pauli (Hopfenstraße)",
+    "city": "Hamburg",
+    "district": "Hopfenstraße",
+    "address": "Hopfenstraße 11-13, 20359 Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-93",
+    "practice_name": "VetCAR 24 (Siyamed Mala Ali)",
+    "city": "Hamburg",
+    "district": "Siyamed Mala Ali",
+    "address": "Unknown Address",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-94",
+    "practice_name": "Felmo Mobiler Tierarzt (Hamburg)",
+    "city": "Hamburg",
+    "district": "Hamburg",
+    "address": "Unknown Address",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": null,
+      "website": null
+    },
+    "verification": {
+      "ai_score": 80,
+      "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  }
+]
