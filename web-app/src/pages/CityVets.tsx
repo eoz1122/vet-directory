@@ -73,13 +73,60 @@ export default function CityVets() {
 
     const capitalizedCity = city!.charAt(0).toUpperCase() + city!.slice(1);
 
+    // JSON-LD Structured Data
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://englishspeakinggermany.online"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": capitalizedCity,
+                "item": `https://englishspeakinggermany.online/vets/${cityKey}`
+            }
+        ]
+    };
+
+    const collectionLd = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": cityData.title,
+        "description": cityData.description,
+        "url": `https://englishspeakinggermany.online/vets/${cityKey}`,
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": cityVets.map((vet: any, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "item": {
+                    "@type": "VeterinaryCare",
+                    "name": vet.practice_name,
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": vet.address,
+                        "addressLocality": vet.city,
+                        "addressCountry": "DE"
+                    }
+                }
+            }))
+        }
+    };
+
     return (
         <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
             <Helmet>
-                <title>{cityData.title} | EnglishSpeakingVets</title>
+                <title>{cityData.title} | Verified English-Speaking Clinics | EnglishSpeakingVets</title>
                 <meta name="description" content={cityData.description} />
                 <meta name="keywords" content={`English speaking vet ${capitalizedCity}, veterinarian ${capitalizedCity}, pet care ${capitalizedCity}, animal hospital ${capitalizedCity}, English vet Germany`} />
                 <link rel="canonical" href={`https://englishspeakinggermany.online/vets/${cityKey}`} />
+                <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
+                <script type="application/ld+json">{JSON.stringify(collectionLd)}</script>
             </Helmet>
 
             {/* Header */}

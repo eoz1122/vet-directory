@@ -5,6 +5,7 @@ import AppMap from '../components/Map'
 import PlaceAutocomplete from '../components/PlaceAutocomplete'
 import { calculateDistance } from '../utils/distance'
 import { APIProvider } from '@vis.gl/react-google-maps'
+import { Helmet } from 'react-helmet-async'
 
 interface Vet {
     id: string
@@ -53,17 +54,44 @@ export default function Home() {
         setCurrentPage(1);
     }, [userLocation]);
 
+    // JSON-LD Structured Data
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "EnglishSpeakingVets",
+        "url": "https://englishspeakinggermany.online",
+        "logo": "https://englishspeakinggermany.online/logo.png",
+        "image": "https://englishspeakinggermany.online/logo.png",
+        "description": "Find verified English-speaking veterinarians across Germany. A comprehensive directory for expats living in Berlin, Hamburg, Frankfurt, and beyond.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "DE"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://englishspeakinggermany.online/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    };
+
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://englishspeakinggermany.online"
+        }]
+    };
+
     // 1. Filter logic
     const filteredVets = useMemo(() => {
         return (vetData as Vet[]).filter(vet => {
-            // Basic text search
             const matchesText = vet.practice_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 vet.district.toLowerCase().includes(searchTerm.toLowerCase());
-
-            // City filter (ignored if user searches for a specific location via Autocomplete)
             const matchesCity = selectedCity === 'All' || vet.city === selectedCity;
-
-            if (userLocation) return true; // If location search is active, show all (sorted by distance)
+            if (userLocation) return true;
             return matchesCity && matchesText;
         })
     }, [selectedCity, searchTerm, userLocation])
@@ -75,9 +103,9 @@ export default function Home() {
         return [...filteredVets].map(vet => {
             const dist = vet.coordinates.lat !== 0
                 ? calculateDistance(userLocation.lat, userLocation.lng, vet.coordinates.lat, vet.coordinates.lng)
-                : 9999; // Push unknown coords to bottom
+                : 9999;
             return { ...vet, distance: dist };
-        }).sort((a, b) => a.distance - b.distance);
+        }).sort((a, b) => (a as any).distance - (b as any).distance);
     }, [filteredVets, userLocation]);
 
     // 3. Pagination logic
@@ -90,7 +118,7 @@ export default function Home() {
     const handlePlaceSelect = (location: { lat: number; lng: number } | null, _address: string) => {
         if (location) {
             setUserLocation(location);
-            setSelectedCity('All'); // Clear city filter to show nearest across borders if needed
+            setSelectedCity('All');
         } else {
             setUserLocation(null);
         }
@@ -104,35 +132,48 @@ export default function Home() {
 
     return (
         <APIProvider apiKey={apiKey} language="en">
+            <Helmet>
+                <title>English-Speaking Vets in Germany | Verify & Find 94+ Clinics</title>
+                <meta name="description" content="Moving to Germany with a pet? Find 94+ verified English-speaking veterinarians in Berlin, Hamburg, Frankfurt and more. Essential guides on dog tax and pet registration." />
+                <meta name="keywords" content="english speaking veterinarian germany, vet berlin english, english vet frankfurt, english vet hamburg, expat pet germany" />
+                <link rel="canonical" href="https://englishspeakinggermany.online" />
+
+                {/* Open Graph / Social */}
+                <meta property="og:title" content="English-Speaking Vets in Germany | Verify & Find 94+ Clinics" />
+                <meta property="og:description" content="Find verified English-speaking veterinarians across Germany. The ultimate directory for expats." />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online" />
+                <meta property="og:type" content="website" />
+
+                <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+                <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
+            </Helmet>
+
             <div className="min-h-screen flex flex-col md:flex-row">
-                {/* Sticky Header (Mobile) / Sidebar Header (Desktop) */}
                 <div className="md:w-[40%] flex flex-col h-screen overflow-hidden bg-secondary">
                     <header className="sticky top-0 z-10 bg-secondary/80 backdrop-blur-md border-b border-primary/10 p-4">
                         <div className="flex flex-col gap-3 mb-4">
                             <Link to="/" className="flex items-center gap-3 group">
-                                <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-20 w-auto transition-transform group-hover:scale-105" />
+                                <img src="/logo.png" alt="EnglishSpeakingVets - Find an English Speaking Vet in Germany" className="h-20 w-auto transition-transform group-hover:scale-105" />
                                 <div className="flex flex-col leading-none">
-                                    <span className="text-primary font-bold text-lg uppercase tracking-tight">English Speaking</span>
+                                    <h1 className="text-primary font-bold text-lg uppercase tracking-tight">English Speaking</h1>
                                     <span className="text-accent font-bold text-3xl uppercase tracking-tighter">Vets</span>
                                 </div>
                             </Link>
 
-                            {/* Desktop Nav Links (Visible in Sidebar) */}
-                            <div className="hidden md:flex gap-4 text-xs font-semibold text-primary/70 border-t border-primary/10 pt-2 w-full">
+                            <nav className="hidden md:flex gap-4 text-xs font-semibold text-primary/70 border-t border-primary/10 pt-2 w-full">
                                 <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
                                 <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
                                 <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                            </div>
+                            </nav>
                         </div>
                     </header>
 
                     <div className="space-y-3 px-4">
-                        {/* Location Search (Google Places) */}
                         <div className="w-full">
                             <PlaceAutocomplete onPlaceSelect={handlePlaceSelect} />
                         </div>
 
-                        {/* City Filter (Only show if no location selected) */}
                         {!userLocation && (
                             <>
                                 <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
@@ -150,9 +191,8 @@ export default function Home() {
                                     ))}
                                 </div>
 
-                                {/* City Landing Pages */}
                                 <div className="text-xs text-primary/60 px-1">
-                                    <p className="mb-2 font-semibold">Explore by City:</p>
+                                    <p className="mb-2 font-semibold font-sans">Explore by City:</p>
                                     <div className="flex flex-wrap gap-2">
                                         <Link to="/vets/berlin" className="hover:text-accent transition-colors">Berlin →</Link>
                                         <Link to="/vets/hamburg" className="hover:text-accent transition-colors">Hamburg →</Link>
@@ -162,7 +202,6 @@ export default function Home() {
                             </>
                         )}
 
-                        {/* Text Search (Fallback) */}
                         {!userLocation && (
                             <div className="relative">
                                 <input
@@ -184,7 +223,6 @@ export default function Home() {
                         )}
                     </div>
 
-                    {/* Scrollable List */}
                     <main className="flex-1 overflow-y-auto p-4 space-y-4">
                         <div className="text-xs text-primary/50 font-mono mb-2 uppercase tracking-wide flex justify-between items-end">
                             <span>{sortedVets.length} Verified Practices Found</span>
@@ -202,17 +240,15 @@ export default function Home() {
                                     : 'bg-white border-transparent hover:border-accent/20 hover:scale-[1.01]'
                                     }`}
                             >
-
-                                {/* Distance Badge */}
                                 {(vet as any).distance !== undefined && (vet as any).distance < 9000 && (
                                     <div className="absolute top-4 right-4 bg-accent/10 text-accent text-xs font-bold px-2 py-1 rounded">
-                                        {(vet as any).distance} km
+                                        {Math.round((vet as any).distance)} km
                                     </div>
                                 )}
 
                                 <div className="flex justify-between items-start mb-2 pr-12">
                                     <div>
-                                        <h3 className="text-lg leading-tight text-primary group-hover:text-accent transition-colors">
+                                        <h3 className="text-lg font-bold leading-tight text-primary group-hover:text-accent transition-colors">
                                             {vet.practice_name}
                                         </h3>
                                         <div className="flex items-center gap-2 mt-1">
@@ -236,17 +272,15 @@ export default function Home() {
                                             ✓ {signal}
                                         </span>
                                     ))}
-
-                                    {/* Verification Info Tooltip Trigger */}
                                     <div className="relative group/tooltip ml-1">
                                         <div className="cursor-help text-primary/30 hover:text-primary transition-colors">
                                             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                         </div>
                                         <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-primary text-secondary text-[10px] rounded shadow-lg opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-200 z-10 pointer-events-none">
-                                            <p className="font-bold mb-1">How we verify:</p>
+                                            <p className="font-bold mb-1">How we verify English-speaking vets:</p>
                                             <ul className="list-disc list-inside space-y-0.5 opacity-90">
                                                 <li>Official Website Check</li>
-                                                <li>Community Feedback</li>
+                                                <li>Expat Community Feedback</li>
                                             </ul>
                                             <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-primary"></div>
                                         </div>
@@ -262,7 +296,7 @@ export default function Home() {
                                             onClick={(e) => e.stopPropagation()}
                                             className="flex-1 py-2 text-center text-xs font-semibold bg-primary text-secondary rounded hover:bg-primary/90 transition-colors"
                                         >
-                                            Visit Website
+                                            Visit Practice Website
                                         </a>
                                     ) : (
                                         <a
@@ -279,7 +313,7 @@ export default function Home() {
 
                                 <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
                                     <span className="text-[10px] text-gray-400">
-                                        User-submitted/AI-verified. Non-binding info.
+                                        Verify directly with clinic. Data updated 2025.
                                     </span>
                                     <button
                                         onClick={(e) => { e.stopPropagation(); setReportingVet(vet); }}
@@ -293,7 +327,6 @@ export default function Home() {
                             </article>
                         ))}
 
-                        {/* Pagination Controls */}
                         {totalPages > 1 && (
                             <div className="flex justify-center gap-4 py-2">
                                 <button
@@ -313,152 +346,123 @@ export default function Home() {
                             </div>
                         )}
 
-                        {/* Expat Resource Center */}
                         <div className="bg-secondary p-6 rounded-2xl border border-primary/10">
-                            <h3 className="text-lg font-bold text-primary mb-2">Expat Resource Center</h3>
+                            <h2 className="text-lg font-bold text-primary mb-2">Expat Pet Resource Center</h2>
                             <p className="text-sm text-primary/70 mb-4 leading-relaxed">
-                                Essential guides for pet owners moving to Germany.
+                                Moving to Germany? These verified guides will save you hours of bureaucracy.
                             </p>
-                            <div className="space-y-3">
+                            <nav className="space-y-3">
                                 <Link to="/blog/moving-to-germany-with-pet-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
                                     <span className="text-lg">🐕</span>
                                     <div>
                                         <p className="font-semibold text-sm group-hover:underline">Moving to Germany with a Pet</p>
-                                        <p className="text-xs text-primary/60">The 2025 Survival Checklist</p>
+                                        <p className="text-xs text-primary/60">2025 Checklist: Rabies, Passport & Entry Rules</p>
                                     </div>
                                 </Link>
                                 <Link to="/blog/cat-registration-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
                                     <span className="text-lg">🐱</span>
                                     <div>
                                         <p className="font-semibold text-sm group-hover:underline">Cat Registration in Germany</p>
-                                        <p className="text-xs text-primary/60">Do you need to tell the Bürgeramt?</p>
+                                        <p className="text-xs text-primary/60">TASSO registration and microchip requirements</p>
                                     </div>
                                 </Link>
                                 <Link to="/blog/eu-pet-passport-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
                                     <span className="text-lg">🛂</span>
                                     <div>
                                         <p className="font-semibold text-sm group-hover:underline">EU Pet Passports</p>
-                                        <p className="text-xs text-primary/60">Why you need one and how to get it</p>
+                                        <p className="text-xs text-primary/60">Document costs and how to find a local vet</p>
                                     </div>
                                 </Link>
                                 <Link to="/blog/hundesteuer-dog-tax-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
                                     <span className="text-lg">💶</span>
                                     <div>
                                         <p className="font-semibold text-sm group-hover:underline">Hundesteuer (Dog Tax)</p>
-                                        <p className="text-xs text-primary/60">Costs, registration & exemptions</p>
+                                        <p className="text-xs text-primary/60">Registration, annual costs and exemptions</p>
                                     </div>
                                 </Link>
-                            </div>
-                        </div>
-
-                        {/* CTA Card */}
-                        <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
-                            <h3 className="text-lg font-bold text-primary mb-2">Help Us Grow the Pack</h3>
-                            <p className="text-sm text-primary/70 mb-4 leading-relaxed">
-                                Found a vet who was amazing with your nervous cat? Or a clinic that provided forms in English?
-                                <strong> EnglishSpeakingVets is a living resource.</strong> When you share a recommendation, you aren't just adding a name—you're helping a fellow expat find peace of mind.
-                            </p>
-                            <Link
-                                to="/contact?topic=submit_vet"
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-secondary rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors"
-                            >
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
-                                Submit a Recommendation
-                            </Link>
+                            </nav>
                         </div>
 
                         {sortedVets.length === 0 && (
                             <div className="text-center py-20 text-primary/40">
-                                <p>No results found for your search.</p>
-                                <button onClick={() => { setSearchTerm(''); setSelectedCity('All') }} className="mt-4 text-accent hover:underline text-sm">Clear filters</button>
+                                <p>No English-speaking vets found for your search.</p>
+                                <button onClick={() => { setSearchTerm(''); setSelectedCity('All') }} className="mt-4 text-accent hover:underline text-sm">Reset filters</button>
                             </div>
                         )}
 
-                        {/* Footer */}
                         <footer className="bg-primary text-secondary py-8 text-center text-sm border-t border-primary/10">
                             <div className="max-w-4xl mx-auto px-4 space-y-4">
-                                <div className="flex justify-center gap-6 font-semibold flex-wrap">
+                                <nav className="flex justify-center gap-6 font-semibold flex-wrap">
                                     <Link to="/about" className="hover:text-accent transition-colors">About</Link>
                                     <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
                                     <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
                                     <Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link>
                                     <Link to="/privacy" className="hover:text-accent transition-colors">Privacy</Link>
-                                </div>
-                                <p className="opacity-60">© 2025 EnglishSpeakingVets.online • Made with ❤️ for pets.</p>
+                                </nav>
+                                <p className="opacity-60">© 2025 EnglishSpeakingVets.online • Trusted by Expats.</p>
                             </div>
                         </footer>
                     </main>
                 </div>
 
-                {/* Map Section */}
                 <div className="hidden md:block md:w-[60%] bg-[#e5e0d8] relative">
                     <AppMap vets={sortedVets} selectedCity={selectedCity} selectedVet={selectedVet} onSelectVet={setSelectedVet} />
                 </div>
 
-                {/* Mobile Sticky Nav */}
+                {/* Mobile Navigation */}
                 <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-3 flex justify-between z-50 safe-area-bottom">
-                    <button className="flex flex-col items-center text-primary">
+                    <Link to="/" className="flex flex-col items-center text-primary">
                         <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                         <span className="text-[10px] font-medium">Directory</span>
-                    </button>
-                    <button className="flex flex-col items-center text-primary/40 hover:text-primary">
+                    </Link>
+                    <button className="flex flex-col items-center text-primary/40">
                         <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0121 18.382V7.618a1 1 0 01-1.447-.894L15 7m0 13V7"></path></svg>
                         <span className="text-[10px] font-medium">Map</span>
                     </button>
-                    <button className="flex flex-col items-center text-primary/40 hover:text-primary">
+                    <Link to="/contact?topic=submit_vet" className="flex flex-col items-center text-primary/40">
                         <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                         <span className="text-[10px] font-medium">Add Vet</span>
-                    </button>
+                    </Link>
                 </nav>
 
-                {/* Report Modal */}
-                {
-                    reportingVet && (
-                        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-                            <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full overflow-hidden border border-red-100">
-                                <div className="bg-red-50 p-4 border-b border-red-100 flex justify-between items-start">
-                                    <div>
-                                        <h3 className="text-red-800 font-bold flex items-center gap-2">
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                                            Report Issue
-                                        </h3>
-                                        <p className="text-xs text-red-600 mt-1">Regulatory Notice & Correction Request</p>
-                                    </div>
-                                    <button onClick={() => setReportingVet(null)} className="text-red-400 hover:text-red-700">
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                                    </button>
+                {reportingVet && (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+                        <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full overflow-hidden border border-red-100">
+                            <div className="bg-red-50 p-4 border-b border-red-100 flex justify-between items-start">
+                                <div>
+                                    <h3 className="text-red-800 font-bold flex items-center gap-2">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                        Report Issue
+                                    </h3>
+                                    <p className="text-xs text-red-600 mt-1">Regulatory Notice & Correction Request</p>
                                 </div>
-
-                                <div className="p-4 space-y-4">
-                                    <p className="text-sm text-gray-600">
-                                        You are reporting listing <strong>{reportingVet.practice_name}</strong> ({reportingVet.city}).
-                                    </p>
-
-                                    <div className="space-y-2">
-                                        <p className="text-xs font-semibold text-gray-500 uppercase">Reason for report:</p>
-                                        <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Permanently Closed`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
-                                            ⚠ Permanently Closed
-                                        </a>
-                                        <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Data Error`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
-                                            ✏ Data Incorrect (Address/Phone)
-                                        </a>
-                                        <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Language Issue`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
-                                            🗣 No longer speaks English
-                                        </a>
-                                        <a href={`mailto:compliance@englishspeakinggermany.online?subject=Removal Request: ${reportingVet.id}&body=I am the owner and request removal.`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
-                                            🛡 Legal / Request Removal (Owner)
-                                        </a>
-                                    </div>
-
-                                    <p className="text-[10px] text-gray-400 leading-tight">
-                                        In compliance with German GDPR & DSA regulations, reports are processed within 72 hours.
-                                    </p>
+                                <button onClick={() => setReportingVet(null)} className="text-red-400 hover:text-red-700">
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                </button>
+                            </div>
+                            <div className="p-4 space-y-4">
+                                <p className="text-sm text-gray-600">
+                                    Reporting <strong>{reportingVet.practice_name}</strong> ({reportingVet.city}).
+                                </p>
+                                <div className="space-y-2">
+                                    <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Permanently Closed`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
+                                        ⚠ Permanently Closed
+                                    </a>
+                                    <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Data Error`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
+                                        ✏ Data Incorrect
+                                    </a>
+                                    <a href={`mailto:compliance@englishspeakinggermany.online?subject=Removal Request: ${reportingVet.id}`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
+                                        🛡 Request Removal (Owner)
+                                    </a>
                                 </div>
+                                <p className="text-[10px] text-gray-400 leading-tight">
+                                    Compliant with German GDPR & DSA regulations.
+                                </p>
                             </div>
                         </div>
-                    )
-                }
-            </div >
-        </APIProvider >
+                    </div>
+                )}
+            </div>
+        </APIProvider>
     )
 }
