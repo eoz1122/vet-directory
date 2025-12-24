@@ -352,6 +352,13 @@ export default function Home() {
                                 Moving to Germany? These verified guides will save you hours of bureaucracy.
                             </p>
                             <nav className="space-y-3">
+                                <Link to="/blog/pet-friendly-apartments-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
+                                    <span className="text-lg">🏠</span>
+                                    <div>
+                                        <p className="font-semibold text-sm group-hover:underline">Finding a Pet-Friendly Apartment</p>
+                                        <p className="text-xs text-primary/60">How to tackle German landlords & "Pet Resumes"</p>
+                                    </div>
+                                </Link>
                                 <Link to="/blog/moving-to-germany-with-pet-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
                                     <span className="text-lg">🐕</span>
                                     <div>

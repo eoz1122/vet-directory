@@ -12,6 +12,7 @@ import CityVets from './pages/CityVets';
 import Impressum from './pages/Impressum';
 import Privacy from './pages/Privacy';
 import CookieConsent from './components/CookieConsent';
+import PetFriendlyApartments from './pages/PetFriendlyApartments';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/blog/cat-registration-germany-2025" element={<CatRegistrationGermany />} />
           <Route path="/blog/eu-pet-passport-germany-2025" element={<EUPetPassport />} />
           <Route path="/blog/hundesteuer-dog-tax-germany-2025" element={<DogTaxGermany />} />
+          <Route path="/blog/pet-friendly-apartments-germany-2025" element={<PetFriendlyApartments />} />
           <Route path="/vets/:city" element={<CityVets />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/privacy" element={<Privacy />} />
