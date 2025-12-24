@@ -1,19 +1,30 @@
-import { useState, useCallback, useEffect } from 'react';
-import { APIProvider, Map as GoogleMap, AdvancedMarker, Pin, InfoWindow } from '@vis.gl/react-google-maps';
+import { useEffect } from 'react';
+import { Map as GoogleMap, AdvancedMarker, Pin, InfoWindow, useMap } from '@vis.gl/react-google-maps';
 
 interface Vet {
     id: string;
     practice_name: string;
+    city: string;
+    district: string;
     address: string;
     coordinates: {
         lat: number;
         lng: number;
+    };
+    contact: {
+        website: string | null;
+        phone: string | null;
+    };
+    verification: {
+        english_signals: string[];
     };
 }
 
 interface MapProps {
     vets: Vet[];
     selectedCity: string;
+    selectedVet: Vet | null;
+    onSelectVet: (vet: Vet | null) => void;
 }
 
 const CITY_COORDS: Record<string, { lat: number; lng: number }> = {
@@ -23,67 +34,93 @@ const CITY_COORDS: Record<string, { lat: number; lng: number }> = {
     'All': { lat: 51.1657, lng: 10.4515 }, // Center of Germany
 };
 
-export default function AppMap({ vets, selectedCity }: MapProps) {
-    // IMPORTANT: This requires a Google Maps API Key in .env file
-    // VITE_GOOGLE_MAPS_API_KEY=YOUR_KEY
-    const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
+// Component to handle camera updates
+function CameraUpdater({ selectedCity, vets, selectedVet }: { selectedCity: string, vets: Vet[], selectedVet: Vet | null }) {
+    const map = useMap();
 
-    const [selectedVet, setSelectedVet] = useState<Vet | null>(null);
-    const center = CITY_COORDS[selectedCity] || CITY_COORDS['All'];
-    const zoom = selectedCity === 'All' ? 6 : 12;
+    useEffect(() => {
+        if (!map) return;
+
+        // Priority 1: Selected Vet (from list click or map click)
+        if (selectedVet && selectedVet.coordinates.lat !== 0) {
+            map.panTo(selectedVet.coordinates);
+            map.setZoom(15);
+            return;
+        }
+
+        // Priority 2: City Selection
+        if (selectedCity !== 'All') {
+            const target = CITY_COORDS[selectedCity];
+            map.moveCamera({ center: target, zoom: 12 });
+        } else if (vets.length > 0 && vets.length < 90) {
+            // Priority 3: Filtered List (Search results)
+            map.moveCamera({ center: vets[0].coordinates, zoom: 13 });
+        }
+
+    }, [selectedCity, map, vets, selectedVet]); // Add selectedVet to dependency
+
+    return null;
+}
+
+export default function AppMap({ vets, selectedCity, selectedVet, onSelectVet }: MapProps) {
+    // Initial default (only used on first load)
+    const defaultCenter = CITY_COORDS['All'];
+    const defaultZoom = 6;
 
     // Filter valid vets
     const validVets = vets.filter(v => v.coordinates.lat !== 0 && v.coordinates.lng !== 0);
 
-    if (!apiKey) {
-        return (
-            <div className="h-full w-full flex items-center justify-center bg-gray-100 p-8 text-center text-gray-500">
-                <div>
-                    <p className="font-bold mb-2">Google Maps API Key Missing</p>
-                    <p className="text-sm">Please add <code className="bg-gray-200 px-1 rounded">VITE_GOOGLE_MAPS_API_KEY</code> to your .env file.</p>
-                    <br />
-                    <p className="text-xs italic">Falling back to basic list view for now.</p>
-                </div>
-            </div>
-        );
-    }
-
     return (
-        <APIProvider apiKey={apiKey}>
-            <div className="h-full w-full">
-                <GoogleMap
-                    mapId={'bf9e34e7'} // Example Map ID (Vector style) - can be replaced with real one or left as default
-                    defaultCenter={center}
-                    defaultZoom={zoom}
-                    center={center}
-                    zoom={zoom}
-                    gestureHandling={'greedy'}
-                    disableDefaultUI={false}
-                    className="h-full w-full"
-                >
-                    {validVets.map(vet => (
-                        <AdvancedMarker
-                            key={vet.id}
-                            position={vet.coordinates}
-                            onClick={() => setSelectedVet(vet)}
-                        >
-                            <Pin background={'#FB8500'} glyphColor={'#FFF'} borderColor={'#1B4332'} />
-                        </AdvancedMarker>
-                    ))}
+        <div className="h-full w-full">
+            <GoogleMap
+                mapId={'bf9e34e7'}
+                defaultCenter={defaultCenter}
+                defaultZoom={defaultZoom}
+                gestureHandling={'greedy'}
+                disableDefaultUI={false}
+                className="h-full w-full"
+                onClick={() => onSelectVet(null)} // Click map to deselect
+            >
+                <CameraUpdater selectedCity={selectedCity} vets={validVets} selectedVet={selectedVet} />
 
-                    {selectedVet && (
-                        <InfoWindow
-                            position={selectedVet.coordinates}
-                            onCloseClick={() => setSelectedVet(null)}
-                        >
-                            <div className="p-1">
-                                <strong className="text-primary block mb-1">{selectedVet.practice_name}</strong>
-                                <p className="text-xs text-gray-600 font-sans">{selectedVet.address}</p>
-                            </div>
-                        </InfoWindow>
-                    )}
-                </GoogleMap>
-            </div>
-        </APIProvider>
+                {validVets.map(vet => (
+                    <AdvancedMarker
+                        key={vet.id}
+                        position={vet.coordinates}
+                        onClick={(e) => {
+                            e.stop(); // Prevent map click
+                            onSelectVet(vet);
+                        }}
+                    >
+                        <Pin
+                            background={selectedVet?.id === vet.id ? '#FB8500' : '#1B4332'}
+                            glyphColor={'#FFF'}
+                            borderColor={'#FFFFFF'}
+                            scale={selectedVet?.id === vet.id ? 1.2 : 1}
+                        />
+                    </AdvancedMarker>
+                ))}
+
+                {selectedVet && selectedVet.coordinates.lat !== 0 && (
+                    <InfoWindow
+                        position={selectedVet.coordinates}
+                        onCloseClick={() => onSelectVet(null)}
+                    >
+                        <div className="p-1">
+                            <strong className="text-primary block mb-1 text-sm">{selectedVet.practice_name}</strong>
+                            <p className="text-xs text-gray-600 font-sans mb-2 leading-tight">{selectedVet.address}</p>
+                            <a
+                                href={`https://www.google.com/maps/dir/?api=1&destination=${selectedVet.coordinates.lat},${selectedVet.coordinates.lng}`}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="block w-full text-center px-3 py-1.5 bg-accent text-white text-xs font-bold rounded-md hover:bg-accent/90 transition-colors shadow-sm"
+                            >
+                                Get Directions
+                            </a>
+                        </div>
+                    </InfoWindow>
+                )}
+            </GoogleMap>
+        </div>
     );
 }

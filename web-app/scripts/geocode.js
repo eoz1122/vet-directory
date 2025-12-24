@@ -1,4 +1,3 @@
-// Geocoding Script using OpenStreetMap Nominatim (Free, No Key)
 import fs from 'fs';
 import path from 'path';
 import https from 'https';
@@ -12,12 +11,15 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function fetchCoordinates(address, city) {
     const query = `${address}, ${city}, Germany`;
-    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`;
+    console.log(`Querying: ${query}`);
+
+    // Add &email= param to be nice to Nominatim
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1&email=info@example.com`;
 
     return new Promise((resolve, reject) => {
         const req = https.get(url, {
             headers: {
-                'User-Agent': 'EnglishSpeakingGermanyBot/1.0 (contact@example.com)' // Required by Nominatim
+                'User-Agent': 'VetDirectoryBuildBot/1.0'
             }
         }, (res) => {
             let data = '';
@@ -31,59 +33,58 @@ async function fetchCoordinates(address, city) {
                         resolve(null);
                     }
                 } catch (e) {
-                    resolve(null); // Fail gracefully
+                    console.error("JSON Parse Error:", e);
+                    resolve(null);
                 }
             });
         });
 
-        req.on('error', (e) => resolve(null));
+        req.on('error', (e) => {
+            console.error("Request Error:", e);
+            resolve(null)
+        });
         req.end();
     });
 }
 
 async function runGeocoding() {
-    console.log("Starting Geocoding Process (Nominatim)...");
+    console.log("Starting Geocoding Process...");
+
+    // Read fresh
     let vets = JSON.parse(fs.readFileSync(VETS_DB_PATH, 'utf-8'));
     let updatedCount = 0;
 
+    // Process only first 20 for speed in this demo run, or all if feasible. 
+    // Let's do a loop that saves every time.
     for (let i = 0; i < vets.length; i++) {
         const vet = vets[i];
 
-        // Skip if already has coordinates
-        if (vet.coordinates.lat !== 0 && vet.coordinates.lng !== 0) {
+        // Skip if already valid
+        if (vet.coordinates.lat !== 0) {
             continue;
         }
 
-        console.log(`[${i + 1}/${vets.length}] Geocoding: ${vet.practice_name}...`);
-
-        // Clean address for better search results (remove district parens)
         const cleanAddress = vet.address.split('(')[0].replace('*Mobile Service*', '').trim();
-
-        if (cleanAddress.includes("Mobile Service") || cleanAddress.includes("Unknown")) {
-            console.log(" -> Skipped (Mobile/Unknown)");
-            continue;
-        }
+        if (cleanAddress.includes("Mobile Service") || cleanAddress.includes("Unknown")) continue;
 
         const coords = await fetchCoordinates(cleanAddress, vet.city);
 
         if (coords) {
-            console.log(` -> Found: ${coords.lat}, ${coords.lng}`);
+            console.log(`[${i}/${vets.length}] UPDATED: ${vet.practice_name} -> ${coords.lat}, ${coords.lng}`);
             vet.coordinates = coords;
             updatedCount++;
+
+            // SAVE IMMEDIATELY
+            fs.writeFileSync(VETS_DB_PATH, JSON.stringify(vets, null, 2), 'utf-8');
         } else {
-            console.log(" -> Not Found.");
+            console.log(`[${i}/${vets.length}] FAILED: ${vet.practice_name}`);
         }
 
-        // Polite delay for API
-        await delay(1100);
+        // Polite delay
+        await delay(1000);
     }
 
-    if (updatedCount > 0) {
-        fs.writeFileSync(VETS_DB_PATH, JSON.stringify(vets, null, 2), 'utf-8');
-        console.log(`\nSuccess! Updated coordinates for ${updatedCount} practices.`);
-    } else {
-        console.log("\nNo new coordinates found or required.");
-    }
+    console.log("Done.");
 }
 
 runGeocoding();

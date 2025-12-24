@@ -6,8 +6,8 @@
     "district": "Prenzlauer Berg",
     "address": "Greifswalder Str. 80c, 10405 Berlin (Prenzlauer Berg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5390605,
+      "lng": 13.438648
     },
     "contact": {
       "phone": null,
@@ -29,8 +29,8 @@
     "district": "Reinickendorf",
     "address": "Scharnweberstraße 136, 13405 Berlin (Reinickendorf)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5638367,
+      "lng": 13.3258987
     },
     "contact": {
       "phone": null,
@@ -50,8 +50,8 @@
     "district": "Friedrichshain) / Others",
     "address": "Friedenstraße 94 (Friedrichshain) / Others",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5222543,
+      "lng": 13.4352901
     },
     "contact": {
       "phone": null,
@@ -96,8 +96,8 @@
     "district": "Düppel/Zehlendorf",
     "address": "Oertzenweg 19b, 14163 Berlin (Düppel/Zehlendorf)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4290895,
+      "lng": 13.236957
     },
     "contact": {
       "phone": null,
@@ -119,8 +119,8 @@
     "district": "Charlottenburg",
     "address": "Hohenzollerndamm 185, 10713 Berlin (Charlottenburg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4914239,
+      "lng": 13.3181079
     },
     "contact": {
       "phone": null,
@@ -129,7 +129,9 @@
     "verification": {
       "ai_score": 80,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Community Verified"
+      ]
     },
     "community_status": "Verified"
   },
@@ -140,8 +142,8 @@
     "district": "Charlottenburg",
     "address": "Weimarer Str. 9, 10625 Berlin (Charlottenburg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5099783,
+      "lng": 13.3116933
     },
     "contact": {
       "phone": null,
@@ -163,8 +165,8 @@
     "district": "Tegel",
     "address": "Wittestraße 30 P, 13509 Berlin (Tegel)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5804781,
+      "lng": 13.2946262
     },
     "contact": {
       "phone": null,
@@ -187,8 +189,8 @@
     "district": "Wilmersdorf",
     "address": "Frankenallee 10, 14052 Berlin (Wilmersdorf)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5067778,
+      "lng": 13.2677368
     },
     "contact": {
       "phone": null,
@@ -210,8 +212,8 @@
     "district": "Friedenau",
     "address": "Lauterstraße 19-20, 12159 Berlin (Friedenau)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4746437,
+      "lng": 13.3353241
     },
     "contact": {
       "phone": null,
@@ -233,8 +235,8 @@
     "district": "Weißensee",
     "address": "Lehderstraße 42, 13086 Berlin (Weißensee)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5514741,
+      "lng": 13.437026
     },
     "contact": {
       "phone": null,
@@ -256,8 +258,8 @@
     "district": "Zehlendorf",
     "address": "Potsdamer Str. 23/2, 14163 Berlin (Zehlendorf)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4354324,
+      "lng": 13.2587088
     },
     "contact": {
       "phone": null,
@@ -279,8 +281,8 @@
     "district": "Friedrichshain",
     "address": "Ebelingstraße 1, 10249 Berlin (Friedrichshain)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5234071,
+      "lng": 13.4503374
     },
     "contact": {
       "phone": null,
@@ -302,8 +304,8 @@
     "district": "Neukölln",
     "address": "Altenbraker Str. 29, 12051 Berlin (Neukölln)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.468653,
+      "lng": 13.4330363
     },
     "contact": {
       "phone": null,
@@ -325,8 +327,8 @@
     "district": "Lichtenberg",
     "address": "Fanningerstraße 27, 10365 Berlin (Lichtenberg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5143907,
+      "lng": 13.4951561
     },
     "contact": {
       "phone": null,
@@ -348,8 +350,8 @@
     "district": "Lichterfelde",
     "address": "Oberhofer Weg 68, 12209 Berlin (Lichterfelde)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4183156,
+      "lng": 13.3320078
     },
     "contact": {
       "phone": null,
@@ -371,8 +373,8 @@
     "district": "Wilmersdorf",
     "address": "Mansfelder Straße 19, 10713 Berlin (Wilmersdorf)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4888413,
+      "lng": 13.3110131
     },
     "contact": {
       "phone": null,
@@ -392,8 +394,8 @@
     "district": "Prenzlauer Berg",
     "address": "Wolliner Str. 21, 10435 Berlin (Prenzlauer Berg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5395953,
+      "lng": 13.401733
     },
     "contact": {
       "phone": null,
@@ -413,8 +415,8 @@
     "district": "Westend",
     "address": "Reichsstraße 2, 14052 Berlin (Westend)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5107099,
+      "lng": 13.2709188
     },
     "contact": {
       "phone": null,
@@ -436,8 +438,8 @@
     "district": "Friedrichshagen",
     "address": "Bölschestraße 8, 12587 Berlin (Friedrichshagen)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4478304,
+      "lng": 13.62464
     },
     "contact": {
       "phone": null,
@@ -459,8 +461,8 @@
     "district": "Friedrichshain",
     "address": "Karl-Marx-Allee 108, 10243 Berlin (Friedrichshain)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5163931,
+      "lng": 13.4456151
     },
     "contact": {
       "phone": null,
@@ -482,8 +484,8 @@
     "district": "Prenzlauer Berg",
     "address": "Husemannstraße 3, 10435 Berlin (Prenzlauer Berg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5371564,
+      "lng": 13.41717
     },
     "contact": {
       "phone": null,
@@ -505,8 +507,8 @@
     "district": "Treptow-Köpenick",
     "address": "Regattastraße 58, 12527 Berlin (Treptow-Köpenick)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4156983,
+      "lng": 13.5819704
     },
     "contact": {
       "phone": null,
@@ -528,8 +530,8 @@
     "district": "Schöneberg",
     "address": "Kufsteiner Str. 22, 10825 Berlin",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4855545,
+      "lng": 13.3366726
     },
     "contact": {
       "phone": null,
@@ -552,8 +554,8 @@
     "district": "Friedenau",
     "address": "Rotdornstr. 7, 12161 Berlin",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4708837,
+      "lng": 13.3254512
     },
     "contact": {
       "phone": null,
@@ -576,8 +578,8 @@
     "district": "Pankow",
     "address": "Dietzgenstraße 28, 13156 Berlin (Pankow)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5825569,
+      "lng": 13.4043662
     },
     "contact": {
       "phone": null,
@@ -600,8 +602,8 @@
     "district": "Tempelhof",
     "address": "Rangsdorfer Str. 9, 12309 Berlin",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.3889464,
+      "lng": 13.3905872
     },
     "contact": {
       "phone": null,
@@ -624,8 +626,8 @@
     "district": "Bernau",
     "address": "Ladeburger Chaussee 73, 16321 Bernau",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.6823492,
+      "lng": 13.5858973
     },
     "contact": {
       "phone": null,
@@ -648,8 +650,8 @@
     "district": "Schöneberg",
     "address": "Hauptstr. 92, 10827 Berlin",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4763237,
+      "lng": 13.3418436
     },
     "contact": {
       "phone": null,
@@ -671,8 +673,8 @@
     "district": "Zehlendorf",
     "address": "Onkel-Tom-Str. 3, 14165 Berlin (Zehlendorf)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4358124,
+      "lng": 13.2586467
     },
     "contact": {
       "phone": null,
@@ -694,8 +696,8 @@
     "district": "Dr. med. vet. S. Robl",
     "address": "Olivaer Platz 11, 10707 Berlin",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.499682,
+      "lng": 13.3162955
     },
     "contact": {
       "phone": null,
@@ -717,8 +719,8 @@
     "district": "Biesdorf",
     "address": "Alt-Biesdorf 22, 12683 Berlin (Biesdorf)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5087397,
+      "lng": 13.5557345
     },
     "contact": {
       "phone": null,
@@ -740,8 +742,8 @@
     "district": "Neukölln",
     "address": "Sonnenallee 170, 12059 Berlin (Neukölln)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4772483,
+      "lng": 13.4485885
     },
     "contact": {
       "phone": null,
@@ -764,8 +766,8 @@
     "district": "Charlottenburg",
     "address": "Herbartstraße 18, 14057 Berlin (Charlottenburg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.505618,
+      "lng": 13.285243
     },
     "contact": {
       "phone": null,
@@ -785,8 +787,8 @@
     "district": "Prenzlauer Berg",
     "address": "Winsstraße 28, 10405 Berlin (Prenzlauer Berg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5353749,
+      "lng": 13.4270448
     },
     "contact": {
       "phone": null,
@@ -809,8 +811,8 @@
     "district": "Prenzlauer Berg",
     "address": "Rykestraße 4, 10405 Berlin (Prenzlauer Berg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5350841,
+      "lng": 13.4196661
     },
     "contact": {
       "phone": null,
@@ -832,8 +834,8 @@
     "district": "Grunewald",
     "address": "Winkler Straße 2, 14193 Berlin (Grunewald)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.489252,
+      "lng": 13.2714154
     },
     "contact": {
       "phone": null,
@@ -853,8 +855,8 @@
     "district": "Zehlendorf",
     "address": "Beerenstraße 28, 14163 Berlin (Zehlendorf)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4364378,
+      "lng": 13.2415326
     },
     "contact": {
       "phone": null,
@@ -874,8 +876,8 @@
     "district": "Steglitz",
     "address": "Steglitzer Damm 48, 12169 Berlin (Steglitz)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4501772,
+      "lng": 13.3437303
     },
     "contact": {
       "phone": null,
@@ -895,8 +897,8 @@
     "district": "Friedrichshain",
     "address": "Bänschstraße 70, 10247 Berlin (Friedrichshain)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5175127,
+      "lng": 13.4680346
     },
     "contact": {
       "phone": null,
@@ -918,8 +920,8 @@
     "district": "Kreuzberg",
     "address": "Blücherstraße 69, 10961 Berlin (Kreuzberg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4919415,
+      "lng": 13.4029716
     },
     "contact": {
       "phone": null,
@@ -941,8 +943,8 @@
     "district": "Charlottenburg",
     "address": "Friedbergstraße 4, 14057 Berlin (Charlottenburg)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5043327,
+      "lng": 13.2957476
     },
     "contact": {
       "phone": null,
@@ -962,8 +964,8 @@
     "district": "Mobile Vet",
     "address": "*Mobile*",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4808427,
+      "lng": 13.4357963
     },
     "contact": {
       "phone": null,
@@ -985,8 +987,8 @@
     "district": "Neukölln",
     "address": "Weichselstraße 25, 12045 Berlin (Neukölln)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.4870325,
+      "lng": 13.4368022
     },
     "contact": {
       "phone": null,
@@ -1009,8 +1011,8 @@
     "district": "Unknown",
     "address": "Pasewalker Straße 25, 13127 Berlin",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.5883891,
+      "lng": 13.429743
     },
     "contact": {
       "phone": null,
@@ -1032,8 +1034,8 @@
     "district": "Unknown",
     "address": "Weberstraße 59, 60318 Frankfurt am Main",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1265373,
+      "lng": 8.6865236
     },
     "contact": {
       "phone": null,
@@ -1055,8 +1057,8 @@
     "district": "Unknown",
     "address": "Wittelsbacherallee 26, 60316 Frankfurt am Main",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.119189,
+      "lng": 8.7031839
     },
     "contact": {
       "phone": null,
@@ -1078,8 +1080,8 @@
     "district": "Sossenheim",
     "address": "Westerbachstraße 226, 65936 Frankfurt am Main (Sossenheim)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1237711,
+      "lng": 8.5766749
     },
     "contact": {
       "phone": null,
@@ -1101,8 +1103,8 @@
     "district": "Eckenheim",
     "address": "Eckenheimer Landstraße 340, 60435 Frankfurt (Eckenheim)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1488729,
+      "lng": 8.6813374
     },
     "contact": {
       "phone": null,
@@ -1147,8 +1149,8 @@
     "district": "Bockenheim",
     "address": "Juliusstraße 12, 60487 Frankfurt am Main (Bockenheim)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1234958,
+      "lng": 8.6448043
     },
     "contact": {
       "phone": null,
@@ -1170,8 +1172,8 @@
     "district": "Ginnheim",
     "address": "Füllerstraße 100, 60431 Frankfurt am Main (Ginnheim)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1434282,
+      "lng": 8.6488114
     },
     "contact": {
       "phone": null,
@@ -1191,8 +1193,8 @@
     "district": "Frankfurt) & Bad Homburg",
     "address": "Riedberg (Frankfurt) & Bad Homburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1766221,
+      "lng": 8.6320784
     },
     "contact": {
       "phone": null,
@@ -1214,8 +1216,8 @@
     "district": "Gallus/City West",
     "address": "Weberstraße 77 (Nordend) / Hamburger Allee 14 (Gallus/City West)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1277397,
+      "lng": 8.6862685
     },
     "contact": {
       "phone": null,
@@ -1237,8 +1239,8 @@
     "district": "Dr. Jan Kullen / Dr. Elena Panova",
     "address": "Textorstraße 93, 60596 Frankfurt am Main",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.0995779,
+      "lng": 8.6813158
     },
     "contact": {
       "phone": null,
@@ -1260,8 +1262,8 @@
     "district": "Unknown",
     "address": "Ginnheimer Landstraße 11, 60487 Frankfurt am Main",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1288579,
+      "lng": 8.6423265
     },
     "contact": {
       "phone": null,
@@ -1283,8 +1285,8 @@
     "district": "Bockenheim",
     "address": "Kurfürstenstraße 3, 60486 Frankfurt am Main",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1224332,
+      "lng": 8.6451228
     },
     "contact": {
       "phone": null,
@@ -1306,8 +1308,8 @@
     "district": "Dr. Katrin Witt",
     "address": "Heisterstraße 1, 60385 Frankfurt am Main",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1036973,
+      "lng": 8.696417
     },
     "contact": {
       "phone": null,
@@ -1327,8 +1329,8 @@
     "district": "Sachsenhausen",
     "address": "Mörfelder Landstraße 263, 60598 Frankfurt (Sachsenhausen)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.0935559,
+      "lng": 8.6782109
     },
     "contact": {
       "phone": null,
@@ -1350,8 +1352,8 @@
     "district": "Am Nordpark 10), 60437 Frankfurt am Main",
     "address": "Max-Holder-Straße 4 (Am Nordpark 10), 60437 Frankfurt am Main",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.18973,
+      "lng": 8.6509635
     },
     "contact": {
       "phone": null,
@@ -1373,8 +1375,8 @@
     "district": "Sachsenhausen",
     "address": "Darmstädter Landstraße 48, 60594 Frankfurt (Sachsenhausen)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1019831,
+      "lng": 8.6906204
     },
     "contact": {
       "phone": null,
@@ -1420,8 +1422,8 @@
     "district": "Dr. Moudrianakis",
     "address": "Leerbachstraße 122, 60322 Frankfurt am Main",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1243152,
+      "lng": 8.6719379
     },
     "contact": {
       "phone": null,
@@ -1441,8 +1443,8 @@
     "district": "Bergen-Enkheim",
     "address": "Leuchte 47, 60388 Frankfurt am Main (Bergen-Enkheim)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1433522,
+      "lng": 8.7626709
     },
     "contact": {
       "phone": null,
@@ -1559,8 +1561,8 @@
     "district": "Unknown",
     "address": "Mühlenkamp 21A, 22303 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5808087,
+      "lng": 10.0112803
     },
     "contact": {
       "phone": null,
@@ -1605,8 +1607,8 @@
     "district": "Unknown",
     "address": "Baakenallee 90, 20457 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5364937,
+      "lng": 10.0169081
     },
     "contact": {
       "phone": null,
@@ -1652,8 +1654,8 @@
     "district": "Bahrenfeld/Altona",
     "address": "Friedensallee 290, 22763 Hamburg (Bahrenfeld/Altona)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5598548,
+      "lng": 9.9106261
     },
     "contact": {
       "phone": null,
@@ -1675,8 +1677,8 @@
     "district": "Niendorf",
     "address": "Garstedter Weg 274, 22455 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.6386928,
+      "lng": 9.9699638
     },
     "contact": {
       "phone": null,
@@ -1699,8 +1701,8 @@
     "district": "Unknown",
     "address": "Kieler Straße 336, 22525 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5872479,
+      "lng": 9.9327793
     },
     "contact": {
       "phone": null,
@@ -1722,8 +1724,8 @@
     "district": "Bramfeld",
     "address": "Hülsdornweg 24, 22179 Hamburg (Bramfeld)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5950623,
+      "lng": 10.0650516
     },
     "contact": {
       "phone": null,
@@ -1745,8 +1747,8 @@
     "district": "Barmbek-Nord",
     "address": "Fuhlsbüttler Str. 344, 22307 Hamburg (Barmbek-Nord)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.6010893,
+      "lng": 10.0413859
     },
     "contact": {
       "phone": null,
@@ -1769,8 +1771,8 @@
     "district": "Dr. Svenja Korth",
     "address": "Feldstraße 22, 20357 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5573499,
+      "lng": 9.9691309
     },
     "contact": {
       "phone": null,
@@ -1793,8 +1795,8 @@
     "district": "Eimsbüttel",
     "address": "Tresckowstr. 6, 20259 Hamburg (Eimsbüttel)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5739651,
+      "lng": 9.963081
     },
     "contact": {
       "phone": null,
@@ -1817,8 +1819,8 @@
     "district": "Jenfeld",
     "address": "Rodigallee 85, 22043 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5706531,
+      "lng": 10.1050302
     },
     "contact": {
       "phone": null,
@@ -1840,8 +1842,8 @@
     "district": "Lokstedt",
     "address": "Grandweg 68, 22529 Hamburg (Lokstedt)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5925323,
+      "lng": 9.9605474
     },
     "contact": {
       "phone": null,
@@ -1864,8 +1866,8 @@
     "district": "Harvestehude",
     "address": "Isestraße 49, 20144 Hamburg (Harvestehude)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5817841,
+      "lng": 9.9817247
     },
     "contact": {
       "phone": null,
@@ -1885,8 +1887,8 @@
     "district": "Sasel",
     "address": "Waldweg 42, 22393 Hamburg (Sasel)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.6552338,
+      "lng": 10.1206751
     },
     "contact": {
       "phone": null,
@@ -1910,8 +1912,8 @@
     "district": "Gwendolien Lehmann",
     "address": "Sülldorfer Kirchenweg 2, 22587 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5640672,
+      "lng": 9.8128885
     },
     "contact": {
       "phone": null,
@@ -1933,8 +1935,8 @@
     "district": "Rahlstedt",
     "address": "Bargteheider Str. 156, 22143 Hamburg (Rahlstedt)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.6005735,
+      "lng": 10.1438955
     },
     "contact": {
       "phone": null,
@@ -1956,8 +1958,8 @@
     "district": "Unknown",
     "address": "Schiffbeker Weg 46, 22119 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5444196,
+      "lng": 10.1048408
     },
     "contact": {
       "phone": null,
@@ -1977,8 +1979,8 @@
     "district": "Unknown",
     "address": "Neugrabener Bahnhofstraße 5a, 21149 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.4677627,
+      "lng": 9.8547253
     },
     "contact": {
       "phone": null,
@@ -2000,8 +2002,8 @@
     "district": "Unknown",
     "address": "Lademannbogen 126, 22339 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.6438854,
+      "lng": 10.0290527
     },
     "contact": {
       "phone": null,
@@ -2023,8 +2025,8 @@
     "district": "Unknown",
     "address": "Bramfelder Chaussee 10, 22177 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5939221,
+      "lng": 10.0599291
     },
     "contact": {
       "phone": null,
@@ -2046,8 +2048,8 @@
     "district": "Lohbrügge",
     "address": "Osterrade 36 a, 21031 Hamburg (Lohbrügge)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5106736,
+      "lng": 10.1845589
     },
     "contact": {
       "phone": null,
@@ -2069,8 +2071,8 @@
     "district": "Schnelsen",
     "address": "Holsteiner Chaussee 38, 22523 Hamburg (Schnelsen)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.6117063,
+      "lng": 9.9056719
     },
     "contact": {
       "phone": null,
@@ -2092,8 +2094,8 @@
     "district": "Hopfenstraße",
     "address": "Hopfenstraße 11-13, 20359 Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5480617,
+      "lng": 9.9639852
     },
     "contact": {
       "phone": null,
