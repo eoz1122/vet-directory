@@ -1288,29 +1288,6 @@
     "community_status": "Unverified"
   },
   {
-    "id": "Berlin-Pot-069",
-    "practice_name": "Pet-Station",
-    "city": "Berlin",
-    "district": "Berlin",
-    "address": "Kulmer Str. 26, Berlin",
-    "coordinates": {
-      "lat": 52.4921297,
-      "lng": 13.3651314
-    },
-    "contact": {
-      "phone": "030 51058546",
-      "website": "http://www.pet-station.de/",
-      "google_maps": "https://www.google.com/maps/place/Pet-Station/data=!4m7!3m6!1s0x47a8503834c7a8f7:0xef4fab72ef1a7364!8m2!3d52.4921297!4d13.3651314!16s%2Fg%2F1tdq9m4_!19sChIJ96jHNDhQqEcRZHMa73KrT-8?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "ai_score": 0,
-      "last_scanned": "2025-12-25",
-      "english_signals": [],
-      "status": "Unverified (Not confirmed English yet)"
-    },
-    "community_status": "Unverified"
-  },
-  {
     "id": "Berlin-Pot-070",
     "practice_name": "Tierarztpraxis Gasteiner Straße",
     "city": "Berlin",
