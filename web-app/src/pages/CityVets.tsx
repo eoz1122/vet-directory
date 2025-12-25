@@ -242,7 +242,7 @@ export default function CityVets() {
                                     </div>
                                 ) : (
                                     <a
-                                        href={`https://www.google.com/search?q=https://www.google.com/maps/search/%3Fapi%3D1%26query%3D${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
+                                        href={`https://www.google.com/search?q=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="block text-[12px] text-primary/60 mb-5 font-medium leading-relaxed bg-secondary/30 p-4 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors hover:text-accent hover:border-accent/30"
@@ -286,7 +286,7 @@ export default function CityVets() {
                                     {/* Hide Map button for Mobile Services */}
                                     {!(vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown')) && (
                                         <a
-                                            href={`https://www.google.com/search?q=https://www.google.com/maps/search/%3Fapi%3D1%26query%3D${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
+                                            href={`https://www.google.com/search?q=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="px-4 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-white border border-primary/10 text-primary rounded-xl hover:bg-gray-50 transition-all hover:border-primary/30 flex items-center justify-center"
