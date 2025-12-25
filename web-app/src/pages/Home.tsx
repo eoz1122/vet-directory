@@ -151,8 +151,8 @@ const Home: React.FC = () => {
                                                 key={city}
                                                 onClick={() => handleCityChange(city)}
                                                 className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 whitespace-nowrap border ${selectedCity === city
-                                                        ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-[1.02]'
-                                                        : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:text-primary hover:bg-white/80'
+                                                    ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-[1.02]'
+                                                    : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:text-primary hover:bg-white/80'
                                                     }`}
                                             >
                                                 {city}
@@ -253,9 +253,22 @@ const Home: React.FC = () => {
                                         </div>
                                     </div>
 
-                                    <p className="text-[12px] text-primary/60 mb-5 font-medium leading-relaxed bg-secondary/30 p-4 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors">
-                                        {vet.address}
-                                    </p>
+                                    {/* Address Display - Mobile vs Fixed */}
+                                    {vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown') ? (
+                                        <div className="text-[12px] text-primary/60 mb-5 font-bold leading-relaxed bg-accent/10 p-4 rounded-xl border border-accent/20 flex items-center gap-2">
+                                            <span>🚐</span> Mobile Service - {vet.city}
+                                        </div>
+                                    ) : (
+                                        <a
+                                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="block text-[12px] text-primary/60 mb-5 font-medium leading-relaxed bg-secondary/30 p-4 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors hover:text-accent hover:border-accent/30"
+                                        >
+                                            {vet.address}
+                                        </a>
+                                    )}
 
                                     <div className="space-y-2 mb-6">
                                         {vet.verification.english_signals && vet.verification.english_signals.slice(0, 1).map((signal, idx) => (
@@ -264,22 +277,46 @@ const Home: React.FC = () => {
                                                     <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7"></path></svg>
                                                 </div>
                                                 <p className="text-[11px] text-primary/60 italic leading-snug group-hover/signal:text-primary/80 transition-colors line-clamp-2">
-                                                    {signal}
+                                                    "{signal}"
                                                 </p>
                                             </div>
                                         ))}
                                     </div>
 
                                     <div className="flex gap-3">
-                                        <a
-                                            href={(vet.contact && vet.contact.website) ? appendUTM(vet.contact.website) : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            onClick={(e) => e.stopPropagation()}
-                                            className="flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary/95 transition-all shadow-xl shadow-primary/10 active:scale-95"
-                                        >
-                                            {(vet.contact && vet.contact.website) ? 'Visit website' : 'View on maps'}
-                                        </a>
+                                        {(vet.contact && vet.contact.website) ? (
+                                            <a
+                                                href={appendUTM(vet.contact.website)}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={(e) => e.stopPropagation()}
+                                                className="flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary/95 transition-all shadow-xl shadow-primary/10 active:scale-95 flex items-center justify-center gap-2"
+                                            >
+                                                <span>🌐</span> Visit Website
+                                            </a>
+                                        ) : (
+                                            <a
+                                                href={vet.contact?.phone ? `tel:${vet.contact.phone}` : '#'}
+                                                onClick={(e) => e.stopPropagation()}
+                                                className={`flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest rounded-xl transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 ${vet.contact?.phone ? 'bg-primary text-secondary hover:bg-primary/95 shadow-primary/10' : 'bg-gray-100 text-gray-400 cursor-not-allowed hidden'}`}
+                                            >
+                                                <span>📞</span> Call Practice
+                                            </a>
+                                        )}
+
+                                        {/* Hide Map button for Mobile Services */}
+                                        {!(vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown')) && (
+                                            <a
+                                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={(e) => e.stopPropagation()}
+                                                className="px-4 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-white border border-primary/10 text-primary rounded-xl hover:bg-gray-50 transition-all hover:border-primary/30 flex items-center justify-center"
+                                                title="View on Maps"
+                                            >
+                                                📍
+                                            </a>
+                                        )}
                                     </div>
 
                                     <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">

@@ -39,7 +39,9 @@
     "verification": {
       "ai_score": 95,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -384,7 +386,9 @@
     "verification": {
       "ai_score": 95,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -406,7 +410,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png She is very attentive, fri...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -447,29 +451,6 @@
     "contact": {
       "phone": null,
       "website": "https://www.tieraerzte-im-kiez.de/"
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-21",
-    "practice_name": "Tierarztpraxis Dr. Rotgang",
-    "city": "Berlin",
-    "district": "Friedrichshain",
-    "address": "Karl-Marx-Allee 108, 10243 Berlin (Friedrichshain)",
-    "coordinates": {
-      "lat": 52.5163931,
-      "lng": 13.4456151
-    },
-    "contact": {
-      "phone": null,
-      "website": "https://www.tierarzt-rotgang.de/"
     },
     "verification": {
       "ai_score": 95,
@@ -670,29 +651,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Berlin-30",
-    "practice_name": "Kleintierpraxis Dr. med. vet. S. Rotgang",
-    "city": "Berlin",
-    "district": "Zehlendorf",
-    "address": "Onkel-Tom-Str. 3, 14165 Berlin (Zehlendorf)",
-    "coordinates": {
-      "lat": 52.4358124,
-      "lng": 13.2586467
-    },
-    "contact": {
-      "phone": null,
-      "website": null
-    },
-    "verification": {
-      "ai_score": 80,
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Berlin-31",
     "practice_name": "Tierarztpraxis am Olivaer Platz (Dr. med. vet. S. Robl)",
     "city": "Berlin",
@@ -779,7 +737,9 @@
     "verification": {
       "ai_score": 80,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -847,7 +807,9 @@
     "verification": {
       "ai_score": 80,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -868,7 +830,9 @@
     "verification": {
       "ai_score": 80,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -889,7 +853,9 @@
     "verification": {
       "ai_score": 80,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -935,8 +901,7 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Verified English Support",
-        "Confirmed English-speaking via Google Reviews comments",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png The staff are super friend...\""
+        "Confirmed English-speaking via Google Reviews comments"
       ]
     },
     "community_status": "Verified"
@@ -958,7 +923,9 @@
     "verification": {
       "ai_score": 80,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -1099,8 +1066,7 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Review: 'EVERYONE SPEAKS ENGLISH. The place is amazingly clean and spacious.'",
-        "Fluent English staff members confirmed by multiple international pet owners.",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Really lovely, kind, carin...\""
+        "Fluent English staff members confirmed by multiple international pet owners."
       ]
     },
     "community_status": "Verified"
@@ -1200,7 +1166,7 @@
   {
     "id": "Frankfurt-50",
     "practice_name": "Tierklinik Hofheim (Specialist Center)",
-    "city": "Frankfurt",
+    "city": "Hofheim",
     "district": "Specialist Center",
     "address": "Im Ried 12, 65719 Hofheim am Taunus",
     "coordinates": {
@@ -1260,14 +1226,16 @@
     "verification": {
       "ai_score": 95,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
   {
     "id": "Frankfurt-53",
     "practice_name": "Dr. Cavalcanti (VetPetCare)",
-    "city": "Frankfurt",
+    "city": "Bad Homburg",
     "district": "Frankfurt) & Bad Homburg",
     "address": "Riedberg (Frankfurt) & Bad Homburg",
     "coordinates": {
@@ -1396,7 +1364,9 @@
     "verification": {
       "ai_score": 95,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -1510,7 +1480,9 @@
     "verification": {
       "ai_score": 95,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -1540,7 +1512,7 @@
   {
     "id": "Frankfurt-65",
     "practice_name": "Tierarztpraxis Dr. med. vet. Moormann",
-    "city": "Frankfurt",
+    "city": "Königstein",
     "district": "Königstein",
     "address": "Frankfurter Str. 11, 61462 Königstein im Taunus",
     "coordinates": {
@@ -1564,7 +1536,7 @@
   {
     "id": "Frankfurt-66",
     "practice_name": "Praxis Dr. med. vet. Anette Fach (Oberursel)",
-    "city": "Frankfurt",
+    "city": "Oberursel",
     "district": "Taunus",
     "address": "Dornbachstr. 33 a, 61440 Oberursel (Taunus)",
     "coordinates": {
@@ -1588,7 +1560,7 @@
   {
     "id": "Frankfurt-67",
     "practice_name": "Kleintierpraxis am Zauberberg (Dr. Katja Feuerbacher)",
-    "city": "Frankfurt",
+    "city": "Kelkheim",
     "district": "Taunus",
     "address": "Robert-Koch-Str. 116, 65779 Kelkheim (Taunus)",
     "coordinates": {
@@ -1744,7 +1716,6 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Verified English Support",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png The was friendly, experienced, and could commu...\"",
         "Confirmed via Google Review: \"was friendly, experienced, and could communicate well in English.\""
       ]
     },
@@ -1793,7 +1764,6 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Verified English Support",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Really friendly staff and nice doctors who spe...\"",
         "Confirmed via Google Review: \"\"Really friendly staff and nice doctors who speak English\""
       ]
     },
@@ -1818,7 +1788,6 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Verified English Support",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Wonderful, caring, English-speaking doctor.\"",
         "Confirmed via Google Review: \"English-speaking doctor.\""
       ]
     },
@@ -1960,7 +1929,9 @@
     "verification": {
       "ai_score": 80,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -2052,7 +2023,9 @@
     "verification": {
       "ai_score": 80,
       "last_scanned": "2025-12-24",
-      "english_signals": []
+      "english_signals": [
+        "Verified by Community"
+      ]
     },
     "community_status": "Verified"
   },
@@ -2236,7 +2209,6 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Verified English Support",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png She spoke very very good English and she was k...\"",
         "Confirmed via Google Review: \"English and she was kind patient!\""
       ]
     },
@@ -2262,7 +2234,6 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Confirmed English-speaking via Google Reviews comments",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Very good place with great...\"",
         "Confirmed via Google Review: \"doctors!\"",
         "Confirmed via Google Review: \"English speaking doctors!\""
       ]
@@ -2336,8 +2307,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed English-speaking via Google Reviews comments",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Our cats received the best...\""
+        "Confirmed English-speaking via Google Reviews comments"
       ]
     },
     "community_status": "Verified"
@@ -2361,8 +2331,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed English-speaking via Google Reviews comments",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png He's also a good listener ...\""
+        "Confirmed English-speaking via Google Reviews comments"
       ]
     },
     "community_status": "Verified"
@@ -2386,8 +2355,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed English-speaking via Google Reviews comments",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Everyone speaks English an...\""
+        "Confirmed English-speaking via Google Reviews comments"
       ]
     },
     "community_status": "Verified"
@@ -2435,7 +2403,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png ... very kind and professi...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2459,7 +2427,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png speak English · Closes 6 p...\"",
         "Confirmed via Google Review: \".\"",
         "Confirmed via Google Review: \"\"They speak English\""
       ]
@@ -2485,7 +2452,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Awesome personal with good...\"",
         "Confirmed via Google Review: \"support.\"",
         "Confirmed via Google Review: \"English language support.\""
       ]
@@ -2511,7 +2477,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Doctors are friendly and c...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2535,7 +2501,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png ... very kind and professi...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2559,7 +2525,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png They were speaking 3 langu...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2583,7 +2549,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Compassionate care and Eng...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2607,7 +2573,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png was kind, calm and they sp...\"",
         "Confirmed via Google Review: \"was kind, calm and they spoke\""
       ]
     },
@@ -2632,7 +2597,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png german and English · Opens...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2656,7 +2621,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Doctors are friendly and c...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2680,7 +2645,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png speak English and you can ...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2704,7 +2669,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Nice, cheap, professional ...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2728,7 +2693,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Doctors speak English and ...\"",
         "Confirmed via Google Review: \"and always have the best solutions for the patients!\"",
         "Confirmed via Google Review: \"speak English and always have the best solutions for the patients!\""
       ]
@@ -2754,7 +2718,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Good experience, very frie...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2778,7 +2742,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png ... a responsive reception...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2802,7 +2766,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png German and English\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2826,7 +2790,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png speak English and even one...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2850,7 +2814,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png ... was nice, clearly expl...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2874,7 +2838,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Stuff is bilingual so no p...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2898,7 +2862,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png German, English and On top...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2922,7 +2886,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png and assistant speak englis...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2946,7 +2910,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Excellent , friendly and s...\""
+        "Verified by Community"
       ]
     },
     "community_status": "Verified"
@@ -2969,7 +2933,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Efficient and they speak English and even Port...\"",
         "Confirmed via Google Review: \"speak English and even Portuguese.\""
       ]
     },
@@ -2993,7 +2956,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Good service in English\"",
         "Confirmed via Google Review: \"\"Good service in English\""
       ]
     },
@@ -3017,7 +2979,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png They provide all kinds of support including th...\"",
         "Confirmed via Google Review: \"\"They provide all kinds of support including the forms, in English\""
       ]
     },
@@ -3041,7 +3002,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Everyone is fluent in English and were very he...\"",
         "Confirmed via Google Review: \"English and were very helpful\""
       ]
     },
@@ -3065,7 +3025,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"https://ssl.gstatic.com/local/servicebusiness/default_user.png Speaks English is a bonus\"",
         "Confirmed via Google Review: \"English is a bonus\""
       ]
     },
@@ -3089,7 +3048,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png English was very good which I really appreciat...\"",
         "Confirmed via Google Review: \"English was very good which I really appreciated and good value.\""
       ]
     },
@@ -3113,7 +3071,6 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Fantastic service and English speaking too.\"",
         "Confirmed via Google Review: \"English speaking too.\""
       ]
     },
@@ -4090,29 +4047,6 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Confirmed via Google Review: \"· 7 pm · Opens 9 am Fri\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Munich-136",
-    "practice_name": "filu Tierarztpraxis Theresienwiese - Allgemein- und Notfallmedizin",
-    "city": "Munich",
-    "district": "Unknown",
-    "address": "Paul-Heyse-Straße 28",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "089 12086780",
-      "website": "https://www.filu.vet/standorte/theresienwiese?utm_source=google&utm_medium=gmb"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"from both the · Opens 8:15 am Sat\""
       ]
     },
     "community_status": "Verified"
