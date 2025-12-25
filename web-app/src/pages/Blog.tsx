@@ -47,6 +47,13 @@ const blogPosts = [
         desc: "MVV Guide: Navigating the 'muzzle gray zone' and utilizing the free travel rules in Germany's financial hub."
     },
     {
+        url: "/blog/public-transport-with-dogs-stuttgart-2025",
+        title: "Public Transport with Dogs: Stuttgart",
+        emoji: "🏎️",
+        category: "Transport",
+        desc: "VVS 2025 Guide: The 'Children's Ticket' rule, local Deutschlandticket bonuses, and the Zacke."
+    },
+    {
         url: "/blog/public-transport-with-dogs-berlin-2025",
         title: "Public Transport with Dogs: Berlin",
         emoji: "🚇",
