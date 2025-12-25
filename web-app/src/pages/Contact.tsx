@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -15,17 +15,11 @@ export default function Contact() {
         // Structured data for Vet Submission
         vetName: '',
         vetCity: '',
+        otherCity: '',
         vetAddress: '',
         vetWebsite: ''
     });
 
-    // Update form topic if URL param changes (e.g. valid re-navigation)
-    useEffect(() => {
-        const topic = searchParams.get('topic');
-        if (topic) {
-            setFormData(prev => ({ ...prev, topic }));
-        }
-    }, [searchParams]);
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
@@ -48,7 +42,7 @@ export default function Contact() {
             setSubmitted(true);
             setFormData({
                 name: '', email: '', topic: 'general', message: '',
-                vetName: '', vetCity: '', vetAddress: '', vetWebsite: ''
+                vetName: '', vetCity: '', otherCity: '', vetAddress: '', vetWebsite: ''
             });
         }, 1500);
     };
@@ -174,9 +168,40 @@ export default function Contact() {
                                                 <option value="Hamburg">Hamburg</option>
                                                 <option value="Frankfurt">Frankfurt</option>
                                                 <option value="Munich">Munich</option>
-                                                <option value="Other">Other</option>
+                                                <option value="Other">Other (Type Below)</option>
                                             </select>
                                         </div>
+                                        {formData.vetCity === 'Other' ? (
+                                            <div>
+                                                <label htmlFor="otherCity" className="block text-sm font-bold text-primary mb-2">Specify City Name</label>
+                                                <input
+                                                    type="text"
+                                                    id="otherCity"
+                                                    name="otherCity"
+                                                    required={formData.vetCity === 'Other'}
+                                                    value={formData.otherCity}
+                                                    onChange={handleChange}
+                                                    className="w-full px-4 py-3 bg-white border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+                                                    placeholder="e.g. Düsseldorf"
+                                                />
+                                            </div>
+                                        ) : (
+                                            <div>
+                                                <label htmlFor="vetAddress" className="block text-sm font-bold text-primary mb-2">Address (Street/District)</label>
+                                                <input
+                                                    type="text"
+                                                    id="vetAddress"
+                                                    name="vetAddress"
+                                                    value={formData.vetAddress}
+                                                    onChange={handleChange}
+                                                    className="w-full px-4 py-3 bg-white border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+                                                    placeholder="e.g. Prenzlauer Allee 123"
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {formData.vetCity === 'Other' && (
                                         <div>
                                             <label htmlFor="vetAddress" className="block text-sm font-bold text-primary mb-2">Address (Street/District)</label>
                                             <input
@@ -186,10 +211,10 @@ export default function Contact() {
                                                 value={formData.vetAddress}
                                                 onChange={handleChange}
                                                 className="w-full px-4 py-3 bg-white border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
-                                                placeholder="e.g. Prenzlauer Allee 123"
+                                                placeholder="e.g. Königsallee 1"
                                             />
                                         </div>
-                                    </div>
+                                    )}
 
                                     <div>
                                         <label htmlFor="vetWebsite" className="block text-sm font-bold text-primary mb-2">Website (Optional)</label>

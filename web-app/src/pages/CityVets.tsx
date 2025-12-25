@@ -3,8 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import { useMemo } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import vets from '../data/vets.json';
+import vetsData from '../data/vets.json';
 import { appendUTM } from '../utils/url';
+import type { Vet } from '../types/vet';
+
+const vets = vetsData as Vet[];
 
 const cityContent: Record<string, { title: string; description: string; content: string }> = {
     berlin: {
@@ -48,6 +51,30 @@ Frankfurt's expat community is one of the largest in Germany, and local vets hav
 - **Modern Facilities**: Frankfurt's vets often feature state-of-the-art diagnostic equipment and surgical suites
 
 From the Palmengarten to the Main riverbanks, Frankfurt is a wonderful city to explore with your pet. Let us help you find the veterinary partner who'll keep them healthy and happy.`
+    },
+    stuttgart: {
+        title: "English-Speaking Vets in Stuttgart",
+        description: "Find trusted English-speaking veterinarians in Stuttgart and the surrounding Baden-Württemberg region. Quality care for the international community.",
+        content: `Stuttgart's significant international population, including many expats and US military families, has led to a high standard of English-speaking veterinary care. Finding a vet who understands your concerns in your native language is key to your pet's well-being.
+
+Our Stuttgart directory connects you with practices that are experienced in serving international clients, offering everything from routine checkups to specialized treatments.
+
+**Why Stuttgart Pet Owners Use Our Directory:**
+- **Expat Communities**: Vets familiar with the needs of the international and military communities.
+- **Baden-Württemberg Coverage**: Find practices in the city center and surrounding districts.
+- **High Standards**: Access to modern clinics with English-speaking proficiency.`
+    },
+    munich: {
+        title: "English-Speaking Vets in Munich",
+        description: "Discover verified English-speaking veterinary clinics in Munich. Trusted pet care in the heart of Bavaria for the international community.",
+        content: `Munich is a world-class city, and its pet care services reflect that. With a large international community, Munich offers numerous veterinary practices where English is spoken fluently by both doctors and staff.
+
+Whether you're living near the Englischer Garten or in the outskirts of the city, our directory helps you find the right medical partner for your pet.
+
+**Benefits of Munich's English-Speaking Vets:**
+- **Central & Suburban**: Options across Munich's diverse neighborhoods.
+- **Advanced Medicine**: Access to some of Germany's leading veterinary specialists.
+- **Community Trusted**: Practices with a proven track record of serving expat families.`
     }
 };
 
@@ -104,7 +131,7 @@ export default function CityVets() {
         "url": `https://englishspeakinggermany.online/vets/${cityKey}`,
         "mainEntity": {
             "@type": "ItemList",
-            "itemListElement": cityVets.map((vet: any, index) => ({
+            "itemListElement": cityVets.map((vet: Vet, index: number) => ({
                 "@type": "ListItem",
                 "position": index + 1,
                 "item": {
@@ -132,12 +159,9 @@ export default function CityVets() {
                 <script type="application/ld+json">{JSON.stringify(collectionLd)}</script>
             </Helmet>
 
-            {/* Header */}
-            {/* Header */}
             <Header />
 
             <main className="max-w-6xl mx-auto p-6 md:p-12">
-                {/* Hero Section */}
                 <section className="mb-12">
                     <div className="flex items-center gap-2 text-sm text-primary/60 mb-4">
                         <Link to="/" className="hover:text-accent">Home</Link>
@@ -158,14 +182,13 @@ export default function CityVets() {
                     </div>
                 </section>
 
-                {/* Vet Listings */}
                 <section>
                     <h2 className="text-2xl font-bold text-primary mb-6">
                         {cityVets.length} Verified Practices in {capitalizedCity}
                     </h2>
 
                     <div className="grid md:grid-cols-2 gap-6">
-                        {cityVets.map((vet: any) => (
+                        {cityVets.map((vet: Vet) => (
                             <article
                                 key={vet.id}
                                 className="bg-white p-6 rounded-xl shadow-sm border border-primary/5 hover:border-accent/20 transition-all"
@@ -187,7 +210,6 @@ export default function CityVets() {
                     </div>
                 </section>
 
-                {/* CTA Section */}
                 <section className="mt-16 bg-primary/5 p-8 rounded-2xl border border-primary/10">
                     <h2 className="text-2xl font-bold text-primary mb-4">Know a Great Vet in {capitalizedCity}?</h2>
                     <p className="text-primary/70 mb-6">

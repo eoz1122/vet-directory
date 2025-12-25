@@ -2,7 +2,7 @@ declare namespace google.maps {
     namespace places {
         class Autocomplete {
             constructor(input: HTMLInputElement, opts?: AutocompleteOptions);
-            addListener(eventName: string, handler: () => void): any;
+            addListener(eventName: string, handler: () => void): google.maps.MapsEventListener;
             getPlace(): PlaceResult;
         }
 
@@ -24,6 +24,6 @@ declare namespace google.maps {
     }
 
     namespace event {
-        function removeListener(listener: any): void;
+        function removeListener(listener: unknown): void;
     }
 }

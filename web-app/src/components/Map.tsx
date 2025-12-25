@@ -1,25 +1,7 @@
 import { useEffect } from 'react';
 import { Map as GoogleMap, AdvancedMarker, Pin, InfoWindow, useMap } from '@vis.gl/react-google-maps';
 import { appendUTM } from '../utils/url';
-
-interface Vet {
-    id: string;
-    practice_name: string;
-    city: string;
-    district: string;
-    address: string;
-    coordinates: {
-        lat: number;
-        lng: number;
-    };
-    contact: {
-        website: string | null;
-        phone: string | null;
-    };
-    verification: {
-        english_signals: string[];
-    };
-}
+import { Vet } from '../types/vet';
 
 interface MapProps {
     vets: Vet[];
@@ -42,7 +24,7 @@ function CameraUpdater({ selectedCity, vets, selectedVet }: { selectedCity: stri
     useEffect(() => {
         if (!map) return;
 
-        // Priority 1: Selected Vet (from list click or map click)
+        // Priority 1: Selected Vet
         if (selectedVet && selectedVet.coordinates.lat !== 0) {
             map.panTo(selectedVet.coordinates);
             map.setZoom(15);
@@ -52,23 +34,23 @@ function CameraUpdater({ selectedCity, vets, selectedVet }: { selectedCity: stri
         // Priority 2: City Selection
         if (selectedCity !== 'All') {
             const target = CITY_COORDS[selectedCity];
-            map.moveCamera({ center: target, zoom: 12 });
+            if (target) {
+                map.moveCamera({ center: target, zoom: 12 });
+            }
         } else if (vets.length > 0 && vets.length < 90) {
-            // Priority 3: Filtered List (Search results)
+            // Priority 3: Filtered List
             map.moveCamera({ center: vets[0].coordinates, zoom: 13 });
         }
 
-    }, [selectedCity, map, vets, selectedVet]); // Add selectedVet to dependency
+    }, [selectedCity, map, vets, selectedVet]);
 
     return null;
 }
 
 export default function AppMap({ vets, selectedCity, selectedVet, onSelectVet }: MapProps) {
-    // Initial default (only used on first load)
     const defaultCenter = CITY_COORDS['All'];
     const defaultZoom = 6;
 
-    // Filter valid vets
     const validVets = vets.filter(v => v.coordinates.lat !== 0 && v.coordinates.lng !== 0);
 
     return (
@@ -80,7 +62,7 @@ export default function AppMap({ vets, selectedCity, selectedVet, onSelectVet }:
                 gestureHandling={'greedy'}
                 disableDefaultUI={false}
                 className="h-full w-full"
-                onClick={() => onSelectVet(null)} // Click map to deselect
+                onClick={() => onSelectVet(null)}
             >
                 <CameraUpdater selectedCity={selectedCity} vets={validVets} selectedVet={selectedVet} />
 
@@ -89,7 +71,7 @@ export default function AppMap({ vets, selectedCity, selectedVet, onSelectVet }:
                         key={vet.id}
                         position={vet.coordinates}
                         onClick={(e) => {
-                            e.stop(); // Prevent map click
+                            e.stop();
                             onSelectVet(vet);
                         }}
                     >

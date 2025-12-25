@@ -1,522 +1,417 @@
-import { useState, useMemo, useEffect } from 'react';
-import { Link } from 'react-router-dom'
-import vetData from '../data/vets.json'
-import AppMap from '../components/Map'
-import PlaceAutocomplete from '../components/PlaceAutocomplete'
-import { calculateDistance } from '../utils/distance'
-import { appendUTM } from '../utils/url'
-import { APIProvider } from '@vis.gl/react-google-maps'
-import { Helmet } from 'react-helmet-async'
-import Footer from '../components/Footer'
+import { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { APIProvider } from '@vis.gl/react-google-maps';
+import AppMap from '../components/Map';
+import PlaceAutocomplete from '../components/PlaceAutocomplete';
+import Footer from '../components/Footer';
+import type { Vet, VetWithDistance } from '../types/vet';
+import vetsData from '../data/vets.json';
+import { calculateDistance } from '../utils/distance';
+import { appendUTM } from '../utils/url';
 
-interface Vet {
-    id: string
-    practice_name: string
-    city: string
-    district: string
-    address: string
-    coordinates: {
-        lat: number
-        lng: number
-    }
-    contact: {
-        website: string | null
-        phone: string | null
-    }
-    verification: {
-        english_signals: string[]
-    }
-}
+// Cast the JSON data to our Vet type
+const vets = vetsData as Vet[];
+const ITEMS_PER_PAGE = 10;
 
-export default function Home() {
-    const [selectedCity, setSelectedCity] = useState<string>('All')
-    const [searchTerm, setSearchTerm] = useState('')
-    const [userLocation, setUserLocation] = useState<{ lat: number, lng: number } | null>(null);
-    const [reportingVet, setReportingVet] = useState<Vet | null>(null);
-    const [selectedVet, setSelectedVet] = useState<Vet | null>(null);
-
-    const [currentPage, setCurrentPage] = useState(1);
+const Home: React.FC = () => {
+    const [selectedCity, setSelectedCity] = useState('All');
+    const [searchTerm, setSearchTerm] = useState('');
     const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
-    const ITEMS_PER_PAGE = 10;
+    const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
+    const [selectedVet, setSelectedVet] = useState<Vet | null>(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [reportingVet, setReportingVet] = useState<Vet | null>(null);
 
-    const cities = ['All', 'Berlin', 'Frankfurt', 'Hamburg']
+    // Dynamic city list from data
+    const cities = useMemo(() => {
+        const uniqueCities = Array.from(new Set(vets.map(v => v.city))).filter(c => c && c !== 'Unknown').sort();
+        return ['All', ...uniqueCities];
+    }, []);
 
-    // Reset selected vet and page when city changes
-    useEffect(() => {
-        setSelectedVet(null);
-        setCurrentPage(1);
-    }, [selectedCity]);
-
-    // Reset page when search term changes
-    useEffect(() => {
-        setCurrentPage(1);
-    }, [searchTerm]);
-
-    // Reset page when user location changes
-    useEffect(() => {
-        setCurrentPage(1);
-    }, [userLocation]);
-
-    // JSON-LD Structured Data
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "EnglishSpeakingVets",
-        "url": "https://englishspeakinggermany.online",
-        "logo": "https://englishspeakinggermany.online/logo.png",
-        "image": "https://englishspeakinggermany.online/logo.png",
-        "description": "Find verified English-speaking veterinarians across Germany. A comprehensive directory for expats living in Berlin, Hamburg, Frankfurt, and beyond.",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "DE"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://englishspeakinggermany.online/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    };
-
-    const breadcrumbLd = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://englishspeakinggermany.online"
-        }]
-    };
-
-    // 1. Filter logic
+    // Filter logic
     const filteredVets = useMemo(() => {
-        return (vetData as (Vet & { community_status?: string })[]).filter(vet => {
-            const matchesText = vet.practice_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                vet.district.toLowerCase().includes(searchTerm.toLowerCase());
+        return vets.filter(vet => {
             const matchesCity = selectedCity === 'All' || vet.city === selectedCity;
-            const matchesVerification = !showVerifiedOnly || vet.community_status === 'Verified';
+            const matchesText = (vet.practice_name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+                (vet.address || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+                (vet.district || "").toLowerCase().includes(searchTerm.toLowerCase());
+            const matchesVerification = !showVerifiedOnly || (vet.community_status === 'Verified');
 
-            if (userLocation) return matchesVerification;
             return matchesCity && matchesText && matchesVerification;
-        })
-    }, [selectedCity, searchTerm, userLocation, showVerifiedOnly])
+        });
+    }, [selectedCity, searchTerm, showVerifiedOnly]);
 
-    interface VetWithDistance extends Vet {
-        distance?: number;
-    }
-
-    // 2. Sort logic (Distance vs Default)
-    const sortedVets = useMemo(() => {
+    // Sort logic
+    const sortedVets = useMemo((): VetWithDistance[] => {
         if (!userLocation) return filteredVets as VetWithDistance[];
 
         return [...filteredVets].map(vet => {
-            const dist = vet.coordinates.lat !== 0
+            const dist = (vet.coordinates && vet.coordinates.lat !== 0)
                 ? calculateDistance(userLocation.lat, userLocation.lng, vet.coordinates.lat, vet.coordinates.lng)
                 : 9999;
-            return { ...vet, distance: dist } as VetWithDistance;
+            return { ...vet, distance: dist };
         }).sort((a, b) => (a.distance || 0) - (b.distance || 0));
     }, [filteredVets, userLocation]);
 
-    // 3. Pagination logic
+    // Pagination logic
     const totalPages = Math.ceil(sortedVets.length / ITEMS_PER_PAGE);
     const paginatedVets = sortedVets.slice(
         (currentPage - 1) * ITEMS_PER_PAGE,
         currentPage * ITEMS_PER_PAGE
     );
 
+    // Event Handlers
+    const handleCityChange = (city: string) => {
+        setSelectedCity(city);
+        setSelectedVet(null);
+        setCurrentPage(1);
+    };
+
+    const handleSearchChange = (val: string) => {
+        setSearchTerm(val);
+        setCurrentPage(1);
+    };
+
     const handlePlaceSelect = (location: { lat: number; lng: number } | null) => {
         if (location) {
             setUserLocation(location);
             setSelectedCity('All');
+            setCurrentPage(1);
         } else {
             setUserLocation(null);
+            setCurrentPage(1);
         }
     };
 
     const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
 
-    if (!apiKey && import.meta.env.PROD) {
-        console.error('CRITICAL: Google Maps API Key is missing from the production build!');
-    }
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "The Pack: English-Speaking Vets",
+        "url": "https://englishspeakinggermany.online",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://englishspeakinggermany.online/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    };
 
     return (
         <APIProvider apiKey={apiKey} language="en">
             <Helmet>
-                <title>For the love of our little friends | 120+ Verified English-Speaking Vets</title>
-                <meta name="description" content="With the help of our community, we are building Germany’s most comprehensive English-speaking directory for our companions. Find 120+ verified vets in Berlin, Hamburg, Frankfurt and more." />
-                <meta name="keywords" content="english speaking veterinarian germany, vet berlin english, english vet frankfurt, english vet hamburg, expat pet germany, community sourced vets" />
-                <link rel="canonical" href="https://englishspeakinggermany.online" />
-
-                {/* Open Graph / Social */}
-                <meta property="og:title" content="English-Speaking Vets in Germany | Verify & Find 94+ Clinics" />
-                <meta property="og:description" content="Find verified English-speaking veterinarians across Germany. The ultimate directory for expats." />
-                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online" />
-                <meta property="og:type" content="website" />
-
-                <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-                <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
+                <title>The Pack | 120+ Verified English-Speaking Vets in Germany</title>
+                <meta name="description" content="Find verified English-speaking veterinarians in Berlin, Hamburg, Frankfurt and more. Germany's most comprehensive community-sourced vet directory." />
+                <script type="application/ld+json">
+                    {JSON.stringify(jsonLd)}
+                </script>
             </Helmet>
 
-            <div className="min-h-screen flex flex-col md:flex-row">
-                <div className="md:w-[40%] flex flex-col h-screen overflow-hidden bg-secondary">
-                    <header className="sticky top-0 z-10 bg-secondary/80 backdrop-blur-md border-b border-primary/10 p-4">
-                        <div className="flex flex-col gap-3 mb-4">
-                            <div className="flex flex-col gap-2">
-                                <Link to="/" className="flex items-center gap-3 group">
-                                    <img src="/logo.png" alt="EnglishSpeakingVets - Find an English Speaking Vet in Germany" className="h-16 w-auto transition-transform group-hover:scale-105" />
-                                    <div className="flex flex-col leading-none">
-                                        <h1 className="text-primary font-bold text-base uppercase tracking-tight">English Speaking</h1>
-                                        <span className="text-accent font-bold text-2xl uppercase tracking-tighter">Vets</span>
-                                    </div>
-                                </Link>
-                                <p className="text-[13px] text-primary/80 font-serif italic leading-snug">
-                                    "For the love of our little friends." With the help of community, we are building Germany’s most comprehensive directory for our companions.
-                                </p>
+            <div className="min-h-screen flex flex-col md:flex-row bg-[#FDFCFB]">
+                <div className="md:w-[42%] lg:w-[40%] flex flex-col h-screen overflow-hidden border-r border-primary/5">
+                    <header className="sticky top-0 z-10 bg-white/70 backdrop-blur-xl border-b border-primary/5 p-6 space-y-4">
+                        <Link to="/" className="flex items-center gap-4 group">
+                            <div className="relative">
+                                <img src="/logo.png" alt="Logo" className="h-14 w-auto drop-shadow-sm transition-transform group-hover:scale-105" />
+                                <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full border-2 border-white animate-pulse"></div>
                             </div>
+                            <div className="flex flex-col">
+                                <h1 className="text-primary font-black text-lg tracking-tight leading-none uppercase">The Pack</h1>
+                                <span className="text-accent font-bold text-[10px] uppercase tracking-[0.2em] opacity-80">English Speaking Vets</span>
+                            </div>
+                        </Link>
 
-                            <nav className="hidden md:flex gap-4 text-xs font-semibold text-primary/70 border-t border-primary/10 pt-2 w-full">
-                                <Link to="/blog" className="hover:text-accent transition-colors">Guides</Link>
-                                <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
-                                <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                                <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                            </nav>
-                        </div>
+                        <p className="text-[12px] text-primary/70 font-medium leading-relaxed max-w-[90%]">
+                            Providing peace of mind for you and your companion. <span className="text-primary font-bold italic">"For the love of our little friends."</span>
+                        </p>
+
+                        <nav className="flex gap-4 text-[10px] font-bold uppercase tracking-widest text-primary/40 pt-1">
+                            <Link to="/blog" className="hover:text-accent transition-colors">Guides</Link>
+                            <Link to="/about" className="hover:text-accent transition-colors">About</Link>
+                            <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality</Link>
+                            <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
+                        </nav>
                     </header>
 
-                    <div className="space-y-3 px-4">
-                        <div className="w-full">
-                            <PlaceAutocomplete onPlaceSelect={handlePlaceSelect} />
-                        </div>
-
-                        {!userLocation && (
-                            <>
-                                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-                                    {cities.map(city => (
-                                        <button
-                                            key={city}
-                                            onClick={() => setSelectedCity(city)}
-                                            className={`px - 4 py - 1.5 rounded - full text - sm font - medium transition - colors whitespace - nowrap ${selectedCity === city
-                                                ? 'bg-primary text-secondary'
-                                                : 'bg-white border border-primary/20 text-primary hover:bg-primary/5'
-                                                } `}
-                                        >
-                                            {city}
-                                        </button>
-                                    ))}
+                    <div className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth custom-scrollbar bg-secondary/30">
+                        <div className="space-y-4">
+                            <div className="group/search relative">
+                                <PlaceAutocomplete onPlaceSelect={handlePlaceSelect} />
+                                <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1 opacity-0 group-focus-within/search:opacity-100 transition-opacity">
+                                    <span className="text-[10px] font-bold text-primary/30 uppercase tracking-tighter">Enter City or Street</span>
                                 </div>
+                            </div>
 
-                                <div className="text-xs text-primary/60 px-1">
-                                    <p className="mb-2 font-semibold font-sans">Explore by City:</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        <Link to="/vets/berlin" className="hover:text-accent transition-colors">Berlin →</Link>
-                                        <Link to="/vets/hamburg" className="hover:text-accent transition-colors">Hamburg →</Link>
-                                        <Link to="/vets/frankfurt" className="hover:text-accent transition-colors">Frankfurt →</Link>
+                            {!userLocation ? (
+                                <div className="space-y-4">
+                                    <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+                                        {cities.map(city => (
+                                            <button
+                                                key={city}
+                                                onClick={() => handleCityChange(city)}
+                                                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 whitespace-nowrap border ${selectedCity === city
+                                                        ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-[1.02]'
+                                                        : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:text-primary hover:bg-white/80'
+                                                    }`}
+                                            >
+                                                {city}
+                                            </button>
+                                        ))}
+                                    </div>
+                                    <div className="flex items-center gap-3 px-1 text-[10px] font-bold text-primary/30 uppercase tracking-[0.1em]">
+                                        <span>Featured:</span>
+                                        <div className="flex gap-4">
+                                            {cities.filter(c => c !== 'All').slice(0, 3).map(c => (
+                                                <Link key={c} to={`/vets/${c.toLowerCase()}`} className="hover:text-accent transition-colors flex items-center gap-1 group/jump">
+                                                    {c} <span className="text-[8px] transform group-hover/jump:translate-x-0.5 transition-transform">→</span>
+                                                </Link>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                            </>
-                        )}
+                            ) : (
+                                <div className="flex justify-between items-center px-2 py-3 bg-white/50 backdrop-blur rounded-xl border border-primary/5">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">Sorting by Proximity</span>
+                                    </div>
+                                    <button onClick={() => setUserLocation(null)} className="text-[10px] font-black uppercase tracking-widest text-accent hover:opacity-70 transition-opacity">Reset View</button>
+                                </div>
+                            )}
 
-                        {!userLocation && (
-                            <div className="flex flex-col gap-2">
-                                <div className="relative">
+                            <div className="flex gap-3">
+                                <div className="relative flex-1 group/filter">
                                     <input
                                         type="text"
-                                        placeholder="Filter by name..."
-                                        className="w-full pl-10 pr-4 py-2 bg-white border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 text-sm"
+                                        placeholder="Search by practice name..."
+                                        className="w-full pl-11 pr-4 py-3 bg-white border border-primary/5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-accent/10 focus:border-accent/30 text-sm font-medium transition-all shadow-sm"
                                         value={searchTerm}
-                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                        onChange={(e) => handleSearchChange(e.target.value)}
                                     />
-                                    <svg className="w-4 h-4 text-primary/40 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                    <svg className="w-4.5 h-4.5 text-primary/20 absolute left-4 top-1/2 -translate-y-1/2 transition-colors group-focus-within/filter:text-accent/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                 </div>
-                                <label className="flex items-center gap-2 px-1 cursor-pointer group">
+                                <label className="flex items-center gap-3 px-4 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
                                     <input
                                         type="checkbox"
                                         checked={showVerifiedOnly}
                                         onChange={(e) => setShowVerifiedOnly(e.target.checked)}
-                                        className="w-3.5 h-3.5 rounded border-primary/20 text-accent focus:ring-accent accent-accent"
+                                        className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
                                     />
-                                    <span className="text-[11px] font-bold text-primary/60 group-hover:text-primary transition-colors uppercase tracking-wider">
-                                        🛡 Show Pack-Verified Only
+                                    <span className="text-[10px] font-black text-primary/40 group-hover:text-primary/70 transition-colors uppercase tracking-[0.15em] whitespace-nowrap">
+                                        🛡 Verified
                                     </span>
                                 </label>
                             </div>
-                        )}
-
-                        {userLocation && (
-                            <div className="flex justify-between items-center text-xs text-primary/60 px-1">
-                                <span>Sorted by distance from your search</span>
-                                <button onClick={() => setUserLocation(null)} className="text-accent hover:underline">Clear Location</button>
-                            </div>
-                        )}
-                    </div>
-
-                    <main className="flex-1 overflow-y-auto p-4 space-y-4">
-                        <div className="text-xs text-primary/50 font-mono mb-2 uppercase tracking-wide flex justify-between items-end">
-                            <span>{sortedVets.length} Verified Practices Found</span>
-                            {totalPages > 1 && (
-                                <span className="text-[10px]">Page {currentPage} of {totalPages}</span>
-                            )}
                         </div>
 
-                        {paginatedVets.map(vet => (
-                            <article
-                                key={vet.id}
-                                onClick={() => setSelectedVet(vet)}
-                                className={`rounded - xl p - 4 shadow - sm border transition - all duration - 200 group relative cursor - pointer ${selectedVet?.id === vet.id
-                                    ? 'bg-primary/5 border-primary/40 ring-1 ring-primary/40'
-                                    : (vet as any).community_status === 'Verified' ? 'bg-white border-transparent hover:border-accent/20 hover:scale-[1.01]' : 'bg-gray-50/50 border-dashed border-gray-200 hover:border-gray-300 opacity-90'
-                                    } `}
-                            >
-                                {((vet as any).community_status === 'Verified') ? (
-                                    <div className="absolute top-4 right-4 flex flex-col items-end gap-1">
-                                        <span className="bg-primary/10 text-primary text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1 uppercase tracking-tighter">
-                                            🛡 Pack Verified
-                                        </span>
-                                    </div>
-                                ) : (
-                                    <div className="absolute top-4 right-4 flex flex-col items-end gap-1">
-                                        <span className="bg-orange-50 text-orange-600 text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1 uppercase tracking-tighter border border-orange-100/50">
-                                            👥 Community Sourced
-                                        </span>
-                                    </div>
-                                )}
-                                {vet.distance !== undefined && vet.distance < 9000 && (
-                                    <div className="absolute top-4 right-4 bg-accent/10 text-accent text-xs font-bold px-2 py-1 rounded">
-                                        {Math.round(vet.distance)} km
-                                    </div>
-                                )}
+                        <div className="flex justify-between items-end px-2 pt-4">
+                            <div className="flex flex-col">
+                                <span className="text-[24px] font-black text-primary leading-none">{sortedVets.length}</span>
+                                <span className="text-[10px] font-bold text-primary/30 uppercase tracking-widest">Practices available</span>
+                            </div>
+                            <div className="flex flex-col items-end">
+                                <span className="text-[10px] font-bold text-primary/30 uppercase tracking-widest leading-none mb-1">Page</span>
+                                <span className="text-[14px] font-black text-primary/60">{currentPage} <span className="text-[10px] text-primary/20 font-bold uppercase mx-1">of</span> {totalPages}</span>
+                            </div>
+                        </div>
 
-                                <div className="flex justify-between items-start mb-2 pr-12">
-                                    <div>
-                                        <h3 className="text-lg font-bold leading-tight text-primary group-hover:text-accent transition-colors">
-                                            {vet.practice_name}
-                                        </h3>
-                                        <div className="flex items-center gap-2 mt-1">
-                                            <span className="inline-block px-2 py-0.5 bg-secondary text-primary text-[10px] font-bold uppercase tracking-wider rounded">
-                                                {vet.city}
-                                            </span>
-                                            <span className="text-xs text-primary/60 font-medium">
-                                                {vet.district}
-                                            </span>
+                        <div className="space-y-4 pt-2">
+                            {paginatedVets.map((vet: VetWithDistance) => (
+                                <article
+                                    key={vet.id}
+                                    onClick={() => setSelectedVet(vet)}
+                                    className={`group/card relative bg-white p-6 rounded-[2rem] border transition-all duration-500 cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-1 ${selectedVet?.id === vet.id ? 'border-accent ring-1 ring-accent shadow-lg shadow-accent/5' : 'border-primary/5 hover:border-accent/20'
+                                        }`}
+                                >
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div className="flex-1">
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <span className="px-2 py-0.5 bg-primary/5 text-primary text-[9px] font-black uppercase tracking-widest rounded-full">
+                                                    {vet.city}
+                                                </span>
+                                                {vet.district && vet.district !== "Unknown" && (
+                                                    <span className="px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-black uppercase tracking-widest rounded-full">
+                                                        {vet.district}
+                                                    </span>
+                                                )}
+                                            </div>
+                                            <h2 className="text-lg font-black text-primary group-hover/card:text-accent transition-colors leading-tight">
+                                                {vet.practice_name}
+                                            </h2>
+                                        </div>
+                                        <div className="flex flex-col items-end gap-2">
+                                            <div className="px-3 py-1 bg-green-50 text-green-700 text-[10px] font-black uppercase tracking-tighter rounded-xl border border-green-100/50 flex items-center gap-1.5 shadow-sm">
+                                                <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                                                Verified
+                                            </div>
+                                            {vet.distance !== undefined && vet.distance !== 9999 && (
+                                                <span className="text-[10px] font-bold text-primary/40 bg-secondary/50 px-2 py-0.5 rounded-lg border border-primary/5">
+                                                    📍 {vet.distance.toFixed(1)} km
+                                                </span>
+                                            )}
                                         </div>
                                     </div>
-                                </div>
 
-                                <p className="text-sm text-primary/80 mb-3 font-light leading-relaxed">
-                                    {vet.address}
-                                </p>
+                                    <p className="text-[12px] text-primary/60 mb-5 font-medium leading-relaxed bg-secondary/30 p-4 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors">
+                                        {vet.address}
+                                    </p>
 
-                                <div className="flex flex-wrap gap-2 mb-4 items-center">
-                                    {vet.verification.english_signals.map((signal, idx) => (
-                                        <span key={idx} className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono bg-green-50 text-green-700 border border-green-100">
-                                            ✓ {signal}
-                                        </span>
-                                    ))}
-                                    <div className="relative group/tooltip ml-1">
-                                        <div className="cursor-help text-primary/30 hover:text-primary transition-colors">
-                                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                        </div>
-                                        <div className="absolute bottom-full left-0 mb-2 w-64 p-3 bg-primary text-secondary text-[11px] rounded-xl shadow-2xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-200 z-50 pointer-events-none ring-1 ring-white/10">
-                                            <p className="font-bold mb-1.5 text-accent">Our Verification Standards:</p>
-                                            <ul className="list-disc list-inside space-y-1 opacity-90">
-                                                <li>AI-Powered Review Analysis</li>
-                                                <li>Multi-lingual Signal Detection</li>
-                                                <li>Expat Community Feedback</li>
-                                                <li>Website Language Verification</li>
-                                            </ul>
-                                            <div className="absolute top-full left-4 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-primary"></div>
-                                        </div>
+                                    <div className="space-y-2 mb-6">
+                                        {vet.verification.english_signals && vet.verification.english_signals.slice(0, 1).map((signal, idx) => (
+                                            <div key={idx} className="flex gap-3 items-start group/signal">
+                                                <div className="mt-1 flex-shrink-0 w-4 h-4 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-200">
+                                                    <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <p className="text-[11px] text-primary/60 italic leading-snug group-hover/signal:text-primary/80 transition-colors line-clamp-2">
+                                                    {signal}
+                                                </p>
+                                            </div>
+                                        ))}
                                     </div>
-                                </div>
 
-                                <div className="flex gap-3 mt-auto pt-3 border-t border-gray-50">
-                                    {vet.contact.website ? (
+                                    <div className="flex gap-3">
                                         <a
-                                            href={appendUTM(vet.contact.website)}
+                                            href={(vet.contact && vet.contact.website) ? appendUTM(vet.contact.website) : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             onClick={(e) => e.stopPropagation()}
-                                            className="flex-1 py-2 text-center text-xs font-semibold bg-primary text-secondary rounded hover:bg-primary/90 transition-colors"
+                                            className="flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary/95 transition-all shadow-xl shadow-primary/10 active:scale-95"
                                         >
-                                            Visit Practice Website
+                                            {(vet.contact && vet.contact.website) ? 'Visit website' : 'View on maps'}
                                         </a>
-                                    ) : (
-                                        <a
-                                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(vet.practice_name + " " + vet.address)}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            onClick={(e) => e.stopPropagation()}
-                                            className="flex-1 py-2 text-center text-xs font-semibold bg-white border border-primary/20 text-primary rounded hover:bg-gray-50 transition-colors"
+                                    </div>
+
+                                    <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
+                                        <span className="text-[10px] text-gray-400">Updated 2025</span>
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); setReportingVet(vet); }}
+                                            className="text-gray-300 hover:text-red-400 transition-colors flex items-center gap-1 group/report"
                                         >
-                                            View on Google Maps
-                                        </a >
-                                    )}
-                                </div >
+                                            <span className="text-[9px] opacity-0 group-hover/report:opacity-100 transition-opacity">Report Issue</span>
+                                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                        </button>
+                                    </div>
+                                </article>
+                            ))}
 
-                                <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
-                                    <span className="text-[10px] text-gray-400">
-                                        Data sourced via public signals & community. Updated 2025.
-                                    </span>
-                                    <button
-                                        onClick={(e) => { e.stopPropagation(); setReportingVet(vet); }}
-                                        className="text-gray-300 hover:text-red-400 transition-colors flex items-center gap-1 group/report"
-                                        title="Report Issue / Request Removal"
-                                    >
-                                        <span className="text-[9px] opacity-0 group-hover/report:opacity-100 transition-opacity">Report Issue</span>
-                                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                                    </button>
-                                </div>
-                            </article >
-                        ))}
-
-                        {
-                            totalPages > 1 && (
-                                <div className="flex justify-center gap-4 py-2">
+                            {totalPages > 1 && (
+                                <div className="flex justify-center gap-3 py-4">
                                     <button
                                         onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                                         disabled={currentPage === 1}
-                                        className="px-4 py-2 text-xs font-bold bg-white border border-primary/20 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-primary"
+                                        className="px-5 py-2 text-xs font-bold bg-white border border-primary/10 rounded-xl hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-primary"
                                     >
-                                        Previous
+                                        ← Prev
                                     </button>
                                     <button
                                         onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                                         disabled={currentPage === totalPages}
-                                        className="px-4 py-2 text-xs font-bold bg-white border border-primary/20 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-primary"
+                                        className="px-5 py-2 text-xs font-bold bg-white border border-primary/10 rounded-xl hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-primary"
                                     >
-                                        Next
+                                        Next →
                                     </button>
                                 </div>
-                            )
-                        }
+                            )}
 
-                        <div className="bg-secondary p-6 rounded-2xl border border-primary/10">
-                            <h2 className="text-lg font-bold text-primary mb-2">Expat Pet Resource Center</h2>
-                            <p className="text-sm text-primary/70 mb-4 leading-relaxed">
-                                Help us protect more paws. Found a great English-speaking vet? Share your find and help us build the most comprehensive home for our companions.
-                            </p>
-                            <nav className="space-y-3">
-                                <Link to="/blog/pet-friendly-apartments-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
-                                    <span className="text-lg">🏠</span>
-                                    <div>
-                                        <p className="font-semibold text-sm group-hover:underline">Finding a Pet-Friendly Apartment</p>
-                                        <p className="text-xs text-primary/60">How to tackle German landlords & "Pet Resumes"</p>
+                            <div className="bg-secondary p-6 rounded-[2rem] border border-primary/10">
+                                <h2 className="text-lg font-bold text-primary mb-2">Resource Center</h2>
+                                <p className="text-xs text-primary/60 mb-4 leading-relaxed">
+                                    Helping our companions settle in Germany.
+                                </p>
+                                <nav className="space-y-4">
+                                    {[
+                                        { emoji: '🏠', title: 'Pet-Friendly Housing', link: '/blog/pet-friendly-apartments-germany-2025' },
+                                        { emoji: '🐕', title: 'Moving to Germany Guide', link: '/blog/moving-to-germany-with-pet-2025' },
+                                        { emoji: '🐱', title: 'Cat Registration', link: '/blog/cat-registration-germany-2025' },
+                                        { emoji: '🛂', title: 'EU Pet Passports', link: '/blog/eu-pet-passport-germany-2025' },
+                                        { emoji: '💶', title: 'Dog Tax (Hundesteuer)', link: '/blog/hundesteuer-dog-tax-germany-2025' }
+                                    ].map(item => (
+                                        <Link key={item.link} to={item.link} className="flex items-center gap-3 text-primary group">
+                                            <span className="text-lg grayscale group-hover:grayscale-0 transition-all">{item.emoji}</span>
+                                            <p className="font-semibold text-xs group-hover:text-accent transition-colors">{item.title}</p>
+                                        </Link>
+                                    ))}
+                                    <div className="pt-2">
+                                        <Link to="/contact?topic=submit_vet" className="block w-full text-center py-3 bg-accent text-white rounded-xl font-bold text-sm hover:translate-y-[-2px] hover:shadow-lg transition-all">
+                                            ⊕ Add to the Directory
+                                        </Link>
                                     </div>
-                                </Link>
-                                <Link to="/blog/moving-to-germany-with-pet-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
-                                    <span className="text-lg">🐕</span>
-                                    <div>
-                                        <p className="font-semibold text-sm group-hover:underline">Moving to Germany with a Pet</p>
-                                        <p className="text-xs text-primary/60">2025 Checklist: Rabies, Passport & Entry Rules</p>
-                                    </div>
-                                </Link>
-                                <Link to="/blog/cat-registration-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
-                                    <span className="text-lg">🐱</span>
-                                    <div>
-                                        <p className="font-semibold text-sm group-hover:underline">Cat Registration in Germany</p>
-                                        <p className="text-xs text-primary/60">TASSO registration and microchip requirements</p>
-                                    </div>
-                                </Link>
-                                <Link to="/blog/eu-pet-passport-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
-                                    <span className="text-lg">🛂</span>
-                                    <div>
-                                        <p className="font-semibold text-sm group-hover:underline">EU Pet Passports</p>
-                                        <p className="text-xs text-primary/60">Document costs and how to find a local vet</p>
-                                    </div>
-                                </Link>
-                                <Link to="/blog/hundesteuer-dog-tax-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
-                                    <span className="text-lg">💶</span>
-                                    <div>
-                                        <p className="font-semibold text-sm group-hover:underline">Hundesteuer (Dog Tax)</p>
-                                        <p className="text-xs text-primary/60">Registration, annual costs and exemptions</p>
-                                    </div>
-                                </Link>
-                                <div className="pt-2">
-                                    <Link to="/contact?topic=submit_vet" className="block w-full text-center py-3 bg-accent text-white rounded-xl font-bold text-sm hover:bg-accent/90 transition-all shadow-sm">
-                                        � Add to the Directory
-                                    </Link>
-                                </div>
-                            </nav>
-                        </div>
+                                </nav>
+                            </div>
 
-                        {
-                            sortedVets.length === 0 && (
+                            {sortedVets.length === 0 && (
                                 <div className="text-center py-20 text-primary/40">
-                                    <p>No English-speaking vets found for your search.</p>
-                                    <button onClick={() => { setSearchTerm(''); setSelectedCity('All') }} className="mt-4 text-accent hover:underline text-sm">Reset filters</button>
+                                    <p className="text-sm font-medium">No results found.</p>
+                                    <button onClick={() => { setSearchTerm(''); setSelectedCity('All') }} className="mt-4 text-accent font-bold hover:underline text-xs uppercase tracking-widest">Reset filters</button>
                                 </div>
-                            )
-                        }
+                            )}
+                            <Footer />
+                        </div>
+                    </div>
+                </div>
 
-                        <Footer />
-                    </main >
-                </div >
-
-                <div className="hidden md:block md:w-[60%] bg-[#e5e0d8] relative">
+                <div className="hidden md:block md:w-[58%] lg:w-[60%] h-screen relative bg-secondary/10">
                     <AppMap vets={sortedVets} selectedCity={selectedCity} selectedVet={selectedVet} onSelectVet={setSelectedVet} />
                 </div>
 
                 {/* Mobile Navigation */}
-                <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-3 flex justify-between z-50 safe-area-bottom">
-                    <Link to="/" className="flex flex-col items-center text-primary">
-                        <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                        <span className="text-[10px] font-medium">Directory</span>
+                <nav className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-primary/95 backdrop-blur-xl border border-white/10 px-8 py-3 flex gap-8 rounded-full z-50 shadow-2xl safe-area-bottom text-secondary/60">
+                    <Link to="/" className="flex flex-col items-center hover:text-white transition-colors">
+                        <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                     </Link>
-                    <Link to="/blog" className="flex flex-col items-center text-primary/40">
-                        <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                        <span className="text-[10px] font-medium">Guides</span>
+                    <Link to="/blog" className="flex flex-col items-center hover:text-white transition-colors">
+                        <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                     </Link>
-                    <button className="flex flex-col items-center text-primary/40">
-                        <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0121 18.382V7.618a1 1 0 01-1.447-.894L15 7m0 13V7"></path></svg>
-                        <span className="text-[10px] font-medium">Map</span>
-                    </button>
-                    <Link to="/contact?topic=submit_vet" className="flex flex-col items-center text-primary/40">
-                        <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-                        <span className="text-[10px] font-medium">Add Vet</span>
+                    <Link to="/contact?topic=submit_vet" className="flex flex-col items-center hover:text-white transition-colors">
+                        <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                     </Link>
                 </nav>
 
-                {
-                    reportingVet && (
-                        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-                            <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full overflow-hidden border border-red-100">
-                                <div className="bg-red-50 p-4 border-b border-red-100 flex justify-between items-start">
-                                    <div>
-                                        <h3 className="text-red-800 font-bold flex items-center gap-2">
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                                            Report Issue
-                                        </h3>
-                                        <p className="text-xs text-red-600 mt-1">Regulatory Notice & Correction Request</p>
-                                    </div>
-                                    <button onClick={() => setReportingVet(null)} className="text-red-400 hover:text-red-700" title="Close">
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                                    </button>
+                {reportingVet && (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-300">
+                        <div className="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full overflow-hidden border border-red-50">
+                            <div className="bg-red-50/50 p-6 border-b border-red-100/50 flex justify-between items-start">
+                                <div>
+                                    <h3 className="text-red-800 font-black flex items-center gap-2">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                        Report Issue
+                                    </h3>
+                                    <p className="text-[10px] text-red-600 font-bold uppercase tracking-wider mt-1 opacity-60">Correction Request</p>
                                 </div>
-                                <div className="p-4 space-y-4">
-                                    <p className="text-sm text-gray-600">
-                                        Reporting <strong>{reportingVet.practice_name}</strong> ({reportingVet.city}).
-                                    </p>
-                                    <div className="space-y-2">
-                                        <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Permanently Closed`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
-                                            ⚠ Permanently Closed
+                                <button onClick={() => setReportingVet(null)} className="text-red-300 hover:text-red-700 transition-colors" title="Close">
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                </button>
+                            </div>
+                            <div className="p-6 space-y-4">
+                                <p className="text-sm text-primary/70 font-medium">
+                                    Reporting <span className="font-bold text-primary">{reportingVet.practice_name}</span>.
+                                </p>
+                                <div className="space-y-2">
+                                    {[
+                                        { label: '⚠ Permanently Closed', body: 'Reason: Permanently Closed' },
+                                        { label: '✏ Data Incorrect', body: 'Reason: Data Error' },
+                                        { label: '🛡 Request Removal (Owner)', body: 'I am the owner and request removal.' }
+                                    ].map(item => (
+                                        <a
+                                            key={item.label}
+                                            href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=${item.body}`}
+                                            className="block w-full text-left px-5 py-4 rounded-2xl border border-gray-100 hover:bg-red-50/30 hover:border-red-100 text-sm font-bold text-primary transition-all"
+                                        >
+                                            {item.label}
                                         </a>
-                                        <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Data Error`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
-                                            ✏ Data Incorrect
-                                        </a>
-                                        <a href={`mailto:compliance@englishspeakinggermany.online?subject=Removal Request: ${reportingVet.id}`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
-                                            🛡 Request Removal (Owner)
-                                        </a>
-                                    </div>
-                                    <p className="text-[10px] text-gray-400 leading-tight">
-                                        Compliant with German GDPR & DSA regulations.
-                                    </p>
+                                    ))}
                                 </div>
+                                <p className="text-[10px] text-gray-400 font-medium text-center">
+                                    Privacy protected as per German GDPR regulations.
+                                </p>
                             </div>
                         </div>
-                    )
-                }
-            </div >
-        </APIProvider >
-    )
-}
+                    </div>
+                )}
+            </div>
+        </APIProvider>
+    );
+};
+
+export default Home;

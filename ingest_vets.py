@@ -11,34 +11,39 @@ def normalize_string(s):
 def normalize_city(city):
     if not city or city.lower() == "unknown":
         return "Unknown"
-    # Basic normalization: Title case and trim
     city = city.strip().title()
-    # Collapse variations if needed
     if "Frankfurt" in city:
         return "Frankfurt"
     return city
 
-def extract_city(address):
-    if not address: return "Unknown"
+def extract_city(address, filename_city=None):
+    if not address: return filename_city if filename_city else "Unknown"
     address_lower = address.lower()
     
-    # Heuristic for major cities first
     if "berlin" in address_lower: return "Berlin"
     if "hamburg" in address_lower: return "Hamburg"
     if "frankfurt" in address_lower: return "Frankfurt"
+    if "stuttgart" in address_lower: return "Stuttgart"
+    if "munich" in address_lower or "münchen" in address_lower: return "Munich"
     
-    # Try to extract the city from the address string (usually after the ZIP code)
-    # German format: "Street 123, 12345 City" or "Street 123, 12345 City (District)"
     match = re.search(r'\d{5}\s+([a-zA-ZäöüÄÖÜß-]+)', address)
     if match:
         return normalize_city(match.group(1))
         
-    return "Unknown"
+    return filename_city if filename_city else "Unknown"
 
 def process_csv(filename, vets, next_id_num, today):
-    new_vets_count = 0
-    updated_vets_count = 0
+    new_count = 0
+    updated_count = 0
     
+    # Try to guess city from filename
+    filename_city = None
+    known_cities = ['hamburg', 'frankfurt', 'stuttgart', 'munich', 'berlin']
+    for c in known_cities:
+        if c in filename.lower():
+            filename_city = c.title()
+            break
+
     try:
         with open(filename, 'r', encoding='utf-8') as f:
             reader = csv.reader(f)
@@ -51,35 +56,30 @@ def process_csv(filename, vets, next_id_num, today):
         if len(row) < 5: continue
         row_str = " ".join(row).lower()
         
-        # Look for English signals
         if "english" in row_str or "spoke" in row_str or "fluent" in row_str:
             name = row[1]
             if not name or name == "qBF1Pd" or len(name) < 3: continue
             
-            # Simple heuristic for Address/Phone/Website
             address = ""
             phone = None
             website = None
             
-            # Address search
             for i in [7, 8, 9, 6]:
                 if i < len(row) and len(row[i]) > 8 and any(char.isdigit() for char in row[i]):
                     address = row[i]
                     break
             
-            # Phone search
             for i in range(len(row)):
-                if re.search(r'\+?\d{8,}', row[i].replace(" ", "")) or (len(row[i]) > 7 and row[i].startswith('040')):
+                is_phone = re.search(r'\+?\d{8,}', row[i].replace(" ", ""))
+                if is_phone:
                     phone = row[i]
                     break
             
-            # Website search
             for i in range(len(row)):
                 if row[i].startswith('http') and ".google.com" not in row[i]:
                     website = row[i]
                     break
             
-            # Extract review fragment
             review_text = ""
             for i in range(len(row)-1, 15, -1):
                 if len(row[i]) > 3:
@@ -93,14 +93,9 @@ def process_csv(filename, vets, next_id_num, today):
 
             signal = f"Confirmed via Google Review: \"{review_text[:120]}...\"" if len(review_text) > 120 else f"Confirmed via Google Review: \"{review_text}\""
 
-            city = extract_city(address)
-            if city == "Unknown" and "hamburg" in filename.lower():
-                city = "Hamburg"
-            
-            # Final normalization
+            city = extract_city(address, filename_city)
             city = normalize_city(city)
 
-            # Check if exists
             norm_name = normalize_string(name)
             existing = None
             for v in vets:
@@ -113,10 +108,8 @@ def process_csv(filename, vets, next_id_num, today):
                     existing['verification']['english_signals'].append(signal)
                     existing['verification']['last_scanned'] = today
                     existing['community_status'] = "Verified"
-                    updated_vets_count += 1
-                    print(f"📝 Updated Vet: {name} ({city})")
+                    updated_count += 1
             else:
-                # New Vet
                 new_vet = {
                     "id": f"{city}-{next_id_num}",
                     "practice_name": name,
@@ -124,10 +117,7 @@ def process_csv(filename, vets, next_id_num, today):
                     "district": "Unknown",
                     "address": address,
                     "coordinates": {"lat": 0, "lng": 0},
-                    "contact": {
-                        "phone": phone,
-                        "website": website
-                    },
+                    "contact": {"phone": phone, "website": website},
                     "verification": {
                         "ai_score": 90,
                         "last_scanned": today,
@@ -137,43 +127,45 @@ def process_csv(filename, vets, next_id_num, today):
                 }
                 vets.append(new_vet)
                 next_id_num += 1
-                new_vets_count += 1
-                print(f"✅ Added New Vet: {name} ({city})")
+                new_count += 1
 
-    return next_id_num, new_vets_count, updated_vets_count
+    return next_id_num, new_count, updated_count
 
 def main():
     vets_file = 'web-app/src/data/vets.json'
     if not os.path.exists(vets_file):
-        print(f"Error: {vets_file} not found")
+        print("vets.json not found")
         return
 
     with open(vets_file, 'r', encoding='utf-8') as f:
         vets = json.load(f)
 
-    # Calculate next global ID count or city-specific? 
-    # Current system seems to use City-Number. 
-    # To keep it simple, we'll find the max number across all IDs if possible or just use a counter.
     all_nums = []
     for v in vets:
         parts = v['id'].split('-')
-        if len(parts) > 1 and parts[-1].isdigit():
-            all_nums.append(int(parts[-1]))
+        if parts[-1].isdigit(): all_nums.append(int(parts[-1]))
     next_id_num = max(all_nums) + 1 if all_nums else 1
     
     today = datetime.now().strftime("%Y-%m-%d")
     
-    # Process Hamburg CSV if it exists
-    if os.path.exists('hamburg.csv'):
-        next_id_num, n1, u1 = process_csv('hamburg.csv', vets, next_id_num, today)
-        if (n1 + u1) > 0:
-            with open(vets_file, 'w', encoding='utf-8') as f:
-                json.dump(vets, f, indent=2, ensure_ascii=False)
-            print(f"\nTotal Summary: Added {n1} new, Updated {u1} existing.")
-        else:
-            print("\nNo new English matches found in CSV.")
+    files_to_process = [f for f in os.listdir('.') if f.endswith('.csv') and any(c in f.lower() for c in ['hamburg', 'frankfurt', 'stuttgart', 'munich'])]
+    
+    total_new = 0
+    total_updated = 0
+    
+    for filename in files_to_process:
+        print(f"Processing {filename}...")
+        next_id_num, n, u = process_csv(filename, vets, next_id_num, today)
+        total_new += n
+        total_updated += u
+        print(f"  -> Added {n}, Updated {u}")
+
+    if total_new + total_updated > 0:
+        with open(vets_file, 'w', encoding='utf-8') as f:
+            json.dump(vets, f, indent=2, ensure_ascii=False)
+        print(f"\nDone! Total New: {total_new}, Total Updated: {total_updated}")
     else:
-        print("hamburg.csv not found.")
+        print("\nNo changes made.")
 
 if __name__ == "__main__":
     main()

@@ -1,8 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function CookieConsent() {
     const [isVisible, setIsVisible] = useState(false);
+
+    const enableGA = useCallback(() => {
+        // @ts-expect-error - gtag is from external script
+        if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+        }
+    }, []);
 
     useEffect(() => {
         // Check if user has already made a choice
@@ -12,14 +21,7 @@ export default function CookieConsent() {
         } else if (consent === 'accepted') {
             enableGA();
         }
-    }, []);
-
-    const enableGA = () => {
-        // @ts-ignore
-        window.gtag('consent', 'update', {
-            'analytics_storage': 'granted'
-        });
-    };
+    }, [enableGA]);
 
     const handleAccept = () => {
         localStorage.setItem('cookie-consent', 'accepted');
@@ -29,10 +31,12 @@ export default function CookieConsent() {
 
     const handleDecline = () => {
         localStorage.setItem('cookie-consent', 'declined');
-        // @ts-ignore
-        window.gtag('consent', 'update', {
-            'analytics_storage': 'denied'
-        });
+        // @ts-expect-error - gtag is from external script
+        if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', {
+                'analytics_storage': 'denied'
+            });
+        }
         setIsVisible(false);
     };
 
