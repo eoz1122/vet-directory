@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Map as GoogleMap, AdvancedMarker, Pin, InfoWindow, useMap } from '@vis.gl/react-google-maps';
 import { appendUTM } from '../utils/url';
-import { Vet } from '../types/vet';
+import type { Vet } from '../types/vet';
 
 interface MapProps {
     vets: Vet[];
@@ -14,6 +14,8 @@ const CITY_COORDS: Record<string, { lat: number; lng: number }> = {
     'Berlin': { lat: 52.5200, lng: 13.4050 },
     'Frankfurt': { lat: 50.1109, lng: 8.6821 },
     'Hamburg': { lat: 53.5511, lng: 9.9937 },
+    'Stuttgart': { lat: 48.7758, lng: 9.1829 },
+    'Munich': { lat: 48.1351, lng: 11.5820 },
     'All': { lat: 51.1657, lng: 10.4515 }, // Center of Germany
 };
 
