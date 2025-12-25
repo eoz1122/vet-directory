@@ -2258,7 +2258,8 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Confirmed English-speaking via Google Reviews comments",
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Very good place with great...\""
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Very good place with great...\"",
+        "Confirmed via Google Review: \"doctors!\""
       ]
     },
     "community_status": "Verified"
@@ -2453,7 +2454,8 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png speak English · Closes 6 p...\""
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png speak English · Closes 6 p...\"",
+        "Confirmed via Google Review: \".\""
       ]
     },
     "community_status": "Verified"
@@ -2477,7 +2479,8 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Awesome personal with good...\""
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Awesome personal with good...\"",
+        "Confirmed via Google Review: \"support.\""
       ]
     },
     "community_status": "Verified"
@@ -2597,7 +2600,8 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png was kind, calm and they sp...\""
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png was kind, calm and they sp...\"",
+        "Confirmed via Google Review: \"was kind, calm and they spoke\""
       ]
     },
     "community_status": "Verified"
@@ -2717,7 +2721,8 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Doctors speak English and ...\""
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Doctors speak English and ...\"",
+        "Confirmed via Google Review: \"and always have the best solutions for the patients!\""
       ]
     },
     "community_status": "Verified"
@@ -3095,6 +3100,697 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Fantastic service and English speaking too.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-69",
+    "practice_name": "Veterinary Medical Center Europe",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "2928, Vogelweh",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06371 94641900",
+      "website": "https://www.google.com/maps/place/Veterinary+Medical+Center+Europe/data=!4m7!3m6!1s0x4796732974646ce7:0xb433a9c9a364d97e!8m2!3d49.4295152!4d7.6861462!16s%2Fg%2F11c208rp4z!19sChIJ52xkdClzlkcRftlko8mpM7Q?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Great service, friendly helpful\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Mainz-70",
+    "practice_name": "VetCare Tierarzt Kaiserslautern",
+    "city": "Mainz",
+    "district": "Unknown",
+    "address": "Mainzer Str. 65",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "0631 31039705",
+      "website": "https://www.google.com/maps/place/VetCare+Tierarzt+Kaiserslautern/data=!4m7!3m6!1s0x47961343da71e405:0x41550cf6378e74b1!8m2!3d49.451713!4d7.7843013!16s%2Fg%2F11y7fb7ly4!19sChIJBeRx2kMTlkcRsXSON_YMVUE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"and made us feel at ease.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-71",
+    "practice_name": "Tierarztpraxis Andres De Lima",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Auf d. Pick 2b",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06371 9188440",
+      "website": "https://www.google.com/maps/place/Tierarztpraxis+Andres+De+Lima/data=!4m7!3m6!1s0x4796751aeabed1e5:0x9af5d33d4d1da710!8m2!3d49.4081967!4d7.5827648!16s%2Fg%2F11g0dsyzwr!19sChIJ5dG-6hp1lkcREKcdTT3T9Zo?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"The\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-72",
+    "practice_name": "Clinique Vétérinaire Bereldange",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "29 Am Becheler",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "+352 33 40 33 1",
+      "website": "https://www.google.com/maps/place/Clinique+V%C3%A9t%C3%A9rinaire+Bereldange/data=!4m7!3m6!1s0x47954e565f5ed8a9:0x4c90f837c091be46!8m2!3d49.6546!4d6.12443!16s%2Fg%2F1td2sv82!19sChIJqdheX1ZOlUcRRr6RwDf4kEw?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Friendly\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-73",
+    "practice_name": "Animal Hospital Hofheim GbR",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Katharina-Kemmler-Straße 7",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06192 290290",
+      "website": "https://www.google.com/maps/place/Animal+Hospital+Hofheim+GbR/data=!4m7!3m6!1s0x47bda1624f17d315:0xf80a023b02607a8f!8m2!3d50.0896786!4d8.4623423!16s%2Fg%2F1tlc_94t!19sChIJFdMXT2KhvUcRj3pgAjsCCvg?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"and take all forms of payment.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-74",
+    "practice_name": "Animova Veterinarian - Tierarzt",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Daimlerstraße 7",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06371 914314",
+      "website": "https://www.google.com/maps/place/Animova+Veterinarian+-+Tierarzt/data=!4m7!3m6!1s0x47967519e7a7127b:0x22fb56f1632a28b1!8m2!3d49.419052!4d7.5727132!16s%2Fg%2F1thw5nz2!19sChIJexKn5xl1lkcRsSgqY_FW-yI?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"which made my trips very easy.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-75",
+    "practice_name": "Vet. Med. Praxis Bitburg",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Rautenberg 1 b",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06561 12012",
+      "website": "https://www.google.com/maps/place/Vet.+Med.+Praxis+Bitburg/data=!4m7!3m6!1s0x47bfddde431fd367:0x7651d2a0b4bd1876!8m2!3d49.9734782!4d6.5204765!16s%2Fg%2F1pxwmcg8r!19sChIJZ9MfQ97dv0cRdhi9tKDSUXY?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"and take VAT forms, and are very kind and caring.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-76",
+    "practice_name": "Cabinet Vétérinaire Christnach",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "2 Um Bierg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "+352 26 87 06 03",
+      "website": "https://www.google.com/maps/place/Cabinet+V%C3%A9t%C3%A9rinaire+Christnach/data=!4m7!3m6!1s0x4795590d0f3cfe23:0x5676b022f13c3c3c!8m2!3d49.7899085!4d6.2725081!16s%2Fg%2F1tffhq77!19sChIJI_48Dw1ZlUcRPDw88SKwdlY?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"spoke 4 languages including\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-77",
+    "practice_name": "Small veterinary practice Dr. Barth",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Jahnstraße 80",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06301 5552",
+      "website": "https://www.google.com/maps/place/Small+veterinary+practice+Dr.+Barth/data=!4m7!3m6!1s0x47960da805af349d:0x79125332be378b61!8m2!3d49.475439!4d7.7142676!16s%2Fg%2F1tjppfm9!19sChIJnTSvBagNlkcRYYs3vjJTEnk?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \".\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-78",
+    "practice_name": "Dr. med. vet. Tilman Michelberger",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Kindsbacher Str. 9",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06371 70040",
+      "website": "https://www.google.com/maps/place/Dr.+med.+vet.+Tilman+Michelberger/data=!4m7!3m6!1s0x47960ab34aa6589f:0x903245d0a30d0c6b!8m2!3d49.4443583!4d7.5583946!16s%2Fg%2F1xtf0hv8!19sChIJn1imSrMKlkcRawwNo9BFMpA?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"and are well educated and treated my dog with such love.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-79",
+    "practice_name": "Dr. med. vet. Otto Doermer",
+    "city": "Frankfurt",
+    "district": "Sachsenhausen",
+    "address": "Mörfelder Landstraße 98",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "069 60607887",
+      "website": "https://www.google.com/maps/place/Dr.+med.+vet.+Otto+Doermer/data=!4m7!3m6!1s0x47bd0c19f177f047:0x7b30cef7f62abbd!8m2!3d50.0968403!4d8.6835219!16s%2Fg%2F1tg396hk!19sChIJR_B38RkMvUcRvatif-8Mswc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"staff;\"",
+        "Confirmed via Google Review: \"· 6 pm · Opens 9:30 am Fri\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-80",
+    "practice_name": "Kleintierpraxis Dr. Corinne Martin",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Häusserstraße 36",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06221 6730600",
+      "website": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+Corinne+Martin/data=!4m7!3m6!1s0x4797c0e6b69d6f4f:0xe0ac382bdb44ec3d!8m2!3d49.4000822!4d8.6886929!16s%2Fg%2F11csqbw2dm!19sChIJT2-dtubAl0cRPexE2ys4rOA?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"and nurses.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-81",
+    "practice_name": "Vetcare, veterinarian practice",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "62a Grand-Rue",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "+352 28 79 07 90",
+      "website": "https://www.google.com/maps/place/Vetcare,+veterinarian+practice/data=!4m7!3m6!1s0x4795487cd66a88ef:0xfa83cf878624eed8!8m2!3d49.5392712!4d6.1441315!16s%2Fg%2F1tj2md9t!19sChIJ74hq1nxIlUcR2O4khofPg_o?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \".\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-82",
+    "practice_name": "Tierarztpraxis Dr. Kindler AniCura Wiesbaden Schierstein GmbH",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Saarbrücker Allee 7",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "0611 1885815",
+      "website": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Kindler+AniCura+Wiesbaden+Schierstein+GmbH/data=!4m7!3m6!1s0x47bd95edb7da87f3:0x3c68002a0ade2fb6!8m2!3d50.0459109!4d8.2048268!16s%2Fg%2F1tdj3b78!19sChIJ84fat-2VvUcRti_eCioAaDw?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"as well :)\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-83",
+    "practice_name": "Dr. Müller, Dr. Rohmer und Dr. Falkenhorst Tierarztpraxis",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Merscheider Weg 1",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06562 930081",
+      "website": "https://www.google.com/maps/place/Dr.+M%C3%BCller,+Dr.+Rohmer+und+Dr.+Falkenhorst+Tierarztpraxis/data=!4m7!3m6!1s0x47bfda725b060539:0x5a2797baf917e651!8m2!3d49.9365334!4d6.6399455!16s%2Fg%2F1w6_mzgk!19sChIJOQUGW3Lav0cRUeYX-bqXJ1o?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"in the area.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-84",
+    "practice_name": "Armin Drexler",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Heinzenberg 22",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06542 962999",
+      "website": "https://www.google.com/maps/place/Armin+Drexler/data=!4m7!3m6!1s0x417340724cf1cc6d:0x835d22742f77ef3!8m2!3d50.0104489!4d7.1883962!16s%2Fg%2F1tgn_y8y!19sChIJbczxTHJAc0ER8373QifSNQg?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"well.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-85",
+    "practice_name": "Kleintierpraxis Moseltal - Tierarzt",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Am Dreiländereck 11",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06867 5617688",
+      "website": "https://www.google.com/maps/place/Kleintierpraxis+Moseltal+-+Tierarzt/data=!4m7!3m6!1s0x479515a0c9f46e65:0xb2d13dcbb0972f5a!8m2!3d49.4736753!4d6.372421!16s%2Fg%2F11c316s84b!19sChIJZW70yaAVlUcRWi-XsMs90bI?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \".\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-86",
+    "practice_name": "Kleintierpraxis Maifeld Kathrin Bau",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "August-Horch-Straße 19",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "02654 8827188",
+      "website": "https://www.google.com/maps/place/Kleintierpraxis+Maifeld+Kathrin+Bau/data=!4m7!3m6!1s0x47be5d16781dc7a3:0x545e312e0646a5ba!8m2!3d50.3055921!4d7.3255195!16s%2Fg%2F11crzjh8j1!19sChIJo8cdeBZdvkcRuqVGBi4xXlQ?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \".\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-87",
+    "practice_name": "Tierarztpraxis Susann Gaudlitz - Bad Vilbel",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Wilhelmstraße 22",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06101 47619",
+      "website": "https://www.google.com/maps/place/Tierarztpraxis+Susann+Gaudlitz+-+Bad+Vilbel/data=!4m7!3m6!1s0x47bd0580e4a30683:0x922d48dd7ba516e6!8m2!3d50.186915!4d8.7401454!16s%2Fg%2F1tf1myqh!19sChIJgwaj5IAFvUcR5hale91ILZI?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \".\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-88",
+    "practice_name": "Tierarztpraxis Dr. Roger Bour & Dr. Claudia Thiel-Bour",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Innerer Schwarzenbacher Ring 1",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "09193 508750",
+      "website": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Roger+Bour+%26+Dr.+Claudia+Thiel-Bour/data=!4m7!3m6!1s0x47a21ab8b73c5c3f:0x2ac7cbdb54708751!8m2!3d49.6934983!4d10.8027143!16s%2Fg%2F12m9j3dym!19sChIJP1w8t7gaokcRUYdwVNvLxyo?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"so good if German is not your\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-89",
+    "practice_name": "Veterinary practice Galina Schirow GmbH",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Bartningallee 5",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "030 39886966",
+      "website": "https://www.google.com/maps/place/Veterinary+practice+Galina+Schirow+GmbH/data=!4m7!3m6!1s0x47a851081855956d:0x502d097849852630!8m2!3d52.5190267!4d13.3427188!16s%2Fg%2F1q4knllr2!19sChIJbZVVGAhRqEcRMCaFSXgJLVA?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \".\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-90",
+    "practice_name": "Veterinární Klinika Nusle - Schwetter a kol.",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Boleslavova 1525/20",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "+420 241 401 000",
+      "website": "https://www.google.com/maps/place/Veterin%C3%A1rn%C3%AD+Klinika+Nusle+-+Schwetter+a+kol./data=!4m7!3m6!1s0x470b947c7161e0b1:0xf9afe1b6e7274b39!8m2!3d50.0635282!4d14.4373438!16s%2Fg%2F1td5dvbz!19sChIJseBhcXyUC0cROUsn57bhr_k?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"stuff and comfortable working hours\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-91",
+    "practice_name": "AniCura Tierklinik Frankfurt",
+    "city": "Frankfurt",
+    "district": "Bockenheim",
+    "address": "Juliusstraße 12",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "069 97074955",
+      "website": "https://www.google.com/maps/place/AniCura+Tierklinik+Frankfurt/data=!4m7!3m6!1s0x47bd0969e22c5aaf:0x59534e74bb4d7eca!8m2!3d50.123563!4d8.644868!16s%2Fg%2F1vjdp58h!19sChIJr1os4mkJvUcRyn5Nu3ROU1k?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"and treat my dog very well so far.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-92",
+    "practice_name": "Katzenklinik Frankfurt",
+    "city": "Frankfurt",
+    "district": "Bockenheim",
+    "address": "Juliusstraße 12",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "069 97098765",
+      "website": "https://www.google.com/maps/place/Katzenklinik+Frankfurt/data=!4m7!3m6!1s0x417313a4450df65d:0x5a18022108987cb8!8m2!3d50.1233763!4d8.6451181!16s%2Fg%2F1th1bvbb!19sChIJXfYNRaQTc0ERuHyYCCECGFo?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"and they were all nice.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-93",
+    "practice_name": "Dr. Gabriele Schoenert-Wißfeld",
+    "city": "Frankfurt",
+    "district": "Nordend",
+    "address": "Schlosserstraße 21",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "069 553366",
+      "website": "https://www.google.com/maps/place/Dr.+Gabriele+Schoenert-Wi%C3%9Ffeld/data=!4m7!3m6!1s0x47bd0ec9443198e9:0x3181802f48b397cc!8m2!3d50.13127!4d8.6817896!16s%2Fg%2F1tlnck70!19sChIJ6ZgxRMkOvUcRzJezSC-AgTE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"and not only.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-94",
+    "practice_name": "Tierärztliche Klinik Für Kleintiere",
+    "city": "Frankfurt",
+    "district": "Bockenheim",
+    "address": "Juliusstraße 12",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "069 97074955",
+      "website": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Klinik+F%C3%BCr+Kleintiere/data=!4m7!3m6!1s0x47bd0969e186aaab:0xdaf34a78c4f3d0ec!8m2!3d50.1235577!4d8.6448334!16s%2Fg%2F11h5505rfz!19sChIJq6qG4WkJvUcR7NDzxHhK89o?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \".\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-95",
+    "practice_name": "Deutsche Gesellschaft für Mauersegler e. V.",
+    "city": "Frankfurt",
+    "district": "Fechenheim",
+    "address": "Buchenstraße 9",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "069 35351504",
+      "website": "https://www.google.com/maps/place/Deutsche+Gesellschaft+f%C3%BCr+Mauersegler+e.+V./data=!4m7!3m6!1s0x47bd0a347b3e7cc5:0x5533513386014cf1!8m2!3d50.0957969!4d8.6060175!16s%2Fg%2F113dqjv90!19sChIJxXw-ezQKvUcR8UwBhjNRM1U?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"which really helped.\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-96",
+    "practice_name": "Kleintierpraxis Sachsenhausen",
+    "city": "Frankfurt",
+    "district": "Sachsenhausen",
+    "address": "Waidmannstraße 2",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "069 69866933",
+      "website": "https://www.google.com/maps/place/Kleintierpraxis+Sachsenhausen/data=!4m7!3m6!1s0x417314846fee36c7:0x164af41d129b875a!8m2!3d50.0953541!4d8.6702789!16s%2Fg%2F1v2gcw9q!19sChIJxzbub4QUc0ERWoebEh30ShY?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \", would recommend!!\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-97",
+    "practice_name": "Kleintierpraxis Dr. Blendinger",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Robert-Bosch-Straße 12",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06122 5358680",
+      "website": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+Blendinger/data=!4m7!3m6!1s0x47bda28abf890c45:0x6774e8bc88907b4b!8m2!3d50.0646627!4d8.3877711!16s%2Fg%2F1hc30npb_!19sChIJRQyJv4qivUcRS3uQiLzodGc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"· 6 pm · Opens 10 am Fri\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Frankfurt-98",
+    "practice_name": "Dr.med.vet. Kirsten König Tierärztin",
+    "city": "Frankfurt",
+    "district": "Unknown",
+    "address": "Riedstraße 60",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "06145 52910",
+      "website": "https://www.google.com/maps/place/Dr.med.vet.+Kirsten+K%C3%B6nig+Tier%C3%A4rztin/data=!4m7!3m6!1s0x47bd9f365dba930d:0xee970111de3e2dee!8m2!3d50.0188307!4d8.4366653!16s%2Fg%2F1tdy85k0!19sChIJDZO6XTafvUcR7i0-3hEBl-4?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"and appointments are always fast and easy.\""
       ]
     },
     "community_status": "Verified"
