@@ -28,7 +28,13 @@ export default function QualityPromise() {
                         Our Heart
                     </h2>
                     <p className="text-lg leading-relaxed text-primary/80">
-                        EnglishSpeakingVets.online was born out of a simple need: to help expats and their pets feel at home. We know that in a medical emergency, every second counts and clear communication is a lifeline. We see ourselves as a bridge—connecting you with the people who speak your language when it matters most.
+                        <span className="inline-flex items-center gap-1.5 align-baseline">
+                            <img src="/logo.png" alt="" className="h-5 w-auto self-center" />
+                            <span className="font-bold tracking-tight">
+                                <span className="text-primary">EnglishSpeaking</span>
+                                <span className="text-accent">Vets</span>
+                            </span>
+                        </span> was born out of a simple need: to help expats and their pets feel at home. We know that in a medical emergency, every second counts and clear communication is a lifeline. We see ourselves as a bridge—connecting you with the people who speak your language when it matters most.
                     </p>
                 </section>
 
