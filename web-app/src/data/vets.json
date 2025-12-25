@@ -49,7 +49,7 @@
     "id": "Berlin-3",
     "practice_name": "Rex Tierarztpraxis (Multiple Locations)",
     "city": "Berlin",
-    "district": "Friedrichshain) / Others",
+    "district": "Friedrichshain / Others",
     "address": "Friedenstraße 94 (Friedrichshain) / Others",
     "coordinates": {
       "lat": 52.5222543,
@@ -72,7 +72,7 @@
     "id": "Berlin-4",
     "practice_name": "Felmo Mobile Veterinarians",
     "city": "Berlin",
-    "district": "Home Visits)*",
+    "district": "Home Visits*",
     "address": "*Mobile Service (Home Visits)*",
     "coordinates": {
       "lat": 0,
@@ -654,7 +654,7 @@
     "id": "Berlin-31",
     "practice_name": "Tierarztpraxis am Olivaer Platz (Dr. med. vet. S. Robl)",
     "city": "Berlin",
-    "district": "Dr. med. vet. S. Robl",
+    "district": "Wilmersdorf",
     "address": "Olivaer Platz 11, 10707 Berlin",
     "coordinates": {
       "lat": 52.499682,
@@ -1569,7 +1569,7 @@
     },
     "contact": {
       "phone": null,
-      "website": "https://www.tierarzt-kelkheim.de/"
+      "website": "https://www.kleintierpraxis-kelkheim.de/"
     },
     "verification": {
       "ai_score": 95,
@@ -2460,7 +2460,7 @@
   },
   {
     "id": "Berlin-108",
-    "practice_name": "felmo Mobiler Tierarzt Berlin",
+    "practice_name": "Felmo Mobiler Tierarzt Berlin",
     "city": "Berlin",
     "district": "Berlin",
     "address": "",
@@ -2604,7 +2604,7 @@
   },
   {
     "id": "Berlin-114",
-    "practice_name": "felmo Mobiler Tierarzt Berlin",
+    "practice_name": "Felmo Mobiler Tierarzt Berlin",
     "city": "Berlin",
     "district": "Berlin",
     "address": "",
@@ -3744,7 +3744,6 @@
       "ai_score": 90,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \", would recommend!!\"",
         "Confirmed via Google Review: \"English , would recommend!!\""
       ]
     },
@@ -3768,8 +3767,7 @@
       "ai_score": 90,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"· 6 pm · Opens 10 am Fri\"",
-        "Confirmed via Google Review: \"as well\" · 6 pm · Opens 10 am Fri\""
+        "Confirmed via Google Review: \"· 6 pm · Opens 10 am Fri\""
       ]
     },
     "community_status": "Verified"
@@ -3984,7 +3982,7 @@
   },
   {
     "id": "Munich-133",
-    "practice_name": "felmo Mobiler Tierarzt München",
+    "practice_name": "Felmo Mobiler Tierarzt München",
     "city": "Munich",
     "district": "Unknown",
     "address": "Am Moosfeld 13",
@@ -4076,7 +4074,7 @@
   },
   {
     "id": "Stuttgart-138",
-    "practice_name": "felmo Mobiler Tierarzt Stuttgart",
+    "practice_name": "Felmo Mobiler Tierarzt Stuttgart",
     "city": "Stuttgart",
     "district": "Unknown",
     "address": "Agnesstraße 17",
@@ -4092,7 +4090,7 @@
       "ai_score": 90,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"· Opens 8 am Fri speak English\""
+        "Confirmed via Google Review: \"Speaks English\""
       ]
     },
     "community_status": "Verified"
@@ -4161,7 +4159,7 @@
       "ai_score": 90,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"was very helpful and informative and speaks outstanding English.\""
+        "Confirmed via Google Review: \"...was very helpful and informative and speaks outstanding English.\""
       ]
     },
     "community_status": "Verified"
@@ -4184,7 +4182,7 @@
       "ai_score": 90,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed via Google Review: \"· Opens 9 am Fri speak English\""
+        "Confirmed via Google Review: \"Speaks English\""
       ]
     },
     "community_status": "Verified"
