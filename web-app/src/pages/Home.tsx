@@ -285,8 +285,10 @@ export default function Home() {
                                         <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-primary text-secondary text-[10px] rounded shadow-lg opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-200 z-10 pointer-events-none">
                                             <p className="font-bold mb-1">How we verify English-speaking vets:</p>
                                             <ul className="list-disc list-inside space-y-0.5 opacity-90">
-                                                <li>Official Website Check</li>
+                                                <li>AI-Powered Review Analysis</li>
+                                                <li>Multi-lingual Signal Detection</li>
                                                 <li>Expat Community Feedback</li>
+                                                <li>Website Language Verification</li>
                                             </ul>
                                             <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-primary"></div>
                                         </div>
@@ -319,7 +321,7 @@ export default function Home() {
 
                                 <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
                                     <span className="text-[10px] text-gray-400">
-                                        Verify directly with clinic. Data updated 2025.
+                                        Data sourced via public signals & community. Updated 2025.
                                     </span>
                                     <button
                                         onClick={(e) => { e.stopPropagation(); setReportingVet(vet); }}

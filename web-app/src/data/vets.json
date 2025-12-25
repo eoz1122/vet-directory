@@ -1010,7 +1010,7 @@
     "id": "Berlin-45",
     "practice_name": "Medivet Berlin-Pankow",
     "city": "Berlin",
-    "district": "Unknown",
+    "district": "Pankow",
     "address": "Pasewalker Straße 25, 13127 Berlin",
     "coordinates": {
       "lat": 52.5883891,
@@ -1105,7 +1105,7 @@
     "id": "Frankfurt-46",
     "practice_name": "Filu Vet Nordend",
     "city": "Frankfurt",
-    "district": "Unknown",
+    "district": "Nordend",
     "address": "Weberstraße 59, 60318 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1265373,
@@ -1128,7 +1128,7 @@
     "id": "Frankfurt-47",
     "practice_name": "Rex Tierarzt Frankfurt Ostend",
     "city": "Frankfurt",
-    "district": "Unknown",
+    "district": "Ostend",
     "address": "Wittelsbacherallee 26, 60316 Frankfurt am Main",
     "coordinates": {
       "lat": 50.119189,
@@ -1333,7 +1333,7 @@
     "id": "Frankfurt-56",
     "practice_name": "Kleintierklinik Frankfurt Bockenheim",
     "city": "Frankfurt",
-    "district": "Unknown",
+    "district": "Bockenheim",
     "address": "Ginnheimer Landstraße 11, 60487 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1288579,
@@ -1537,7 +1537,7 @@
     "id": "Frankfurt-65",
     "practice_name": "Tierarztpraxis Dr. med. vet. Moormann",
     "city": "Frankfurt",
-    "district": "Unknown",
+    "district": "Königstein",
     "address": "Frankfurter Str. 11, 61462 Königstein im Taunus",
     "coordinates": {
       "lat": 0,
@@ -1632,7 +1632,7 @@
     "id": "Hamburg-69",
     "practice_name": "filu Tierarztpraxis Winterhude",
     "city": "Hamburg",
-    "district": "Unknown",
+    "district": "Winterhude",
     "address": "Mühlenkamp 21A, 22303 Hamburg",
     "coordinates": {
       "lat": 53.5808087,
@@ -1678,7 +1678,7 @@
     "id": "Hamburg-71",
     "practice_name": "VetZentrum Hafencity",
     "city": "Hamburg",
-    "district": "Unknown",
+    "district": "Hafencity",
     "address": "Baakenallee 90, 20457 Hamburg",
     "coordinates": {
       "lat": 53.5364937,
@@ -1772,7 +1772,7 @@
     "id": "Hamburg-75",
     "practice_name": "Medivet Tierarztpraxis Hamburg-Stellingen",
     "city": "Hamburg",
-    "district": "Unknown",
+    "district": "Stellingen",
     "address": "Kieler Straße 336, 22525 Hamburg",
     "coordinates": {
       "lat": 53.5872479,
@@ -2029,7 +2029,7 @@
     "id": "Hamburg-86",
     "practice_name": "Dr. med. vet. Eva Tutlies",
     "city": "Hamburg",
-    "district": "Unknown",
+    "district": "Billstedt",
     "address": "Schiffbeker Weg 46, 22119 Hamburg",
     "coordinates": {
       "lat": 53.5444196,
@@ -2050,7 +2050,7 @@
     "id": "Hamburg-87",
     "practice_name": "Dr. med. vet. Nicolai Mannstaedt",
     "city": "Hamburg",
-    "district": "Unknown",
+    "district": "Neugraben",
     "address": "Neugrabener Bahnhofstraße 5a, 21149 Hamburg",
     "coordinates": {
       "lat": 53.4677627,
@@ -2073,7 +2073,7 @@
     "id": "Hamburg-88",
     "practice_name": "Tierklinik Lademannbogen",
     "city": "Hamburg",
-    "district": "Unknown",
+    "district": "Hummelsbüttel",
     "address": "Lademannbogen 126, 22339 Hamburg",
     "coordinates": {
       "lat": 53.6438854,
@@ -2096,7 +2096,7 @@
     "id": "Hamburg-89",
     "practice_name": "Dr. med. vet. Klaus-Henning von Kuenheim",
     "city": "Hamburg",
-    "district": "Unknown",
+    "district": "Bramfeld",
     "address": "Bramfelder Chaussee 10, 22177 Hamburg",
     "coordinates": {
       "lat": 53.5939221,
