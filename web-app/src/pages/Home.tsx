@@ -123,7 +123,7 @@ const Home: React.FC = () => {
                             Providing peace of mind for you and your companion. <span className="text-primary font-bold italic">"For the love of our little friends."</span>
                         </p>
 
-                        <nav className="flex gap-4 text-[10px] font-bold uppercase tracking-widest text-primary/40 pt-1">
+                        <nav className="flex gap-4 text-[10px] font-bold uppercase tracking-widest text-primary/80 pt-1">
                             <Link to="/blog" className="hover:text-accent transition-colors">Guides</Link>
                             <Link to="/about" className="hover:text-accent transition-colors">About</Link>
                             <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality</Link>
@@ -156,9 +156,9 @@ const Home: React.FC = () => {
                                             </button>
                                         ))}
                                     </div>
-                                    <div className="flex items-center gap-3 px-1 text-[10px] font-bold text-primary/30 uppercase tracking-[0.1em]">
+                                    <div className="flex items-center gap-3 px-1 text-[10px] font-bold text-primary/60 uppercase tracking-[0.1em]">
                                         <span>Featured:</span>
-                                        <div className="flex gap-4">
+                                        <div className="flex gap-4 text-primary/80">
                                             {cities.filter(c => c !== 'All').slice(0, 3).map(c => (
                                                 <Link key={c} to={`/vets/${c.toLowerCase()}`} className="hover:text-accent transition-colors flex items-center gap-1 group/jump">
                                                     {c} <span className="text-[8px] transform group-hover/jump:translate-x-0.5 transition-transform">→</span>
@@ -205,11 +205,11 @@ const Home: React.FC = () => {
                         <div className="flex justify-between items-end px-2 pt-4">
                             <div className="flex flex-col">
                                 <span className="text-[24px] font-black text-primary leading-none">{sortedVets.length}</span>
-                                <span className="text-[10px] font-bold text-primary/30 uppercase tracking-widest">Practices available</span>
+                                <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Practices available</span>
                             </div>
                             <div className="flex flex-col items-end">
-                                <span className="text-[10px] font-bold text-primary/30 uppercase tracking-widest leading-none mb-1">Page</span>
-                                <span className="text-[14px] font-black text-primary/60">{currentPage} <span className="text-[10px] text-primary/20 font-bold uppercase mx-1">of</span> {totalPages}</span>
+                                <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest leading-none mb-1">Page</span>
+                                <span className="text-[14px] font-black text-primary/80">{currentPage} <span className="text-[10px] text-primary/40 font-bold uppercase mx-1">of</span> {totalPages}</span>
                             </div>
                         </div>
 
