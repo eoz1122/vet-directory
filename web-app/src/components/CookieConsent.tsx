@@ -5,7 +5,6 @@ export default function CookieConsent() {
     const [isVisible, setIsVisible] = useState(false);
 
     const enableGA = useCallback(() => {
-        // @ts-expect-error - gtag is from external script
         if (typeof window.gtag === 'function') {
             window.gtag('consent', 'update', {
                 'analytics_storage': 'granted'
@@ -31,7 +30,6 @@ export default function CookieConsent() {
 
     const handleDecline = () => {
         localStorage.setItem('cookie-consent', 'declined');
-        // @ts-expect-error - gtag is from external script
         if (typeof window.gtag === 'function') {
             window.gtag('consent', 'update', {
                 'analytics_storage': 'denied'

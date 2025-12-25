@@ -40,6 +40,13 @@ const blogPosts = [
         desc: "Germany has no dog tax for cats, but registration is vital. Learn about Tasso e.V., microchipping, and Findefix."
     },
     {
+        url: "/blog/public-transport-with-dogs-munich-2025",
+        title: "Public Transport with Dogs: Munich",
+        emoji: "🥨",
+        category: "Transport",
+        desc: "MVV Guide: Navigating the 'muzzle gray zone' and utilizing the free travel rules in Germany's financial hub."
+    },
+    {
         url: "/blog/public-transport-with-dogs-berlin-2025",
         title: "Public Transport with Dogs: Berlin",
         emoji: "🚇",
