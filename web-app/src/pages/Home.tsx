@@ -23,11 +23,8 @@ const Home: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [reportingVet, setReportingVet] = useState<Vet | null>(null);
 
-    // Dynamic city list from data
-    const cities = useMemo(() => {
-        const uniqueCities = Array.from(new Set(vets.map(v => v.city))).filter(c => c && c !== 'Unknown').sort();
-        return ['All', ...uniqueCities];
-    }, []);
+    // Restricted city list to major hubs as requested
+    const cities = ['All', 'Berlin', 'Hamburg', 'Frankfurt', 'Munich', 'Stuttgart'];
 
     // Filter logic
     const filteredVets = useMemo(() => {
@@ -110,7 +107,7 @@ const Home: React.FC = () => {
 
             <div className="min-h-screen flex flex-col md:flex-row bg-secondary">
                 <div className="md:w-[42%] lg:w-[40%] flex flex-col h-screen overflow-hidden border-r border-primary/5">
-                    <header className="sticky top-0 z-10 bg-secondary/80 backdrop-blur-xl border-b border-primary/5 p-6 space-y-4">
+                    <header className="sticky top-0 z-10 bg-secondary backdrop-blur-xl border-b border-primary/5 p-6 space-y-4">
                         <Link to="/" className="flex items-center gap-4 group">
                             <div className="relative">
                                 <img src="/logo.png" alt="Logo" className="h-14 w-auto drop-shadow-sm transition-transform group-hover:scale-105" />
