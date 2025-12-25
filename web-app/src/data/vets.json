@@ -50,7 +50,7 @@
     "practice_name": "Rex Tierarztpraxis (Multiple Locations)",
     "city": "Berlin",
     "district": "Friedrichshain / Others",
-    "address": "Friedenstraße 94 (Friedrichshain) / Others",
+    "address": "Friedenstraße 94, 10249 Berlin",
     "coordinates": {
       "lat": 52.5222543,
       "lng": 13.4352901
@@ -73,7 +73,7 @@
     "practice_name": "Felmo Mobile Veterinarians",
     "city": "Berlin",
     "district": "Home Visits*",
-    "address": "*Mobile Service (Home Visits)*",
+    "address": "Alt-Moabit 73/73a, 10555 Berlin",
     "coordinates": {
       "lat": 52.52410159999999,
       "lng": 13.3327137
@@ -934,7 +934,7 @@
     "practice_name": "Dr. Pascal Klunder (Mobile Vet)",
     "city": "Berlin",
     "district": "Mobile Vet",
-    "address": "*Mobile*",
+    "address": "Mobile Service - Berlin",
     "coordinates": {
       "lat": 52.4808427,
       "lng": 13.4357963
@@ -1237,7 +1237,7 @@
     "practice_name": "Dr. Cavalcanti (VetPetCare)",
     "city": "Bad Homburg",
     "district": "Frankfurt) & Bad Homburg",
-    "address": "Riedberg (Frankfurt) & Bad Homburg",
+    "address": "Kirdorfer Str. 14, 61350 Bad Homburg vor der Höhe",
     "coordinates": {
       "lat": 50.1766221,
       "lng": 8.6320784
@@ -1260,7 +1260,7 @@
     "practice_name": "Tierarztpraxis Maja Firlé",
     "city": "Frankfurt",
     "district": "Gallus/City West",
-    "address": "Weberstraße 77 (Nordend) / Hamburger Allee 14 (Gallus/City West)",
+    "address": "Hamburger Allee 14, 60486 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1277397,
       "lng": 8.6862685
@@ -1586,7 +1586,7 @@
     "practice_name": "Felmo Mobiler Tierarzt (Frankfurt)",
     "city": "Frankfurt",
     "district": "Frankfurt",
-    "address": "Unknown Address",
+    "address": "Königsberger Str. 2, 60487 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1290747,
       "lng": 8.628140799999999
@@ -2167,34 +2167,11 @@
     "community_status": "Verified"
   },
   {
-    "id": "Hamburg-93",
-    "practice_name": "VetCAR 24 (Siyamed Mala Ali)",
-    "city": "Hamburg",
-    "district": "Siyamed Mala Ali",
-    "address": "Unknown Address",
-    "coordinates": {
-      "lat": 53.5488282,
-      "lng": 9.987170299999999
-    },
-    "contact": {
-      "phone": null,
-      "website": null
-    },
-    "verification": {
-      "ai_score": 80,
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Hamburg-94",
     "practice_name": "Felmo Mobiler Tierarzt (Hamburg)",
     "city": "Hamburg",
     "district": "Hamburg",
-    "address": "Unknown Address",
+    "address": "Borsteler Chaussee 85-99, 22453 Hamburg",
     "coordinates": {
       "lat": 53.6050408,
       "lng": 9.9792363
@@ -2218,7 +2195,7 @@
     "practice_name": "Kleintierpraxis Flidais-vet Kreuzberg",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Wiener Str. 25, Berlin",
+    "address": "Wiener Str. 25, 10999 Berlin",
     "coordinates": {
       "lat": 52.4969444,
       "lng": 13.4325
@@ -2243,7 +2220,7 @@
     "practice_name": "Dr. Johanna Pauls",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Rykestraße 35, Berlin",
+    "address": "Rykestraße 35, 10405 Berlin",
     "coordinates": {
       "lat": 52.5385307,
       "lng": 13.4216955
@@ -2267,7 +2244,7 @@
     "practice_name": "Tierarztpraxis",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Kulmer Str. 26, Berlin",
+    "address": "Kulmer Str. 26, 10783 Berlin",
     "coordinates": {
       "lat": 52.4921195,
       "lng": 13.3651271
@@ -2315,7 +2292,7 @@
     "practice_name": "Dipl.Med.Vet. Jörg Porada",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Rungestraße 18, Berlin",
+    "address": "Rungestraße 18, 10179 Berlin",
     "coordinates": {
       "lat": 52.5121682,
       "lng": 13.419935
@@ -2339,7 +2316,7 @@
     "practice_name": "Tierarztpraxis Liegnitzer",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Liegnitzer Str. 19, Berlin",
+    "address": "Liegnitzer Str. 19, 10999 Berlin",
     "coordinates": {
       "lat": 52.4929802,
       "lng": 13.4338649
@@ -2363,7 +2340,7 @@
     "practice_name": "Pet-Station",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Kulmer Str. 26, Berlin",
+    "address": "Kulmer Str. 26, 10783 Berlin",
     "coordinates": {
       "lat": 52.4921297,
       "lng": 13.3651314
@@ -2387,7 +2364,7 @@
     "practice_name": "Tierarztpraxis Rödiger - Das Veterinärmedizinische Zentrum Berlin - 24h geöffnet",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Scharnweberstraße 136, Berlin",
+    "address": "Scharnweberstraße 136, 13405 Berlin",
     "coordinates": {
       "lat": 52.5643159,
       "lng": 13.3262383
@@ -2411,7 +2388,7 @@
     "practice_name": "Veterinary Practice by the Water Tower",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Rykestraße 4, Berlin",
+    "address": "Rykestraße 4, 10405 Berlin",
     "coordinates": {
       "lat": 52.5350514,
       "lng": 13.419747
@@ -2435,7 +2412,7 @@
     "practice_name": "Veterinarian and cattery",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Conrad-Blenkle-Straße 4, Berlin",
+    "address": "Conrad-Blenkle-Straße 4, 10407 Berlin",
     "coordinates": {
       "lat": 52.5281499,
       "lng": 13.4502641
@@ -2459,7 +2436,7 @@
     "practice_name": "Felmo Mobiler Tierarzt Berlin",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "",
+    "address": "Alt-Moabit 73/73a, 10555 Berlin",
     "coordinates": {
       "lat": 52.524102,
       "lng": 13.332714
@@ -2483,7 +2460,7 @@
     "practice_name": "Tierarztpraxis Rödiger - Das Veterinärmedizinische Zentrum Berlin - 24h geöffnet",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "136 Scharnweberstraße, Berlin",
+    "address": "Scharnweberstraße 136, 13405 Berlin",
     "coordinates": {
       "lat": 52.564316,
       "lng": 13.326238
@@ -2507,7 +2484,7 @@
     "practice_name": "Dr. Ulusal veterinarian",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Prinzenallee 72-73, Berlin",
+    "address": "Prinzenallee 72-73, 13357 Berlin",
     "coordinates": {
       "lat": 52.5554661,
       "lng": 13.3836295
@@ -2531,7 +2508,7 @@
     "practice_name": "Veterinary clinic for cats - vets for cats Berlin",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "",
+    "address": "Bayerischer Pl. 2, 10779 Berlin",
     "coordinates": {
       "lat": 52.4897329,
       "lng": 13.3391583
@@ -2555,7 +2532,7 @@
     "practice_name": "Veterinary clinic for small animals and pets",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "",
+    "address": "Alt-Biesdorf 22, 12683 Berlin",
     "coordinates": {
       "lat": 52.5087827,
       "lng": 13.5557674
@@ -2579,7 +2556,7 @@
     "practice_name": "Rex Tierarztpraxis Berlin-Prenzlauer Berg",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Greifswalder Str. 204, Berlin",
+    "address": "Greifswalder Str. 204, 10405 Berlin",
     "coordinates": {
       "lat": 52.5334687,
       "lng": 13.4293548
@@ -2603,7 +2580,7 @@
     "practice_name": "Felmo Mobiler Tierarzt Berlin",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "",
+    "address": "Alt-Moabit 73/73a, 10555 Berlin",
     "coordinates": {
       "lat": 52.5241016,
       "lng": 13.3327137
@@ -2627,7 +2604,7 @@
     "practice_name": "Dr.med.vet. Claudia Pastor Tierärztin",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Brüsseler Str. 52A, Berlin",
+    "address": "Brüsseler Str. 52A, 13353 Berlin",
     "coordinates": {
       "lat": 52.54868,
       "lng": 13.3531601
@@ -2651,7 +2628,7 @@
     "practice_name": "Dr. med. vet. Claudia Handke",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Danziger Str. 15, Berlin",
+    "address": "Danziger Str. 15, 10435 Berlin",
     "coordinates": {
       "lat": 52.5407316,
       "lng": 13.4157091
@@ -2675,7 +2652,7 @@
     "practice_name": "Dr.med.vet. Wolfgang Beck veterinarian",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Weichselstraße 25, Berlin",
+    "address": "Weichselstraße 25, 12045 Berlin",
     "coordinates": {
       "lat": 52.4869708,
       "lng": 13.4367711
@@ -2700,7 +2677,7 @@
     "practice_name": "Kleintierpraxis im Kiez - TA Jörg Saecker",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Pohlstraße 69, Berlin",
+    "address": "Pohlstraße 69, 10785 Berlin",
     "coordinates": {
       "lat": 52.5008191,
       "lng": 13.3628081
@@ -2724,7 +2701,7 @@
     "practice_name": "Veterinary practice Friedrichshain Sabine Heidel",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Auerstraße 44, Berlin",
+    "address": "Auerstraße 44, 10249 Berlin",
     "coordinates": {
       "lat": 52.5209184,
       "lng": 13.4462681
@@ -2748,7 +2725,7 @@
     "practice_name": "Tierarztpraxis Dr. Peter Vogel",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Finowstraße 14, Berlin",
+    "address": "Finowstraße 14, 10247 Berlin",
     "coordinates": {
       "lat": 52.5114026,
       "lng": 13.4666047
@@ -2772,7 +2749,7 @@
     "practice_name": "Veterinary practice E. Laskawy",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Bänschstraße 58, Berlin",
+    "address": "Bänschstraße 58, 10247 Berlin",
     "coordinates": {
       "lat": 52.5176605,
       "lng": 13.4663371
@@ -2796,7 +2773,7 @@
     "practice_name": "Rex Tierarztpraxis Berlin-Friedrichshain",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Revaler Str. 17, Berlin",
+    "address": "Revaler Str. 17, 10245 Berlin",
     "coordinates": {
       "lat": 52.5072059,
       "lng": 13.4575494
@@ -2820,7 +2797,7 @@
     "practice_name": "Tierarztpraxis Rotgang",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "",
+    "address": "Greifswalder Str: 21, 10405 Berlin",
     "coordinates": {
       "lat": 52.5310183,
       "lng": 13.4278352
@@ -2844,7 +2821,7 @@
     "practice_name": "Tierarztpraxis Oldenburger Straße",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Oldenburger Str. 44, Berlin",
+    "address": "Oldenburger Str. 44, 10551 Berlin",
     "coordinates": {
       "lat": 52.5289304,
       "lng": 13.3357299
@@ -2868,7 +2845,7 @@
     "practice_name": "Tierarztpraxis am Südkreuz",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Gustav-Müller-Straße 19, Berlin",
+    "address": "Gustav-Müller-Straße 19, 10829 Berlin",
     "coordinates": {
       "lat": 52.4808667,
       "lng": 13.3621523
@@ -2892,7 +2869,7 @@
     "practice_name": "DER TIERARZT Dr. Theobald in Schöneberg",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "Eisenacher Str. 40, Berlin",
+    "address": "Eisenacher Str. 40, 10781 Berlin",
     "coordinates": {
       "lat": 52.4898995,
       "lng": 13.3487913
@@ -2916,7 +2893,7 @@
     "practice_name": "Die Hamburger Tierärzte - Dr. med. vet. Ulf Krohn und Florian Grosser - Praxis für kleine Haustiere",
     "city": "Hamburg",
     "district": "Hohenfelde",
-    "address": "Lübecker Str. 128 U-Bahn Wartenau U 1, Hamburg",
+    "address": "Lübecker Str. 128 U-Bahn Wartenau U 1, 22087 Hamburg",
     "coordinates": {
       "lat": 53.5635992,
       "lng": 10.0345325
@@ -2939,7 +2916,7 @@
     "practice_name": "Kleintierzentrum Kotzian",
     "city": "Hamburg",
     "district": "Alsterdorf",
-    "address": "Alsterdorfer Str. 255A, Hamburg",
+    "address": "Alsterdorfer Str. 255A, 22297 Hamburg",
     "coordinates": {
       "lat": 53.6082228,
       "lng": 10.0052354
@@ -2962,7 +2939,7 @@
     "practice_name": "Tierklinik Fuhlsbüttel",
     "city": "Hamburg",
     "district": "Fuhlsbüttel",
-    "address": "Farnstraße 41, Hamburg",
+    "address": "Farnstraße 41, 22335 Hamburg",
     "coordinates": {
       "lat": 53.6327356,
       "lng": 10.0210687
@@ -2985,7 +2962,7 @@
     "practice_name": "AniCura Hamburg Niendorf GmbH",
     "city": "Hamburg",
     "district": "Niendorf",
-    "address": "Garstedter Weg 274, Hamburg",
+    "address": "Garstedter Weg 274, 22455 Hamburg",
     "coordinates": {
       "lat": 53.6387008,
       "lng": 9.9699341
@@ -3008,7 +2985,7 @@
     "practice_name": "Dr.med.vet. Bergit Grünau",
     "city": "Hamburg",
     "district": "Winterhude",
-    "address": "Dorotheenstraße 63, Hamburg",
+    "address": "Dorotheenstraße 63, 22301 Hamburg",
     "coordinates": {
       "lat": 53.5836,
       "lng": 10.0071901
@@ -3031,7 +3008,7 @@
     "practice_name": "Veterinarian Dr. Eva Tutlies",
     "city": "Hamburg",
     "district": "Billstedt",
-    "address": "Schiffbeker Weg 46, Hamburg",
+    "address": "Schiffbeker Weg 46, 22119 Hamburg",
     "coordinates": {
       "lat": 53.5444343,
       "lng": 10.1047443
@@ -3054,7 +3031,7 @@
     "practice_name": "ProPferd Hamburg Pferdeosteopathie & mobiler Reitunterricht",
     "city": "Hamburg",
     "district": "Unknown",
-    "address": "",
+    "address": "Dorfstraße 6, 25451 Quickborn",
     "coordinates": {
       "lat": 53.5488282,
       "lng": 9.987170299999999
@@ -3077,7 +3054,7 @@
     "practice_name": "Veterinary Medical Center Europe",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "2928, Vogelweh",
+    "address": "Frankfurt am Main",
     "coordinates": {
       "lat": 50.1109221,
       "lng": 8.6821267
@@ -3097,35 +3074,11 @@
     "community_status": "Verified"
   },
   {
-    "id": "Mainz-70",
-    "practice_name": "VetCare Tierarzt Kaiserslautern",
-    "city": "Mainz",
-    "district": "Unknown",
-    "address": "Mainzer Str. 65",
-    "coordinates": {
-      "lat": 49.9928617,
-      "lng": 8.2472526
-    },
-    "contact": {
-      "phone": "0631 31039705",
-      "website": "https://www.google.com/maps/place/VetCare+Tierarzt+Kaiserslautern/data=!4m7!3m6!1s0x47961343da71e405:0x41550cf6378e74b1!8m2!3d49.451713!4d7.7843013!16s%2Fg%2F11y7fb7ly4!19sChIJBeRx2kMTlkcRsXSON_YMVUE?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"and made us feel at ease.\"",
-        "Confirmed via Google Review: \"English and made us feel at ease.\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Frankfurt-71",
     "practice_name": "Tierarztpraxis Andres De Lima",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Auf d. Pick 2b",
+    "address": "Frankfurt am Main",
     "coordinates": {
       "lat": 50.1109221,
       "lng": 8.6821267
@@ -3144,34 +3097,11 @@
     "community_status": "Verified"
   },
   {
-    "id": "Frankfurt-72",
-    "practice_name": "Clinique Vétérinaire Bereldange",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "29 Am Becheler",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "+352 33 40 33 1",
-      "website": "https://www.google.com/maps/place/Clinique+V%C3%A9t%C3%A9rinaire+Bereldange/data=!4m7!3m6!1s0x47954e565f5ed8a9:0x4c90f837c091be46!8m2!3d49.6546!4d6.12443!16s%2Fg%2F1td2sv82!19sChIJqdheX1ZOlUcRRr6RwDf4kEw?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"English speaking , competent\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Frankfurt-73",
     "practice_name": "Animal Hospital Hofheim GbR",
-    "city": "Frankfurt",
+    "city": "Hofheim",
     "district": "Unknown",
-    "address": "Katharina-Kemmler-Straße 7",
+    "address": "Katharina-Kemmler-Straße 7, 65719 Hofheim am Taunus",
     "coordinates": {
       "lat": 50.0896786,
       "lng": 8.4623423
@@ -3195,7 +3125,7 @@
     "practice_name": "Animova Veterinarian - Tierarzt",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Daimlerstraße 7",
+    "address": "Frankfurt am Main",
     "coordinates": {
       "lat": 50.1109221,
       "lng": 8.6821267
@@ -3219,7 +3149,7 @@
     "practice_name": "Vet. Med. Praxis Bitburg",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Rautenberg 1 b",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1109221,
       "lng": 8.6821267
@@ -3239,34 +3169,11 @@
     "community_status": "Verified"
   },
   {
-    "id": "Frankfurt-76",
-    "practice_name": "Cabinet Vétérinaire Christnach",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "2 Um Bierg",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "+352 26 87 06 03",
-      "website": "https://www.google.com/maps/place/Cabinet+V%C3%A9t%C3%A9rinaire+Christnach/data=!4m7!3m6!1s0x4795590d0f3cfe23:0x5676b022f13c3c3c!8m2!3d49.7899085!4d6.2725081!16s%2Fg%2F1tffhq77!19sChIJI_48Dw1ZlUcRPDw88SKwdlY?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"spoke 4 languages including\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Frankfurt-77",
     "practice_name": "Small veterinary practice Dr. Barth",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Jahnstraße 80",
+    "address": "Am Wiesenhof 57, 60529 Frankfurt am Main",
     "coordinates": {
       "lat": 49.8600795,
       "lng": 8.6598085
@@ -3289,7 +3196,7 @@
     "practice_name": "Dr. med. vet. Tilman Michelberger",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Kindsbacher Str. 9",
+    "address": "Frankfurt am Main",
     "coordinates": {
       "lat": 50.1109221,
       "lng": 8.6821267
@@ -3313,7 +3220,7 @@
     "practice_name": "Dr. med. vet. Otto Doermer",
     "city": "Frankfurt",
     "district": "Sachsenhausen",
-    "address": "Mörfelder Landstraße 98",
+    "address": "Mörfelder Landstraße 98, 60598 Frankfurt am Main",
     "coordinates": {
       "lat": 50.0968403,
       "lng": 8.6835219
@@ -3336,7 +3243,7 @@
     "practice_name": "Kleintierpraxis Dr. Corinne Martin",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Häusserstraße 36",
+    "address": "Häusserstraße 36, 69115 Heidelberg",
     "coordinates": {
       "lat": 49.4000822,
       "lng": 8.6886929
@@ -3356,34 +3263,11 @@
     "community_status": "Verified"
   },
   {
-    "id": "Frankfurt-81",
-    "practice_name": "Vetcare, veterinarian practice",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "62a Grand-Rue",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "+352 28 79 07 90",
-      "website": "https://www.google.com/maps/place/Vetcare,+veterinarian+practice/data=!4m7!3m6!1s0x4795487cd66a88ef:0xfa83cf878624eed8!8m2!3d49.5392712!4d6.1441315!16s%2Fg%2F1tj2md9t!19sChIJ74hq1nxIlUcR2O4khofPg_o?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"English speaking\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Frankfurt-82",
     "practice_name": "Tierarztpraxis Dr. Kindler AniCura Wiesbaden Schierstein GmbH",
-    "city": "Frankfurt",
+    "city": "Wiesbaden",
     "district": "Unknown",
-    "address": "Saarbrücker Allee 7",
+    "address": "Saarbrücker Allee 7, 65201 Wiesbaden",
     "coordinates": {
       "lat": 50.0459109,
       "lng": 8.2048268
@@ -3407,7 +3291,7 @@
     "practice_name": "Dr. Müller, Dr. Rohmer und Dr. Falkenhorst Tierarztpraxis",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Merscheider Weg 1",
+    "address": "60437 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1109221,
       "lng": 8.6821267
@@ -3431,7 +3315,7 @@
     "practice_name": "Armin Drexler",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Heinzenberg 22",
+    "address": "Eschersheimer Landstraße 18, 60322 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1109221,
       "lng": 8.6821267
@@ -3454,7 +3338,7 @@
     "practice_name": "Kleintierpraxis Moseltal - Tierarzt",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Am Dreiländereck 11",
+    "address": "Am Dreiländereck 11, 66706 Perl",
     "coordinates": {
       "lat": 49.4736753,
       "lng": 6.372421
@@ -3477,7 +3361,7 @@
     "practice_name": "Kleintierpraxis Maifeld Kathrin Bau",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "August-Horch-Straße 19",
+    "address": "August-Horch-Straße 19, 56751 Polch",
     "coordinates": {
       "lat": 50.3055921,
       "lng": 7.3255195
@@ -3500,7 +3384,7 @@
     "practice_name": "Tierarztpraxis Susann Gaudlitz - Bad Vilbel",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Wilhelmstraße 22",
+    "address": "Wilhelmstraße 22, 61118 Bad Vilbel",
     "coordinates": {
       "lat": 50.186915,
       "lng": 8.740145499999999
@@ -3519,37 +3403,14 @@
     "community_status": "Verified"
   },
   {
-    "id": "Frankfurt-88",
-    "practice_name": "Tierarztpraxis Dr. Roger Bour & Dr. Claudia Thiel-Bour",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Innerer Schwarzenbacher Ring 1",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "09193 508750",
-      "website": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Roger+Bour+%26+Dr.+Claudia+Thiel-Bour/data=!4m7!3m6!1s0x47a21ab8b73c5c3f:0x2ac7cbdb54708751!8m2!3d49.6934983!4d10.8027143!16s%2Fg%2F12m9j3dym!19sChIJP1w8t7gaokcRUYdwVNvLxyo?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Verified English Support"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Frankfurt-89",
     "practice_name": "Veterinary practice Galina Schirow GmbH",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Bartningallee 5",
+    "city": "Berlin",
+    "district": "Moabit",
+    "address": "Alt-Moabit 73, 10555 Berlin",
     "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
+      "lat": 52.5190267,
+      "lng": 13.3427188
     },
     "contact": {
       "phone": "030 39886966",
@@ -3565,35 +3426,11 @@
     "community_status": "Verified"
   },
   {
-    "id": "Frankfurt-90",
-    "practice_name": "Veterinární Klinika Nusle - Schwetter a kol.",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Boleslavova 1525/20",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "+420 241 401 000",
-      "website": "https://www.google.com/maps/place/Veterin%C3%A1rn%C3%AD+Klinika+Nusle+-+Schwetter+a+kol./data=!4m7!3m6!1s0x470b947c7161e0b1:0xf9afe1b6e7274b39!8m2!3d50.0635282!4d14.4373438!16s%2Fg%2F1td5dvbz!19sChIJseBhcXyUC0cROUsn57bhr_k?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"stuff and comfortable working hours\"",
-        "Confirmed via Google Review: \"English speaking stuff and comfortable working hours\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Frankfurt-91",
     "practice_name": "AniCura Tierklinik Frankfurt",
     "city": "Frankfurt",
     "district": "Bockenheim",
-    "address": "Juliusstraße 12",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main",
     "coordinates": {
       "lat": 50.123563,
       "lng": 8.644867999999999
@@ -3617,7 +3454,7 @@
     "practice_name": "Katzenklinik Frankfurt",
     "city": "Frankfurt",
     "district": "Bockenheim",
-    "address": "Juliusstraße 12",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1233763,
       "lng": 8.6451181
@@ -3641,7 +3478,7 @@
     "practice_name": "Dr. Gabriele Schoenert-Wißfeld",
     "city": "Frankfurt",
     "district": "Nordend",
-    "address": "Schlosserstraße 21",
+    "address": "Schlosserstraße 21, 60322 Frankfurt am Main",
     "coordinates": {
       "lat": 50.13127,
       "lng": 8.6817896
@@ -3665,7 +3502,7 @@
     "practice_name": "Tierärztliche Klinik Für Kleintiere",
     "city": "Frankfurt",
     "district": "Bockenheim",
-    "address": "Juliusstraße 12",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1235577,
       "lng": 8.6448334
@@ -3688,7 +3525,7 @@
     "practice_name": "Deutsche Gesellschaft für Mauersegler e. V.",
     "city": "Frankfurt",
     "district": "Fechenheim",
-    "address": "Buchenstraße 9",
+    "address": "Buchenstraße 9, 65933 Frankfurt am Main",
     "coordinates": {
       "lat": 50.0957969,
       "lng": 8.6060175
@@ -3712,7 +3549,7 @@
     "practice_name": "Kleintierpraxis Sachsenhausen",
     "city": "Frankfurt",
     "district": "Sachsenhausen",
-    "address": "Waidmannstraße 2",
+    "address": "Waidmannstraße 2, 60596 Frankfurt am Main",
     "coordinates": {
       "lat": 50.09535409999999,
       "lng": 8.6702789
@@ -3733,9 +3570,9 @@
   {
     "id": "Frankfurt-97",
     "practice_name": "Kleintierpraxis Dr. Blendinger",
-    "city": "Frankfurt",
+    "city": "Hofheim",
     "district": "Unknown",
-    "address": "Robert-Bosch-Straße 12",
+    "address": "Robert-Bosch-Straße 12, 65719 Hofheim am Taunus",
     "coordinates": {
       "lat": 50.0646627,
       "lng": 8.3877711
@@ -3758,7 +3595,7 @@
     "practice_name": "Dr.med.vet. Kirsten König Tierärztin",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Riedstraße 60",
+    "address": "Riedstraße 60, 65439 Flörsheim am Main",
     "coordinates": {
       "lat": 50.0188307,
       "lng": 8.4366653
@@ -3781,7 +3618,7 @@
     "practice_name": "Cats Only veterinary practice for Cats",
     "city": "Hamburg",
     "district": "Eppendorf",
-    "address": "Eppendorfer Weg 50",
+    "address": "Eppendorfer Weg 50, 20259 Hamburg",
     "coordinates": {
       "lat": 53.5715083,
       "lng": 9.9588278
@@ -3804,7 +3641,7 @@
     "practice_name": "Dr. Nicolai Mannstaedt veterinarian",
     "city": "Hamburg",
     "district": "Neugraben",
-    "address": "Neugrabener Bahnhofstraße 5A",
+    "address": "Neugrabener Bahnhofstraße 5A, 21149 Hamburg",
     "coordinates": {
       "lat": 53.4731841,
       "lng": 9.854593099999999
@@ -3827,7 +3664,7 @@
     "practice_name": "Flynn Family Medicine",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Schulstraße 2",
+    "address": "Schulstraße 2, 60594 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1054571,
       "lng": 8.6873342
@@ -3846,34 +3683,11 @@
     "community_status": "Verified"
   },
   {
-    "id": "Frankfurt-128",
-    "practice_name": "Veterinary Clinic Jičínská 47",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Jičínská 1787/47",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "+420 777 469 530",
-      "website": "http://www.premiumvet.cz/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"speak English and are helpful.\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Frankfurt-129",
     "practice_name": "Tierhotel Rhein-Main",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Teichstraße 201",
+    "address": "Teichstraße, 60594 Frankfurt am Main-Frankfurt-Süd",
     "coordinates": {
       "lat": 50.1030275,
       "lng": 8.694155
@@ -3896,7 +3710,7 @@
     "practice_name": "Clinic of Small Animal Surgery and Reproduction",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Veterinärstraße 13",
+    "address": "Veterinärstraße 13, 80539 München",
     "coordinates": {
       "lat": 48.15208029999999,
       "lng": 11.5870728
@@ -3919,7 +3733,7 @@
     "practice_name": "Tierarztpraxis Dr. Cornelia Maul and Dr. Sabine Herget",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Schwarzstraße 3",
+    "address": "Schwarzstraße 3, 81669 München",
     "coordinates": {
       "lat": 48.1292349,
       "lng": 11.5861193
@@ -3942,7 +3756,7 @@
     "practice_name": "Tierklinik Oberhaching",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Bajuwarenring 10",
+    "address": "Bajuwarenring 10, 82041 Oberhaching",
     "coordinates": {
       "lat": 48.0320052,
       "lng": 11.5825403
@@ -3965,7 +3779,7 @@
     "practice_name": "Felmo Mobiler Tierarzt München",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Am Moosfeld 13",
+    "address": "Am Moosfeld 13, 81829 München",
     "coordinates": {
       "lat": 48.134753,
       "lng": 11.658236
@@ -3988,7 +3802,7 @@
     "practice_name": "AniCura Tierklinik Haar",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Keferloher Str. 25",
+    "address": "Keferloher Str. 25, 85540 Haar",
     "coordinates": {
       "lat": 48.11226809999999,
       "lng": 11.71571
@@ -4011,7 +3825,7 @@
     "practice_name": "Tierarztpraxis München Laim Dr. med. vet. Ursula Link",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Agnes-Bernauer-Straße 178",
+    "address": "Agnes-Bernauer-Straße 178, 80687 München",
     "coordinates": {
       "lat": 48.1417635,
       "lng": 11.4852651
@@ -4034,7 +3848,7 @@
     "practice_name": "Kleintierpraxis Dr. Ernst",
     "city": "Stuttgart",
     "district": "Unknown",
-    "address": "Birkenwaldstraße 214",
+    "address": "Birkenwaldstraße 214, 70191 Stuttgart",
     "coordinates": {
       "lat": 48.7984113,
       "lng": 9.175696799999999
@@ -4057,7 +3871,7 @@
     "practice_name": "Felmo Mobiler Tierarzt Stuttgart",
     "city": "Stuttgart",
     "district": "Unknown",
-    "address": "Agnesstraße 17",
+    "address": "Agnesstraße 17, 70597 Stuttgart",
     "coordinates": {
       "lat": 48.7520867,
       "lng": 9.1751811
@@ -4103,7 +3917,7 @@
     "practice_name": "Dr. med. vet. Erika Christiansen, Ingrid Kucher, Lehel Kooš GbR",
     "city": "Stuttgart",
     "district": "Unknown",
-    "address": "Südliche Alleenstraße 6",
+    "address": "Südliche Alleenstraße 6, 71679 Asperg",
     "coordinates": {
       "lat": 48.9042302,
       "lng": 9.1471244
@@ -4126,7 +3940,7 @@
     "practice_name": "Kleintierpraxis am Wasserturm, JCS Tierarzt Rutesheim GmbH",
     "city": "Stuttgart",
     "district": "Unknown",
-    "address": "Drescherstraße 53",
+    "address": "Drescherstraße 53, 71277 Rutesheim",
     "coordinates": {
       "lat": 48.8103808,
       "lng": 8.927621

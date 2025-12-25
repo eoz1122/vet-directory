@@ -9,13 +9,14 @@ def clean_vets_data(file_path):
     
     cleaned_vets = []
     
-    # 1. Non-German Cities Removal List (Add specific ones known or generalized)
-    # Using a simple blocklist for now based on user request "Luxembourg-based entries"
-    # Also checking if address implies a different country
-    non_german_indicators = ["Luxembourg", "L-", "Bereldange", "Christnach"] 
+    # 1. Non-German Countries/Cities Removal List
+    non_german_indicators = [
+        "Luxembourg", "L-", "Bereldange", "Christnach", "Luxemburg",
+        "Czech Republic", "Prague", "Praha", "Prag", "Nusle", "Jičínská",
+        "Switzerland", "Austria", "Österreich", "Schweiz", "Kaiserslautern"
+    ] 
     
     # 2. Strict City Validation - Suburb mapping
-    # Map suburb keywords to new City Names
     suburb_map = {
         "Hofheim": "Hofheim",
         "Wiesbaden": "Wiesbaden",
@@ -33,43 +34,56 @@ def clean_vets_data(file_path):
         # Check for Non-German entries
         is_german = True
         address = vet.get('address', '') or ''
-        # Assume "Germany" is default, check for explicit non-german indicators
+        city = vet.get('city', '') or ''
+        practice_name = vet.get('practice_name', '') or ''
+        
+        # 1. Check for non-german indicators in address/city/name
         for indicator in non_german_indicators:
-            if indicator.lower() in address.lower() or indicator.lower() in vet.get('city', '').lower():
+            if (indicator.lower() in address.lower() or 
+                indicator.lower() in city.lower() or 
+                indicator.lower() in practice_name.lower()):
                 is_german = False
-                print(f"Removing non-German entry: {vet['practice_name']} ({address})")
+                print(f"Removing non-German/Incompatible entry: {practice_name} ({address})")
                 break
+        
+        # 2. Check for non-german phone numbers (+420, +352, +43, +41)
+        phone = (vet.get('contact', {}) or {}).get('phone', '') or ''
+        if phone:
+            if phone.startswith('+420') or phone.startswith('+352') or phone.startswith('+43') or phone.startswith('+41'):
+                is_german = False
+                print(f"Removing non-German phone entry: {practice_name} ({phone})")
         
         if not is_german:
             continue
 
-        # Modify Vet object in place
-        
-        # 2. Update City if it's a suburb
+        # 3. Clean up "City name only" addresses unless mobile
+        if address.strip().lower() == city.strip().lower() or not address:
+            if "mobile" not in practice_name.lower() and "felmo" not in practice_name.lower():
+                print(f"Skipping entry with missing address: {practice_name}")
+                continue
+            else:
+                # Standardize mobile address
+                vet['address'] = f"Mobile Service - {city}"
+
+        # 4. Update City if it's a suburb
         for suburb, new_city in suburb_map.items():
             if suburb in address:
-                if vet['city'] == 'Frankfurt': # Typically these are lumped into Frankfurt
+                if vet['city'] == 'Frankfurt': 
                     print(f"Moving {vet['practice_name']} from Frankfurt to {new_city}")
                     vet['city'] = new_city
-                    # Also update ID if it starts with Frankfurt? Maybe safer to leave ID alone to avoid breaking things, 
-                    # but user didn't specify. I'll leave ID alone for now to be safe.
 
-        # 3. Clean up english_signals (acting as quotes)
+        # 5. Clean up english_signals (acting as quotes)
         if 'verification' in vet and 'english_signals' in vet['verification']:
             signals = vet['verification']['english_signals']
             new_signals = []
             for sig in signals:
-                # Remove URL quotes
                 if 'http' in sig or 'gstatic.com' in sig:
-                    print(f"Removing URL signal for {vet['practice_name']}")
                     continue
                     
-                # Remove opening hours and metadata patterns
-                # Common trash patterns from automated scraping
                 trash_patterns = [
                     r"·", r"Opens?\s*[0-9]", r"Closes?\s*[0-9]", 
                     r"[0-9]+\s*am", r"[0-9]+\s*pm", 
-                    r"[0-9]+:[0-9]+", # Catch times
+                    r"[0-9]+:[0-9]+",
                     r"Confirmed via Google Review: \"\.\"",
                     r"Confirmed via Google Review: \"\s*\"",
                     r"Open\s*24\s*hours",
@@ -82,18 +96,13 @@ def clean_vets_data(file_path):
                         break
                 
                 if is_trash:
-                    print(f"Removing trash signal: '{sig}' for {vet['practice_name']}")
                     continue
 
-                # Remove short or truncated meaningless quotes
                 clean_sig = sig.replace("Confirmed via Google Review: ", "").strip(' "')
                 if len(clean_sig) < 10:
-                    # Unless it's a very specific positive signal like "English"
                     if "english" not in clean_sig.lower():
-                        print(f"Removing short meaningless signal '{sig}' for {vet['practice_name']}")
                         continue
 
-                # Remove specific truncated endings like "spoke to me in" or "if German is not"
                 truncated_patterns = [
                     r"in$", r"your$", r"is not$", r"with us$"
                 ]
@@ -103,50 +112,26 @@ def clean_vets_data(file_path):
                         break
                 
                 if is_trash:
-                     print(f"Removing truncated signal: '{sig}' for {vet['practice_name']}")
                      continue
 
-                # Add valid signal
                 new_signals.append(sig)
             
-            # If we removed everything but it is Verified, add "Verified English Support"
             if not new_signals and vet.get('community_status') == 'Verified':
                 new_signals.append("Verified English Support")
             
             vet['verification']['english_signals'] = new_signals
 
-        # 4. Address Sanitization
-        # Remove "U-Bahn info", "Floor info", parentheses with directions
-        # Regex to remove content in parentheses if it looks like directions/floor/metadata
-        # or simple heuristics.
-        # Removing patterns like: " (U-Bahn ...)", " (1st floor)", etc.
-        # But we need to be careful not to remove "(Friedrichshain)" which is the district.
-        
-        # Strategy: Remove specific phrases
+        # 6. Address Sanitization
         if address:
-            # Common distraction patterns
             distractions = [
-                r"\(near.*\)",
-                r"\(U-Bahn.*\)",
-                r"\(S-Bahn.*\)",
-                r"\(Tram.*\)",
-                r"[0-9]+\.?\s*Floor",
-                r"[0-9]+\.?\s*Etage",
-                r"Hinterhof",
-                r"Vorderhaus",
-                r"c/o.*"
+                r"\(near.*\)", r"\(U-Bahn.*\)", r"\(S-Bahn.*\)", r"\(Tram.*\)",
+                r"[0-9]+\.?\s*Floor", r"[0-9]+\.?\s*Etage", r"Hinterhof",
+                r"Vorderhaus", r"c/o.*"
             ]
-            
-            original_addr = address
             for pattern in distractions:
                 address = re.sub(pattern, "", address, flags=re.IGNORECASE)
-            
-            # Clean up extra spaces
             address = re.sub(r'\s+', ' ', address).strip()
-            
-            if address != original_addr:
-                print(f"Sanitized address: '{original_addr}' -> '{address}'")
-                vet['address'] = address
+            vet['address'] = address
 
         cleaned_vets.append(vet)
 
