@@ -15,7 +15,13 @@ def fix_districts():
         "VetZentrum Hafencity": "Hafencity",
         "Medivet Tierarztpraxis Hamburg-Stellingen": "Stellingen",
         "Dr. med. vet. Eva Tutlies": "Billstedt",
-        "Dr. med. vet. Nicolai Mannstaedt": "Neugraben"
+        "Veterinarian Dr. Eva Tutlies": "Billstedt",
+        "Dr. med. vet. Nicolai Mannstaedt": "Neugraben",
+        "Die Hamburger Tierärzte": "Hohenfelde",
+        "Kleintierzentrum Kotzian": "Alsterdorf",
+        "Tierklinik Fuhlsbüttel": "Fuhlsbüttel",
+        "AniCura Hamburg Niendorf": "Niendorf",
+        "Dr.med.vet. Bergit Grünau": "Winterhude"
     }
 
     updated = 0
@@ -24,15 +30,22 @@ def fix_districts():
             name = v.get('practice_name', '')
             address = v.get('address', '')
             
-            # Check by name first
-            if name in mappings:
-                v['district'] = mappings[name]
-                updated += 1
-                continue
+            # Check by name substring
+            found_mapping = False
+            for key, dist in mappings.items():
+                if key.lower() in name.lower():
+                    v['district'] = dist
+                    updated += 1
+                    found_mapping = True
+                    break
+            if found_mapping: continue
             
-            # Try to infer from name or address
+            # Try to infer from name or address keywords
             found = False
-            for key in ["Nordend", "Ostend", "Bramfeld", "Hummelsbüttel", "Pankow", "Bockenheim", "Stellingen", "Billstedt", "Hafencity", "Neugraben", "Eppendorf", "Winterhude", "Altona", "Eimsbüttel"]:
+            keywords = ["Nordend", "Ostend", "Bramfeld", "Hummelsbüttel", "Pankow", "Bockenheim", 
+                        "Stellingen", "Billstedt", "Hafencity", "Neugraben", "Eppendorf", 
+                        "Winterhude", "Altona", "Eimsbüttel", "Niendorf", "Alsterdorf", "Fuhlsbüttel"]
+            for key in keywords:
                 if key.lower() in name.lower() or key.lower() in address.lower():
                     v['district'] = key
                     updated += 1

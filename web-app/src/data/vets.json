@@ -1741,9 +1741,10 @@
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-25",
       "english_signals": [
-        "Verified English Support"
+        "Verified English Support",
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png The was friendly, experienced, and could commu...\""
       ]
     },
     "community_status": "Verified"
@@ -1788,9 +1789,10 @@
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-25",
       "english_signals": [
-        "Verified English Support"
+        "Verified English Support",
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Really friendly staff and nice doctors who spe...\""
       ]
     },
     "community_status": "Verified"
@@ -1811,9 +1813,10 @@
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-25",
       "english_signals": [
-        "Verified English Support"
+        "Verified English Support",
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Wonderful, caring, English-speaking doctor.\""
       ]
     },
     "community_status": "Verified"
@@ -2227,9 +2230,10 @@
     },
     "verification": {
       "ai_score": 80,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-25",
       "english_signals": [
-        "Verified English Support"
+        "Verified English Support",
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png She spoke very very good English and she was k...\""
       ]
     },
     "community_status": "Verified"
@@ -2930,6 +2934,167 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Excellent , friendly and s...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-95",
+    "practice_name": "Die Hamburger Tierärzte - Dr. med. vet. Ulf Krohn und Florian Grosser - Praxis für kleine Haustiere",
+    "city": "Hamburg",
+    "district": "Hohenfelde",
+    "address": "Lübecker Str. 128 U-Bahn Wartenau U 1, Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "040 2202331",
+      "website": "http://www.dht.hamburg/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Efficient and they speak English and even Port...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-96",
+    "practice_name": "Kleintierzentrum Kotzian",
+    "city": "Hamburg",
+    "district": "Alsterdorf",
+    "address": "Alsterdorfer Str. 255A, Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "040 5110707",
+      "website": "http://www.tierklinik-kotzian.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Good service in English\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-97",
+    "practice_name": "Tierklinik Fuhlsbüttel",
+    "city": "Hamburg",
+    "district": "Fuhlsbüttel",
+    "address": "Farnstraße 41, Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "040 592859",
+      "website": "https://www.tierarztfuhlsbuettel.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png They provide all kinds of support including th...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-98",
+    "practice_name": "AniCura Hamburg Niendorf GmbH",
+    "city": "Hamburg",
+    "district": "Niendorf",
+    "address": "Garstedter Weg 274, Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "040 55204088",
+      "website": "https://www.anicura.de/standorte/hamburg-niendorf/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Everyone is fluent in English and were very he...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-99",
+    "practice_name": "Dr.med.vet. Bergit Grünau",
+    "city": "Hamburg",
+    "district": "Winterhude",
+    "address": "Dorotheenstraße 63, Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "040 482844",
+      "website": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"https://ssl.gstatic.com/local/servicebusiness/default_user.png Speaks English is a bonus\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-100",
+    "practice_name": "Veterinarian Dr. Eva Tutlies",
+    "city": "Hamburg",
+    "district": "Billstedt",
+    "address": "Schiffbeker Weg 46, Hamburg",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "040 7313231",
+      "website": "http://www.kleintierpraxis-tutlies.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png English was very good which I really appreciat...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-101",
+    "practice_name": "ProPferd Hamburg Pferdeosteopathie & mobiler Reitunterricht",
+    "city": "Hamburg",
+    "district": "Unknown",
+    "address": "",
+    "coordinates": {
+      "lat": 0,
+      "lng": 0
+    },
+    "contact": {
+      "phone": "0174 4929182",
+      "website": "http://www.propferdhamburg.com/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Fantastic service and English speaking too.\""
       ]
     },
     "community_status": "Verified"
