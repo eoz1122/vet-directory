@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import TableOfContents from '../components/TableOfContents';
+import RelatedPosts from '../components/RelatedPosts';
 
 export default function EUPetPassport() {
     return (
@@ -15,29 +19,8 @@ export default function EUPetPassport() {
             </Helmet>
 
             {/* Header / Nav */}
-            <header className="sticky top-0 z-50 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
-                <div className="max-w-4xl mx-auto flex justify-between items-center flex-wrap gap-4">
-                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                        <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-16 w-auto" />
-                        <span>EnglishSpeaking<span className="text-accent">Vets</span></span>
-                    </Link>
-
-                    {/* Desktop Nav Links */}
-                    <div className="hidden md:flex gap-4 text-sm font-semibold text-primary/70">
-                        <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/" className="hover:text-accent transition-colors">Directory</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                    </div>
-
-                    {/* Mobile Back Link */}
-                    <div className="md:hidden">
-                        <Link to="/" className="text-sm font-semibold hover:text-accent transition-colors flex items-center gap-1">
-                            <span className="text-xl">🐾</span> Directory
-                        </Link>
-                    </div>
-                </div>
-            </header>
+            {/* Header / Nav */}
+            <Header />
 
             <main className="max-w-3xl mx-auto p-6 md:p-12 relative z-10">
                 <article className="prose prose-stone prose-lg max-w-none text-primary/90">
@@ -45,6 +28,15 @@ export default function EUPetPassport() {
                     <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
                         EU Pet Passports: <br />Why You Need One and How to Get It
                     </h1>
+
+                    <TableOfContents items={[
+                        { id: 'what-is-it', label: 'What Is an EU Pet Passport?' },
+                        { id: 'why-need-one', label: 'Why You Need One (vs. Certificates)' },
+                        { id: 'cost', label: 'How Much Does It Cost? (2025)' },
+                        { id: 'how-to', label: 'How to Get One (Step-by-Step)' },
+                        { id: 'tapeworm', label: 'Special Rule: The Tapeworm Treatment' },
+                        { id: 'travel-back', label: 'Traveling to UK/USA?' }
+                    ]} />
 
                     <p className="lead text-xl italic text-primary/70 mb-8 border-l-4 border-accent pl-4">
                         You've made it to Germany. You cleared customs with your pet's health certificate, survived the flight, and finally collapsed on your new sofa with your furry companion. Congratulations!
@@ -59,7 +51,7 @@ export default function EUPetPassport() {
                     </p>
 
                     <div className="bg-primary/5 p-8 rounded-2xl shadow-sm my-8 border border-primary/10">
-                        <h2 className="text-2xl font-bold text-primary mb-4 mt-0">What Is an EU Pet Passport?</h2>
+                        <h2 id="what-is-it" className="text-2xl font-bold text-primary mb-4 mt-0 scroll-mt-24">What Is an EU Pet Passport?</h2>
                         <p>
                             The EU Pet Passport is your pet's official travel document for movement within the European Union and certain neighbouring countries.
                         </p>
@@ -77,7 +69,7 @@ export default function EUPetPassport() {
                         </p>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">Why You Need One (and Why It Beats Health Certificates)</h2>
+                    <h2 id="why-need-one" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Why You Need One (and Why It Beats Health Certificates)</h2>
                     <p>
                         Imagine you're living in <Link to="/vets/berlin" className="text-accent hover:underline">Berlin</Link> and decide to drive to Prague for the weekend.
                     </p>
@@ -105,7 +97,7 @@ export default function EUPetPassport() {
                         <li><strong>Cost-effective</strong> — a one-time fee instead of repeated certificates</li>
                     </ul>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">How Much Does It Cost?</h2>
+                    <h2 id="cost" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">How Much Does It Cost?</h2>
                     <p>In 2025, expect to pay approximately:</p>
                     <div className="bg-white p-6 rounded-xl shadow-sm border border-primary/5 my-6">
                         <ul className="list-none pl-0 space-y-2 mb-4">
@@ -117,7 +109,7 @@ export default function EUPetPassport() {
                         </p>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">How to Get an EU Pet Passport (Step by Step)</h2>
+                    <h2 id="how-to" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">How to Get an EU Pet Passport (Step by Step)</h2>
 
                     <div className="space-y-6 my-8">
                         <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-accent">
@@ -159,7 +151,7 @@ export default function EUPetPassport() {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">⚠️ Special Requirements: The "Tapeworm Rule"</h2>
+                    <h2 id="tapeworm" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">⚠️ Special Requirements: The "Tapeworm Rule"</h2>
                     <p>
                         Some countries have additional rules even with a passport.
                     </p>
@@ -167,7 +159,7 @@ export default function EUPetPassport() {
                         If you're traveling with a dog to <strong>Ireland, Malta, Finland, or Norway</strong>, your dog must receive a tapeworm treatment from a vet <strong>1–5 days before entry</strong>. This treatment must be recorded and stamped in the passport.
                     </p>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">Can I Travel Back to the UK or the US with an EU Pet Passport?</h2>
+                    <h2 id="travel-back" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Can I Travel Back to the UK or the US with an EU Pet Passport?</h2>
 
                     <div className="space-y-6 my-8">
                         <div className="bg-white p-6 rounded-xl shadow-sm">
@@ -211,49 +203,21 @@ export default function EUPetPassport() {
 
                     <hr className="my-12 border-primary/10" />
 
-                    <section className="bg-secondary p-6 rounded-xl border border-primary/10">
-                        <h3 className="font-bold text-primary mb-4 text-lg">📚 Related Guides for Expats</h3>
-                        <div className="space-y-3">
-                            <Link to="/blog/moving-to-germany-with-pet-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
-                                <span className="text-lg">🐕</span>
-                                <div>
-                                    <p className="font-semibold text-sm group-hover:underline">Moving to Germany with a Pet: The 2025 Survival Checklist</p>
-                                    <p className="text-xs text-primary/60">Microchips, rabies vaccines, and the 15-week rule</p>
-                                </div>
-                            </Link>
-                            <Link to="/blog/cat-registration-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
-                                <span className="text-lg">🐱</span>
-                                <div>
-                                    <p className="font-semibold text-sm group-hover:underline">Cat Registration in Germany</p>
-                                    <p className="text-xs text-primary/60">TASSO, microchipping, and city-specific rules</p>
-                                </div>
-                            </Link>
-                        </div>
-                    </section>
-
-                    <section className="text-sm text-primary/60 mt-12">
-                        <h3 className="font-bold text-primary mb-4 text-base">📚 Official Sources</h3>
-                        <ul className="list-disc pl-5 space-y-2">
-                            <li><a href="https://food.ec.europa.eu/animals/movement-pets_en" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">European Commission – Travelling with Pets</a></li>
-                            <li><a href="https://www.cdc.gov/importation/bringing-an-animal-into-the-united-states/dogs.html" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">US CDC – Bringing a Dog into the United States</a></li>
-                            <li><a href="https://www.gov.uk/bring-pet-to-great-britain" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">UK Government – Bringing Your Pet to Great Britain</a></li>
-                        </ul>
-                    </section>
                 </article>
+
+                <RelatedPosts currentPath="/blog/eu-pet-passport-germany-2025" />
+
+                <section className="text-sm text-primary/60 mt-12 mb-12">
+                    <h3 className="font-bold text-primary mb-4 text-base">📚 Official Sources</h3>
+                    <ul className="list-disc pl-5 space-y-2">
+                        <li><a href="https://food.ec.europa.eu/animals/movement-pets_en" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">European Commission – Travelling with Pets</a></li>
+                        <li><a href="https://www.cdc.gov/importation/bringing-an-animal-into-the-united-states/dogs.html" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">US CDC – Bringing a Dog into the United States</a></li>
+                        <li><a href="https://www.gov.uk/bring-pet-to-great-britain" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">UK Government – Bringing Your Pet to Great Britain</a></li>
+                    </ul>
+                </section>
             </main>
 
-            <footer className="bg-primary text-secondary py-12 text-center text-sm relative z-10 mt-12">
-                <div className="max-w-4xl mx-auto px-4 space-y-6">
-                    <div className="flex justify-center gap-6 font-semibold flex-wrap">
-                        <Link to="/about" className="hover:text-accent transition-colors">About</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                        <Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link>
-                        <Link to="/privacy" className="hover:text-accent transition-colors">Privacy</Link>
-                    </div>
-                    <p className="opacity-60">© 2025 englishspeakinggermany.online • Made with ❤️ for pets.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

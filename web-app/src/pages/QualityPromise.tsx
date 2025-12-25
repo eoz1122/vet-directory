@@ -1,31 +1,14 @@
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import RelatedPosts from '../components/RelatedPosts';
 
 export default function QualityPromise() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             {/* Header / Nav */}
-            <header className="sticky top-0 z-10 bg-secondary/90 backdrop-blur-md border-b border-primary/10 p-4">
-                <div className="max-w-4xl mx-auto flex justify-between items-center flex-wrap gap-4">
-                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                        <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-16 w-auto" />
-                        <span>EnglishSpeaking<span className="text-accent">Vets</span></span>
-                    </Link>
-
-                    {/* Desktop Nav Links */}
-                    <div className="hidden md:flex gap-4 text-sm font-semibold text-primary/70">
-                        <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
-                        <Link to="/" className="hover:text-accent transition-colors">Directory</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                    </div>
-
-                    {/* Mobile Back Link */}
-                    <div className="md:hidden">
-                        <Link to="/" className="text-sm font-semibold hover:text-accent transition-colors">
-                            ← Directory
-                        </Link>
-                    </div>
-                </div>
-            </header>
+            {/* Header / Nav */}
+            <Header />
 
             <main className="max-w-3xl mx-auto p-6 md:p-12 space-y-12">
 
@@ -120,21 +103,10 @@ export default function QualityPromise() {
                     </p>
                 </section>
 
+                <RelatedPosts currentPath="/quality-promise" />
             </main>
 
-            <footer className="bg-primary text-secondary py-12 text-center text-sm">
-                <div className="max-w-4xl mx-auto px-4 space-y-6">
-                    <div className="flex justify-center gap-6 font-semibold flex-wrap">
-                        <Link to="/about" className="hover:text-accent transition-colors">About</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/" className="hover:text-accent transition-colors">Directory</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                        <Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link>
-                        <Link to="/privacy" className="hover:text-accent transition-colors">Privacy</Link>
-                    </div>
-                    <p className="opacity-60">© 2025 EnglishSpeakingVets.online • Made with ❤️ for pets.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

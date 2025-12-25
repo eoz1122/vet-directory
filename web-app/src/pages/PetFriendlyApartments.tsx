@@ -1,5 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import TableOfContents from '../components/TableOfContents';
+import RelatedPosts from '../components/RelatedPosts';
 
 export default function PetFriendlyApartments() {
     return (
@@ -12,18 +16,8 @@ export default function PetFriendlyApartments() {
             </Helmet>
 
             {/* Header */}
-            <header className="sticky top-0 z-10 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
-                <div className="max-w-4xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                        <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-12 w-auto" />
-                        <span className="hidden sm:inline">EnglishSpeaking<span className="text-accent">Vets</span></span>
-                    </Link>
-                    <div className="flex gap-4 text-sm font-semibold text-primary/70">
-                        <Link to="/" className="hover:text-accent transition-colors">Directory</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                    </div>
-                </div>
-            </header>
+            {/* Header */}
+            <Header />
 
             <main className="max-w-3xl mx-auto p-6 md:p-12">
                 <article className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-primary/5">
@@ -37,6 +31,13 @@ export default function PetFriendlyApartments() {
                     <h1 className="text-3xl md:text-5xl font-bold text-primary mb-6 leading-tight">
                         🏠 Finding a Pet-Friendly Apartment in Berlin, Hamburg & Frankfurt (2025)
                     </h1>
+
+                    <TableOfContents items={[
+                        { id: 'legal-rights', label: 'Your Legal Rights: What Landlords Can Do' },
+                        { id: 'pet-resume', label: 'The "Pet Resume": Your Secret Weapon' },
+                        { id: 'best-districts', label: 'Best Pet-Friendly Districts (2025)' },
+                        { id: 'strategy', label: 'How to Apply: The Strategy' }
+                    ]} />
 
                     <div className="prose prose-lg text-primary/80 max-w-none">
                         <p className="text-xl leading-relaxed opacity-90 mb-8 border-l-4 border-accent pl-4 italic">
@@ -53,7 +54,7 @@ export default function PetFriendlyApartments() {
 
                         <hr className="my-8 border-primary/10" />
 
-                        <h2 className="text-2xl font-bold text-primary mt-10 mb-4">Your Legal Rights: What Landlords Can (and Can’t) Do</h2>
+                        <h2 id="legal-rights" className="text-2xl font-bold text-primary mt-10 mb-4 scroll-mt-24">Your Legal Rights: What Landlords Can (and Can’t) Do</h2>
                         <p>
                             In 2013, Germany’s Federal Court of Justice (<em>Bundesgerichtshof – BGH</em>) made a landmark ruling: general blanket bans on dogs and cats in rental contracts are invalid.
                         </p>
@@ -91,7 +92,7 @@ export default function PetFriendlyApartments() {
                             </ul>
                         </div>
 
-                        <h2 className="text-2xl font-bold text-primary mt-10 mb-4">The “Pet Resume”: Your Secret Weapon</h2>
+                        <h2 id="pet-resume" className="text-2xl font-bold text-primary mt-10 mb-4 scroll-mt-24">The “Pet Resume”: Your Secret Weapon</h2>
                         <p>
                             In a market where 40–60 people apply for one apartment, you need to present yourself as the <strong>Responsible Expat™</strong>, not a risk.
                         </p>
@@ -122,7 +123,7 @@ export default function PetFriendlyApartments() {
                             </li>
                         </ul>
 
-                        <h2 className="text-2xl font-bold text-primary mt-12 mb-6">Best Pet-Friendly Districts (2025–2026)</h2>
+                        <h2 id="best-districts" className="text-2xl font-bold text-primary mt-12 mb-6 scroll-mt-24">Best Pet-Friendly Districts (2025–2026)</h2>
 
                         <div className="grid md:grid-cols-3 gap-4 mb-8">
                             <div className="bg-primary/5 p-4 rounded-xl">
@@ -150,7 +151,7 @@ export default function PetFriendlyApartments() {
                         </div>
                         <p className="text-xs text-center opacity-60 italic">(Pet-friendly doesn’t mean guaranteed — but these areas are known to be more accepting.)</p>
 
-                        <h2 className="text-2xl font-bold text-primary mt-10 mb-4">The Hobbyist Strategy: How to Apply</h2>
+                        <h2 id="strategy" className="text-2xl font-bold text-primary mt-10 mb-4 scroll-mt-24">The Hobbyist Strategy: How to Apply</h2>
                         <ol className="list-decimal pl-5 space-y-2 mb-6 font-medium">
                             <li>Don’t hide the pet. <span className="font-normal opacity-80">Sneaking one in can justify termination later.</span></li>
                             <li>Lead with the resume, not the request.</li>
@@ -196,21 +197,12 @@ export default function PetFriendlyApartments() {
 
                     </div>
                 </article>
+
+                <RelatedPosts currentPath="/blog/pet-friendly-apartments-germany-2025" />
             </main>
 
             {/* Footer */}
-            <footer className="bg-primary text-secondary py-12 text-center text-sm mt-12">
-                <div className="max-w-4xl mx-auto px-4">
-                    <div className="flex justify-center gap-6 font-semibold mb-4">
-                        <Link to="/" className="hover:text-accent transition-colors">Directory</Link>
-                        <Link to="/about" className="hover:text-accent transition-colors">About</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                        <Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link>
-                        <Link to="/privacy" className="hover:text-accent transition-colors">Privacy</Link>
-                    </div>
-                    <p className="opacity-60">© 2025 EnglishSpeakingVets.online • Made with ❤️ for pets.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

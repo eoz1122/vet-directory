@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Contact() {
     const [searchParams] = useSearchParams();
@@ -9,7 +11,12 @@ export default function Contact() {
         name: '',
         email: '',
         topic: initialTopic,
-        message: ''
+        message: '',
+        // Structured data for Vet Submission
+        vetName: '',
+        vetCity: '',
+        vetAddress: '',
+        vetWebsite: ''
     });
 
     // Update form topic if URL param changes (e.g. valid re-navigation)
@@ -27,11 +34,22 @@ export default function Contact() {
         e.preventDefault();
         setIsSubmitting(true);
 
+        const finalData = {
+            ...formData,
+            submittedAt: new Date().toISOString()
+        };
+
+        // For now, log the structured JSON. This can be sent to a backend later.
+        console.log("Form Submission:", JSON.stringify(finalData, null, 2));
+
         // Simulate API call
         setTimeout(() => {
             setIsSubmitting(false);
             setSubmitted(true);
-            setFormData({ name: '', email: '', topic: 'general', message: '' });
+            setFormData({
+                name: '', email: '', topic: 'general', message: '',
+                vetName: '', vetCity: '', vetAddress: '', vetWebsite: ''
+            });
         }, 1500);
     };
 
@@ -45,28 +63,7 @@ export default function Contact() {
     return (
         <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
             {/* Header / Nav */}
-            <header className="sticky top-0 z-10 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
-                <div className="max-w-4xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                        <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-16 w-auto" />
-                        <span>EnglishSpeaking<span className="text-accent">Vets</span></span>
-                    </Link>
-
-                    {/* Desktop Nav Links */}
-                    <div className="hidden md:flex gap-4 text-sm font-semibold text-primary/70">
-                        <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/" className="hover:text-accent transition-colors">Directory</Link>
-                    </div>
-
-                    {/* Mobile Back Link */}
-                    <div className="md:hidden">
-                        <Link to="/" className="text-sm font-semibold hover:text-accent transition-colors">
-                            ← Directory
-                        </Link>
-                    </div>
-                </div>
-            </header>
+            <Header />
 
             <main className="max-w-2xl mx-auto p-6 md:p-12 space-y-8">
 
@@ -142,8 +139,77 @@ export default function Contact() {
                                 </div>
                             </div>
 
+                            {/* Dynamic Fields for Vet Submission */}
+                            {formData.topic === 'submit_vet' && (
+                                <div className="p-6 bg-secondary/20 rounded-xl space-y-4 border border-primary/5 animate-fade-in">
+                                    <h4 className="font-bold text-accent text-sm uppercase tracking-wider mb-2">Practice Details</h4>
+
+                                    <div>
+                                        <label htmlFor="vetName" className="block text-sm font-bold text-primary mb-2">Practice Name</label>
+                                        <input
+                                            type="text"
+                                            id="vetName"
+                                            name="vetName"
+                                            required={formData.topic === 'submit_vet'}
+                                            value={formData.vetName}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 bg-white border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+                                            placeholder="e.g. Tierarztpraxis Berlin Mitte"
+                                        />
+                                    </div>
+
+                                    <div className="grid md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label htmlFor="vetCity" className="block text-sm font-bold text-primary mb-2">City</label>
+                                            <select
+                                                id="vetCity"
+                                                name="vetCity"
+                                                required={formData.topic === 'submit_vet'}
+                                                value={formData.vetCity}
+                                                onChange={handleChange}
+                                                className="w-full px-4 py-3 bg-white border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+                                            >
+                                                <option value="">Select City...</option>
+                                                <option value="Berlin">Berlin</option>
+                                                <option value="Hamburg">Hamburg</option>
+                                                <option value="Frankfurt">Frankfurt</option>
+                                                <option value="Munich">Munich</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label htmlFor="vetAddress" className="block text-sm font-bold text-primary mb-2">Address (Street/District)</label>
+                                            <input
+                                                type="text"
+                                                id="vetAddress"
+                                                name="vetAddress"
+                                                value={formData.vetAddress}
+                                                onChange={handleChange}
+                                                className="w-full px-4 py-3 bg-white border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+                                                placeholder="e.g. Prenzlauer Allee 123"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="vetWebsite" className="block text-sm font-bold text-primary mb-2">Website (Optional)</label>
+                                        <input
+                                            type="url"
+                                            id="vetWebsite"
+                                            name="vetWebsite"
+                                            value={formData.vetWebsite}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 bg-white border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+                                            placeholder="https://..."
+                                        />
+                                    </div>
+                                </div>
+                            )}
+
                             <div>
-                                <label htmlFor="message" className="block text-sm font-bold text-primary mb-2">Message</label>
+                                <label htmlFor="message" className="block text-sm font-bold text-primary mb-2">
+                                    {formData.topic === 'submit_vet' ? "Why do you recommend them?" : "Message"}
+                                </label>
                                 <textarea
                                     id="message"
                                     name="message"
@@ -153,7 +219,7 @@ export default function Contact() {
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 bg-secondary/30 border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
                                     placeholder={
-                                        formData.topic === 'submit_vet' ? "Please include the Vet Name, Address, and why you recommend them!" :
+                                        formData.topic === 'submit_vet' ? "Tell us about your experience! Did they speak clear English? Were they kind to your pet?" :
                                             formData.topic === 'report_issue' ? "Let us know which clinic needs updating and what the correct info is." :
                                                 "How can we help?"
                                     }
@@ -173,11 +239,7 @@ export default function Contact() {
 
             </main>
 
-            <footer className="bg-primary text-secondary py-12 text-center text-sm">
-                <div className="max-w-4xl mx-auto px-4 space-y-6">
-                    <p className="opacity-60">© 2025 EnglishSpeakingVets.online • Made with ❤️ for pets.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

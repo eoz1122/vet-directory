@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import TableOfContents from '../components/TableOfContents';
+import RelatedPosts from '../components/RelatedPosts';
 
 export default function CatRegistrationGermany() {
     return (
@@ -15,29 +19,7 @@ export default function CatRegistrationGermany() {
             </Helmet>
 
             {/* Header / Nav */}
-            <header className="sticky top-0 z-50 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
-                <div className="max-w-4xl mx-auto flex justify-between items-center flex-wrap gap-4">
-                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                        <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-16 w-auto" />
-                        <span>EnglishSpeaking<span className="text-accent">Vets</span></span>
-                    </Link>
-
-                    {/* Desktop Nav Links */}
-                    <div className="hidden md:flex gap-4 text-sm font-semibold text-primary/70">
-                        <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/" className="hover:text-accent transition-colors">Directory</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                    </div>
-
-                    {/* Mobile Back Link */}
-                    <div className="md:hidden">
-                        <Link to="/" className="text-sm font-semibold hover:text-accent transition-colors flex items-center gap-1">
-                            <span className="text-xl">🐾</span> Directory
-                        </Link>
-                    </div>
-                </div>
-            </header>
+            <Header />
 
             <main className="max-w-3xl mx-auto p-6 md:p-12 relative z-10">
                 <article className="prose prose-stone prose-lg max-w-none text-primary/90">
@@ -45,6 +27,16 @@ export default function CatRegistrationGermany() {
                     <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
                         🐱 Cat Registration in Germany: <br />Do You Need to Tell the Bürgeramt?
                     </h1>
+
+                    <TableOfContents items={[
+                        { id: 'no-tax', label: 'The Good News: No Cat Tax' },
+                        { id: 'mandatory-rules', label: 'Rules for Free-Roaming Cats' },
+                        { id: 'city-rules', label: 'City-by-City Rules (Berlin, Hamburg, etc.)' },
+                        { id: 'why-register', label: 'Why Register Your Microchip?' },
+                        { id: 'tasso-v-findefix', label: 'TASSO vs. FINDEFIX' },
+                        { id: 'how-to', label: 'How to Register (5 Minute Guide)' },
+                        { id: 'faq', label: 'Quick Answers for Expats' }
+                    ]} />
 
                     <p className="lead text-xl italic text-primary/70 mb-8 border-l-4 border-accent pl-4">
                         You've just moved to Germany with your cat. Between the Anmeldung paperwork and getting your tax ID sorted, you've got one more question nagging at you: Do I need to register my cat?
@@ -59,7 +51,7 @@ export default function CatRegistrationGermany() {
                     </p>
 
                     <div className="bg-green-50 p-8 rounded-2xl shadow-sm my-8 border border-green-100">
-                        <h2 className="text-2xl font-bold text-green-800 mb-4 mt-0">✅ The Good News: No Cat Tax</h2>
+                        <h2 id="no-tax" className="text-2xl font-bold text-green-800 mb-4 mt-0 scroll-mt-24">✅ The Good News: No Cat Tax</h2>
                         <p className="text-green-900/80">
                             Let's start with the relief. There is <strong>no Hundesteuer for cats in Germany</strong>. Not in Berlin. Not in Hamburg. Not in Frankfurt or Munich.
                         </p>
@@ -68,7 +60,7 @@ export default function CatRegistrationGermany() {
                         </p>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">⚠️ The "But": Free-Roaming Cats Must Be Chipped & Registered</h2>
+                    <h2 id="mandatory-rules" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">⚠️ The "But": Free-Roaming Cats Must Be Chipped & Registered</h2>
                     <p>Here is where it gets important. While you don't pay tax, many German cities now require <strong>free-roaming cats</strong> (<em>Freigängerkatzen</em>) to be:</p>
 
                     <ul className="list-disc pl-5 space-y-2">
@@ -87,7 +79,7 @@ export default function CatRegistrationGermany() {
                         </p>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">🗺️ City-by-City Rules (The Patchwork Map)</h2>
+                    <h2 id="city-rules" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🗺️ City-by-City Rules (The Patchwork Map)</h2>
                     <p>Germany is a fan of local ordinances. Here's the 2025/2026 status for the big hubs:</p>
 
                     <div className="space-y-4 my-8">
@@ -130,7 +122,7 @@ export default function CatRegistrationGermany() {
                         <strong>The takeaway:</strong> Don't assume. Search for "Katzenschutzverordnung + [Your City]" to be 100% sure.
                     </p>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">💡 Why Register Your Cat's Microchip (Even for Indoor Cats)</h2>
+                    <h2 id="why-register" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">💡 Why Register Your Cat's Microchip (Even for Indoor Cats)</h2>
                     <p>Even if it isn't legally required for your "couch potato" cat, registering is the smartest thing you can do.</p>
 
                     <ul className="list-disc pl-5 space-y-2">
@@ -139,7 +131,7 @@ export default function CatRegistrationGermany() {
                         <li><strong>The "Open Window" Risk:</strong> Indoor cats escape. A guest leaves a door ajar, or a window is left on "tilt" (<em>Kipp</em>). A registered chip is the only way a shelter can call you.</li>
                     </ul>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">🆚 TASSO vs. FINDEFIX: Which One?</h2>
+                    <h2 id="tasso-v-findefix" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🆚 TASSO vs. FINDEFIX: Which One?</h2>
                     <p>Both are excellent, free, and non-profit.</p>
 
                     <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -168,7 +160,7 @@ export default function CatRegistrationGermany() {
                         <strong>Pro-tip:</strong> Many owners register with both. It's free and doubles the safety net.
                     </p>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">📝 How to Register (The 5-Minute Process)</h2>
+                    <h2 id="how-to" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">📝 How to Register (The 5-Minute Process)</h2>
                     <ol className="list-decimal pl-5 space-y-3">
                         <li><strong>Check the Chip:</strong> Your vet will give you a 15-digit number on a sticker (usually in your Pet Passport).</li>
                         <li><strong>Go Online:</strong> Visit TASSO or FINDEFIX.</li>
@@ -176,7 +168,7 @@ export default function CatRegistrationGermany() {
                         <li><strong>Done:</strong> You'll get a confirmation email (and a physical card in the mail later).</li>
                     </ol>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">❓ Quick Answers for Expats</h2>
+                    <h2 id="faq" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">❓ Quick Answers for Expats</h2>
                     <div className="space-y-4">
                         <div className="bg-white p-6 rounded-xl shadow-sm">
                             <h3 className="text-lg font-bold mb-2 mt-0">Do I tell my landlord?</h3>
@@ -235,18 +227,11 @@ export default function CatRegistrationGermany() {
                         </ul>
                     </section>
                 </article>
+
+                <RelatedPosts currentPath="/blog/cat-registration-germany-2025" />
             </main>
 
-            <footer className="bg-primary text-secondary py-12 text-center text-sm relative z-10 mt-12">
-                <div className="max-w-4xl mx-auto px-4 space-y-6">
-                    <div className="flex justify-center gap-6 font-semibold">
-                        <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                    </div>
-                    <p className="opacity-60">© 2025 englishspeakinggermany.online • Made with ❤️ for pets.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

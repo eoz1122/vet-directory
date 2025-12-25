@@ -14,12 +14,18 @@ import Privacy from './pages/Privacy';
 import CookieConsent from './components/CookieConsent';
 import PetFriendlyApartments from './pages/PetFriendlyApartments';
 
+import PublicTransportBerlin from './pages/PublicTransportBerlin';
+import PublicTransportHamburg from './pages/PublicTransportHamburg';
+import PublicTransportFrankfurt from './pages/PublicTransportFrankfurt';
+import Blog from './pages/Blog';
+
 function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/quality-promise" element={<QualityPromise />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -28,6 +34,9 @@ function App() {
           <Route path="/blog/eu-pet-passport-germany-2025" element={<EUPetPassport />} />
           <Route path="/blog/hundesteuer-dog-tax-germany-2025" element={<DogTaxGermany />} />
           <Route path="/blog/pet-friendly-apartments-germany-2025" element={<PetFriendlyApartments />} />
+          <Route path="/blog/public-transport-with-dogs-berlin-2025" element={<PublicTransportBerlin />} />
+          <Route path="/blog/public-transport-with-dogs-hamburg-2025" element={<PublicTransportHamburg />} />
+          <Route path="/blog/public-transport-with-dogs-frankfurt-2025" element={<PublicTransportFrankfurt />} />
           <Route path="/vets/:city" element={<CityVets />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/privacy" element={<Privacy />} />

@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import TableOfContents from '../components/TableOfContents';
+import RelatedPosts from '../components/RelatedPosts';
 
 export default function DogTaxGermany() {
     return (
@@ -15,29 +19,7 @@ export default function DogTaxGermany() {
             </Helmet>
 
             {/* Header / Nav */}
-            <header className="sticky top-0 z-50 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
-                <div className="max-w-4xl mx-auto flex justify-between items-center flex-wrap gap-4">
-                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                        <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-16 w-auto" />
-                        <span>EnglishSpeaking<span className="text-accent">Vets</span></span>
-                    </Link>
-
-                    {/* Desktop Nav Links */}
-                    <div className="hidden md:flex gap-4 text-sm font-semibold text-primary/70">
-                        <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/" className="hover:text-accent transition-colors">Directory</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                    </div>
-
-                    {/* Mobile Back Link */}
-                    <div className="md:hidden">
-                        <Link to="/" className="text-sm font-semibold hover:text-accent transition-colors flex items-center gap-1">
-                            <span className="text-xl">🐾</span> Directory
-                        </Link>
-                    </div>
-                </div>
-            </header>
+            <Header />
 
             <main className="max-w-3xl mx-auto p-6 md:p-12 relative z-10">
                 <article className="prose prose-stone prose-lg max-w-none text-primary/90">
@@ -45,6 +27,14 @@ export default function DogTaxGermany() {
                     <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
                         🐕 The Expat Guide to Hundesteuer (Dog Tax) – 2025
                     </h1>
+
+                    <TableOfContents items={[
+                        { id: 'what-is-it', label: '1. What Is Hundesteuer?' },
+                        { id: 'costs', label: '2. Costs & Rates (2025)' },
+                        { id: 'tags', label: '3. No More Metal Tags?' },
+                        { id: 'how-to', label: '4. How to Register' },
+                        { id: 'insurance', label: '5. Liability Insurance (Haftpflicht)' }
+                    ]} />
 
                     <p className="lead text-xl italic text-primary/70 mb-8 border-l-4 border-accent pl-4">
                         Welcome to Germany, where your dog needs to be registered, insured, chipped — and taxed.
@@ -58,7 +48,7 @@ export default function DogTaxGermany() {
                         But here's the reality: <strong>Hundesteuer (dog tax) is not optional</strong>. Ignoring it can lead to backdated bills, fines, and very unfriendly letters from the city. Let's break down the expat-friendly guide to Hundesteuer in 2025 so you can stay firmly on the right side of the rules.
                     </p>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">1. What Is Hundesteuer (and Why?)</h2>
+                    <h2 id="what-is-it" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">1. What Is Hundesteuer (and Why?)</h2>
                     <p>
                         Dating back to the 19th century, <em>Hundesteuer</em> was originally designed to discourage excessive dog ownership. Today, it's a major source of municipal revenue, generating well over <strong>€400 million per year</strong> nationwide.
                     </p>
@@ -72,7 +62,7 @@ export default function DogTaxGermany() {
                         </p>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">2. How Much Does It Cost? (Typical 2025 Rates)</h2>
+                    <h2 id="costs" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">2. How Much Does It Cost? (Typical 2025 Rates)</h2>
                     <p>
                         Hundesteuer is set by your city (<em>Stadt</em>) or municipality (<em>Gemeinde</em>), so rates vary widely. As a rule:
                     </p>
@@ -143,7 +133,7 @@ export default function DogTaxGermany() {
                         <li><strong>Guide dogs</strong> and certified assistance dogs are fully exempt nationwide.</li>
                     </ul>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">3. The "Big Change": No More Metal Tags?</h2>
+                    <h2 id="tags" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">3. The "Big Change": No More Metal Tags?</h2>
                     <p>
                         For decades, dogs were required to wear a small metal tax tag (<em>Hundesteuermarke</em>) on their collar.
                     </p>
@@ -155,7 +145,7 @@ export default function DogTaxGermany() {
                         👉 Check your local rules — in some cities, the tag may still be required or recommended in public.
                     </p>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">4. How to Register (The 3-Step Process)</h2>
+                    <h2 id="how-to" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">4. How to Register (The 3-Step Process)</h2>
                     <p>
                         You usually have <strong>2–4 weeks</strong> after moving or acquiring a dog to register.
                     </p>
@@ -191,7 +181,7 @@ export default function DogTaxGermany() {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">5. Don't Forget the Insurance (Haftpflicht)</h2>
+                    <h2 id="insurance" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">5. Don't Forget the Insurance (Haftpflicht)</h2>
                     <p>
                         While not a tax, <strong>dog liability insurance</strong> (<em>Hundehaftpflichtversicherung</em>) is legally mandatory in Berlin, Hamburg, and several other federal states.
                     </p>
@@ -229,56 +219,21 @@ export default function DogTaxGermany() {
 
                     <hr className="my-12 border-primary/10" />
 
-                    <section className="bg-secondary p-6 rounded-xl border border-primary/10">
-                        <h3 className="font-bold text-primary mb-4 text-lg">📚 Related Guides for Expats</h3>
-                        <div className="space-y-3">
-                            <Link to="/blog/moving-to-germany-with-pet-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
-                                <span className="text-lg">🐕</span>
-                                <div>
-                                    <p className="font-semibold text-sm group-hover:underline">Moving to Germany with a Pet</p>
-                                    <p className="text-xs text-primary/60">The 2025 Survival Checklist</p>
-                                </div>
-                            </Link>
-                            <Link to="/blog/cat-registration-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
-                                <span className="text-lg">🐱</span>
-                                <div>
-                                    <p className="font-semibold text-sm group-hover:underline">Cat Registration in Germany</p>
-                                    <p className="text-xs text-primary/60">TASSO, microchipping, and city rules</p>
-                                </div>
-                            </Link>
-                            <Link to="/blog/eu-pet-passport-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
-                                <span className="text-lg">🛂</span>
-                                <div>
-                                    <p className="font-semibold text-sm group-hover:underline">EU Pet Passports</p>
-                                    <p className="text-xs text-primary/60">Why you need one and how to get it</p>
-                                </div>
-                            </Link>
-                        </div>
-                    </section>
-
-                    <section className="text-sm text-primary/60 mt-12">
-                        <h3 className="font-bold text-primary mb-4 text-base">📚 Official Sources</h3>
-                        <ul className="list-disc pl-5 space-y-2">
-                            <li><a href="https://www.berlin.de/sen/finanzen/steuern/hundesteuer/" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">Berlin Dog Tax Information</a></li>
-                            <li><a href="https://www.hamburg.de/hundesteuer/" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">Hamburg Dog Tax Information</a></li>
-                            <li><a href="https://www.muenchen.de/rathaus/Stadtverwaltung/Stadtkasse/Hundesteuer.html" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">Munich Dog Tax Information</a></li>
-                        </ul>
-                    </section>
                 </article>
+
+                <RelatedPosts currentPath="/blog/hundesteuer-dog-tax-germany-2025" />
+
+                <section className="text-sm text-primary/60 mt-12 mb-12">
+                    <h3 className="font-bold text-primary mb-4 text-base">📚 Official Sources</h3>
+                    <ul className="list-disc pl-5 space-y-2">
+                        <li><a href="https://www.berlin.de/sen/finanzen/steuern/hundesteuer/" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">Berlin Dog Tax Information</a></li>
+                        <li><a href="https://www.hamburg.de/hundesteuer/" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">Hamburg Dog Tax Information</a></li>
+                        <li><a href="https://www.muenchen.de/rathaus/Stadtverwaltung/Stadtkasse/Hundesteuer.html" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">Munich Dog Tax Information</a></li>
+                    </ul>
+                </section>
             </main>
 
-            <footer className="bg-primary text-secondary py-12 text-center text-sm relative z-10 mt-12">
-                <div className="max-w-4xl mx-auto px-4 space-y-6">
-                    <div className="flex justify-center gap-6 font-semibold flex-wrap">
-                        <Link to="/about" className="hover:text-accent transition-colors">About</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                        <Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link>
-                        <Link to="/privacy" className="hover:text-accent transition-colors">Privacy</Link>
-                    </div>
-                    <p className="opacity-60">© 2025 englishspeakinggermany.online • Made with ❤️ for pets.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

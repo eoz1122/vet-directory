@@ -1,21 +1,13 @@
-import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function About() {
     return (
         <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary relative overflow-hidden">
 
             {/* Header / Nav */}
-            <header className="sticky top-0 z-10 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
-                <div className="max-w-4xl mx-auto flex justify-between items-center relative z-20 flex-wrap gap-4">
-                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                        <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-16 w-auto" />
-                        <span>EnglishSpeaking<span className="text-accent">Vets</span></span>
-                    </Link>
-                    <Link to="/" className="text-sm font-semibold hover:text-accent transition-colors flex items-center gap-1">
-                        <span className="text-xl">🐾</span> Back to Directory
-                    </Link>
-                </div>
-            </header>
+            {/* Header / Nav */}
+            <Header />
 
             <main className="max-w-3xl mx-auto p-6 md:p-12 space-y-16 relative z-10">
 
@@ -132,16 +124,7 @@ export default function About() {
             </main>
 
             {/* Footer */}
-            <footer className="bg-primary text-secondary py-12 text-center text-sm relative z-10 mt-12">
-                <div className="max-w-4xl mx-auto px-4 space-y-6">
-                    <div className="flex justify-center gap-6 font-semibold">
-                        <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                    </div>
-                    <p className="opacity-60">© 2025 EnglishSpeakingVets.online • Made with ❤️ for pets.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

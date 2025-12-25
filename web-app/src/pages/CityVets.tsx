@@ -1,6 +1,8 @@
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useMemo } from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import vets from '../data/vets.json';
 
 const cityContent: Record<string, { title: string; description: string; content: string }> = {
@@ -130,19 +132,8 @@ export default function CityVets() {
             </Helmet>
 
             {/* Header */}
-            <header className="sticky top-0 z-10 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
-                <div className="max-w-6xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                        <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-16 w-auto" />
-                        <span>EnglishSpeaking<span className="text-accent">Vets</span></span>
-                    </Link>
-                    <div className="hidden md:flex gap-4 text-sm font-semibold text-primary/70">
-                        <Link to="/about" className="hover:text-accent transition-colors">About</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                    </div>
-                </div>
-            </header>
+            {/* Header */}
+            <Header />
 
             <main className="max-w-6xl mx-auto p-6 md:p-12">
                 {/* Hero Section */}
@@ -210,11 +201,7 @@ export default function CityVets() {
                 </section>
             </main>
 
-            <footer className="bg-primary text-secondary py-12 text-center text-sm mt-12">
-                <div className="max-w-4xl mx-auto px-4">
-                    <p className="opacity-60">© 2025 englishspeakinggermany.online • Made with ❤️ for pets.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

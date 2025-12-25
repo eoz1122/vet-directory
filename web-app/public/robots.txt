@@ -1,5 +1,14 @@
 User-agent: *
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Sitemaps
 Sitemap: https://englishspeakinggermany.online/sitemap.xml

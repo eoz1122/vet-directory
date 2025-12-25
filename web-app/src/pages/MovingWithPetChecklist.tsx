@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import TableOfContents from '../components/TableOfContents';
+import RelatedPosts from '../components/RelatedPosts';
 
 export default function MovingWithPetChecklist() {
     return (
@@ -15,29 +19,8 @@ export default function MovingWithPetChecklist() {
             </Helmet>
 
             {/* Header / Nav */}
-            <header className="sticky top-0 z-50 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
-                <div className="max-w-4xl mx-auto flex justify-between items-center flex-wrap gap-4">
-                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                        <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-16 w-auto" />
-                        <span>EnglishSpeaking<span className="text-accent">Vets</span></span>
-                    </Link>
-
-                    {/* Desktop Nav Links */}
-                    <div className="hidden md:flex gap-4 text-sm font-semibold text-primary/70">
-                        <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/" className="hover:text-accent transition-colors">Directory</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                    </div>
-
-                    {/* Mobile Back Link */}
-                    <div className="md:hidden">
-                        <Link to="/" className="text-sm font-semibold hover:text-accent transition-colors flex items-center gap-1">
-                            <span className="text-xl">🐾</span> Directory
-                        </Link>
-                    </div>
-                </div>
-            </header>
+            {/* Header / Nav */}
+            <Header />
 
             <main className="max-w-3xl mx-auto p-6 md:p-12 relative z-10">
                 <article className="prose prose-stone prose-lg max-w-none text-primary/90">
@@ -45,6 +28,15 @@ export default function MovingWithPetChecklist() {
                     <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
                         Moving to Germany with a Pet: <br />The 2025 Survival Checklist
                     </h1>
+
+                    <TableOfContents items={[
+                        { id: 'golden-rule', label: '1. The "Golden Rule": Microchip FIRST' },
+                        { id: 'waiting-period', label: '2. The 21-Day Waiting Period' },
+                        { id: 'puppy-barrier', label: '3. The "15-Week Rule" (Puppies/Kittens)' },
+                        { id: 'paperwork', label: '4. Paperwork: EU Health Certificate' },
+                        { id: 'travel-type', label: '5. Commercial vs. Non-Commercial' },
+                        { id: 'restrictions', label: '6. Breed & Quantity Restrictions' }
+                    ]} />
 
                     <p className="lead text-xl italic text-primary/70 mb-8 border-l-4 border-accent pl-4">
                         So, you’re making the big move to Germany. Between visa paperwork and apartment hunting, your biggest worry isn’t the furniture — it’s the four-legged family member coming with you.
@@ -55,7 +47,7 @@ export default function MovingWithPetChecklist() {
                     </p>
 
                     <div className="bg-white p-8 rounded-2xl shadow-sm my-8 border border-primary/5">
-                        <h2 className="text-2xl font-bold text-accent mb-4 mt-0">1. The “Golden Rule”: Microchip FIRST, Vaccine SECOND</h2>
+                        <h2 id="golden-rule" className="text-2xl font-bold text-accent mb-4 mt-0 scroll-mt-24">1. The “Golden Rule”: Microchip FIRST, Vaccine SECOND</h2>
                         <p><strong>This is the mistake that breaks hearts — and drains bank accounts.</strong></p>
                         <p>In the eyes of German customs (Zoll), a rabies vaccination does not exist unless it is linked to a microchip.</p>
 
@@ -66,14 +58,14 @@ export default function MovingWithPetChecklist() {
                         </ul>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">2. The 21-Day Waiting Period</h2>
+                    <h2 id="waiting-period" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">2. The 21-Day Waiting Period</h2>
                     <p>You can’t just jab and go.</p>
                     <p>After the rabies vaccine is administered (and only after the microchip is in place), you must wait at least <strong>21 full days</strong> before entering Germany.¹</p>
                     <p className="bg-red-50 p-4 rounded-lg border-l-4 border-red-400 text-sm">
                         This waiting period is non-negotiable. Arrive even one day early, and your pet may face quarantine or be sent back at your expense.³⁶
                     </p>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">3. The “15-Week Rule” (The Puppy & Kitten Barrier)</h2>
+                    <h2 id="puppy-barrier" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">3. The “15-Week Rule” (The Puppy & Kitten Barrier)</h2>
                     <p>This rule catches many new pet owners off guard.</p>
                     <p>Germany <strong>does not allow puppies or kittens under 15 weeks old</strong> to enter from countries such as the US, UK, Canada, and other EU-listed (low-rabies-risk) countries.¹⁴⁷</p>
 
@@ -97,7 +89,7 @@ export default function MovingWithPetChecklist() {
                     </ul>
                     <p>In practice, this usually means pets cannot enter Germany until they are around 7 months old or older.⁴⁷</p>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">4. Paperwork: The EU Health Certificate (Annex IV)</h2>
+                    <h2 id="paperwork" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">4. Paperwork: The EU Health Certificate (Annex IV)</h2>
                     <p>If you’re arriving from a non-EU country (such as the US, UK, or Canada), you’ll need an <strong>EU Annex IV Animal Health Certificate</strong>.¹³</p>
                     <p>This certificate must:</p>
                     <ul className="list-disc pl-5">
@@ -107,12 +99,12 @@ export default function MovingWithPetChecklist() {
                     </ul>
                     <p>It feels like a race against time — so book your international health certificate appointment well in advance.</p>
 
-                    <h2 className="text-2xl font-bold text-primary mt-12 mb-4">5. “Non-Commercial” vs. “Commercial” Travel</h2>
+                    <h2 id="travel-type" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">5. “Non-Commercial” vs. “Commercial” Travel</h2>
                     <p>To keep the process simple (and affordable), your pet must travel <strong>within 5 days before or after your own flight</strong>.¹</p>
                     <p>This classifies the move as non-commercial. If the gap is longer, the transport is legally considered commercial, triggering significantly more paperwork, higher costs, and stricter controls.</p>
 
                     <div className="bg-red-50 border border-red-100 p-8 rounded-2xl my-12">
-                        <h2 className="text-2xl font-bold text-red-800 mb-4 mt-0">6. Important Additional Restrictions</h2>
+                        <h2 id="restrictions" className="text-2xl font-bold text-red-800 mb-4 mt-0 scroll-mt-24">6. Important Additional Restrictions</h2>
                         <h3 className="text-lg font-bold text-red-700 mt-4 mb-2">Breed restrictions</h3>
                         <p className="text-red-900/80">Germany enforces strict dog-breed regulations under both federal and state-level (Bundesland) laws.</p>
                         <p className="text-red-900/80">Commonly restricted or banned breeds include:</p>
@@ -176,20 +168,11 @@ export default function MovingWithPetChecklist() {
                         </ol>
                     </section>
                 </article>
+
+                <RelatedPosts currentPath="/blog/moving-to-germany-with-pet-2025" />
             </main>
 
-            <footer className="bg-primary text-secondary py-12 text-center text-sm relative z-10 mt-12">
-                <div className="max-w-4xl mx-auto px-4 space-y-6">
-                    <div className="flex justify-center gap-6 font-semibold flex-wrap">
-                        <Link to="/about" className="hover:text-accent transition-colors">About</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                        <Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link>
-                        <Link to="/privacy" className="hover:text-accent transition-colors">Privacy</Link>
-                    </div>
-                    <p className="opacity-60">© 2025 englishspeakinggermany.online • Made with ❤️ for pets.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

@@ -1,20 +1,12 @@
-import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Impressum() {
     return (
         <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
             {/* Header */}
-            <header className="sticky top-0 z-10 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
-                <div className="max-w-4xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                        <img src="/logo.png" alt="EnglishSpeakingVets Logo" className="h-16 w-auto" />
-                        <span>EnglishSpeaking<span className="text-accent">Vets</span></span>
-                    </Link>
-                    <Link to="/" className="text-sm font-semibold hover:text-accent transition-colors">
-                        ← Back to Directory
-                    </Link>
-                </div>
-            </header>
+            {/* Header */}
+            <Header />
 
             <main className="max-w-3xl mx-auto p-6 md:p-12">
                 <h1 className="text-4xl font-bold text-primary mb-8">Impressum</h1>
@@ -113,18 +105,7 @@ export default function Impressum() {
                 </div>
             </main>
 
-            <footer className="bg-primary text-secondary py-12 text-center text-sm mt-12">
-                <div className="max-w-4xl mx-auto px-4 space-y-6">
-                    <div className="flex justify-center gap-6 font-semibold flex-wrap">
-                        <Link to="/about" className="hover:text-accent transition-colors">About</Link>
-                        <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                        <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                        <Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link>
-                        <Link to="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link>
-                    </div>
-                    <p className="opacity-60">© 2025 EnglishSpeakingVets.online • Made with ❤️ for pets.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

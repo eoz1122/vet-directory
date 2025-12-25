@@ -6,6 +6,7 @@ import PlaceAutocomplete from '../components/PlaceAutocomplete'
 import { calculateDistance } from '../utils/distance'
 import { APIProvider } from '@vis.gl/react-google-maps'
 import { Helmet } from 'react-helmet-async'
+import Footer from '../components/Footer'
 
 interface Vet {
     id: string
@@ -397,18 +398,7 @@ export default function Home() {
                             </div>
                         )}
 
-                        <footer className="bg-primary text-secondary py-8 text-center text-sm border-t border-primary/10">
-                            <div className="max-w-4xl mx-auto px-4 space-y-4">
-                                <nav className="flex justify-center gap-6 font-semibold flex-wrap">
-                                    <Link to="/about" className="hover:text-accent transition-colors">About</Link>
-                                    <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
-                                    <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
-                                    <Link to="/impressum" className="hover:text-accent transition-colors">Impressum</Link>
-                                    <Link to="/privacy" className="hover:text-accent transition-colors">Privacy</Link>
-                                </nav>
-                                <p className="opacity-60">© 2025 EnglishSpeakingVets.online • Trusted by Expats.</p>
-                            </div>
-                        </footer>
+                        <Footer />
                     </main>
                 </div>
 
