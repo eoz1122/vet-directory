@@ -17,9 +17,22 @@ export default function QualityPromise() {
                     <h1 className="text-4xl md:text-5xl font-bold text-primary tracking-tight">
                         Our Quality Promise
                     </h1>
-                    <p className="text-xl text-primary/70 max-w-2xl mx-auto">
+                    <p className="text-xl text-primary/70 max-w-2xl mx-auto italic">
                         Keeping the Connection Strong
                     </p>
+
+                    <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-2xl mx-auto border-8 border-white group">
+                        <img
+                            src="/images/cat-hero.png"
+                            alt="A calm, happy cat sitting on a sofa"
+                            className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        <div className="absolute bottom-6 left-6 text-white text-left">
+                            <p className="text-sm font-bold uppercase tracking-widest opacity-80">Our Inspiration</p>
+                            <p className="text-2xl font-serif italic italic font-medium">"For the love of our little friends."</p>
+                        </div>
+                    </div>
                 </section>
 
                 {/* Our Heart */}
