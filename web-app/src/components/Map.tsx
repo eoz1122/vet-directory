@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Map as GoogleMap, AdvancedMarker, Pin, InfoWindow, useMap } from '@vis.gl/react-google-maps';
+import { Map as GoogleMap, AdvancedMarker, InfoWindow, useMap } from '@vis.gl/react-google-maps';
 import { appendUTM } from '../utils/url';
 import type { Vet } from '../types/vet';
 
@@ -75,7 +75,6 @@ export default function AppMap({ vets, selectedCity, selectedVet, onSelectVet }:
                         position={vet.coordinates}
                         onClick={() => {
                             onSelectVet(vet);
-                            map?.moveCamera({ center: vet.coordinates, zoom: 15 });
                         }}
                     >
                         <div className={`relative transition-all duration-300 ${selectedVet?.id === vet.id ? 'scale-125 z-50' : 'scale-100 opacity-90 hover:scale-110 hover:opacity-100 hover:z-40'}`}>
@@ -86,8 +85,8 @@ export default function AppMap({ vets, selectedCity, selectedVet, onSelectVet }:
 
                             {/* Paw Icon Marker */}
                             <div className={`w-10 h-10 rounded-full flex items-center justify-center shadow-lg border-2 transform transition-colors ${selectedVet?.id === vet.id
-                                    ? 'bg-accent border-white text-white shadow-accent/40'
-                                    : 'bg-white border-accent text-accent shadow-black/20'
+                                ? 'bg-accent border-white text-white shadow-accent/40'
+                                : 'bg-white border-accent text-accent shadow-black/20'
                                 }`}>
                                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-1.36c.64-.11 1.05-.73.91-1.38-.13-.64-.72-1.04-1.37-.93L12 14.28 10.96 8.54c-.11-.65-.73-1.05-1.38-.91-.64.13-1.04.72-.93 1.37l1.37 7.51-5.75-.41c-.65-.05-1.22.44-1.27 1.09-.05.65.44 1.22 1.09 1.27l5.41.39z M17.34 14.86l1.23-.97c.51-.4.59-1.15.19-1.65-.4-.51-1.15-.59-1.65-.19l-1.23.97-1.42-3.88c-.23-.61-.91-.91-1.52-.68-.61.23-.91.91-.68 1.52l2.08 5.68 2.02 2.02c.46.46 1.21.46 1.67 0 .46-.47.46-1.22-.01-1.67l-1.32-1.32.64.17z" />
