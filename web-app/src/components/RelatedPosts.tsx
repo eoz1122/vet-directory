@@ -55,6 +55,12 @@ const allPosts: BlogPost[] = [
         title: "Public Transport with Dogs (Frankfurt)",
         emoji: "🚆",
         desc: "RMV guide: Free dogs & muzzle rules"
+    },
+    {
+        url: "/blog/german-vet-survival-kit-phrases",
+        title: "German Vet Survival Kit Phrases",
+        emoji: "🩺",
+        desc: "Essential medical German medical terms"
     }
 ];
 

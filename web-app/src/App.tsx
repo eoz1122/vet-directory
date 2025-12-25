@@ -18,6 +18,7 @@ import PublicTransportBerlin from './pages/PublicTransportBerlin';
 import PublicTransportHamburg from './pages/PublicTransportHamburg';
 import PublicTransportFrankfurt from './pages/PublicTransportFrankfurt';
 import Blog from './pages/Blog';
+import GermanVetPhrases from './pages/GermanVetPhrases';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/german-vet-survival-kit-phrases" element={<GermanVetPhrases />} />
           <Route path="/quality-promise" element={<QualityPromise />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

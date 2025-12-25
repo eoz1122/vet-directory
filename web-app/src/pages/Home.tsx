@@ -97,16 +97,20 @@ export default function Home() {
         })
     }, [selectedCity, searchTerm, userLocation])
 
+    interface VetWithDistance extends Vet {
+        distance?: number;
+    }
+
     // 2. Sort logic (Distance vs Default)
     const sortedVets = useMemo(() => {
-        if (!userLocation) return filteredVets;
+        if (!userLocation) return filteredVets as VetWithDistance[];
 
         return [...filteredVets].map(vet => {
             const dist = vet.coordinates.lat !== 0
                 ? calculateDistance(userLocation.lat, userLocation.lng, vet.coordinates.lat, vet.coordinates.lng)
                 : 9999;
-            return { ...vet, distance: dist };
-        }).sort((a, b) => (a as any).distance - (b as any).distance);
+            return { ...vet, distance: dist } as VetWithDistance;
+        }).sort((a, b) => (a.distance || 0) - (b.distance || 0));
     }, [filteredVets, userLocation]);
 
     // 3. Pagination logic
@@ -116,7 +120,7 @@ export default function Home() {
         currentPage * ITEMS_PER_PAGE
     );
 
-    const handlePlaceSelect = (location: { lat: number; lng: number } | null, _address: string) => {
+    const handlePlaceSelect = (location: { lat: number; lng: number } | null) => {
         if (location) {
             setUserLocation(location);
             setSelectedCity('All');
@@ -241,9 +245,9 @@ export default function Home() {
                                     : 'bg-white border-transparent hover:border-accent/20 hover:scale-[1.01]'
                                     }`}
                             >
-                                {(vet as any).distance !== undefined && (vet as any).distance < 9000 && (
+                                {vet.distance !== undefined && vet.distance < 9000 && (
                                     <div className="absolute top-4 right-4 bg-accent/10 text-accent text-xs font-bold px-2 py-1 rounded">
-                                        {Math.round((vet as any).distance)} km
+                                        {Math.round(vet.distance)} km
                                     </div>
                                 )}
 
@@ -388,6 +392,11 @@ export default function Home() {
                                         <p className="text-xs text-primary/60">Registration, annual costs and exemptions</p>
                                     </div>
                                 </Link>
+                                <div className="pt-2">
+                                    <Link to="/blog" className="block w-full text-center py-3 bg-primary text-secondary rounded-xl font-bold text-sm hover:bg-accent hover:text-primary transition-all shadow-sm">
+                                        📚 View All Expat Guides
+                                    </Link>
+                                </div>
                             </nav>
                         </div>
 
@@ -433,7 +442,7 @@ export default function Home() {
                                     </h3>
                                     <p className="text-xs text-red-600 mt-1">Regulatory Notice & Correction Request</p>
                                 </div>
-                                <button onClick={() => setReportingVet(null)} className="text-red-400 hover:text-red-700">
+                                <button onClick={() => setReportingVet(null)} className="text-red-400 hover:text-red-700" title="Close">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                                 </button>
                             </div>

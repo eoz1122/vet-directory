@@ -59,6 +59,13 @@ const blogPosts = [
         emoji: "🚆",
         category: "Transport",
         desc: "RMV Guide: Navigating the 'muzzle gray zone' and utilizing the free travel rules in Germany's financial hub."
+    },
+    {
+        url: "/blog/german-vet-survival-kit-phrases",
+        title: "German Vet Survival Kit Phrases",
+        emoji: "🩺",
+        category: "Safety",
+        desc: "Essential medical German for pet owners. From describing symptoms like 'Durchfall' to making emergency appointments."
     }
 ];
 
