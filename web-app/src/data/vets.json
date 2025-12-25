@@ -1028,6 +1028,78 @@
     "community_status": "Verified"
   },
   {
+    "id": "Berlin-95",
+    "practice_name": "Pfotendoctor - dein digitaler Tierarzt",
+    "city": "Berlin",
+    "district": "Mitte",
+    "address": "Wöhlertstraße 12-13, 10115 Berlin",
+    "coordinates": {
+      "lat": 52.5372757,
+      "lng": 13.3786958
+    },
+    "contact": {
+      "phone": "0800 7777444",
+      "website": "https://www.pfotendoctor.de/"
+    },
+    "verification": {
+      "ai_score": 90,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Digital-only service with multiple reviews mentioning English-speaking doctors.",
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-96",
+    "practice_name": "Veterinary practice Galina Schirow GmbH (Hansavet)",
+    "city": "Berlin",
+    "district": "Hansaviertel",
+    "address": "Bartningallee 5, 10557 Berlin",
+    "coordinates": {
+      "lat": 52.5190267,
+      "lng": 13.3427188
+    },
+    "contact": {
+      "phone": "030 39886966",
+      "website": "http://www.vetpraxis-schirow.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Multilingual team (English, German, Russian)",
+        "Review: 'A highly competent and caring team of veterinarians - perfect for internationals!'"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-97",
+    "practice_name": "Tierarztpraxis Brigitte Ludwig-Kahya",
+    "city": "Berlin",
+    "district": "Kreuzberg",
+    "address": "Wilhelmstraße 3, 10963 Berlin",
+    "coordinates": {
+      "lat": 52.500908,
+      "lng": 13.391216
+    },
+    "contact": {
+      "phone": "030 2513480",
+      "website": "http://www.tierarztpraxis-in-kreuzberg.de/"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Review: 'EVERYONE SPEAKS ENGLISH. The place is amazingly clean and spacious.'",
+        "Fluent English staff members confirmed by multiple international pet owners."
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
     "id": "Frankfurt-46",
     "practice_name": "Filu Vet Nordend",
     "city": "Frankfurt",
