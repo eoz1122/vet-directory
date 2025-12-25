@@ -2293,7 +2293,7 @@
     "practice_name": "Kleintiermedizin am Lützowufer",
     "city": "Berlin",
     "district": "Berlin",
-    "address": "https://www.google.com/maps/place/Kleintiermedizin+am+L%C3%BCtzowufer/data=!4m7!3m6!1s0x47a851ad2a53ba37:0x9b8a2da25d7c1a36!8m2!3d52.5062018!4d13.3493321!16s%2Fg%2F11fxvtrx2s!19sChIJN7pTKq1RqEcRNhp8XaItips?authuser=0&hl=en&rclk=1, Berlin",
+    "address": "Lützowufer 24, 10787 Berlin",
     "coordinates": {
       "lat": 52.5062018,
       "lng": 13.3493321
@@ -4100,7 +4100,7 @@
     "practice_name": "Kleintierpraxis am Haigst GmbH",
     "city": "Stuttgart",
     "district": "Unknown",
-    "address": "Alte Weinsteige 100",
+    "address": "Alte Weinsteige 100, 70597 Stuttgart",
     "coordinates": {
       "lat": 48.7549151,
       "lng": 9.1719186
@@ -4169,7 +4169,7 @@
     "practice_name": "Kleintierpraxis Dr. Späth",
     "city": "Stuttgart",
     "district": "Unknown",
-    "address": "Rembrandtstraße 15",
+    "address": "Rembrandtstraße 15, 70567 Stuttgart",
     "coordinates": {
       "lat": 48.7282653,
       "lng": 9.1499572
