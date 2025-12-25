@@ -404,8 +404,10 @@
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
-      "english_signals": []
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png She is very attentive, fri...\""
+      ]
     },
     "community_status": "Verified"
   },
@@ -933,7 +935,8 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Verified English Support",
-        "Confirmed English-speaking via Google Reviews comments"
+        "Confirmed English-speaking via Google Reviews comments",
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png The staff are super friend...\""
       ]
     },
     "community_status": "Verified"
@@ -1096,7 +1099,8 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Review: 'EVERYONE SPEAKS ENGLISH. The place is amazingly clean and spacious.'",
-        "Fluent English staff members confirmed by multiple international pet owners."
+        "Fluent English staff members confirmed by multiple international pet owners.",
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Really lovely, kind, carin...\""
       ]
     },
     "community_status": "Verified"
@@ -2249,7 +2253,8 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed English-speaking via Google Reviews comments"
+        "Confirmed English-speaking via Google Reviews comments",
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Very good place with great...\""
       ]
     },
     "community_status": "Verified"
@@ -2321,7 +2326,8 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed English-speaking via Google Reviews comments"
+        "Confirmed English-speaking via Google Reviews comments",
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Our cats received the best...\""
       ]
     },
     "community_status": "Verified"
@@ -2345,7 +2351,8 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed English-speaking via Google Reviews comments"
+        "Confirmed English-speaking via Google Reviews comments",
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png He's also a good listener ...\""
       ]
     },
     "community_status": "Verified"
@@ -2369,7 +2376,8 @@
       "ai_score": 95,
       "last_scanned": "2025-12-25",
       "english_signals": [
-        "Confirmed English-speaking via Google Reviews comments"
+        "Confirmed English-speaking via Google Reviews comments",
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Everyone speaks English an...\""
       ]
     },
     "community_status": "Verified"
@@ -2394,6 +2402,534 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Confirmed English-speaking via Google Reviews comments"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-105",
+    "practice_name": "Tierarztpraxis Rödiger - Das Veterinärmedizinische Zentrum Berlin - 24h geöffnet",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Scharnweberstraße 136, Berlin",
+    "coordinates": {
+      "lat": 52.5643159,
+      "lng": 13.3262383
+    },
+    "contact": {
+      "phone": "030 4127357",
+      "website": "https://www.vetzentrum-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+R%C3%B6diger+-+Das+Veterin%C3%A4rmedizinische+Zentrum+Berlin+-+24h+ge%C3%B6ffnet/data=!4m7!3m6!1s0x47a853ef387aaf1f:0xdb64322c775ad6a9!8m2!3d52.5643159!4d13.3262383!16s%2Fg%2F1tj56td9!19sChIJH696OO9TqEcRqdZadywyZNs?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png ... very kind and professi...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-106",
+    "practice_name": "Veterinary Practice by the Water Tower",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Rykestraße 4, Berlin",
+    "coordinates": {
+      "lat": 52.5350514,
+      "lng": 13.419747
+    },
+    "contact": {
+      "phone": "030 4420329",
+      "website": "http://www.tierarztpraxis-wasserturm.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+Practice+by+the+Water+Tower/data=!4m7!3m6!1s0x47a84e03e9285567:0xb5fe0b87abb728f0!8m2!3d52.5350514!4d13.419747!16s%2Fg%2F1234r5bv1!19sChIJZ1Uo6QNOqEcR8Ci3q4cL_rU?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png speak English · Closes 6 p...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-107",
+    "practice_name": "Veterinarian and cattery",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Conrad-Blenkle-Straße 4, Berlin",
+    "coordinates": {
+      "lat": 52.5281499,
+      "lng": 13.4502641
+    },
+    "contact": {
+      "phone": "030 42085005",
+      "website": "http://www.tierarztpraxis-am-velodrom.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinarian+and+cattery/data=!4m7!3m6!1s0x47a84e71edabbaf1:0xcdafb946c2a44b7b!8m2!3d52.5281499!4d13.4502641!16s%2Fg%2F1tctwlbc!19sChIJ8bqr7XFOqEcRe0ukwka5r80?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Awesome personal with good...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-108",
+    "practice_name": "felmo Mobiler Tierarzt Berlin",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.524102,
+      "lng": 13.332714
+    },
+    "contact": {
+      "phone": "0800 0010347",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Berlin/data=!4m7!3m6!1s0x47a851daf8337149:0x6726eb1d6104038b!8m2!3d52.524102!4d13.332714!16s%2Fg%2F11hds6bxzr!19sChIJSXEz-NpRqEcRiwMEYR3rJmc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Doctors are friendly and c...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-109",
+    "practice_name": "Tierarztpraxis Rödiger - Das Veterinärmedizinische Zentrum Berlin - 24h geöffnet",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "136 Scharnweberstraße, Berlin",
+    "coordinates": {
+      "lat": 52.564316,
+      "lng": 13.326238
+    },
+    "contact": {
+      "phone": "030 4127357",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+R%C3%B6diger+-+Das+Veterin%C3%A4rmedizinische+Zentrum+Berlin+-+24h+ge%C3%B6ffnet/data=!4m7!3m6!1s0x47a853ef387aaf1f:0xdb64322c775ad6a9!8m2!3d52.564316!4d13.326238!16s%2Fg%2F1tj56td9!19sChIJH696OO9TqEcRqdZadywyZNs?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png ... very kind and professi...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-110",
+    "practice_name": "Dr. Ulusal veterinarian",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Prinzenallee 72-73, Berlin",
+    "coordinates": {
+      "lat": 52.5554661,
+      "lng": 13.3836295
+    },
+    "contact": {
+      "phone": "030 4936060",
+      "website": "http://www.tierarzt-in-wedding.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.+Ulusal+veterinarian/data=!4m7!3m6!1s0x416521a502f61045:0xf80f1d3a889bfb9e!8m2!3d52.5554661!4d13.3836295!16s%2Fg%2F12lvkr1tc!19sChIJRRD2AqUhZUERnvubiDodD_g?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png They were speaking 3 langu...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-111",
+    "practice_name": "Veterinary clinic for cats - vets for cats Berlin",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.4897329,
+      "lng": 13.3391583
+    },
+    "contact": {
+      "phone": "030 34398877",
+      "website": "https://www.vetsforcats.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+clinic+for+cats+-+vets+for+cats+Berlin/data=!4m7!3m6!1s0x47a8505c14dd0365:0x6592bbfb53015b3e!8m2!3d52.4897329!4d13.3391583!16s%2Fg%2F1ptvqbly0!19sChIJZQPdFFxQqEcRPlsBU_u7kmU?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Compassionate care and Eng...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-112",
+    "practice_name": "Veterinary clinic for small animals and pets",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.5087827,
+      "lng": 13.5557674
+    },
+    "contact": {
+      "phone": "030 5143760",
+      "website": "https://www.tierklinik-in-biesdorf.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+clinic+for+small+animals+and+pets/data=!4m7!3m6!1s0x47a84941fd712d3b:0x565c966c172f20cd!8m2!3d52.5087827!4d13.5557674!16s%2Fg%2F1td57n5r!19sChIJOy1x_UFJqEcRzSAvF2yWXFY?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png was kind, calm and they sp...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-113",
+    "practice_name": "Rex Tierarztpraxis Berlin-Prenzlauer Berg",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Greifswalder Str. 204, Berlin",
+    "coordinates": {
+      "lat": 52.5334687,
+      "lng": 13.4293548
+    },
+    "contact": {
+      "phone": "030 91733620",
+      "website": "https://www.rex.app/praxen/berlin-prenzlauer-berg",
+      "google_maps": "https://www.google.com/maps/place/Rex+Tierarztpraxis+Berlin-Prenzlauer+Berg/data=!4m7!3m6!1s0x47a84fddfeb06ccf:0xfce256665a5b5802!8m2!3d52.5334687!4d13.4293548!16s%2Fg%2F11vyxr1h3w!19sChIJz2yw_t1PqEcRAlhbWmZW4vw?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png german and English · Opens...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-114",
+    "practice_name": "felmo Mobiler Tierarzt Berlin",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.5241016,
+      "lng": 13.3327137
+    },
+    "contact": {
+      "phone": "030 31196542",
+      "website": "https://felmo.de/tierarzt/berlin/?utm_medium=referral&utm_source=google_my_business&utm_term=berlin",
+      "google_maps": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Berlin/data=!4m7!3m6!1s0x47a851daf8337149:0x6726eb1d6104038b!8m2!3d52.5241016!4d13.3327137!16s%2Fg%2F11hds6bxzr!19sChIJSXEz-NpRqEcRiwMEYR3rJmc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Doctors are friendly and c...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-115",
+    "practice_name": "Dr.med.vet. Claudia Pastor Tierärztin",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Brüsseler Str. 52A, Berlin",
+    "coordinates": {
+      "lat": 52.54868,
+      "lng": 13.3531601
+    },
+    "contact": {
+      "phone": "030 4539080",
+      "website": "http://www.tierarztpraxis-pastor.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+Claudia+Pastor+Tier%C3%A4rztin/data=!4m7!3m6!1s0x47a8517e21566743:0x114581b9a63794aa!8m2!3d52.54868!4d13.3531601!16s%2Fg%2F1tv235bz!19sChIJQ2dWIX5RqEcRqpQ3prmBRRE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png speak English and you can ...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-116",
+    "practice_name": "Dr. med. vet. Claudia Handke",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Danziger Str. 15, Berlin",
+    "coordinates": {
+      "lat": 52.5407316,
+      "lng": 13.4157091
+    },
+    "contact": {
+      "phone": "030 4421760",
+      "website": "http://www.tierarztpraxis-prenzlauerberg.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.+med.+vet.+Claudia+Handke/data=!4m7!3m6!1s0x47a851ffe8bf593f:0x91d6e1cf0d7f4c94!8m2!3d52.5407316!4d13.4157091!16s%2Fg%2F1tfw21mc!19sChIJP1m_6P9RqEcRlEx_Dc_h1pE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Nice, cheap, professional ...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-117",
+    "practice_name": "Dr.med.vet. Wolfgang Beck veterinarian",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Weichselstraße 25, Berlin",
+    "coordinates": {
+      "lat": 52.4869708,
+      "lng": 13.4367711
+    },
+    "contact": {
+      "phone": "030 6239664",
+      "website": "http://www.tierarztpraxis-dr-beck.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+Wolfgang+Beck+veterinarian/data=!4m7!3m6!1s0x47a84fafd90f6acb:0xb9847fcb07cf6bc9!8m2!3d52.4869708!4d13.4367711!16s%2Fg%2F1tjymrcy!19sChIJy2oP2a9PqEcRyWvPB8t_hLk?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Doctors speak English and ...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-118",
+    "practice_name": "Kleintierpraxis im Kiez - TA Jörg Saecker",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Pohlstraße 69, Berlin",
+    "coordinates": {
+      "lat": 52.5008191,
+      "lng": 13.3628081
+    },
+    "contact": {
+      "phone": "0163 6746922",
+      "website": "http://www.kieztierarzt.de/",
+      "google_maps": "https://www.google.com/maps/place/Kleintierpraxis+im+Kiez+-+TA+J%C3%B6rg+Saecker/data=!4m7!3m6!1s0x47a8504a492c46a7:0x39b2ed0c13067f81!8m2!3d52.5008191!4d13.3628081!16s%2Fg%2F1tdq9m52!19sChIJp0YsSUpQqEcRgX8GEwztsjk?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Good experience, very frie...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-119",
+    "practice_name": "Veterinary practice Friedrichshain Sabine Heidel",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Auerstraße 44, Berlin",
+    "coordinates": {
+      "lat": 52.5209184,
+      "lng": 13.4462681
+    },
+    "contact": {
+      "phone": "030 78083485",
+      "website": "http://www.tierarztpraxis-friedrichshain.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+practice+Friedrichshain+Sabine+Heidel/data=!4m7!3m6!1s0x47a84e695cc6d7f1:0x3283c49cdeb81b59!8m2!3d52.5209184!4d13.4462681!16s%2Fg%2F11c6f0l69_!19sChIJ8dfGXGlOqEcRWRu43pzEgzI?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png ... a responsive reception...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-120",
+    "practice_name": "Tierarztpraxis Dr. Peter Vogel",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Finowstraße 14, Berlin",
+    "coordinates": {
+      "lat": 52.5114026,
+      "lng": 13.4666047
+    },
+    "contact": {
+      "phone": "030 29776835",
+      "website": "http://www.drpetervogel.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Peter+Vogel/data=!4m7!3m6!1s0x47a84e5e02696dbf:0x3d814eedbcad95ff!8m2!3d52.5114026!4d13.4666047!16s%2Fg%2F1tvt9ckb!19sChIJv21pAl5OqEcR_5WtvO1OgT0?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png German and English\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-121",
+    "practice_name": "Veterinary practice E. Laskawy",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Bänschstraße 58, Berlin",
+    "coordinates": {
+      "lat": 52.5176605,
+      "lng": 13.4663371
+    },
+    "contact": {
+      "phone": "030 4267684",
+      "website": "http://www.laskawy-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+practice+E.+Laskawy/data=!4m7!3m6!1s0x47a84e61d0077367:0x5bd567a75ef25002!8m2!3d52.5176605!4d13.4663371!16s%2Fg%2F1tffncfm!19sChIJZ3MH0GFOqEcRAlDyXqdn1Vs?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png speak English and even one...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-122",
+    "practice_name": "Rex Tierarztpraxis Berlin-Friedrichshain",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Revaler Str. 17, Berlin",
+    "coordinates": {
+      "lat": 52.5072059,
+      "lng": 13.4575494
+    },
+    "contact": {
+      "phone": "030 91734338",
+      "website": "https://www.rex.app/praxen/rex-berlin-friedrichshain",
+      "google_maps": "https://www.google.com/maps/place/Rex+Tierarztpraxis+Berlin-Friedrichshain/data=!4m7!3m6!1s0x47a84f9be0f199a1:0x1bc2f105df77e470!8m2!3d52.5072059!4d13.4575494!16s%2Fg%2F11vhg12w0x!19sChIJoZnx4JtPqEcRcOR33wXxwhs?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png ... was nice, clearly expl...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-123",
+    "practice_name": "Tierarztpraxis Rotgang",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.5310183,
+      "lng": 13.4278352
+    },
+    "contact": {
+      "phone": "030 4254696",
+      "website": "https://www.tierarztpraxis-rotgang.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Rotgang/data=!4m7!3m6!1s0x47a84f8d95729e73:0x6bb27b6cd086cd71!8m2!3d52.5310183!4d13.4278352!16s%2Fg%2F11qr9m8bs3!19sChIJc55ylY1PqEcRcc2G0Gx7sms?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Stuff is bilingual so no p...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-124",
+    "practice_name": "Tierarztpraxis Oldenburger Straße",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Oldenburger Str. 44, Berlin",
+    "coordinates": {
+      "lat": 52.5289304,
+      "lng": 13.3357299
+    },
+    "contact": {
+      "phone": "030 3951555",
+      "website": "http://www.tierarztpraxis-oldenburger-strasse.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Oldenburger+Stra%C3%9Fe/data=!4m7!3m6!1s0x47a8510d369c5953:0xebafa45584e9073b!8m2!3d52.5289304!4d13.3357299!16s%2Fg%2F11c6_bkhly!19sChIJU1mcNg1RqEcROwfphFWkr-s?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png German, English and On top...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-125",
+    "practice_name": "Tierarztpraxis am Südkreuz",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Gustav-Müller-Straße 19, Berlin",
+    "coordinates": {
+      "lat": 52.4808667,
+      "lng": 13.3621523
+    },
+    "contact": {
+      "phone": "030 96083860",
+      "website": "http://www.tierarztpraxis-am-suedkreuz.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+am+S%C3%BCdkreuz/data=!4m7!3m6!1s0x47a85015c7a92a8b:0x82877ba7d1db3449!8m2!3d52.4808667!4d13.3621523!16s%2Fg%2F1ts1r7x_!19sChIJiyqpxxVQqEcRSTTb0ad7h4I?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png and assistant speak englis...\""
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-126",
+    "practice_name": "DER TIERARZT Dr. Theobald in Schöneberg",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Eisenacher Str. 40, Berlin",
+    "coordinates": {
+      "lat": 52.4898995,
+      "lng": 13.3487913
+    },
+    "contact": {
+      "phone": "030 2111779",
+      "website": "https://tierarztschoeneberg.de/",
+      "google_maps": "https://www.google.com/maps/place/DER+TIERARZT+Dr.+Theobald+in+Sch%C3%B6neberg/data=!4m7!3m6!1s0x47a850448045a28d:0x97ce7237bb30acd9!8m2!3d52.4898995!4d13.3487913!16s%2Fg%2F1tfrfs_1!19sChIJjaJFgERQqEcR2awwuzdyzpc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed via Google Review: \"Directions https://ssl.gstatic.com/local/servicebusiness/default_user.png Excellent , friendly and s...\""
       ]
     },
     "community_status": "Verified"
