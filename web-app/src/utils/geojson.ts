@@ -1,4 +1,4 @@
-import { Vet } from './types/vet';
+import type { Vet } from '../types/vet';
 
 export const vetsToGeoJson = (vets: Vet[]) => {
     return {
