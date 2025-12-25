@@ -17,6 +17,9 @@ import PetFriendlyApartments from './pages/PetFriendlyApartments';
 import PublicTransportBerlin from './pages/PublicTransportBerlin';
 import PublicTransportHamburg from './pages/PublicTransportHamburg';
 import PublicTransportFrankfurt from './pages/PublicTransportFrankfurt';
+import PublicTransportMunich from './pages/PublicTransportMunich';
+import PublicTransportStuttgart from './pages/PublicTransportStuttgart';
+import PetSittingGermany from './pages/PetSittingGermany';
 import Blog from './pages/Blog';
 import GermanVetPhrases from './pages/GermanVetPhrases';
 
@@ -39,6 +42,9 @@ function App() {
           <Route path="/blog/public-transport-with-dogs-berlin-2025" element={<PublicTransportBerlin />} />
           <Route path="/blog/public-transport-with-dogs-hamburg-2025" element={<PublicTransportHamburg />} />
           <Route path="/blog/public-transport-with-dogs-frankfurt-2025" element={<PublicTransportFrankfurt />} />
+          <Route path="/blog/public-transport-with-dogs-munich-2025" element={<PublicTransportMunich />} />
+          <Route path="/blog/public-transport-with-dogs-stuttgart-2025" element={<PublicTransportStuttgart />} />
+          <Route path="/blog/pet-sitting-germany-2025" element={<PetSittingGermany />} />
           <Route path="/vets/:city" element={<CityVets />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/privacy" element={<Privacy />} />

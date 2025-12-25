@@ -260,7 +260,7 @@ const Home: React.FC = () => {
                                         </div>
                                     ) : (
                                         <a
-                                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
+                                            href={`https://www.google.com/search?q=https://www.google.com/maps/search/%3Fapi%3D1%26query%3D${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             onClick={(e) => e.stopPropagation()}
@@ -307,7 +307,7 @@ const Home: React.FC = () => {
                                         {/* Hide Map button for Mobile Services */}
                                         {!(vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown')) && (
                                             <a
-                                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
+                                                href={`https://www.google.com/search?q=https://www.google.com/maps/search/%3Fapi%3D1%26query%3D${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 onClick={(e) => e.stopPropagation()}

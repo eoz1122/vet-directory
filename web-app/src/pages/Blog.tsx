@@ -5,6 +5,13 @@ import Footer from '../components/Footer';
 
 const blogPosts = [
     {
+        url: "/blog/pet-sitting-germany-2025",
+        title: "Pet Sitting in Germany (2025)",
+        emoji: "🏡",
+        category: "Living",
+        desc: "Finding a safe home for your little friends. Comparing platforms like Pawshake vs. Pensions vs. Community Swaps."
+    },
+    {
         url: "/blog/moving-to-germany-with-pet-2025",
         title: "Moving to Germany with a Pet",
         emoji: "🐕",
