@@ -209,20 +209,63 @@ export default function CityVets() {
                         {cityVets.map((vet: Vet) => (
                             <article
                                 key={vet.id}
-                                className="bg-white p-6 rounded-xl shadow-sm border border-primary/5 hover:border-accent/20 transition-all"
+                                className="group/card relative bg-white p-6 rounded-[2rem] border border-primary/5 transition-all duration-500 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:border-accent/20"
                             >
-                                <h3 className="text-xl font-bold text-primary mb-2">{vet.practice_name}</h3>
-                                <p className="text-sm text-primary/70 mb-1">{vet.address}</p>
-                                {vet.contact?.phone && (
-                                    <a href={`tel:${vet.contact.phone}`} className="text-accent hover:underline text-sm block mb-1">
-                                        📞 {vet.contact.phone}
+                                <div className="flex justify-between items-start mb-4">
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <span className="px-2 py-0.5 bg-primary/5 text-primary text-[9px] font-black uppercase tracking-widest rounded-full">
+                                                {vet.city}
+                                            </span>
+                                            {vet.district && vet.district !== "Unknown" && (
+                                                <span className="px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-black uppercase tracking-widest rounded-full">
+                                                    {vet.district}
+                                                </span>
+                                            )}
+                                        </div>
+                                        <h3 className="text-lg font-black text-primary group-hover/card:text-accent transition-colors leading-tight">
+                                            {vet.practice_name}
+                                        </h3>
+                                    </div>
+                                    <div className="flex flex-col items-end gap-2">
+                                        <div className="px-3 py-1 bg-green-50 text-green-700 text-[10px] font-black uppercase tracking-tighter rounded-xl border border-green-100/50 flex items-center gap-1.5 shadow-sm">
+                                            <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                                            Verified
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p className="text-[12px] text-primary/60 mb-5 font-medium leading-relaxed bg-secondary/30 p-4 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors">
+                                    {vet.address}
+                                </p>
+
+                                <div className="space-y-2 mb-6">
+                                    {vet.verification?.english_signals && vet.verification.english_signals.slice(0, 1).map((signal, idx) => (
+                                        <div key={idx} className="flex gap-3 items-start group/signal">
+                                            <div className="mt-1 flex-shrink-0 w-4 h-4 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-200">
+                                                <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7"></path></svg>
+                                            </div>
+                                            <p className="text-[11px] text-primary/60 italic leading-snug group-hover/signal:text-primary/80 transition-colors line-clamp-2">
+                                                {signal}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="flex gap-3">
+                                    <a
+                                        href={(vet.contact && vet.contact.website) ? appendUTM(vet.contact.website) : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary/95 transition-all shadow-xl shadow-primary/10 active:scale-95"
+                                    >
+                                        {(vet.contact && vet.contact.website) ? 'Visit website' : 'View on maps'}
                                     </a>
-                                )}
-                                {vet.contact?.website && (
-                                    <a href={appendUTM(vet.contact.website)} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline text-sm block">
-                                        🌐 Visit Website
-                                    </a>
-                                )}
+                                </div>
+
+                                <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
+                                    <span className="text-[10px] text-gray-400">Updated 2025</span>
+                                </div>
                             </article>
                         ))}
                     </div>
