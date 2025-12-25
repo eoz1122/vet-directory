@@ -188,6 +188,16 @@ export default function CityVets() {
                             </p>
                         ))}
                     </div>
+
+                    {CITY_CONFIG[capitalizedCity]?.guideLink && (
+                        <div className="mt-8">
+                            <Link to={CITY_CONFIG[capitalizedCity].guideLink!} className="inline-flex items-center gap-2 px-6 py-3 bg-accent/10 hover:bg-accent/20 text-accent font-bold rounded-xl transition-colors">
+                                <span>🚆</span>
+                                <span>Public Transport with Dogs in {capitalizedCity}</span>
+                                <span>→</span>
+                            </Link>
+                        </div>
+                    )}
                 </section>
 
                 <section>
