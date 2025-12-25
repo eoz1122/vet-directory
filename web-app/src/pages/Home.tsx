@@ -108,9 +108,9 @@ const Home: React.FC = () => {
                 </script>
             </Helmet>
 
-            <div className="min-h-screen flex flex-col md:flex-row bg-[#FDFCFB]">
+            <div className="min-h-screen flex flex-col md:flex-row bg-secondary">
                 <div className="md:w-[42%] lg:w-[40%] flex flex-col h-screen overflow-hidden border-r border-primary/5">
-                    <header className="sticky top-0 z-10 bg-white/70 backdrop-blur-xl border-b border-primary/5 p-6 space-y-4">
+                    <header className="sticky top-0 z-10 bg-secondary/80 backdrop-blur-xl border-b border-primary/5 p-6 space-y-4">
                         <Link to="/" className="flex items-center gap-4 group">
                             <div className="relative">
                                 <img src="/logo.png" alt="Logo" className="h-14 w-auto drop-shadow-sm transition-transform group-hover:scale-105" />

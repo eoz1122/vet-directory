@@ -75,8 +75,8 @@
     "district": "Home Visits*",
     "address": "*Mobile Service (Home Visits)*",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 52.52410159999999,
+      "lng": 13.3327137
     },
     "contact": {
       "phone": null,
@@ -1170,8 +1170,8 @@
     "district": "Specialist Center",
     "address": "Im Ried 12, 65719 Hofheim am Taunus",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.0896786,
+      "lng": 8.4623423
     },
     "contact": {
       "phone": null,
@@ -1447,8 +1447,8 @@
     "district": "Obertshausen",
     "address": "Birkenwaldstr. 42, 63179 Obertshausen",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.07601040000001,
+      "lng": 8.875295
     },
     "contact": {
       "phone": null,
@@ -1516,8 +1516,8 @@
     "district": "Königstein",
     "address": "Frankfurter Str. 11, 61462 Königstein im Taunus",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1815992,
+      "lng": 8.471150399999999
     },
     "contact": {
       "phone": null,
@@ -1540,8 +1540,8 @@
     "district": "Taunus",
     "address": "Dornbachstr. 33 a, 61440 Oberursel (Taunus)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.2144864,
+      "lng": 8.5668588
     },
     "contact": {
       "phone": null,
@@ -1564,8 +1564,8 @@
     "district": "Taunus",
     "address": "Robert-Koch-Str. 116, 65779 Kelkheim (Taunus)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1773429,
+      "lng": 8.404821
     },
     "contact": {
       "phone": null,
@@ -1588,8 +1588,8 @@
     "district": "Frankfurt",
     "address": "Unknown Address",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1290747,
+      "lng": 8.628140799999999
     },
     "contact": {
       "phone": null,
@@ -1634,8 +1634,8 @@
     "district": "Winterhude & Ottensen",
     "address": "Winterhuder Marktplatz 1, 22299 Hamburg / Ottensen",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5942753,
+      "lng": 9.9987207
     },
     "contact": {
       "phone": null,
@@ -1680,8 +1680,8 @@
     "district": "St. Pauli",
     "address": "B4 31, 20359 Hamburg (St. Pauli)",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.55376649999999,
+      "lng": 9.964839399999999
     },
     "contact": {
       "phone": null,
@@ -2174,8 +2174,8 @@
     "district": "Siyamed Mala Ali",
     "address": "Unknown Address",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5488282,
+      "lng": 9.987170299999999
     },
     "contact": {
       "phone": null,
@@ -2197,8 +2197,8 @@
     "district": "Hamburg",
     "address": "Unknown Address",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.6050408,
+      "lng": 9.9792363
     },
     "contact": {
       "phone": null,
@@ -2922,8 +2922,8 @@
     "district": "Hohenfelde",
     "address": "Lübecker Str. 128 U-Bahn Wartenau U 1, Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5635992,
+      "lng": 10.0345325
     },
     "contact": {
       "phone": "040 2202331",
@@ -2945,8 +2945,8 @@
     "district": "Alsterdorf",
     "address": "Alsterdorfer Str. 255A, Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.6082228,
+      "lng": 10.0052354
     },
     "contact": {
       "phone": "040 5110707",
@@ -2968,8 +2968,8 @@
     "district": "Fuhlsbüttel",
     "address": "Farnstraße 41, Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.6327356,
+      "lng": 10.0210687
     },
     "contact": {
       "phone": "040 592859",
@@ -2991,8 +2991,8 @@
     "district": "Niendorf",
     "address": "Garstedter Weg 274, Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.6387008,
+      "lng": 9.9699341
     },
     "contact": {
       "phone": "040 55204088",
@@ -3014,8 +3014,8 @@
     "district": "Winterhude",
     "address": "Dorotheenstraße 63, Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5836,
+      "lng": 10.0071901
     },
     "contact": {
       "phone": "040 482844",
@@ -3037,8 +3037,8 @@
     "district": "Billstedt",
     "address": "Schiffbeker Weg 46, Hamburg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5444343,
+      "lng": 10.1047443
     },
     "contact": {
       "phone": "040 7313231",
@@ -3060,8 +3060,8 @@
     "district": "Unknown",
     "address": "",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5488282,
+      "lng": 9.987170299999999
     },
     "contact": {
       "phone": "0174 4929182",
@@ -3083,8 +3083,8 @@
     "district": "Unknown",
     "address": "2928, Vogelweh",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "06371 94641900",
@@ -3107,8 +3107,8 @@
     "district": "Unknown",
     "address": "Mainzer Str. 65",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 49.9928617,
+      "lng": 8.2472526
     },
     "contact": {
       "phone": "0631 31039705",
@@ -3131,8 +3131,8 @@
     "district": "Unknown",
     "address": "Auf d. Pick 2b",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "06371 9188440",
@@ -3155,8 +3155,8 @@
     "district": "Unknown",
     "address": "29 Am Becheler",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "+352 33 40 33 1",
@@ -3179,8 +3179,8 @@
     "district": "Unknown",
     "address": "Katharina-Kemmler-Straße 7",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.0896786,
+      "lng": 8.4623423
     },
     "contact": {
       "phone": "06192 290290",
@@ -3203,8 +3203,8 @@
     "district": "Unknown",
     "address": "Daimlerstraße 7",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "06371 914314",
@@ -3227,8 +3227,8 @@
     "district": "Unknown",
     "address": "Rautenberg 1 b",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "06561 12012",
@@ -3251,8 +3251,8 @@
     "district": "Unknown",
     "address": "2 Um Bierg",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "+352 26 87 06 03",
@@ -3274,8 +3274,8 @@
     "district": "Unknown",
     "address": "Jahnstraße 80",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 49.8600795,
+      "lng": 8.6598085
     },
     "contact": {
       "phone": "06301 5552",
@@ -3298,8 +3298,8 @@
     "district": "Unknown",
     "address": "Kindsbacher Str. 9",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "06371 70040",
@@ -3322,8 +3322,8 @@
     "district": "Sachsenhausen",
     "address": "Mörfelder Landstraße 98",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.0968403,
+      "lng": 8.6835219
     },
     "contact": {
       "phone": "069 60607887",
@@ -3348,8 +3348,8 @@
     "district": "Unknown",
     "address": "Häusserstraße 36",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 49.4000822,
+      "lng": 8.6886929
     },
     "contact": {
       "phone": "06221 6730600",
@@ -3372,8 +3372,8 @@
     "district": "Unknown",
     "address": "62a Grand-Rue",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "+352 28 79 07 90",
@@ -3396,8 +3396,8 @@
     "district": "Unknown",
     "address": "Saarbrücker Allee 7",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.0459109,
+      "lng": 8.2048268
     },
     "contact": {
       "phone": "0611 1885815",
@@ -3420,8 +3420,8 @@
     "district": "Unknown",
     "address": "Merscheider Weg 1",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "06562 930081",
@@ -3444,8 +3444,8 @@
     "district": "Unknown",
     "address": "Heinzenberg 22",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "06542 962999",
@@ -3468,8 +3468,8 @@
     "district": "Unknown",
     "address": "Am Dreiländereck 11",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 49.4736753,
+      "lng": 6.372421
     },
     "contact": {
       "phone": "06867 5617688",
@@ -3492,8 +3492,8 @@
     "district": "Unknown",
     "address": "August-Horch-Straße 19",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.3055921,
+      "lng": 7.3255195
     },
     "contact": {
       "phone": "02654 8827188",
@@ -3516,8 +3516,8 @@
     "district": "Unknown",
     "address": "Wilhelmstraße 22",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.186915,
+      "lng": 8.740145499999999
     },
     "contact": {
       "phone": "06101 47619",
@@ -3541,8 +3541,8 @@
     "district": "Unknown",
     "address": "Innerer Schwarzenbacher Ring 1",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "09193 508750",
@@ -3565,8 +3565,8 @@
     "district": "Unknown",
     "address": "Bartningallee 5",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "030 39886966",
@@ -3589,8 +3589,8 @@
     "district": "Unknown",
     "address": "Boleslavova 1525/20",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "+420 241 401 000",
@@ -3613,8 +3613,8 @@
     "district": "Bockenheim",
     "address": "Juliusstraße 12",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.123563,
+      "lng": 8.644867999999999
     },
     "contact": {
       "phone": "069 97074955",
@@ -3637,8 +3637,8 @@
     "district": "Bockenheim",
     "address": "Juliusstraße 12",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1233763,
+      "lng": 8.6451181
     },
     "contact": {
       "phone": "069 97098765",
@@ -3661,8 +3661,8 @@
     "district": "Nordend",
     "address": "Schlosserstraße 21",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.13127,
+      "lng": 8.6817896
     },
     "contact": {
       "phone": "069 553366",
@@ -3685,8 +3685,8 @@
     "district": "Bockenheim",
     "address": "Juliusstraße 12",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1235577,
+      "lng": 8.6448334
     },
     "contact": {
       "phone": "069 97074955",
@@ -3709,8 +3709,8 @@
     "district": "Fechenheim",
     "address": "Buchenstraße 9",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.0957969,
+      "lng": 8.6060175
     },
     "contact": {
       "phone": "069 35351504",
@@ -3733,8 +3733,8 @@
     "district": "Sachsenhausen",
     "address": "Waidmannstraße 2",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.09535409999999,
+      "lng": 8.6702789
     },
     "contact": {
       "phone": "069 69866933",
@@ -3756,8 +3756,8 @@
     "district": "Unknown",
     "address": "Robert-Bosch-Straße 12",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.0646627,
+      "lng": 8.3877711
     },
     "contact": {
       "phone": "06122 5358680",
@@ -3779,8 +3779,8 @@
     "district": "Unknown",
     "address": "Riedstraße 60",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.0188307,
+      "lng": 8.4366653
     },
     "contact": {
       "phone": "06145 52910",
@@ -3803,8 +3803,8 @@
     "district": "Eppendorf",
     "address": "Eppendorfer Weg 50",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.5715083,
+      "lng": 9.9588278
     },
     "contact": {
       "phone": "040 49222468",
@@ -3826,8 +3826,8 @@
     "district": "Neugraben",
     "address": "Neugrabener Bahnhofstraße 5A",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 53.4731841,
+      "lng": 9.854593099999999
     },
     "contact": {
       "phone": "040 7017291",
@@ -3849,8 +3849,8 @@
     "district": "Unknown",
     "address": "Schulstraße 2",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1054571,
+      "lng": 8.6873342
     },
     "contact": {
       "phone": "06371 9527070",
@@ -3872,8 +3872,8 @@
     "district": "Unknown",
     "address": "Jičínská 1787/47",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1109221,
+      "lng": 8.6821267
     },
     "contact": {
       "phone": "+420 777 469 530",
@@ -3895,8 +3895,8 @@
     "district": "Unknown",
     "address": "Teichstraße 201",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 50.1030275,
+      "lng": 8.694155
     },
     "contact": {
       "phone": "0177 2787657",
@@ -3918,8 +3918,8 @@
     "district": "Unknown",
     "address": "Veterinärstraße 13",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.15208029999999,
+      "lng": 11.5870728
     },
     "contact": {
       "phone": "089 21802650",
@@ -3941,8 +3941,8 @@
     "district": "Unknown",
     "address": "Schwarzstraße 3",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.1292349,
+      "lng": 11.5861193
     },
     "contact": {
       "phone": "089 99952010",
@@ -3964,8 +3964,8 @@
     "district": "Unknown",
     "address": "Bajuwarenring 10",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.0320052,
+      "lng": 11.5825403
     },
     "contact": {
       "phone": "089 63893020",
@@ -3987,8 +3987,8 @@
     "district": "Unknown",
     "address": "Am Moosfeld 13",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.134753,
+      "lng": 11.658236
     },
     "contact": {
       "phone": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+M%C3%BCnchen/data=!4m7!3m6!1s0x479e0ba12bc5db59:0x59666aa80228880f!8m2!3d48.134753!4d11.658236!16s%2Fg%2F11qnbrsvqd!19sChIJWdvFK6ELnkcRD4goAqhqZlk?authuser=0&hl=en&rclk=1",
@@ -4010,8 +4010,8 @@
     "district": "Unknown",
     "address": "Keferloher Str. 25",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.11226809999999,
+      "lng": 11.71571
     },
     "contact": {
       "phone": "089 46148510",
@@ -4033,8 +4033,8 @@
     "district": "Unknown",
     "address": "Agnes-Bernauer-Straße 178",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.1417635,
+      "lng": 11.4852651
     },
     "contact": {
       "phone": "089 58929090",
@@ -4056,8 +4056,8 @@
     "district": "Unknown",
     "address": "Birkenwaldstraße 214",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.7984113,
+      "lng": 9.175696799999999
     },
     "contact": {
       "phone": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+Ernst/data=!4m7!3m6!1s0x4799dad816650777:0x5eaf75115e7ef513!8m2!3d48.7984113!4d9.1756968!16s%2Fg%2F1v_s4w1t!19sChIJdwdlFtjamUcRE_V-XhF1r14?authuser=0&hl=en&rclk=1",
@@ -4079,8 +4079,8 @@
     "district": "Unknown",
     "address": "Agnesstraße 17",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.7520867,
+      "lng": 9.1751811
     },
     "contact": {
       "phone": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Stuttgart/data=!4m7!3m6!1s0x4799db0d1df75241:0xe4615968680cec2b!8m2!3d48.7520867!4d9.1751811!16s%2Fg%2F11r3s60j5q!19sChIJQVL3HQ3bmUcRK-wMaGhZYeQ?authuser=0&hl=en&rclk=1",
@@ -4102,8 +4102,8 @@
     "district": "Unknown",
     "address": "Alte Weinsteige 100",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.7549151,
+      "lng": 9.1719186
     },
     "contact": {
       "phone": "0711 762494",
@@ -4125,8 +4125,8 @@
     "district": "Unknown",
     "address": "Südliche Alleenstraße 6",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.9042302,
+      "lng": 9.1471244
     },
     "contact": {
       "phone": "07141 2993299",
@@ -4148,8 +4148,8 @@
     "district": "Unknown",
     "address": "Drescherstraße 53",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.8103808,
+      "lng": 8.927621
     },
     "contact": {
       "phone": "https://www.google.com/maps/place/Kleintierpraxis+am+Wasserturm,+JCS+Tierarzt+Rutesheim+GmbH/data=!4m7!3m6!1s0x479763840e2a26c9:0xf95fa42b0dd769d1!8m2!3d48.8103808!4d8.927621!16s%2Fg%2F11wx1j1ktj!19sChIJySYqDoRjl0cR0WnXDSukX_k?authuser=0&hl=en&rclk=1",
@@ -4171,8 +4171,8 @@
     "district": "Unknown",
     "address": "Rembrandtstraße 15",
     "coordinates": {
-      "lat": 0,
-      "lng": 0
+      "lat": 48.7282653,
+      "lng": 9.1499572
     },
     "contact": {
       "phone": "0711 712434",
