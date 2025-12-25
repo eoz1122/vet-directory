@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
     return (
-        <header className="sticky top-0 z-10 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
+        <header className="sticky top-0 z-50 bg-[#F5EBE0]/90 backdrop-blur-md border-b border-primary/10 p-4">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
                 <Link to="/" className="text-2xl font-bold flex items-center gap-2 group">
                     <img src="/logo.png" alt="EnglishSpeakingVets - Find an English Speaking Vet in Germany" className="h-14 md:h-16 w-auto transition-transform group-hover:scale-105" />
