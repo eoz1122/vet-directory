@@ -167,6 +167,7 @@ export default function Home() {
                             </Link>
 
                             <nav className="hidden md:flex gap-4 text-xs font-semibold text-primary/70 border-t border-primary/10 pt-2 w-full">
+                                <Link to="/blog" className="hover:text-accent transition-colors">Guides</Link>
                                 <Link to="/about" className="hover:text-accent transition-colors">About Our Pack</Link>
                                 <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality Promise</Link>
                                 <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
@@ -420,6 +421,10 @@ export default function Home() {
                     <Link to="/" className="flex flex-col items-center text-primary">
                         <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                         <span className="text-[10px] font-medium">Directory</span>
+                    </Link>
+                    <Link to="/blog" className="flex flex-col items-center text-primary/40">
+                        <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        <span className="text-[10px] font-medium">Guides</span>
                     </Link>
                     <button className="flex flex-col items-center text-primary/40">
                         <svg className="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0121 18.382V7.618a1 1 0 01-1.447-.894L15 7m0 13V7"></path></svg>
