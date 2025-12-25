@@ -14,6 +14,7 @@ const CITY_COORDS: Record<string, { lat: number; lng: number }> = {
     'Berlin': { lat: 52.5200, lng: 13.4050 },
     'Frankfurt': { lat: 50.1109, lng: 8.6821 },
     'Hamburg': { lat: 53.5511, lng: 9.9937 },
+    'Mainz': { lat: 49.9929, lng: 8.2473 },
     'Stuttgart': { lat: 48.7758, lng: 9.1829 },
     'Munich': { lat: 48.1351, lng: 11.5820 },
     'All': { lat: 51.1657, lng: 10.4515 }, // Center of Germany
@@ -39,9 +40,9 @@ function CameraUpdater({ selectedCity, vets, selectedVet }: { selectedCity: stri
             if (target) {
                 map.moveCamera({ center: target, zoom: 12 });
             }
-        } else if (vets.length > 0 && vets.length < 90) {
-            // Priority 3: Filtered List
-            map.moveCamera({ center: vets[0].coordinates, zoom: 13 });
+        } else {
+            // Reset to Germany view when "All" is selected
+            map.moveCamera({ center: CITY_COORDS['All'], zoom: 6 });
         }
 
     }, [selectedCity, map, vets, selectedVet]);
