@@ -1,0 +1,2256 @@
+[
+  {
+    "id": "Berlin-Pot-001",
+    "practice_name": "Kristina Friedrich-Kehnscherper",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Buchholzer Str. 7, Berlin",
+    "coordinates": {
+      "lat": 52.5832991,
+      "lng": 13.4080429
+    },
+    "contact": {
+      "phone": "030 4768661",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Kristina+Friedrich-Kehnscherper/data=!4m7!3m6!1s0x47a852611beb44ed:0xbace11d83fecaf93!8m2!3d52.5832991!4d13.4080429!16s%2Fg%2F1hm5rldcb!19sChIJ7UTrG2FSqEcRk6_sP9gRzro?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-003",
+    "practice_name": "Tierarztpraxis Rödiger - Das Veterinärmedizinische Zentrum Berlin - 24h geöffnet",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Scharnweberstraße 136, Berlin",
+    "coordinates": {
+      "lat": 52.5643159,
+      "lng": 13.3262383
+    },
+    "contact": {
+      "phone": "030 4127357",
+      "website": "https://www.vetzentrum-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+R%C3%B6diger+-+Das+Veterin%C3%A4rmedizinische+Zentrum+Berlin+-+24h+ge%C3%B6ffnet/data=!4m7!3m6!1s0x47a853ef387aaf1f:0xdb64322c775ad6a9!8m2!3d52.5643159!4d13.3262383!16s%2Fg%2F1tj56td9!19sChIJH696OO9TqEcRqdZadywyZNs?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-004",
+    "practice_name": "Veterinary Practice by the Water Tower",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Rykestraße 4, Berlin",
+    "coordinates": {
+      "lat": 52.5350514,
+      "lng": 13.419747
+    },
+    "contact": {
+      "phone": "030 4420329",
+      "website": "http://www.tierarztpraxis-wasserturm.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+Practice+by+the+Water+Tower/data=!4m7!3m6!1s0x47a84e03e9285567:0xb5fe0b87abb728f0!8m2!3d52.5350514!4d13.419747!16s%2Fg%2F1234r5bv1!19sChIJZ1Uo6QNOqEcR8Ci3q4cL_rU?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-005",
+    "practice_name": "Tierarztpraxis am Amalienpark, Dr. Meike Eimers",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Breite Str. 2A, Berlin",
+    "coordinates": {
+      "lat": 52.5721682,
+      "lng": 13.4136168
+    },
+    "contact": {
+      "phone": "030 4868702",
+      "website": "http://www.tierarztpraxis-amalienpark.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+am+Amalienpark,+Dr.+Meike+Eimers/data=!4m7!3m6!1s0x47a8526fad59dd3d:0x943f8033462c14a6!8m2!3d52.5721682!4d13.4136168!16s%2Fg%2F11b7rxk419!19sChIJPd1ZrW9SqEcRphQsRjOAP5Q?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-006",
+    "practice_name": "Veterinarian and cattery",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Conrad-Blenkle-Straße 4, Berlin",
+    "coordinates": {
+      "lat": 52.5281499,
+      "lng": 13.4502641
+    },
+    "contact": {
+      "phone": "030 42085005",
+      "website": "http://www.tierarztpraxis-am-velodrom.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinarian+and+cattery/data=!4m7!3m6!1s0x47a84e71edabbaf1:0xcdafb946c2a44b7b!8m2!3d52.5281499!4d13.4502641!16s%2Fg%2F1tctwlbc!19sChIJ8bqr7XFOqEcRe0ukwka5r80?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-007",
+    "practice_name": "Tierarzt Berlin Prenzlauer Berg, Tierarztpraxis und Tierphysiotherapie Uwe Lenk",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Schönfließer Str. 1, Berlin",
+    "coordinates": {
+      "lat": 52.5501883,
+      "lng": 13.4083331
+    },
+    "contact": {
+      "phone": "030 4469769",
+      "website": "https://www.tierarztpraxis-lenk.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarzt+Berlin+Prenzlauer+Berg,+Tierarztpraxis+und+Tierphysiotherapie+Uwe+Lenk/data=!4m7!3m6!1s0x47a85204e4613689:0x80002afdc49ca4a7!8m2!3d52.5501883!4d13.4083331!16s%2Fg%2F1tqpy8hf!19sChIJiTZh5ARSqEcRp6ScxP0qAIA?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-009",
+    "practice_name": "Kleintierspezialisten",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Wittestraße 30P, Berlin",
+    "coordinates": {
+      "lat": 52.5804499,
+      "lng": 13.2947749
+    },
+    "contact": {
+      "phone": "030 43662200",
+      "website": "http://www.kleintierspezialisten.de/",
+      "google_maps": "https://www.google.com/maps/place/Kleintierspezialisten/data=!4m7!3m6!1s0x47a8546da2194129:0xabec156afe70dbc2!8m2!3d52.5804499!4d13.2947749!16s%2Fg%2F11g_c36zx!19sChIJKUEZom1UqEcRwttw_moV7Ks?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-010",
+    "practice_name": "Veterinary practice Markus Hofmann",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Markus Hofmann, Berliner Str. 11",
+    "coordinates": {
+      "lat": 52.5985375,
+      "lng": 13.4329689
+    },
+    "contact": {
+      "phone": "030 4742619",
+      "website": "http://www.tierarzt-hofmann.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+practice+Markus+Hofmann/data=!4m7!3m6!1s0x47a8529a341f42df:0x27a6b498e0203220!8m2!3d52.5985375!4d13.4329689!16s%2Fg%2F1tflr0zy!19sChIJ30IfNJpSqEcRIDIg4Ji0pic?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-011",
+    "practice_name": "Dr.med.vet. Wolfram Haider Tierarzt",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Schönhauser Str. 62, Berlin",
+    "coordinates": {
+      "lat": 52.5965126,
+      "lng": 13.4269611
+    },
+    "contact": {
+      "phone": "030 47488780",
+      "website": "https://www.tierpathologie-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+Wolfram+Haider+Tierarzt/data=!4m7!3m6!1s0x47a852906bce7dd5:0x9f9d7af8f9ce97a8!8m2!3d52.5965126!4d13.4269611!16s%2Fg%2F1tl7mrjh!19sChIJ1X3Oa5BSqEcRqJfO-fh6nZ8?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-012",
+    "practice_name": "PRAXIS FÜR KLEINTIERMEDIZIN Janine Lenk • Berlin Pankow",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.5563683,
+      "lng": 13.4246996
+    },
+    "contact": {
+      "phone": "030 91203200",
+      "website": "http://www.kleintiermedizin-lenk.de/",
+      "google_maps": "https://www.google.com/maps/place/PRAXIS+F%C3%9CR+KLEINTIERMEDIZIN+Janine+Lenk+%E2%80%A2+Berlin+Pankow/data=!4m7!3m6!1s0x47a84df61cad17c1:0x61613dc230136a41!8m2!3d52.5563683!4d13.4246996!16s%2Fg%2F11c2k9vdd3!19sChIJwRetHPZNqEcRQWoTMMI9YWE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-013",
+    "practice_name": "Tierzahnarzt Uwe Kubelka",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Pasewalker Str. 25, Berlin",
+    "coordinates": {
+      "lat": 52.588179,
+      "lng": 13.4295546
+    },
+    "contact": {
+      "phone": "030 47497532",
+      "website": "http://www.vetdent.berlin/",
+      "google_maps": "https://www.google.com/maps/place/Tierzahnarzt+Uwe+Kubelka/data=!4m7!3m6!1s0x47a852869aaf3f5b:0x2fdd7d78f26486bd!8m2!3d52.588179!4d13.4295546!16s%2Fg%2F11c1tmb292!19sChIJWz-vmoZSqEcRvYZk8nh93S8?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-014",
+    "practice_name": "Tierarztpraxis am Bürgerpark",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Wilhelm-Kuhr-Straße 2, Berlin",
+    "coordinates": {
+      "lat": 52.5694571,
+      "lng": 13.3998919
+    },
+    "contact": {
+      "phone": "030 48479400",
+      "website": "http://www.tierarzt-pankow.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+am+B%C3%BCrgerpark/data=!4m7!3m6!1s0x47a8526a0b277a85:0x270120f4bde31a8f!8m2!3d52.5694571!4d13.3998919!16s%2Fg%2F1th27f8z!19sChIJhXonC2pSqEcRjxrjvfQgASc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-017",
+    "practice_name": "Dr.med.vet. Leszek Chelminski",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Residenzstraße 26a, Berlin",
+    "coordinates": {
+      "lat": 52.5691256,
+      "lng": 13.3612474
+    },
+    "contact": {
+      "phone": "030 4954038",
+      "website": "https://vet.maps.ivof.com/dr-med-vet-leszek-chelminski/",
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+Leszek+Chelminski/data=!4m7!3m6!1s0x47a853ca030273ef:0x80e330cc303b7afa!8m2!3d52.5691256!4d13.3612474!16s%2Fg%2F1wfcn5h8!19sChIJ73MCA8pTqEcR-no7MMww44A?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-018",
+    "practice_name": "vetevo GmbH",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Pappelallee 78/79, Berlin",
+    "coordinates": {
+      "lat": 52.5430556,
+      "lng": 13.4140712
+    },
+    "contact": {
+      "phone": "030 54448546",
+      "website": "https://vetevo.de/",
+      "google_maps": "https://www.google.com/maps/place/vetevo+GmbH/data=!4m7!3m6!1s0x47a84e1d07aa4e31:0xd0c73b40e8e682b1!8m2!3d52.5430556!4d13.4140712!16s%2Fg%2F11f00nrkbp!19sChIJMU6qBx1OqEcRsYLm6EA7x9A?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-019",
+    "practice_name": "Veterinary practice in Pankow Rosenthal",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Hauptstraße 118, Berlin",
+    "coordinates": {
+      "lat": 52.5982168,
+      "lng": 13.37616
+    },
+    "contact": {
+      "phone": "030 9121069",
+      "website": "http://www.tierarzt-rosenthal.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+practice+in+Pankow+Rosenthal/data=!4m7!3m6!1s0x47a85303777b2a17:0xc98702e912d8cadb!8m2!3d52.5982168!4d13.37616!16s%2Fg%2F11bvt0sm00!19sChIJFyp7dwNTqEcR28rYEukCh8k?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-020",
+    "practice_name": "Kleintierpraxis Dr. med. vet. Tim Krämer",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Prenzlauer Promenade 47B, Berlin",
+    "coordinates": {
+      "lat": 52.5625608,
+      "lng": 13.42793
+    },
+    "contact": {
+      "phone": "030 47304956",
+      "website": "http://www.doktor-kraemer.de/",
+      "google_maps": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+med.+vet.+Tim+Kr%C3%A4mer/data=!4m7!3m6!1s0x47a84d8aac464835:0xbd42a1196cdcd086!8m2!3d52.5625608!4d13.42793!16s%2Fg%2F1td_9q8f!19sChIJNUhGrIpNqEcRhtDcbBmhQr0?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-021",
+    "practice_name": "felmo Mobiler Tierarzt Berlin",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.524102,
+      "lng": 13.332714
+    },
+    "contact": {
+      "phone": "0800 0010347",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Berlin/data=!4m7!3m6!1s0x47a851daf8337149:0x6726eb1d6104038b!8m2!3d52.524102!4d13.332714!16s%2Fg%2F11hds6bxzr!19sChIJSXEz-NpRqEcRiwMEYR3rJmc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-022",
+    "practice_name": "Tierarztpraxis Rödiger - Das Veterinärmedizinische Zentrum Berlin - 24h geöffnet",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "136 Scharnweberstraße, Berlin",
+    "coordinates": {
+      "lat": 52.564316,
+      "lng": 13.326238
+    },
+    "contact": {
+      "phone": "030 4127357",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+R%C3%B6diger+-+Das+Veterin%C3%A4rmedizinische+Zentrum+Berlin+-+24h+ge%C3%B6ffnet/data=!4m7!3m6!1s0x47a853ef387aaf1f:0xdb64322c775ad6a9!8m2!3d52.564316!4d13.326238!16s%2Fg%2F1tj56td9!19sChIJH696OO9TqEcRqdZadywyZNs?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-023",
+    "practice_name": "Dr. med. vet. Silke Dietze - Verhaltenstherapie und Beratung",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.5842045,
+      "lng": 13.3975696
+    },
+    "contact": {
+      "phone": "0179 5148827",
+      "website": "https://www.praxis-tierverhalten-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.+med.+vet.+Silke+Dietze+-+Verhaltenstherapie+und+Beratung/data=!4m7!3m6!1s0x47a853166ce6d61d:0x14a88000f0004b68!8m2!3d52.5842045!4d13.3975696!16s%2Fg%2F11ny34rvlj!19sChIJHdbmbBZTqEcRaEsA8ACAqBQ?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-024",
+    "practice_name": "Tierarztpraxis Dr. Anne Quade",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Friedrich-Engels-Straße 29, Berlin",
+    "coordinates": {
+      "lat": 52.5819877,
+      "lng": 13.3922796
+    },
+    "contact": {
+      "phone": "030 4773960",
+      "website": "http://www.tierarzt-pankow.com/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Anne+Quade/data=!4m7!3m6!1s0x47a8525a186bf317:0x6565a3e51a2611c7!8m2!3d52.5819877!4d13.3922796!16s%2Fg%2F1tfbxhd8!19sChIJF_NrGFpSqEcRxxEmGuWjZWU?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-025",
+    "practice_name": "Dr. Ulusal veterinarian",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Prinzenallee 72-73, Berlin",
+    "coordinates": {
+      "lat": 52.5554661,
+      "lng": 13.3836295
+    },
+    "contact": {
+      "phone": "030 4936060",
+      "website": "http://www.tierarzt-in-wedding.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.+Ulusal+veterinarian/data=!4m7!3m6!1s0x416521a502f61045:0xf80f1d3a889bfb9e!8m2!3d52.5554661!4d13.3836295!16s%2Fg%2F12lvkr1tc!19sChIJRRD2AqUhZUERnvubiDodD_g?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-026",
+    "practice_name": "Tierarztpraxis Dr. Anita Gräfe",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Esmarchstraße 26, Berlin",
+    "coordinates": {
+      "lat": 52.5315618,
+      "lng": 13.4306233
+    },
+    "contact": {
+      "phone": "030 4213630",
+      "website": "https://tierarzt-graefe.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Anita+Gr%C3%A4fe/data=!4m7!3m6!1s0x47a84e0faed85f05:0xcb05ca89d65cbac6!8m2!3d52.5315618!4d13.4306233!16s%2Fg%2F1tkbx7ss!19sChIJBV_Yrg9OqEcRxrpc1onKBcs?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-028",
+    "practice_name": "Veterinary clinic for cats - vets for cats Berlin",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.4897329,
+      "lng": 13.3391583
+    },
+    "contact": {
+      "phone": "030 34398877",
+      "website": "https://www.vetsforcats.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+clinic+for+cats+-+vets+for+cats+Berlin/data=!4m7!3m6!1s0x47a8505c14dd0365:0x6592bbfb53015b3e!8m2!3d52.4897329!4d13.3391583!16s%2Fg%2F1ptvqbly0!19sChIJZQPdFFxQqEcRPlsBU_u7kmU?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-029",
+    "practice_name": "Tierarztpraxis neko Tiergesundheit",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Provinzstraße 47, Berlin",
+    "coordinates": {
+      "lat": 52.5688189,
+      "lng": 13.3794826
+    },
+    "contact": {
+      "phone": "030 54814390",
+      "website": "http://www.neko-tiergesundheit.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+neko+Tiergesundheit/data=!4m7!3m6!1s0x47a85249c8556351:0x63d218bb1ae854aa!8m2!3d52.5688189!4d13.3794826!16s%2Fg%2F11c535h7gm!19sChIJUWNVyElSqEcRqlToGrsY0mM?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-030",
+    "practice_name": "Tierklinik Berlin-Marzahn - Notaufnahme sowie ambulante- und stationäre Behandlung von Hunden, Katzen und Heimtieren",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Märkische Allee 258, Berlin",
+    "coordinates": {
+      "lat": 52.55559,
+      "lng": 13.55323
+    },
+    "contact": {
+      "phone": "030 9322093",
+      "website": "http://www.tierklinik-in-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierklinik+Berlin-Marzahn+-+Notaufnahme+sowie+ambulante-+und+station%C3%A4re+Behandlung+von+Hunden,+Katzen+und+Heimtieren/data=!4m7!3m6!1s0x47a84b891c4f6dd5:0x6ef5e03f03229f16!8m2!3d52.55559!4d13.55323!16s%2Fg%2F1td_9q81!19sChIJ1W1PHIlLqEcRFp8iAz_g9W4?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-032",
+    "practice_name": "Veterinary clinic for small animals and pets",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.5087827,
+      "lng": 13.5557674
+    },
+    "contact": {
+      "phone": "030 5143760",
+      "website": "https://www.tierklinik-in-biesdorf.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+clinic+for+small+animals+and+pets/data=!4m7!3m6!1s0x47a84941fd712d3b:0x565c966c172f20cd!8m2!3d52.5087827!4d13.5557674!16s%2Fg%2F1td57n5r!19sChIJOy1x_UFJqEcRzSAvF2yWXFY?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-033",
+    "practice_name": "Tierbestattungen - Berlin - Pankow - Prenzlauer Promenade",
+    "city": "Berlin",
+    "district": "Pankow",
+    "address": "https://www.google.com/maps/place/Tierbestattungen+-+Berlin+-+Pankow+-+Prenzlauer+Promenade/data=!4m7!3m6!1s0x47a85275a1cf1095:0xc47aa0d5e927b1d1!8m2!3d52.565465!4d13.4264617!16s%2Fg%2F1ptyk0tzf!19sChIJlRDPoXVSqEcR0bEn6dWgesQ?authuser=0&hl=en&rclk=1",
+    "coordinates": {
+      "lat": 52.565465,
+      "lng": 13.4264617
+    },
+    "contact": {
+      "phone": "030 47006835",
+      "website": "http://www.berlin-tierbestattung.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierbestattungen+-+Berlin+-+Pankow+-+Prenzlauer+Promenade/data=!4m7!3m6!1s0x47a85275a1cf1095:0xc47aa0d5e927b1d1!8m2!3d52.565465!4d13.4264617!16s%2Fg%2F1ptyk0tzf!19sChIJlRDPoXVSqEcR0bEn6dWgesQ?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-034",
+    "practice_name": "Tierarztpraxis Dr. Dirk Mauch",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Elsa-Brändström-Straße 13, Berlin",
+    "coordinates": {
+      "lat": 52.560132,
+      "lng": 13.415531
+    },
+    "contact": {
+      "phone": "030 4710133",
+      "website": "http://www.elsavet.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Dirk+Mauch/data=!4m7!3m6!1s0x47a8520c500b86a9:0xb47f87b743d8b356!8m2!3d52.560132!4d13.415531!16s%2Fg%2F1tdzklrb!19sChIJqYYLUAxSqEcRVrPYQ7eHf7Q?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-035",
+    "practice_name": "Dr.med.vet. Cordula Nitschke",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Max-Steinke-Straße 2, Berlin",
+    "coordinates": {
+      "lat": 52.548894,
+      "lng": 13.4513375
+    },
+    "contact": {
+      "phone": "030 9252160",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+Cordula+Nitschke/data=!4m7!3m6!1s0x47a84de802259307:0x9105d386e0cd92ed!8m2!3d52.548894!4d13.4513375!16s%2Fg%2F1tdpl30_!19sChIJB5MlAuhNqEcR7ZLN4IbTBZE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-038",
+    "practice_name": "Tierarztpraxis Jana Rafael DVM",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Kuglerstraße 6, Berlin",
+    "coordinates": {
+      "lat": 52.5524825,
+      "lng": 13.4156162
+    },
+    "contact": {
+      "phone": "030 4449710",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Jana+Rafael+DVM/data=!4m7!3m6!1s0x47a852061cadf10f:0x152476070f99acfd!8m2!3d52.5524825!4d13.4156162!16s%2Fg%2F11btms2zv_!19sChIJD_GtHAZSqEcR_ayZDwd2JBU?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-039",
+    "practice_name": "Rafael Tierarztpraxis",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "https://www.google.com/maps/place/Rafael+Tierarztpraxis/data=!4m7!3m6!1s0x47a852061cadf10f:0xdd8caf11172f4858!8m2!3d52.5524825!4d13.4156162!16s%2Fg%2F11d_txzph6!19sChIJD_GtHAZSqEcRWEgvFxGvjN0?authuser=0&hl=en&rclk=1, Berlin",
+    "coordinates": {
+      "lat": 52.5524825,
+      "lng": 13.4156162
+    },
+    "contact": {
+      "phone": "030 4449710",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Rafael+Tierarztpraxis/data=!4m7!3m6!1s0x47a852061cadf10f:0xdd8caf11172f4858!8m2!3d52.5524825!4d13.4156162!16s%2Fg%2F11d_txzph6!19sChIJD_GtHAZSqEcRWEgvFxGvjN0?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-041",
+    "practice_name": "BerlinVets- Zentrum für Kleintiermedizin Adam und Lehmann GbR",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Frankfurter Allee 213-217, Berlin",
+    "coordinates": {
+      "lat": 52.5121659,
+      "lng": 13.4929049
+    },
+    "contact": {
+      "phone": "030 50178500",
+      "website": "https://www.berlinvets.de/",
+      "google_maps": "https://www.google.com/maps/place/BerlinVets-+Zentrum+f%C3%BCr+Kleintiermedizin+Adam+und+Lehmann+GbR/data=!4m7!3m6!1s0x47a84f2090d3be2d:0xd6fcfbd3041d44c9!8m2!3d52.5121659!4d13.4929049!16s%2Fg%2F11m78wrwhm!19sChIJLb7TkCBPqEcRyUQdBNP7_NY?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-042",
+    "practice_name": "Berliner Tierdroschke",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Lübener Weg 5, Berlin",
+    "coordinates": {
+      "lat": 52.5704657,
+      "lng": 13.3465294
+    },
+    "contact": {
+      "phone": "0176 96383888",
+      "website": "http://www.tierdroschke.de/",
+      "google_maps": "https://www.google.com/maps/place/Berliner+Tierdroschke/data=!4m7!3m6!1s0x47a853c74956c5a9:0xb7ecfeed7827e49a!8m2!3d52.5704657!4d13.3465294!16s%2Fg%2F1tfx3yjm!19sChIJqcVWScdTqEcRmuQneO3-7Lc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-043",
+    "practice_name": "Fressnapf Berlin Ostseestraße",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "5 Ostseestraße, Berlin",
+    "coordinates": {
+      "lat": 52.551181,
+      "lng": 13.431541
+    },
+    "contact": {
+      "phone": "030 40043818",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Fressnapf+Berlin+Ostseestra%C3%9Fe/data=!4m7!3m6!1s0x47a84df09f6eda41:0xfe8b06ecf02a02d0!8m2!3d52.551181!4d13.431541!16s%2Fg%2F1tj56t89!19sChIJQdpun_BNqEcR0AIq8OwGi_4?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-044",
+    "practice_name": "Miss Dr. Michaela Boxhammer",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Blankenburger Str. 102A, Berlin",
+    "coordinates": {
+      "lat": 52.570496,
+      "lng": 13.442241
+    },
+    "contact": {
+      "phone": "030 47005550",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Miss+Dr.+Michaela+Boxhammer/data=!4m7!3m6!1s0x47a84d8f709f543b:0xee04cf112d576708!8m2!3d52.570496!4d13.442241!16s%2Fg%2F1tx4ncw3!19sChIJO1SfcI9NqEcRCGdXLRHPBO4?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-045",
+    "practice_name": "Dr.med.vet Henrike Heinemann - Chiropraktik für Tiere",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Wigandstaler Str. 28, Berlin",
+    "coordinates": {
+      "lat": 52.5593839,
+      "lng": 13.4429685
+    },
+    "contact": {
+      "phone": "0176 83284519",
+      "website": "https://heinemann-chiropraktik.vet/berlin/",
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet+Henrike+Heinemann+-+Chiropraktik+f%C3%BCr+Tiere/data=!4m7!3m6!1s0x47a85146ff3d769b:0x94b9b3f8b870edd4!8m2!3d52.5593839!4d13.4429685!16s%2Fg%2F11fm_2mbnr!19sChIJm3Y9_0ZRqEcR1O1wuPizuZQ?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-046",
+    "practice_name": "Rex Tierarztpraxis Berlin-Prenzlauer Berg",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Greifswalder Str. 204, Berlin",
+    "coordinates": {
+      "lat": 52.5334687,
+      "lng": 13.4293548
+    },
+    "contact": {
+      "phone": "030 91733620",
+      "website": "https://www.rex.app/praxen/berlin-prenzlauer-berg",
+      "google_maps": "https://www.google.com/maps/place/Rex+Tierarztpraxis+Berlin-Prenzlauer+Berg/data=!4m7!3m6!1s0x47a84fddfeb06ccf:0xfce256665a5b5802!8m2!3d52.5334687!4d13.4293548!16s%2Fg%2F11vyxr1h3w!19sChIJz2yw_t1PqEcRAlhbWmZW4vw?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-047",
+    "practice_name": "Swetlana Hempel",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Rheinsberger Str. 74, Berlin",
+    "coordinates": {
+      "lat": 52.5369406,
+      "lng": 13.3955607
+    },
+    "contact": {
+      "phone": "030 4493433",
+      "website": "https://www.tierarztpraxis-hempel.de/",
+      "google_maps": "https://www.google.com/maps/place/Swetlana+Hempel/data=!4m7!3m6!1s0x47a851f0e234d309:0xfa95cf8faf36293f!8m2!3d52.5369406!4d13.3955607!16s%2Fg%2F11hlyn9qr5!19sChIJCdM04vBRqEcRPyk2r4_Plfo?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-048",
+    "practice_name": "Sybille Schickert vet",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Eichborndamm 267A, Berlin",
+    "coordinates": {
+      "lat": 52.5937219,
+      "lng": 13.3283164
+    },
+    "contact": {
+      "phone": "030 41191600",
+      "website": "http://sybille-schickert-vet.9gg.de/",
+      "google_maps": "https://www.google.com/maps/place/Sybille+Schickert+vet/data=!4m7!3m6!1s0x47a853781f714841:0x56f9f263de2ced21!8m2!3d52.5937219!4d13.3283164!16s%2Fg%2F12lrlxxch!19sChIJQUhxH3hTqEcRIe0s3mPy-VY?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-050",
+    "practice_name": "Animal Docs",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Waldstraße 1, Berlin",
+    "coordinates": {
+      "lat": 52.5756325,
+      "lng": 13.3318358
+    },
+    "contact": {
+      "phone": "030 92213380",
+      "website": "http://animal-docs.de/",
+      "google_maps": "https://www.google.com/maps/place/Animal+Docs/data=!4m7!3m6!1s0x47a853f45f67d8e7:0x50452585c39732b1!8m2!3d52.5756325!4d13.3318358!16s%2Fg%2F1tdxv13m!19sChIJ59hnX_RTqEcRsTKXw4UlRVA?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-051",
+    "practice_name": "Vet-Doktor",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Gipsstraße 5, Berlin",
+    "coordinates": {
+      "lat": 52.5270355,
+      "lng": 13.3996988
+    },
+    "contact": {
+      "phone": "0179 7570485",
+      "website": "http://vet-doktor.de/",
+      "google_maps": "https://www.google.com/maps/place/Vet-Doktor/data=!4m7!3m6!1s0x47a851e69eb2c2e9:0x92865c0718ed0dc9!8m2!3d52.5270355!4d13.3996988!16s%2Fg%2F11dxd1y9bl!19sChIJ6cKynuZRqEcRyQ3tGAdchpI?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-052",
+    "practice_name": "Tierärztliche Gemeinschaftspraxis Ute Schäfer & Anita Kapahnke",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Goethestraße 17, Berlin",
+    "coordinates": {
+      "lat": 52.5877995,
+      "lng": 13.3649658
+    },
+    "contact": {
+      "phone": "030 49856880",
+      "website": "http://www.tierarztpraxis-pankow.de/",
+      "google_maps": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Gemeinschaftspraxis+Ute+Sch%C3%A4fer+%26+Anita+Kapahnke/data=!4m7!3m6!1s0x47a853a8f033f8c9:0xfe03f7e25c8b3168!8m2!3d52.5877995!4d13.3649658!16s%2Fg%2F1v6p7x0s!19sChIJyfgz8KhTqEcRaDGLXOL3A_4?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-053",
+    "practice_name": "felmo Mobiler Tierarzt Berlin",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.5241016,
+      "lng": 13.3327137
+    },
+    "contact": {
+      "phone": "030 31196542",
+      "website": "https://felmo.de/tierarzt/berlin/?utm_medium=referral&utm_source=google_my_business&utm_term=berlin",
+      "google_maps": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Berlin/data=!4m7!3m6!1s0x47a851daf8337149:0x6726eb1d6104038b!8m2!3d52.5241016!4d13.3327137!16s%2Fg%2F11hds6bxzr!19sChIJSXEz-NpRqEcRiwMEYR3rJmc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-054",
+    "practice_name": "Tierärztliche Praxis für Augenerkrankungen Dr. Emmelmann & Dr. Fengler",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Max-Beer-Str. 7, Berlin",
+    "coordinates": {
+      "lat": 52.5252071,
+      "lng": 13.4079611
+    },
+    "contact": {
+      "phone": "030 2426512",
+      "website": "http://www.augentierarzt-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Praxis+f%C3%BCr+Augenerkrankungen+Dr.+Emmelmann+%26+Dr.+Fengler/data=!4m7!3m6!1s0x47a851e1e7c045c9:0x28f6175d96f1cd6c!8m2!3d52.5252071!4d13.4079611!16s%2Fg%2F1tf7r4v1!19sChIJyUXA5-FRqEcRbM3xll0X9ig?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-055",
+    "practice_name": "Dr.med.vet. Claudia Pastor Tierärztin",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Brüsseler Str. 52A, Berlin",
+    "coordinates": {
+      "lat": 52.54868,
+      "lng": 13.3531601
+    },
+    "contact": {
+      "phone": "030 4539080",
+      "website": "http://www.tierarztpraxis-pastor.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+Claudia+Pastor+Tier%C3%A4rztin/data=!4m7!3m6!1s0x47a8517e21566743:0x114581b9a63794aa!8m2!3d52.54868!4d13.3531601!16s%2Fg%2F1tv235bz!19sChIJQ2dWIX5RqEcRqpQ3prmBRRE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-056",
+    "practice_name": "Christin Bechmann - Kleintierpraxis in der Torstrasse",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Torstraße 64, Berlin",
+    "coordinates": {
+      "lat": 52.5288006,
+      "lng": 13.4081521
+    },
+    "contact": {
+      "phone": "030 28598058",
+      "website": "http://kleintierpraxis-torstrasse.berlin/",
+      "google_maps": "https://www.google.com/maps/place/Christin+Bechmann+-+Kleintierpraxis+in+der+Torstrasse/data=!4m7!3m6!1s0x47a851784aa8f885:0x6fd73a46f22c9791!8m2!3d52.5288006!4d13.4081521!16s%2Fg%2F11p56hkzj_!19sChIJhfioSnhRqEcRkZcs8kY6128?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-057",
+    "practice_name": "Dr.med.vet. Steffen Wiesner",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Müllerstraße 145, Berlin",
+    "coordinates": {
+      "lat": 52.5479832,
+      "lng": 13.3557796
+    },
+    "contact": {
+      "phone": "030 4556020",
+      "website": "https://tierarztindeutschland.de/berlin/berlin/dr-vet-steffen-wiesner-berlin/",
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+Steffen+Wiesner/data=!4m7!3m6!1s0x416521a1fcfe88eb:0x23afda928ce7726b!8m2!3d52.5479832!4d13.3557796!16s%2Fg%2F1td5f49m!19sChIJ64j-_KEhZUERa3LnjJLaryM?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-059",
+    "practice_name": "Tierarztpraxis Hempel",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Rheinsberger Str. 74, Berlin",
+    "coordinates": {
+      "lat": 52.5369406,
+      "lng": 13.3955607
+    },
+    "contact": {
+      "phone": "030 4493433",
+      "website": "http://www.tierarztpraxis-hempel.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Hempel/data=!4m7!3m6!1s0x47a8510f67d1dcd3:0x948429fd788580a8!8m2!3d52.5369406!4d13.3955607!16s%2Fg%2F11j0h41f6m!19sChIJ09zRZw9RqEcRqICFeP0phJQ?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-060",
+    "practice_name": "Dr. med. vet. Claudia Handke",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Danziger Str. 15, Berlin",
+    "coordinates": {
+      "lat": 52.5407316,
+      "lng": 13.4157091
+    },
+    "contact": {
+      "phone": "030 4421760",
+      "website": "http://www.tierarztpraxis-prenzlauerberg.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.+med.+vet.+Claudia+Handke/data=!4m7!3m6!1s0x47a851ffe8bf593f:0x91d6e1cf0d7f4c94!8m2!3d52.5407316!4d13.4157091!16s%2Fg%2F1tfw21mc!19sChIJP1m_6P9RqEcRlEx_Dc_h1pE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-061",
+    "practice_name": "Dr. Ralf Neuer Tierarztpraxis",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.513956,
+      "lng": 13.4087092
+    },
+    "contact": {
+      "phone": "030 2858558",
+      "website": "https://tierarztportal.com/berlin/650-dr-ralf-neuer-tierarztpraxis",
+      "google_maps": "https://www.google.com/maps/place/Dr.+Ralf+Neuer+Tierarztpraxis/data=!4m7!3m6!1s0x47a851e40cb289f5:0xb73bfdfcc47d2701!8m2!3d52.513956!4d13.4087092!16s%2Fg%2F1vfn5pdt!19sChIJ9YmyDORRqEcRASd9xPz9O7c?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-062",
+    "practice_name": "ANIMAL MRI / BERLIN-CT CENTER",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Reinhardtstraße 25, Berlin",
+    "coordinates": {
+      "lat": 52.522981,
+      "lng": 13.383286
+    },
+    "contact": {
+      "phone": "0170 9500270",
+      "website": "https://www.vet-tomopet.de/",
+      "google_maps": "https://www.google.com/maps/place/ANIMAL+MRI+%2F+BERLIN-CT+CENTER/data=!4m7!3m6!1s0x47a851c1ef1d6d97:0x30b6973757934b31!8m2!3d52.522981!4d13.383286!16s%2Fg%2F11bw3_y33j!19sChIJl20d78FRqEcRMUuTVzeXtjA?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-063",
+    "practice_name": "Dr. med. vet. Stephanie Adams - Tierverhaltenstherapie",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Wisbyer Str. 70, Berlin",
+    "coordinates": {
+      "lat": 52.5538857,
+      "lng": 13.4168392
+    },
+    "contact": {
+      "phone": "0171 6765670",
+      "website": "http://www.tierverhaltenstherapie-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.+med.+vet.+Stephanie+Adams+-+Tierverhaltenstherapie/data=!4m7!3m6!1s0x47a85208c7669f69:0x6330b2f960ed302c!8m2!3d52.5538857!4d13.4168392!16s%2Fg%2F11bv1bspx7!19sChIJaZ9mxwhSqEcRLDDtYPmyMGM?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-064",
+    "practice_name": "Tierarztpraxis am Hermannplatz",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "https://www.google.com/maps/place/Tierarztpraxis+am+Hermannplatz/data=!4m7!3m6!1s0x41652371ae8ceab3:0xc6a6c0e38e56d223!8m2!3d52.4861475!4d13.4234116!16s%2Fg%2F1tlzz64t!19sChIJs-qMrnEjZUERI9JWjuPApsY?authuser=0&hl=en&rclk=1, Berlin",
+    "coordinates": {
+      "lat": 52.4861475,
+      "lng": 13.4234116
+    },
+    "contact": {
+      "phone": "030 6226288",
+      "website": "https://www.tierarztpraxis-am-hermannplatz.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+am+Hermannplatz/data=!4m7!3m6!1s0x41652371ae8ceab3:0xc6a6c0e38e56d223!8m2!3d52.4861475!4d13.4234116!16s%2Fg%2F1tlzz64t!19sChIJs-qMrnEjZUERI9JWjuPApsY?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-066",
+    "practice_name": "Dr.med.vet. Wolfgang Beck veterinarian",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Weichselstraße 25, Berlin",
+    "coordinates": {
+      "lat": 52.4869708,
+      "lng": 13.4367711
+    },
+    "contact": {
+      "phone": "030 6239664",
+      "website": "http://www.tierarztpraxis-dr-beck.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+Wolfgang+Beck+veterinarian/data=!4m7!3m6!1s0x47a84fafd90f6acb:0xb9847fcb07cf6bc9!8m2!3d52.4869708!4d13.4367711!16s%2Fg%2F1tjymrcy!19sChIJy2oP2a9PqEcRyWvPB8t_hLk?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-067",
+    "practice_name": "Kleintierpraxis im Kiez - TA Jörg Saecker",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Pohlstraße 69, Berlin",
+    "coordinates": {
+      "lat": 52.5008191,
+      "lng": 13.3628081
+    },
+    "contact": {
+      "phone": "0163 6746922",
+      "website": "http://www.kieztierarzt.de/",
+      "google_maps": "https://www.google.com/maps/place/Kleintierpraxis+im+Kiez+-+TA+J%C3%B6rg+Saecker/data=!4m7!3m6!1s0x47a8504a492c46a7:0x39b2ed0c13067f81!8m2!3d52.5008191!4d13.3628081!16s%2Fg%2F1tdq9m52!19sChIJp0YsSUpQqEcRgX8GEwztsjk?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-068",
+    "practice_name": "Veterinary practice Friedrichshain Sabine Heidel",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Auerstraße 44, Berlin",
+    "coordinates": {
+      "lat": 52.5209184,
+      "lng": 13.4462681
+    },
+    "contact": {
+      "phone": "030 78083485",
+      "website": "http://www.tierarztpraxis-friedrichshain.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+practice+Friedrichshain+Sabine+Heidel/data=!4m7!3m6!1s0x47a84e695cc6d7f1:0x3283c49cdeb81b59!8m2!3d52.5209184!4d13.4462681!16s%2Fg%2F11c6f0l69_!19sChIJ8dfGXGlOqEcRWRu43pzEgzI?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-069",
+    "practice_name": "Pet-Station",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Kulmer Str. 26, Berlin",
+    "coordinates": {
+      "lat": 52.4921297,
+      "lng": 13.3651314
+    },
+    "contact": {
+      "phone": "030 51058546",
+      "website": "http://www.pet-station.de/",
+      "google_maps": "https://www.google.com/maps/place/Pet-Station/data=!4m7!3m6!1s0x47a8503834c7a8f7:0xef4fab72ef1a7364!8m2!3d52.4921297!4d13.3651314!16s%2Fg%2F1tdq9m4_!19sChIJ96jHNDhQqEcRZHMa73KrT-8?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-070",
+    "practice_name": "Tierarztpraxis Gasteiner Straße",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Gasteiner Str. 33, Berlin",
+    "coordinates": {
+      "lat": 52.4873129,
+      "lng": 13.3260485
+    },
+    "contact": {
+      "phone": "030 8618564",
+      "website": "http://www.tierarztpraxis-gasteiner-strasse.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Gasteiner+Stra%C3%9Fe/data=!4m7!3m6!1s0x47a850f534477365:0x6c6d9d183d1af748!8m2!3d52.4873129!4d13.3260485!16s%2Fg%2F1v_nbk07!19sChIJZXNHNPVQqEcRSPcaPRidbWw?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-071",
+    "practice_name": "Dr.med.vet. Holger Fuhrmann",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Franz-Jacob-Straße 14, Berlin",
+    "coordinates": {
+      "lat": 52.5290189,
+      "lng": 13.4684552
+    },
+    "contact": {
+      "phone": "030 9758808",
+      "website": "https://tierarztindeutschland.de/berlin/berlin/drmedvet-holger-fuhrmann-berlin/",
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+Holger+Fuhrmann/data=!4m7!3m6!1s0x416523d672fb2521:0x77f0c1c81b5a1606!8m2!3d52.5290189!4d13.4684552!16s%2Fg%2F1wf20wmg!19sChIJISX7ctYjZUERBhZaG8jB8Hc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-072",
+    "practice_name": "Tierarztpraxis Dr. Peter Vogel",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Finowstraße 14, Berlin",
+    "coordinates": {
+      "lat": 52.5114026,
+      "lng": 13.4666047
+    },
+    "contact": {
+      "phone": "030 29776835",
+      "website": "http://www.drpetervogel.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Peter+Vogel/data=!4m7!3m6!1s0x47a84e5e02696dbf:0x3d814eedbcad95ff!8m2!3d52.5114026!4d13.4666047!16s%2Fg%2F1tvt9ckb!19sChIJv21pAl5OqEcR_5WtvO1OgT0?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-074",
+    "practice_name": "Janine Bräuer Kleintierpraxis (reine Terminpraxis)",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Krüllsstraße 5, Berlin",
+    "coordinates": {
+      "lat": 52.4921892,
+      "lng": 13.4478362
+    },
+    "contact": {
+      "phone": "030 6912677",
+      "website": "http://www.tap.berlin/",
+      "google_maps": "https://www.google.com/maps/place/Janine+Br%C3%A4uer+Kleintierpraxis+%28reine+Terminpraxis%29/data=!4m7!3m6!1s0x47a84fcafc28d597:0xf2a2ef087c66d8bb!8m2!3d52.4921892!4d13.4478362!16s%2Fg%2F11d_ty4td9!19sChIJl9Uo_MpPqEcRu9hmfAjvovI?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-075",
+    "practice_name": "Veterinary practice E. Laskawy",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Bänschstraße 58, Berlin",
+    "coordinates": {
+      "lat": 52.5176605,
+      "lng": 13.4663371
+    },
+    "contact": {
+      "phone": "030 4267684",
+      "website": "http://www.laskawy-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Veterinary+practice+E.+Laskawy/data=!4m7!3m6!1s0x47a84e61d0077367:0x5bd567a75ef25002!8m2!3d52.5176605!4d13.4663371!16s%2Fg%2F1tffncfm!19sChIJZ3MH0GFOqEcRAlDyXqdn1Vs?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-076",
+    "practice_name": "Tierarztpraxis Bräuer (reine Terminpraxis)",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Krüllsstraße 5, Berlin",
+    "coordinates": {
+      "lat": 52.4921892,
+      "lng": 13.4478362
+    },
+    "contact": {
+      "phone": "030 6912677",
+      "website": "http://www.tap.berlin/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Br%C3%A4uer+%28reine+Terminpraxis%29/data=!4m7!3m6!1s0x4165239e27544f39:0x7dcf458d41f35d1e!8m2!3d52.4921892!4d13.4478362!16s%2Fg%2F11b6xch1hf!19sChIJOU9UJ54jZUERHl3zQY1Fz30?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-077",
+    "practice_name": "Rex Tierarztpraxis Berlin-Neukölln",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Hermannstraße 227, Berlin",
+    "coordinates": {
+      "lat": 52.4807233,
+      "lng": 13.4258771
+    },
+    "contact": {
+      "phone": "030 91734766",
+      "website": "https://www.rex.app/praxen/rex-berlin-neukoelln",
+      "google_maps": "https://www.google.com/maps/place/Rex+Tierarztpraxis+Berlin-Neuk%C3%B6lln/data=!4m7!3m6!1s0x47a84f02117b7aa1:0x8e984c17afbad159!8m2!3d52.4807233!4d13.4258771!16s%2Fg%2F11sk2_b56b!19sChIJoXp7EQJPqEcRWdG6rxdMmI4?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-078",
+    "practice_name": "Dr.med.vet. Jörg Bauer veterinarian",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Möllendorffstraße 104/105, Berlin",
+    "coordinates": {
+      "lat": 52.5174915,
+      "lng": 13.4797972
+    },
+    "contact": {
+      "phone": "030 55491515",
+      "website": "http://www.tierarzt-berlin-lichtenberg.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+J%C3%B6rg+Bauer+veterinarian/data=!4m7!3m6!1s0x47a84e8dc4ef81a5:0xdab0fa198214e628!8m2!3d52.5174915!4d13.4797972!16s%2Fg%2F1tlmmbxl!19sChIJpYHvxI1OqEcRKOYUghn6sNo?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-079",
+    "practice_name": "Anne-Dörte Ferencz",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Elberfelder Str. 3, Berlin",
+    "coordinates": {
+      "lat": 52.5241476,
+      "lng": 13.3360137
+    },
+    "contact": {
+      "phone": "030 39889278",
+      "website": "http://www.tierarztpraxis-moabit.de/",
+      "google_maps": "https://www.google.com/maps/place/Anne-D%C3%B6rte+Ferencz/data=!4m7!3m6!1s0x47a8510c267838b1:0x1e09362aa8274b84!8m2!3d52.5241476!4d13.3360137!16s%2Fg%2F1tcztzqq!19sChIJsTh4JgxRqEcRhEsnqCo2CR4?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-081",
+    "practice_name": "Rex Tierarztpraxis Berlin-Friedrichshain",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Revaler Str. 17, Berlin",
+    "coordinates": {
+      "lat": 52.5072059,
+      "lng": 13.4575494
+    },
+    "contact": {
+      "phone": "030 91734338",
+      "website": "https://www.rex.app/praxen/rex-berlin-friedrichshain",
+      "google_maps": "https://www.google.com/maps/place/Rex+Tierarztpraxis+Berlin-Friedrichshain/data=!4m7!3m6!1s0x47a84f9be0f199a1:0x1bc2f105df77e470!8m2!3d52.5072059!4d13.4575494!16s%2Fg%2F11vhg12w0x!19sChIJoZnx4JtPqEcRcOR33wXxwhs?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-083",
+    "practice_name": "Tierarztpraxis Rotgang",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.5310183,
+      "lng": 13.4278352
+    },
+    "contact": {
+      "phone": "030 4254696",
+      "website": "https://www.tierarztpraxis-rotgang.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Rotgang/data=!4m7!3m6!1s0x47a84f8d95729e73:0x6bb27b6cd086cd71!8m2!3d52.5310183!4d13.4278352!16s%2Fg%2F11qr9m8bs3!19sChIJc55ylY1PqEcRcc2G0Gx7sms?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-084",
+    "practice_name": "Tierarztpraxis Dr. Wolfgang Hoffmann",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Wilhelmshavener Str. 64, Berlin",
+    "coordinates": {
+      "lat": 52.5285744,
+      "lng": 13.3411832
+    },
+    "contact": {
+      "phone": "030 3952768",
+      "website": "http://www.tierarzt-wh.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Wolfgang+Hoffmann/data=!4m7!3m6!1s0x47a8510caadb0765:0x7a46839bcc9540e1!8m2!3d52.5285744!4d13.3411832!16s%2Fg%2F1tg673tv!19sChIJZQfbqgxRqEcR4UCVzJuDRno?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-085",
+    "practice_name": "Tierarztpraxis Oldenburger Straße",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Oldenburger Str. 44, Berlin",
+    "coordinates": {
+      "lat": 52.5289304,
+      "lng": 13.3357299
+    },
+    "contact": {
+      "phone": "030 3951555",
+      "website": "http://www.tierarztpraxis-oldenburger-strasse.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Oldenburger+Stra%C3%9Fe/data=!4m7!3m6!1s0x47a8510d369c5953:0xebafa45584e9073b!8m2!3d52.5289304!4d13.3357299!16s%2Fg%2F11c6_bkhly!19sChIJU1mcNg1RqEcROwfphFWkr-s?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-086",
+    "practice_name": "Tierarztpraxis am Südkreuz",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Gustav-Müller-Straße 19, Berlin",
+    "coordinates": {
+      "lat": 52.4808667,
+      "lng": 13.3621523
+    },
+    "contact": {
+      "phone": "030 96083860",
+      "website": "http://www.tierarztpraxis-am-suedkreuz.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+am+S%C3%BCdkreuz/data=!4m7!3m6!1s0x47a85015c7a92a8b:0x82877ba7d1db3449!8m2!3d52.4808667!4d13.3621523!16s%2Fg%2F1ts1r7x_!19sChIJiyqpxxVQqEcRSTTb0ad7h4I?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-087",
+    "practice_name": "Tierarztpraxis Diek",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Traunsteiner Str. 1, Berlin",
+    "coordinates": {
+      "lat": 52.4930391,
+      "lng": 13.3455028
+    },
+    "contact": {
+      "phone": "030 2142954",
+      "website": "https://www.tierarzt-onlineverzeichnis.de/tierarztpraxis/10781-berlin/gudrun-diek/1525/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Diek/data=!4m7!3m6!1s0x416523758ce30617:0x82bb9d8918d93942!8m2!3d52.4930391!4d13.3455028!16s%2Fg%2F1trvkgdk!19sChIJFwbjjHUjZUERQjnZGImdu4I?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-088",
+    "practice_name": "Tierphysiotherapie & -heilpraxis Sabrina Findeisen",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Boxhagener Str. 47, Berlin",
+    "coordinates": {
+      "lat": 52.508728,
+      "lng": 13.4659234
+    },
+    "contact": {
+      "phone": "0176 20174346",
+      "website": "https://tierphysioberlin.simplybook.it/",
+      "google_maps": "https://www.google.com/maps/place/Tierphysiotherapie+%26+-heilpraxis+Sabrina+Findeisen/data=!4m7!3m6!1s0x47a84f7e7c59194d:0x1a71fc1a63d4b4c9!8m2!3d52.508728!4d13.4659234!16s%2Fg%2F11kx2j8bdv!19sChIJTRlZfH5PqEcRybTUYxr8cRo?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-089",
+    "practice_name": "Dr. med. vet. Ann-Kathrin Fritsche - Tierverhaltensmedizin - Beratung & Therapie",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Wilhelm-Stolze-Straße 32, Berlin",
+    "coordinates": {
+      "lat": 52.5234212,
+      "lng": 13.4470607
+    },
+    "contact": {
+      "phone": "0174 3595658",
+      "website": "http://tierverhalten.berlin/",
+      "google_maps": "https://www.google.com/maps/place/Dr.+med.+vet.+Ann-Kathrin+Fritsche+-+Tierverhaltensmedizin+-+Beratung+%26+Therapie/data=!4m7!3m6!1s0x47a84e6e9f1c0fb1:0xb9d56d8bb1c3437a!8m2!3d52.5234212!4d13.4470607!16s%2Fg%2F11h68m399l!19sChIJsQ8cn25OqEcRekPDsYtt1bk?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-090",
+    "practice_name": "mobile Pferdezahn - Tierarztpraxis",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Ostseestraße 48, Berlin",
+    "coordinates": {
+      "lat": 52.5433958,
+      "lng": 13.4413606
+    },
+    "contact": {
+      "phone": "01516 4874822",
+      "website": "http://www.tierarzt-fuers-pferd.berlin/",
+      "google_maps": "https://www.google.com/maps/place/mobile+Pferdezahn+-+Tierarztpraxis/data=!4m7!3m6!1s0xdf180163e765c9b:0x9006feaf8ca55cb6!8m2!3d52.5433958!4d13.4413606!16s%2Fg%2F11kb96gh_9!19sChIJm1x2PhaA8Q0RtlyljK_-BpA?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-091",
+    "practice_name": "Tierarztpraxis Dr. Klaus Lendner",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Fuggerstraße 22, Berlin",
+    "coordinates": {
+      "lat": 52.4990878,
+      "lng": 13.3445343
+    },
+    "contact": {
+      "phone": "030 7812138",
+      "website": "http://www.tierarztpraxis-drlendner.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Klaus+Lendner/data=!4m7!3m6!1s0x47a850511762fe0f:0x50d5d657e4fcaf85!8m2!3d52.4990878!4d13.3445343!16s%2Fg%2F1hc18hhbc!19sChIJD_5iF1FQqEcRha_85FfW1VA?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-092",
+    "practice_name": "ReBalance – Mobile Tierphysiotherapie & Osteopathie in Berlin",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Büschingstraße 35, Berlin",
+    "coordinates": {
+      "lat": 52.5254944,
+      "lng": 13.4291413
+    },
+    "contact": {
+      "phone": "0176 24851833",
+      "website": "https://www.rebalance-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/ReBalance+%E2%80%93+Mobile+Tierphysiotherapie+%26+Osteopathie+in+Berlin/data=!4m7!3m6!1s0x838723d70df19b69:0x3446ea906e827155!8m2!3d52.5254944!4d13.4291413!16s%2Fg%2F11zj7mf0x2!19sChIJaZvxDdcjh4MRVXGCbpDqRjQ?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-093",
+    "practice_name": "Tiermedizin am Treptower Park",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.4848621,
+      "lng": 13.4673954
+    },
+    "contact": {
+      "phone": "015560 110554",
+      "website": "https://www.tiermedizin-treptower-park.com/",
+      "google_maps": "https://www.google.com/maps/place/Tiermedizin+am+Treptower+Park/data=!4m7!3m6!1s0x47a84f0022f71d77:0x2b060eaba9e96fee!8m2!3d52.4848621!4d13.4673954!16s%2Fg%2F11yf3z9g79!19sChIJdx33IgBPqEcR7m_pqasOBis?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-094",
+    "practice_name": "Tierärztliche mobile Gemeinschaftspraxis Schleich & Wiese (GbR)",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Badensche Str. 44, Berlin",
+    "coordinates": {
+      "lat": 52.4857537,
+      "lng": 13.3340974
+    },
+    "contact": {
+      "phone": "030 67968494",
+      "website": "http://www.schleich-wiese.de/kontakt/",
+      "google_maps": "https://www.google.com/maps/place/Tier%C3%A4rztliche+mobile+Gemeinschaftspraxis+Schleich+%26+Wiese+%28GbR%29/data=!4m7!3m6!1s0x47a85060a68eaaab:0xa7871e1546b01c5f!8m2!3d52.4857537!4d13.3340974!16s%2Fg%2F11gjms8h02!19sChIJq6qOpmBQqEcRXxywRhUeh6c?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-095",
+    "practice_name": "Frank Reinhard Wilke - Tierheilpraktiker",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Waldstraße 37, Berlin",
+    "coordinates": {
+      "lat": 52.5315913,
+      "lng": 13.3312922
+    },
+    "contact": {
+      "phone": "038354 339066",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Frank+Reinhard+Wilke+-+Tierheilpraktiker/data=!4m7!3m6!1s0x47a84534506a992b:0x21aee9941b77a08a!8m2!3d52.5315913!4d13.3312922!16s%2Fg%2F11dxf19jcs!19sChIJK5lqUDRFqEcRiqB3G5TpriE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-096",
+    "practice_name": "Dr. Ellen Sandhas Tierarztpraxis für Verhaltenstherapie",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.4886975,
+      "lng": 13.4463966
+    },
+    "contact": {
+      "phone": "01512 0655024",
+      "website": "https://www.souldogvet-berlin.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=7073244744833785165",
+      "google_maps": "https://www.google.com/maps/place/Dr.+Ellen+Sandhas+Tierarztpraxis+f%C3%BCr+Verhaltenstherapie/data=!4m7!3m6!1s0x809561a76766d395:0xeb11247fec3f8205!8m2!3d52.4886975!4d13.4463966!16s%2Fg%2F11ybnvm3xw!19sChIJldNmZ6dhlYARBYI_7H8kEes?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-097",
+    "practice_name": "Tierarztpraxis Dr. Heike Hübner",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Gasteiner Str. 33, Berlin",
+    "coordinates": {
+      "lat": 52.4873129,
+      "lng": 13.3260485
+    },
+    "contact": {
+      "phone": "030 8618564",
+      "website": "http://www.dr-heike-huebner.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Heike+H%C3%BCbner/data=!4m7!3m6!1s0x47a850f534477365:0x191ce8a30ee4e85!8m2!3d52.4873129!4d13.3260485!16s%2Fg%2F11gbk5nh6h!19sChIJZXNHNPVQqEcRhU7uMIrOkQE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-098",
+    "practice_name": "DER TIERARZT Dr. Theobald in Schöneberg",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Eisenacher Str. 40, Berlin",
+    "coordinates": {
+      "lat": 52.4898995,
+      "lng": 13.3487913
+    },
+    "contact": {
+      "phone": "030 2111779",
+      "website": "https://tierarztschoeneberg.de/",
+      "google_maps": "https://www.google.com/maps/place/DER+TIERARZT+Dr.+Theobald+in+Sch%C3%B6neberg/data=!4m7!3m6!1s0x47a850448045a28d:0x97ce7237bb30acd9!8m2!3d52.4898995!4d13.3487913!16s%2Fg%2F1tfrfs_1!19sChIJjaJFgERQqEcR2awwuzdyzpc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-099",
+    "practice_name": "Tierarztpraxis Kiezfidel, Mobiler Tierarzt, Hausbesuche, Tierarzt ins Haus Berlin und Brandenburg, Notdienst, Routine Termine",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.45906,
+      "lng": 13.0157992
+    },
+    "contact": {
+      "phone": "030 4495269",
+      "website": "https://tierarztpraxiskiezfidel.com/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Kiezfidel,+Mobiler+Tierarzt,+Hausbesuche,+Tierarzt+ins+Haus+Berlin+und+Brandenburg,+Notdienst,+Routine+Termine/data=!4m7!3m6!1s0x47a851fe8729b3b5:0x4a8d6f5c30972900!8m2!3d52.45906!4d13.0157992!16s%2Fg%2F1tf01hqv!19sChIJtbMph_5RqEcRACmXMFxvjUo?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-100",
+    "practice_name": "Tierarzt Plus Partner",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Wöhlertstraße 12-13, Berlin",
+    "coordinates": {
+      "lat": 52.5370019,
+      "lng": 13.3790127
+    },
+    "contact": {
+      "phone": "030 20977463",
+      "website": "https://www.tierarztpluspartner.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarzt+Plus+Partner/data=!4m7!3m6!1s0x47a850fdbbc4cc7f:0xdf69a52e063baa09!8m2!3d52.5370019!4d13.3790127!16s%2Fg%2F11hzxjbfdn!19sChIJf8zEu_1QqEcRCao7Bi6lad8?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-101",
+    "practice_name": "Tierarztpraxis am Nollendorfplatz",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "https://www.google.com/maps/place/Tierarztpraxis+am+Nollendorfplatz/data=!4m7!3m6!1s0x47a8504e334c9deb:0xe0e1c7450ff6dd3c!8m2!3d52.497687!4d13.35043!16s%2Fg%2F1th1t22k!19sChIJ651MM05QqEcRPN32D0XH4eA?authuser=0&hl=en&rclk=1, Berlin",
+    "coordinates": {
+      "lat": 52.497687,
+      "lng": 13.35043
+    },
+    "contact": {
+      "phone": "030 2167711",
+      "website": "http://www.hund-katze-vogel.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+am+Nollendorfplatz/data=!4m7!3m6!1s0x47a8504e334c9deb:0xe0e1c7450ff6dd3c!8m2!3d52.497687!4d13.35043!16s%2Fg%2F1th1t22k!19sChIJ651MM05QqEcRPN32D0XH4eA?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-102",
+    "practice_name": "Tierphysiotherapie Mara Polzin",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Spittastraße 21, Berlin",
+    "coordinates": {
+      "lat": 52.5046036,
+      "lng": 13.4793403
+    },
+    "contact": {
+      "phone": null,
+      "website": "https://tierphysio-marapolzin.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierphysiotherapie+Mara+Polzin/data=!4m7!3m6!1s0x47a84fb239715277:0xb28c3bb2ecb10670!8m2!3d52.5046036!4d13.4793403!16s%2Fg%2F11vrcmt9j2!19sChIJd1JxObJPqEcRcAax7LI7jLI?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-103",
+    "practice_name": "Shiferau Biru Haki Tierarztpraxis",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Friedenstraße 54, Berlin",
+    "coordinates": {
+      "lat": 52.5198703,
+      "lng": 13.4380941
+    },
+    "contact": {
+      "phone": "030 20053332",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Shiferau+Biru+Haki+Tierarztpraxis/data=!4m7!3m6!1s0x47a84e6ad74d8d13:0xbb7b8ed2ed9b02e5!8m2!3d52.5198703!4d13.4380941!16s%2Fg%2F11d_ty1syt!19sChIJE41N12pOqEcR5QKb7dKOe7s?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-104",
+    "practice_name": "Veterinäramt Pankow Haus 6",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Fröbelstraße 17, Berlin",
+    "coordinates": {
+      "lat": 52.5405188,
+      "lng": 13.4273402
+    },
+    "contact": {
+      "phone": null,
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Veterin%C3%A4ramt+Pankow+Haus+6/data=!4m7!3m6!1s0x47a84d192090d4f5:0xf1276710861b2c6f!8m2!3d52.5405188!4d13.4273402!16s%2Fg%2F11sszcsdc6!19sChIJ9dSQIBlNqEcRbywbhhBnJ_E?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-105",
+    "practice_name": "Stopik C., Marxen I. Dr. Tierärzte",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.4897318,
+      "lng": 13.3391337
+    },
+    "contact": {
+      "phone": "030 34398877",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Stopik+C.,+Marxen+I.+Dr.+Tier%C3%A4rzte/data=!4m7!3m6!1s0x47a8505c14dd0365:0x15732adb0d718965!8m2!3d52.4897318!4d13.3391337!16s%2Fg%2F1vgw_sf8!19sChIJZQPdFFxQqEcRZYlxDdsqcxU?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-107",
+    "practice_name": "Mobile tierärztliche Praxis für Chiropraktik",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Käthe-Niederkirchner-Straße 15, Berlin",
+    "coordinates": {
+      "lat": 52.5303674,
+      "lng": 13.4318927
+    },
+    "contact": {
+      "phone": "0173 6558353",
+      "website": "http://www.vet-chiropraktik-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Mobile+tier%C3%A4rztliche+Praxis+f%C3%BCr+Chiropraktik/data=!4m7!3m6!1s0x47a84e0e37f5fa25:0x97088435049697b9!8m2!3d52.5303674!4d13.4318927!16s%2Fg%2F11dxdx693r!19sChIJJfr1Nw5OqEcRuZeWBDWECJc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-108",
+    "practice_name": "EquiCanis Physiotherapie für deinen Hund oder dein Pferd. Mobil, flexibel, kundenorientiert 🫶",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.4958043,
+      "lng": 13.4731144
+    },
+    "contact": {
+      "phone": "0176 41252522",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/EquiCanis+Physiotherapie+f%C3%BCr+deinen+Hund+oder+dein+Pferd.+Mobil,+flexibel,+kundenorientiert+%F0%9F%AB%B6/data=!4m7!3m6!1s0x47a84f10fba09169:0x416bf296ffadd6a0!8m2!3d52.4958043!4d13.4731144!16s%2Fg%2F11mckytbgv!19sChIJaZGg-xBPqEcRoNat_5bya0E?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-109",
+    "practice_name": "Wolfgang Apczinski Tierarzt",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Dortmunder Str. 9, Berlin",
+    "coordinates": {
+      "lat": 52.52162,
+      "lng": 13.33625
+    },
+    "contact": {
+      "phone": null,
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Wolfgang+Apczinski+Tierarzt/data=!4m7!3m6!1s0x47a8510edb034365:0xef1c547f58730c59!8m2!3d52.52162!4d13.33625!16s%2Fg%2F11d_tz3dbw!19sChIJZUMD2w5RqEcRWQxzWH9UHO8?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-110",
+    "practice_name": "DVG-Vet-Congress",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Friedrichstraße 17, Berlin",
+    "coordinates": {
+      "lat": 52.50258,
+      "lng": 13.39151
+    },
+    "contact": {
+      "phone": "0641 24466",
+      "website": "http://www.dvg-vet-congress.de/index.php?id=491",
+      "google_maps": "https://www.google.com/maps/place/DVG-Vet-Congress/data=!4m7!3m6!1s0x47a851d495e8d699:0x33c01d630349a472!8m2!3d52.50258!4d13.39151!16s%2Fg%2F11fkf7wjb2!19sChIJmdboldRRqEcRcqRJA2MdwDM?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-111",
+    "practice_name": "Dr. Martin Deutschland, Neurologische Überweisungspraxis",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 51.175807,
+      "lng": 10.4541194
+    },
+    "contact": {
+      "phone": "030 22808450",
+      "website": "http://www.tierneurologie-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Dr.+Martin+Deutschland,+Neurologische+%C3%9Cberweisungspraxis/data=!4m7!3m6!1s0x47a84e60ddda44cb:0x2e4174113d9db151!8m2!3d51.175807!4d10.4541194!16s%2Fg%2F1hc5t3spb!19sChIJy0Ta3WBOqEcRUbGdPRF0QS4?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-112",
+    "practice_name": "Dirk Oschika veterinary",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.5068441,
+      "lng": 13.4247318
+    },
+    "contact": {
+      "phone": "030 2946333",
+      "website": "https://www.tierarzt-im-kiez.de/",
+      "google_maps": "https://www.google.com/maps/place/Dirk+Oschika+veterinary/data=!4m7!3m6!1s0x47a84ef5e45db2df:0x3abf8c2a63ab79b1!8m2!3d52.5068441!4d13.4247318!16s%2Fg%2F1q2vx0t3z!19sChIJ37Jd5PVOqEcRsXmrYyqMvzo?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-113",
+    "practice_name": "PonyHengst Islandpferdezucht",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 51.175807,
+      "lng": 10.4541194
+    },
+    "contact": {
+      "phone": "+43 650 4494521",
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/PonyHengst+Islandpferdezucht/data=!4m7!3m6!1s0x47a84e618b28ba73:0x9d0893d562bf6ae6!8m2!3d51.175807!4d10.4541194!16s%2Fg%2F11bzymvncs!19sChIJc7ooi2FOqEcR5mq_YtWTCJ0?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  },
+  {
+    "id": "Berlin-Pot-114",
+    "practice_name": "hauttierarztpraxis",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "",
+    "coordinates": {
+      "lat": 52.5222481,
+      "lng": 13.3976064
+    },
+    "contact": {
+      "phone": "030 34787510",
+      "website": "http://www.hauttierarztpraxis.de/",
+      "google_maps": "https://www.google.com/maps/place/hauttierarztpraxis/data=!4m7!3m6!1s0x47a8511f6b7b0f93:0x95b4d81d78b742f8!8m2!3d52.5222481!4d13.3976064!16s%2Fg%2F1vtzg7g9!19sChIJkw97ax9RqEcR-EK3eB3YtJU?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 0,
+      "last_scanned": "2025-12-25",
+      "english_signals": [],
+      "status": "Unverified (Not confirmed English yet)"
+    },
+    "community_status": "Unverified"
+  }
+]

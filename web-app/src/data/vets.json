@@ -221,9 +221,10 @@
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-25",
       "english_signals": [
-        "Verified English Support"
+        "Verified English Support",
+        "Confirmed English-speaking via Google Reviews comments"
       ]
     },
     "community_status": "Verified"
@@ -929,9 +930,10 @@
     },
     "verification": {
       "ai_score": 80,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-25",
       "english_signals": [
-        "Verified English Support"
+        "Verified English Support",
+        "Confirmed English-speaking via Google Reviews comments"
       ]
     },
     "community_status": "Verified"
@@ -2224,6 +2226,150 @@
       "last_scanned": "2025-12-24",
       "english_signals": [
         "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-98",
+    "practice_name": "Kleintierpraxis Flidais-vet Kreuzberg",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Wiener Str. 25, Berlin",
+    "coordinates": {
+      "lat": 52.4969444,
+      "lng": 13.4325
+    },
+    "contact": {
+      "phone": "030 6181766",
+      "website": "https://www.flidais-vet.de/",
+      "google_maps": "https://www.google.com/maps/place/Kleintierpraxis+Flidais-vet+Kreuzberg/data=!4m7!3m6!1s0x47a84e4b4fcb4dcd:0x1a48f0f57b4804b9!8m2!3d52.4969444!4d13.4325!16s%2Fg%2F11bttkq8nz!19sChIJzU3LT0tOqEcRuQRIe_XwSBo?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed English-speaking via Google Reviews comments"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-99",
+    "practice_name": "Dr. Johanna Pauls",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Rykestraße 35, Berlin",
+    "coordinates": {
+      "lat": 52.5385307,
+      "lng": 13.4216955
+    },
+    "contact": {
+      "phone": "030 23900061",
+      "website": "http://www.kleintier-sonographie.de/?page_id=122",
+      "google_maps": "https://www.google.com/maps/place/Dr.+Johanna+Pauls/data=!4m7!3m6!1s0x47a84e00de054f03:0xd88aadf11ead293d!8m2!3d52.5385307!4d13.4216955!16s%2Fg%2F11c1tlz48s!19sChIJA08F3gBOqEcRPSmtHvGtitg?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed English-speaking via Google Reviews comments"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-100",
+    "practice_name": "Tierarztpraxis",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Kulmer Str. 26, Berlin",
+    "coordinates": {
+      "lat": 52.4921195,
+      "lng": 13.3651271
+    },
+    "contact": {
+      "phone": null,
+      "website": null,
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis/data=!4m7!3m6!1s0x47a8503835ce73f9:0x45ad73e1b6d175a1!8m2!3d52.4921195!4d13.3651271!16s%2Fg%2F11mgn05v41!19sChIJ-XPONThQqEcRoXXRtuFzrUU?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed English-speaking via Google Reviews comments"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-101",
+    "practice_name": "Kleintiermedizin am Lützowufer",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "https://www.google.com/maps/place/Kleintiermedizin+am+L%C3%BCtzowufer/data=!4m7!3m6!1s0x47a851ad2a53ba37:0x9b8a2da25d7c1a36!8m2!3d52.5062018!4d13.3493321!16s%2Fg%2F11fxvtrx2s!19sChIJN7pTKq1RqEcRNhp8XaItips?authuser=0&hl=en&rclk=1, Berlin",
+    "coordinates": {
+      "lat": 52.5062018,
+      "lng": 13.3493321
+    },
+    "contact": {
+      "phone": "030 26397900",
+      "website": "https://www.vet-berlin.de/",
+      "google_maps": "https://www.google.com/maps/place/Kleintiermedizin+am+L%C3%BCtzowufer/data=!4m7!3m6!1s0x47a851ad2a53ba37:0x9b8a2da25d7c1a36!8m2!3d52.5062018!4d13.3493321!16s%2Fg%2F11fxvtrx2s!19sChIJN7pTKq1RqEcRNhp8XaItips?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed English-speaking via Google Reviews comments"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-102",
+    "practice_name": "Dipl.Med.Vet. Jörg Porada",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Rungestraße 18, Berlin",
+    "coordinates": {
+      "lat": 52.5121682,
+      "lng": 13.419935
+    },
+    "contact": {
+      "phone": "030 2754906",
+      "website": "https://tierarztportal.com/berlin/653-dipl-vet-med-joerg-porada",
+      "google_maps": "https://www.google.com/maps/place/Dipl.Med.Vet.+J%C3%B6rg+Porada/data=!4m7!3m6!1s0x416523c75ea54025:0xb6778bc277d3c95d!8m2!3d52.5121682!4d13.419935!16s%2Fg%2F1vc6cd_d!19sChIJJUClXscjZUERXcnTd8KLd7Y?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed English-speaking via Google Reviews comments"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-103",
+    "practice_name": "Tierarztpraxis Liegnitzer",
+    "city": "Berlin",
+    "district": "Berlin",
+    "address": "Liegnitzer Str. 19, Berlin",
+    "coordinates": {
+      "lat": 52.4929802,
+      "lng": 13.4338649
+    },
+    "contact": {
+      "phone": "030 6126474",
+      "website": "http://www.tierarztpraxis-liegnitzer.de/",
+      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Liegnitzer/data=!4m7!3m6!1s0x416523758d183683:0xf7206235691d1a5c!8m2!3d52.4929802!4d13.4338649!16s%2Fg%2F11b6b3ngv4!19sChIJgzYYjXUjZUERXBodaTViIPc?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-25",
+      "english_signals": [
+        "Confirmed English-speaking via Google Reviews comments"
       ]
     },
     "community_status": "Verified"
