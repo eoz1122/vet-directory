@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vets from '../data/vets.json';
+import { appendUTM } from '../utils/url';
 
 const cityContent: Record<string, { title: string; description: string; content: string }> = {
     berlin: {
@@ -177,7 +178,7 @@ export default function CityVets() {
                                     </a>
                                 )}
                                 {vet.contact?.website && (
-                                    <a href={vet.contact.website} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline text-sm block">
+                                    <a href={appendUTM(vet.contact.website)} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline text-sm block">
                                         🌐 Visit Website
                                     </a>
                                 )}

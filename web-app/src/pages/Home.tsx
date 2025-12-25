@@ -1,9 +1,10 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import vetData from '../data/vets.json'
 import AppMap from '../components/Map'
 import PlaceAutocomplete from '../components/PlaceAutocomplete'
 import { calculateDistance } from '../utils/distance'
+import { appendUTM } from '../utils/url'
 import { APIProvider } from '@vis.gl/react-google-maps'
 import { Helmet } from 'react-helmet-async'
 import Footer from '../components/Footer'
@@ -195,10 +196,10 @@ export default function Home() {
                                         <button
                                             key={city}
                                             onClick={() => setSelectedCity(city)}
-                                            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${selectedCity === city
+                                            className={`px - 4 py - 1.5 rounded - full text - sm font - medium transition - colors whitespace - nowrap ${selectedCity === city
                                                 ? 'bg-primary text-secondary'
                                                 : 'bg-white border border-primary/20 text-primary hover:bg-primary/5'
-                                                }`}
+                                                } `}
                                         >
                                             {city}
                                         </button>
@@ -262,10 +263,10 @@ export default function Home() {
                             <article
                                 key={vet.id}
                                 onClick={() => setSelectedVet(vet)}
-                                className={`rounded-xl p-4 shadow-sm border transition-all duration-200 group relative cursor-pointer ${selectedVet?.id === vet.id
+                                className={`rounded - xl p - 4 shadow - sm border transition - all duration - 200 group relative cursor - pointer ${selectedVet?.id === vet.id
                                     ? 'bg-primary/5 border-primary/40 ring-1 ring-primary/40'
                                     : (vet as any).community_status === 'Verified' ? 'bg-white border-transparent hover:border-accent/20 hover:scale-[1.01]' : 'bg-gray-50/50 border-dashed border-gray-200 hover:border-gray-300 opacity-90'
-                                    }`}
+                                    } `}
                             >
                                 {((vet as any).community_status === 'Verified') ? (
                                     <div className="absolute top-4 right-4 flex flex-col items-end gap-1">
@@ -332,7 +333,7 @@ export default function Home() {
                                 <div className="flex gap-3 mt-auto pt-3 border-t border-gray-50">
                                     {vet.contact.website ? (
                                         <a
-                                            href={vet.contact.website}
+                                            href={appendUTM(vet.contact.website)}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             onClick={(e) => e.stopPropagation()}
@@ -349,9 +350,9 @@ export default function Home() {
                                             className="flex-1 py-2 text-center text-xs font-semibold bg-white border border-primary/20 text-primary rounded hover:bg-gray-50 transition-colors"
                                         >
                                             View on Google Maps
-                                        </a>
+                                        </a >
                                     )}
-                                </div>
+                                </div >
 
                                 <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
                                     <span className="text-[10px] text-gray-400">
@@ -366,27 +367,29 @@ export default function Home() {
                                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                                     </button>
                                 </div>
-                            </article>
+                            </article >
                         ))}
 
-                        {totalPages > 1 && (
-                            <div className="flex justify-center gap-4 py-2">
-                                <button
-                                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                                    disabled={currentPage === 1}
-                                    className="px-4 py-2 text-xs font-bold bg-white border border-primary/20 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-primary"
-                                >
-                                    Previous
-                                </button>
-                                <button
-                                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                                    disabled={currentPage === totalPages}
-                                    className="px-4 py-2 text-xs font-bold bg-white border border-primary/20 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-primary"
-                                >
-                                    Next
-                                </button>
-                            </div>
-                        )}
+                        {
+                            totalPages > 1 && (
+                                <div className="flex justify-center gap-4 py-2">
+                                    <button
+                                        onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                                        disabled={currentPage === 1}
+                                        className="px-4 py-2 text-xs font-bold bg-white border border-primary/20 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-primary"
+                                    >
+                                        Previous
+                                    </button>
+                                    <button
+                                        onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                                        disabled={currentPage === totalPages}
+                                        className="px-4 py-2 text-xs font-bold bg-white border border-primary/20 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-primary"
+                                    >
+                                        Next
+                                    </button>
+                                </div>
+                            )
+                        }
 
                         <div className="bg-secondary p-6 rounded-2xl border border-primary/10">
                             <h2 className="text-lg font-bold text-primary mb-2">Expat Pet Resource Center</h2>
@@ -437,16 +440,18 @@ export default function Home() {
                             </nav>
                         </div>
 
-                        {sortedVets.length === 0 && (
-                            <div className="text-center py-20 text-primary/40">
-                                <p>No English-speaking vets found for your search.</p>
-                                <button onClick={() => { setSearchTerm(''); setSelectedCity('All') }} className="mt-4 text-accent hover:underline text-sm">Reset filters</button>
-                            </div>
-                        )}
+                        {
+                            sortedVets.length === 0 && (
+                                <div className="text-center py-20 text-primary/40">
+                                    <p>No English-speaking vets found for your search.</p>
+                                    <button onClick={() => { setSearchTerm(''); setSelectedCity('All') }} className="mt-4 text-accent hover:underline text-sm">Reset filters</button>
+                                </div>
+                            )
+                        }
 
                         <Footer />
-                    </main>
-                </div>
+                    </main >
+                </div >
 
                 <div className="hidden md:block md:w-[60%] bg-[#e5e0d8] relative">
                     <AppMap vets={sortedVets} selectedCity={selectedCity} selectedVet={selectedVet} onSelectVet={setSelectedVet} />
@@ -472,44 +477,46 @@ export default function Home() {
                     </Link>
                 </nav>
 
-                {reportingVet && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-                        <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full overflow-hidden border border-red-100">
-                            <div className="bg-red-50 p-4 border-b border-red-100 flex justify-between items-start">
-                                <div>
-                                    <h3 className="text-red-800 font-bold flex items-center gap-2">
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                                        Report Issue
-                                    </h3>
-                                    <p className="text-xs text-red-600 mt-1">Regulatory Notice & Correction Request</p>
+                {
+                    reportingVet && (
+                        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+                            <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full overflow-hidden border border-red-100">
+                                <div className="bg-red-50 p-4 border-b border-red-100 flex justify-between items-start">
+                                    <div>
+                                        <h3 className="text-red-800 font-bold flex items-center gap-2">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                            Report Issue
+                                        </h3>
+                                        <p className="text-xs text-red-600 mt-1">Regulatory Notice & Correction Request</p>
+                                    </div>
+                                    <button onClick={() => setReportingVet(null)} className="text-red-400 hover:text-red-700" title="Close">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                    </button>
                                 </div>
-                                <button onClick={() => setReportingVet(null)} className="text-red-400 hover:text-red-700" title="Close">
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                                </button>
-                            </div>
-                            <div className="p-4 space-y-4">
-                                <p className="text-sm text-gray-600">
-                                    Reporting <strong>{reportingVet.practice_name}</strong> ({reportingVet.city}).
-                                </p>
-                                <div className="space-y-2">
-                                    <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Permanently Closed`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
-                                        ⚠ Permanently Closed
-                                    </a>
-                                    <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Data Error`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
-                                        ✏ Data Incorrect
-                                    </a>
-                                    <a href={`mailto:compliance@englishspeakinggermany.online?subject=Removal Request: ${reportingVet.id}`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
-                                        🛡 Request Removal (Owner)
-                                    </a>
+                                <div className="p-4 space-y-4">
+                                    <p className="text-sm text-gray-600">
+                                        Reporting <strong>{reportingVet.practice_name}</strong> ({reportingVet.city}).
+                                    </p>
+                                    <div className="space-y-2">
+                                        <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Permanently Closed`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
+                                            ⚠ Permanently Closed
+                                        </a>
+                                        <a href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=Reason: Data Error`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
+                                            ✏ Data Incorrect
+                                        </a>
+                                        <a href={`mailto:compliance@englishspeakinggermany.online?subject=Removal Request: ${reportingVet.id}`} className="block w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:bg-gray-50 text-sm text-primary transition-colors">
+                                            🛡 Request Removal (Owner)
+                                        </a>
+                                    </div>
+                                    <p className="text-[10px] text-gray-400 leading-tight">
+                                        Compliant with German GDPR & DSA regulations.
+                                    </p>
                                 </div>
-                                <p className="text-[10px] text-gray-400 leading-tight">
-                                    Compliant with German GDPR & DSA regulations.
-                                </p>
                             </div>
                         </div>
-                    </div>
-                )}
-            </div>
-        </APIProvider>
+                    )
+                }
+            </div >
+        </APIProvider >
     )
 }

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Map as GoogleMap, AdvancedMarker, Pin, InfoWindow, useMap } from '@vis.gl/react-google-maps';
+import { appendUTM } from '../utils/url';
 
 interface Vet {
     id: string;
@@ -144,7 +145,7 @@ export default function AppMap({ vets, selectedCity, selectedVet, onSelectVet }:
                                 </a>
                                 {selectedVet.contact.website && (
                                     <a
-                                        href={selectedVet.contact.website}
+                                        href={appendUTM(selectedVet.contact.website)}
                                         target="_blank"
                                         rel="noreferrer"
                                         className="flex-1 text-center py-2 bg-primary text-secondary text-[10px] font-bold rounded-lg hover:bg-primary/90 transition-all shadow-sm"
