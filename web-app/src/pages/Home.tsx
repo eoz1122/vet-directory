@@ -35,6 +35,7 @@ export default function Home() {
     const [selectedVet, setSelectedVet] = useState<Vet | null>(null);
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
     const ITEMS_PER_PAGE = 10;
 
     const cities = ['All', 'Berlin', 'Frankfurt', 'Hamburg']
@@ -88,14 +89,16 @@ export default function Home() {
 
     // 1. Filter logic
     const filteredVets = useMemo(() => {
-        return (vetData as Vet[]).filter(vet => {
+        return (vetData as (Vet & { community_status?: string })[]).filter(vet => {
             const matchesText = vet.practice_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 vet.district.toLowerCase().includes(searchTerm.toLowerCase());
             const matchesCity = selectedCity === 'All' || vet.city === selectedCity;
-            if (userLocation) return true;
-            return matchesCity && matchesText;
+            const matchesVerification = !showVerifiedOnly || vet.community_status === 'Verified';
+
+            if (userLocation) return matchesVerification;
+            return matchesCity && matchesText && matchesVerification;
         })
-    }, [selectedCity, searchTerm, userLocation])
+    }, [selectedCity, searchTerm, userLocation, showVerifiedOnly])
 
     interface VetWithDistance extends Vet {
         distance?: number;
@@ -138,9 +141,9 @@ export default function Home() {
     return (
         <APIProvider apiKey={apiKey} language="en">
             <Helmet>
-                <title>English-Speaking Vets in Germany | Verify & Find 94+ Clinics</title>
-                <meta name="description" content="Moving to Germany with a pet? Find 94+ verified English-speaking veterinarians in Berlin, Hamburg, Frankfurt and more. Essential guides on dog tax and pet registration." />
-                <meta name="keywords" content="english speaking veterinarian germany, vet berlin english, english vet frankfurt, english vet hamburg, expat pet germany" />
+                <title>For the love of our little friends | 120+ Verified English-Speaking Vets</title>
+                <meta name="description" content="With the help of our community, we are building Germany’s most comprehensive English-speaking directory for our companions. Find 120+ verified vets in Berlin, Hamburg, Frankfurt and more." />
+                <meta name="keywords" content="english speaking veterinarian germany, vet berlin english, english vet frankfurt, english vet hamburg, expat pet germany, community sourced vets" />
                 <link rel="canonical" href="https://englishspeakinggermany.online" />
 
                 {/* Open Graph / Social */}
@@ -158,13 +161,18 @@ export default function Home() {
                 <div className="md:w-[40%] flex flex-col h-screen overflow-hidden bg-secondary">
                     <header className="sticky top-0 z-10 bg-secondary/80 backdrop-blur-md border-b border-primary/10 p-4">
                         <div className="flex flex-col gap-3 mb-4">
-                            <Link to="/" className="flex items-center gap-3 group">
-                                <img src="/logo.png" alt="EnglishSpeakingVets - Find an English Speaking Vet in Germany" className="h-20 w-auto transition-transform group-hover:scale-105" />
-                                <div className="flex flex-col leading-none">
-                                    <h1 className="text-primary font-bold text-lg uppercase tracking-tight">English Speaking</h1>
-                                    <span className="text-accent font-bold text-3xl uppercase tracking-tighter">Vets</span>
-                                </div>
-                            </Link>
+                            <div className="flex flex-col gap-2">
+                                <Link to="/" className="flex items-center gap-3 group">
+                                    <img src="/logo.png" alt="EnglishSpeakingVets - Find an English Speaking Vet in Germany" className="h-16 w-auto transition-transform group-hover:scale-105" />
+                                    <div className="flex flex-col leading-none">
+                                        <h1 className="text-primary font-bold text-base uppercase tracking-tight">English Speaking</h1>
+                                        <span className="text-accent font-bold text-2xl uppercase tracking-tighter">Vets</span>
+                                    </div>
+                                </Link>
+                                <p className="text-[13px] text-primary/80 font-serif italic leading-snug">
+                                    "For the love of our little friends." With the help of community, we are building Germany’s most comprehensive directory for our companions.
+                                </p>
+                            </div>
 
                             <nav className="hidden md:flex gap-4 text-xs font-semibold text-primary/70 border-t border-primary/10 pt-2 w-full">
                                 <Link to="/blog" className="hover:text-accent transition-colors">Guides</Link>
@@ -209,15 +217,28 @@ export default function Home() {
                         )}
 
                         {!userLocation && (
-                            <div className="relative">
-                                <input
-                                    type="text"
-                                    placeholder="Filter by name..."
-                                    className="w-full pl-10 pr-4 py-2 bg-white border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 text-sm"
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                />
-                                <svg className="w-4 h-4 text-primary/40 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            <div className="flex flex-col gap-2">
+                                <div className="relative">
+                                    <input
+                                        type="text"
+                                        placeholder="Filter by name..."
+                                        className="w-full pl-10 pr-4 py-2 bg-white border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 text-sm"
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                    />
+                                    <svg className="w-4 h-4 text-primary/40 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                                </div>
+                                <label className="flex items-center gap-2 px-1 cursor-pointer group">
+                                    <input
+                                        type="checkbox"
+                                        checked={showVerifiedOnly}
+                                        onChange={(e) => setShowVerifiedOnly(e.target.checked)}
+                                        className="w-3.5 h-3.5 rounded border-primary/20 text-accent focus:ring-accent accent-accent"
+                                    />
+                                    <span className="text-[11px] font-bold text-primary/60 group-hover:text-primary transition-colors uppercase tracking-wider">
+                                        🛡 Show Pack-Verified Only
+                                    </span>
+                                </label>
                             </div>
                         )}
 
@@ -243,9 +264,22 @@ export default function Home() {
                                 onClick={() => setSelectedVet(vet)}
                                 className={`rounded-xl p-4 shadow-sm border transition-all duration-200 group relative cursor-pointer ${selectedVet?.id === vet.id
                                     ? 'bg-primary/5 border-primary/40 ring-1 ring-primary/40'
-                                    : 'bg-white border-transparent hover:border-accent/20 hover:scale-[1.01]'
+                                    : (vet as any).community_status === 'Verified' ? 'bg-white border-transparent hover:border-accent/20 hover:scale-[1.01]' : 'bg-gray-50/50 border-dashed border-gray-200 hover:border-gray-300 opacity-90'
                                     }`}
                             >
+                                {((vet as any).community_status === 'Verified') ? (
+                                    <div className="absolute top-4 right-4 flex flex-col items-end gap-1">
+                                        <span className="bg-primary/10 text-primary text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1 uppercase tracking-tighter">
+                                            🛡 Pack Verified
+                                        </span>
+                                    </div>
+                                ) : (
+                                    <div className="absolute top-4 right-4 flex flex-col items-end gap-1">
+                                        <span className="bg-orange-50 text-orange-600 text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1 uppercase tracking-tighter border border-orange-100/50">
+                                            👥 Community Sourced
+                                        </span>
+                                    </div>
+                                )}
                                 {vet.distance !== undefined && vet.distance < 9000 && (
                                     <div className="absolute top-4 right-4 bg-accent/10 text-accent text-xs font-bold px-2 py-1 rounded">
                                         {Math.round(vet.distance)} km
@@ -357,7 +391,7 @@ export default function Home() {
                         <div className="bg-secondary p-6 rounded-2xl border border-primary/10">
                             <h2 className="text-lg font-bold text-primary mb-2">Expat Pet Resource Center</h2>
                             <p className="text-sm text-primary/70 mb-4 leading-relaxed">
-                                Moving to Germany? These verified guides will save you hours of bureaucracy.
+                                Help us protect more paws. Found a great English-speaking vet? Share your find and help us build the most comprehensive home for our companions.
                             </p>
                             <nav className="space-y-3">
                                 <Link to="/blog/pet-friendly-apartments-germany-2025" className="flex items-start gap-2 text-primary hover:text-accent transition-colors group">
@@ -396,8 +430,8 @@ export default function Home() {
                                     </div>
                                 </Link>
                                 <div className="pt-2">
-                                    <Link to="/blog" className="block w-full text-center py-3 bg-primary text-secondary rounded-xl font-bold text-sm hover:bg-accent hover:text-primary transition-all shadow-sm">
-                                        📚 View All Expat Guides
+                                    <Link to="/contact?topic=submit_vet" className="block w-full text-center py-3 bg-accent text-white rounded-xl font-bold text-sm hover:bg-accent/90 transition-all shadow-sm">
+                                        � Add to the Directory
                                     </Link>
                                 </div>
                             </nav>

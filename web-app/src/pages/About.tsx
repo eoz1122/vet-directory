@@ -15,10 +15,10 @@ export default function About() {
                 <section className="text-center space-y-8">
                     <div className="space-y-4">
                         <h1 className="text-4xl md:text-5xl font-bold text-primary tracking-tight">
-                            About Our Pack
+                            Our Mission & The Pack
                         </h1>
                         <p className="text-xl text-primary/70 max-w-2xl mx-auto font-serif italic">
-                            "Because pets don't speak German, but your vet should speak English."
+                            "We believe that language should never be a barrier to love."
                         </p>
                     </div>
 
@@ -96,9 +96,14 @@ export default function About() {
                         <h2 className="text-3xl font-bold text-primary">The "Why"</h2>
                     </div>
 
-                    <p className="text-lg leading-relaxed text-primary/80 font-medium italic">
-                        We do this to make the transition to life in Germany just a little bit softer for the people (and the paws) who come after us.
-                    </p>
+                    <div className="prose prose-lg text-primary/80">
+                        <p className="text-lg leading-relaxed font-medium italic">
+                            We do this to make the transition to life in Germany just a little bit softer for the people (and the paws) who come after us.
+                        </p>
+                        <p className="mt-4 leading-relaxed">
+                            Our mission is simple: to ensure every expat companion in Germany gets the care they deserve. We aren't doing this alone—this site is built by the hands and hearts of the community. Every new vet added and every detail updated is a step toward the most complete resource for our little friends.
+                        </p>
+                    </div>
                 </section>
 
                 {/* Meet the Team (Happiness Officer) */}
