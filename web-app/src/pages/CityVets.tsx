@@ -228,7 +228,10 @@ export default function CityVets() {
                                         </h3>
                                     </div>
                                     <div className="flex flex-col items-end gap-2">
-                                        <div className="px-3 py-1 bg-green-50 text-green-700 text-[10px] font-black uppercase tracking-tighter rounded-xl border border-green-100/50 flex items-center gap-1.5 shadow-sm">
+                                        <div
+                                            className="px-3 py-1 bg-green-50 text-green-700 text-[10px] font-black uppercase tracking-tighter rounded-xl border border-green-100/50 flex items-center gap-1.5 shadow-sm cursor-help"
+                                            title="This vet has been verified by our community to speak English fluently."
+                                        >
                                             <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
                                             Verified
                                         </div>

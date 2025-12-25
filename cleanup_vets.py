@@ -62,19 +62,56 @@ def clean_vets_data(file_path):
                 # Remove URL quotes
                 if 'http' in sig or 'gstatic.com' in sig:
                     print(f"Removing URL signal for {vet['practice_name']}")
-                    continue # effectively removing it
-                    
-                # Remove short quotes
-                if len(sig.strip()) < 5:
-                    print(f"Removing short signal '{sig}' for {vet['practice_name']}")
                     continue
+                    
+                # Remove opening hours and metadata patterns
+                # Common trash patterns from automated scraping
+                trash_patterns = [
+                    r"·", r"Opens?\s*[0-9]", r"Closes?\s*[0-9]", 
+                    r"[0-9]+\s*am", r"[0-9]+\s*pm", 
+                    r"[0-9]+:[0-9]+", # Catch times
+                    r"Confirmed via Google Review: \"\.\"",
+                    r"Confirmed via Google Review: \"\s*\"",
+                    r"Open\s*24\s*hours",
+                    r"Closed\s*·",
+                ]
+                is_trash = False
+                for pattern in trash_patterns:
+                    if re.search(pattern, sig, re.IGNORECASE):
+                        is_trash = True
+                        break
+                
+                if is_trash:
+                    print(f"Removing trash signal: '{sig}' for {vet['practice_name']}")
+                    continue
+
+                # Remove short or truncated meaningless quotes
+                clean_sig = sig.replace("Confirmed via Google Review: ", "").strip(' "')
+                if len(clean_sig) < 10:
+                    # Unless it's a very specific positive signal like "English"
+                    if "english" not in clean_sig.lower():
+                        print(f"Removing short meaningless signal '{sig}' for {vet['practice_name']}")
+                        continue
+
+                # Remove specific truncated endings like "spoke to me in" or "if German is not"
+                truncated_patterns = [
+                    r"in$", r"your$", r"is not$", r"with us$"
+                ]
+                for pattern in truncated_patterns:
+                    if re.search(pattern, clean_sig, re.IGNORECASE):
+                        is_trash = True
+                        break
+                
+                if is_trash:
+                     print(f"Removing truncated signal: '{sig}' for {vet['practice_name']}")
+                     continue
 
                 # Add valid signal
                 new_signals.append(sig)
             
-            # If we removed everything but it is Verified, add "Verified by Community"
+            # If we removed everything but it is Verified, add "Verified English Support"
             if not new_signals and vet.get('community_status') == 'Verified':
-                new_signals.append("Verified by Community")
+                new_signals.append("Verified English Support")
             
             vet['verification']['english_signals'] = new_signals
 
