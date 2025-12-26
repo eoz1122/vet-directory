@@ -145,6 +145,10 @@ def sync():
     for vet in vets:
         norm = normalize_name(vet['practice_name'])
         if norm in blacklist: continue
+
+        # Filter out closed practices
+        if 'Closed' in vet['community_status'] or 'Archived' in vet['community_status']:
+            continue
         
         # 1. Relocation check (Phone based)
         phone = (vet['contact'].get('phone') or "").replace(' ', '').replace('-', '').replace('+', '00')

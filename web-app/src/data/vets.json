@@ -411,6 +411,30 @@
     "community_status": "Verified"
   },
   {
+    "id": "Berlin-110",
+    "practice_name": "filu Tierarzt Berlin Charlottenburg",
+    "city": "Berlin",
+    "district": "Charlottenburg",
+    "address": "Olivaer Platz 15, 10707 Berlin",
+    "coordinates": {
+      "lat": 52.499682,
+      "lng": 13.3162955
+    },
+    "contact": {
+      "phone": "",
+      "website": "https://filu.vet/berlin/charlottenburg",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
     "id": "Berlin-101",
     "practice_name": "Kleintiermedizin am Lützowufer",
     "city": "Berlin",
@@ -530,30 +554,6 @@
       ]
     },
     "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-38",
-    "practice_name": "Marita Toepfer Veterinary Services",
-    "city": "Berlin",
-    "district": "Zehlendorf",
-    "address": "Beerenstraße 28, 14163 Berlin",
-    "coordinates": {
-      "lat": 52.4364378,
-      "lng": 13.2415326
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-26",
-      "english_signals": [
-        "Verified by Community"
-      ]
-    },
-    "community_status": "Verified but No Website Found"
   },
   {
     "id": "Berlin-45",
@@ -818,30 +818,6 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Verified by Community"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-31",
-    "practice_name": "Tierarztpraxis am Olivaer Platz (Dr. med. vet. S. Robl)",
-    "city": "Berlin",
-    "district": "Wilmersdorf",
-    "address": "Olivaer Platz 11, 10707 Berlin",
-    "coordinates": {
-      "lat": 52.499682,
-      "lng": 13.3162955
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
       ]
     },
     "community_status": "Verified"
