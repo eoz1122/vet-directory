@@ -114,11 +114,10 @@
       "ai_score": 95,
       "last_scanned": "2025-12-26",
       "english_signals": [
-        "FLAGGED: Could not find vet at this address.",
         "Verified English Support"
       ]
     },
-    "community_status": "Verified but Mismatch"
+    "community_status": "Verified"
   },
   {
     "id": "Berlin-126",
@@ -606,9 +605,9 @@
   },
   {
     "id": "Berlin-104",
-    "practice_name": "Pet-Station",
+    "practice_name": "Pet-Station (Tierarztpraxis)",
     "city": "Berlin",
-    "district": "Berlin",
+    "district": "Schöneberg",
     "address": "Kulmer Str. 26, 10783 Berlin",
     "coordinates": {
       "lat": 52.4921297,
@@ -616,14 +615,15 @@
     },
     "contact": {
       "phone": "030 51058546",
-      "website": "http://www.pet-station.de/",
+      "website": "https://pet-station.de/",
       "google_maps": null
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-25",
+      "last_scanned": "2025-12-26",
       "english_signals": [
-        "Confirmed English-speaking via Google Reviews comments"
+        "Merged with general Tierarztpraxis entry",
+        "Verified English Support"
       ]
     },
     "community_status": "Verified"
@@ -770,30 +770,6 @@
       "last_scanned": "2025-12-24",
       "english_signals": [
         "Verified by Community"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-100",
-    "practice_name": "Tierarztpraxis",
-    "city": "Berlin",
-    "district": "Berlin",
-    "address": "Kulmer Str. 26, 10783 Berlin",
-    "coordinates": {
-      "lat": 52.4921195,
-      "lng": 13.3651271
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed English-speaking via Google Reviews comments"
       ]
     },
     "community_status": "Verified"
@@ -1257,6 +1233,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-26",
       "english_signals": [
+        "Address updated from Bänschstraße 70",
         "Verified English Support"
       ]
     },
@@ -1281,6 +1258,7 @@
       "ai_score": 95,
       "last_scanned": "2025-12-26",
       "english_signals": [
+        "Address updated from Winkler Straße 2",
         "Verified by Community"
       ]
     },
@@ -1529,23 +1507,23 @@
     "community_status": "Verified"
   },
   {
-    "id": "Berlin-12",
+    "id": "Berlin-81",
     "practice_name": "Valera Veterinary Clinic",
     "city": "Berlin",
     "district": "Zehlendorf",
-    "address": "Potsdamer Str. 23/2, 14163 Berlin (Zehlendorf)",
+    "address": "Potsdamer Straße 23/24, 14163 Berlin",
     "coordinates": {
-      "lat": 52.4354324,
-      "lng": 13.2587088
+      "lat": 52.4332462,
+      "lng": 13.2592737
     },
     "contact": {
       "phone": "",
-      "website": "https://valera.berlin/",
+      "website": "https://www.valeratierklinikberlin.com/",
       "google_maps": null
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-26",
       "english_signals": [
         "Verified English Support"
       ]
@@ -2598,7 +2576,7 @@
     "practice_name": "Dr. Martin Bucksch (Tierärzte am Grandweg)",
     "city": "Hamburg",
     "district": "Lokstedt",
-    "address": "Grandweg 68, 22529 Hamburg (Lokstedt)",
+    "address": "Grandweg 68, 22529 Hamburg",
     "coordinates": {
       "lat": 53.5925323,
       "lng": 9.9605474
@@ -2735,12 +2713,12 @@
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-26",
       "english_signals": [
         "Verified English Support"
       ]
     },
-    "community_status": "Verified"
+    "community_status": "Verified but No Website Found"
   },
   {
     "id": "Hamburg-77",
@@ -3014,10 +2992,10 @@
     "practice_name": "Tierarztpraxis am Millerntor",
     "city": "Hamburg",
     "district": "St. Pauli",
-    "address": "B4 31, 20359 Hamburg (St. Pauli)",
+    "address": "Budapester Straße 31, 20359 Hamburg",
     "coordinates": {
-      "lat": 53.55376649999999,
-      "lng": 9.964839399999999
+      "lat": 53.5537665,
+      "lng": 9.9648394
     },
     "contact": {
       "phone": "",
@@ -3026,7 +3004,7 @@
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-26",
       "english_signals": [
         "Verified English Support",
         "Community Verified"
@@ -3039,7 +3017,7 @@
     "practice_name": "Tierarztpraxis Dr. Stefanie Möller",
     "city": "Hamburg",
     "district": "Harvestehude",
-    "address": "Isestraße 49, 20144 Hamburg (Harvestehude)",
+    "address": "Isestraße 49, 20144 Hamburg",
     "coordinates": {
       "lat": 53.5817841,
       "lng": 9.9817247
@@ -3051,31 +3029,31 @@
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-26",
       "english_signals": [
         "Verified by Community"
       ]
     },
-    "community_status": "Verified"
+    "community_status": "Verified but No Website Found"
   },
   {
     "id": "Hamburg-91",
     "practice_name": "Tierarztpraxis Dr. von Marnitz",
     "city": "Hamburg",
     "district": "Schnelsen",
-    "address": "Holsteiner Chaussee 38, 22523 Hamburg (Schnelsen)",
+    "address": "Holsteiner Chaussee 38, 22523 Hamburg",
     "coordinates": {
       "lat": 53.6117063,
       "lng": 9.9056719
     },
     "contact": {
       "phone": "",
-      "website": "",
+      "website": "https://www.von-marnitz.de",
       "google_maps": null
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-26",
       "english_signals": [
         "Verified English Support"
       ]
@@ -3112,7 +3090,7 @@
     "practice_name": "Tierarztpraxis Simon",
     "city": "Hamburg",
     "district": "Rahlstedt",
-    "address": "Bargteheider Str. 156, 22143 Hamburg (Rahlstedt)",
+    "address": "Bargteheider Str. 156, 22143 Hamburg",
     "coordinates": {
       "lat": 53.6005735,
       "lng": 10.1438955
@@ -3120,30 +3098,6 @@
     "contact": {
       "phone": "040 64860711",
       "website": "https://simon.hamburg/",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Hamburg-92",
-    "practice_name": "Tierarztpraxis St. Pauli (Hopfenstraße)",
-    "city": "Hamburg",
-    "district": "St. Pauli",
-    "address": "Hopfenstraße 11-13, 20359 Hamburg",
-    "coordinates": {
-      "lat": 53.5480617,
-      "lng": 9.9639852
-    },
-    "contact": {
-      "phone": "",
-      "website": "https://tierarzt-stpauli.hamburg",
       "google_maps": null
     },
     "verification": {
@@ -3159,7 +3113,7 @@
     "id": "Hamburg-84",
     "practice_name": "Tierarztpraxis Sülldorf (Gwendolien Lehmann)",
     "city": "Hamburg",
-    "district": "Gwendolien Lehmann",
+    "district": "Sülldorf",
     "address": "Sülldorfer Kirchenweg 2, 22587 Hamburg",
     "coordinates": {
       "lat": 53.5640672,
@@ -3167,13 +3121,14 @@
     },
     "contact": {
       "phone": "",
-      "website": "",
+      "website": "https://www.tierarzt-blankenese.de",
       "google_maps": null
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-26",
       "english_signals": [
+        "Verified English Support",
         "Jameda Verified"
       ]
     },
@@ -3215,12 +3170,12 @@
     },
     "contact": {
       "phone": "",
-      "website": "",
+      "website": "https://www.tierklinik-lademannbogen.de",
       "google_maps": null
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-26",
       "english_signals": [
         "Verified English Support"
       ]
