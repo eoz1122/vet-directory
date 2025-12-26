@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
@@ -84,9 +85,17 @@ export default function DistrictVets() {
 Our directory connects you with verified English-speaking veterinary practices in ${districtDisplay}. We rely on community feedback to ensure that every listed vet can communicate effectively in English, giving you peace of mind when your furry friend needs care.`
     };
 
+    const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
+    const [showMobileOnly, setShowMobileOnly] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+
     const districtVets = vets.filter(vet =>
         vet.city.toLowerCase() === cityKey &&
-        vet.district?.toLowerCase() === districtKey
+        vet.district?.toLowerCase() === districtKey &&
+        ((vet.practice_name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+            (vet.address || "").toLowerCase().includes(searchTerm.toLowerCase())) &&
+        (!showVerifiedOnly || vet.community_status === 'Verified') &&
+        (!showMobileOnly || (vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown')))
     );
 
     // JSON-LD Structured Data
@@ -142,6 +151,43 @@ Our directory connects you with verified English-speaking veterinary practices i
 
                     <div className="prose prose-lg max-w-none text-primary/80 space-y-4 whitespace-pre-wrap">
                         {content.content}
+                    </div>
+
+                    <div className="mt-8 flex flex-col md:flex-row gap-4">
+                        <div className="relative flex-1 group/filter">
+                            <input
+                                type="text"
+                                placeholder="Search by practice name..."
+                                className="w-full pl-11 pr-4 py-3 bg-white border border-primary/5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-accent/10 focus:border-accent/30 text-sm font-medium transition-all shadow-sm"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                            <svg className="w-4.5 h-4.5 text-primary/20 absolute left-4 top-1/2 -translate-y-1/2 transition-colors group-focus-within/filter:text-accent/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                        <div className="flex gap-2">
+                            <label className="flex items-center gap-2 px-3 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
+                                <input
+                                    type="checkbox"
+                                    checked={showMobileOnly}
+                                    onChange={(e) => setShowMobileOnly(e.target.checked)}
+                                    className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
+                                />
+                                <span className="text-[10px] font-black text-primary/40 group-hover:text-primary/70 transition-colors uppercase tracking-[0.1em] whitespace-nowrap">
+                                    🚐 Mobile
+                                </span>
+                            </label>
+                            <label className="flex items-center gap-2 px-3 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
+                                <input
+                                    type="checkbox"
+                                    checked={showVerifiedOnly}
+                                    onChange={(e) => setShowVerifiedOnly(e.target.checked)}
+                                    className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
+                                />
+                                <span className="text-[10px] font-black text-primary/40 group-hover:text-primary/70 transition-colors uppercase tracking-[0.1em] whitespace-nowrap">
+                                    🛡 Verified
+                                </span>
+                            </label>
+                        </div>
                     </div>
                 </section>
 
@@ -278,6 +324,6 @@ Our directory connects you with verified English-speaking veterinary practices i
                 </section>
             </main>
             <Footer />
-        </div>
+        </div >
     );
 }
