@@ -19,6 +19,7 @@ const Home: React.FC = () => {
     const [selectedCity, setSelectedCity] = useState('All');
     const [searchTerm, setSearchTerm] = useState('');
     const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
+    const [showMobileOnly, setShowMobileOnly] = useState(false);
     const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
     const [selectedVet, setSelectedVet] = useState<Vet | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
@@ -36,6 +37,7 @@ const Home: React.FC = () => {
             (vet.address || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
             (vet.district || "").toLowerCase().includes(searchTerm.toLowerCase());
         const matchesVerification = !showVerifiedOnly || (vet.community_status === 'Verified');
+        const matchesMobile = !showMobileOnly || (vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown'));
 
         // Distance filter
         let matchesDistance = true;
@@ -48,7 +50,7 @@ const Home: React.FC = () => {
             }
         }
 
-        return matchesCity && matchesText && matchesVerification && matchesDistance;
+        return matchesCity && matchesText && matchesVerification && matchesDistance && matchesMobile;
     });
 
     // Sort logic
@@ -122,7 +124,7 @@ const Home: React.FC = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
         }
-    }, [currentPage, selectedCity, searchTerm, searchRadius, userLocation]);
+    }, [currentPage, selectedCity, searchTerm, searchRadius, userLocation, showMobileOnly]);
 
     return (
         <APIProvider apiKey={apiKey} language="en">
@@ -241,17 +243,30 @@ const Home: React.FC = () => {
                                     />
                                     <svg className="w-4.5 h-4.5 text-primary/20 absolute left-4 top-1/2 -translate-y-1/2 transition-colors group-focus-within/filter:text-accent/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                 </div>
-                                <label className="flex items-center gap-3 px-4 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
-                                    <input
-                                        type="checkbox"
-                                        checked={showVerifiedOnly}
-                                        onChange={(e) => setShowVerifiedOnly(e.target.checked)}
-                                        className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
-                                    />
-                                    <span className="text-[10px] font-black text-primary/40 group-hover:text-primary/70 transition-colors uppercase tracking-[0.15em] whitespace-nowrap">
-                                        🛡 Verified
-                                    </span>
-                                </label>
+                                <div className="flex gap-2">
+                                    <label className="flex items-center gap-2 px-3 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
+                                        <input
+                                            type="checkbox"
+                                            checked={showMobileOnly}
+                                            onChange={(e) => setShowMobileOnly(e.target.checked)}
+                                            className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
+                                        />
+                                        <span className="text-[10px] font-black text-primary/40 group-hover:text-primary/70 transition-colors uppercase tracking-[0.1em] whitespace-nowrap">
+                                            🚐 Mobile
+                                        </span>
+                                    </label>
+                                    <label className="flex items-center gap-2 px-3 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
+                                        <input
+                                            type="checkbox"
+                                            checked={showVerifiedOnly}
+                                            onChange={(e) => setShowVerifiedOnly(e.target.checked)}
+                                            className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
+                                        />
+                                        <span className="text-[10px] font-black text-primary/40 group-hover:text-primary/70 transition-colors uppercase tracking-[0.1em] whitespace-nowrap">
+                                            🛡 Verified
+                                        </span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
