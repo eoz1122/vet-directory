@@ -96,30 +96,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Berlin-29",
-    "practice_name": "Bernhard Alexander (Schöneberg)",
-    "city": "Berlin",
-    "district": "Schöneberg",
-    "address": "Hauptstr. 92, 10827 Berlin",
-    "coordinates": {
-      "lat": 52.4763237,
-      "lng": 13.3418436
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-26",
-      "english_signals": [
-        "Verified English Support"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Berlin-126",
     "practice_name": "DER TIERARZT Dr. Theobald in Schöneberg",
     "city": "Berlin",
