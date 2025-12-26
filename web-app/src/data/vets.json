@@ -539,7 +539,7 @@
       "lng": 13.236957
     },
     "contact": {
-      "phone": "",
+      "phone": "030 83862356",
       "website": "https://www.vetmed.fu-berlin.de/einrichtungen/kliniken/we20/index.html",
       "google_maps": null
     },
@@ -549,7 +549,7 @@
       "english_signals": [
         "Verified English Support"
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -1529,7 +1529,7 @@
       "lng": 13.2592737
     },
     "contact": {
-      "phone": "",
+      "phone": "030 201805750",
       "website": "https://www.valeratierklinikberlin.com/",
       "google_maps": null
     },
@@ -1539,7 +1539,7 @@
       "english_signals": [
         "Verified English Support"
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -1680,7 +1680,7 @@
       "lng": 13.2677368
     },
     "contact": {
-      "phone": "",
+      "phone": "0174 1601606",
       "website": "https://tierarzt-baerenwiese.de",
       "google_maps": null
     },
@@ -1690,7 +1690,7 @@
       "english_signals": [
         "Verified English Support"
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -2552,6 +2552,31 @@
     "community_status": "Verified"
   },
   {
+    "id": "Hamburg-104",
+    "practice_name": "AniCura Hamburg Tierärztliche Klinik",
+    "city": "Hamburg",
+    "district": "Bahrenfeld",
+    "address": "Stresemannstraße 62, 22769 Hamburg",
+    "coordinates": {
+      "lat": 53.560645,
+      "lng": 9.927233
+    },
+    "contact": {
+      "phone": "040 854040",
+      "website": "https://www.anicura.de/standorte/hamburg-altona/",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "Verified English Support"
+      ],
+      "emergency": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
     "id": "Hamburg-74",
     "practice_name": "AniCura Kleintierzentrum (Niendorf)",
     "city": "Hamburg",
@@ -2957,6 +2982,31 @@
         "Verified English Support"
       ],
       "emergency": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-106",
+    "practice_name": "Kleintierklinik im Mühlenfeld",
+    "city": "Hamburg",
+    "district": "Eidelstedt",
+    "address": "Im Mühlenfeld 23, 22523 Hamburg",
+    "coordinates": {
+      "lat": 53.6067,
+      "lng": 9.9056
+    },
+    "contact": {
+      "phone": "040 5700568",
+      "website": "http://www.tierklinik-im-muehlenfeld.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "Verified English Support"
+      ],
+      "emergency": "Weekends/Holidays"
     },
     "community_status": "Verified"
   },
@@ -3672,6 +3722,31 @@
     "community_status": "Verified"
   },
   {
+    "id": "Munich-136",
+    "practice_name": "AniCura Tierärztliches Zentrum München",
+    "city": "Munich",
+    "district": "Pasing",
+    "address": "Planegger Str. 150, 81241 München",
+    "coordinates": {
+      "lat": 48.1408,
+      "lng": 11.4589
+    },
+    "contact": {
+      "phone": "089 88909690",
+      "website": "https://www.anicura.de/tierarztliches-zentrum-munchen/",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "Verified English Support"
+      ],
+      "emergency": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
     "id": "Munich-130",
     "practice_name": "Clinic of Small Animal Surgery and Reproduction",
     "city": "Munich",
@@ -3692,7 +3767,7 @@
       "english_signals": [
         "Confirmed via Google Review: \"English to accommodate my limited German.\""
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -3797,6 +3872,56 @@
     "community_status": "Verified"
   },
   {
+    "id": "Frankfurt-99",
+    "practice_name": "Tierklinik Neu-Isenburg",
+    "city": "Neu-Isenburg",
+    "district": "Neu-Isenburg",
+    "address": "Carl-Friedrich-Gauß-Straße 5, 63263 Neu-Isenburg",
+    "coordinates": {
+      "lat": 50.0575,
+      "lng": 8.718
+    },
+    "contact": {
+      "phone": "06102 8838221",
+      "website": "https://www.tierklinik-neu-isenburg.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "Verified English Support"
+      ],
+      "emergency": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hamburg-105",
+    "practice_name": "Tierärztliche Klinik Neustadt",
+    "city": "Neustadt (near Hamburg)",
+    "district": "Neustadt",
+    "address": "Goethering 6, 23730 Neustadt in Holstein",
+    "coordinates": {
+      "lat": 54.103,
+      "lng": 10.822
+    },
+    "contact": {
+      "phone": "04561 610160",
+      "website": "http://www.tierklinik-neustadt.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "Verified English Support"
+      ],
+      "emergency": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
     "id": "Frankfurt-66",
     "practice_name": "Praxis Dr. med. vet. Anette Fach (Oberursel)",
     "city": "Oberursel",
@@ -3844,6 +3969,31 @@
         "Confirmed via Google Review: \"English speaking vet\""
       ],
       "emergency": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Stuttgart-144",
+    "practice_name": "AniCura Tierärztliche Klinik Reutlingen",
+    "city": "Reutlingen",
+    "district": "Reutlingen",
+    "address": "August-Lämmle-Straße 51, 72760 Reutlingen",
+    "coordinates": {
+      "lat": 48.4908,
+      "lng": 9.1925
+    },
+    "contact": {
+      "phone": "07121 334050",
+      "website": "https://www.anicura.de/tierklinik-reutlingen",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "Verified English Support"
+      ],
+      "emergency": "Weekends/Holidays"
     },
     "community_status": "Verified"
   },
@@ -4071,6 +4221,31 @@
         "Confirmed via Google Review: \"English well.\""
       ],
       "emergency": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Stuttgart-143",
+    "practice_name": "Tierklinik Nussdorf",
+    "city": "Überlingen",
+    "district": "Nussdorf",
+    "address": "Dieselstraße 7, 88662 Überlingen",
+    "coordinates": {
+      "lat": 47.7818,
+      "lng": 9.1982
+    },
+    "contact": {
+      "phone": "07551 9494949",
+      "website": "https://www.tierklinik-nussdorf.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "Verified English Support"
+      ],
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   }
