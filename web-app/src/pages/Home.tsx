@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { APIProvider } from '@vis.gl/react-google-maps';
@@ -95,6 +95,15 @@ const Home: React.FC = () => {
         }
     };
 
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+    // Scroll to top on page change
+    useEffect(() => {
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [currentPage, selectedCity, searchTerm]);
+
     return (
         <APIProvider apiKey={apiKey} language="en">
             <Helmet>
@@ -131,7 +140,7 @@ const Home: React.FC = () => {
                         </nav>
                     </header>
 
-                    <div className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth custom-scrollbar bg-secondary/30">
+                    <div ref={scrollContainerRef} className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth custom-scrollbar bg-secondary/30">
                         <div className="space-y-4">
                             <div className="group/search relative">
                                 <PlaceAutocomplete onPlaceSelect={handlePlaceSelect} />
