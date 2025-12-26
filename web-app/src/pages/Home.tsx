@@ -326,7 +326,9 @@ const Home: React.FC = () => {
                                     </div>
 
                                     <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
-                                        <span className="text-[10px] text-gray-400">Updated 2025</span>
+                                        <span className="text-[10px] text-gray-400">
+                                            Last Verified: {vet.verification?.last_scanned ? new Date(vet.verification.last_scanned).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '2025'}
+                                        </span>
                                         <button
                                             onClick={(e) => { e.stopPropagation(); setReportingVet(vet); }}
                                             className="text-gray-300 hover:text-red-400 transition-colors flex items-center gap-1 group/report"

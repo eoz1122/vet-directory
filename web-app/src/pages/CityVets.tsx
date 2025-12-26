@@ -307,7 +307,9 @@ export default function CityVets() {
                                 </div>
 
                                 <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
-                                    <span className="text-[10px] text-gray-400">Updated 2025</span>
+                                    <span className="text-[10px] text-gray-400">
+                                        Last Verified: {vet.verification?.last_scanned ? new Date(vet.verification.last_scanned).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '2025'}
+                                    </span>
                                 </div>
                             </article>
                         ))}
