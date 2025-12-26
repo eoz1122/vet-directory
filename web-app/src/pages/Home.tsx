@@ -9,6 +9,7 @@ import type { Vet, VetWithDistance } from '../types/vet';
 import vetsData from '../data/vets.json';
 import { calculateDistance } from '../utils/distance';
 import { appendUTM } from '../utils/url';
+import { generateListingSchema } from '../utils/schema';
 
 // Cast the JSON data to our Vet type
 const vets = vetsData as Vet[];
@@ -110,6 +111,12 @@ const Home: React.FC = () => {
         }
     };
 
+    const listingSchema = generateListingSchema(
+        paginatedVets,
+        "Verified English-Speaking Vets in Germany",
+        "A directory of verified English-speaking veterinarians in Berlin, Hamburg, Frankfurt, Munich, and Stuttgart."
+    );
+
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
     // Scroll to top on page change
@@ -125,7 +132,7 @@ const Home: React.FC = () => {
                 <title>The Pack | 170+ Verified English-Speaking Vets in Germany</title>
                 <meta name="description" content="Find verified English-speaking veterinarians in Berlin, Hamburg, Frankfurt and more. Germany's most comprehensive community-sourced vet directory." />
                 <script type="application/ld+json">
-                    {JSON.stringify(jsonLd)}
+                    {JSON.stringify([jsonLd, listingSchema])}
                 </script>
             </Helmet>
 
