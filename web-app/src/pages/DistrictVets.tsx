@@ -1,6 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useMemo } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
@@ -85,12 +84,10 @@ export default function DistrictVets() {
 Our directory connects you with verified English-speaking veterinary practices in ${districtDisplay}. We rely on community feedback to ensure that every listed vet can communicate effectively in English, giving you peace of mind when your furry friend needs care.`
     };
 
-    const districtVets = useMemo(() => {
-        return vets.filter(vet =>
-            vet.city.toLowerCase() === cityKey &&
-            vet.district?.toLowerCase() === districtKey
-        );
-    }, [cityKey, districtKey]);
+    const districtVets = vets.filter(vet =>
+        vet.city.toLowerCase() === cityKey &&
+        vet.district?.toLowerCase() === districtKey
+    );
 
     // JSON-LD Structured Data
     const breadcrumbLd = {

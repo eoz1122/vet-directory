@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useMemo } from 'react';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
@@ -92,11 +92,9 @@ export default function CityVets() {
     const cityKey = city?.toLowerCase() || '';
     const cityData = cityContent[cityKey];
 
-    const cityVets = useMemo(() => {
-        return vets.filter(vet =>
-            vet.city.toLowerCase() === cityKey
-        );
-    }, [cityKey]);
+    const cityVets = vets.filter(vet =>
+        vet.city.toLowerCase() === cityKey
+    );
 
     if (!cityData) {
         return (

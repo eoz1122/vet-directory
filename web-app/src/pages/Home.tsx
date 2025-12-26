@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { APIProvider } from '@vis.gl/react-google-maps';
@@ -30,31 +30,29 @@ const Home: React.FC = () => {
     const cities = ['All', 'Berlin', 'Hamburg', 'Frankfurt', 'Munich', 'Stuttgart'];
 
     // Filter logic
-    const filteredVets = useMemo(() => {
-        return vets.filter(vet => {
-            const matchesCity = selectedCity === 'All' || vet.city === selectedCity;
-            const matchesText = (vet.practice_name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
-                (vet.address || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
-                (vet.district || "").toLowerCase().includes(searchTerm.toLowerCase());
-            const matchesVerification = !showVerifiedOnly || (vet.community_status === 'Verified');
+    const filteredVets = vets.filter(vet => {
+        const matchesCity = selectedCity === 'All' || vet.city === selectedCity;
+        const matchesText = (vet.practice_name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+            (vet.address || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+            (vet.district || "").toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesVerification = !showVerifiedOnly || (vet.community_status === 'Verified');
 
-            // Distance filter
-            let matchesDistance = true;
-            if (userLocation && searchRadius) {
-                if (vet.coordinates && vet.coordinates.lat !== 0) {
-                    const dist = calculateDistance(userLocation.lat, userLocation.lng, vet.coordinates.lat, vet.coordinates.lng);
-                    if (dist > searchRadius) matchesDistance = false;
-                } else {
-                    matchesDistance = false; // Filter out if no coords and radius constraint active
-                }
+        // Distance filter
+        let matchesDistance = true;
+        if (userLocation && searchRadius) {
+            if (vet.coordinates && vet.coordinates.lat !== 0) {
+                const dist = calculateDistance(userLocation.lat, userLocation.lng, vet.coordinates.lat, vet.coordinates.lng);
+                if (dist > searchRadius) matchesDistance = false;
+            } else {
+                matchesDistance = false; // Filter out if no coords and radius constraint active
             }
+        }
 
-            return matchesCity && matchesText && matchesVerification && matchesDistance;
-        });
-    }, [selectedCity, searchTerm, showVerifiedOnly, userLocation, searchRadius]);
+        return matchesCity && matchesText && matchesVerification && matchesDistance;
+    });
 
     // Sort logic
-    const sortedVets = useMemo((): VetWithDistance[] => {
+    const sortedVets: VetWithDistance[] = (() => {
         if (!userLocation) return filteredVets as VetWithDistance[];
 
         return [...filteredVets].map(vet => {
@@ -63,7 +61,7 @@ const Home: React.FC = () => {
                 : 9999;
             return { ...vet, distance: dist };
         }).sort((a, b) => (a.distance || 0) - (b.distance || 0));
-    }, [filteredVets, userLocation]);
+    })();
 
     // Pagination logic
     const totalPages = Math.ceil(sortedVets.length / ITEMS_PER_PAGE);
