@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import TableOfContents from '../components/TableOfContents';
 
 export default function PetSittingGermany() {
     return (
@@ -28,15 +29,12 @@ export default function PetSittingGermany() {
                             🏡 Pet Sitting in Germany (2025): Finding a Safe Home for Your Little Friends
                         </h1>
 
-                        <div className="bg-white p-6 rounded-2xl border border-primary/5 shadow-sm mb-12">
-                            <span className="block text-xs font-bold text-primary/40 uppercase tracking-widest mb-4">Table of Contents</span>
-                            <nav className="space-y-3">
-                                <a href="#options" className="block text-primary/80 hover:text-accent transition-colors text-sm font-medium">→ 1. The Three Ways to Settle Your Pet</a>
-                                <a href="#costs" className="block text-primary/80 hover:text-accent transition-colors text-sm font-medium">→ 2. What Does Pet Sitting Cost?</a>
-                                <a href="#legal" className="block text-primary/80 hover:text-accent transition-colors text-sm font-medium">→ 3. Legal & Insurance (Don't Skip)</a>
-                                <a href="#checklist" className="block text-primary/80 hover:text-accent transition-colors text-sm font-medium">→ 4. The Ultimate Checklist</a>
-                            </nav>
-                        </div>
+                        <TableOfContents items={[
+                            { id: 'options', label: '1. The Three Ways to Settle Your Pet' },
+                            { id: 'costs', label: '2. What Does Pet Sitting Cost?' },
+                            { id: 'legal', label: '3. Legal & Insurance (Don\'t Skip)' },
+                            { id: 'checklist', label: '4. The Ultimate Checklist' }
+                        ]} />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
                             <p className="border-l-4 border-accent pl-6 py-2 italic bg-accent/5 rounded-r-lg text-xl">
