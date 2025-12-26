@@ -49,7 +49,7 @@
     "id": "Berlin-3",
     "practice_name": "Rex Tierarztpraxis (Multiple Locations)",
     "city": "Berlin",
-    "district": "Friedrichshain / Others",
+    "district": "Unknown",
     "address": "Friedenstraße 94, 10249 Berlin",
     "coordinates": {
       "lat": 52.5222543,
@@ -95,7 +95,7 @@
     "id": "Berlin-5",
     "practice_name": "Klinik für kleine Haustiere (FU Berlin Small Animal Clinic)",
     "city": "Berlin",
-    "district": "Düppel/Zehlendorf",
+    "district": "Zehlendorf",
     "address": "Oertzenweg 19b, 14163 Berlin (Düppel/Zehlendorf)",
     "coordinates": {
       "lat": 52.4290895,
@@ -116,17 +116,17 @@
   },
   {
     "id": "Berlin-6",
-    "practice_name": "Dr. Jens Vöster",
+    "practice_name": "Tierärztliche Gemeinschaftspraxis Wilmersdorf",
     "city": "Berlin",
-    "district": "Charlottenburg",
-    "address": "Hohenzollerndamm 185, 10713 Berlin (Charlottenburg)",
+    "district": "Wilmersdorf",
+    "address": "Hohenzollerndamm 185, 10713 Berlin (Wilmersdorf)",
     "coordinates": {
       "lat": 52.4914239,
       "lng": 13.3181079
     },
     "contact": {
       "phone": null,
-      "website": null
+      "website": "https://www.tierarztpraxis-berlin.net/"
     },
     "verification": {
       "ai_score": 80,
@@ -463,7 +463,7 @@
   },
   {
     "id": "Berlin-22",
-    "practice_name": "Tierarztpraxis Dr. Till Robl",
+    "practice_name": "Tierarztpraxis am Gesundbrunnen - Dr. Till Robl",
     "city": "Berlin",
     "district": "Prenzlauer Berg",
     "address": "Husemannstraße 3, 10435 Berlin (Prenzlauer Berg)",
@@ -591,7 +591,7 @@
     },
     "contact": {
       "phone": null,
-      "website": null
+      "website": "https://tierarztpraxis-dr-wegeler.de/"
     },
     "verification": {
       "ai_score": 80,
@@ -623,52 +623,6 @@
       "english_signals": [
         "Verified English Support",
         "Jameda Verified"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-29",
-    "practice_name": "Bernhard Alexander (Schöneberg)",
-    "city": "Berlin",
-    "district": "Schöneberg",
-    "address": "Hauptstr. 92, 10827 Berlin",
-    "coordinates": {
-      "lat": 52.4763237,
-      "lng": 13.3418436
-    },
-    "contact": {
-      "phone": null,
-      "website": null
-    },
-    "verification": {
-      "ai_score": 80,
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-31",
-    "practice_name": "Tierarztpraxis am Olivaer Platz (Dr. med. vet. S. Robl)",
-    "city": "Berlin",
-    "district": "Wilmersdorf",
-    "address": "Olivaer Platz 11, 10707 Berlin",
-    "coordinates": {
-      "lat": 52.499682,
-      "lng": 13.3162955
-    },
-    "contact": {
-      "phone": null,
-      "website": null
-    },
-    "verification": {
-      "ai_score": 80,
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
       ]
     },
     "community_status": "Verified"
@@ -732,7 +686,7 @@
     },
     "contact": {
       "phone": null,
-      "website": null
+      "website": "https://tierarztpraxis-am-lietzenseepark.de/"
     },
     "verification": {
       "ai_score": 80,
@@ -779,7 +733,7 @@
     },
     "contact": {
       "phone": null,
-      "website": null
+      "website": "https://www.tierarztpraxis-wasserturm.de/"
     },
     "verification": {
       "ai_score": 80,
@@ -802,53 +756,7 @@
     },
     "contact": {
       "phone": null,
-      "website": null
-    },
-    "verification": {
-      "ai_score": 80,
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified by Community"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-38",
-    "practice_name": "Marita Toepfer Veterinary Services",
-    "city": "Berlin",
-    "district": "Zehlendorf",
-    "address": "Beerenstraße 28, 14163 Berlin (Zehlendorf)",
-    "coordinates": {
-      "lat": 52.4364378,
-      "lng": 13.2415326
-    },
-    "contact": {
-      "phone": null,
-      "website": null
-    },
-    "verification": {
-      "ai_score": 80,
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified by Community"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-39",
-    "practice_name": "Tierarztpraxis Dr. C. S. Alexander",
-    "city": "Berlin",
-    "district": "Steglitz",
-    "address": "Steglitzer Damm 48, 12169 Berlin (Steglitz)",
-    "coordinates": {
-      "lat": 52.4501772,
-      "lng": 13.3437303
-    },
-    "contact": {
-      "phone": null,
-      "website": null
+      "website": "https://tierarzt-berlin-gotthardt.de/"
     },
     "verification": {
       "ai_score": 80,
@@ -871,7 +779,7 @@
     },
     "contact": {
       "phone": null,
-      "website": null
+      "website": "https://laskawy.jimdofree.com/"
     },
     "verification": {
       "ai_score": 80,
@@ -894,7 +802,7 @@
     },
     "contact": {
       "phone": null,
-      "website": null
+      "website": "https://www.tierarztpraxis-am-urbanhafen.de/"
     },
     "verification": {
       "ai_score": 80,
@@ -918,7 +826,7 @@
     },
     "contact": {
       "phone": null,
-      "website": null
+      "website": "https://tierarztinberlin.de/"
     },
     "verification": {
       "ai_score": 80,
@@ -1236,7 +1144,7 @@
     "id": "Frankfurt-53",
     "practice_name": "Dr. Cavalcanti (VetPetCare)",
     "city": "Bad Homburg",
-    "district": "Frankfurt) & Bad Homburg",
+    "district": "Unknown",
     "address": "Kirdorfer Str. 14, 61350 Bad Homburg vor der Höhe",
     "coordinates": {
       "lat": 50.1766221,
@@ -1259,7 +1167,7 @@
     "id": "Frankfurt-54",
     "practice_name": "Tierarztpraxis Maja Firlé",
     "city": "Frankfurt",
-    "district": "Gallus/City West",
+    "district": "Unknown",
     "address": "Hamburger Allee 14, 60486 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1277397,
@@ -1282,7 +1190,7 @@
     "id": "Frankfurt-55",
     "practice_name": "Tierarztpraxis Sachsenhausen (Dr. Jan Kullen / Dr. Elena Panova)",
     "city": "Frankfurt",
-    "district": "Dr. Jan Kullen / Dr. Elena Panova",
+    "district": "Sachsenhausen",
     "address": "Textorstraße 93, 60596 Frankfurt am Main",
     "coordinates": {
       "lat": 50.0995779,
@@ -1351,7 +1259,7 @@
     "id": "Frankfurt-58",
     "practice_name": "Tierarztpraxis Bornheim (Dr. Katrin Witt)",
     "city": "Frankfurt",
-    "district": "Dr. Katrin Witt",
+    "district": "Bornheim",
     "address": "Heisterstraße 1, 60385 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1036973,
@@ -1397,7 +1305,7 @@
     "id": "Frankfurt-60",
     "practice_name": "Tierklinik Kalbach (Kleintierklinik am Nordpark)",
     "city": "Frankfurt",
-    "district": "Am Nordpark 10), 60437 Frankfurt am Main",
+    "district": "Unknown",
     "address": "Max-Holder-Straße 4 (Am Nordpark 10), 60437 Frankfurt am Main",
     "coordinates": {
       "lat": 50.18973,
@@ -1467,7 +1375,7 @@
     "id": "Frankfurt-63",
     "practice_name": "Kleintierpraxis Frankfurt (Dr. Moudrianakis)",
     "city": "Frankfurt",
-    "district": "Dr. Moudrianakis",
+    "district": "Westend",
     "address": "Leerbachstraße 122, 60322 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1243152,
@@ -1701,7 +1609,7 @@
     "id": "Hamburg-73",
     "practice_name": "Tierarztpraxis ElbVet Hamburg",
     "city": "Hamburg",
-    "district": "Bahrenfeld/Altona",
+    "district": "Altona",
     "address": "Friedensallee 290, 22763 Hamburg (Bahrenfeld/Altona)",
     "coordinates": {
       "lat": 53.5598548,
@@ -1820,7 +1728,7 @@
     "id": "Hamburg-78",
     "practice_name": "Tierärztliche Gemeinschaftspraxis St. Pauli (Dr. Svenja Korth)",
     "city": "Hamburg",
-    "district": "Dr. Svenja Korth",
+    "district": "St. Pauli",
     "address": "Feldstraße 22, 20357 Hamburg",
     "coordinates": {
       "lat": 53.5573499,
@@ -2147,7 +2055,7 @@
     "id": "Hamburg-92",
     "practice_name": "Tierarztpraxis St. Pauli (Hopfenstraße)",
     "city": "Hamburg",
-    "district": "Hopfenstraße",
+    "district": "St. Pauli",
     "address": "Hopfenstraße 11-13, 20359 Hamburg",
     "coordinates": {
       "lat": 53.5480617,
@@ -2229,30 +2137,6 @@
       "phone": "030 23900061",
       "website": "http://www.kleintier-sonographie.de/?page_id=122",
       "google_maps": "https://www.google.com/maps/place/Dr.+Johanna+Pauls/data=!4m7!3m6!1s0x47a84e00de054f03:0xd88aadf11ead293d!8m2!3d52.5385307!4d13.4216955!16s%2Fg%2F11c1tlz48s!19sChIJA08F3gBOqEcRPSmtHvGtitg?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed English-speaking via Google Reviews comments"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-100",
-    "practice_name": "Tierarztpraxis",
-    "city": "Berlin",
-    "district": "Berlin",
-    "address": "Kulmer Str. 26, 10783 Berlin",
-    "coordinates": {
-      "lat": 52.4921195,
-      "lng": 13.3651271
-    },
-    "contact": {
-      "phone": null,
-      "website": null,
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis/data=!4m7!3m6!1s0x47a8503835ce73f9:0x45ad73e1b6d175a1!8m2!3d52.4921195!4d13.3651271!16s%2Fg%2F11mgn05v41!19sChIJ-XPONThQqEcRoXXRtuFzrUU?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "ai_score": 95,

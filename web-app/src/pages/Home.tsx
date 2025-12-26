@@ -138,23 +138,23 @@ const Home: React.FC = () => {
 
             <div className="min-h-screen flex flex-col md:flex-row bg-secondary">
                 <div className="md:w-[42%] lg:w-[40%] flex flex-col h-screen overflow-hidden border-r border-primary/5">
-                    <header className="sticky top-0 z-10 bg-secondary backdrop-blur-xl border-b border-primary/5 p-6 space-y-4">
-                        <Link to="/" className="flex items-center gap-4 group">
+                    <header className="sticky top-0 z-10 bg-secondary backdrop-blur-xl border-b border-primary/5 p-6 space-y-5">
+                        <Link to="/" className="flex items-center gap-5 group">
                             <div className="relative">
-                                <img src="/logo.png" alt="Logo" className="h-14 w-auto drop-shadow-sm transition-transform group-hover:scale-105" />
-                                <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full border-2 border-white animate-pulse"></div>
+                                <img src="/logo.png" alt="Logo" className="h-16 md:h-20 w-auto drop-shadow-sm transition-transform group-hover:scale-105" />
+                                <div className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-accent rounded-full border-2 border-white animate-pulse"></div>
                             </div>
-                            <div className="flex flex-col leading-none">
-                                <span className="text-primary font-bold text-lg uppercase tracking-tight">English Speaking</span>
-                                <span className="text-accent font-bold text-2xl uppercase tracking-tighter">Vets</span>
+                            <div className="flex flex-col leading-tight">
+                                <span className="text-primary font-black text-xl md:text-2xl uppercase tracking-tight">English Speaking</span>
+                                <span className="text-accent font-black text-3xl md:text-4xl uppercase tracking-tighter">Vets</span>
                             </div>
                         </Link>
 
-                        <p className="text-[12px] text-primary/70 font-medium leading-relaxed max-w-[90%]">
+                        <p className="text-sm md:text-base text-primary/80 font-medium leading-relaxed max-w-[95%]">
                             Providing peace of mind for you and your companion. <span className="text-primary font-bold italic">"For the love of our little friends."</span>
                         </p>
 
-                        <nav className="flex gap-4 text-[10px] font-bold uppercase tracking-widest text-primary/80 pt-1">
+                        <nav className="flex gap-6 text-xs md:text-sm font-bold uppercase tracking-widest text-primary pt-2">
                             <Link to="/blog" className="hover:text-accent transition-colors">Guides</Link>
                             <Link to="/about" className="hover:text-accent transition-colors">About</Link>
                             <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality</Link>

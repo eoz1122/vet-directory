@@ -121,19 +121,19 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://englishspeakinggermany.online/vets/berlin/friedrichshain-/-others</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://englishspeakinggermany.online/vets/berlin/home-visits*</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://englishspeakinggermany.online/vets/berlin/d%C3%BCppel/zehlendorf</loc>
+    <loc>https://englishspeakinggermany.online/vets/berlin/zehlendorf</loc>
+    <lastmod>2025-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://englishspeakinggermany.online/vets/berlin/wilmersdorf</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -151,12 +151,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://englishspeakinggermany.online/vets/berlin/wilmersdorf</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://englishspeakinggermany.online/vets/berlin/friedenau</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -164,12 +158,6 @@
   </url>
   <url>
     <loc>https://englishspeakinggermany.online/vets/berlin/wei%C3%9Fensee</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://englishspeakinggermany.online/vets/berlin/zehlendorf</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -253,12 +241,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://englishspeakinggermany.online/vets/berlin/steglitz</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://englishspeakinggermany.online/vets/berlin/kreuzberg</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -325,37 +307,13 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://englishspeakinggermany.online/vets/bad-homburg/frankfurt-bad-homburg</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://englishspeakinggermany.online/vets/frankfurt/gallus/city-west</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://englishspeakinggermany.online/vets/frankfurt/dr.-jan-kullen-/-dr.-elena-panova</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://englishspeakinggermany.online/vets/frankfurt/dr.-katrin-witt</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://englishspeakinggermany.online/vets/frankfurt/sachsenhausen</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://englishspeakinggermany.online/vets/frankfurt/am-nordpark-10%2C-60437-frankfurt-am-main</loc>
+    <loc>https://englishspeakinggermany.online/vets/frankfurt/bornheim</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -367,7 +325,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://englishspeakinggermany.online/vets/frankfurt/dr.-moudrianakis</loc>
+    <loc>https://englishspeakinggermany.online/vets/frankfurt/westend</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -415,7 +373,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://englishspeakinggermany.online/vets/hamburg/bahrenfeld/altona</loc>
+    <loc>https://englishspeakinggermany.online/vets/hamburg/altona</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -440,12 +398,6 @@
   </url>
   <url>
     <loc>https://englishspeakinggermany.online/vets/hamburg/barmbek-nord</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://englishspeakinggermany.online/vets/hamburg/dr.-svenja-korth</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -518,12 +470,6 @@
   </url>
   <url>
     <loc>https://englishspeakinggermany.online/vets/hamburg/schnelsen</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://englishspeakinggermany.online/vets/hamburg/hopfenstra%C3%9Fe</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
