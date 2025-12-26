@@ -20,7 +20,7 @@ export default function Footer() {
                     <Link to="/privacy" className="hover:text-accent transition-colors opacity-80 font-normal">Privacy</Link>
                 </nav>
                 <p className="opacity-60 text-xs md:text-sm">
-                    © 2025 EnglishSpeakingVets.online • Made with ❤️ for pets.
+                    © 2025 EnglishSpeakingVets Germany • Made with ❤️ for pets.
                 </p>
             </div>
         </footer>
