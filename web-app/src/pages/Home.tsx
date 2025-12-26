@@ -23,6 +23,8 @@ const Home: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [reportingVet, setReportingVet] = useState<Vet | null>(null);
 
+    const [searchRadius, setSearchRadius] = useState<number | null>(null);
+
     // Restricted city list to major hubs as requested
     const cities = ['All', 'Berlin', 'Hamburg', 'Frankfurt', 'Munich', 'Stuttgart'];
 
@@ -35,9 +37,20 @@ const Home: React.FC = () => {
                 (vet.district || "").toLowerCase().includes(searchTerm.toLowerCase());
             const matchesVerification = !showVerifiedOnly || (vet.community_status === 'Verified');
 
-            return matchesCity && matchesText && matchesVerification;
+            // Distance filter
+            let matchesDistance = true;
+            if (userLocation && searchRadius) {
+                if (vet.coordinates && vet.coordinates.lat !== 0) {
+                    const dist = calculateDistance(userLocation.lat, userLocation.lng, vet.coordinates.lat, vet.coordinates.lng);
+                    if (dist > searchRadius) matchesDistance = false;
+                } else {
+                    matchesDistance = false; // Filter out if no coords and radius constraint active
+                }
+            }
+
+            return matchesCity && matchesText && matchesVerification && matchesDistance;
         });
-    }, [selectedCity, searchTerm, showVerifiedOnly]);
+    }, [selectedCity, searchTerm, showVerifiedOnly, userLocation, searchRadius]);
 
     // Sort logic
     const sortedVets = useMemo((): VetWithDistance[] => {
@@ -75,9 +88,11 @@ const Home: React.FC = () => {
             setUserLocation(location);
             setSelectedCity('All');
             setCurrentPage(1);
+            setSearchRadius(null); // Reset radius to "All" initially
         } else {
             setUserLocation(null);
             setCurrentPage(1);
+            setSearchRadius(null);
         }
     };
 
@@ -102,7 +117,7 @@ const Home: React.FC = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
         }
-    }, [currentPage, selectedCity, searchTerm]);
+    }, [currentPage, selectedCity, searchTerm, searchRadius, userLocation]);
 
     return (
         <APIProvider apiKey={apiKey} language="en">
@@ -177,12 +192,39 @@ const Home: React.FC = () => {
                                     </div>
                                 </div>
                             ) : (
-                                <div className="flex justify-between items-center px-2 py-3 bg-white/50 backdrop-blur rounded-xl border border-primary/5">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">Sorting by Proximity</span>
+                                <div className="flex flex-col gap-3 p-4 bg-white/50 backdrop-blur rounded-xl border border-primary/5">
+                                    <div className="flex justify-between items-center">
+                                        <div className="flex items-center gap-2">
+                                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                            <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">
+                                                {searchRadius ? `Within ${searchRadius}km` : 'Sorted by Proximity'}
+                                            </span>
+                                        </div>
+                                        <button onClick={() => setUserLocation(null)} className="text-[10px] font-black uppercase tracking-widest text-accent hover:opacity-70 transition-opacity">Reset View</button>
                                     </div>
-                                    <button onClick={() => setUserLocation(null)} className="text-[10px] font-black uppercase tracking-widest text-accent hover:opacity-70 transition-opacity">Reset View</button>
+                                    <div className="flex gap-2 text-[10px] font-bold uppercase tracking-widest overflow-x-auto pb-1 no-scrollbar">
+                                        {[1, 3, 5, 10, 25, 50].map(km => (
+                                            <button
+                                                key={km}
+                                                onClick={() => setSearchRadius(km)}
+                                                className={`px-3 py-1.5 rounded-lg border transition-all whitespace-nowrap ${searchRadius === km
+                                                        ? 'bg-primary text-white border-primary'
+                                                        : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
+                                                    }`}
+                                            >
+                                                {km} km
+                                            </button>
+                                        ))}
+                                        <button
+                                            onClick={() => setSearchRadius(null)}
+                                            className={`px-3 py-1.5 rounded-lg border transition-all whitespace-nowrap ${searchRadius === null
+                                                    ? 'bg-primary text-white border-primary'
+                                                    : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
+                                                }`}
+                                        >
+                                            Any Distance
+                                        </button>
+                                    </div>
                                 </div>
                             )}
 
