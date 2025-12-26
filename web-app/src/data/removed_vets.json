@@ -1,0 +1,50 @@
+[
+    {
+        "id": "Berlin-35",
+        "practice_name": "Tierarztpraxis Dr. Demmler & Dr. Wehming",
+        "city": "Berlin",
+        "district": "Prenzlauer Berg",
+        "address": "Winsstraße 28, 10405 Berlin (Prenzlauer Berg)",
+        "coordinates": {
+            "lat": 52.5353749,
+            "lng": 13.4270448
+        },
+        "reason": "Consolidated/Updated to Wiener Straße location per user request"
+    },
+    {
+        "id": "Berlin-98",
+        "practice_name": "Kleintierpraxis Flidais-vet Kreuzberg",
+        "city": "Berlin",
+        "district": "Berlin",
+        "address": "Wiener Str. 25, 10999 Berlin",
+        "coordinates": {
+            "lat": 52.4969444,
+            "lng": 13.4325
+        },
+        "reason": "Corrected/Renamed to Tierarztpraxis Dr. Demmler und Dr. Wehming per user request"
+    },
+    {
+        "id": "Berlin-33",
+        "practice_name": "Tierarztpraxis Sonnenallee",
+        "city": "Berlin",
+        "district": "Neukölln",
+        "address": "Sonnenallee 170, 12059 Berlin (Neukölln)",
+        "coordinates": {
+            "lat": 52.4772483,
+            "lng": 13.4485885
+        },
+        "reason": "Updated with detailed name and new address Sonnenallee 204"
+    },
+    {
+        "id": "Berlin-43",
+        "practice_name": "Dr. Pascal Klunder (Mobile Vet)",
+        "city": "Berlin",
+        "district": "Mobile Vet",
+        "address": "Mobile Service - Berlin",
+        "coordinates": {
+            "lat": 52.4808427,
+            "lng": 13.4357963
+        },
+        "reason": "Updated to 'Mobile Tierarztpraxis Berlin' and fixed address to Gutzkowstraße 4 per user request"
+    }
+]

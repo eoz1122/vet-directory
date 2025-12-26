@@ -290,30 +290,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Berlin-43",
-    "practice_name": "Dr. Pascal Klunder (Mobile Vet)",
-    "city": "Berlin",
-    "district": "Mobile Vet",
-    "address": "Mobile Service - Berlin",
-    "coordinates": {
-      "lat": 52.4808427,
-      "lng": 13.4357963
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Berlin-13",
     "practice_name": "Dr. Peter Vogel",
     "city": "Berlin",
@@ -532,31 +508,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Berlin-98",
-    "practice_name": "Kleintierpraxis Flidais-vet Kreuzberg",
-    "city": "Berlin",
-    "district": "Berlin",
-    "address": "Wiener Str. 25, 10999 Berlin",
-    "coordinates": {
-      "lat": 52.4969444,
-      "lng": 13.4325
-    },
-    "contact": {
-      "phone": "030 6181766",
-      "website": "https://www.flidais-vet.de/",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"English speaking doctors!\"",
-        "Confirmed English-speaking via Google Reviews comments"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Berlin-118",
     "practice_name": "Kleintierpraxis im Kiez - TA Jörg Saecker",
     "city": "Berlin",
@@ -671,6 +622,30 @@
     "verification": {
       "ai_score": 95,
       "last_scanned": "2025-12-24",
+      "english_signals": [
+        "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-43",
+    "practice_name": "Mobile Tierarztpraxis Berlin - Dr. Pascal Klunder",
+    "city": "Berlin",
+    "district": "Schöneberg",
+    "address": "Gutzkowstraße 4, 10827 Berlin",
+    "coordinates": {
+      "lat": 52.4834,
+      "lng": 13.3524
+    },
+    "contact": {
+      "phone": "0162 7462404",
+      "website": "https://tierarzt-mobil-berlin.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
       "english_signals": [
         "Verified English Support"
       ]
@@ -1138,26 +1113,26 @@
     "community_status": "Verified"
   },
   {
-    "id": "Berlin-35",
-    "practice_name": "Tierarztpraxis Dr. Demmler & Dr. Wehming",
+    "id": "Berlin-98",
+    "practice_name": "Tierarztpraxis Dr. Demmler und Dr. Wehming",
     "city": "Berlin",
-    "district": "Prenzlauer Berg",
-    "address": "Winsstraße 28, 10405 Berlin (Prenzlauer Berg)",
+    "district": "Berlin",
+    "address": "Wiener Straße 25, 10999 Berlin",
     "coordinates": {
-      "lat": 52.5353749,
-      "lng": 13.4270448
+      "lat": 52.49969,
+      "lng": 13.43355
     },
     "contact": {
-      "phone": "",
-      "website": "",
+      "phone": "030 6181766",
+      "website": "https://www.tierarzt-wienerstrasse.de/",
       "google_maps": null
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-26",
       "english_signals": [
-        "Verified English Support",
-        "Community Verified"
+        "Confirmed via Google Review: \"English speaking doctors!\"",
+        "Confirmed English-speaking via Google Reviews comments"
       ]
     },
     "community_status": "Verified"
@@ -1525,22 +1500,22 @@
   },
   {
     "id": "Berlin-33",
-    "practice_name": "Tierarztpraxis Sonnenallee",
+    "practice_name": "Tierarztpraxis Sonnenallee - Dr. Jana Kudritzki und Daniel Kitzing",
     "city": "Berlin",
     "district": "Neukölln",
-    "address": "Sonnenallee 170, 12059 Berlin (Neukölln)",
+    "address": "Sonnenallee 204, 12059 Berlin",
     "coordinates": {
-      "lat": 52.4772483,
-      "lng": 13.4485885
+      "lat": 52.4746,
+      "lng": 13.4542
     },
     "contact": {
-      "phone": "",
-      "website": "",
+      "phone": "030 6814455",
+      "website": "https://www.tierarztpraxis-sonnenallee.de/",
       "google_maps": null
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-26",
       "english_signals": [
         "Verified English Support",
         "Community Verified"
