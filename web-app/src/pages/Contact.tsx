@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -23,28 +23,66 @@ export default function Contact() {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    // Pre-fill form if coming from a report link
+    useEffect(() => {
+        const topic = searchParams.get('topic');
+        const vetId = searchParams.get('vetId');
+        const vetName = searchParams.get('vetName');
+        const reason = searchParams.get('reason');
+
+        if (topic === 'report_issue' && vetName && reason) {
+            setFormData(prev => ({
+                ...prev,
+                topic: 'report_issue',
+                message: `[REPORT] ${reason}\nPractice: ${vetName}\nID: ${vetId}\n\nDetails: `
+            }));
+        }
+    }, [searchParams]);
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitError(null);
 
         const finalData = {
             ...formData,
+            _subject: `[The Pack] ${formData.topic.toUpperCase()} - ${formData.name}`,
             submittedAt: new Date().toISOString()
         };
 
-        // For now, log the structured JSON. This can be sent to a backend later.
-        console.log("Form Submission:", JSON.stringify(finalData, null, 2));
+        try {
+            // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree ID (e.g. 'mqkrpkvn')
+            // You can get one for free at https://formspree.io
+            const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
 
-        // Simulate API call
-        setTimeout(() => {
-            setIsSubmitting(false);
+            if (FORMSPREE_ID === 'YOUR_FORMSPREE_ID') {
+                console.log("Form Submission (Simulated):", JSON.stringify(finalData, null, 2));
+                // If no ID provided, simulate success after delay
+                await new Promise(resolve => setTimeout(resolve, 1500));
+            } else {
+                const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(finalData)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to send message. Please try again later.');
+                }
+            }
+
             setSubmitted(true);
             setFormData({
                 name: '', email: '', topic: 'general', message: '',
                 vetName: '', vetCity: '', otherCity: '', vetAddress: '', vetWebsite: ''
             });
-        }, 1500);
+        } catch (err) {
+            setSubmitError(err instanceof Error ? err.message : 'Something went wrong.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -71,6 +109,11 @@ export default function Contact() {
                 </section>
 
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-primary/5">
+                    {submitError && (
+                        <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm font-medium">
+                            {submitError}
+                        </div>
+                    )}
                     {submitted ? (
                         <div className="text-center py-12 space-y-4">
                             <span className="text-6xl">💌</span>

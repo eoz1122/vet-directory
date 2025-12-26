@@ -308,6 +308,13 @@ export default function CityVets() {
                                     <span className="text-[10px] text-gray-400">
                                         Last Verified: {vet.verification?.last_scanned ? new Date(vet.verification.last_scanned).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '2025'}
                                     </span>
+                                    <Link
+                                        to={`/contact?topic=report_issue&vetId=${vet.id}&vetName=${encodeURIComponent(vet.practice_name)}&reason=Data%20Incorrect`}
+                                        className="text-gray-300 hover:text-red-400 transition-colors flex items-center gap-1 group/report"
+                                    >
+                                        <span className="text-[9px] opacity-0 group-hover/report:opacity-100 transition-opacity">Report Issue</span>
+                                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                    </Link>
                                 </div>
                             </article>
                         ))}

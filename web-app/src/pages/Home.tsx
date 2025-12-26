@@ -489,17 +489,17 @@ const Home: React.FC = () => {
                                 </p>
                                 <div className="space-y-2">
                                     {[
-                                        { label: '⚠ Permanently Closed', body: 'Reason: Permanently Closed' },
-                                        { label: '✏ Data Incorrect', body: 'Reason: Data Error' },
-                                        { label: '🛡 Request Removal (Owner)', body: 'I am the owner and request removal.' }
+                                        { label: '⚠ Permanently Closed', reason: 'Permanently Closed' },
+                                        { label: '✏ Data Incorrect', reason: 'Data Error' },
+                                        { label: '🛡 Request Removal (Owner)', reason: 'Owner Request Removal' }
                                     ].map(item => (
-                                        <a
+                                        <Link
                                             key={item.label}
-                                            href={`mailto:compliance@englishspeakinggermany.online?subject=Report: ${reportingVet.id}&body=${item.body}`}
+                                            to={`/contact?topic=report_issue&vetId=${reportingVet.id}&vetName=${encodeURIComponent(reportingVet.practice_name)}&reason=${encodeURIComponent(item.reason)}`}
                                             className="block w-full text-left px-5 py-4 rounded-2xl border border-gray-100 hover:bg-red-50/30 hover:border-red-100 text-sm font-bold text-primary transition-all"
                                         >
                                             {item.label}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                                 <p className="text-[10px] text-gray-400 font-medium text-center">
