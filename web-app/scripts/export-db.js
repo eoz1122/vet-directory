@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const INPUT_FILE = path.resolve(__dirname, '../src/data/vets.json');
-const OUTPUT_FILE = path.resolve(__dirname, '../public/vets-database.csv');
+const OUTPUT_FILE = path.resolve(__dirname, '../vets-database-internal.csv');
 
 try {
     const data = fs.readFileSync(INPUT_FILE, 'utf8');
