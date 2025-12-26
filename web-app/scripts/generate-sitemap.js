@@ -10,13 +10,29 @@ const OUTPUT_FILE = path.resolve(__dirname, '../public/sitemap.xml');
 const VETS_DATA_PATH = path.resolve(__dirname, '../src/data/vets.json');
 const BLOG_FILE_PATH = path.resolve(__dirname, '../src/pages/Blog.tsx');
 
+// Helper to sanitize slugs
+function sanitizeSlug(text) {
+    if (!text) return '';
+    return text
+        .toLowerCase()
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/[()&]/g, '') // Remove parentheses and ampersands
+        .replace(/-+/g, '-')   // Remove double hyphens
+        .trim();
+}
+
+// Helper to URL encode path parts specifically (leaving slashes alone)
+function encodePath(urlPath) {
+    return urlPath.split('/').map(part => encodeURIComponent(part)).join('/');
+}
+
 // 1. Static Routes
 const staticRoutes = [
     { url: '/', changefreq: 'weekly', priority: 1.0 },
     { url: '/about', changefreq: 'monthly', priority: 0.8 },
     { url: '/quality-promise', changefreq: 'monthly', priority: 0.7 },
     { url: '/contact', changefreq: 'monthly', priority: 0.7 },
-    { url: '/blog', changefreq: 'weekly', priority: 0.9 },
+    { url: '/blog', changefreq: 'weekly', priority: 0.8 }, // Lowered priority for blog index
     { url: '/impressum', changefreq: 'yearly', priority: 0.3 },
     { url: '/privacy', changefreq: 'yearly', priority: 0.3 },
 ];
@@ -33,7 +49,11 @@ function getBlogRoutes() {
         const routes = [];
         let match;
         while ((match = regex.exec(content)) !== null) {
-            routes.push({ url: match[1], changefreq: 'monthly', priority: 0.9 });
+            routes.push({
+                url: match[1],
+                changefreq: 'monthly',
+                priority: 0.8 // Updated priority
+            });
         }
         console.log(`Found ${routes.length} blog posts.`);
         return routes;
@@ -53,31 +73,52 @@ function getVetRoutes() {
 
         // Cities
         const cities = [...new Set(vets.map(v => v.city))];
-        const cityRoutes = cities.map(city => ({
-            url: `/vets/${city.toLowerCase()}`,
-            changefreq: 'weekly',
-            priority: 0.9
-        }));
+        const cityRoutes = cities.map(city => {
+            // Find most recent last_scanned for this city
+            const cityVets = vets.filter(v => v.city === city);
+            const latestScan = cityVets.reduce((latest, v) => {
+                return (v.verification.last_scanned > latest) ? v.verification.last_scanned : latest;
+            }, '2024-01-01');
+
+            return {
+                url: `/vets/${sanitizeSlug(city)}`,
+                changefreq: 'weekly',
+                priority: 1.0, // Major landing pages
+                lastmod: latestScan
+            };
+        });
 
         // Districts
         const districtRoutes = [];
         const seenDistricts = new Set();
-        // Only include districts with at least 1 verified vet
-        // Filter by major cities usually, but let's include all non-empty districts 
-        // that are actually in use.
 
         vets.forEach(vet => {
             if (vet.city && vet.district && vet.district !== 'Unknown') {
-                const citySlug = vet.city.toLowerCase();
-                const districtSlug = vet.district.toLowerCase().replace(/\s+/g, '-');
+                const citySlug = sanitizeSlug(vet.city);
+                const districtSlug = sanitizeSlug(vet.district);
+
+                // Remove /city/city redundancy
+                if (citySlug === districtSlug) return;
+
                 const key = `${citySlug}/${districtSlug}`;
 
                 if (!seenDistricts.has(key)) {
                     seenDistricts.add(key);
+
+                    // Find latest update for this specific district
+                    const districtVets = vets.filter(v =>
+                        sanitizeSlug(v.city) === citySlug &&
+                        sanitizeSlug(v.district) === districtSlug
+                    );
+                    const latestScan = districtVets.reduce((latest, v) => {
+                        return (v.verification.last_scanned > latest) ? v.verification.last_scanned : latest;
+                    }, '2024-01-01');
+
                     districtRoutes.push({
                         url: `/vets/${key}`,
                         changefreq: 'weekly',
-                        priority: 0.8
+                        priority: 1.0, // High priority for district pages
+                        lastmod: latestScan
                     });
                 }
             }
@@ -119,16 +160,22 @@ function generateSitemap() {
     const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allRoutes.map(route => {
-        const fullUrl = `${BASE_URL}${route.url.startsWith('/') ? '' : '/'}${route.url}`;
+        // Correct URL encoding and escaping
+        const formattedUrl = route.url.startsWith('/') ? route.url : `/${route.url}`;
+        const parts = formattedUrl.split('/').map(part => encodeURIComponent(part));
+        const encodedUrl = parts.join('/');
+        const fullUrl = `${BASE_URL}${encodedUrl}`.replace(/\/+/g, '/').replace('https:/', 'https://');
+
+        const lastmod = route.lastmod || new Date().toISOString().split('T')[0];
+
         return `  <url>
     <loc>${escapeXml(fullUrl)}</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
-    <priority>${route.priority}</priority>
+    <priority>${route.priority.toFixed(1)}</priority>
   </url>`;
     }).join('\n')}
 </urlset>`;
-
 
     fs.writeFileSync(OUTPUT_FILE, sitemapContent);
     console.log(`Sitemap generated with ${allRoutes.length} URLs at ${OUTPUT_FILE}`);

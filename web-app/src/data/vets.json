@@ -3591,29 +3591,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Frankfurt-98",
-    "practice_name": "Dr.med.vet. Kirsten König Tierärztin",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Riedstraße 60, 65439 Flörsheim am Main",
-    "coordinates": {
-      "lat": 50.0188307,
-      "lng": 8.4366653
-    },
-    "contact": {
-      "phone": "06145 52910",
-      "website": "https://www.google.com/maps/place/Dr.med.vet.+Kirsten+K%C3%B6nig+Tier%C3%A4rztin/data=!4m7!3m6!1s0x47bd9f365dba930d:0xee970111de3e2dee!8m2!3d50.0188307!4d8.4366653!16s%2Fg%2F1tdy85k0!19sChIJDZO6XTafvUcR7i0-3hEBl-4?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"and appointments are always fast and easy.\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Hamburg-102",
     "practice_name": "Cats Only veterinary practice for Cats",
     "city": "Hamburg",
