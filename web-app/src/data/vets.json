@@ -3004,7 +3004,8 @@
       "ai_score": 95,
       "last_scanned": "2025-12-26",
       "english_signals": [
-        "Verified English Support"
+        "English confirmation pending",
+        "Emergency Service"
       ],
       "emergency": "Weekends/Holidays"
     },
@@ -3973,31 +3974,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Stuttgart-144",
-    "practice_name": "AniCura Tierärztliche Klinik Reutlingen",
-    "city": "Reutlingen",
-    "district": "Reutlingen",
-    "address": "August-Lämmle-Straße 51, 72760 Reutlingen",
-    "coordinates": {
-      "lat": 48.4908,
-      "lng": 9.1925
-    },
-    "contact": {
-      "phone": "07121 334050",
-      "website": "https://www.anicura.de/tierklinik-reutlingen",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-26",
-      "english_signals": [
-        "Verified English Support"
-      ],
-      "emergency": "Weekends/Holidays"
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Frankfurt-83",
     "practice_name": "Dr. Müller, Dr. Rohmer und Dr. Falkenhorst Tierarztpraxis",
     "city": "Speicher",
@@ -4020,6 +3996,32 @@
         "Confirmed via Google Review: \"in the area.\""
       ],
       "emergency": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Stuttgart-144",
+    "practice_name": "AniCura Tierärztliche Klinik Reutlingen",
+    "city": "Stuttgart",
+    "district": "Reutlingen",
+    "address": "August-Lämmle-Straße 51, 72760 Reutlingen",
+    "coordinates": {
+      "lat": 48.4908,
+      "lng": 9.1925
+    },
+    "contact": {
+      "phone": "07121 334050",
+      "website": "https://www.anicura.de/tierklinik-reutlingen",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "English confirmation pending",
+        "Emergency Service"
+      ],
+      "emergency": "Weekends/Holidays"
     },
     "community_status": "Verified"
   },
@@ -4174,6 +4176,32 @@
     "community_status": "Verified"
   },
   {
+    "id": "Stuttgart-143",
+    "practice_name": "Tierklinik Nussdorf",
+    "city": "Stuttgart",
+    "district": "Nussdorf (Überlingen)",
+    "address": "Dieselstraße 7, 88662 Überlingen",
+    "coordinates": {
+      "lat": 47.7818,
+      "lng": 9.1982
+    },
+    "contact": {
+      "phone": "07551 9494949",
+      "website": "https://www.tierklinik-nussdorf.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "English confirmation pending",
+        "Emergency Service"
+      ],
+      "emergency": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
     "id": "Frankfurt-82",
     "practice_name": "Tierarztpraxis Dr. Kindler AniCura Wiesbaden Schierstein GmbH",
     "city": "Wiesbaden",
@@ -4221,31 +4249,6 @@
         "Confirmed via Google Review: \"English well.\""
       ],
       "emergency": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Stuttgart-143",
-    "practice_name": "Tierklinik Nussdorf",
-    "city": "Überlingen",
-    "district": "Nussdorf",
-    "address": "Dieselstraße 7, 88662 Überlingen",
-    "coordinates": {
-      "lat": 47.7818,
-      "lng": 9.1982
-    },
-    "contact": {
-      "phone": "07551 9494949",
-      "website": "https://www.tierklinik-nussdorf.de/",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-26",
-      "english_signals": [
-        "Verified English Support"
-      ],
-      "emergency": "24/7"
     },
     "community_status": "Verified"
   }
