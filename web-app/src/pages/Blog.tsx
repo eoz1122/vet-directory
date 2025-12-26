@@ -94,6 +94,13 @@ const blogPosts = [
         emoji: "💰",
         category: "Bureaucracy",
         desc: "Do you really need it? Understanding liability vs. health insurance, the GOT fees, and why emergencies are so expensive."
+    },
+    {
+        url: "/blog/german-dog-etiquette-rules",
+        title: "German Dog Etiquette: Unwritten Rules",
+        emoji: "🐕",
+        category: "Living",
+        desc: "Blending in like a local. From leash laws (Leinenpflicht) to restaurant etiquette and the social rules of the park."
     }
 ];
 

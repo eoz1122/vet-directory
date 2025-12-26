@@ -67,6 +67,18 @@ const allPosts: BlogPost[] = [
         title: "German Vet Survival Kit Phrases",
         emoji: "🩺",
         desc: "Essential medical German medical terms"
+    },
+    {
+        url: "/blog/pet-insurance-germany-2025",
+        title: "Pet Insurance Guide",
+        emoji: "💰",
+        desc: "Understanding liability & health insurance"
+    },
+    {
+        url: "/blog/german-dog-etiquette-rules",
+        title: "Dog Etiquette & Rules",
+        emoji: "🐕",
+        desc: "Leash laws & social unwritten rules"
     }
 ];
 

@@ -26,6 +26,7 @@ import PetSittingGermany from './pages/PetSittingGermany';
 import Blog from './pages/Blog';
 import GermanVetPhrases from './pages/GermanVetPhrases';
 import PetInsuranceGermany from './pages/PetInsuranceGermany';
+import GermanDogEtiquette from './pages/GermanDogEtiquette';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/blog/public-transport-with-dogs-stuttgart-2025" element={<PublicTransportStuttgart />} />
           <Route path="/blog/pet-sitting-germany-2025" element={<PetSittingGermany />} />
           <Route path="/blog/pet-insurance-germany-2025" element={<PetInsuranceGermany />} />
+          <Route path="/blog/german-dog-etiquette-rules" element={<GermanDogEtiquette />} />
 
           <Route path="/vets/:city" element={<CityVets />} />
           <Route path="/vets/:city/:district" element={<DistrictVets />} />

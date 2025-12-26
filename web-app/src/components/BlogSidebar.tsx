@@ -65,6 +65,11 @@ const blogPosts = [
         url: "/blog/pet-insurance-germany-2025",
         title: "Pet Insurance Guide",
         emoji: "💰"
+    },
+    {
+        url: "/blog/german-dog-etiquette-rules",
+        title: "Dog Etiquette & Rules",
+        emoji: "🐕"
     }
 ];
 
