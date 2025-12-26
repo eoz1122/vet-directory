@@ -60,6 +60,11 @@ const blogPosts = [
         url: "/blog/public-transport-with-dogs-stuttgart-2025",
         title: "Transport: Stuttgart",
         emoji: "🚗"
+    },
+    {
+        url: "/blog/pet-insurance-germany-2025",
+        title: "Pet Insurance Guide",
+        emoji: "💰"
     }
 ];
 

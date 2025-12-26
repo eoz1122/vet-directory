@@ -14,6 +14,8 @@ import Impressum from './pages/Impressum';
 import Privacy from './pages/Privacy';
 import CookieConsent from './components/CookieConsent';
 import PetFriendlyApartments from './pages/PetFriendlyApartments';
+import ScrollToTop from './components/ScrollToTop';
+
 
 import PublicTransportBerlin from './pages/PublicTransportBerlin';
 import PublicTransportHamburg from './pages/PublicTransportHamburg';
@@ -30,8 +32,10 @@ function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/german-vet-survival-kit-phrases" element={<GermanVetPhrases />} />
           <Route path="/quality-promise" element={<QualityPromise />} />
