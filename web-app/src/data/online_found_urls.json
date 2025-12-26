@@ -1,0 +1,345 @@
+[
+    {
+        "practice_name": "Dr. Cavalcanti (VetPetCare)",
+        "city": "Bad Homburg",
+        "address": "Kirdorfer Str. 14, 61350 Bad Homburg",
+        "website": "http://www.vetpetcare.de",
+        "google_maps": "https://www.google.com/maps?q=Kirdorfer+Str.+14,+61350+Bad+Homburg",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "AniCura Tierklinik Berlin-Biesdorf",
+        "city": "Berlin",
+        "address": "Alt-Biesdorf 22, 12683 Berlin",
+        "website": "https://www.anicura.de/standorte/tierklinik-berlin-biesdorf/",
+        "google_maps": "https://www.google.com/maps?q=Alt-Biesdorf+22,+12683+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Berlin English Vet (Tierarztpraxis an den Allee-Arcaden)",
+        "city": "Berlin",
+        "old_address": "Greifswalder Str. 80c, 10405 Berlin",
+        "new_address": "Greifenhagener Str. 45, 10437 Berlin",
+        "website": "https://berlin-english-vets.de",
+        "google_maps": "https://www.google.com/maps?q=Greifenhagener+Str.+45,+10437+Berlin",
+        "status": "Address Updated / Verified Online"
+    },
+    {
+        "practice_name": "Dr. Claudia Wegeler",
+        "city": "Berlin",
+        "address": "Rangsdorfer Str. 9, 12307 Berlin",
+        "website": "http://www.tierarztpraxis-dr-wegeler.de",
+        "google_maps": "https://www.google.com/maps?q=Rangsdorfer+Str.+9,+12307+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. Jens Vöster",
+        "city": "Berlin",
+        "address": "Hohenzollerndamm 185, 10713 Berlin",
+        "website": "https://tierarztpraxis-berlin.net",
+        "google_maps": "https://www.google.com/maps?q=Hohenzollerndamm+185,+10713+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. med. vet. Katharina Dralle",
+        "city": "Berlin",
+        "address": "Rotdornstr. 7, 12161 Berlin",
+        "website": "http://dr-dralle-berlin.de",
+        "google_maps": "https://www.google.com/maps?q=Rotdornstr.+7,+12161+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. Peter Vogel",
+        "city": "Berlin",
+        "old_address": "Ebelingstraße 1, 10249 Berlin",
+        "new_address": "Finowstraße 14, 10247 Berlin",
+        "website": "http://www.drpetervogel.de",
+        "google_maps": "https://www.google.com/maps?q=Finowstraße+14,+10247+Berlin",
+        "status": "Address Updated / Verified Online"
+    },
+    {
+        "practice_name": "Kleintierpraxis 4 Pfoten & Co",
+        "city": "Berlin",
+        "address": "Fanningerstraße 27, 10365 Berlin",
+        "website": "http://praxis4pfoten.de",
+        "google_maps": "https://www.google.com/maps?q=Fanningerstraße+27,+10365+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Tiermedizinzentrum Berlin (Schöneberg)",
+        "city": "Berlin",
+        "address": "Kufsteiner Str. 22, 10825 Berlin",
+        "website": "http://tiermedizinzentrum-berlin.de",
+        "google_maps": "https://www.google.com/maps?q=Kufsteiner+Str.+22,+10825+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Veterinary Clinic Chung & Wahle",
+        "city": "Berlin",
+        "old_address": "Lauterstraße 19-20, 12159 Berlin",
+        "new_address": "Hauptstraße 89, 12159 Berlin",
+        "website": "http://tierarztpraxis-chung-wahle.com",
+        "google_maps": "https://www.google.com/maps?q=Hauptstraße+89,+12159+Berlin",
+        "status": "Address Updated / Verified Online"
+    },
+    {
+        "practice_name": "Valera Veterinary Clinic",
+        "city": "Berlin",
+        "address": "Potsdamer Straße 23/24, 14163 Berlin",
+        "website": "https://www.tierklinikberlinvalera.com/",
+        "google_maps": "https://www.google.com/maps?q=Potsdamer+Straße+23,+14163+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Veterinary Practice Bärenwiese",
+        "city": "Berlin",
+        "old_address": "Frankenallee 10, 14052 Berlin",
+        "new_address": "Uhlandstraße 151, 10719 Berlin",
+        "website": "https://tierarzt-baerenwiese.de",
+        "google_maps": "https://www.google.com/maps?q=Uhlandstraße+151,+10719+Berlin",
+        "status": "Address Updated / Verified Online"
+    },
+    {
+        "practice_name": "Tierarztpraxis Sarah Watson",
+        "city": "Berlin",
+        "address": "Altenbraker Str. 29, 12051 Berlin",
+        "website": "http://tierarzt-watson.de",
+        "google_maps": "https://www.google.com/maps?q=Altenbraker+Str.+29,+12051+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Praxis Tierzuliebe (Dr. Bertram)",
+        "city": "Berlin",
+        "old_address": "Friedbergstraße 4, 14057 Berlin",
+        "new_address": "Edisonstraße 12, 12459 Berlin",
+        "website": "http://www.praxis-tierzuliebe.de",
+        "google_maps": "https://www.google.com/maps?q=Edisonstraße+12,+12459+Berlin",
+        "status": "Address Updated / Relocated"
+    },
+    {
+        "practice_name": "Tierarztpraxis Ellen Laskawy",
+        "city": "Berlin",
+        "old_address": "Bänschstraße 70, 10247 Berlin",
+        "new_address": "Bänschstraße 58, 10247 Berlin",
+        "website": "http://www.laskawy-berlin.de",
+        "google_maps": "https://www.google.com/maps?q=Bänschstraße+58,+10247+Berlin",
+        "status": "Address Updated / Verified Online"
+    },
+    {
+        "practice_name": "Tierarztpraxis Gotthardt",
+        "city": "Berlin",
+        "old_address": "Winkler Straße 2, 14193 Berlin",
+        "new_address": "Winkler Str. 21, 14193 Berlin",
+        "website": "http://tierarzt-berlin-gotthardt.de",
+        "google_maps": "https://www.google.com/maps?q=Winkler+Str.+21,+14193+Berlin",
+        "status": "Address Updated / Verified Online"
+    },
+    {
+        "practice_name": "Bernhard Alexander (Schöneberg)",
+        "city": "Berlin",
+        "address": "Hauptstr. 92, 10827 Berlin",
+        "status": "FLAGGED: Could not find vet at this address. Possible mismatch."
+    },
+    {
+        "practice_name": "Pfotendoctor - dein digitaler Tierarzt",
+        "city": "Berlin",
+        "address": "Wöhlertstraße 12-13, 10115 Berlin",
+        "website": "https://pfotendoctor.de",
+        "status": "Verified Online / Digital Service Only"
+    },
+    {
+        "practice_name": "Veterinary practice Galina Schirow GmbH (Hansavet)",
+        "city": "Berlin",
+        "address": "Bartningallee 5, 10557 Berlin",
+        "website": "http://www.vetpraxis-schirow.de",
+        "google_maps": "https://www.google.com/maps?q=Bartningallee+5,+10557+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Medivet Berlin-Pankow",
+        "city": "Berlin",
+        "address": "Pasewalker Straße 25, 13127 Berlin",
+        "website": "https://www.medivetgroup.com/de-de/tierarzt/berlin-pankow/",
+        "google_maps": "https://www.google.com/maps?q=Pasewalker+Str.+25,+13127+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. Ulusal Tierarzt Gesundbrunnen",
+        "city": "Berlin",
+        "address": "Prinzenallee 72-73, 13357 Berlin",
+        "website": "http://www.tierarzt-in-wedding.de",
+        "google_maps": "https://www.google.com/maps?q=Prinzenallee+72-73,+13357+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. med. vet. Claudia Pastor",
+        "city": "Berlin",
+        "address": "Brüsseler Str. 52A, 13353 Berlin",
+        "website": "http://www.tierarztpraxis-pastor.de",
+        "google_maps": "https://www.google.com/maps?q=Brüsseler+Str.+52A,+13353+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Kleintierpraxis im Kiez (Jörg Saecker)",
+        "city": "Berlin",
+        "address": "Pohlstraße 69, 10785 Berlin",
+        "website": "http://www.kieztierarzt.de",
+        "google_maps": "https://www.google.com/maps?q=Pohlstraße+69,+10785+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Tierarztpraxis am Urbanhafen",
+        "city": "Berlin",
+        "old_address": "Blücherstraße 69, 10961 Berlin",
+        "new_address": "Baerwaldstraße 69, 10961 Berlin",
+        "website": "http://www.tierarztpraxis-am-urbanhafen.de",
+        "google_maps": "https://www.google.com/maps?q=Baerwaldstraße+69,+10961+Berlin",
+        "status": "Address Updated / Verified Online"
+    },
+    {
+        "practice_name": "Tierarztpraxis Brigitte Ludwig-Kahya",
+        "city": "Berlin",
+        "address": "Wilhelmstraße 3, 10963 Berlin",
+        "website": "http://www.tierarztpraxis-in-kreuzberg.de",
+        "google_maps": "https://www.google.com/maps?q=Wilhelmstraße+3,+10963+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Tierarztpraxis am Lietzenseepark (Dr. Layla Hourani)",
+        "city": "Berlin",
+        "old_address": "Herbartstraße 18, 14057 Berlin",
+        "new_address": "Riehlstraße 3, 14057 Berlin",
+        "website": "http://tierarztpraxis-am-lietzenseepark.de",
+        "google_maps": "https://www.google.com/maps?q=Riehlstraße+3,+14057+Berlin",
+        "status": "Address Updated / Verified Online"
+    },
+    {
+        "practice_name": "Tierarztpraxis am Wasserturm",
+        "city": "Berlin",
+        "address": "Rykestraße 4, 10405 Berlin",
+        "website": "http://tierarztpraxis-wasserturm.de",
+        "google_maps": "https://www.google.com/maps?q=Rykestraße+4,+10405+Berlin",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Tierarztpraxis Dr. C. S. Alexander",
+        "city": "Berlin",
+        "address": "Steglitzer Damm 48, 12169 Berlin",
+        "website": "http://tierphysiotherapie-alexander.de",
+        "google_maps": "https://www.google.com/maps?q=Steglitzer+Damm+48,+12169+Berlin",
+        "status": "Verified Online / Physiotherapy Only"
+    },
+    {
+        "practice_name": "Tierarztpraxis Dr. med. vet. Stephanie Adams",
+        "city": "Bernau",
+        "old_address": "Ladeburger Chaussee 73, 16321 Bernau",
+        "new_address": "Wandlitzer Chaussee 1, 16321 Bernau",
+        "website": "https://www.tierverhaltenstherapie-adams.de",
+        "google_maps": "https://www.google.com/maps?q=Wandlitzer+Chaussee+1,+16321+Bernau",
+        "status": "Address Updated / Verified Online"
+    },
+    {
+        "practice_name": "Tierarztpraxis St. Pauli (Dr. Svenja Korth)",
+        "city": "Hamburg",
+        "old_address": "Feldstraße 22, 20357 Hamburg",
+        "new_address": "Hopfenstraße 11-13, 20359 Hamburg",
+        "website": "https://tierarzt-stpauli.hamburg",
+        "google_maps": "https://www.google.com/maps?q=Hopfenstraße+11-13,+20359+Hamburg",
+        "status": "Address Updated / Verified Online"
+    },
+    {
+        "practice_name": "Dr. med. vet. Dagmar H. Vogel",
+        "city": "Hamburg",
+        "address": "Tresckowstraße 6, 20259 Hamburg",
+        "website": "http://www.tierarzt-hh.de",
+        "google_maps": "https://www.google.com/maps?q=Tresckowstraße+6,+20259+Hamburg",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. med. vet. Imke Tammena",
+        "city": "Hamburg",
+        "address": "Waldweg 42, 22393 Hamburg",
+        "website": "http://tierarztpraxis-sasel.de",
+        "google_maps": "https://www.google.com/maps?q=Waldweg+42,+22393+Hamburg",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. med. vet. Eva Tutlies",
+        "city": "Hamburg",
+        "address": "Schiffbeker Weg 46, 22119 Hamburg",
+        "website": "http://kleintierpraxis-tutlies.de",
+        "google_maps": "https://www.google.com/maps?q=Schiffbeker+Weg+46,+22119+Hamburg",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. med. vet. Nicolai Mannstaedt",
+        "city": "Hamburg",
+        "address": "Neugrabener Bahnhofstraße 5a, 21149 Hamburg",
+        "website": "http://kleintierpraxis-neugraben.de",
+        "google_maps": "https://www.google.com/maps?q=Neugrabener+Bahnhofstraße+5a,+21149+Hamburg",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. Mirja Fenske",
+        "city": "Hamburg",
+        "address": "Osterrade 36 a, 21031 Hamburg",
+        "website": "http://tierarztbergedorf.de",
+        "google_maps": "https://www.google.com/maps?q=Osterrade+36+a,+21031+Hamburg",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "AniCura Kleintierzentrum (Juliusstraße)",
+        "city": "Frankfurt",
+        "address": "Juliusstraße 12, 60487 Frankfurt",
+        "website": "https://www.anicura.de/standorte/frankfurt/",
+        "google_maps": "https://www.google.com/maps?q=Juliusstraße+12,+60487+Frankfurt",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. Andrea Töpfer",
+        "city": "Frankfurt",
+        "address": "Füllerstraße 100, 60431 Frankfurt",
+        "website": "http://www.tierarztpraxis-toepfer.de",
+        "google_maps": "https://www.google.com/maps?q=Füllerstraße+100,+60431+Frankfurt",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. med. vet. Sandra Härtter",
+        "city": "Frankfurt",
+        "address": "Leuchte 47, 60388 Frankfurt",
+        "website": "http://www.tierarzt-bergen-enkheim.de",
+        "google_maps": "https://www.google.com/maps?q=Leuchte+47,+60388+Frankfurt",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Kleintierklinik Frankfurt Bockenheim",
+        "city": "Frankfurt",
+        "address": "Juliusstraße 12, 60487 Frankfurt",
+        "website": "http://tierklinik-bockenheim.de",
+        "google_maps": "https://www.google.com/maps?q=Juliusstraße+12,+60487+Frankfurt",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Kleintierpraxis Frankfurt (Dr. Moudrianakis)",
+        "city": "Frankfurt",
+        "address": "Leerbachstraße 122, 60322 Frankfurt",
+        "website": "http://www.kleintierpraxis-frankfurt.de",
+        "google_maps": "https://www.google.com/maps?q=Leerbachstraße+122,+60322+Frankfurt",
+        "status": "Verified Online"
+    },
+    {
+        "practice_name": "Dr. med. vet. Thomas Görlitz",
+        "city": "Munich",
+        "status": "FLAGGED: Could not find vet in Munich. Possible mismatch."
+    },
+    {
+        "practice_name": "Tierarztpraxis Dr. med. vet. B. Krause",
+        "city": "Munich",
+        "status": "FLAGGED: Could not find vet in Munich. Possible mismatch."
+    },
+    {
+        "practice_name": "Tierarztpraxis Dr. med. vet. Stefan Reiser",
+        "city": "Stuttgart",
+        "status": "FLAGGED: Could not find vet in Stuttgart. Possible mismatch."
+    }
+]

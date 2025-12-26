@@ -1,0 +1,482 @@
+[
+  {
+    "practice_name": "Filu Vet Nordend",
+    "id": "Frankfurt-46",
+    "address": "Weberstraße 59, 60318 Frankfurt am Main",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.filu.vet",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Rex Tierarzt Frankfurt Ostend",
+    "id": "Frankfurt-47",
+    "address": "Wittelsbacherallee 26, 60316 Frankfurt am Main",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.rex.app/clinics/frankfurt-ostend",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierarztpraxis Sonja Krämer",
+    "id": "Frankfurt-48",
+    "address": "Westerbachstraße 226, 65936 Frankfurt am Main (Sossenheim)",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "http://www.tierarzt-kraemer.de/",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Maike Höch",
+    "id": "Frankfurt-49",
+    "address": "Eckenheimer Landstraße 340, 60435 Frankfurt (Eckenheim)",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.dr-hoech.de/en/",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "AniCura Kleintierzentrum (Juliusstraße)",
+    "id": "Frankfurt-51",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main (Bockenheim)",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.tierklinik-bockenheim.de/",
+    "verification_signals": [
+      "Community Verified"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Dr. Andrea Töpfer",
+    "id": "Frankfurt-52",
+    "address": "Füllerstraße 100, 60431 Frankfurt am Main (Ginnheim)",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.tierarztpraxis-toepfer.de",
+    "verification_signals": [
+      "Verified by Community"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierarztpraxis Maja Firlé",
+    "id": "Frankfurt-54",
+    "address": "Hamburger Allee 14, 60486 Frankfurt am Main",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "http://www.tierarzt-firle.de/",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierarztpraxis Sachsenhausen (Dr. Jan Kullen / Dr. Elena Panova)",
+    "id": "Frankfurt-55",
+    "address": "Textorstraße 93, 60596 Frankfurt am Main",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.tierarzt-sachsenhausen.de/",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Kleintierklinik Frankfurt Bockenheim",
+    "id": "Frankfurt-56",
+    "address": "Ginnheimer Landstraße 11, 60487 Frankfurt am Main",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.tierklinik-frankfurt.de/",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierarztpraxis am Kurfürstenplatz (Bockenheim)",
+    "id": "Frankfurt-57",
+    "address": "Kurfürstenstraße 3, 60486 Frankfurt am Main",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.tierarzt-bockenheim.de/",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierarztpraxis Bornheim (Dr. Katrin Witt)",
+    "id": "Frankfurt-58",
+    "address": "Heisterstraße 1, 60385 Frankfurt am Main",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.tierarztpraxis-bornheim.de/",
+    "verification_signals": [
+      "Verified by Community"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Joachim & Katja Gross",
+    "id": "Frankfurt-59",
+    "address": "Mörfelder Landstraße 263, 60598 Frankfurt (Sachsenhausen)",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.tierarzt-frankfurt-sachsenhausen.de/",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierklinik Kalbach (Kleintierklinik am Nordpark)",
+    "id": "Frankfurt-60",
+    "address": "Max-Holder-Straße 4 (Am Nordpark 10), 60437 Frankfurt am Main",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://tierklinik-kalbach.de/",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierarztpraxis Berger (Melanie Berger)",
+    "id": "Frankfurt-61",
+    "address": "Darmstädter Landstraße 48, 60594 Frankfurt (Sachsenhausen)",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://tierarztpraxis-berger.com/",
+    "verification_signals": [
+      "Verified English Support",
+      " Community Verified"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierklinik Trillig (Obertshausen)",
+    "id": "Frankfurt-62",
+    "address": "Birkenwaldstr. 42, 63179 Obertshausen",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.tierklinik-trillig.de",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Kleintierpraxis Frankfurt (Dr. Moudrianakis)",
+    "id": "Frankfurt-63",
+    "address": "Leerbachstraße 122, 60322 Frankfurt am Main",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.tierarzt-frankfurt.com",
+    "verification_signals": [
+      "Verified by Community"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Dr. med. vet. Sandra Härtter",
+    "id": "Frankfurt-64",
+    "address": "Leuchte 47, 60388 Frankfurt am Main (Bergen-Enkheim)",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.tierarztpraxis-haertter.de/",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Felmo Mobiler Tierarzt (Frankfurt)",
+    "id": "Frankfurt-68",
+    "address": "Königsberger Str. 2, 60487 Frankfurt am Main",
+    "phone": "",
+    "google_maps_url": null,
+    "website": "https://www.google.com/aclk?sa=L&ai=DChsSEwiU5p-glNmRAxV6pYMHHaXcNTMYACICCAEQABoCZWY&co=1&ase=2&gclid=CjwKCAiA3rPKBhBZEiwAhPNFQLHQE46FmO4XZJaUPqVm_N4yc8Y4-aLV5Qn-wCycGO_4SjutXIJqmhoCQmcQAvD_BwE&cce=2&category=acrcp_v1_32&sig=AOD64_0RrxHGPA-sFWHxh1GazcFPUV06Ew&adurl&q&ctype=99&nis=6",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Veterinary Medical Center Europe",
+    "id": "Frankfurt-69",
+    "address": "Frankfurt am Main",
+    "phone": "06371 94641900",
+    "google_maps_url": "https://www.google.com/maps/place/Veterinary+Medical+Center+Europe/data=!4m7!3m6!1s0x4796732974646ce7:0xb433a9c9a364d97e!8m2!3d49.4295152!4d7.6861462!16s%2Fg%2F11c208rp4z!19sChIJ52xkdClzlkcRftlko8mpM7Q?authuser=0&hl=en&rclk=1",
+    "website": "https://mrc-europe.army.mil/Public-Health-Command-Europe/-Programs-Services/-Veterinary-Services-Treatment-Facilities/Veterinary-Medical-Center-Europe/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"Great service, friendly helpful\"",
+      " Confirmed via Google Review: \"English speaking lady\""
+    ],
+    "current_status": "Relocated to Landstuhl"
+  },
+  {
+    "practice_name": "Tierarztpraxis Andres De Lima",
+    "id": "Frankfurt-71",
+    "address": "Frankfurt am Main",
+    "phone": "06371 9188440",
+    "google_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Andres+De+Lima/data=!4m7!3m6!1s0x4796751aeabed1e5:0x9af5d33d4d1da710!8m2!3d49.4081967!4d7.5827648!16s%2Fg%2F11g0dsyzwr!19sChIJ5dG-6hp1lkcREKcdTT3T9Zo?authuser=0&hl=en&rclk=1",
+    "website": "https://www.tierarztpraxis-ivs.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"spoke perfect\""
+    ],
+    "current_status": "Relocated to Landstuhl"
+  },
+  {
+    "practice_name": "Animova Veterinarian - Tierarzt",
+    "id": "Frankfurt-74",
+    "address": "Frankfurt am Main",
+    "phone": "06371 914314",
+    "google_maps_url": "https://www.google.com/maps/place/Animova+Veterinarian+-+Tierarzt/data=!4m7!3m6!1s0x47967519e7a7127b:0x22fb56f1632a28b1!8m2!3d49.419052!4d7.5727132!16s%2Fg%2F1thw5nz2!19sChIJexKn5xl1lkcRsSgqY_FW-yI?authuser=0&hl=en&rclk=1",
+    "website": "https://animova.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"which made my trips very easy.\"",
+      " Confirmed via Google Review: \"speak English which made my trips very easy.\""
+    ],
+    "current_status": "Relocated to Landstuhl"
+  },
+  {
+    "practice_name": "Vet. Med. Praxis Bitburg",
+    "id": "Frankfurt-75",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main",
+    "phone": "06561 12012",
+    "google_maps_url": "https://www.google.com/maps/place/Vet.+Med.+Praxis+Bitburg/data=!4m7!3m6!1s0x47bfddde431fd367:0x7651d2a0b4bd1876!8m2!3d49.9734782!4d6.5204765!16s%2Fg%2F1pxwmcg8r!19sChIJZ9MfQ97dv0cRdhi9tKDSUXY?authuser=0&hl=en&rclk=1",
+    "website": "http://www.bitburgvet.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"and take VAT forms, and are very kind and caring.\"",
+      " Confirmed via Google Review: \"speak English and take VAT forms, and are very kind and caring.\""
+    ],
+    "current_status": "Relocated to Bitburg"
+  },
+  {
+    "practice_name": "Small veterinary practice Dr. Barth",
+    "id": "Frankfurt-77",
+    "address": "Am Wiesenhof 57, 60529 Frankfurt am Main",
+    "phone": "06301 5552",
+    "google_maps_url": "https://www.google.com/maps/place/Small+veterinary+practice+Dr.+Barth/data=!4m7!3m6!1s0x47960da805af349d:0x79125332be378b61!8m2!3d49.475439!4d7.7142676!16s%2Fg%2F1tjppfm9!19sChIJnTSvBagNlkcRYYs3vjJTEnk?authuser=0&hl=en&rclk=1",
+    "website": "https://tierarztportal.com/kaiserslautern/10614-barth-gisela-fachtieraerztin",
+    "verification_signals": [
+      "Verified English Support"
+    ],
+    "current_status": "Relocated to Kaiserslautern"
+  },
+  {
+    "practice_name": "Dr. med. vet. Tilman Michelberger",
+    "id": "Frankfurt-78",
+    "address": "Frankfurt am Main",
+    "phone": "06371 70040",
+    "google_maps_url": "https://www.google.com/maps/place/Dr.+med.+vet.+Tilman+Michelberger/data=!4m7!3m6!1s0x47960ab34aa6589f:0x903245d0a30d0c6b!8m2!3d49.4443583!4d7.5583946!16s%2Fg%2F1xtf0hv8!19sChIJn1imSrMKlkcRawwNo9BFMpA?authuser=0&hl=en&rclk=1",
+    "website": "http://www.tierarzt-michelberger.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"and are well educated and treated my dog with such love.\"",
+      " Confirmed via Google Review: \"speak English and are well educated and treated my dog with such love.\""
+    ],
+    "current_status": "Relocated to Landstuhl"
+  },
+  {
+    "practice_name": "Dr. med. vet. Otto Doermer",
+    "id": "Frankfurt-79",
+    "address": "Mörfelder Landstraße 98, 60598 Frankfurt am Main",
+    "phone": "069 60607887",
+    "google_maps_url": "https://www.google.com/maps/place/Dr.+med.+vet.+Otto+Doermer/data=!4m7!3m6!1s0x47bd0c19f177f047:0x7b30cef7f62abbd!8m2!3d50.0968403!4d8.6835219!16s%2Fg%2F1tg396hk!19sChIJR_B38RkMvUcRvatif-8Mswc?authuser=0&hl=en&rclk=1",
+    "website": "https://www.docvet.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"English speaking staff",
+      "\""
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Kleintierpraxis Dr. Corinne Martin",
+    "id": "Frankfurt-80",
+    "address": "Häusserstraße 36, 69115 Heidelberg",
+    "phone": "06221 6730600",
+    "google_maps_url": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+Corinne+Martin/data=!4m7!3m6!1s0x4797c0e6b69d6f4f:0xe0ac382bdb44ec3d!8m2!3d49.4000822!4d8.6886929!16s%2Fg%2F11csqbw2dm!19sChIJT2-dtubAl0cRPexE2ys4rOA?authuser=0&hl=en&rclk=1",
+    "website": "https://www.kleintierpraxis-martin.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"and nurses.\"",
+      " Confirmed via Google Review: \"English speaking vets and nurses.\""
+    ],
+    "current_status": "Relocated to Heidelberg"
+  },
+  {
+    "practice_name": "Dr. Müller, Dr. Rohmer und Dr. Falkenhorst Tierarztpraxis",
+    "id": "Frankfurt-83",
+    "address": "60437 Frankfurt am Main",
+    "phone": "06562 930081",
+    "google_maps_url": "https://www.google.com/maps/place/Dr.+M%C3%BCller,+Dr.+Rohmer+und+Dr.+Falkenhorst+Tierarztpraxis/data=!4m7!3m6!1s0x47bfda725b060539:0x5a2797baf917e651!8m2!3d49.9365334!4d6.6399455!16s%2Fg%2F1w6_mzgk!19sChIJOQUGW3Lav0cRUeYX-bqXJ1o?authuser=0&hl=en&rclk=1",
+    "website": "https://tierarztpraxis-speicher.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"in the area.\"",
+      " Confirmed via Google Review: \"English speaking vet in the area.\""
+    ],
+    "current_status": "Relocated to Speicher"
+  },
+  {
+    "practice_name": "Armin Drexler",
+    "id": "Frankfurt-84",
+    "address": "Eschersheimer Landstraße 18, 60322 Frankfurt am Main",
+    "phone": "06542 962999",
+    "google_maps_url": "https://www.google.com/maps/place/Armin+Drexler/data=!4m7!3m6!1s0x417340724cf1cc6d:0x835d22742f77ef3!8m2!3d50.0104489!4d7.1883962!16s%2Fg%2F1tgn_y8y!19sChIJbczxTHJAc0ER8373QifSNQg?authuser=0&hl=en&rclk=1",
+    "website": "https://tierarztportal.com/zell-mosel/2172-armin-drexler",
+    "verification_signals": [
+      "Confirmed via Google Review: \"English well.\""
+    ],
+    "current_status": "Relocated to Zell"
+  },
+  {
+    "practice_name": "Kleintierpraxis Maifeld Kathrin Bau",
+    "id": "Frankfurt-86",
+    "address": "August-Horch-Straße 19, 56751 Polch",
+    "phone": "02654 8827188",
+    "google_maps_url": "https://www.google.com/maps/place/Kleintierpraxis+Maifeld+Kathrin+Bau/data=!4m7!3m6!1s0x47be5d16781dc7a3:0x545e312e0646a5ba!8m2!3d50.3055921!4d7.3255195!16s%2Fg%2F11crzjh8j1!19sChIJo8cdeBZdvkcRuqVGBi4xXlQ?authuser=0&hl=en&rclk=1",
+    "website": "http://www.tierarzt-maifeld.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"English speaking vet\""
+    ],
+    "current_status": "Relocated to Polch"
+  },
+  {
+    "practice_name": "Tierarztpraxis Susann Gaudlitz - Bad Vilbel",
+    "id": "Frankfurt-87",
+    "address": "Wilhelmstraße 22, 61118 Bad Vilbel",
+    "phone": "06101 47619",
+    "google_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Susann+Gaudlitz+-+Bad+Vilbel/data=!4m7!3m6!1s0x47bd0580e4a30683:0x922d48dd7ba516e6!8m2!3d50.186915!4d8.7401454!16s%2Fg%2F1tf1myqh!19sChIJgwaj5IAFvUcR5hale91ILZI?authuser=0&hl=en&rclk=1",
+    "website": "http://www.tierarztpraxis-badvilbel.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"English\""
+    ],
+    "current_status": "Relocated to Bad Vilbel"
+  },
+  {
+    "practice_name": "AniCura Tierklinik Frankfurt",
+    "id": "Frankfurt-91",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main",
+    "phone": "069 97074955",
+    "google_maps_url": "https://www.google.com/maps/place/AniCura+Tierklinik+Frankfurt/data=!4m7!3m6!1s0x47bd0969e22c5aaf:0x59534e74bb4d7eca!8m2!3d50.123563!4d8.644868!16s%2Fg%2F1vjdp58h!19sChIJr1os4mkJvUcRyn5Nu3ROU1k?authuser=0&hl=en&rclk=1",
+    "website": "http://www.tierklinik-bockenheim.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"and treat my dog very well so far.\"",
+      " Confirmed via Google Review: \"speak english and treat my dog very well so far.\""
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Katzenklinik Frankfurt",
+    "id": "Frankfurt-92",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main",
+    "phone": "069 97098765",
+    "google_maps_url": "https://www.google.com/maps/place/Katzenklinik+Frankfurt/data=!4m7!3m6!1s0x417313a4450df65d:0x5a18022108987cb8!8m2!3d50.1233763!4d8.6451181!16s%2Fg%2F1th1bvbb!19sChIJXfYNRaQTc0ERuHyYCCECGFo?authuser=0&hl=en&rclk=1",
+    "website": "http://www.katzenklinik-frankfurt.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"and they were all nice.\"",
+      " Confirmed via Google Review: \"English and they were all nice.\""
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Dr. Gabriele Schoenert-Wißfeld",
+    "id": "Frankfurt-93",
+    "address": "Schlosserstraße 21, 60322 Frankfurt am Main",
+    "phone": "069 553366",
+    "google_maps_url": "https://www.google.com/maps/place/Dr.+Gabriele+Schoenert-Wi%C3%9Ffeld/data=!4m7!3m6!1s0x47bd0ec9443198e9:0x3181802f48b397cc!8m2!3d50.13127!4d8.6817896!16s%2Fg%2F1tlnck70!19sChIJ6ZgxRMkOvUcRzJezSC-AgTE?authuser=0&hl=en&rclk=1",
+    "website": "https://www.tierarzt-ffm.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"and not only.\"",
+      " Confirmed via Google Review: \"English and not only.\""
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Tierärztliche Klinik Für Kleintiere",
+    "id": "Frankfurt-94",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main",
+    "phone": "069 97074955",
+    "google_maps_url": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Klinik+F%C3%BCr+Kleintiere/data=!4m7!3m6!1s0x47bd0969e186aaab:0xdaf34a78c4f3d0ec!8m2!3d50.1235577!4d8.6448334!16s%2Fg%2F11h5505rfz!19sChIJq6qG4WkJvUcR7NDzxHhK89o?authuser=0&hl=en&rclk=1",
+    "website": "http://www.tierklinik-bockenheim.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"speak English\""
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Deutsche Gesellschaft für Mauersegler e. V.",
+    "id": "Frankfurt-95",
+    "address": "Buchenstraße 9, 65933 Frankfurt am Main",
+    "phone": "069 35351504",
+    "google_maps_url": "https://www.google.com/maps/place/Deutsche+Gesellschaft+f%C3%BCr+Mauersegler+e.+V./data=!4m7!3m6!1s0x47bd0a347b3e7cc5:0x5533513386014cf1!8m2!3d50.0957969!4d8.6060175!16s%2Fg%2F113dqjv90!19sChIJxXw-ezQKvUcR8UwBhjNRM1U?authuser=0&hl=en&rclk=1",
+    "website": "http://www.mauersegler.com/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"which really helped.\"",
+      " Confirmed via Google Review: \"English which really helped.\""
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Kleintierpraxis Sachsenhausen",
+    "id": "Frankfurt-96",
+    "address": "Waidmannstraße 2, 60596 Frankfurt am Main",
+    "phone": "069 69866933",
+    "google_maps_url": "https://www.google.com/maps/place/Kleintierpraxis+Sachsenhausen/data=!4m7!3m6!1s0x417314846fee36c7:0x164af41d129b875a!8m2!3d50.0953541!4d8.6702789!16s%2Fg%2F1v2gcw9q!19sChIJxzbub4QUc0ERWoebEh30ShY?authuser=0&hl=en&rclk=1",
+    "website": "http://kleintierpraxis-sachsenhausen.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"English , would recommend!!\""
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Dr.med.vet. Kirsten König Tierärztin",
+    "id": "Frankfurt-98",
+    "address": "Riedstraße 60, 65439 Flörsheim am Main",
+    "phone": "06145 52910",
+    "google_maps_url": "https://www.google.com/maps/place/Dr.med.vet.+Kirsten+K%C3%B6nig+Tier%C3%A4rztin/data=!4m7!3m6!1s0x47bd9f365dba930d:0xee970111de3e2dee!8m2!3d50.0188307!4d8.4366653!16s%2Fg%2F1tdy85k0!19sChIJDZO6XTafvUcR7i0-3hEBl-4?authuser=0&hl=en&rclk=1",
+    "website": "http://www.kleintierpraxis-koenig.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"and appointments are always fast and easy.\""
+    ],
+    "current_status": "Active in Frankfurt"
+  },
+  {
+    "practice_name": "Flynn Family Medicine",
+    "id": "Frankfurt-127",
+    "address": "Schulstraße 2, 60594 Frankfurt am Main",
+    "phone": "06371 9527070",
+    "google_maps_url": null,
+    "website": "http://www.flynnsmedical.com/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"English speaking doctors and caters to Americans.\""
+    ],
+    "current_status": "Relocated to Landstuhl"
+  },
+  {
+    "practice_name": "Tierhotel Rhein-Main",
+    "id": "Frankfurt-129",
+    "address": "Teichstraße, 60594 Frankfurt am Main-Frankfurt-Süd",
+    "phone": "0177 2787657",
+    "google_maps_url": null,
+    "website": "http://www.tierhotel-rhein-main.de/",
+    "verification_signals": [
+      "Confirmed via Google Review: \"speaking English\""
+    ],
+    "current_status": "Active in Frankfurt"
+  }
+]

@@ -1,0 +1,1422 @@
+[
+  {
+    "practice_name": "Dr. Cavalcanti (VetPetCare)",
+    "city": "Bad Homburg",
+    "current_address": "Kirdorfer Str. 14, 61350 Bad Homburg vor der Höhe",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "AniCura Tierklinik Berlin-Biesdorf",
+    "city": "Berlin",
+    "current_address": "Alt-Biesdorf 22, 12683 Berlin (Biesdorf)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Berlin English Vet (Tierarztpraxis an den Allee-Arcaden)",
+    "city": "Berlin",
+    "current_address": "Greifswalder Str. 80c, 10405 Berlin (Prenzlauer Berg)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Bernhard Alexander (Schöneberg)",
+    "city": "Berlin",
+    "current_address": "Hauptstr. 92, 10827 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "DER TIERARZT Dr. Theobald in Schöneberg",
+    "city": "Berlin",
+    "current_address": "Eisenacher Str. 40, 10781 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/DER+TIERARZT+Dr.+Theobald+in+Sch%C3%B6neberg/data=!4m7!3m6!1s0x47a850448045a28d:0x97ce7237bb30acd9!8m2!3d52.4898995!4d13.3487913!16s%2Fg%2F1tfrfs_1!19sChIJjaJFgERQqEcR2awwuzdyzpc?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Dipl.Med.Vet. Jörg Porada",
+    "city": "Berlin",
+    "current_address": "Rungestraße 18, 10179 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Dipl.Med.Vet.+J%C3%B6rg+Porada/data=!4m7!3m6!1s0x416523c75ea54025:0xb6778bc277d3c95d!8m2!3d52.5121682!4d13.419935!16s%2Fg%2F1vc6cd_d!19sChIJJUClXscjZUERXcnTd8KLd7Y?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Dr. Claudia Wegeler (Tempelhof)",
+    "city": "Berlin",
+    "current_address": "Rangsdorfer Str. 9, 12309 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. Jens Vöster",
+    "city": "Berlin",
+    "current_address": "Hohenzollerndamm 185, 10713 Berlin (Charlottenburg)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. Johanna Pauls",
+    "city": "Berlin",
+    "current_address": "Rykestraße 35, 10405 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Dr.+Johanna+Pauls/data=!4m7!3m6!1s0x47a84e00de054f03:0xd88aadf11ead293d!8m2!3d52.5385307!4d13.4216955!16s%2Fg%2F11c1tlz48s!19sChIJA08F3gBOqEcRPSmtHvGtitg?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Dr. med. vet. Claudia Handke",
+    "city": "Berlin",
+    "current_address": "Danziger Str. 15, 10435 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Dr.+med.+vet.+Claudia+Handke/data=!4m7!3m6!1s0x47a851ffe8bf593f:0x91d6e1cf0d7f4c94!8m2!3d52.5407316!4d13.4157091!16s%2Fg%2F1tfw21mc!19sChIJP1m_6P9RqEcRlEx_Dc_h1pE?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Dr. med. vet. Katharina Dralle (Friedenau)",
+    "city": "Berlin",
+    "current_address": "Rotdornstr. 7, 12161 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. Peter Vogel",
+    "city": "Berlin",
+    "current_address": "Ebelingstraße 1, 10249 Berlin (Friedrichshain)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. Ulusal veterinarian",
+    "city": "Berlin",
+    "current_address": "Prinzenallee 72-73, 13357 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Dr.+Ulusal+veterinarian/data=!4m7!3m6!1s0x416521a502f61045:0xf80f1d3a889bfb9e!8m2!3d52.5554661!4d13.3836295!16s%2Fg%2F12lvkr1tc!19sChIJRRD2AqUhZUERnvubiDodD_g?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Dr.med.vet. Claudia Pastor Tierärztin",
+    "city": "Berlin",
+    "current_address": "Brüsseler Str. 52A, 13353 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Dr.med.vet.+Claudia+Pastor+Tier%C3%A4rztin/data=!4m7!3m6!1s0x47a8517e21566743:0x114581b9a63794aa!8m2!3d52.54868!4d13.3531601!16s%2Fg%2F1tv235bz!19sChIJQ2dWIX5RqEcRqpQ3prmBRRE?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Felmo Mobile Veterinarians",
+    "city": "Berlin",
+    "current_address": "Alt-Moabit 73/73a, 10555 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Felmo Mobiler Tierarzt Berlin",
+    "city": "Berlin",
+    "current_address": "Alt-Moabit 73/73a, 10555 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Berlin/data=!4m7!3m6!1s0x47a851daf8337149:0x6726eb1d6104038b!8m2!3d52.524102!4d13.332714!16s%2Fg%2F11hds6bxzr!19sChIJSXEz-NpRqEcRiwMEYR3rJmc?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Kleintiermedizin am Lützowufer",
+    "city": "Berlin",
+    "current_address": "Lützowufer 24, 10787 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Kleintiermedizin+am+L%C3%BCtzowufer/data=!4m7!3m6!1s0x47a851ad2a53ba37:0x9b8a2da25d7c1a36!8m2!3d52.5062018!4d13.3493321!16s%2Fg%2F11fxvtrx2s!19sChIJN7pTKq1RqEcRNhp8XaItips?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Kleintierpraxis 4 Pfoten & Co",
+    "city": "Berlin",
+    "current_address": "Fanningerstraße 27, 10365 Berlin (Lichtenberg)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Kleintierpraxis im Kiez - TA Jörg Saecker",
+    "city": "Berlin",
+    "current_address": "Pohlstraße 69, 10785 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Kleintierpraxis+im+Kiez+-+TA+J%C3%B6rg+Saecker/data=!4m7!3m6!1s0x47a8504a492c46a7:0x39b2ed0c13067f81!8m2!3d52.5008191!4d13.3628081!16s%2Fg%2F1tdq9m52!19sChIJp0YsSUpQqEcRgX8GEwztsjk?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Kleintierspezialisten Berlin",
+    "city": "Berlin",
+    "current_address": "Wittestraße 30 P, 13509 Berlin (Tegel)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Klinik für kleine Haustiere (FU Berlin Small Animal Clinic)",
+    "city": "Berlin",
+    "current_address": "Oertzenweg 19b, 14163 Berlin (Düppel/Zehlendorf)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Marita Toepfer Veterinary Services",
+    "city": "Berlin",
+    "current_address": "Beerenstraße 28, 14163 Berlin (Zehlendorf)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Medivet Berlin-Pankow",
+    "city": "Berlin",
+    "current_address": "Pasewalker Straße 25, 13127 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Medivet+Berlin-Pankow/data=!4m7!3m6!1s0x47a852869aaf3f49:0xad7dbeaab4648b23!8m2!3d52.5884304!4d13.429723!16s%2Fg%2F1vv2r8dy!19sChIJST-vmoZSqEcRI4tktKq-fa0?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Mobile Tierarztpraxis Berlin - Dr. Pascal Klunder",
+    "city": "Berlin",
+    "current_address": "Gutzkowstraße 4, 10827 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Pet-Station",
+    "city": "Berlin",
+    "current_address": "Kulmer Str. 26, 10783 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Pet-Station/data=!4m7!3m6!1s0x47a8503834c7a8f7:0xef4fab72ef1a7364!8m2!3d52.4921297!4d13.3651314!16s%2Fg%2F1tdq9m4_!19sChIJ96jHNDhQqEcRZHMa73KrT-8?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Pfotendoctor - dein digitaler Tierarzt",
+    "city": "Berlin",
+    "current_address": "Wöhlertstraße 12-13, 10115 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Praxis Tierzuliebe (Dr. Bertram)",
+    "city": "Berlin",
+    "current_address": "Friedbergstraße 4, 14057 Berlin (Charlottenburg)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Rex Tierarztpraxis (Multiple Locations)",
+    "city": "Berlin",
+    "current_address": "Friedenstraße 94, 10249 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Rex Tierarztpraxis Berlin-Friedrichshain",
+    "city": "Berlin",
+    "current_address": "Revaler Str. 17, 10245 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Rex+Tierarztpraxis+Berlin-Friedrichshain/data=!4m7!3m6!1s0x47a84f9be0f199a1:0x1bc2f105df77e470!8m2!3d52.5072059!4d13.4575494!16s%2Fg%2F11vhg12w0x!19sChIJoZnx4JtPqEcRcOR33wXxwhs?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Rex Tierarztpraxis Berlin-Prenzlauer Berg",
+    "city": "Berlin",
+    "current_address": "Greifswalder Str. 204, 10405 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Rex+Tierarztpraxis+Berlin-Prenzlauer+Berg/data=!4m7!3m6!1s0x47a84fddfeb06ccf:0xfce256665a5b5802!8m2!3d52.5334687!4d13.4293548!16s%2Fg%2F11vyxr1h3w!19sChIJz2yw_t1PqEcRAlhbWmZW4vw?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "The Berlin Veterinary Center (Zentrum für Tiermedizin / Dr. Rödiger)",
+    "city": "Berlin",
+    "current_address": "Scharnweberstraße 136, 13405 Berlin (Reinickendorf)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis",
+    "city": "Berlin",
+    "current_address": "Kulmer Str. 26, 10783 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis/data=!4m7!3m6!1s0x47a8503835ce73f9:0x45ad73e1b6d175a1!8m2!3d52.4921195!4d13.3651271!16s%2Fg%2F11mgn05v41!19sChIJ-XPONThQqEcRoXXRtuFzrUU?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis am Lietzenseepark (Dr. Layla Hourani)",
+    "city": "Berlin",
+    "current_address": "Herbartstraße 18, 14057 Berlin (Charlottenburg)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis am Mauerpark",
+    "city": "Berlin",
+    "current_address": "Wolliner Str. 21, 10435 Berlin (Prenzlauer Berg)",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+am+Mauerpark/data=!4m7!3m6!1s0x47a852030f2840a1:0xe998cf9fcb19f10b!8m2!3d52.5471166!4d13.4082182!16s%2Fg%2F1tf9rvwn!19sChIJoUAoDwNSqEcRC_EZy5_PmOk?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis am Olivaer Platz (Dr. med. vet. S. Robl)",
+    "city": "Berlin",
+    "current_address": "Olivaer Platz 11, 10707 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis am Schlosspark (Jana Czernutzky)",
+    "city": "Berlin",
+    "current_address": "Dietzgenstraße 28, 13156 Berlin (Pankow)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis am Südkreuz",
+    "city": "Berlin",
+    "current_address": "Gustav-Müller-Straße 19, 10829 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+am+S%C3%BCdkreuz/data=!4m7!3m6!1s0x47a85015c7a92a8b:0x82877ba7d1db3449!8m2!3d52.4808667!4d13.3621523!16s%2Fg%2F1ts1r7x_!19sChIJiyqpxxVQqEcRSTTb0ad7h4I?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis am Urbanhafen",
+    "city": "Berlin",
+    "current_address": "Blücherstraße 69, 10961 Berlin (Kreuzberg)",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+am+Urbanhafen/data=!4m7!3m6!1s0x47a84fd3b653770d:0xd3240f83e30b3ce3!8m2!3d52.4956405!4d13.4053191!16s%2Fg%2F1w04j3nk!19sChIJDXdTttNPqEcR4zwL44MPJNM?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis am Wasserturm",
+    "city": "Berlin",
+    "current_address": "Rykestraße 4, 10405 Berlin (Prenzlauer Berg)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Anne Gamalski",
+    "city": "Berlin",
+    "current_address": "Weimarer Str. 9, 10625 Berlin (Charlottenburg)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Bartels & Wende (formerly Heinemann)",
+    "city": "Berlin",
+    "current_address": "Mansfelder Straße 19, 10713 Berlin (Wilmersdorf)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Brigitte Ludwig-Kahya",
+    "city": "Berlin",
+    "current_address": "Wilhelmstraße 3, 10963 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Brigitte+Ludwig-Kahya/data=!4m7!3m6!1s0x47a8502b6084b857:0x2bae721d26f5f822!8m2!3d52.5003224!4d13.389816!16s%2Fg%2F1thwzgd_!19sChIJV7iEYCtQqEcRIvj1Jh1yris?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. C. S. Alexander",
+    "city": "Berlin",
+    "current_address": "Steglitzer Damm 48, 12169 Berlin (Steglitz)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Demmler und Dr. Wehming",
+    "city": "Berlin",
+    "current_address": "Wiener Straße 25, 10999 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. med. vet. Stephanie Adams (Bernau)",
+    "city": "Berlin",
+    "current_address": "Ladeburger Chaussee 73, 16321 Bernau",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Peter Vogel",
+    "city": "Berlin",
+    "current_address": "Finowstraße 14, 10247 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Peter+Vogel/data=!4m7!3m6!1s0x47a84e5e02696dbf:0x3d814eedbcad95ff!8m2!3d52.5114026!4d13.4666047!16s%2Fg%2F1tvt9ckb!19sChIJv21pAl5OqEcR_5WtvO1OgT0?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Renate Lorenz",
+    "city": "Berlin",
+    "current_address": "Oberhofer Weg 68, 12209 Berlin (Lichterfelde)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Stahlhut (Tierarzt Westend)",
+    "city": "Berlin",
+    "current_address": "Reichsstraße 2, 14052 Berlin (Westend)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Till Robl",
+    "city": "Berlin",
+    "current_address": "Husemannstraße 3, 10435 Berlin (Prenzlauer Berg)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Wolfgang Beck",
+    "city": "Berlin",
+    "current_address": "Weichselstraße 25, 12045 Berlin (Neukölln)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Ellen Laskawy",
+    "city": "Berlin",
+    "current_address": "Bänschstraße 70, 10247 Berlin (Friedrichshain)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Gotthardt",
+    "city": "Berlin",
+    "current_address": "Winkler Straße 2, 14193 Berlin (Grunewald)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Grünau (Dr. Manuela Wight)",
+    "city": "Berlin",
+    "current_address": "Regattastraße 58, 12527 Berlin (Treptow-Köpenick)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Liegnitzer",
+    "city": "Berlin",
+    "current_address": "Liegnitzer Str. 19, 10999 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Liegnitzer/data=!4m7!3m6!1s0x416523758d183683:0xf7206235691d1a5c!8m2!3d52.4929802!4d13.4338649!16s%2Fg%2F11b6b3ngv4!19sChIJgzYYjXUjZUERXBodaTViIPc?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis Oldenburger Straße",
+    "city": "Berlin",
+    "current_address": "Oldenburger Str. 44, 10551 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Oldenburger+Stra%C3%9Fe/data=!4m7!3m6!1s0x47a8510d369c5953:0xebafa45584e9073b!8m2!3d52.5289304!4d13.3357299!16s%2Fg%2F11c6_bkhly!19sChIJU1mcNg1RqEcROwfphFWkr-s?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis Pastor (\"Tierärzte im Kiez\")",
+    "city": "Berlin",
+    "current_address": "Bölschestraße 8, 12587 Berlin (Friedrichshagen)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Peters",
+    "city": "Berlin",
+    "current_address": "Lehderstraße 42, 13086 Berlin (Weißensee)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Rotgang",
+    "city": "Berlin",
+    "current_address": "Greifswalder Str: 21, 10405 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Rotgang/data=!4m7!3m6!1s0x47a84f8d95729e73:0x6bb27b6cd086cd71!8m2!3d52.5310183!4d13.4278352!16s%2Fg%2F11qr9m8bs3!19sChIJc55ylY1PqEcRcc2G0Gx7sms?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis Rödiger - Das Veterinärmedizinische Zentrum Berlin - 24h geöffnet",
+    "city": "Berlin",
+    "current_address": "Scharnweberstraße 136, 13405 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+R%C3%B6diger+-+Das+Veterin%C3%A4rmedizinische+Zentrum+Berlin+-+24h+ge%C3%B6ffnet/data=!4m7!3m6!1s0x47a853ef387aaf1f:0xdb64322c775ad6a9!8m2!3d52.5643159!4d13.3262383!16s%2Fg%2F1tj56td9!19sChIJH696OO9TqEcRqdZadywyZNs?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis Sarah Watson",
+    "city": "Berlin",
+    "current_address": "Altenbraker Str. 29, 12051 Berlin (Neukölln)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Sonnenallee - Dr. Jana Kudritzki und Daniel Kitzing",
+    "city": "Berlin",
+    "current_address": "Sonnenallee 204, 12059 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Sonnenallee+-+Dr.+Jana+Kudritzki+und+Daniel+Kitzing/data=!4m7!3m6!1s0x4165235d846a80cd:0x2a27519a2dba204f!8m2!3d52.4747886!4d13.453599!16s%2Fg%2F11b74w1rpg!19sChIJzYBqhF0jZUERTyC6LZpRJyo?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tiermedizinzentrum Berlin (Schöneberg)",
+    "city": "Berlin",
+    "current_address": "Kufsteiner Str. 22, 10825 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Valera Veterinary Clinic",
+    "city": "Berlin",
+    "current_address": "Potsdamer Str. 23/2, 14163 Berlin (Zehlendorf)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Veterinarian and cattery",
+    "city": "Berlin",
+    "current_address": "Conrad-Blenkle-Straße 4, 10407 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Veterinarian+and+cattery/data=!4m7!3m6!1s0x47a84e71edabbaf1:0xcdafb946c2a44b7b!8m2!3d52.5281499!4d13.4502641!16s%2Fg%2F1tctwlbc!19sChIJ8bqr7XFOqEcRe0ukwka5r80?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Veterinary Clinic Chung & Wahle",
+    "city": "Berlin",
+    "current_address": "Lauterstraße 19-20, 12159 Berlin (Friedenau)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Veterinary clinic for cats - vets for cats Berlin",
+    "city": "Berlin",
+    "current_address": "Bayerischer Pl. 2, 10779 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Veterinary+clinic+for+cats+-+vets+for+cats+Berlin/data=!4m7!3m6!1s0x47a8505c14dd0365:0x6592bbfb53015b3e!8m2!3d52.4897329!4d13.3391583!16s%2Fg%2F1ptvqbly0!19sChIJZQPdFFxQqEcRPlsBU_u7kmU?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Veterinary clinic for small animals and pets",
+    "city": "Berlin",
+    "current_address": "Alt-Biesdorf 22, 12683 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Veterinary+clinic+for+small+animals+and+pets/data=!4m7!3m6!1s0x47a84941fd712d3b:0x565c966c172f20cd!8m2!3d52.5087827!4d13.5557674!16s%2Fg%2F1td57n5r!19sChIJOy1x_UFJqEcRzSAvF2yWXFY?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Veterinary Practice by the Water Tower",
+    "city": "Berlin",
+    "current_address": "Rykestraße 4, 10405 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Veterinary+Practice+by+the+Water+Tower/data=!4m7!3m6!1s0x47a84e03e9285567:0xb5fe0b87abb728f0!8m2!3d52.5350514!4d13.419747!16s%2Fg%2F1234r5bv1!19sChIJZ1Uo6QNOqEcR8Ci3q4cL_rU?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Veterinary Practice Bärenwiese",
+    "city": "Berlin",
+    "current_address": "Frankenallee 10, 14052 Berlin (Wilmersdorf)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Veterinary practice E. Laskawy",
+    "city": "Berlin",
+    "current_address": "Bänschstraße 58, 10247 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Veterinary+practice+E.+Laskawy/data=!4m7!3m6!1s0x47a84e61d0077367:0x5bd567a75ef25002!8m2!3d52.5176605!4d13.4663371!16s%2Fg%2F1tffncfm!19sChIJZ3MH0GFOqEcRAlDyXqdn1Vs?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Veterinary practice Friedrichshain Sabine Heidel",
+    "city": "Berlin",
+    "current_address": "Auerstraße 44, 10249 Berlin",
+    "found_maps_url": "https://www.google.com/maps/place/Veterinary+practice+Friedrichshain+Sabine+Heidel/data=!4m7!3m6!1s0x47a84e695cc6d7f1:0x3283c49cdeb81b59!8m2!3d52.5209184!4d13.4462681!16s%2Fg%2F11c6f0l69_!19sChIJ8dfGXGlOqEcRWRu43pzEgzI?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Veterinary practice Galina Schirow GmbH (Hansavet)",
+    "city": "Berlin",
+    "current_address": "Bartningallee 5, 10557 Berlin",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "AniCura Kleintierzentrum (Juliusstraße)",
+    "city": "Frankfurt",
+    "current_address": "Juliusstraße 12, 60487 Frankfurt am Main (Bockenheim)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. Andrea Töpfer",
+    "city": "Frankfurt",
+    "current_address": "Füllerstraße 100, 60431 Frankfurt am Main (Ginnheim)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. med. vet. Sandra Härtter",
+    "city": "Frankfurt",
+    "current_address": "Leuchte 47, 60388 Frankfurt am Main (Bergen-Enkheim)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Felmo Mobiler Tierarzt (Frankfurt)",
+    "city": "Frankfurt",
+    "current_address": "2 Königsberger Straße, Frankfurt",
+    "found_maps_url": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Frankfurt/data=!4m7!3m6!1s0x47bd0f1033e794c9:0xa6c205570edc16e6!8m2!3d50.129075!4d8.628141!16s%2Fg%2F11r3v_j65g!19sChIJyZTnMxAPvUcR5hbcDlcFwqY?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Filu Vet Nordend",
+    "city": "Frankfurt",
+    "current_address": "Weberstraße 59, 60318 Frankfurt am Main",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Kleintierklinik Frankfurt Bockenheim",
+    "city": "Frankfurt",
+    "current_address": "Ginnheimer Landstraße 11, 60487 Frankfurt am Main",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Kleintierpraxis Frankfurt (Dr. Moudrianakis)",
+    "city": "Frankfurt",
+    "current_address": "Leerbachstraße 122, 60322 Frankfurt am Main",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Rex Tierarzt Frankfurt Ostend",
+    "city": "Frankfurt",
+    "current_address": "Wittelsbacherallee 26, 60316 Frankfurt am Main",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis am Kurfürstenplatz (Bockenheim)",
+    "city": "Frankfurt",
+    "current_address": "Kurfürstenstraße 3, 60486 Frankfurt am Main",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Berger (Melanie Berger)",
+    "city": "Frankfurt",
+    "current_address": "Darmstädter Landstraße 48, 60594 Frankfurt (Sachsenhausen)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Bornheim (Dr. Katrin Witt)",
+    "city": "Frankfurt",
+    "current_address": "Heisterstraße 1, 60385 Frankfurt am Main",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Joachim & Katja Gross",
+    "city": "Frankfurt",
+    "current_address": "Mörfelder Landstraße 263, 60598 Frankfurt (Sachsenhausen)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Maike Höch",
+    "city": "Frankfurt",
+    "current_address": "Eckenheimer Landstraße 340, 60435 Frankfurt (Eckenheim)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Maja Firlé",
+    "city": "Frankfurt",
+    "current_address": "Hamburger Allee 14, Frankfurt",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Maja+Firl%C3%A9/data=!4m7!3m6!1s0x47bd095d1c6b57b5:0x161891416ad46e11!8m2!3d50.1149422!4d8.649158!16s%2Fg%2F1tdq9pww!19sChIJtVdrHF0JvUcREW7UakGRGBY?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis Sachsenhausen (Dr. Jan Kullen / Dr. Elena Panova)",
+    "city": "Frankfurt",
+    "current_address": "Textorstraße 93, 60596 Frankfurt am Main",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Sonja Krämer",
+    "city": "Frankfurt",
+    "current_address": "Westerbachstraße 226, Frankfurt",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Sonja+Kr%C3%A4mer/data=!4m7!3m6!1s0x47bd09facf58c0ef:0xe353ca2c235d346f!8m2!3d50.1238303!4d8.5768004!16s%2Fg%2F1v7tkh2r!19sChIJ78BYz_oJvUcRbzRdIyzKU-M?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierhotel Rhein-Main",
+    "city": "Frankfurt",
+    "current_address": "Teichstraße 201, Frankfurt",
+    "found_maps_url": "https://www.google.com/maps/place/Tierhotel+Rhein-Main/data=!4m7!3m6!1s0x47bd72fafc48950f:0x70e2197b8ffb1428!8m2!3d49.9893189!4d8.6931289!16s%2Fg%2F11clljnfhq!19sChIJD5VI_PpyvUcRKBT7j3sZ4nA?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierklinik Kalbach (Kleintierklinik am Nordpark)",
+    "city": "Frankfurt",
+    "current_address": "Max-Holder-Straße 4 (Am Nordpark 10), 60437 Frankfurt am Main",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierklinik Trillig (Obertshausen)",
+    "city": "Frankfurt",
+    "current_address": "Birkenwaldstr. 42, 63179 Obertshausen",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "AniCura Fachzentrum Hamburg (Jenfeld)",
+    "city": "Hamburg",
+    "current_address": "Rodigallee 85, 22043 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "AniCura Hamburg Niendorf GmbH",
+    "city": "Hamburg",
+    "current_address": "Garstedter Weg 274, 22455 Hamburg",
+    "found_maps_url": "https://www.google.com/maps/place/AniCura+Hamburg+Niendorf+GmbH/data=!4m7!3m6!1s0x47b187d708080557:0x94d116b949621e6!8m2!3d53.6387008!4d9.9699341!16s%2Fg%2F1tj44zdj!19sChIJVwUICNeHsUcR5iGWlGsRTQk?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "AniCura Kleintierzentrum (Niendorf)",
+    "city": "Hamburg",
+    "current_address": "Garstedter Weg 274, 22455 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Cats Only veterinary practice for Cats",
+    "city": "Hamburg",
+    "current_address": "Eppendorfer Weg 50, 20259 Hamburg",
+    "found_maps_url": "https://www.google.com/maps/place/Cats+Only+veterinary+practice+for+Cats/data=!4m7!3m6!1s0x47b18f5a88a725df:0x3b16dec92c1cdaa0!8m2!3d53.5715083!4d9.9588278!16s%2Fg%2F1thx7nvt!19sChIJ3yWniFqPsUcRoNocLMneFjs?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Die Hamburger Tierärzte - Dr. med. vet. Ulf Krohn und Florian Grosser - Praxis für kleine Haustiere",
+    "city": "Hamburg",
+    "current_address": "Lübecker Str. 128 U-Bahn Wartenau U 1, 22087 Hamburg",
+    "found_maps_url": "https://www.google.com/maps/place/Die+Hamburger+Tier%C3%A4rzte+-+Dr.+med.+vet.+Ulf+Krohn+und+Florian+Grosser+-+Praxis+f%C3%BCr+kleine+Haustiere/data=!4m7!3m6!1s0x47b18ec55536f43b:0x1a18fb8effcafde3!8m2!3d53.5635992!4d10.0345325!16s%2Fg%2F1th0lz0k!19sChIJO_Q2VcWOsUcR4_3K_477GBo?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Dr. Martin Bucksch (Tierärzte am Grandweg)",
+    "city": "Hamburg",
+    "current_address": "Grandweg 68, 22529 Hamburg (Lokstedt)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. med. vet. Dagmar H. Vogel",
+    "city": "Hamburg",
+    "current_address": "Tresckowstr. 6, 20259 Hamburg (Eimsbüttel)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. med. vet. Eva Tutlies",
+    "city": "Hamburg",
+    "current_address": "Schiffbeker Weg 46, 22119 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. med. vet. Fabian von Manteuffel",
+    "city": "Hamburg",
+    "current_address": "Hülsdornweg 24, 22179 Hamburg (Bramfeld)",
+    "found_maps_url": "https://www.google.com/maps/place/Dr.+med.+vet.+Fabian+von+Manteuffel/data=!4m7!3m6!1s0x47b1895d9e0164a3:0x31017aefc542e55d!8m2!3d53.5950214!4d10.0651161!16s%2Fg%2F1v_z3d0t!19sChIJo2QBnl2JsUcRXeVCxe96ATE?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Dr. med. vet. Imke Tammena",
+    "city": "Hamburg",
+    "current_address": "Waldweg 42, 22393 Hamburg (Sasel)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. med. vet. Klaus-Henning von Kuenheim",
+    "city": "Hamburg",
+    "current_address": "Bramfelder Chaussee 10, 22177 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. med. vet. Michael Gervers",
+    "city": "Hamburg",
+    "current_address": "Fuhlsbüttler Str. 344, 22307 Hamburg (Barmbek-Nord)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. med. vet. Nicolai Mannstaedt",
+    "city": "Hamburg",
+    "current_address": "Neugrabener Bahnhofstraße 5a, 21149 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. Mirja Fenske",
+    "city": "Hamburg",
+    "current_address": "Osterrade 36 a, 21031 Hamburg (Lohbrügge)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. Nicolai Mannstaedt veterinarian",
+    "city": "Hamburg",
+    "current_address": "Neugrabener Bahnhofstraße 5A, 21149 Hamburg",
+    "found_maps_url": "https://www.google.com/maps/place/Dr.+Nicolai+Mannstaedt+veterinarian/data=!4m7!3m6!1s0x47b19ae2e052bee9:0x2a58942d3b00fae2!8m2!3d53.4731841!4d9.8545931!16s%2Fg%2F1tf7lmg9!19sChIJ6b5S4OKasUcR4voAOy2UWCo?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Dr.med.vet. Bergit Grünau",
+    "city": "Hamburg",
+    "current_address": "Dorotheenstraße 63, 22301 Hamburg",
+    "found_maps_url": "https://www.google.com/maps/place/Dr.med.vet.+Bergit+Gr%C3%BCnau/data=!4m7!3m6!1s0x4163bb44032df797:0x4350be5527879692!8m2!3d53.5836!4d10.0071901!16s%2Fg%2F1tdwc_c5!19sChIJl_ctA0S7Y0ERkpaHJ1W-UEM?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Felmo Mobiler Tierarzt (Hamburg)",
+    "city": "Hamburg",
+    "current_address": "Borsteler Chaussee 85-99, 22453 Hamburg",
+    "found_maps_url": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Hamburg/data=!4m7!3m6!1s0x47b189458b2e857f:0x29e930c39b522a8e!8m2!3d53.605041!4d9.979236!16s%2Fg%2F11ny2glch0!19sChIJf4Uui0WJsUcRjipSm8Mw6Sk?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "filu Tierarztpraxis Winterhude",
+    "city": "Hamburg",
+    "current_address": "Mühlenkamp 21A, 22303 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Kleintierzentrum Kotzian",
+    "city": "Hamburg",
+    "current_address": "Alsterdorfer Str. 255A, 22297 Hamburg",
+    "found_maps_url": "https://www.google.com/maps/place/Kleintierzentrum+Kotzian/data=!4m7!3m6!1s0x47b188e5f500c741:0x3151dc970f32ca0!8m2!3d53.6082228!4d10.0052354!16s%2Fg%2F11g8162s7n!19sChIJQccA9eWIsUcRoCzzcMkdFQM?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Medivet Tierarztpraxis Hamburg-Stellingen",
+    "city": "Hamburg",
+    "current_address": "Kieler Straße 336, 22525 Hamburg",
+    "found_maps_url": "https://www.google.com/maps/place/Medivet+Tierarztpraxis+Hamburg-Stellingen/data=!4m7!3m6!1s0x47b185faf8a8ee2d:0xecf43e4f270a4c6f!8m2!3d53.5871493!4d9.9325501!16s%2Fg%2F1tx462gw!19sChIJLe6o-PqFsUcRb0wKJ08-9Ow?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "ProPferd Hamburg Pferdeosteopathie & mobiler Reitunterricht",
+    "city": "Hamburg",
+    "current_address": "Dorfstraße 6, 25451 Quickborn",
+    "found_maps_url": "https://www.google.com/maps/place/ProPferd+Hamburg+Pferdeosteopathie+%26+mobiler+Reitunterricht/data=!4m7!3m6!1s0x47b221d25b30a6ad:0x1a28ddd2d52cdb24!8m2!3d51.175807!4d10.4541194!16s%2Fg%2F11h4_f7hsh!19sChIJraYwW9IhskcRJNss1dLdKBo?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Rex Tierarztpraxis (Winterhude & Ottensen)",
+    "city": "Hamburg",
+    "current_address": "Winterhuder Marktplatz 1, 22299 Hamburg / Ottensen",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis am Millerntor",
+    "city": "Hamburg",
+    "current_address": "B4 31, 20359 Hamburg (St. Pauli)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Stefanie Möller",
+    "city": "Hamburg",
+    "current_address": "Isestraße 49, 20144 Hamburg (Harvestehude)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. von Marnitz",
+    "city": "Hamburg",
+    "current_address": "Holsteiner Chaussee 38, 22523 Hamburg (Schnelsen)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis ElbVet Hamburg",
+    "city": "Hamburg",
+    "current_address": "Friedensallee 290, 22763 Hamburg (Bahrenfeld/Altona)",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+ElbVet+Hamburg/data=!4m7!3m6!1s0x47b1856fe7d43e95:0x6934c6336fc69d77!8m2!3d53.56439!4d9.91812!16s%2Fg%2F11h0zbm_6t!19sChIJlT7U52-FsUcRd53GbzPGNGk?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "MISMATCH",
+    "mismatch_details": "CSV: Bahrenfelder Chaussee 4 vs JSON: Friedensallee 290, 22763 Hamburg (Bahrenfeld/Altona)",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis Simon",
+    "city": "Hamburg",
+    "current_address": "Bargteheider Str. 156, 22143 Hamburg (Rahlstedt)",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Simon/data=!4m7!3m6!1s0x47b18babb133b0a9:0x8790e5e344ef6544!8m2!3d53.6115286!4d10.1537557!16s%2Fg%2F1vxcvgkb!19sChIJqbAzsauLsUcRRGXvROPlkIc?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis St. Pauli (Hopfenstraße)",
+    "city": "Hamburg",
+    "current_address": "Hopfenstraße 11-13, 20359 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Sülldorf (Gwendolien Lehmann)",
+    "city": "Hamburg",
+    "current_address": "Sülldorfer Kirchenweg 2, 22587 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierklinik Fuhlsbüttel",
+    "city": "Hamburg",
+    "current_address": "Farnstraße 41, 22335 Hamburg",
+    "found_maps_url": "https://www.google.com/maps/place/Tierklinik+Fuhlsb%C3%BCttel/data=!4m7!3m6!1s0x47b1884e1ebf891b:0x8d23676c513fb96c!8m2!3d53.6327356!4d10.0210687!16s%2Fg%2F11fmz268z2!19sChIJG4m_Hk6IsUcRbLk_UWxnI40?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierklinik Lademannbogen",
+    "city": "Hamburg",
+    "current_address": "Lademannbogen 126, 22339 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierärztliche Gemeinschaftspraxis St. Pauli (Dr. Svenja Korth)",
+    "city": "Hamburg",
+    "current_address": "Feldstraße 22, 20357 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Veterinarian Dr. Eva Tutlies",
+    "city": "Hamburg",
+    "current_address": "Schiffbeker Weg 46, 22119 Hamburg",
+    "found_maps_url": "https://www.google.com/maps/place/Veterinarian+Dr.+Eva+Tutlies/data=!4m7!3m6!1s0x47b18c5cbe959d51:0xf8ccb18bf1a99393!8m2!3d53.5444343!4d10.1047443!16s%2Fg%2F1vxcvgkk!19sChIJUZ2VvlyMsUcRk5Op8YuxzPg?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "VetZentrum Hafencity",
+    "city": "Hamburg",
+    "current_address": "Baakenallee 90, 20457 Hamburg",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierklinik Hofheim (Specialist Center)",
+    "city": "Hofheim",
+    "current_address": "Im Ried 12, 65719 Hofheim am Taunus",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Kleintierpraxis am Zauberberg (Dr. Katja Feuerbacher)",
+    "city": "Kelkheim",
+    "current_address": "Robert-Koch-Str. 116, 65779 Kelkheim (Taunus)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. med. vet. Moormann",
+    "city": "Königstein",
+    "current_address": "Frankfurter Str. 11, 61462 Königstein im Taunus",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Flynn Family Medicine",
+    "city": "Landstuhl",
+    "current_address": "Schulstraße 2, Landstuhl",
+    "found_maps_url": "https://www.google.com/maps/place/Flynn+Family+Medicine/data=!4m7!3m6!1s0x47960bc0b6c257f1:0x91e634117a9c5c9f!8m2!3d49.44555!4d7.55746!16s%2Fg%2F11kvpc_6h8!19sChIJ8VfCtsALlkcRn1ycehE05pE?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "AniCura Tierklinik Haar",
+    "city": "Munich",
+    "current_address": "Keferloher Str. 25, 85540 Haar",
+    "found_maps_url": "https://www.google.com/maps/place/AniCura+Tierklinik+Haar/data=!4m7!3m6!1s0x479de1db6524fd6f:0x5eb95cb889f90757!8m2!3d48.1122681!4d11.71571!16s%2Fg%2F1thr64ml!19sChIJb_0kZdvhnUcRVwf5ibhcuV4?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Clinic of Small Animal Surgery and Reproduction",
+    "city": "Munich",
+    "current_address": "Veterinärstraße 13, 80539 München",
+    "found_maps_url": "https://www.google.com/maps/place/Clinic+of+Small+Animal+Surgery+and+Reproduction/data=!4m7!3m6!1s0x479e7595c758a147:0x99a1f95fef49c04!8m2!3d48.1520803!4d11.5870728!16s%2Fg%2F11btlw4n9n!19sChIJR6FYx5V1nkcRBJz0_pUfmgk?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "MISMATCH",
+    "mismatch_details": "CSV: Emergency veterinarian service vs JSON: Veterinärstraße 13, 80539 München",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Felmo Mobiler Tierarzt München",
+    "city": "Munich",
+    "current_address": "Am Moosfeld 13, 81829 München",
+    "found_maps_url": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+M%C3%BCnchen/data=!4m7!3m6!1s0x479e0ba12bc5db59:0x59666aa80228880f!8m2!3d48.134753!4d11.658236!16s%2Fg%2F11qnbrsvqd!19sChIJWdvFK6ELnkcRD4goAqhqZlk?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis Dr. Cornelia Maul and Dr. Sabine Herget",
+    "city": "Munich",
+    "current_address": "Schwarzstraße 3, 81669 München",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Cornelia+Maul+and+Dr.+Sabine+Herget/data=!4m7!3m6!1s0x479ddf7ca52d5fc3:0x21a35afb38181d4f!8m2!3d48.1292349!4d11.5861193!16s%2Fg%2F1vgw7mj2!19sChIJw18tpXzfnUcRTx0YOPtaoyE?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierarztpraxis München Laim Dr. med. vet. Ursula Link",
+    "city": "Munich",
+    "current_address": "Agnes-Bernauer-Straße 178, 80687 München",
+    "found_maps_url": "https://www.google.com/maps/place/Tierarztpraxis+M%C3%BCnchen+Laim+Dr.+med.+vet.+Ursula+Link/data=!4m7!3m6!1s0x479dd8782e570921:0x652cf5fabd7d3578!8m2!3d48.1417635!4d11.4852651!16s%2Fg%2F1td4j2z2!19sChIJIQlXLnjYnUcReDV9vfr1LGU?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Tierklinik Oberhaching",
+    "city": "Munich",
+    "current_address": "Bajuwarenring 10, 82041 Oberhaching",
+    "found_maps_url": "https://www.google.com/maps/place/Tierklinik+Oberhaching/data=!4m7!3m6!1s0x479dddbfa2c7f4dd:0xc8a522eefbe448da!8m2!3d48.0320052!4d11.5825403!16s%2Fg%2F1td_44qs!19sChIJ3fTHor_dnUcR2kjk--4ipcg?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Praxis Dr. med. vet. Anette Fach (Oberursel)",
+    "city": "Oberursel",
+    "current_address": "Dornbachstr. 33 a, 61440 Oberursel (Taunus)",
+    "found_maps_url": null,
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "No Info Found In CSVs"
+  },
+  {
+    "practice_name": "Dr. med. vet. Erika Christiansen, Ingrid Kucher, Lehel Kooš GbR",
+    "city": "Stuttgart",
+    "current_address": "Südliche Alleenstraße 6, 71679 Asperg",
+    "found_maps_url": "https://www.google.com/maps/place/Dr.+med.+vet.+Erika+Christiansen,+Ingrid+Kucher,+Lehel+Koo%C5%A1+GbR/data=!4m7!3m6!1s0x4799d16a770ec24f:0x51d1e4874355dfe0!8m2!3d48.9042302!4d9.1471244!16s%2Fg%2F1tftk4zd!19sChIJT8IOd2rRmUcR4N9VQ4fk0VE?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Felmo Mobiler Tierarzt Stuttgart",
+    "city": "Stuttgart",
+    "current_address": "Agnesstraße 17, 70597 Stuttgart",
+    "found_maps_url": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Stuttgart/data=!4m7!3m6!1s0x4799db0d1df75241:0xe4615968680cec2b!8m2!3d48.7520867!4d9.1751811!16s%2Fg%2F11r3s60j5q!19sChIJQVL3HQ3bmUcRK-wMaGhZYeQ?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Kleintierpraxis am Haigst GmbH",
+    "city": "Stuttgart",
+    "current_address": "Alte Weinsteige 100, 70597 Stuttgart",
+    "found_maps_url": "https://www.google.com/maps/place/Kleintierpraxis+am+Haigst+GmbH/data=!4m7!3m6!1s0x4799dcaa56e775cb:0x5798931df1d028f7!8m2!3d48.7549151!4d9.1719186!16s%2Fg%2F1tf6_xh3!19sChIJy3XnVqrcmUcR9yjQ8R2TmFc?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Kleintierpraxis am Wasserturm, JCS Tierarzt Rutesheim GmbH",
+    "city": "Stuttgart",
+    "current_address": "Drescherstraße 53, 71277 Rutesheim",
+    "found_maps_url": "https://www.google.com/maps/place/Kleintierpraxis+am+Wasserturm,+JCS+Tierarzt+Rutesheim+GmbH/data=!4m7!3m6!1s0x479763840e2a26c9:0xf95fa42b0dd769d1!8m2!3d48.8103808!4d8.927621!16s%2Fg%2F11wx1j1ktj!19sChIJySYqDoRjl0cR0WnXDSukX_k?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Kleintierpraxis Dr. Ernst",
+    "city": "Stuttgart",
+    "current_address": "Birkenwaldstraße 214, 70191 Stuttgart",
+    "found_maps_url": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+Ernst/data=!4m7!3m6!1s0x4799dad816650777:0x5eaf75115e7ef513!8m2!3d48.7984113!4d9.1756968!16s%2Fg%2F1v_s4w1t!19sChIJdwdlFtjamUcRE_V-XhF1r14?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  },
+  {
+    "practice_name": "Kleintierpraxis Dr. Späth",
+    "city": "Stuttgart",
+    "current_address": "Rembrandtstraße 15, 70567 Stuttgart",
+    "found_maps_url": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+Sp%C3%A4th/data=!4m7!3m6!1s0x4799dcdb2d18dba3:0xa8a951fe4d13d0f2!8m2!3d48.7282653!4d9.1499572!16s%2Fg%2F1tdwcxd7!19sChIJo9sYLdvcmUcR8tATTf5Rqag?authuser=0&hl=en&rclk=1",
+    "found_website": null,
+    "address_flag": "OK",
+    "mismatch_details": "",
+    "status": "Found New Info"
+  }
+]
