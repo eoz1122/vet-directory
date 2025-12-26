@@ -357,7 +357,7 @@
     "practice_name": "Felmo Mobile Veterinarians",
     "city": "Berlin",
     "district": "Home Visits*",
-    "address": "Alt-Moabit 73/73a, 10555 Berlin",
+    "address": "Alt-Moabit 73/73a, 10555 Berlin (Mobile Service)",
     "coordinates": {
       "lat": 52.52410159999999,
       "lng": 13.3327137
@@ -583,7 +583,7 @@
     "practice_name": "Mobile Tierarztpraxis Berlin - Dr. Pascal Klunder",
     "city": "Berlin",
     "district": "Schöneberg",
-    "address": "Gutzkowstraße 4, 10827 Berlin",
+    "address": "Gutzkowstraße 4, 10827 Berlin (Mobile Service)",
     "coordinates": {
       "lat": 52.4834,
       "lng": 13.3524
@@ -1868,7 +1868,7 @@
         "Confirmed via Google Review: \"speak english and treat my dog very well so far.\"",
         "Confirmed via Google Review: \"and treat my dog very well so far.\""
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -2447,7 +2447,7 @@
       "english_signals": [
         "Verified English Support"
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -2573,7 +2573,7 @@
         "Verified English Support",
         "Jameda Verified"
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -3259,7 +3259,7 @@
       "english_signals": [
         "Verified English Support"
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -3437,7 +3437,7 @@
       "english_signals": [
         "Verified English Support"
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -3667,7 +3667,7 @@
       "english_signals": [
         "Verified English Support"
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -3701,7 +3701,7 @@
     "practice_name": "Felmo Mobiler Tierarzt München",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Am Moosfeld 13, 81829 München",
+    "address": "Am Moosfeld 13, 81829 München (Mobile Service)",
     "coordinates": {
       "lat": 48.134753,
       "lng": 11.658236
@@ -3792,7 +3792,7 @@
       "english_signals": [
         "Confirmed via Google Review: \"speak English was a nice bonus.\""
       ],
-      "emergency": ""
+      "emergency": "24/7"
     },
     "community_status": "Verified"
   },
@@ -3903,7 +3903,7 @@
     "practice_name": "Felmo Mobiler Tierarzt Stuttgart",
     "city": "Stuttgart",
     "district": "Unknown",
-    "address": "Agnesstraße 17, 70597 Stuttgart",
+    "address": "Agnesstraße 17, 70597 Stuttgart (Mobile Service)",
     "coordinates": {
       "lat": 48.7520867,
       "lng": 9.1751811
