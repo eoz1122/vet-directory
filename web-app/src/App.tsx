@@ -9,6 +9,7 @@ import CatRegistrationGermany from './pages/CatRegistrationGermany';
 import EUPetPassport from './pages/EUPetPassport';
 import DogTaxGermany from './pages/DogTaxGermany';
 import CityVets from './pages/CityVets';
+import DistrictVets from './pages/DistrictVets';
 import Impressum from './pages/Impressum';
 import Privacy from './pages/Privacy';
 import CookieConsent from './components/CookieConsent';
@@ -46,6 +47,7 @@ function App() {
           <Route path="/blog/public-transport-with-dogs-stuttgart-2025" element={<PublicTransportStuttgart />} />
           <Route path="/blog/pet-sitting-germany-2025" element={<PetSittingGermany />} />
           <Route path="/vets/:city" element={<CityVets />} />
+          <Route path="/vets/:city/:district" element={<DistrictVets />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>

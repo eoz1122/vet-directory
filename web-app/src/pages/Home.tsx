@@ -122,7 +122,7 @@ const Home: React.FC = () => {
     return (
         <APIProvider apiKey={apiKey} language="en">
             <Helmet>
-                <title>The Pack | 120+ Verified English-Speaking Vets in Germany</title>
+                <title>The Pack | 170+ Verified English-Speaking Vets in Germany</title>
                 <meta name="description" content="Find verified English-speaking veterinarians in Berlin, Hamburg, Frankfurt and more. Germany's most comprehensive community-sourced vet directory." />
                 <script type="application/ld+json">
                     {JSON.stringify(jsonLd)}
@@ -208,8 +208,8 @@ const Home: React.FC = () => {
                                                 key={km}
                                                 onClick={() => setSearchRadius(km)}
                                                 className={`px-3 py-1.5 rounded-lg border transition-all whitespace-nowrap ${searchRadius === km
-                                                        ? 'bg-primary text-white border-primary'
-                                                        : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
+                                                    ? 'bg-primary text-white border-primary'
+                                                    : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
                                                     }`}
                                             >
                                                 {km} km
@@ -218,8 +218,8 @@ const Home: React.FC = () => {
                                         <button
                                             onClick={() => setSearchRadius(null)}
                                             className={`px-3 py-1.5 rounded-lg border transition-all whitespace-nowrap ${searchRadius === null
-                                                    ? 'bg-primary text-white border-primary'
-                                                    : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
+                                                ? 'bg-primary text-white border-primary'
+                                                : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
                                                 }`}
                                         >
                                             Any Distance
