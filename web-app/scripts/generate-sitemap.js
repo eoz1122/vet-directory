@@ -104,15 +104,31 @@ function generateSitemap() {
         ...blogRoutes
     ];
 
+    const escapeXml = (unsafe) => {
+        return unsafe.replace(/[<>&'"]/g, (c) => {
+            switch (c) {
+                case '<': return '&lt;';
+                case '>': return '&gt;';
+                case '&': return '&amp;';
+                case '\'': return '&apos;';
+                case '"': return '&quot;';
+            }
+        });
+    };
+
     const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allRoutes.map(route => `  <url>
-    <loc>${BASE_URL}${route.url.startsWith('/') ? route.url.substring(1) : route.url}</loc>
+${allRoutes.map(route => {
+        const fullUrl = `${BASE_URL}${route.url.startsWith('/') ? '' : '/'}${route.url}`;
+        return `  <url>
+    <loc>${escapeXml(fullUrl)}</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
-  </url>`).join('\n')}
+  </url>`;
+    }).join('\n')}
 </urlset>`;
+
 
     fs.writeFileSync(OUTPUT_FILE, sitemapContent);
     console.log(`Sitemap generated with ${allRoutes.length} URLs at ${OUTPUT_FILE}`);

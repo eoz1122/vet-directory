@@ -23,6 +23,8 @@ import PublicTransportStuttgart from './pages/PublicTransportStuttgart';
 import PetSittingGermany from './pages/PetSittingGermany';
 import Blog from './pages/Blog';
 import GermanVetPhrases from './pages/GermanVetPhrases';
+import PetInsuranceGermany from './pages/PetInsuranceGermany';
+
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
           <Route path="/blog/public-transport-with-dogs-munich-2025" element={<PublicTransportMunich />} />
           <Route path="/blog/public-transport-with-dogs-stuttgart-2025" element={<PublicTransportStuttgart />} />
           <Route path="/blog/pet-sitting-germany-2025" element={<PetSittingGermany />} />
+          <Route path="/blog/pet-insurance-germany-2025" element={<PetInsuranceGermany />} />
+
           <Route path="/vets/:city" element={<CityVets />} />
           <Route path="/vets/:city/:district" element={<DistrictVets />} />
           <Route path="/impressum" element={<Impressum />} />

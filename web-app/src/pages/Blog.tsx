@@ -87,6 +87,13 @@ const blogPosts = [
         emoji: "🩺",
         category: "Safety",
         desc: "Essential medical German for pet owners. From describing symptoms like 'Durchfall' to making emergency appointments."
+    },
+    {
+        url: "/blog/pet-insurance-germany-2025",
+        title: "Pet Insurance in Germany (2025)",
+        emoji: "💰",
+        category: "Bureaucracy",
+        desc: "Do you really need it? Understanding liability vs. health insurance, the GOT fees, and why emergencies are so expensive."
     }
 ];
 

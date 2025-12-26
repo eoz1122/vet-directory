@@ -425,8 +425,10 @@ const Home: React.FC = () => {
                                         { emoji: '🐕', title: 'Moving to Germany Guide', link: '/blog/moving-to-germany-with-pet-2025' },
                                         { emoji: '🐱', title: 'Cat Registration', link: '/blog/cat-registration-germany-2025' },
                                         { emoji: '🛂', title: 'EU Pet Passports', link: '/blog/eu-pet-passport-germany-2025' },
-                                        { emoji: '💶', title: 'Dog Tax (Hundesteuer)', link: '/blog/hundesteuer-dog-tax-germany-2025' }
+                                        { emoji: '💶', title: 'Dog Tax (Hundesteuer)', link: '/blog/hundesteuer-dog-tax-germany-2025' },
+                                        { emoji: '💰', title: 'Pet Insurance Guide', link: '/blog/pet-insurance-germany-2025' }
                                     ].map(item => (
+
                                         <Link key={item.link} to={item.link} className="flex items-center gap-3 text-primary group">
                                             <span className="text-lg grayscale group-hover:grayscale-0 transition-all">{item.emoji}</span>
                                             <p className="font-semibold text-xs group-hover:text-accent transition-colors">{item.title}</p>
