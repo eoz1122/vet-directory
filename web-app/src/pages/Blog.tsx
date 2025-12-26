@@ -5,6 +5,20 @@ import Footer from '../components/Footer';
 
 const blogPosts = [
     {
+        url: "/guides/pet-emergency-germany",
+        title: "🚨 Pet Emergency Guide",
+        emoji: "🚑",
+        category: "EMERGENCY",
+        desc: "Complete survival guide for pet emergencies in Germany. Know where to go, what to expect, costs, and emergency numbers BEFORE you need them."
+    },
+    {
+        url: "/guides/emergency-vets-berlin",
+        title: "24/7 Emergency Vets: Berlin",
+        emoji: "🏥",
+        category: "EMERGENCY",
+        desc: "5 verified 24/7 emergency clinics in Berlin with English-speaking staff. Phone numbers, addresses, and what to expect."
+    },
+    {
         url: "/blog/pet-sitting-germany-2025",
         title: "Pet Sitting in Germany (2025)",
         emoji: "🏡",
