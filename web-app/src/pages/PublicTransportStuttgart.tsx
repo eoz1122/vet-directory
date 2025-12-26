@@ -8,7 +8,7 @@ import BlogSidebar from '../components/BlogSidebar';
 
 export default function PublicTransportStuttgart() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Public Transport with Dogs in Stuttgart (2025 VVS Guide) | EnglishSpeakingVets</title>
                 <meta name="description" content="Guide to taking dogs on public transport in Stuttgart (VVS). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
@@ -59,15 +59,15 @@ export default function PublicTransportStuttgart() {
                             <h3 className="text-lg font-bold mt-6 mb-2">Special Cases:</h3>
 
                             <div className="grid md:grid-cols-2 gap-6 mb-8 not-prose">
-                                <div className="bg-green-50 p-6 rounded-xl border border-green-100">
-                                    <h4 className="font-bold text-green-900 mt-0">Small Pets in Carriers: FREE</h4>
-                                    <p className="text-sm text-green-800 mb-0">
+                                <div className="bg-primary/5 p-6 rounded-xl border border-primary/10">
+                                    <h4 className="font-bold text-primary mt-0">Small Pets in Carriers: FREE</h4>
+                                    <p className="text-sm text-primary/80 mb-0">
                                         Small pets (cats, rabbits, small dogs) in closed carriers or bags are considered "hand luggage" and travel for free.
                                     </p>
                                 </div>
-                                <div className="bg-green-50 p-6 rounded-xl border border-green-100">
-                                    <h4 className="font-bold text-green-900 mt-0">Service Dogs: FREE</h4>
-                                    <p className="text-sm text-green-800 mb-0">
+                                <div className="bg-primary/5 p-6 rounded-xl border border-primary/10">
+                                    <h4 className="font-bold text-primary mt-0">Service Dogs: FREE</h4>
+                                    <p className="text-sm text-primary/80 mb-0">
                                         Guide dogs for the blind, police dogs, and official service dogs travel free and are exempt from ticket/muzzle rules.
                                     </p>
                                 </div>
@@ -124,7 +124,7 @@ export default function PublicTransportStuttgart() {
 
                             <h2 id="deutschlandticket" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Deutschlandticket: The Stuttgart Bonus</h2>
 
-                            <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6 not-prose">
+                            <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 my-6 not-prose">
                                 <h3 className="text-xl font-bold text-primary mt-0 mb-3">Important: The local exemption</h3>
                                 <p className="mb-4 text-primary/80">
                                     If you have a <strong>Deutschlandticket</strong> (€58/month in 2025), traveling with your dog in Stuttgart has a very specific "local vs. visitor" rule:
@@ -138,14 +138,14 @@ export default function PublicTransportStuttgart() {
                             <h2 id="leash-muzzle" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Leash & Muzzle Requirements</h2>
 
                             <div className="space-y-4 not-prose">
-                                <div className="bg-white p-6 rounded-xl border-l-4 border-red-500">
+                                <div className="bg-white p-6 rounded-xl border-l-4 border-accent">
                                     <h3 className="text-lg font-bold mt-0 mb-2 text-primary">Leash: Mandatory</h3>
                                     <p className="mb-0 text-primary/80">
                                         Mandatory at all times in vehicles and stations. No exceptions. Even the calmest dog must be on a leash.
                                     </p>
                                 </div>
 
-                                <div className="bg-white p-6 rounded-xl border-l-4 border-yellow-500">
+                                <div className="bg-white p-6 rounded-xl border-l-4 border-primary">
                                     <h3 className="text-lg font-bold mt-0 mb-2 text-primary">Muzzle: "Risk-Based"</h3>
                                     <p className="mb-2 text-primary/80">Stuttgart does not have a blanket muzzle requirement, but they are mandatory for:</p>
                                     <ul className="list-disc pl-5 text-sm mb-0 text-primary/80">
@@ -241,15 +241,15 @@ export default function PublicTransportStuttgart() {
                                 </div>
                             </div>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
                                 <div className="relative z-10">
                                     <h2 className="text-3xl font-bold text-accent mb-4 mt-0">The Bottom Line</h2>
                                     <p className="text-lg leading-relaxed opacity-90">
                                         Stuttgart is wonderfully dog-friendly, though you'll need to budget for those tickets. Pro tip: Always use the app to buy tickets—it's cheaper and easier!
                                     </p>
-                                    <div className="mt-8 pt-6 border-t border-[#F5EBE0]/20">
+                                    <div className="mt-8 pt-6 border-t border-white/20">
                                         <p className="font-bold mb-2">Need a vet in Stuttgart?</p>
-                                        <Link to="/vets/stuttgart" className="inline-block px-6 py-2 bg-accent text-primary font-bold rounded-lg hover:bg-white transition-colors">
+                                        <Link to="/vets/stuttgart" className="inline-block px-6 py-2 bg-accent text-primary font-bold rounded-lg hover:bg-secondary hover:text-accent transition-colors">
                                             Browse Stuttgart Vets
                                         </Link>
                                     </div>

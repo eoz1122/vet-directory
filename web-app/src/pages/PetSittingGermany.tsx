@@ -8,7 +8,7 @@ import TableOfContents from '../components/TableOfContents';
 
 export default function PetSittingGermany() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-[#1B4332]">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Pet Sitting in Germany (2025): Finding a Safe Home for Your Little Friends</title>
                 <meta name="description" content="A complete guide to finding pet sitters in Germany. Comparing Pawshake, Cat in a Flat, pensions, and community options for expats." />
@@ -114,9 +114,9 @@ export default function PetSittingGermany() {
                             <p>
                                 German liability law (§ 833 BGB) states that YOU, the owner, are liable for damages caused by your animal, even if you are not there.
                             </p>
-                            <div className="bg-red-50 border-l-4 border-red-400 p-6 my-6 rounded-r-lg">
-                                <h4 className="font-bold text-red-800 mb-2">Scenario:</h4>
-                                <p className="text-red-700 text-sm">
+                            <div className="bg-accent/10 border-l-4 border-accent p-6 my-6 rounded-r-lg not-prose">
+                                <h4 className="font-bold text-primary mb-2">Scenario:</h4>
+                                <p className="text-primary/80 text-sm">
                                     Your dog pulls the leash out of the sitter's hand and causes a cyclist to fall. The cyclist breaks an arm. <strong>Your</strong> "Hundehaftpflichtversicherung" (Dog Liability Insurance) must cover this.
                                 </p>
                             </div>
@@ -134,14 +134,14 @@ export default function PetSittingGermany() {
                                 <li><strong>Passport:</strong> Leave the EU Pet Passport visible on the table.</li>
                             </ul>
 
-                            <div className="mt-12 p-8 bg-secondary/30 rounded-2xl text-center">
-                                <h3 className="text-2xl font-bold text-primary mb-4">Need a Vet while you're away?</h3>
-                                <p className="mb-6 text-primary/70">
+                            <div className="mt-12 p-8 bg-primary text-secondary rounded-2xl text-center not-prose">
+                                <h3 className="text-2xl font-bold text-accent mb-4">Need a Vet while you're away?</h3>
+                                <p className="mb-6 opacity-90">
                                     Make sure your sitter knows where to go. Find a verified English-speaking vet near you.
                                 </p>
                                 <Link
                                     to="/"
-                                    className="inline-block bg-accent hover:bg-accent-dark text-white font-bold py-3 px-8 rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl"
+                                    className="inline-block bg-accent hover:bg-white hover:text-accent text-primary font-bold py-3 px-8 rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl"
                                 >
                                     Search Vet Directory
                                 </Link>

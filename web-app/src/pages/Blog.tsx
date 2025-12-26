@@ -92,7 +92,7 @@ const blogPosts = [
 
 export default function Blog() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Expat Dog & Cat Guides Germany | EnglishSpeakingVets</title>
                 <meta name="description" content="Essential guides for pet owners in Germany. Dog tax, public transport rules, finding apartments, and EU pet passports explained for expats." />
@@ -119,7 +119,7 @@ export default function Blog() {
                             to={post.url}
                             className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-primary/5 group flex flex-col"
                         >
-                            <div className="p-8 flex items-start justify-between bg-secondary/10 border-b border-primary/5">
+                            <div className="p-8 flex items-start justify-between bg-primary/5 border-b border-primary/5">
                                 <span className="text-5xl">{post.emoji}</span>
                                 <span className="px-3 py-1 bg-white text-xs font-bold rounded-full uppercase tracking-wider text-primary/60 border border-primary/10">
                                     {post.category}

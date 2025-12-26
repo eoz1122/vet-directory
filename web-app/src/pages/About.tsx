@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 
 export default function About() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary relative overflow-hidden">
+        <div className="min-h-screen bg-secondary font-sans text-primary relative overflow-hidden">
 
             {/* Header / Nav */}
             {/* Header / Nav */}

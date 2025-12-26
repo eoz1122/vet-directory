@@ -8,7 +8,7 @@ import BlogSidebar from '../components/BlogSidebar';
 
 export default function EUPetPassport() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>EU Pet Passports: Why You Need One and How to Get It | EnglishSpeakingVets</title>
                 <meta name="description" content="Living in Germany? Learn how to get an EU Pet Passport for your dog or cat. Valid indefinitely for travel across Europe. Step-by-step guide for expats in 2025." />
@@ -76,16 +76,16 @@ export default function EUPetPassport() {
                             </p>
 
                             <div className="grid md:grid-cols-2 gap-6 my-8 not-prose">
-                                <div className="bg-red-50 p-6 rounded-xl border border-red-200">
-                                    <h3 className="text-lg font-bold text-red-800 mb-2 mt-0">❌ With a Health Certificate:</h3>
-                                    <p className="text-sm text-red-900/80 mb-0">
+                                <div className="bg-accent/10 p-6 rounded-xl border border-accent/20">
+                                    <h3 className="text-lg font-bold text-primary mb-2 mt-0">❌ With a Health Certificate:</h3>
+                                    <p className="text-sm text-primary/80 mb-0">
                                         You'd need a vet appointment, pay €100+, and obtain a new certificate issued within 10 days of travel — <strong>every single time</strong>.
                                     </p>
                                 </div>
 
-                                <div className="bg-green-50 p-6 rounded-xl border border-green-200">
-                                    <h3 className="text-lg font-bold text-green-800 mb-2 mt-0">✅ With an EU Pet Passport:</h3>
-                                    <p className="text-sm text-green-900/80 mb-0">
+                                <div className="bg-primary/5 p-6 rounded-xl border border-primary/10">
+                                    <h3 className="text-lg font-bold text-primary mb-2 mt-0">✅ With an EU Pet Passport:</h3>
+                                    <p className="text-sm text-primary/80 mb-0">
                                         You grab the leash, pack some kibble, and go.
                                     </p>
                                 </div>
@@ -156,7 +156,7 @@ export default function EUPetPassport() {
                             <p>
                                 Some countries have additional rules even with a passport.
                             </p>
-                            <p className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 text-sm text-yellow-900/80">
+                            <p className="bg-accent/10 p-4 rounded-lg border-l-4 border-accent text-sm text-primary/80">
                                 If you're traveling with a dog to <strong>Ireland, Malta, Finland, or Norway</strong>, your dog must receive a tapeworm treatment from a vet <strong>1–5 days before entry</strong>. This treatment must be recorded and stamped in the passport.
                             </p>
 
@@ -178,23 +178,23 @@ export default function EUPetPassport() {
                                 </div>
                             </div>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
                                 <div className="relative z-10">
                                     <h2 className="text-3xl font-bold text-accent mb-4 mt-0">🐾 The Bottom Line</h2>
                                     <p className="text-lg leading-relaxed opacity-90">
                                         If you plan to live in Germany for more than a few months, the EU Pet Passport is one of the smartest investments you can make. It turns cross-border travel from a bureaucratic headache into a simple grab-and-go routine.
                                     </p>
-                                    <div className="mt-8 pt-6 border-t border-[#F5EBE0]/20">
+                                    <div className="mt-8 pt-6 border-t border-white/20">
                                         <p className="font-bold mb-2">Need a vet to issue your passport?</p>
                                         <p className="text-sm opacity-80 mb-4">Browse our city guides to find an expat-friendly clinic today:</p>
                                         <div className="flex flex-wrap gap-2">
-                                            <Link to="/vets/berlin" className="text-sm px-3 py-1 bg-accent/20 hover:bg-accent/30 rounded-full transition-colors">
+                                            <Link to="/vets/berlin" className="text-sm px-3 py-1 bg-secondary text-primary hover:bg-white rounded-full transition-colors">
                                                 English-Speaking Vets in Berlin
                                             </Link>
-                                            <Link to="/vets/hamburg" className="text-sm px-3 py-1 bg-accent/20 hover:bg-accent/30 rounded-full transition-colors">
+                                            <Link to="/vets/hamburg" className="text-sm px-3 py-1 bg-secondary text-primary hover:bg-white rounded-full transition-colors">
                                                 English-Speaking Vets in Hamburg
                                             </Link>
-                                            <Link to="/vets/frankfurt" className="text-sm px-3 py-1 bg-accent/20 hover:bg-accent/30 rounded-full transition-colors">
+                                            <Link to="/vets/frankfurt" className="text-sm px-3 py-1 bg-secondary text-primary hover:bg-white rounded-full transition-colors">
                                                 English-Speaking Vets in Frankfurt
                                             </Link>
                                         </div>

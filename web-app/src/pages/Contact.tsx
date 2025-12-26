@@ -55,7 +55,7 @@ export default function Contact() {
     }
 
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             {/* Header / Nav */}
             <Header />
 
@@ -95,7 +95,7 @@ export default function Contact() {
                                     name="topic"
                                     value={formData.topic}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-secondary/30 border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 text-primary"
+                                    className="w-full px-4 py-3 bg-primary/5 border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 text-primary"
                                 >
                                     <option value="general">Ask a General Question</option>
                                     <option value="submit_vet">Submit a New Vet Recommendation</option>
@@ -114,7 +114,7 @@ export default function Contact() {
                                         required
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-secondary/30 border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+                                        className="w-full px-4 py-3 bg-primary/5 border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
                                         placeholder="Jane Doe"
                                     />
                                 </div>
@@ -127,7 +127,7 @@ export default function Contact() {
                                         required
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-secondary/30 border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+                                        className="w-full px-4 py-3 bg-primary/5 border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
                                         placeholder="jane@example.com"
                                     />
                                 </div>
@@ -135,7 +135,7 @@ export default function Contact() {
 
                             {/* Dynamic Fields for Vet Submission */}
                             {formData.topic === 'submit_vet' && (
-                                <div className="p-6 bg-secondary/20 rounded-xl space-y-4 border border-primary/5 animate-fade-in">
+                                <div className="p-6 bg-primary/5 rounded-xl space-y-4 border border-primary/5 animate-fade-in">
                                     <h4 className="font-bold text-accent text-sm uppercase tracking-wider mb-2">Practice Details</h4>
 
                                     <div>
@@ -242,7 +242,7 @@ export default function Contact() {
                                     rows={5}
                                     value={formData.message}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-secondary/30 border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
+                                    className="w-full px-4 py-3 bg-primary/5 border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
                                     placeholder={
                                         formData.topic === 'submit_vet' ? "Tell us about your experience! Did they speak clear English? Were they kind to your pet?" :
                                             formData.topic === 'report_issue' ? "Let us know which clinic needs updating and what the correct info is." :

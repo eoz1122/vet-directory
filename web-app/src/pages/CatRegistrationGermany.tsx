@@ -8,7 +8,7 @@ import BlogSidebar from '../components/BlogSidebar';
 
 export default function CatRegistrationGermany() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Cat Registration in Germany: Do You Need to Tell the Bürgeramt? | EnglishSpeakingVets</title>
                 <meta name="description" content="Moving to Germany with a cat? Learn the 2025/2026 rules for cat registration, microchipping, and neutering requirements in Berlin, Hamburg, and Frankfurt." />
@@ -52,12 +52,12 @@ export default function CatRegistrationGermany() {
                                 I've watched countless expats panic over this, so let's cut through the confusion with the real facts about cat ownership in Germany for 2025 and 2026.
                             </p>
 
-                            <div className="bg-green-50 p-8 rounded-2xl shadow-sm my-8 border border-green-100 not-prose">
-                                <h2 id="no-tax" className="text-2xl font-bold text-green-800 mb-4 mt-0 scroll-mt-24">✅ The Good News: No Cat Tax</h2>
-                                <p className="text-green-900/80 mb-4">
+                            <div className="bg-primary/5 p-8 rounded-2xl shadow-sm my-8 border border-primary/10 not-prose">
+                                <h2 id="no-tax" className="text-2xl font-bold text-primary mb-4 mt-0 scroll-mt-24">✅ The Good News: No Cat Tax</h2>
+                                <p className="text-primary/80 mb-4">
                                     Let's start with the relief. There is <strong>no Hundesteuer for cats in Germany</strong>. Not in Berlin. Not in Hamburg. Not in Frankfurt or Munich.
                                 </p>
-                                <p className="text-green-900/80 mb-0">
+                                <p className="text-primary/80 mb-0">
                                     Dogs get taxed anywhere from €90–€150+ per year. Cats? They're off the hook. You won't receive a tax bill from your local Bürgeramt for owning a cat, and you don't need to register them with the tax office.
                                 </p>
                             </div>
@@ -85,7 +85,7 @@ export default function CatRegistrationGermany() {
                             <p>Germany is a fan of local ordinances. Here's the 2025/2026 status for the big hubs:</p>
 
                             <div className="space-y-4 my-8 not-prose">
-                                <div className="bg-white p-6 rounded-xl border-l-4 border-red-500 shadow-sm">
+                                <div className="bg-white p-6 rounded-xl border-l-4 border-accent shadow-sm">
                                     <h3 className="text-lg font-bold mb-2 mt-0">
                                         <Link to="/vets/berlin" className="text-primary hover:text-accent">Berlin</Link> ✅ MANDATORY
                                     </h3>
@@ -94,7 +94,7 @@ export default function CatRegistrationGermany() {
                                     </p>
                                 </div>
 
-                                <div className="bg-white p-6 rounded-xl border-l-4 border-orange-500 shadow-sm">
+                                <div className="bg-white p-6 rounded-xl border-l-4 border-primary shadow-sm">
                                     <h3 className="text-lg font-bold mb-2 mt-0">
                                         <Link to="/vets/hamburg" className="text-primary hover:text-accent">Hamburg</Link> ✅ MANDATORY (Starting Jan 2026)
                                     </h3>
@@ -103,7 +103,7 @@ export default function CatRegistrationGermany() {
                                     </p>
                                 </div>
 
-                                <div className="bg-white p-6 rounded-xl border-l-4 border-yellow-500 shadow-sm">
+                                <div className="bg-white p-6 rounded-xl border-l-4 border-accent shadow-sm">
                                     <h3 className="text-lg font-bold mb-2 mt-0">
                                         <Link to="/vets/frankfurt" className="text-primary hover:text-accent">Frankfurt</Link> & Hesse ⚠️ VARIES
                                     </h3>
@@ -112,7 +112,7 @@ export default function CatRegistrationGermany() {
                                     </p>
                                 </div>
 
-                                <div className="bg-white p-6 rounded-xl border-l-4 border-yellow-500 shadow-sm">
+                                <div className="bg-white p-6 rounded-xl border-l-4 border-primary shadow-sm">
                                     <h3 className="text-lg font-bold mb-2 mt-0">NRW (Cologne/Düsseldorf) ⚠️ VARIES</h3>
                                     <p className="text-sm mb-0 text-primary/70">
                                         Over 100 cities in NRW have these laws.
@@ -120,9 +120,9 @@ export default function CatRegistrationGermany() {
                                 </div>
                             </div>
 
-                            <p className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 text-sm text-yellow-900/80 mb-8">
+                            <div className="bg-accent/10 p-4 rounded-lg border-l-4 border-accent text-sm text-primary/80 mb-8">
                                 <strong>The takeaway:</strong> Don't assume. Search for "Katzenschutzverordnung + [Your City]" to be 100% sure.
-                            </p>
+                            </div>
 
                             <h2 id="why-register" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">💡 Why Register Your Cat's Microchip (Even for Indoor Cats)</h2>
                             <p>Even if it isn't legally required for your "couch potato" cat, registering is the smartest thing you can do.</p>
@@ -194,22 +194,22 @@ export default function CatRegistrationGermany() {
                                 </div>
                             </div>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
                                 <div className="relative z-10">
                                     <h2 className="text-3xl font-bold text-accent mb-4 mt-0">🐾 The Bottom Line</h2>
                                     <p className="text-lg leading-relaxed opacity-90">
                                         You don't need to visit the Bürgeramt or pay a "cat tax." But if you love your cat, chip them and register that chip. It's the "quietest" piece of German bureaucracy, but it's the one that brings your best friend home.
                                     </p>
-                                    <div className="mt-8 pt-6 border-t border-[#F5EBE0]/20">
+                                    <div className="mt-8 pt-6 border-t border-white/20">
                                         <p className="font-bold mb-2">Need a vet for microchipping?</p>
                                         <div className="flex flex-wrap gap-2 mt-4">
-                                            <Link to="/vets/berlin" className="text-sm px-3 py-1 bg-accent/20 hover:bg-accent/30 rounded-full transition-colors">
+                                            <Link to="/vets/berlin" className="text-sm px-3 py-1 bg-secondary text-primary hover:bg-white rounded-full transition-colors">
                                                 English-Speaking Vets in Berlin
                                             </Link>
-                                            <Link to="/vets/hamburg" className="text-sm px-3 py-1 bg-accent/20 hover:bg-accent/30 rounded-full transition-colors">
+                                            <Link to="/vets/hamburg" className="text-sm px-3 py-1 bg-secondary text-primary hover:bg-white rounded-full transition-colors">
                                                 English-Speaking Vets in Hamburg
                                             </Link>
-                                            <Link to="/vets/frankfurt" className="text-sm px-3 py-1 bg-accent/20 hover:bg-accent/30 rounded-full transition-colors">
+                                            <Link to="/vets/frankfurt" className="text-sm px-3 py-1 bg-secondary text-primary hover:bg-white rounded-full transition-colors">
                                                 English-Speaking Vets in Frankfurt
                                             </Link>
                                         </div>

@@ -7,7 +7,7 @@ import BlogSidebar from '../components/BlogSidebar';
 
 export default function GermanVetPhrases() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>German Vet Survival Kit: Essential Phrases for Expats | EnglishSpeakingVets</title>
                 <meta name="description" content="Learn the essential German words and phrases for visiting the vet with your pet. From making appointments to describing symptoms like Durchfall." />
@@ -138,7 +138,7 @@ export default function GermanVetPhrases() {
                                     <p className="text-sm m-0">(Do you accept card payment?)</p>
                                 </div>
                             </div>
-                            <p className="mt-6 text-sm bg-orange-50 p-4 border border-orange-200 rounded-lg text-orange-900 not-prose">
+                            <p className="mt-6 text-sm bg-accent/10 p-4 border border-accent/20 rounded-lg text-primary not-prose">
                                 <strong>⚠️ Important:</strong> Many German vets accept only Girocard (EC-Karte) — not credit cards. Asking this early avoids an extra wave of stress.
                             </p>
 

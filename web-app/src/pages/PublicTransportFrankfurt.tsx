@@ -8,7 +8,7 @@ import BlogSidebar from '../components/BlogSidebar';
 
 export default function PublicTransportFrankfurt() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Public Transport with Dogs in Frankfurt (RMV): The 2025 Expat Survival Guide | EnglishSpeakingVets</title>
                 <meta name="description" content="Moving to Frankfurt with a dog? Read the 2025 guide to RMV transport rules. Learn why dogs ride for free and how to navigate the 'muzzle gray zone'." />
@@ -59,7 +59,7 @@ export default function PublicTransportFrankfurt() {
                                 In Frankfurt and the surrounding RMV region, the rule is refreshingly simple: <strong>Dogs ride for free.</strong>
                             </p>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-8 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-8 relative overflow-hidden not-prose">
                                 <h3 className="text-xl font-bold text-accent mb-2 mt-0">🐕 Do Dogs Need a Ticket? No.</h3>
                                 <p className="font-medium text-lg mb-4">Whether your dog is a tiny Terrier or a massive Mastiff, they do not need their own ticket on RMV public transport.</p>
                                 <ul className="space-y-2 list-none pl-0">
@@ -80,13 +80,13 @@ export default function PublicTransportFrankfurt() {
                             </p>
 
                             <div className="grid md:grid-cols-2 gap-6 my-6 not-prose">
-                                <div className="bg-white p-6 rounded-xl border border-primary/5">
+                                <div className="bg-white p-6 rounded-xl border border-primary/10">
                                     <h3 className="font-bold text-lg mb-2 text-primary">🦮 Leash: REQUIRED</h3>
                                     <p className="text-sm text-primary/80">
                                         This is non-negotiable. All dogs must be kept on a lead and under control at all times.
                                     </p>
                                 </div>
-                                <div className="bg-white p-6 rounded-xl border border-primary/5">
+                                <div className="bg-white p-6 rounded-xl border border-primary/10">
                                     <h3 className="font-bold text-lg mb-2 text-primary">😬 The Muzzle Rule</h3>
                                     <p className="text-sm text-primary/80">
                                         RMV’s official wording states that dogs "which could endanger passengers" must wear a muzzle.
@@ -98,12 +98,12 @@ export default function PublicTransportFrankfurt() {
                                 <strong>What does this mean?</strong> There is no specific weight limit or breed list mentioned in the transport rules. It is largely up to the <strong>discretion of the transport staff</strong> (drivers and ticket inspectors).
                             </p>
 
-                            <div className="bg-primary/5 p-6 rounded-xl my-6 not-prose">
-                                <h3 className="text-lg font-bold mb-2">🧠 Reality Check</h3>
+                            <div className="bg-white p-6 rounded-xl border border-primary/10 my-6 not-prose">
+                                <h3 className="text-lg font-bold mb-2 text-primary">🧠 Reality Check</h3>
                                 <p className="mb-4 text-primary/80">
                                     In daily life, most well-behaved dogs in Frankfurt travel without a muzzle. However, if a train is extremely crowded or your dog is acting nervous/agitated, an inspector has the right to ask you to put one on.
                                 </p>
-                                <h3 className="text-lg font-bold mb-2">✅ Practical Expat Strategy</h3>
+                                <h3 className="text-lg font-bold mb-2 text-primary">✅ Practical Expat Strategy</h3>
                                 <p className="mb-0 text-primary/80">
                                     Always carry a muzzle in your bag. You likely won't need to use it, but having one proves you are a responsible owner if you are ever challenged by a driver or a concerned passenger.
                                 </p>
@@ -125,8 +125,8 @@ export default function PublicTransportFrankfurt() {
                                     <h3 className="font-bold text-base mb-1 text-primary">⏰ The "Main" Rush Hour</h3>
                                     <p className="text-sm mb-0 text-primary/80">Frankfurt is a business city, and the S-Bahn gets incredibly packed between <strong>07:30–09:00</strong> and <strong>16:30–18:30</strong>. Large dogs are much safer in the "multi-purpose" areas (usually marked with a bicycle or stroller icon) where there is more floor space.</p>
                                 </div>
-                                <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-red-500">
-                                    <h3 className="font-bold text-base mb-1 text-red-600">🛗 Elevators vs. Escalators</h3>
+                                <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                    <h3 className="font-bold text-base mb-1 text-primary">🛗 Elevators vs. Escalators</h3>
                                     <p className="text-sm mb-0 text-primary/80">Frankfurt’s deeper U-Bahn stations have long escalators. Never take your dog on these. Paw injuries from the metal "teeth" are common. Stick to the <em>Aufzüge</em> (elevators).</p>
                                 </div>
                                 <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-accent">
@@ -142,7 +142,7 @@ export default function PublicTransportFrankfurt() {
                                 <li><strong>Free Travel:</strong> Small pets in carriers always travel for free and do not need a ticket.</li>
                             </ul>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-12 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-12 relative overflow-hidden not-prose">
                                 <h2 className="text-3xl font-bold text-accent mb-4 mt-0">🏠 A Note from the Sofa</h2>
                                 <p className="text-lg leading-relaxed opacity-90">
                                     Frankfurt's transit system is one of the most practical I’ve used. There’s something great about being able to hop on the S-Bahn at Hauptwache and be walking in the forest in 20 minutes without ever reaching for your wallet to buy a "dog ticket." Just remember that Frankfurt commuters can be a bit more "business-focused" than the relaxed crowds in Hamburg. Keep your dog close, carry a muzzle just in case, and you’ll find the RMV is a fantastic way to explore Hessen with your best friend.

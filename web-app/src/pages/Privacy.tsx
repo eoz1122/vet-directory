@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 
 export default function Privacy() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             {/* Header */}
             {/* Header */}
             <Header />

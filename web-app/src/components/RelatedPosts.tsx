@@ -81,8 +81,8 @@ export default function RelatedPosts({ currentPath }: RelatedPostsProps) {
     const displayPosts = related.slice(0, 4);
 
     return (
-        <section className="bg-[#F5EBE0] p-8 rounded-2xl border border-[#1B4332]/10 mt-12">
-            <h3 className="font-bold text-[#1B4332] mb-6 text-xl flex items-center gap-2">
+        <section className="bg-secondary p-8 rounded-2xl border border-primary/10 mt-12">
+            <h3 className="font-bold text-primary mb-6 text-xl flex items-center gap-2">
                 <span>📚</span> More Guides for Expats
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
@@ -90,14 +90,14 @@ export default function RelatedPosts({ currentPath }: RelatedPostsProps) {
                     <Link
                         key={post.url}
                         to={post.url}
-                        className="bg-white p-4 rounded-xl border border-[#1B4332]/5 hover:border-[#FB8500] hover:shadow-sm transition-all flex items-start gap-3 group"
+                        className="bg-white p-4 rounded-xl border border-primary/5 hover:border-accent hover:shadow-sm transition-all flex items-start gap-3 group"
                     >
                         <span className="text-2xl mt-0.5">{post.emoji}</span>
                         <div>
-                            <p className="font-bold text-[#1B4332] text-sm group-hover:text-[#FB8500] transition-colors">
+                            <p className="font-bold text-primary text-sm group-hover:text-accent transition-colors">
                                 {post.title}
                             </p>
-                            <p className="text-xs text-[#1B4332]/60 mt-0.5">{post.desc}</p>
+                            <p className="text-xs text-primary/60 mt-0.5">{post.desc}</p>
                         </div>
                     </Link>
                 ))}

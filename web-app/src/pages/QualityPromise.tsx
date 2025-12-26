@@ -92,7 +92,7 @@ export default function QualityPromise() {
                 </section>
 
                 {/* Be a Part of the Story */}
-                <section className="bg-[#1B4332]/5 p-8 rounded-2xl border border-dashed border-primary/20 space-y-4">
+                <section className="bg-primary/5 p-8 rounded-2xl border border-dashed border-primary/20 space-y-4">
                     <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
                         Be a Part of the Story
                     </h2>

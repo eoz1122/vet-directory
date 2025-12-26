@@ -8,7 +8,7 @@ import BlogSidebar from '../components/BlogSidebar';
 
 export default function DogTaxGermany() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>The Expat Guide to Hundesteuer (Dog Tax) in Germany – 2025 | EnglishSpeakingVets</title>
                 <meta name="description" content="Complete guide to Hundesteuer (dog tax) in Germany for expats. Learn registration requirements, costs, exemptions, and how to avoid fines in Berlin, Hamburg, Munich, and Frankfurt." />
@@ -58,8 +58,8 @@ export default function DogTaxGermany() {
                                 Although the money goes into the city's general budget, it's commonly associated with dog infrastructure like parks, waste bins, and public cleaning services.
                             </p>
 
-                            <div className="bg-green-50 p-6 rounded-xl border border-green-200 my-6 not-prose">
-                                <p className="text-sm text-green-900/80 mb-0">
+                            <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 my-6 not-prose">
+                                <p className="text-sm text-primary/80 mb-0">
                                     <strong>The good news:</strong> Cats, rabbits, birds, and other pets are tax-free. Only dogs are taxed.
                                 </p>
                             </div>
@@ -125,9 +125,9 @@ export default function DogTaxGermany() {
                                 </table>
                             </div>
 
-                            <p className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 text-sm">
-                                <strong>⚠️ Note:</strong> Rates can change annually and may differ slightly by district. Always check your city's official website.
-                            </p>
+                            <div className="bg-accent/10 p-4 rounded-lg border-l-4 border-accent text-sm text-primary/80">
+                                <strong>⚠️ Note:</strong> Rates can change annually and may differ slightly by district. Always check your official city website.
+                            </div>
 
                             <h3 className="text-lg font-bold mb-2 mt-8">Exemptions</h3>
                             <ul className="list-disc pl-5 space-y-2">
@@ -143,9 +143,9 @@ export default function DogTaxGermany() {
                                 <li><strong>Berlin:</strong> As of 2024, physical tags are no longer required. Compliance is checked via microchip and registration.</li>
                                 <li><strong>Other cities:</strong> Some still issue or require tags, while others are transitioning away from them.</li>
                             </ul>
-                            <p className="bg-blue-50 p-4 rounded-lg text-sm mt-4 text-blue-900/80">
+                            <div className="bg-primary/5 p-4 rounded-lg text-sm mt-4 text-primary/80">
                                 <strong>👉 Check your local rules</strong> — in some cities, the tag may still be required or recommended in public.
-                            </p>
+                            </div>
 
                             <h2 id="how-to" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">4. How to Register (The 3-Step Process)</h2>
                             <p>
@@ -197,7 +197,7 @@ export default function DogTaxGermany() {
                                 </ul>
                             </div>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
                                 <div className="relative z-10">
                                     <h2 className="text-3xl font-bold text-accent mb-4 mt-0">🏠 A Note From the Sofa</h2>
                                     <p className="text-lg leading-relaxed opacity-90">
@@ -206,7 +206,7 @@ export default function DogTaxGermany() {
                                     <p className="text-lg leading-relaxed opacity-90 mt-4">
                                         Think of Hundesteuer as the entry fee to one of the most dog-friendly cultures in the world.
                                     </p>
-                                    <div className="mt-8 pt-6 border-t border-[#F5EBE0]/20">
+                                    <div className="mt-8 pt-6 border-t border-white/20">
                                         <p className="font-bold mb-2">Planning to travel with your dog?</p>
                                         <Link to="/blog/eu-pet-passport-germany-2025" className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors font-bold text-lg">
                                             Get an EU Pet Passport for hassle-free travel

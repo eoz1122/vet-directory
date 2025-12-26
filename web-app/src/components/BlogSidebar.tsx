@@ -2,24 +2,19 @@ import { Link, useLocation } from 'react-router-dom';
 
 const blogPosts = [
     {
-        url: "/blog/pet-sitting-germany-2025",
-        title: "Pet Sitting",
-        emoji: "🏡"
-    },
-    {
         url: "/blog/moving-to-germany-with-pet-2025",
-        title: "Moving Guide",
-        emoji: "🐕"
-    },
-    {
-        url: "/blog/pet-friendly-apartments-germany-2025",
-        title: "Finding Apartments",
-        emoji: "🏠"
+        title: "Moving to Germany Guide",
+        emoji: "📦"
     },
     {
         url: "/blog/eu-pet-passport-germany-2025",
         title: "EU Pet Passport",
         emoji: "🛂"
+    },
+    {
+        url: "/blog/pet-friendly-apartments-germany-2025",
+        title: "Finding Apartments",
+        emoji: "🏠"
     },
     {
         url: "/blog/hundesteuer-dog-tax-germany-2025",
@@ -32,9 +27,39 @@ const blogPosts = [
         emoji: "🐱"
     },
     {
+        url: "/blog/pet-sitting-germany-2025",
+        title: "Pet Sitting & Boarding",
+        emoji: "🏡"
+    },
+    {
         url: "/blog/german-vet-survival-kit-phrases",
-        title: "Vet Phrases Kit",
-        emoji: "🩺"
+        title: "German Vet Phrases",
+        emoji: "🇩🇪"
+    },
+    {
+        url: "/blog/public-transport-with-dogs-berlin-2025",
+        title: "Transport: Berlin",
+        emoji: "🐻"
+    },
+    {
+        url: "/blog/public-transport-with-dogs-hamburg-2025",
+        title: "Transport: Hamburg",
+        emoji: "⚓"
+    },
+    {
+        url: "/blog/public-transport-with-dogs-munich-2025",
+        title: "Transport: Munich",
+        emoji: "🥨"
+    },
+    {
+        url: "/blog/public-transport-with-dogs-frankfurt-2025",
+        title: "Transport: Frankfurt",
+        emoji: "🏙️"
+    },
+    {
+        url: "/blog/public-transport-with-dogs-stuttgart-2025",
+        title: "Transport: Stuttgart",
+        emoji: "🚗"
     }
 ];
 
@@ -46,9 +71,9 @@ export default function BlogSidebar() {
             <div className="sticky top-32">
                 <div className="bg-white rounded-xl shadow-sm border border-primary/5 overflow-hidden">
                     <div className="bg-primary/5 p-4 border-b border-primary/5">
-                        <span className="font-bold text-primary text-sm uppercase tracking-wider">More Guides</span>
+                        <span className="font-bold text-primary text-sm uppercase tracking-wider">All Guides</span>
                     </div>
-                    <nav className="p-2">
+                    <nav className="p-2 space-y-1">
                         {blogPosts.map((post) => {
                             const isActive = location.pathname === post.url;
                             return (
@@ -56,11 +81,11 @@ export default function BlogSidebar() {
                                     key={post.url}
                                     to={post.url}
                                     className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${isActive
-                                            ? 'bg-accent/10 text-accent'
-                                            : 'text-primary/70 hover:bg-secondary hover:text-primary'
+                                        ? 'bg-accent/10 text-accent'
+                                        : 'text-primary/70 hover:bg-secondary hover:text-primary'
                                         }`}
                                 >
-                                    <span className="text-lg">{post.emoji}</span>
+                                    <span className="text-lg w-6 text-center">{post.emoji}</span>
                                     <span>{post.title}</span>
                                 </Link>
                             );

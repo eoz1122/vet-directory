@@ -8,7 +8,7 @@ import BlogSidebar from '../components/BlogSidebar';
 
 export default function PublicTransportHamburg() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Public Transport with Dogs in Hamburg (HVV): The 2025 Expat Survival Guide | EnglishSpeakingVets</title>
                 <meta name="description" content="Navigating Hamburg with a dog? Learn why HVV is Germany's most pet-friendly transit system. Rules on tickets, muzzles, and taking the ferry with your pup." />
@@ -60,7 +60,7 @@ export default function PublicTransportHamburg() {
                                 The most striking difference between Hamburg and cities like Berlin or Munich is the cost. Hamburg’s public transport network—covering everything from the inner-city U-Bahn to regional trains in the surrounding countryside—treats dogs as welcome guests rather than paying passengers.
                             </p>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-8 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-8 relative overflow-hidden not-prose">
                                 <h3 className="text-xl font-bold text-accent mb-2 mt-0">🐕 Do Dogs Need a Ticket? No.</h3>
                                 <p className="font-medium text-lg mb-4">All dogs travel completely FREE on HVV transport.</p>
                                 <ul className="space-y-2 list-none pl-0">
@@ -81,20 +81,20 @@ export default function PublicTransportHamburg() {
                             </p>
 
                             <div className="grid md:grid-cols-2 gap-6 my-6 not-prose">
-                                <div className="bg-white p-6 rounded-xl border border-primary/5">
+                                <div className="bg-white p-6 rounded-xl border border-primary/10">
                                     <h3 className="font-bold text-lg mb-2 text-primary">🦮 Leash: REQUIRED</h3>
                                     <p className="text-sm text-primary/80">
                                         All dogs must be kept on a leash while on public transport.
                                     </p>
                                 </div>
-                                <div className="bg-white p-6 rounded-xl border border-primary/5">
+                                <div className="bg-white p-6 rounded-xl border border-primary/10">
                                     <h3 className="font-bold text-lg mb-2 text-primary">The "Muzzle Reality"</h3>
                                     <p className="text-sm text-primary/80">
                                         Unlike Berlin, where a muzzle is technically mandatory for all large dogs, <strong>Hamburg has no general muzzle requirement for standard breeds</strong>. As long as your dog is well-behaved and kept on a short lead, they can breathe freely.
                                     </p>
                                 </div>
                             </div>
-                            <p className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400 text-sm">
+                            <p className="bg-accent/10 p-4 rounded-lg border-l-4 border-accent text-sm text-primary/80">
                                 <strong>Exemption:</strong> If your dog is classified as a "Dangerous Breed" (see below), the muzzle requirement is absolute and strictly enforced.
                             </p>
 
@@ -120,20 +120,20 @@ export default function PublicTransportHamburg() {
                                 One of the most unique perks of living in Hamburg is the <strong>HADAG Ferries</strong>. These aren't just for tourists; they are a core part of the HVV network (Lines 61–75).
                             </p>
 
-                            <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 my-6 not-prose">
+                            <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 my-6 not-prose">
                                 <ul className="space-y-3">
                                     <li className="flex items-start gap-2">
-                                        <span className="text-blue-600 text-xl">🌊</span>
-                                        <span className="text-blue-900/80"><strong>Scenic & Free:</strong> Your dog can board the ferries at Landungsbrücken and travel across the Elbe for free.</span>
+                                        <span className="text-accent text-xl">🌊</span>
+                                        <span className="text-primary/80"><strong>Scenic & Free:</strong> Your dog can board the ferries at Landungsbrücken and travel across the Elbe for free.</span>
                                     </li>
                                     <li className="flex items-start gap-2">
-                                        <span className="text-blue-600 text-xl">🌬️</span>
-                                        <span className="text-blue-900/80"><strong>Fresh Air:</strong> Unlike a stuffy U-Bahn tunnel, the ferries offer fresh sea air and plenty of space on the outdoor decks. It is arguably the most stress-free way to travel with a pet in any major German city.</span>
+                                        <span className="text-accent text-xl">🌬️</span>
+                                        <span className="text-primary/80"><strong>Fresh Air:</strong> Unlike a stuffy U-Bahn tunnel, the ferries offer fresh sea air and plenty of space on the outdoor decks. It is arguably the most stress-free way to travel with a pet in any major German city.</span>
                                     </li>
                                 </ul>
-                                <div className="mt-4 pt-4 border-t border-blue-200">
-                                    <p className="font-bold text-blue-900 text-sm mb-0">💡 Pro-Tip:</p>
-                                    <p className="text-sm text-blue-800">
+                                <div className="mt-4 pt-4 border-t border-primary/10">
+                                    <p className="font-bold text-primary text-sm mb-0">💡 Pro-Tip:</p>
+                                    <p className="text-sm text-primary/80">
                                         Take <strong>Line 62 to Övelgönne</strong>. Not only is the ride beautiful, but it drops you right at the <strong>Elbe Dog Beach</strong>, where your pup can run off-leash in the sand.
                                     </p>
                                 </div>
@@ -158,18 +158,18 @@ export default function PublicTransportHamburg() {
                                     <h3 className="font-bold text-base mb-1 text-primary">⏰ Peak Hours</h3>
                                     <p className="text-sm mb-0 text-primary/80">Try to avoid the <strong>07:30–09:00 rush</strong>. While Hamburg is less "sardine-like" than Berlin, the S-Bahn can still get very cramped.</p>
                                 </div>
-                                <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-red-500">
-                                    <h3 className="font-bold text-base mb-1 text-red-600">🛗 Escalators: A Reminder</h3>
+                                <div className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                    <h3 className="font-bold text-base mb-1 text-primary">🛗 Escalators: A Reminder</h3>
                                     <p className="text-sm mb-0 text-primary/80">Never take a dog on an escalator. The metal teeth at the top and bottom are a major injury risk for paws. Every HVV station has elevators (<em>Aufzüge</em>). Use them!</p>
                                 </div>
                             </div>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-12 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-12 relative overflow-hidden not-prose">
                                 <h2 className="text-3xl font-bold text-accent mb-4 mt-0">🏠 A Note from the Sofa</h2>
                                 <p className="text-lg leading-relaxed opacity-90">
                                     When I first brought my dog onto a Hamburg ferry, I kept waiting for someone to tell me I needed a ticket or a muzzle. It never happened. Hamburgers have a quiet, respectful "dog culture." As long as your dog isn't blocking the aisle or jumping on seats, you'll find that people are incredibly welcoming. It’s one of the few places in Germany where the bureaucracy actually takes a backseat to common sense.
                                 </p>
-                                <div className="mt-8 pt-6 border-t border-[#F5EBE0]/20">
+                                <div className="mt-8 pt-6 border-t border-white/20">
                                     <p className="font-medium mb-2">Found a great new dog run in Altona or Eimsbüttel?</p>
                                     <Link to="/contact?topic=tips" className="text-accent font-bold hover:underline">Let us know</Link> so we can share it with the rest of the expat pack!
                                 </div>

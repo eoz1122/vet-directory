@@ -8,7 +8,7 @@ import BlogSidebar from '../components/BlogSidebar';
 
 export default function PetFriendlyApartments() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Finding a Pet-Friendly Apartment in Germany (2025) | Rights & Tips</title>
                 <meta name="description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2025." />
@@ -77,16 +77,16 @@ export default function PetFriendlyApartments() {
                                 <p className="text-sm italics opacity-70">What doesn’t count: vague fears, stereotypes, or “I just don’t like dogs.”</p>
                             </div>
 
-                            <div className="bg-red-50 p-6 rounded-xl border border-red-100 my-8 not-prose">
-                                <h3 className="text-lg font-bold text-red-800 mb-2">💸 The “Pet Rent” Trap</h3>
-                                <p className="text-sm text-red-900/80 mb-4">Be careful here.</p>
-                                <p className="text-sm text-red-900/80">
+                            <div className="bg-accent/10 p-6 rounded-xl border-l-4 border-accent my-8 not-prose">
+                                <h3 className="text-lg font-bold text-primary mb-2">💸 The “Pet Rent” Trap</h3>
+                                <p className="text-sm text-primary/80 mb-4">Be careful here.</p>
+                                <p className="text-sm text-primary/80">
                                     In recent years, German courts have increasingly ruled that monthly “pet rent” surcharges (e.g. +€15–€30 per month) are often unenforceable, since normal pet ownership is already covered by the base rent.
                                 </p>
-                                <p className="text-sm text-red-900/80 mt-2 font-bold">
+                                <p className="text-sm text-primary/80 mt-2 font-bold">
                                     Landlords MAY, however:
                                 </p>
-                                <ul className="list-disc pl-5 text-sm text-red-900/80 mt-1">
+                                <ul className="list-disc pl-5 text-sm text-primary/80 mt-1">
                                     <li>Ask for a higher security deposit (within legal limits)</li>
                                     <li>Set clear conditions for keeping the pet</li>
                                 </ul>
@@ -165,17 +165,17 @@ export default function PetFriendlyApartments() {
                                 “I’m happy to bring my dog to the viewing so you can see how calm they are.”
                             </blockquote>
 
-                            <div className="bg-green-50 p-6 rounded-xl border border-green-100 my-8 not-prose">
-                                <h3 className="text-lg font-bold text-green-800 mb-2">🌳 Bonus Tip: Check Dog Zones Early</h3>
-                                <p className="text-sm text-green-900/80 mb-2">Some parks have strict no-dogs or leash-only rules. Before committing to a flat, check:</p>
-                                <ul className="list-disc pl-5 text-sm text-green-900/80">
+                            <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 my-8 not-prose">
+                                <h3 className="text-lg font-bold text-primary mb-2">🌳 Bonus Tip: Check Dog Zones Early</h3>
+                                <p className="text-sm text-primary/80 mb-2">Some parks have strict no-dogs or leash-only rules. Before committing to a flat, check:</p>
+                                <ul className="list-disc pl-5 text-sm text-primary/80">
                                     <li>“Hundeauslaufzonen” (off-leash areas)</li>
                                     <li>Local district rules</li>
                                     <li>Apps like <em>Dog’s Places</em> or city park maps</li>
                                 </ul>
                             </div>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
                                 <div className="relative z-10">
                                     <h3 className="text-3xl font-bold text-accent mb-4 mt-0">🏠 A Note from the Sofa</h3>
                                     <p className="text-lg leading-relaxed opacity-90 mb-6">

@@ -8,7 +8,7 @@ import BlogSidebar from '../components/BlogSidebar';
 
 export default function PublicTransportMunich() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Public Transport with Dogs in Munich (2025 MVV Rules) | EnglishSpeakingVets</title>
                 <meta name="description" content="Guide to taking dogs on public transport in Munich (MVV). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
@@ -50,7 +50,7 @@ export default function PublicTransportMunich() {
 
                             <div className="bg-white p-6 rounded-xl shadow-sm border border-primary/5 my-6 space-y-4 not-prose">
                                 <div>
-                                    <h3 className="text-lg font-bold text-green-700 mt-0">The First Dog: FREE</h3>
+                                    <h3 className="text-lg font-bold text-primary mt-0">The First Dog: FREE</h3>
                                     <p className="mb-0 text-primary/80">
                                         If you have a valid MVV ticket (single, day ticket, weekly or monthly pass, or Deutschlandticket), <strong>one dog travels for free</strong>. No additional ticket required. This applies to all U-Bahn, S-Bahn, trams, and buses within the MVV network.
                                     </p>
@@ -101,22 +101,15 @@ export default function PublicTransportMunich() {
 
                             <p>In Munich, the rule is technically "risk-based." While small, calm dogs are rarely bothered, MVV regulations state that dogs must wear a muzzle in vehicles and stations if they pose a potential risk.</p>
 
-                            <div className="grid md:grid-cols-2 gap-6 my-8 not-prose">
-                                <div className="bg-white p-6 rounded-xl border-l-4 border-yellow-500">
-                                    <h3 className="text-lg font-bold mt-0 mb-2 text-primary">The Muzzle Rule</h3>
-                                    <ul className="list-disc pl-5 text-sm space-y-2 mb-0 text-primary/80">
-                                        <li><strong>Large dogs:</strong> Generally expected to wear muzzles (Shepherds, Rottweilers, etc.)</li>
-                                        <li><strong>Rush hour:</strong> Inspectors may ask for muzzles on crowded trains</li>
-                                        <li><strong>Small/Calm dogs:</strong> Rarely asked, but you should still carry one</li>
-                                    </ul>
-                                </div>
-                                <div className="bg-white p-6 rounded-xl border-l-4 border-red-500">
-                                    <h3 className="text-lg font-bold mt-0 mb-2 text-primary">Strict Requirements</h3>
-                                    <ul className="list-disc pl-5 text-sm space-y-2 mb-0 text-primary/80">
-                                        <li><strong>Leash:</strong> Mandatory at all times in stations and vehicles. No exceptions.</li>
-                                        <li><strong>Dangerous Breeds:</strong> "Attack dogs" (Kampfhunde) are <strong>not allowed</strong> on public transport at all.</li>
-                                    </ul>
-                                </div>
+                            <div className="bg-white p-6 rounded-xl shadow-sm border border-primary/10 my-6 not-prose">
+                                <h3 className="text-lg font-bold text-primary mt-0 mb-3">🐶 The Rules on Muzzles</h3>
+                                <ul className="list-disc pl-5 mt-2 mb-0 text-primary/80">
+                                    <li><strong>Large dogs:</strong> Generally expected to wear muzzles (Shepherds, Rottweilers, etc.)</li>
+                                    <li><strong>Rush hour:</strong> Inspectors may ask for muzzles on crowded trains</li>
+                                    <li><strong>Small/Calm dogs:</strong> Rarely asked, but you should still carry one</li>
+                                    <li><strong>Leash:</strong> Mandatory at all times in stations and vehicles. No exceptions.</li>
+                                    <li><strong>Dangerous Breeds:</strong> "Attack dogs" (Kampfhunde) are <strong>not allowed</strong> on public transport at all.</li>
+                                </ul>
                             </div>
 
                             <p className="bg-primary/5 p-4 rounded-lg text-sm text-primary/80 not-prose">
@@ -127,23 +120,25 @@ export default function PublicTransportMunich() {
 
                             <p>If you have a weekly or monthly <strong>IsarCard</strong> (MVV's subscription ticket), you get an extra bonus: <strong>one dog travels free at any time</strong>.</p>
 
-                            <ul className="list-disc pl-5 space-y-2 text-primary/80">
-                                <li><strong>IsarCard (weekly/monthly):</strong> Unlimited travel in your zones.</li>
-                                <li><strong>IsarCard9Uhr:</strong> Discounted option. <strong>Important:</strong> Dog is only free after 9am on weekdays (anytime weekends).</li>
-                                <li><strong>IsarCardJob:</strong> Annual subscription for commuters.</li>
-                            </ul>
-
-                            <h2 id="deutschlandticket" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Deutschlandticket: Dogs Ride Free Too</h2>
-
-                            <div className="bg-secondary/20 p-6 rounded-2xl border border-secondary my-6 not-prose">
-                                <h3 className="text-xl font-bold text-primary mt-0">The Deutschlandticket Deal</h3>
-                                <p className="mb-4 text-primary/80">
-                                    If you have the <strong>Deutschlandticket</strong> (€58/month as of Dec 2025, rising to €63 in 2026), your dog travels free throughout the entire MVV network.
-                                </p>
-                                <p className="text-sm italic mb-0 text-primary/70">
-                                    <strong>Note:</strong> While the MVV allows one dog free with the Deutschlandticket, this is a local Munich rule. If you travel to Hamburg or Berlin, their local rules may differ (often requiring a ticket for the dog).
+                            <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 my-6 not-prose">
+                                <h3 className="text-xl font-bold text-primary mt-0 mb-3">🎫 IsarCard Options</h3>
+                                <ul className="list-disc pl-5 mt-0 text-primary/80">
+                                    <li><strong>IsarCard (weekly/monthly):</strong> Unlimited travel in your zones.</li>
+                                    <li><strong>IsarCard9Uhr:</strong> Discounted option. <strong>Important:</strong> Dog is only free after 9am on weekdays (anytime weekends).</li>
+                                    <li><strong>IsarCardJob:</strong> Annual subscription for commuters.</li>
+                                </ul>
+                                <p className="text-sm italic text-primary/70 mb-0 mt-2">
+                                    Note: This generally does <strong>not</strong> apply to the basic "Streifenkarte" (Stripe Ticket).
                                 </p>
                             </div>
+
+                            <h2 id="deutschlandticket" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Deutschlandticket: Dogs Ride Free Too</h2>
+                            <p>
+                                The Deutschlandticket (€58) is personal and non-transferable. In the MVV (Munich) network, it allows you to bring <strong>one dog for free</strong>.
+                            </p>
+                            <p className="bg-accent/10 p-4 rounded-lg border-l-4 border-accent text-sm text-primary/80">
+                                <strong>Check the fine print:</strong> While MVV accepts this, if you travel Regional Express to Nürnberg or Salzburg, different rules may kickoff once you leave the MVV zone.
+                            </p>
 
                             <h2 id="cats-small-pets" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Cats and Other Small Pets</h2>
                             <p>
@@ -169,7 +164,7 @@ export default function PublicTransportMunich() {
                                             <th className="p-3 font-bold text-primary">Rule</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody className="text-sm">
                                         <tr className="border-b border-primary/5">
                                             <td className="p-3 text-sm font-semibold text-primary/80">First Dog</td>
                                             <td className="p-3 text-sm text-primary/80">FREE (with any valid ticket)</td>
@@ -214,15 +209,15 @@ export default function PublicTransportMunich() {
                                 </div>
                             </div>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
                                 <div className="relative z-10">
                                     <h2 className="text-3xl font-bold text-accent mb-4 mt-0">The Bottom Line</h2>
                                     <p className="text-lg leading-relaxed opacity-90">
-                                        Munich is incredibly dog-friendly. With your first dog riding free on any valid ticket and relaxed enforcement for calm dogs, getting around is stress-free. Just remember to always carry a muzzle and avoid rush hour when you can!
+                                        Munich is a "pawsitive" city for transport. Just remember the muzzle rule for big dogs, keep them on a leash, and you'll fit right in with the locals.
                                     </p>
-                                    <div className="mt-8 pt-6 border-t border-[#F5EBE0]/20">
+                                    <div className="mt-8 pt-6 border-t border-white/20">
                                         <p className="font-bold mb-2">Need a vet in Munich?</p>
-                                        <Link to="/vets/munich" className="inline-block px-6 py-2 bg-accent text-primary font-bold rounded-lg hover:bg-white transition-colors">
+                                        <Link to="/vets/munich" className="inline-block px-6 py-2 bg-accent text-primary font-bold rounded-lg hover:bg-secondary hover:text-accent transition-colors">
                                             Browse Munich Vets
                                         </Link>
                                     </div>

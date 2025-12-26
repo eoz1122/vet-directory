@@ -8,7 +8,7 @@ import BlogSidebar from '../components/BlogSidebar';
 
 export default function MovingWithPetChecklist() {
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Moving to Germany with a Pet: The 2025 Survival Checklist</title>
                 <meta name="description" content="Moving to Germany with a dog or cat in 2025? Follow this essential 6-step checklist covering microchips, rabies vaccines, the 15-week rule, and EU health certificates to avoid quarantine." />
@@ -49,7 +49,7 @@ export default function MovingWithPetChecklist() {
                                 I’ve been through the expat pet panic myself. German bureaucracy has its reputation for a reason, and when it comes to animal health, they don’t mess around. To save you from a nightmare at the airport, here’s the essential, human-to-human checklist for relocating your pet to Germany in 2025.
                             </p>
 
-                            <div className="bg-white p-8 rounded-2xl shadow-sm my-8 border border-primary/5 not-prose">
+                            <div className="bg-white p-8 rounded-2xl shadow-sm my-8 border border-primary/10 not-prose">
                                 <h2 id="golden-rule" className="text-2xl font-bold text-accent mb-4 mt-0 scroll-mt-24">1. The “Golden Rule”: Microchip FIRST, Vaccine SECOND</h2>
                                 <p className="mb-4"><strong>This is the mistake that breaks hearts — and drains bank accounts.</strong></p>
                                 <p className="mb-4">In the eyes of German customs (Zoll), a rabies vaccination does not exist unless it is linked to a microchip.</p>
@@ -64,18 +64,18 @@ export default function MovingWithPetChecklist() {
                             <h2 id="waiting-period" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">2. The 21-Day Waiting Period</h2>
                             <p>You can’t just jab and go.</p>
                             <p>After the rabies vaccine is administered (and only after the microchip is in place), you must wait at least <strong>21 full days</strong> before entering Germany.¹</p>
-                            <div className="bg-red-50 p-4 rounded-lg border-l-4 border-red-400 text-sm">
-                                <p className="m-0 font-bold text-red-800">This waiting period is non-negotiable.</p>
-                                <p className="m-0 text-red-700">Arrive even one day early, and your pet may face quarantine or be sent back at your expense.³⁶</p>
+                            <div className="bg-accent/10 p-4 rounded-lg border-l-4 border-accent text-sm text-primary/80">
+                                <p className="m-0 font-bold text-primary">This waiting period is non-negotiable.</p>
+                                <p className="m-0 text-primary/80">Arrive even one day early, and your pet may face quarantine or be sent back at your expense.³⁶</p>
                             </div>
 
                             <h2 id="puppy-barrier" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">3. The “15-Week Rule”</h2>
                             <p>This rule catches many new pet owners off guard.</p>
                             <p>Germany <strong>does not allow puppies or kittens under 15 weeks old</strong> to enter from countries such as the US, UK, Canada, and other EU-listed (low-rabies-risk) countries.¹⁴⁷</p>
 
-                            <div className="bg-primary/5 p-6 rounded-xl my-6 not-prose">
-                                <h3 className="text-lg font-bold mb-2 mt-0">The Math:</h3>
-                                <ul className="list-none pl-0 space-y-2 mb-0">
+                            <div className="bg-primary/5 p-6 rounded-xl my-6 not-prose border border-primary/10">
+                                <h3 className="text-lg font-bold mb-2 mt-0 text-primary">The Math:</h3>
+                                <ul className="list-none pl-0 space-y-2 mb-0 text-primary/80">
                                     <li>💉 Minimum rabies vaccination age: <strong>12 weeks</strong></li>
                                     <li>⏳ Mandatory waiting period: <strong>21 days</strong></li>
                                     <li><strong>= 15 weeks minimum age at travel</strong></li>
@@ -107,24 +107,24 @@ export default function MovingWithPetChecklist() {
                             <p>To keep the process simple (and affordable), your pet must travel <strong>within 5 days before or after your own flight</strong>.¹</p>
                             <p>This classifies the move as non-commercial. If the gap is longer, the transport is legally considered commercial, triggering significantly more paperwork, higher costs, and stricter controls.</p>
 
-                            <div className="bg-red-50 border border-red-100 p-8 rounded-2xl my-12 not-prose">
-                                <h2 id="restrictions" className="text-2xl font-bold text-red-800 mb-4 mt-0 scroll-mt-24">6. Important Additional Restrictions</h2>
-                                <h3 className="text-lg font-bold text-red-700 mt-4 mb-2">Breed restrictions</h3>
-                                <p className="text-red-900/80">Germany enforces strict dog-breed regulations under both federal and state-level (Bundesland) laws.</p>
-                                <p className="text-red-900/80">Commonly restricted or banned breeds include:</p>
-                                <ul className="list-disc pl-5 text-red-900/80 mb-4">
+                            <div className="bg-accent/10 border border-accent/20 p-8 rounded-2xl my-12 not-prose">
+                                <h2 id="restrictions" className="text-2xl font-bold text-accent mb-4 mt-0 scroll-mt-24">6. Important Additional Restrictions</h2>
+                                <h3 className="text-lg font-bold text-primary mt-4 mb-2">Breed restrictions</h3>
+                                <p className="text-primary/80">Germany enforces strict dog-breed regulations under both federal and state-level (Bundesland) laws.</p>
+                                <p className="text-primary/80">Commonly restricted or banned breeds include:</p>
+                                <ul className="list-disc pl-5 text-primary/80 mb-4">
                                     <li>Pit Bull Terrier</li>
                                     <li>American Staffordshire Terrier</li>
                                     <li>Staffordshire Bull Terrier</li>
                                     <li>Bull Terrier</li>
                                 </ul>
-                                <p className="text-sm italic text-red-700">Rules vary by state, and some German states prohibit import entirely. Each state (Bundesland) has its own "List of Dangerous Dogs". Always check the specific laws of your destination state before traveling.⁵⁸</p>
+                                <p className="text-sm italic text-primary/70">Rules vary by state, and some German states prohibit import entirely. Each state (Bundesland) has its own "List of Dangerous Dogs". Always check the specific laws of your destination state before traveling.⁵⁸</p>
 
-                                <h3 className="text-lg font-bold text-red-700 mt-6 mb-2">Maximum number of pets</h3>
-                                <p className="text-red-900/80 mb-0">For non-commercial travel, you may bring up to <strong>five pets per person</strong>.¹</p>
+                                <h3 className="text-lg font-bold text-primary mt-6 mb-2">Maximum number of pets</h3>
+                                <p className="text-primary/80 mb-0">For non-commercial travel, you may bring up to <strong>five pets per person</strong>.¹</p>
                             </div>
 
-                            <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
+                            <div className="bg-primary text-secondary p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
                                 <div className="relative z-10">
                                     <h2 className="text-3xl font-bold text-accent mb-4 mt-0">🏠 A Note from the Sofa</h2>
                                     <p className="text-lg leading-relaxed opacity-90">
@@ -133,7 +133,7 @@ export default function MovingWithPetChecklist() {
                                     <p className="text-lg leading-relaxed opacity-90 mt-4">
                                         Germany is an incredibly pet-friendly country once you're inside the fortress. We're here to help you get through the gates.
                                     </p>
-                                    <div className="mt-8 pt-6 border-t border-[#F5EBE0]/20">
+                                    <div className="mt-8 pt-6 border-t border-white/20">
                                         <p className="font-bold mb-2">Moving soon?</p>
                                         <Link to="/" className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors font-bold text-lg">
                                             Check our Directory of English-Speaking Vets

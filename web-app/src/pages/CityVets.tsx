@@ -100,7 +100,7 @@ export default function CityVets() {
 
     if (!cityData) {
         return (
-            <div className="min-h-screen bg-[#F5EBE0] flex items-center justify-center">
+            <div className="min-h-screen bg-secondary flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-primary mb-4">City Not Found</h1>
                     <Link to="/" className="text-accent hover:underline">← Back to Directory</Link>
@@ -157,7 +157,7 @@ export default function CityVets() {
     };
 
     return (
-        <div className="min-h-screen bg-[#F5EBE0] font-sans text-primary">
+        <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>{cityData.title} | Verified English-Speaking Clinics | EnglishSpeakingVets</title>
                 <meta name="description" content={cityData.description} />
@@ -229,12 +229,12 @@ export default function CityVets() {
                                     </div>
                                     <div className="flex flex-col items-end gap-2">
                                         <div className="relative group/tooltip z-20">
-                                            <div className="px-3 py-1 bg-green-50 text-green-700 text-[10px] font-black uppercase tracking-tighter rounded-xl border border-green-100/50 flex items-center gap-1.5 shadow-sm cursor-help">
-                                                <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                                            <div className="px-3 py-1 bg-accent/20 text-primary text-[10px] font-black uppercase tracking-tighter rounded-xl border border-accent/20 flex items-center gap-1.5 shadow-sm cursor-help">
+                                                <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></div>
                                                 Verified
                                             </div>
-                                            <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-white border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
-                                                <p className="text-[11px] leading-relaxed font-medium text-white/90 normal-case tracking-normal">
+                                            <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-secondary border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
+                                                <p className="text-[11px] leading-relaxed font-medium text-secondary/90 normal-case tracking-normal">
                                                     <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">Community Verified</span>
                                                     We analyze thousands of patient reviews to identify "English signals"—confirming that other international pet owners successfully communicated in English.
                                                 </p>
@@ -263,8 +263,8 @@ export default function CityVets() {
                                 <div className="space-y-2 mb-6">
                                     {vet.verification?.english_signals && vet.verification.english_signals.slice(0, 1).map((signal, idx) => (
                                         <div key={idx} className="flex gap-3 items-start group/signal">
-                                            <div className="mt-1 flex-shrink-0 w-4 h-4 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-200">
-                                                <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7"></path></svg>
+                                            <div className="mt-1 flex-shrink-0 w-4 h-4 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/20">
+                                                <svg className="w-2.5 h-2.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7"></path></svg>
                                             </div>
                                             <p className="text-[11px] text-primary/60 italic leading-snug group-hover/signal:text-primary/80 transition-colors line-clamp-2">
                                                 "{signal}"
