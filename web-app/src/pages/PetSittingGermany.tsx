@@ -16,116 +16,146 @@ export default function PetSittingGermany() {
 
             <Header />
 
-                        { id: 'legal', label: '3. Legal & Insurance (Don\'t Skip)' },
-                        { id: 'choosing', label: '4. How to Choose the Right Sitter' },
-                        { id: 'checklist', label: '5. The Ultimate Checklist' },
-                        { id: 'cities', label: '6. City-Specific Realities' },
-                        { id: 'emotional', label: '7. Preparing Your Pet Emotionally' }
-                    ]} />
+            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
+                <div className="flex flex-col lg:flex-row gap-12">
+                    {/* Left Sidebar */}
+                    <BlogSidebar />
 
-                    <p className="lead text-xl italic text-primary/70 mb-8 border-l-4 border-accent pl-4">
-                        You’ve finally booked that long-awaited trip home. Or maybe a spontaneous weekend in the Alps. The suitcase is out, the to-do list is shrinking… and then you feel it. Those big eyes. Watching you from the sofa. Judging you. Just a little.
-                    </p>
+                    {/* Main Content */}
+                    <article className="lg:flex-1 max-w-4xl">
+                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Guide</span>
+                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
+                            🏡 Pet Sitting in Germany (2025): Finding a Safe Home for Your Little Friends
+                        </h1>
 
-                    <p>
-                        For expats in Germany, finding trustworthy pet care is often more stressful than booking the trip itself. You’re not just leaving a pet — you’re leaving your routine, your language safety net, and your peace of mind behind.
-                    </p>
-
-                    <p>
-                        The good news? Germany has one of the strongest, most structured pet-sitting ecosystems in Europe. Whether you want a professional setup, a vetted platform, or a community-based exchange, there is a safe solution for your little friend.
-                    </p>
-
-                    <h2 id="options" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">1. The Three Ways to Settle Your Pet</h2>
-                    <p>There’s no single “best” option — only the one that fits your pet’s personality.</p>
-
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-primary/5 my-6">
-                        <h3 className="text-lg font-bold text-green-700 mt-0">🟢 Option A: Digital Platforms (Best for Reliability & Reviews)</h3>
-                        <p>In 2025, several platforms dominate the German pet-sitting market. Their biggest advantage: structure. Profiles, reviews, identity checks, messaging, and often insurance.</p>
-
-                        <h4 className="font-bold text-sm uppercase text-primary/60 mt-4">The Big, International Names</h4>
-                        <ul className="list-disc pl-5 mt-2">
-                            <li><strong>Pawshake</strong></li>
-                            <li><strong>Rover</strong></li>
-                        </ul>
-                        <p className="text-sm">Widely used by expats and locals. Good for dog boarding, house sitting, and drop-in visits.</p>
-
-                        <h4 className="font-bold text-sm uppercase text-primary/60 mt-4">German-First Platforms</h4>
-                        <ul className="list-disc pl-5 mt-2">
-                            <li><strong>Tierio</strong></li>
-                            <li><strong>Tiersitter24</strong></li>
-                        </ul>
-                        <p className="text-sm">Higher density in smaller cities, but often prefer German communication.</p>
-
-                        <p className="bg-yellow-50 p-4 rounded-lg text-sm mt-4 border border-yellow-100">
-                            <strong>💡 Reality check:</strong> Even on platforms, always do a meet-and-greet. Germans expect this — skipping it is a red flag.
-                        </p>
-                    </div>
-
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-primary/5 my-6">
-                        <h3 className="text-lg font-bold text-yellow-600 mt-0">🟡 Option B: Professional Pet Pensions (Best for Social Dogs)</h3>
-                        <p>A <em>Hundepension</em> (dog hotel) or <em>Tierpension</em> is a licensed business where animals stay overnight.</p>
-                            <div>
-                                <strong>Personality:</strong> Fear triggers, doorbell reactions, hiding spots, comfort items.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <h2 id="cities" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">6. City-Specific Pet Sitting Realities</h2>
-
-                    <div className="grid md:grid-cols-3 gap-4">
-                        <div className="bg-white p-4 rounded-lg shadow-sm border border-primary/5">
-                            <h4 className="font-bold mb-2">🐕 Berlin</h4>
-                            <ul className="text-sm list-disc pl-4">
-                                <li>Huge supply of sitters</li>
-                                <li>High holiday competition</li>
-                                <li>Dog parks = networking</li>
-                            </ul>
+                        <div className="bg-white p-6 rounded-2xl border border-primary/5 shadow-sm mb-12">
+                            <span className="block text-xs font-bold text-primary/40 uppercase tracking-widest mb-4">Table of Contents</span>
+                            <nav className="space-y-3">
+                                <a href="#options" className="block text-primary/80 hover:text-accent transition-colors text-sm font-medium">→ 1. The Three Ways to Settle Your Pet</a>
+                                <a href="#costs" className="block text-primary/80 hover:text-accent transition-colors text-sm font-medium">→ 2. What Does Pet Sitting Cost?</a>
+                                <a href="#legal" className="block text-primary/80 hover:text-accent transition-colors text-sm font-medium">→ 3. Legal & Insurance (Don't Skip)</a>
+                                <a href="#checklist" className="block text-primary/80 hover:text-accent transition-colors text-sm font-medium">→ 4. The Ultimate Checklist</a>
+                            </nav>
                         </div>
-                        <div className="bg-white p-4 rounded-lg shadow-sm border border-primary/5">
-                            <h4 className="font-bold mb-2">🐈 Munich</h4>
-                            <ul className="text-sm list-disc pl-4">
-                                <li>More expensive</li>
-                                <li>Preference for pros</li>
-                                <li>Great cat-only options</li>
-                            </ul>
-                        </div>
-                        <div className="bg-white p-4 rounded-lg shadow-sm border border-primary/5">
-                            <h4 className="font-bold mb-2">🐕 Frankfurt</h4>
-                            <ul className="text-sm list-disc pl-4">
-                                <li>Commuters → house sitting</li>
-                                <li>Short trips common</li>
-                                <li>Reliability valued</li>
-                            </ul>
-                        </div>
-                    </div>
 
-                    <h2 id="emotional" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">7. Preparing Your Pet Emotionally</h2>
-                    <p>A sitter isn’t just logistics — it’s a routine disruption.</p>
-                    <ul className="list-disc pl-5">
-                        <li><strong>Before:</strong> Do a trial visit. Leave worn clothing (smell matters). Don't over-dramatize the goodbye.</li>
-                        <li><strong>During:</strong> Ask for photo updates. Avoid micromanaging. A calm owner = calmer pet.</li>
-                    </ul>
-
-                    <div className="bg-[#1B4332] text-[#F5EBE0] p-8 rounded-2xl my-16 relative overflow-hidden">
-                        <div className="relative z-10">
-                            <h2 className="text-3xl font-bold text-accent mb-4 mt-0">A Note from the Sofa</h2>
-                            <p className="text-lg leading-relaxed opacity-90">
-                                Leaving your pet is never easy. But finding the right sitter changes everything. Germany is full of people who take animal care seriously. A happy sitter equals a happy pet. And a happy pet means you can finally enjoy that coffee on the mountain without guilt.
+                        <div className="prose prose-lg text-primary/80 max-w-none">
+                            <p className="border-l-4 border-accent pl-6 py-2 italic bg-accent/5 rounded-r-lg text-xl">
+                                You've finally booked that long-awaited trip home. Or maybe a spontaneous weekend in the Alps. The suitcase is out, the to-do list is shrinking... and then you feel it. Those big eyes. Watching you from the sofa. Judging you. Just a little.
                             </p>
-                            <div className="mt-8 pt-6 border-t border-[#F5EBE0]/20">
-                                <p className="font-bold mb-2">Need a vet while you're away?</p>
-                                <Link to="/" className="inline-block px-6 py-2 bg-accent text-primary font-bold rounded-lg hover:bg-white transition-colors">
-                                    Find a Vet Near You
+
+                            <p className="mt-8">
+                                For expats in Germany, finding trustworthy pet care is often more stressful than the actual move. You don't just want someone to feed your dog; you want someone who won't accidentally teach them bad habits or, worse, misunderstand a vet emergency because of a language barrier.
+                            </p>
+
+                            <h2 id="options" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">1. The Three Ways to Settle Your Pet</h2>
+
+                            <div className="grid md:grid-cols-3 gap-6 my-8 not-prose">
+                                <div className="bg-white p-6 rounded-xl border border-primary/10 shadow-sm">
+                                    <div className="text-4xl mb-4">📱</div>
+                                    <h3 className="font-bold text-lg mb-2 text-primary">The Apps</h3>
+                                    <p className="text-sm text-primary/70 mb-4">Pawshake, Rover, Cat in a Flat.</p>
+                                    <ul className="text-xs space-y-2 text-primary/60">
+                                        <li className="flex gap-2">✅ Insured usually</li>
+                                        <li className="flex gap-2">✅ Reviews visible</li>
+                                        <li className="flex gap-2">❌ Quality varies widely</li>
+                                    </ul>
+                                </div>
+                                <div className="bg-white p-6 rounded-xl border border-primary/10 shadow-sm">
+                                    <div className="text-4xl mb-4">🏨</div>
+                                    <h3 className="font-bold text-lg mb-2 text-primary">Professional Pensions</h3>
+                                    <p className="text-sm text-primary/70 mb-4">"Hundepensionen" or "Katzenhotels".</p>
+                                    <ul className="text-xs space-y-2 text-primary/60">
+                                        <li className="flex gap-2">✅ Pros handle it</li>
+                                        <li className="flex gap-2">✅ Reliable 24/7</li>
+                                        <li className="flex gap-2">❌ Expensive & Kennel-like</li>
+                                    </ul>
+                                </div>
+                                <div className="bg-white p-6 rounded-xl border border-primary/10 shadow-sm">
+                                    <div className="text-4xl mb-4">🤝</div>
+                                    <h3 className="font-bold text-lg mb-2 text-primary">Community Swap</h3>
+                                    <p className="text-sm text-primary/70 mb-4">TrustedHousesitters or FB Groups.</p>
+                                    <ul className="text-xs space-y-2 text-primary/60">
+                                        <li className="flex gap-2">✅ Free / Low Cost</li>
+                                        <li className="flex gap-2">✅ Home environment</li>
+                                        <li className="flex gap-2">❌ Hard to find availability</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3 className="text-2xl font-bold text-primary mt-8 mb-4">Which one is right for you?</h3>
+                            <p>
+                                If you have an <strong>anxious dog</strong>, a loud "Hundepension" with 20 other barking dogs is probably hell on earth for them. Look for a 1-on-1 sitter on Rover or Pawshake.
+                            </p>
+                            <p>
+                                If you have a <strong>cat</strong>, never move them to a pension unless absolutely necessary. Cats are territorial. Use <a href="https://catinaflat.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">Cat in a Flat</a> or a neighbor check-in service.
+                            </p>
+
+                            <h2 id="costs" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">2. What Does Pet Sitting Cost in 2025?</h2>
+                            <p>Prices have risen significantly in major cities like Berlin and Munich. Here are the realistic averages you should budget for:</p>
+
+                            <ul className="space-y-4 my-6 list-none pl-0">
+                                <li className="flex items-center justify-between p-4 bg-white rounded-lg border border-primary/5">
+                                    <span className="font-bold text-primary">Dog Day Care (Gassigehen)</span>
+                                    <span className="font-mono text-accent font-bold">€15 - €25 / walk</span>
+                                </li>
+                                <li className="flex items-center justify-between p-4 bg-white rounded-lg border border-primary/5">
+                                    <span className="font-bold text-primary">Overnight Dog Sitting (Sitter's Home)</span>
+                                    <span className="font-mono text-accent font-bold">€35 - €60 / night</span>
+                                </li>
+                                <li className="flex items-center justify-between p-4 bg-white rounded-lg border border-primary/5">
+                                    <span className="font-bold text-primary">Cat Visit (1x daily, 30 min)</span>
+                                    <span className="font-mono text-accent font-bold">€15 - €20 / visit</span>
+                                </li>
+                                <li className="flex items-center justify-between p-4 bg-white rounded-lg border border-primary/5">
+                                    <span className="font-bold text-primary">Professional Hundepension</span>
+                                    <span className="font-mono text-accent font-bold">€40 - €80 / night</span>
+                                </li>
+                            </ul>
+
+                            <h2 id="legal" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">3. Legal & Insurance (Don't Skip)</h2>
+                            <p>
+                                German liability law (§ 833 BGB) states that YOU, the owner, are liable for damages caused by your animal, even if you are not there.
+                            </p>
+                            <div className="bg-red-50 border-l-4 border-red-400 p-6 my-6 rounded-r-lg">
+                                <h4 className="font-bold text-red-800 mb-2">Scenario:</h4>
+                                <p className="text-red-700 text-sm">
+                                    Your dog pulls the leash out of the sitter's hand and causes a cyclist to fall. The cyclist breaks an arm. <strong>Your</strong> "Hundehaftpflichtversicherung" (Dog Liability Insurance) must cover this.
+                                </p>
+                            </div>
+                            <p>
+                                <strong>Crucial Step:</strong> Call your insurance provider and ask: <em>"Is 'Fremdhütung' (care by a third party) covered particularly if it is a paid service?"</em> Some basic policies exclude paid sitting!
+                            </p>
+
+                            <h2 id="checklist" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">4. The Ultimate Sitter Checklist</h2>
+                            <p>Before you hand over the keys, print this out for your peace of mind:</p>
+                            <ul className="list-disc pl-5 space-y-2 marker:text-accent">
+                                <li><strong>Emergency Vet Contact:</strong> Provide name, address, and Google Maps link.</li>
+                                <li><strong>Payment Authorization:</strong> Tell your vet you are away and authorize the sitter to make medical decisions up to €500 (or your limit).</li>
+                                <li><strong>Dietary Rules:</strong> "No table scraps" isn't enough. Be specific: "He is allergic to Chicken."</li>
+                                <li><strong>Behavioral Triggers:</strong> "He hates postmen" or "Do not touch his tail."</li>
+                                <li><strong>Passport:</strong> Leave the EU Pet Passport visible on the table.</li>
+                            </ul>
+
+                            <div className="mt-12 p-8 bg-secondary/30 rounded-2xl text-center">
+                                <h3 className="text-2xl font-bold text-primary mb-4">Need a Vet while you're away?</h3>
+                                <p className="mb-6 text-primary/70">
+                                    Make sure your sitter knows where to go. Find a verified English-speaking vet near you.
+                                </p>
+                                <Link
+                                    to="/"
+                                    className="inline-block bg-accent hover:bg-accent-dark text-white font-bold py-3 px-8 rounded-full transition-all hover:scale-105 shadow-lg hover:shadow-xl"
+                                >
+                                    Search Vet Directory
                                 </Link>
                             </div>
                         </div>
-                    </div>
-                </article >
 
-        <RelatedPosts currentPath="/blog/pet-sitting-germany-2025" />
-            </main >
+                        <RelatedPosts currentPath="/blog/pet-sitting-germany-2025" />
+                    </article>
+                </div>
+            </main>
 
-        <Footer />
-        </div >
+            <Footer />
+        </div>
     );
 }
