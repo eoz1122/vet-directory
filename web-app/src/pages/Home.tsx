@@ -157,11 +157,8 @@ const Home: React.FC = () => {
 
                     <div ref={scrollContainerRef} className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth custom-scrollbar bg-secondary/30">
                         <div className="space-y-4">
-                            <div className="group/search relative">
+                            <div className="group/search relative z-50">
                                 <PlaceAutocomplete onPlaceSelect={handlePlaceSelect} />
-                                <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1 opacity-0 group-focus-within/search:opacity-100 transition-opacity">
-                                    <span className="text-[10px] font-bold text-primary/30 uppercase tracking-tighter">Enter City or Street</span>
-                                </div>
                             </div>
 
                             {!userLocation ? (
