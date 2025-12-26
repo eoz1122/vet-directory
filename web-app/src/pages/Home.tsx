@@ -249,37 +249,37 @@ const Home: React.FC = () => {
                                     <svg className="w-4.5 h-4.5 text-primary/20 absolute left-4 top-1/2 -translate-y-1/2 transition-colors group-focus-within/filter:text-accent/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                 </div>
                                 <div className="flex gap-2">
-                                    <label className="flex items-center gap-2 px-3 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
+                                    <label className="flex items-center gap-3 px-4 py-2 bg-white border-2 border-primary/20 rounded-2xl cursor-pointer hover:bg-amber-50 hover:border-amber-400 transition-all shadow-md group">
                                         <input
                                             type="checkbox"
                                             checked={showMobileOnly}
                                             onChange={(e) => setShowMobileOnly(e.target.checked)}
-                                            className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
+                                            className="w-5 h-5 rounded-lg border-2 border-primary/30 text-amber-500 focus:ring-2 focus:ring-amber-400 accent-amber-500 transition-all cursor-pointer"
                                         />
-                                        <span className="text-[10px] font-black text-primary/40 group-hover:text-primary/70 transition-colors uppercase tracking-[0.1em] whitespace-nowrap">
+                                        <span className="text-sm font-bold text-primary/70 group-hover:text-amber-700 transition-colors uppercase tracking-wide whitespace-nowrap">
                                             🚐 Mobile
                                         </span>
                                     </label>
-                                    <label className="flex items-center gap-2 px-3 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
+                                    <label className="flex items-center gap-3 px-4 py-2 bg-white border-2 border-primary/20 rounded-2xl cursor-pointer hover:bg-red-50 hover:border-red-400 transition-all shadow-md group">
                                         <input
                                             type="checkbox"
                                             checked={showEmergencyOnly}
                                             onChange={(e) => setShowEmergencyOnly(e.target.checked)}
-                                            className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
+                                            className="w-5 h-5 rounded-lg border-2 border-primary/30 text-red-500 focus:ring-2 focus:ring-red-400 accent-red-500 transition-all cursor-pointer"
                                         />
-                                        <span className="text-[10px] font-black text-primary/40 group-hover:text-primary/70 transition-colors uppercase tracking-[0.1em] whitespace-nowrap">
+                                        <span className="text-sm font-bold text-primary/70 group-hover:text-red-700 transition-colors uppercase tracking-wide whitespace-nowrap">
                                             🚑 Emergency (24h)
                                         </span>
                                     </label>
-                                    <label className="flex items-center gap-2 px-3 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
+                                    <label className="flex items-center gap-3 px-4 py-2 bg-white border-2 border-primary/20 rounded-2xl cursor-pointer hover:bg-green-50 hover:border-green-400 transition-all shadow-md group">
                                         <input
                                             type="checkbox"
                                             checked={showVerifiedOnly}
                                             onChange={(e) => setShowVerifiedOnly(e.target.checked)}
-                                            className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
+                                            className="w-5 h-5 rounded-lg border-2 border-primary/30 text-green-500 focus:ring-2 focus:ring-green-400 accent-green-500 transition-all cursor-pointer"
                                         />
-                                        <span className="text-[10px] font-black text-primary/40 group-hover:text-primary/70 transition-colors uppercase tracking-[0.1em] whitespace-nowrap">
-                                            🛡 Verified
+                                        <span className="text-sm font-bold text-primary/70 group-hover:text-green-700 transition-colors uppercase tracking-wide whitespace-nowrap">
+                                            ✅ Verified
                                         </span>
                                     </label>
                                 </div>
