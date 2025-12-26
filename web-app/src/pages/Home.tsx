@@ -23,6 +23,7 @@ const Home: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
     const [showMobileOnly, setShowMobileOnly] = useState(false);
+    const [showEmergencyOnly, setShowEmergencyOnly] = useState(false);
     const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
     const [selectedVet, setSelectedVet] = useState<Vet | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
@@ -41,6 +42,7 @@ const Home: React.FC = () => {
             (vet.district || "").toLowerCase().includes(searchTerm.toLowerCase());
         const matchesVerification = !showVerifiedOnly || (vet.community_status === 'Verified');
         const matchesMobile = !showMobileOnly || (vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown'));
+        const matchesEmergency = !showEmergencyOnly || (vet.verification?.emergency === '24/7');
 
         // Distance filter
         let matchesDistance = true;
@@ -53,7 +55,7 @@ const Home: React.FC = () => {
             }
         }
 
-        return matchesCity && matchesText && matchesVerification && matchesDistance && matchesMobile;
+        return matchesCity && matchesText && matchesVerification && matchesDistance && matchesMobile && matchesEmergency;
     });
 
     // Sort logic
@@ -261,6 +263,17 @@ const Home: React.FC = () => {
                                     <label className="flex items-center gap-2 px-3 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
                                         <input
                                             type="checkbox"
+                                            checked={showEmergencyOnly}
+                                            onChange={(e) => setShowEmergencyOnly(e.target.checked)}
+                                            className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
+                                        />
+                                        <span className="text-[10px] font-black text-primary/40 group-hover:text-primary/70 transition-colors uppercase tracking-[0.1em] whitespace-nowrap">
+                                            🚑 Emergency (24h)
+                                        </span>
+                                    </label>
+                                    <label className="flex items-center gap-2 px-3 bg-white border border-primary/5 rounded-2xl cursor-pointer hover:bg-white/80 transition-all shadow-sm group">
+                                        <input
+                                            type="checkbox"
                                             checked={showVerifiedOnly}
                                             onChange={(e) => setShowVerifiedOnly(e.target.checked)}
                                             className="w-4 h-4 rounded-lg border-primary/20 text-accent focus:ring-accent accent-accent transition-all cursor-pointer"
@@ -358,6 +371,16 @@ const Home: React.FC = () => {
                                                 </p>
                                             </div>
                                         ))}
+                                        {vet.verification?.emergency === '24/7' && (
+                                            <div className="flex gap-3 items-start group/signal">
+                                                <div className="mt-1 flex-shrink-0 w-4 h-4 bg-red-100 rounded-full flex items-center justify-center animate-pulse">
+                                                    <span className="text-[10px]">🚑</span>
+                                                </div>
+                                                <p className="text-[11px] text-red-600 font-bold leading-snug">
+                                                    24h Emergency Service
+                                                </p>
+                                            </div>
+                                        )}
                                     </div>
 
                                     <div className="flex gap-3">

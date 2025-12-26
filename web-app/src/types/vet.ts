@@ -16,6 +16,7 @@ export interface Vet {
         ai_score: number;
         last_scanned: string;
         english_signals: string[];
+        emergency?: string;
     };
     community_status?: "Verified" | "Community Sourced";
 }

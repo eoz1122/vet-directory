@@ -132,7 +132,8 @@ def sync():
                 "verification": {
                     "ai_score": 95,
                     "last_scanned": row.get('Last Verified', '2025-12-25'),
-                    "english_signals": [s.strip() for s in row.get('English Signals', '').split(';')] if row.get('English Signals') else []
+                    "english_signals": [s.strip() for s in row.get('English Signals', '').split(';')] if row.get('English Signals') else [],
+                    "emergency": (row.get('Emergency Services') or '').strip()
                 },
                 "community_status": row.get('Verification Status', 'Verified')
             }
