@@ -144,9 +144,9 @@ const Home: React.FC = () => {
                                 <img src="/logo.png" alt="Logo" className="h-14 w-auto drop-shadow-sm transition-transform group-hover:scale-105" />
                                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full border-2 border-white animate-pulse"></div>
                             </div>
-                            <div className="flex flex-col">
-                                <h1 className="text-primary font-black text-lg tracking-tight leading-none uppercase">English Speaking</h1>
-                                <span className="text-accent font-bold text-[10px] uppercase tracking-[0.2em] opacity-80">Vets</span>
+                            <div className="flex flex-col leading-none">
+                                <span className="text-primary font-bold text-lg uppercase tracking-tight">English Speaking</span>
+                                <span className="text-accent font-bold text-2xl uppercase tracking-tighter">Vets</span>
                             </div>
                         </Link>
 
