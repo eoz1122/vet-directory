@@ -338,31 +338,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Berlin-44",
-    "practice_name": "Dr. Wolfgang Beck",
-    "city": "Berlin",
-    "district": "Neukölln",
-    "address": "Weichselstraße 25, 12045 Berlin (Neukölln)",
-    "coordinates": {
-      "lat": 52.4870325,
-      "lng": 13.4368022
-    },
-    "contact": {
-      "phone": "",
-      "website": "http://www.tierarztpraxis-dr-beck.de/index.htm",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-26",
-      "english_signals": [
-        "Verified English Support",
-        "Community Verified"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Berlin-115",
     "practice_name": "Dr.med.vet. Claudia Pastor Tierärztin",
     "city": "Berlin",
@@ -382,31 +357,6 @@
       "last_scanned": "2025-12-25",
       "english_signals": [
         "Verified by Community"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-117",
-    "practice_name": "Dr.med.vet. Wolfgang Beck veterinarian",
-    "city": "Berlin",
-    "district": "Berlin",
-    "address": "Weichselstraße 25, 12045 Berlin",
-    "coordinates": {
-      "lat": 52.4869708,
-      "lng": 13.4367711
-    },
-    "contact": {
-      "phone": "030 6239664",
-      "website": "http://www.tierarztpraxis-dr-beck.de/",
-      "google_maps": null
-    },
-    "verification": {
-      "ai_score": 95,
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"speak English and always have the best solutions for the patients!\"",
-        "Confirmed via Google Review: \"and always have the best solutions for the patients!\""
       ]
     },
     "community_status": "Verified"
@@ -1254,6 +1204,32 @@
       "last_scanned": "2025-12-24",
       "english_signals": [
         "Verified English Support"
+      ]
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Berlin-44",
+    "practice_name": "Tierarztpraxis Dr. Wolfgang Beck",
+    "city": "Berlin",
+    "district": "Neukölln",
+    "address": "Weichselstraße 25, 12045 Berlin (Neukölln)",
+    "coordinates": {
+      "lat": 52.4870325,
+      "lng": 13.4368022
+    },
+    "contact": {
+      "phone": "030 6239664",
+      "website": "http://www.tierarztpraxis-dr-beck.de/index.htm",
+      "google_maps": null
+    },
+    "verification": {
+      "ai_score": 95,
+      "last_scanned": "2025-12-26",
+      "english_signals": [
+        "Confirmed via Google Review: \"English speaking and always have the best solutions\"",
+        "Verified English Support",
+        "Community Verified"
       ]
     },
     "community_status": "Verified"
