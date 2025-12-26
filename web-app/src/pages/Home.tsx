@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { APIProvider } from '@vis.gl/react-google-maps';
-import AppMap from '../components/Map';
+// import AppMap from '../components/Map'; // Removed direct import
 import PlaceAutocomplete from '../components/PlaceAutocomplete';
 import Footer from '../components/Footer';
 import type { Vet, VetWithDistance } from '../types/vet';
@@ -10,6 +10,9 @@ import vetsData from '../data/vets.json';
 import { calculateDistance } from '../utils/distance';
 import { appendUTM } from '../utils/url';
 import { generateListingSchema } from '../utils/schema';
+
+// Lazy load the Map component to reduce initial bundle size causing TBT
+const AppMap = lazy(() => import('../components/Map'));
 
 // Cast the JSON data to our Vet type
 const vets = vetsData as Vet[];
@@ -141,7 +144,7 @@ const Home: React.FC = () => {
                     <header className="sticky top-0 z-10 bg-secondary backdrop-blur-xl border-b border-primary/5 p-6 space-y-5">
                         <Link to="/" className="flex items-center gap-5 group">
                             <div className="relative">
-                                <img src="/logo.png" alt="Logo" className="h-16 md:h-20 w-auto drop-shadow-sm transition-transform group-hover:scale-105" />
+                                <img src="/logo.png" alt="Logo" width="232" height="80" className="h-16 md:h-20 w-auto drop-shadow-sm transition-transform group-hover:scale-105" />
                                 <div className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-accent rounded-full border-2 border-white animate-pulse"></div>
                             </div>
                             <div className="flex flex-col leading-tight">
@@ -467,7 +470,9 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="hidden md:block md:w-[58%] lg:w-[60%] h-screen relative bg-secondary/10">
-                    <AppMap vets={sortedVets} selectedCity={selectedCity} selectedVet={selectedVet} onSelectVet={setSelectedVet} />
+                    <Suspense fallback={<div className="h-full w-full flex items-center justify-center text-primary/40 font-bold uppercase tracking-widest text-sm">Loading Map...</div>}>
+                        <AppMap vets={sortedVets} selectedCity={selectedCity} selectedVet={selectedVet} onSelectVet={setSelectedVet} />
+                    </Suspense>
                 </div>
 
                 {/* Mobile Navigation */}
