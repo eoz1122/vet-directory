@@ -46,5 +46,17 @@
             "lng": 13.4357963
         },
         "reason": "Updated to 'Mobile Tierarztpraxis Berlin' and fixed address to Gutzkowstraße 4 per user request"
+    },
+    {
+        "id": "Berlin-44",
+        "practice_name": "Dr. Wolfgang Beck",
+        "city": "Berlin",
+        "district": "Neukölln",
+        "address": "Weichselstraße 25, 12045 Berlin (Neukölln)",
+        "coordinates": {
+            "lat": 52.4870325,
+            "lng": 13.4368022
+        },
+        "reason": "Added website per user request"
     }
 ]

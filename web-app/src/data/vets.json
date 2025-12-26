@@ -349,12 +349,12 @@
     },
     "contact": {
       "phone": "",
-      "website": "",
+      "website": "http://www.tierarztpraxis-dr-beck.de/index.htm",
       "google_maps": null
     },
     "verification": {
       "ai_score": 95,
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2025-12-26",
       "english_signals": [
         "Verified English Support",
         "Community Verified"
