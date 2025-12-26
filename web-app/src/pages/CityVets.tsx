@@ -233,12 +233,12 @@ export default function CityVets() {
                                                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
                                                 Verified
                                             </div>
-                                            <div className="absolute bottom-full right-0 mb-2 w-56 p-4 bg-white border border-primary/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
-                                                <p className="text-[11px] leading-relaxed font-medium text-primary/80 normal-case tracking-normal">
-                                                    <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">Our Methodology</span>
-                                                    We verify language capabilities by analyzing reviews for "English signals" and validating directly with practices to ensure clear communication.
+                                            <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-white border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
+                                                <p className="text-[11px] leading-relaxed font-medium text-white/90 normal-case tracking-normal">
+                                                    <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">Community Verified</span>
+                                                    We analyze thousands of patient reviews to identify "English signals"—confirming that other international pet owners successfully communicated in English.
                                                 </p>
-                                                <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-white border-b border-r border-primary/10 rotate-45"></div>
+                                                <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-primary border-b border-r border-white/10 rotate-45"></div>
                                             </div>
                                         </div>
                                     </div>
