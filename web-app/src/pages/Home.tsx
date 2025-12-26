@@ -138,8 +138,8 @@ const Home: React.FC = () => {
                                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full border-2 border-white animate-pulse"></div>
                             </div>
                             <div className="flex flex-col">
-                                <h1 className="text-primary font-black text-lg tracking-tight leading-none uppercase">The Pack</h1>
-                                <span className="text-accent font-bold text-[10px] uppercase tracking-[0.2em] opacity-80">English Speaking Vets</span>
+                                <h1 className="text-primary font-black text-lg tracking-tight leading-none uppercase">English Speaking</h1>
+                                <span className="text-accent font-bold text-[10px] uppercase tracking-[0.2em] opacity-80">Vets</span>
                             </div>
                         </Link>
 
