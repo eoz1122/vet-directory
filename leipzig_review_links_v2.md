@@ -1,0 +1,54 @@
+# Leipzig Vets - Direct Review Links (V2)
+
+| Vet Name | Direct Review Link |
+| :--- | :--- |
+| **Kleintierklinik der Universität Leipzig** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJNVvGW7T5pkcRvK94WJGm3Eo) |
+| **Tierärztliche Notfallambulanz** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJeeVloLD5pkcR-FHNK3f_n80) |
+| **Tierarztpraxis Kolonnadenviertel** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJuSFDNIj3pkcR7k6iSL4H1gI) |
+| **Tierärztliche Gemeinschaftspraxis** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJB8mUO9L5pkcRyFBHjMYIbyw) |
+| **felmo Mobiler Tierarzt Leipzig** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJc3WNHbdaxWwRUIVrj9HbTbM) |
+| **Tierarztpraxis Paarmann** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJ1bBl9d3JcUERMowpPmD5W5E) |
+| **Tierarztpraxis Angela Petermann** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJWT5i2PDJcUERhHH3Rj0_LvQ) |
+| **Tierärztliche Gemeinschaftspraxis Tierarzt Holm Schnelle & Fachtierärztin Simone Fuchs** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJpZrgtkL4pkcRLmC3_7J2RQs) |
+| **Tiergesundheitszentrum Leipzig-Nord** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJAYIsuzVXpkcRhETSv_m9CUE) |
+| **Tierarztpraxis Reflexus - Kraa, Dr. Leukert und Girgner** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJaQqgPtL5pkcRt6ihkf2pCIs) |
+| **Tierärztliche Praxis für Augenheilkunde, Dr. von Krosigk & Dr. Voigt** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJ6XnC6f5XpkcR0Gz5Tq2m8Ko) |
+| **Tierarztpraxis am Rosental** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJs5DPauT3pkcREj9N2yAYJJk) |
+| **Tierärztliche Praxis Dr. Peter Schmidt** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJz5pJZPH_pkcRu4g_Umznb_c) |
+| **Tierarztpraxis am Kirschberg** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJHZQ44-j2pkcRxyXpdE6Y3NA) |
+| **Dipl.Vet.Med. Henrik Jassmann** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJKdzP77z5pkcRHnxyitVzmi0) |
+| **Tierarztpraxis Dr. Christine Fabritius** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJ7TGFloX3pkcRA2Rfab03o04) |
+| **Dr. Mima Hohmann** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJWUf3pCz4pkcRsBQcymP6Al0) |
+| **Tierarztpraxis Dr. Fricke - Leipzig** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJmWLMhO9ZpkcRk_ekK7M5zDY) |
+| **Tagesklinik für Kleintiere - Dr. Volker Jähnig und Tierarzt Patrick Jähnig, GbR** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJibMy98NXpkcRyijK3lk3wn8) |
+| **Dr.habil Beuche mit Notdienst Freit. Sa. Sonn,Feiertag nach tel. Anmeldung bis 21:30** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJM7UsqrL-pkcRxiRUxnyIouM) |
+| **Kleintierpraxis Dr. Fatima Sterl** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJyxourj1YpkcRKFYBhwBpqNw) |
+| **Tierarztpraxis Reudnitz** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJx30K3A35pkcRhwUh4U1GCaM) |
+| **Kleintierpraxis Weinlein** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJKUwp8Rr6pkcRcA00tA5ksnA) |
+| **Dr.med.vet. Rüdiger Neumann** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJM98Wr3L3pkcRzM7I6Q1OTPM) |
+| **Tierarztpraxis Dr. Isabel Göpner/Dr. Silke Schroth** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJsQNBqU_4pkcR_LCgtezNl6w) |
+| **Tierarztpraxis Jähnig** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJy3bCCG74pkcR8F8UstNOii4) |
+| **Veterinär-Physiologisches Institut** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJufvfObX5pkcR2g-3Gf7XE88) |
+| **Mitteldeutsches Kompetenzzentrum f. Kleintiere / Fachtierarzt / Tages-Tierklinik** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJCxJHmoH5pkcRhTQfAwMVdR4) |
+| **Manfred Seeliger veterinarian** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJR8ZC3s75pkcRuKo601sEBt4) |
+| **Tierarztpraxis - Dr. med. vet. Reinhart Voigt** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJ5yWT87z5pkcRB8UnnMm_0dA) |
+| **Tierarztpraxis an der Elster - Elstertierärzte** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJA6M-WoL3pkcRFtM6x_MnO7Q) |
+| **Dr. med. Vet. Volker Jähnig** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJR5DLSXL4pkcRq8wmP4EaW4s) |
+| **Universität Leipzig - Klinik für Pferde (Chirurgie)** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJ7fe497T5pkcRKqNoYuv43IQ) |
+| **Dr.med.vet. Kristina Rottmayer** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJxSFe34JYpkcR1oFsgfqSMCw) |
+| **Tierarztpraxis Dr. Jörg Rottmayer** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJbwu-iQhYpkcR8i4AMI7ahpE) |
+| **Tierarztpraxis Yumeico** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJ3ceV9a_-pkcRQHuutHI5TKA) |
+| **Tierarzt Claudia Ernst** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJM0TFTY_5pkcRssNhJPlNcTI) |
+| **Tierarztpraxis Großzschocher (ehem. TAP Junghanns), Inh. Dr. N. Graneß** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJ9RUlf0b3pkcRqw08aT2GLyc) |
+| **Ashley Walter Cullis veterinary practice** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJl00jpIpYpkcRwa4XY2QcBws) |
+| **Kleintier- und Exotenpraxis Tierärztin Nadine Pahl - Leipzig** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJURZFNBj5pkcRDwoaZy9-37Q) |
+| **Ambulante Tierarztpraxis Gabriela Kinder** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJE04l-TT2pkcR36cU-9pjLNk) |
+| **Tierarztpraxis im Planetenviertel** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJzV0ow473pkcRAAhw_3u9riQ) |
+| **Tierarztpraxis Leutzsch** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJudXXKbX3pkcRBUHtrGuTWtQ) |
+| **Mobiler Tierarztnotdienst Leipzig** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJd_YGz6L7pkcR8w8b0yvVvpI) |
+| **Augentierarzt** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJTRCV6f5XpkcRHybvaNY9yOw) |
+| **Tierarztpraxis Dr. Fränze Hering** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJgbalJ4H5pkcRuLGdeHctZlM) |
+| **Kleintierpraxis Leipzig Schönefeld** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJ68VT5234pkcRbaWrKRjJ1es) |
+| **Tierärztliche Praxis für Haus- und Heimtiere** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJbwu-iQhYpkcRJ1tH99uUKBk) |
+| **Klinik für Vögel und Reptilien - Universität Leipzig** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJtefL_rT5pkcRG8HD_LdkfBc) |
+| **Tierärztliche Tagesklinik Weinlein** | [Open Reviews 🌟](https://search.google.com/local/reviews?placeid=ChIJcxo5B97xpkcRfP20oU4Lyfs) |

@@ -1,0 +1,54 @@
+# Leipzig Vets - Review Verification Links
+
+| Vet Name | Verify English Support |
+| :--- | :--- |
+| **Kleintierklinik der Universität Leipzig** | [Search Reviews 🔎](https://www.google.com/search?q=Kleintierklinik%20der%20Universit%C3%A4t%20Leipzig%20Leipzig%20reviews%20English) |
+| **Tierärztliche Notfallambulanz** | [Search Reviews 🔎](https://www.google.com/search?q=Tier%C3%A4rztliche%20Notfallambulanz%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Kolonnadenviertel** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Kolonnadenviertel%20Leipzig%20reviews%20English) |
+| **Tierärztliche Gemeinschaftspraxis** | [Search Reviews 🔎](https://www.google.com/search?q=Tier%C3%A4rztliche%20Gemeinschaftspraxis%20Leipzig%20reviews%20English) |
+| **felmo Mobiler Tierarzt Leipzig** | [Search Reviews 🔎](https://www.google.com/search?q=felmo%20Mobiler%20Tierarzt%20Leipzig%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Paarmann** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Paarmann%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Angela Petermann** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Angela%20Petermann%20Leipzig%20reviews%20English) |
+| **Tierärztliche Gemeinschaftspraxis Tierarzt Holm Schnelle & Fachtierärztin Simone Fuchs** | [Search Reviews 🔎](https://www.google.com/search?q=Tier%C3%A4rztliche%20Gemeinschaftspraxis%20Tierarzt%20Holm%20Schnelle%20%26%20Fachtier%C3%A4rztin%20Simone%20Fuchs%20Leipzig%20reviews%20English) |
+| **Tiergesundheitszentrum Leipzig-Nord** | [Search Reviews 🔎](https://www.google.com/search?q=Tiergesundheitszentrum%20Leipzig-Nord%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Reflexus - Kraa, Dr. Leukert und Girgner** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Reflexus%20-%20Kraa%2C%20Dr.%20Leukert%20und%20Girgner%20Leipzig%20reviews%20English) |
+| **Tierärztliche Praxis für Augenheilkunde, Dr. von Krosigk & Dr. Voigt** | [Search Reviews 🔎](https://www.google.com/search?q=Tier%C3%A4rztliche%20Praxis%20f%C3%BCr%20Augenheilkunde%2C%20Dr.%20von%20Krosigk%20%26%20Dr.%20Voigt%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis am Rosental** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20am%20Rosental%20Leipzig%20reviews%20English) |
+| **Tierärztliche Praxis Dr. Peter Schmidt** | [Search Reviews 🔎](https://www.google.com/search?q=Tier%C3%A4rztliche%20Praxis%20Dr.%20Peter%20Schmidt%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis am Kirschberg** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20am%20Kirschberg%20Leipzig%20reviews%20English) |
+| **Dipl.Vet.Med. Henrik Jassmann** | [Search Reviews 🔎](https://www.google.com/search?q=Dipl.Vet.Med.%20Henrik%20Jassmann%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Dr. Christine Fabritius** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Dr.%20Christine%20Fabritius%20Leipzig%20reviews%20English) |
+| **Dr. Mima Hohmann** | [Search Reviews 🔎](https://www.google.com/search?q=Dr.%20Mima%20Hohmann%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Dr. Fricke - Leipzig** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Dr.%20Fricke%20-%20Leipzig%20Leipzig%20reviews%20English) |
+| **Tagesklinik für Kleintiere - Dr. Volker Jähnig und Tierarzt Patrick Jähnig, GbR** | [Search Reviews 🔎](https://www.google.com/search?q=Tagesklinik%20f%C3%BCr%20Kleintiere%20-%20Dr.%20Volker%20J%C3%A4hnig%20und%20Tierarzt%20Patrick%20J%C3%A4hnig%2C%20GbR%20Leipzig%20reviews%20English) |
+| **Dr.habil Beuche mit Notdienst Freit. Sa. Sonn,Feiertag nach tel. Anmeldung bis 21:30** | [Search Reviews 🔎](https://www.google.com/search?q=Dr.habil%20Beuche%20mit%20Notdienst%20Freit.%20Sa.%20Sonn%2CFeiertag%20nach%20tel.%20Anmeldung%20bis%2021%3A30%20Leipzig%20reviews%20English) |
+| **Kleintierpraxis Dr. Fatima Sterl** | [Search Reviews 🔎](https://www.google.com/search?q=Kleintierpraxis%20Dr.%20Fatima%20Sterl%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Reudnitz** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Reudnitz%20Leipzig%20reviews%20English) |
+| **Kleintierpraxis Weinlein** | [Search Reviews 🔎](https://www.google.com/search?q=Kleintierpraxis%20Weinlein%20Leipzig%20reviews%20English) |
+| **Dr.med.vet. Rüdiger Neumann** | [Search Reviews 🔎](https://www.google.com/search?q=Dr.med.vet.%20R%C3%BCdiger%20Neumann%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Dr. Isabel Göpner/Dr. Silke Schroth** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Dr.%20Isabel%20G%C3%B6pner/Dr.%20Silke%20Schroth%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Jähnig** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20J%C3%A4hnig%20Leipzig%20reviews%20English) |
+| **Veterinär-Physiologisches Institut** | [Search Reviews 🔎](https://www.google.com/search?q=Veterin%C3%A4r-Physiologisches%20Institut%20Leipzig%20reviews%20English) |
+| **Mitteldeutsches Kompetenzzentrum f. Kleintiere / Fachtierarzt / Tages-Tierklinik** | [Search Reviews 🔎](https://www.google.com/search?q=Mitteldeutsches%20Kompetenzzentrum%20f.%20Kleintiere%20/%20Fachtierarzt%20/%20Tages-Tierklinik%20Leipzig%20reviews%20English) |
+| **Manfred Seeliger veterinarian** | [Search Reviews 🔎](https://www.google.com/search?q=Manfred%20Seeliger%20veterinarian%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis - Dr. med. vet. Reinhart Voigt** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20-%20Dr.%20med.%20vet.%20Reinhart%20Voigt%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis an der Elster - Elstertierärzte** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20an%20der%20Elster%20-%20Elstertier%C3%A4rzte%20Leipzig%20reviews%20English) |
+| **Dr. med. Vet. Volker Jähnig** | [Search Reviews 🔎](https://www.google.com/search?q=Dr.%20med.%20Vet.%20Volker%20J%C3%A4hnig%20Leipzig%20reviews%20English) |
+| **Universität Leipzig - Klinik für Pferde (Chirurgie)** | [Search Reviews 🔎](https://www.google.com/search?q=Universit%C3%A4t%20Leipzig%20-%20Klinik%20f%C3%BCr%20Pferde%20%28Chirurgie%29%20Leipzig%20reviews%20English) |
+| **Dr.med.vet. Kristina Rottmayer** | [Search Reviews 🔎](https://www.google.com/search?q=Dr.med.vet.%20Kristina%20Rottmayer%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Dr. Jörg Rottmayer** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Dr.%20J%C3%B6rg%20Rottmayer%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Yumeico** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Yumeico%20Leipzig%20reviews%20English) |
+| **Tierarzt Claudia Ernst** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarzt%20Claudia%20Ernst%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Großzschocher (ehem. TAP Junghanns), Inh. Dr. N. Graneß** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Gro%C3%9Fzschocher%20%28ehem.%20TAP%20Junghanns%29%2C%20Inh.%20Dr.%20N.%20Grane%C3%9F%20Leipzig%20reviews%20English) |
+| **Ashley Walter Cullis veterinary practice** | [Search Reviews 🔎](https://www.google.com/search?q=Ashley%20Walter%20Cullis%20veterinary%20practice%20Leipzig%20reviews%20English) |
+| **Kleintier- und Exotenpraxis Tierärztin Nadine Pahl - Leipzig** | [Search Reviews 🔎](https://www.google.com/search?q=Kleintier-%20und%20Exotenpraxis%20Tier%C3%A4rztin%20Nadine%20Pahl%20-%20Leipzig%20Leipzig%20reviews%20English) |
+| **Ambulante Tierarztpraxis Gabriela Kinder** | [Search Reviews 🔎](https://www.google.com/search?q=Ambulante%20Tierarztpraxis%20Gabriela%20Kinder%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis im Planetenviertel** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20im%20Planetenviertel%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Leutzsch** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Leutzsch%20Leipzig%20reviews%20English) |
+| **Mobiler Tierarztnotdienst Leipzig** | [Search Reviews 🔎](https://www.google.com/search?q=Mobiler%20Tierarztnotdienst%20Leipzig%20Leipzig%20reviews%20English) |
+| **Augentierarzt** | [Search Reviews 🔎](https://www.google.com/search?q=Augentierarzt%20Leipzig%20reviews%20English) |
+| **Tierarztpraxis Dr. Fränze Hering** | [Search Reviews 🔎](https://www.google.com/search?q=Tierarztpraxis%20Dr.%20Fr%C3%A4nze%20Hering%20Leipzig%20reviews%20English) |
+| **Kleintierpraxis Leipzig Schönefeld** | [Search Reviews 🔎](https://www.google.com/search?q=Kleintierpraxis%20Leipzig%20Sch%C3%B6nefeld%20Leipzig%20reviews%20English) |
+| **Tierärztliche Praxis für Haus- und Heimtiere** | [Search Reviews 🔎](https://www.google.com/search?q=Tier%C3%A4rztliche%20Praxis%20f%C3%BCr%20Haus-%20und%20Heimtiere%20Leipzig%20reviews%20English) |
+| **Klinik für Vögel und Reptilien - Universität Leipzig** | [Search Reviews 🔎](https://www.google.com/search?q=Klinik%20f%C3%BCr%20V%C3%B6gel%20und%20Reptilien%20-%20Universit%C3%A4t%20Leipzig%20Leipzig%20reviews%20English) |
+| **Tierärztliche Tagesklinik Weinlein** | [Search Reviews 🔎](https://www.google.com/search?q=Tier%C3%A4rztliche%20Tagesklinik%20Weinlein%20Leipzig%20reviews%20English) |

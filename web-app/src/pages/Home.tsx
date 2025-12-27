@@ -21,7 +21,7 @@ const ITEMS_PER_PAGE = 10;
 const Home: React.FC = () => {
     const [selectedCity, setSelectedCity] = useState('All');
     const [searchTerm, setSearchTerm] = useState('');
-    const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
+    const [showVerifiedOnly, setShowVerifiedOnly] = useState(true);
     const [showMobileOnly, setShowMobileOnly] = useState(false);
     const [showEmergencyOnly, setShowEmergencyOnly] = useState(false);
     const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
@@ -407,7 +407,7 @@ const Home: React.FC = () => {
                                         {/* Hide Map button for Mobile Services */}
                                         {!(vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown')) && (
                                             <a
-                                                href={`https://www.google.com/search?q=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
+                                                href={vet.contact?.google_maps || `https://www.google.com/search?q=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 onClick={(e) => e.stopPropagation()}

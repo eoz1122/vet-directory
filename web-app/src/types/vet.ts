@@ -11,12 +11,13 @@ export interface Vet {
     contact: {
         website: string | null;
         phone: string | null;
+        google_maps?: string | null;
     };
     verification: {
-        ai_score: number;
+        status: string;
         last_scanned: string;
         english_signals: string[];
-        emergency?: string;
+        emergency_services?: string;
     };
     community_status?: "Verified" | "Community Sourced";
 }
