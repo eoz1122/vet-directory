@@ -83,6 +83,18 @@ Whether you're living near the Englischer Garten or in the outskirts of the city
 - **Central & Suburban**: Options across Munich's diverse neighborhoods.
 - **Advanced Medicine**: Access to some of Germany's leading veterinary specialists.
 - **Community Trusted**: Practices with a proven track record of serving expat families.`
+    },
+    leipzig: {
+        title: "English-Speaking Vets in Leipzig",
+        description: "Find trusted English-speaking veterinary practices in Leipzig. Verified care for your pets in Plagwitz, Südvorstadt, and across the city.",
+        content: `Leipzig is widely known as "Hypezig" for a reason—its vibrant culture, green spaces like the Clara-Zetkin-Park, and growing international community make it a fantastic place to live. for pet owners, however, finding a veterinarian who speaks clear English can still be a challenge.
+
+Our Leipzig directory connects you with verified practices where language isn't a barrier. Whether you're living in the trendy Plagwitz area, the family-friendly Südvorstadt, or the historic Gohlis, we help you find the right care for your four-legged family members.
+
+**Why Leipzig Pet Owners Use Our Directory:**
+- **Local Verification**: We've analyzed thousands of reviews to identify practices with a history of supporting English speakers.
+- **District Coverage**: options across major neighborhoods to save you travel time.
+- **Peace of Mind**: Ensure you fully understand your pet's diagnosis and treatment plan.`
     }
 };
 
