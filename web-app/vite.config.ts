@@ -15,7 +15,7 @@ export default defineConfig({
     // Optimize chunk size
     chunkSizeWarningLimit: 1000,
     // Enable minification
-    minify: 'terser',
+    minify: true,
     // terserOptions: {
     //   compress: {
     //     drop_console: true,
