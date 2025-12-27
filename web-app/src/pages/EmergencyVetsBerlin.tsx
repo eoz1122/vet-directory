@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BlogSidebar from '../components/BlogSidebar';
 import RelatedPosts from '../components/RelatedPosts';
+import GuideDisclaimer from '../components/GuideDisclaimer';
 
 export default function EmergencyVetsBerlin() {
     return (
@@ -145,6 +146,8 @@ export default function EmergencyVetsBerlin() {
                                 Find a Berlin Vet →
                             </Link>
                         </div>
+
+                        <GuideDisclaimer />
 
                         <RelatedPosts currentPath="/guides/emergency-vets-berlin" />
                     </article>

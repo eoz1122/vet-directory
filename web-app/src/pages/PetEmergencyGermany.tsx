@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import GuideDisclaimer from '../components/GuideDisclaimer';
 
 export default function PetEmergencyGermany() {
     return (
@@ -216,6 +217,8 @@ export default function PetEmergencyGermany() {
                                 </Link>
                             </div>
                         </div>
+
+                        <GuideDisclaimer />
 
                         <RelatedPosts currentPath="/guides/pet-emergency-germany" />
                     </article>
