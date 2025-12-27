@@ -119,6 +119,18 @@ Our Hannover directory connects you with practices that bridge the language gap.
 - **University Excellence**: Access to one of Europe's leading veterinary schools (TiHo).
 - **Verified Communication**: Practices where English is spoken and understood.
 - **Emergency Options**: Clear info on 24/7 clinics for peace of mind.`
+    },
+    nuremberg: {
+        title: "English-Speaking Vets in Nuremberg (Nürnberg)",
+        description: "Find trusted English-speaking veterinarians in Nuremberg. Verified practices near the Altstadt, Langwasser, and Südstadt.",
+        content: `Nuremberg's medieval charm and modern quality of life make it a great place for pets, from walks along the Pegnitz to the Reichswald. But navigating veterinary care in a new language can be daunting.
+
+Our Nuremberg directory highlights practices where you can communicate comfortably in English. Whether you need a specialist at the harbor clinic or a family vet in the suburbs, we've got you covered.
+
+**Why Nuremberg Pet Owners Use Our Directory:**
+- **Local Expertise**: Vets who understand the needs of the international community.
+- **Specialized Care**: Access to major clinics like the Tierklinik am Stadtpark/Hafen.
+- **Convenience**: Finding the right help, whether you're in the city center or the outskirts.`
     }
 };
 
