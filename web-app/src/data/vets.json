@@ -6018,5 +6018,80 @@
       "emergency_services": "No"
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "Nuremberg-New-4",
+    "practice_name": "Medivet Nürnberg",
+    "city": "Nuremberg",
+    "district": "Schweinau",
+    "address": "Konstanzenstraße 90, 90439 Nürnberg",
+    "coordinates": {
+      "lat": 49.435292,
+      "lng": 11.0402869
+    },
+    "contact": {
+      "phone": "0911 96583888",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/nuernberg/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet+Nürnberg+Konstanzenstraße+90"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Primary clinic chain; staff usually English-speaking"
+      ],
+      "emergency_services": "Extended Hours"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Nuremberg-New-5",
+    "practice_name": "TierStadt GmbH",
+    "city": "Nuremberg",
+    "district": "Röthenbach",
+    "address": "Valentin-Dretzel-Straße 13, 90449 Nürnberg",
+    "coordinates": {
+      "lat": 49.4060684,
+      "lng": 11.0864262
+    },
+    "contact": {
+      "phone": "0911 38423601",
+      "website": "https://tierstadt.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=TierStadt+GmbH+Nürnberg"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Modern clinic; specialized services"
+      ],
+      "emergency_services": "Extended Hours"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Nuremberg-New-6",
+    "practice_name": "Tierklinik Am Stadtpark (Main)",
+    "city": "Nuremberg",
+    "district": "Maxfeld",
+    "address": "Tellstraße 8, 90408 Nürnberg",
+    "coordinates": {
+      "lat": 49.4684827,
+      "lng": 11.0904793
+    },
+    "contact": {
+      "phone": "0911 533008",
+      "website": "http://www.nuernberger-tierklinik.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Am+Stadtpark+Tellstraße+8"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Review confirmed: 'they were also english speaking!'"
+      ],
+      "emergency_services": "24/7 Emergency"
+    },
+    "community_status": "Verified"
   }
 ]

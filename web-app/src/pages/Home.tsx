@@ -180,13 +180,13 @@ const Home: React.FC = () => {
 
                                 {!userLocation ? (
                                     <div className="space-y-3">
-                                        <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar -mx-2 px-2">
+                                        <div className="flex flex-wrap gap-2 pb-2">
                                             {cities.map(city => (
                                                 <button
                                                     key={city}
                                                     onClick={() => handleCityChange(city)}
-                                                    className={`px-5 py-2.5 rounded-2xl text-xs font-bold transition-all duration-300 whitespace-nowrap border shadow-sm ${selectedCity === city
-                                                        ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-[1.02]'
+                                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm ${selectedCity === city
+                                                        ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
                                                         : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
                                                         }`}
                                                 >
