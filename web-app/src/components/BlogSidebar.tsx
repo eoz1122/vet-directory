@@ -7,6 +7,21 @@ const blogPosts = [
         emoji: "📦"
     },
     {
+        url: "/guides/pet-emergency-germany",
+        title: "Pet Emergency Guide",
+        emoji: "🚑"
+    },
+    {
+        url: "/guides/emergency-vets-berlin",
+        title: "Emergency Vets Berlin",
+        emoji: "🏥"
+    },
+    {
+        url: "/blog/pet-medication-germany-guide",
+        title: "Pet Medication Guide",
+        emoji: "💊"
+    },
+    {
         url: "/blog/eu-pet-passport-germany-2025",
         title: "EU Pet Passport",
         emoji: "🛂"
@@ -37,6 +52,16 @@ const blogPosts = [
         emoji: "🇩🇪"
     },
     {
+        url: "/blog/pet-insurance-germany-2025",
+        title: "Pet Insurance Guide",
+        emoji: "💰"
+    },
+    {
+        url: "/blog/german-dog-etiquette-rules",
+        title: "Dog Etiquette & Rules",
+        emoji: "🐕"
+    },
+    {
         url: "/blog/public-transport-with-dogs-berlin-2025",
         title: "Transport: Berlin",
         emoji: "🐻"
@@ -60,16 +85,6 @@ const blogPosts = [
         url: "/blog/public-transport-with-dogs-stuttgart-2025",
         title: "Transport: Stuttgart",
         emoji: "🚗"
-    },
-    {
-        url: "/blog/pet-insurance-germany-2025",
-        title: "Pet Insurance Guide",
-        emoji: "💰"
-    },
-    {
-        url: "/blog/german-dog-etiquette-rules",
-        title: "Dog Etiquette & Rules",
-        emoji: "🐕"
     }
 ];
 
@@ -80,8 +95,12 @@ export default function BlogSidebar() {
         <aside className="hidden lg:block w-64 shrink-0 space-y-8">
             <div className="sticky top-32">
                 <div className="bg-white rounded-xl shadow-sm border border-primary/5 overflow-hidden">
-                    <div className="bg-primary/5 p-4 border-b border-primary/5">
-                        <span className="font-bold text-primary text-sm uppercase tracking-wider">All Guides</span>
+                    <div className="flex items-center justify-between p-4 border-b border-primary/5">
+                        <h2 className="text-sm font-bold text-primary uppercase tracking-wider">All Guides</h2>
+                        <div className="flex items-center gap-1.5 px-2 py-1 bg-green-50 rounded-full border border-green-100">
+                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                            <span className="text-[10px] font-black text-green-700 uppercase tracking-widest">Live Sync</span>
+                        </div>
                     </div>
                     <nav className="p-2 space-y-1">
                         {blogPosts.map((post) => {
