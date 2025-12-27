@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Map as GoogleMap, AdvancedMarker, InfoWindow, useMap } from '@vis.gl/react-google-maps';
 import { appendUTM } from '../utils/url';
 import type { Vet } from '../types/vet';
@@ -17,35 +17,44 @@ const CITY_COORDS: Record<string, { lat: number; lng: number }> = {
     'Mainz': { lat: 49.9929, lng: 8.2473 },
     'Stuttgart': { lat: 48.7758, lng: 9.1829 },
     'Munich': { lat: 48.1351, lng: 11.5820 },
+    'Leipzig': { lat: 51.3397, lng: 12.3731 },
+    'Cologne': { lat: 50.9375, lng: 6.9603 },
+    'Hannover': { lat: 52.3759, lng: 9.7320 },
+    'Nuremberg': { lat: 49.4521, lng: 11.0767 },
     'All': { lat: 51.1657, lng: 10.4515 }, // Center of Germany
 };
 
 // Component to handle camera updates
-function CameraUpdater({ selectedCity, vets, selectedVet }: { selectedCity: string, vets: Vet[], selectedVet: Vet | null }) {
+function CameraUpdater({ selectedCity, selectedVet }: { selectedCity: string, selectedVet: Vet | null }) {
     const map = useMap();
+    const prevCityRef = useRef(selectedCity);
 
     useEffect(() => {
         if (!map) return;
 
-        // Priority 1: Selected Vet
+        // Priority 1: Selected Vet - Always pan and zoom when a vet is clicked
         if (selectedVet && selectedVet.coordinates.lat !== 0) {
             map.panTo(selectedVet.coordinates);
             map.setZoom(15);
             return;
         }
 
-        // Priority 2: City Selection
-        if (selectedCity !== 'All') {
-            const target = CITY_COORDS[selectedCity];
-            if (target) {
-                map.moveCamera({ center: target, zoom: 12 });
+        // Priority 2: City Selection - Only reset camera if the city FILTER itself changed
+        // This prevents the map from jumping back when you just close a vet window
+        if (prevCityRef.current !== selectedCity) {
+            if (selectedCity !== 'All') {
+                const target = CITY_COORDS[selectedCity];
+                if (target) {
+                    map.moveCamera({ center: target, zoom: 12 });
+                }
+            } else {
+                // Reset to Germany view when "All" is selected
+                map.moveCamera({ center: CITY_COORDS['All'], zoom: 6 });
             }
-        } else {
-            // Reset to Germany view when "All" is selected
-            map.moveCamera({ center: CITY_COORDS['All'], zoom: 6 });
+            prevCityRef.current = selectedCity;
         }
 
-    }, [selectedCity, map, vets, selectedVet]);
+    }, [selectedCity, map, selectedVet]);
 
     return null;
 }
@@ -67,7 +76,7 @@ export default function AppMap({ vets, selectedCity, selectedVet, onSelectVet }:
                 className="h-full w-full"
                 onClick={() => onSelectVet(null)}
             >
-                <CameraUpdater selectedCity={selectedCity} vets={validVets} selectedVet={selectedVet} />
+                <CameraUpdater selectedCity={selectedCity} selectedVet={selectedVet} />
 
                 {validVets.map(vet => (
                     <AdvancedMarker
