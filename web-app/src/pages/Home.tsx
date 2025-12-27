@@ -168,120 +168,116 @@ const Home: React.FC = () => {
                     </header>
 
                     <div ref={scrollContainerRef} className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth custom-scrollbar bg-secondary/30">
-                        <div className="space-y-4">
-                            <div className="group/search relative z-50">
-                                <PlaceAutocomplete onPlaceSelect={handlePlaceSelect} />
-                            </div>
+                        <div className="space-y-6">
+                            {/* Location Section */}
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-bold text-primary/40 uppercase tracking-widest px-1">
+                                    Where to look?
+                                </label>
+                                <div className="group/search relative z-50">
+                                    <PlaceAutocomplete onPlaceSelect={handlePlaceSelect} />
+                                </div>
 
-                            {!userLocation ? (
-                                <div className="space-y-4">
-                                    <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
-                                        {cities.map(city => (
-                                            <button
-                                                key={city}
-                                                onClick={() => handleCityChange(city)}
-                                                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 whitespace-nowrap border ${selectedCity === city
-                                                    ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20 scale-[1.02]'
-                                                    : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:text-primary hover:bg-white/80'
-                                                    }`}
-                                            >
-                                                {city}
-                                            </button>
-                                        ))}
-                                    </div>
-                                    <div className="flex items-center gap-3 px-1 text-[10px] font-bold text-primary/60 uppercase tracking-[0.1em]">
-                                        <span>Featured:</span>
-                                        <div className="flex gap-4 text-primary/80">
-                                            {cities.filter(c => c !== 'All').slice(0, 3).map(c => (
-                                                <Link key={c} to={`/vets/${c.toLowerCase()}`} className="hover:text-accent transition-colors flex items-center gap-1 group/jump">
-                                                    {c} <span className="text-[8px] transform group-hover/jump:translate-x-0.5 transition-transform">→</span>
-                                                </Link>
+                                {!userLocation ? (
+                                    <div className="space-y-3">
+                                        <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar -mx-2 px-2">
+                                            {cities.map(city => (
+                                                <button
+                                                    key={city}
+                                                    onClick={() => handleCityChange(city)}
+                                                    className={`px-5 py-2.5 rounded-2xl text-xs font-bold transition-all duration-300 whitespace-nowrap border shadow-sm ${selectedCity === city
+                                                        ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-[1.02]'
+                                                        : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
+                                                        }`}
+                                                >
+                                                    {city}
+                                                </button>
                                             ))}
                                         </div>
                                     </div>
-                                </div>
-                            ) : (
-                                <div className="flex flex-col gap-3 p-4 bg-white/50 backdrop-blur rounded-xl border border-primary/5">
-                                    <div className="flex justify-between items-center">
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                                            <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">
-                                                {searchRadius ? `Within ${searchRadius}km` : 'Sorted by Proximity'}
-                                            </span>
+                                ) : (
+                                    <div className="flex flex-col gap-3 p-4 bg-white/50 backdrop-blur rounded-2xl border border-primary/5">
+                                        <div className="flex justify-between items-center">
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                                                <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">
+                                                    {searchRadius ? `Within ${searchRadius}km` : 'Sorted by Proximity'}
+                                                </span>
+                                            </div>
+                                            <button onClick={() => setUserLocation(null)} className="text-[10px] font-black uppercase tracking-widest text-accent hover:opacity-70 transition-opacity">Change Location</button>
                                         </div>
-                                        <button onClick={() => setUserLocation(null)} className="text-[10px] font-black uppercase tracking-widest text-accent hover:opacity-70 transition-opacity">Reset View</button>
-                                    </div>
-                                    <div className="flex gap-2 text-[10px] font-bold uppercase tracking-widest overflow-x-auto pb-1 no-scrollbar">
-                                        {[1, 3, 5, 10, 25, 50].map(km => (
+                                        <div className="flex gap-2 text-[10px] font-bold uppercase tracking-widest overflow-x-auto pb-1 no-scrollbar">
+                                            {[1, 3, 5, 10, 25, 50].map(km => (
+                                                <button
+                                                    key={km}
+                                                    onClick={() => setSearchRadius(km)}
+                                                    className={`px-3 py-1.5 rounded-xl border transition-all whitespace-nowrap ${searchRadius === km
+                                                        ? 'bg-primary text-white border-primary'
+                                                        : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
+                                                        }`}
+                                                >
+                                                    {km} km
+                                                </button>
+                                            ))}
                                             <button
-                                                key={km}
-                                                onClick={() => setSearchRadius(km)}
-                                                className={`px-3 py-1.5 rounded-lg border transition-all whitespace-nowrap ${searchRadius === km
+                                                onClick={() => setSearchRadius(null)}
+                                                className={`px-3 py-1.5 rounded-xl border transition-all whitespace-nowrap ${searchRadius === null
                                                     ? 'bg-primary text-white border-primary'
                                                     : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
                                                     }`}
                                             >
-                                                {km} km
+                                                Any Distance
                                             </button>
-                                        ))}
-                                        <button
-                                            onClick={() => setSearchRadius(null)}
-                                            className={`px-3 py-1.5 rounded-lg border transition-all whitespace-nowrap ${searchRadius === null
-                                                ? 'bg-primary text-white border-primary'
-                                                : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
-                                                }`}
-                                        >
-                                            Any Distance
-                                        </button>
+                                        </div>
                                     </div>
-                                </div>
-                            )}
+                                )}
+                            </div>
 
-                            <div className="flex flex-col-reverse md:flex-col gap-4">
+                            <hr className="border-primary/5" />
+
+                            {/* Refine Section */}
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-bold text-primary/40 uppercase tracking-widest px-1">
+                                    Refine Results
+                                </label>
                                 <div className="relative w-full group/filter z-0">
                                     <input
                                         type="text"
-                                        placeholder="Search by practice name..."
-                                        className="w-full pl-11 pr-4 py-3 bg-white border border-primary/5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-accent/10 focus:border-accent/30 text-sm font-medium transition-all shadow-sm"
+                                        placeholder="Filter by practice name..."
+                                        className="w-full pl-11 pr-4 py-3 bg-white border border-primary/5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-accent/5 focus:border-accent/20 text-sm font-medium transition-all shadow-sm hover:border-primary/20"
                                         value={searchTerm}
                                         onChange={(e) => handleSearchChange(e.target.value)}
                                     />
                                     <svg className="w-4.5 h-4.5 text-primary/20 absolute left-4 top-1/2 -translate-y-1/2 transition-colors group-focus-within/filter:text-accent/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                 </div>
-                                <div className="flex gap-2 overflow-x-auto pb-1 -mx-6 px-6 md:mx-0 md:px-0 no-scrollbar">
-                                    <label className="flex items-center gap-3 px-4 py-2 bg-white border-2 border-primary/20 rounded-2xl cursor-pointer hover:bg-amber-50 hover:border-amber-400 transition-all shadow-md group whitespace-nowrap">
-                                        <input
-                                            type="checkbox"
-                                            checked={showMobileOnly}
-                                            onChange={(e) => setShowMobileOnly(e.target.checked)}
-                                            className="w-5 h-5 rounded-lg border-2 border-primary/30 text-amber-500 focus:ring-2 focus:ring-amber-400 accent-amber-500 transition-all cursor-pointer"
-                                        />
-                                        <span className="text-sm font-bold text-primary/70 group-hover:text-amber-700 transition-colors uppercase tracking-wide">
-                                            🚐 Mobile
-                                        </span>
-                                    </label>
-                                    <label className="flex items-center gap-3 px-4 py-2 bg-white border-2 border-primary/20 rounded-2xl cursor-pointer hover:bg-red-50 hover:border-red-400 transition-all shadow-md group whitespace-nowrap">
-                                        <input
-                                            type="checkbox"
-                                            checked={showEmergencyOnly}
-                                            onChange={(e) => setShowEmergencyOnly(e.target.checked)}
-                                            className="w-5 h-5 rounded-lg border-2 border-primary/30 text-red-500 focus:ring-2 focus:ring-red-400 accent-red-500 transition-all cursor-pointer"
-                                        />
-                                        <span className="text-sm font-bold text-primary/70 group-hover:text-red-700 transition-colors uppercase tracking-wide">
-                                            🚑 Emergency (24h)
-                                        </span>
-                                    </label>
-                                    <label className="flex items-center gap-3 px-4 py-2 bg-white border-2 border-primary/20 rounded-2xl cursor-pointer hover:bg-green-50 hover:border-green-400 transition-all shadow-md group whitespace-nowrap">
-                                        <input
-                                            type="checkbox"
-                                            checked={showVerifiedOnly}
-                                            onChange={(e) => setShowVerifiedOnly(e.target.checked)}
-                                            className="w-5 h-5 rounded-lg border-2 border-primary/30 text-green-500 focus:ring-2 focus:ring-green-400 accent-green-500 transition-all cursor-pointer"
-                                        />
-                                        <span className="text-sm font-bold text-primary/70 group-hover:text-green-700 transition-colors uppercase tracking-wide">
-                                            ✅ Verified
-                                        </span>
-                                    </label>
+                                <div className="flex gap-2 flex-wrap md:flex-nowrap overflow-x-auto pb-1 no-scrollbar">
+                                    <button
+                                        onClick={() => setShowVerifiedOnly(!showVerifiedOnly)}
+                                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-300 border shadow-sm flex items-center justify-center gap-2 ${showVerifiedOnly
+                                            ? 'bg-green-500 text-white border-green-500 shadow-green-500/20'
+                                            : 'bg-white border-primary/5 text-primary/60 hover:border-green-500/30 hover:text-green-600 hover:bg-green-50/50'
+                                            }`}
+                                    >
+                                        <span>✅</span> Verified
+                                    </button>
+                                    <button
+                                        onClick={() => setShowEmergencyOnly(!showEmergencyOnly)}
+                                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-300 border shadow-sm flex items-center justify-center gap-2 ${showEmergencyOnly
+                                            ? 'bg-red-500 text-white border-red-500 shadow-red-500/20'
+                                            : 'bg-white border-primary/5 text-primary/60 hover:border-red-500/30 hover:text-red-600 hover:bg-red-50/50'
+                                            }`}
+                                    >
+                                        <span>🚑</span> 24h Emergency
+                                    </button>
+                                    <button
+                                        onClick={() => setShowMobileOnly(!showMobileOnly)}
+                                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-300 border shadow-sm flex items-center justify-center gap-2 ${showMobileOnly
+                                            ? 'bg-amber-400 text-white border-amber-400 shadow-amber-400/20'
+                                            : 'bg-white border-primary/5 text-primary/60 hover:border-amber-400/30 hover:text-amber-500 hover:bg-amber-50/50'
+                                            }`}
+                                    >
+                                        <span>🚐</span> Mobile
+                                    </button>
                                 </div>
                             </div>
                         </div>
