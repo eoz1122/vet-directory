@@ -199,6 +199,30 @@ export default function Privacy() {
                         </p>
                     </section>
 
+                    <section>
+                        <h2 className="text-2xl font-bold text-primary mb-4">9. Affiliate-Programme (Admitad)</h2>
+                        <p className="text-sm mb-4">
+                            Diese Website nimmt an Affiliate-Programmen teil, insbesondere am Netzwerk von Admitad.
+                            Affiliate-Links sind Verweise auf externe Online-Shops oder Dienstleister. Wenn Sie auf einen dieser
+                            Links klicken und anschließend ein Produkt kaufen oder eine Dienstleistung buchen, erhält der
+                            Betreiber dieser Website ggf. eine Provision.
+                        </p>
+                        <p className="text-sm mb-4">
+                            Um die Zuordnung von Verkäufen zu ermöglichen, setzt unser Partner Admitad Cookies auf Ihrem Endgerät.
+                            Diese Cookies dienen ausschließlich dem Zweck einer korrekten Zuordnung des Verkaufserfolgs eines Affiliate-Links zum Kooperationspartner.
+                            Personenbezogene Daten werden hierbei in der Regel nicht erhoben, außer anonymisierte Identifikatoren,
+                            die keine Rückschlüsse auf Ihre Person zulassen.
+                        </p>
+                        <p className="text-sm">
+                            Die Nutzung erfolgt auf Grundlage unseres berechtigten Interesses an der wirtschaftlichen Finanzierung
+                            unseres Webangebots (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen zur Datennutzung durch Admitad
+                            finden Sie in der Datenschutzerklärung des Anbieters:
+                            <a href="https://www.admitad.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                                https://www.admitad.com/privacy-policy/
+                            </a>
+                        </p>
+                    </section>
+
                 </div>
             </main>
 

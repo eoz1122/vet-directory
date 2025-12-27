@@ -140,20 +140,21 @@ export default function PetMedicationGermany() {
                                 </p>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-6 my-12 not-prose">
+                            <div className="grid md:grid-cols-2 gap-6 mt-12 mb-6 not-prose">
                                 <a href={appendUTM("https://www.medpets.de")} target="_blank" rel="noopener" className="bg-white p-6 rounded-2xl border-l-4 border-accent shadow-sm hover:translate-y-[-4px] transition-all group">
-                                    <h4 className="font-bold text-primary text-xl group-hover:text-accent transition-colors">Medpets.de</h4>
+                                    <h4 className="font-bold text-primary text-xl group-hover:text-accent transition-colors">Medpets.de*</h4>
                                     <p className="text-xs opacity-50 mb-4">Largest Online Tierapotheke</p>
                                     <p className="text-sm opacity-70 mb-4 leading-relaxed">Huge selection, English customer service available, and free shipping over €49.</p>
                                     <span className="text-accent text-[10px] font-black uppercase tracking-widest">Visit Site →</span>
                                 </a>
                                 <a href={appendUTM("https://www.shop-apotheke.com")} target="_blank" rel="noopener" className="bg-white p-6 rounded-2xl border-l-4 border-primary shadow-sm hover:translate-y-[-4px] transition-all group">
-                                    <h4 className="font-bold text-primary text-xl group-hover:text-accent transition-colors">Shop-Apotheke</h4>
+                                    <h4 className="font-bold text-primary text-xl group-hover:text-accent transition-colors">Shop-Apotheke*</h4>
                                     <p className="text-xs opacity-50 mb-4">Fastest Delivery (App available)</p>
                                     <p className="text-sm opacity-70 mb-4 leading-relaxed">Wide selection of OTC and Pharmacy-only products. Often offers massive discounts for bulk orders.</p>
                                     <span className="text-accent text-[10px] font-black uppercase tracking-widest">Visit Site →</span>
                                 </a>
                             </div>
+                            <p className="text-[10px] opacity-40 italic mb-12">*Affiliate Link: This site may earn a commission from your purchase at no extra cost to you.</p>
 
                             <h2 id="categories" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">What You Can vs. Cannot Order</h2>
                             <p className="text-center font-bold text-lg mb-8 italic opacity-60">"Just because it doesn't need a prescription doesn't mean it's sold at your local pet shop."</p>
