@@ -6215,5 +6215,56 @@
       "emergency_services": "Mobile Service"
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "Leipzig-Ullrich",
+    "practice_name": "Tierarztpraxis Dr. Ullrich",
+    "city": "Leipzig",
+    "district": "Leipzig",
+    "address": "Zwickauer Straße 118, 04277 Leipzig",
+    "coordinates": {
+      "lat": 51.3135,
+      "lng": 12.3854
+    },
+    "contact": {
+      "phone": "",
+      "website": "http://tierarzt-ullrich.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Community Recommendation"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Leipzig-Plenge",
+    "practice_name": "Mobile Tierarztpraxis Dr. Amelie Plenge",
+    "city": "Leipzig",
+    "district": "Leipzig",
+    "address": "Schillerweg 17, 04155 Leipzig (Mobile Service)",
+    "coordinates": {
+      "lat": 51.3582,
+      "lng": 12.3591
+    },
+    "contact": {
+      "phone": "",
+      "website": "https://www.mobile-tierarztpraxis-leipzig.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Community Recommendation",
+        "Mobile Service"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
   }
 ]
