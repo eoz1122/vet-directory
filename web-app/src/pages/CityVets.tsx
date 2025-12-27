@@ -131,6 +131,81 @@ Our Nuremberg directory highlights practices where you can communicate comfortab
 - **Local Expertise**: Vets who understand the needs of the international community.
 - **Specialized Care**: Access to major clinics like the Tierklinik am Stadtpark/Hafen.
 - **Convenience**: Finding the right help, whether you're in the city center or the outskirts.`
+    },
+    wiesbaden: {
+        title: "English-Speaking Vets in Wiesbaden",
+        description: "Find trusted English-speaking veterinarians in Wiesbaden. Quality pet care for the international and military community in Hessen's capital.",
+        content: `Wiesbaden, the elegant capital of Hessen, is home to a large international population, including a significant US military presence. This has created a high demand for English-speaking services, particularly in veterinary care.
+
+Our Wiesbaden directory features practices that are well-versed in serving English-speaking clients, ensuring your pet receives top-tier medical attention with clear communication.
+
+**Why Wiesbaden Pet Owners Choose Us:**
+- **Military Friendly**: Vets familiar with the needs of the US community and international relocations.
+- **Hessen Capital Reach**: Coverage across Wiesbaden's beautiful historic districts and outskirts.
+- **Expert Care**: From routine wellness to complex treatments, find vets who speak your language.`
+    },
+    'bad homburg': {
+        title: "English-Speaking Vets in Bad Homburg",
+        description: "Premium English-speaking veterinary services in Bad Homburg vor der Höhe. Verified care for the international community in the Taunus region.",
+        content: `Bad Homburg is known for its high quality of life and international flair, situated just at the foot of the Taunus mountains. For pet owners in this sophisticated spa town, finding a vet who speaks fluent English is key to maintaining a healthy lifestyle for their pets.
+
+We connect you with verified practices in Bad Homburg that cater to the town's global residents. Expect professional, compassionate care where English is the standard.`
+    },
+    hofheim: {
+        title: "English-Speaking Vets in Hofheim & MTK",
+        description: "Discover top English-speaking veterinarians in Hofheim and the Main-Taunus-Kreis. Home to major specialist clinics and local experts.",
+        content: `Hofheim and the Main-Taunus-Kreis are hubs for world-class veterinary medicine, featuring some of Germany's most advanced specialist clinics. For the many international residents living in this region, communication in English is vital during specialized procedures or emergencies.
+
+Our directory features both local practices and major referral hospitals in the Hofheim area where English is spoken fluently.`
+    },
+    oberursel: {
+        title: "English-Speaking Vets in Oberursel",
+        description: "Find reliable English-speaking veterinarians in Oberursel. Trusted pet care for the international community near the Frankfurt International School.",
+        content: `Oberursel is a favorite among expats, partly due to the presence of the Frankfurt International School. For families with pets, having an English-speaking vet nearby is a top priority.
+
+We list verified practices in and around Oberursel that provide a welcoming environment for English speakers. Ensure you and your pet feel confident during every visit.`
+    },
+    kelkheim: {
+        title: "English-Speaking Vets in Kelkheim (Taunus)",
+        description: "Find verified English-speaking veterinarians in Kelkheim. Quality pet care in the heart of the Main-Taunus-Kreis for expats and locals.",
+        content: `Kelkheim offers a high quality of life with its proximity to the Frankfurt metropolis and the nature of the Taunus. For the international community living here, access to English-speaking veterinary care is an important part of settling in.
+
+Our directory features trusted vets in Kelkheim who can help with everything from routine care to more complex medical needs, all in English.`
+    },
+    'königstein': {
+        title: "English-Speaking Vets in Königstein im Taunus",
+        description: "Premium English-speaking veterinary services in Königstein. Discover top-rated care for your pets in the Taunus region.",
+        content: `Königstein is one of the most prestigious locations in the Taunus, attracting many international residents. Finding a veterinarian who matches the high standards of the area and speaks fluent English is essential.
+
+Explore our list of verified veterinary practices in Königstein that offer expert medical services and clear communication for the global community.`
+    },
+    langenhagen: {
+        title: "English-Speaking Vets in Langenhagen",
+        description: "Find trusted English-speaking veterinarians in Langenhagen. Quality pet care near Hannover Airport and the northern suburbs.",
+        content: `Langenhagen, located just north of Hannover, is a key hub for many international travelers and residents. For those living in the area with pets, finding a local vet who speaks English provides great peace of mind.
+
+We've identified practices in Langenhagen that are experienced in assisting English-speaking clients, ensuring your pet's health is always a priority.`
+    },
+    leinburg: {
+        title: "English-Speaking Vets in Leinburg",
+        description: "Locate English-speaking veterinarians in Leinburg. Trusted pet care in the Nuremberg region for international families.",
+        content: `Leinburg offers a peaceful, green environment for pet owners near Nuremberg. For expats and international residents in the area, having a local vet who can communicate clearly in English is a significant advantage.
+
+Our directory includes verified practices in Leinburg that welcome English-speaking clients and provide high-quality medical care.`
+    },
+    'neustadt (near hamburg)': {
+        title: "English-Speaking Vets in Neustadt (Hambug Region)",
+        description: "Find English-speaking veterinarians in the Neustadt area near Hamburg. Verified pet care for the local international community.",
+        content: `Neustadt, located in the greater Hamburg area, is home to a growing number of international residents. Finding a veterinarian who can provide medical care in English is essential for clear understanding and the best possible outcomes for your pet.
+
+We list verified practices in the Neustadt region that offer professional services in English.`
+    },
+    'überlingen': {
+        title: "English-Speaking Vets in Überlingen (Lake Constance)",
+        description: "Find trusted English-speaking veterinarians in Überlingen. Quality pet care on the shores of Lake Constance for the international community.",
+        content: `Überlingen is one of the most beautiful towns on Lake Constance, attracting residents and visitors from all over the world. For pet owners in the area, finding a vet who speaks fluent English is key to enjoying life on the lake with their furry companions.
+
+Our directory features verified practices in Überlingen that offer expert care and clear communication in English.`
     }
 };
 

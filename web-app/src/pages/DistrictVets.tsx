@@ -64,6 +64,48 @@ Our list includes clinics near Savignyplatz, Kurfürstendamm, and Westend that h
         content: `Schöneberg is a beloved district with a strong sense of community and plenty of green pockets. For English-speaking residents in the Akazienkiez or around Winterfeldtplatz, finding a local vet is a priority.
 
 We verify practices in Schöneberg that explicitly offer services in English. Connect with friendly, competent veterinarians who make you and your pet feel at home.`
+    },
+    'lindenthal': {
+        title: "English-Speaking Vets in Lindenthal, Cologne",
+        description: "Find verified English-speaking veterinarians in Cologne's Lindenthal. Trusted pet care near the University and Lindenthaler Tierpark.",
+        content: `Lindenthal is one of Cologne's most academic and green districts, making it a popular choice for international residents. With the Lindenthaler Tierpark and sprawling parks nearby, life with a pet here is wonderful.
+
+Our directory features verified English-speaking vets in Lindenthal who understand the needs of the international community. Whether you're a student, researcher, or expat family, find professional care that speaks your language.`
+    },
+    'ehrenfeld': {
+        title: "English-Speaking Vets in Ehrenfeld, Cologne",
+        description: "Discover top English-speaking vets in Cologne-Ehrenfeld. Verified practices in one of Köln's most vibrant and international districts.",
+        content: `Ehrenfeld is the creative heart of Cologne, known for its street art, cafes, and diverse population. For pet owners in this bustling district, finding a vet who can communicate clearly in English is essential.
+
+We list verified practices in Ehrenfeld and nearby Neuehrenfeld where language barriers are non-existent. Get the best care for your furry friend in one of Cologne's most welcoming neighborhoods.`
+    },
+    'list': {
+        title: "English-Speaking Vets in Hannover-List",
+        description: "Locate English-speaking veterinarians in Hannover's List district. Trusted care near the Eilenriede and Podbielskistraße.",
+        content: `The List is one of Hannover's most sought-after neighborhoods, characterized by beautiful architecture and its proximity to the Eilenriede forest. For international families living here, English-speaking veterinary care is a must.
+
+Our Hannover directory includes verified practices in the List district. Find a local vet near Podbielskistraße who can provide expert medical attention while ensuring you fully understand every step of your pet's treatment.`
+    },
+    'maxfeld': {
+        title: "English-Speaking Vets in Maxfeld, Nuremberg",
+        description: "Find verified English-speaking veterinary care in Nuremberg-Maxfeld. Trusted practices near the Stadtpark for international residents.",
+        content: `Maxfeld is a central and green district of Nuremberg, popular with expats for its balance of city life and park access. Finding a vet who speaks fluent English in this neighborhood ensures your pet gets the best care without any translation issues.
+
+Our Nuremberg directory features verified practices in Maxfeld, including major clinics with specialized emergency services. Connect with professionals who speak your language near the Stadtpark.`
+    },
+    'plagwitz': {
+        title: "English-Speaking Vets in Leipzig-Plagwitz",
+        description: "Discover English-speaking vets in Leipzig's trendy Plagwitz district. Verified pet care near the canals and Karl-Heine-Straße.",
+        content: `Plagwitz is Leipzig's international hub for creativity and innovation. For the many English-speaking residents moving to this vibrant western district, having a local, trusted veterinarian is vital.
+
+We verify practices in Plagwitz and Lindenau that offer services in English. Whether you're walking your dog along the canals or living in a converted industrial loft, find the right care for your pet nearby.`
+    },
+    'südvorstadt': {
+        title: "English-Speaking Vets in Leipzig-Südvorstadt",
+        description: "Find top-rated English-speaking veterinarians in Leipzig's Südvorstadt. Verified care near KarLi and Clara-Zetkin-Park.",
+        content: `The Südvorstadt is a favorite among Leipzig's international community, known for the lively 'KarLi' and its proximity to the Clara-Zetkin-Park. Providing high-quality medical support for pets in English is standard for the practices we list here.
+
+Find a compassionate, English-speaking vet in the heart of Leipzig's south. Our verified listings ensure that your pet's health is discussed clearly and professionally.`
     }
 };
 
