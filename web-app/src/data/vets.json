@@ -5715,7 +5715,7 @@
       "english_signals": [
         "Emergency Service; English website; Highly recommended"
       ],
-      "emergency_services": null
+      "emergency_services": "24/7"
     },
     "community_status": "Verified"
   },
@@ -5740,7 +5740,7 @@
       "english_signals": [
         "English speaking team"
       ],
-      "emergency_services": null
+      "emergency_services": "No"
     },
     "community_status": "Verified"
   },
@@ -5765,7 +5765,7 @@
       "english_signals": [
         "English speaking team"
       ],
-      "emergency_services": null
+      "emergency_services": "No"
     },
     "community_status": "Verified"
   },
@@ -5790,7 +5790,7 @@
       "english_signals": [
         "Highly recommended on Reddit for English"
       ],
-      "emergency_services": null
+      "emergency_services": "No"
     },
     "community_status": "Verified"
   },
@@ -5815,7 +5815,7 @@
       "english_signals": [
         "Reddit recommended; Online booking"
       ],
-      "emergency_services": null
+      "emergency_services": "No"
     },
     "community_status": "Verified"
   },
@@ -5838,9 +5838,9 @@
       "status": "Verified",
       "last_scanned": "2025-01-26",
       "english_signals": [
-        "24/7 Emergency Clinic; Major center"
+        "Clinic; Major center"
       ],
-      "emergency_services": null
+      "emergency_services": "24/7"
     },
     "community_status": "Verified"
   },
@@ -5863,9 +5863,9 @@
       "status": "Verified",
       "last_scanned": "2025-01-26",
       "english_signals": [
-        "24/7 Emergency; English spoken"
+        "English spoken"
       ],
-      "emergency_services": null
+      "emergency_services": "24/7"
     },
     "community_status": "Verified"
   },
@@ -5890,7 +5890,7 @@
       "english_signals": [
         "University Clinic 24/7; Expert care"
       ],
-      "emergency_services": null
+      "emergency_services": "24/7"
     },
     "community_status": "Verified"
   },
@@ -5915,7 +5915,7 @@
       "english_signals": [
         "Recommended on Reddit"
       ],
-      "emergency_services": null
+      "emergency_services": "No"
     },
     "community_status": "Verified"
   },
@@ -5940,7 +5940,82 @@
       "english_signals": [
         "Highly recommended; Community favorite"
       ],
-      "emergency_services": null
+      "emergency_services": "No"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Nuremberg-New-1",
+    "practice_name": "Tierklinik Am Stadtpark (Hafen)",
+    "city": "Nuremberg",
+    "district": "Wülfel",
+    "address": "Wertachstraße 1 90451 Nürnberg",
+    "coordinates": {
+      "lat": 49.405,
+      "lng": 11.065
+    },
+    "contact": {
+      "phone": "0911 643110",
+      "website": "https://www.tieraerztlicheklinik-nuernberg.de/",
+      "google_maps": ""
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "Staff fluent in English"
+      ],
+      "emergency_services": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Nuremberg-New-2",
+    "practice_name": "Tierärzte am Nordring",
+    "city": "Nuremberg",
+    "district": "Nordstadt",
+    "address": "Obermaierstraße 10 90408 Nürnberg",
+    "coordinates": {
+      "lat": 49.47,
+      "lng": 11.085
+    },
+    "contact": {
+      "phone": "0911 366513",
+      "website": "https://www.tierkliniknuernberg.com/",
+      "google_maps": ""
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "Staff proficient in English"
+      ],
+      "emergency_services": "No"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Nuremberg-New-3",
+    "practice_name": "Tierarztpraxis Am Moritzberg (Dr. Fritz Karbe)",
+    "city": "Leinburg",
+    "district": "Leinburg",
+    "address": "Industriestraße 26 91227 Leinburg",
+    "coordinates": {
+      "lat": 49.445,
+      "lng": 11.305
+    },
+    "contact": {
+      "phone": "09120 4409272",
+      "website": "https://zoodocs.de",
+      "google_maps": ""
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "No language barrier; Most staff speaks English"
+      ],
+      "emergency_services": "No"
     },
     "community_status": "Verified"
   }
