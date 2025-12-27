@@ -24,7 +24,8 @@ def main():
     new_count = 0
     update_count = 0
 
-    with open(csv_file, 'r', encoding='utf-8') as f:
+    first_line = True
+    with open(csv_file, 'r', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f)
         for row in reader:
             vet_id = row['ID']

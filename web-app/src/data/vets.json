@@ -5693,5 +5693,80 @@
       "emergency_services": ""
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "Stuttgart-New-1",
+    "practice_name": "Tierklinik Stuttgart Plieningen (AniCura)",
+    "city": "Stuttgart",
+    "district": "Plieningen",
+    "address": "Hermann-Fein-Straße 15",
+    "coordinates": {
+      "lat": 48.7061,
+      "lng": 9.2155
+    },
+    "contact": {
+      "phone": "0711 637380",
+      "website": "https://www.tierklinik-stuttgart.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "Emergency Service; English website; Highly recommended"
+      ],
+      "emergency_services": null
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Stuttgart-New-2",
+    "practice_name": "Kleintierpraxis Klaus Senger",
+    "city": "Stuttgart",
+    "district": "West",
+    "address": "Schloßstraße 100",
+    "coordinates": {
+      "lat": 48.7758,
+      "lng": 9.1575
+    },
+    "contact": {
+      "phone": "0711 617172",
+      "website": "https://www.kleintierpraxis-stuttgart.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "English speaking team"
+      ],
+      "emergency_services": null
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Stuttgart-New-3",
+    "practice_name": "Tierarztpraxis Dr. Bendel",
+    "city": "Stuttgart",
+    "district": "Süd",
+    "address": "Böblinger Str. 147",
+    "coordinates": {
+      "lat": 48.7612,
+      "lng": 9.1625
+    },
+    "contact": {
+      "phone": "0711 7657276",
+      "website": "https://www.tierarzt-stuttgart.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "English speaking team"
+      ],
+      "emergency_services": null
+    },
+    "community_status": "Verified"
   }
 ]
