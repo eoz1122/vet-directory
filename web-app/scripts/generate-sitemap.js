@@ -45,7 +45,7 @@ function getBlogRoutes() {
         }
         const content = fs.readFileSync(BLOG_FILE_PATH, 'utf-8');
         // Look for url: "/blog/..." patterns in the blogPosts array
-        const regex = /url:\s*"(.*?)"/g;
+        const regex = /url:\s*["']([^"']+)["']/g;
         const routes = [];
         let match;
         while ((match = regex.exec(content)) !== null) {

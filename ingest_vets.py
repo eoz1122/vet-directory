@@ -53,12 +53,16 @@ def process_csv(filename, vets, next_id_num, today):
         return next_id_num, 0, 0
 
     for row in rows:
+        # print(f"Row len: {len(row)}, content: {row[:3]}")
         if len(row) < 5: continue
         row_str = " ".join(row).lower()
+        # print(f"Row str: {row_str[:100]}...")
         
         if "english" in row_str or "spoke" in row_str or "fluent" in row_str:
             name = row[1]
-            if not name or name == "qBF1Pd" or len(name) < 3: continue
+            if not name or name == "qBF1Pd" or len(name) < 3: 
+                print(f"Skipping {name} (invalid name)")
+                continue
             
             address = ""
             phone = None
@@ -97,6 +101,7 @@ def process_csv(filename, vets, next_id_num, today):
             city = normalize_city(city)
 
             norm_name = normalize_string(name)
+            # print(f"Processing {name} (City: {city})...")
             existing = None
             for v in vets:
                 if normalize_string(v['practice_name']) == norm_name:
@@ -104,12 +109,23 @@ def process_csv(filename, vets, next_id_num, today):
                     break
             
             if existing:
+                # Always try to update address if we have a good one
+                if address and len(address) > 10 and address != existing.get('address', ''):
+                    existing['address'] = address
+                    updated_count += 1
+                    print(f"Updated Address for {name} to {address}")
+
                 if signal not in existing['verification']['english_signals']:
                     existing['verification']['english_signals'].append(signal)
                     existing['verification']['last_scanned'] = today
                     existing['community_status'] = "Verified"
                     updated_count += 1
+                    print(f"Updated Verification for {name}")
+                else:
+                    # print(f"Skipping {name} (Already verified)")
+                    pass
             else:
+                print(f"Adding New: {name}")
                 new_vet = {
                     "id": f"{city}-{next_id_num}",
                     "practice_name": name,

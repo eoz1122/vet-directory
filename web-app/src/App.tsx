@@ -3,6 +3,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { lazy, Suspense } from 'react';
 import ScrollToTop from './components/ScrollToTop';
 import CookieConsent from './components/CookieConsent';
+import GoogleAnalyticsTracker from './components/GoogleAnalyticsTracker';
 
 // Critical routes - load immediately
 import Home from './pages/Home';
@@ -50,6 +51,7 @@ function App() {
     <HelmetProvider>
       <BrowserRouter>
         <ScrollToTop />
+        <GoogleAnalyticsTracker />
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<Home />} />
