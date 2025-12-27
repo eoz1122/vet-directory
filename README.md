@@ -5,33 +5,39 @@ A comprehensive directory of English-speaking veterinarians across Germany, buil
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or yarn
 
 ### Local Development
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/eoz1122/vet-directory.git
 cd vet-directory/web-app
 ```
 
-2. Create `.env` file:
+1. Create `.env` file:
+
 ```bash
 cp .env.example .env
 ```
 
-3. Add your Google Maps API key to `.env`:
-```
+1. Add your Google Maps API key to `.env`:
+
+```env
 VITE_GOOGLE_MAPS_API_KEY=your_actual_api_key_here
 ```
 
-4. Install dependencies:
+1. Install dependencies:
+
 ```bash
 npm install --legacy-peer-deps
 ```
 
-5. Run development server:
+1. Run development server:
+
 ```bash
 npm run dev
 ```
@@ -48,7 +54,7 @@ The built files will be in the `dist/` folder.
 
 ## 🌐 VPS Deployment
 
-### On your VPS:
+### On your VPS
 
 ```bash
 # Navigate to your domain directory
@@ -99,7 +105,7 @@ This project requires a Google Maps API key for the location search feature.
 
 ## 📁 Project Structure
 
-```
+```text
 web-app/
 ├── src/
 │   ├── components/     # Reusable components
@@ -134,7 +140,7 @@ web-app/
 
 ## ⚠️ Security Note
 
-**Never commit `.env` files to git!** 
+**Never commit `.env` files to git!**
 
 The `.env` file contains sensitive API keys and should only exist on your local machine and production server.
 

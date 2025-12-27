@@ -70,7 +70,7 @@ Implemented critical performance optimizations to improve Lighthouse scores from
 
 ### Medium Priority
 
-4. **Font Optimization**
+1. **Font Optimization**
    - Preload critical fonts
    - Use font-display: swap
 
