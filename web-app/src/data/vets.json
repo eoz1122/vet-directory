@@ -5004,7 +5004,7 @@
     "practice_name": "Clinic of Small Animal Surgery and Reproduction",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Veterinärstraße 13",
+    "address": "Veterinärstraße 13 80539 München",
     "coordinates": {
       "lat": 48.15208029999999,
       "lng": 11.5870728
@@ -5030,7 +5030,7 @@
     "practice_name": "Tierarztpraxis Dr. Cornelia Maul and Dr. Sabine Herget",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Schwarzstraße 3",
+    "address": "Schwarzstraße 3 80802 München",
     "coordinates": {
       "lat": 48.1292349,
       "lng": 11.5861193
@@ -5057,7 +5057,7 @@
     "practice_name": "Tierklinik Oberhaching",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Bajuwarenring 10",
+    "address": "Bajuwarenring 10 82041 Oberhaching",
     "coordinates": {
       "lat": 48.0320052,
       "lng": 11.5825403
@@ -5083,7 +5083,7 @@
     "practice_name": "Felmo Mobiler Tierarzt München",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Am Moosfeld 13",
+    "address": "Am Moosfeld 13 81829 München",
     "coordinates": {
       "lat": 48.134753,
       "lng": 11.658236
@@ -5111,7 +5111,7 @@
     "practice_name": "AniCura Tierklinik Haar",
     "city": "Munich",
     "district": "Unknown",
-    "address": "Keferloher Str. 25",
+    "address": "Keferloher Str. 25 85540 Haar",
     "coordinates": {
       "lat": 48.11226809999999,
       "lng": 11.71571
@@ -5189,7 +5189,7 @@
     "practice_name": "Kleintierklinik Dr. Lutz",
     "city": "Munich",
     "district": "Munich",
-    "address": "Martin-Empl-Ring 3",
+    "address": "Martin-Empl-Ring 3 81829 München",
     "coordinates": {
       "lat": 48.1401286,
       "lng": 11.6811747
@@ -5215,7 +5215,7 @@
     "practice_name": "Center for Small Animal Medicine Munich",
     "city": "Munich",
     "district": "Munich",
-    "address": "089 54042430",
+    "address": "Seumestraße 3 81373 München",
     "coordinates": {
       "lat": 48.0942391,
       "lng": 11.5238016
@@ -5241,7 +5241,7 @@
     "practice_name": "filu Tierarztpraxis Theresienwiese - Allgemein- und Notfallmedizin",
     "city": "Munich",
     "district": "Munich",
-    "address": "Paul-Heyse-Straße 28",
+    "address": "Paul-Heyse-Straße 28 80336 München",
     "coordinates": {
       "lat": 48.1356131,
       "lng": 11.5555936
@@ -5268,7 +5268,7 @@
     "practice_name": "filu Tierarztpraxis Schwabing - Allgemein- und Notfallmedizin",
     "city": "Munich",
     "district": "Munich",
-    "address": "089 38038398",
+    "address": "Schleißheimer Str. 141 80797 München",
     "coordinates": {
       "lat": 48.1642872,
       "lng": 11.5640235
@@ -5294,7 +5294,7 @@
     "practice_name": "Dr. med. vet. Monika Koller",
     "city": "Munich",
     "district": "Munich",
-    "address": "089 91077728",
+    "address": "Buschingstraße 4 81677 München",
     "coordinates": {
       "lat": 48.1435974,
       "lng": 11.6179399
@@ -5320,7 +5320,7 @@
     "practice_name": "Tierarztpraxis Moosach Dr. Bader-Mechler",
     "city": "Munich",
     "district": "Munich",
-    "address": "089 1414346",
+    "address": "Triebstraße 3/1. OG rechts 80993 München",
     "coordinates": {
       "lat": 48.1878952,
       "lng": 11.5262078
@@ -5346,7 +5346,7 @@
     "practice_name": "Tierarztpraxis Dr. Heubeck",
     "city": "Munich",
     "district": "Munich",
-    "address": "089 6906600",
+    "address": "Traunsteiner Str. 34 81549 München",
     "coordinates": {
       "lat": 48.1008017,
       "lng": 11.5886823
@@ -5372,7 +5372,7 @@
     "practice_name": "Tierärzte Würmtal",
     "city": "Munich",
     "district": "Munich",
-    "address": "089 7459925",
+    "address": "Münchner Str. 2a 82152 Planegg",
     "coordinates": {
       "lat": 48.0933125,
       "lng": 11.4664324

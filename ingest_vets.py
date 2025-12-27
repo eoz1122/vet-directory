@@ -68,10 +68,17 @@ def process_csv(filename, vets, next_id_num, today):
             phone = None
             website = None
             
-            for i in [7, 8, 9, 6]:
-                if i < len(row) and len(row[i]) > 8 and any(char.isdigit() for char in row[i]):
-                    address = row[i]
-                    break
+            for i in [3, 4, 7, 8, 9, 6]:
+                if i < len(row) and len(row[i]) > 8:
+                    candidate = row[i].strip()
+                    # A good address should have a house number or a ZIP code, and shouldn't be a URL
+                    if any(char.isdigit() for char in candidate) and "google.com" not in candidate:
+                        # Exclude pure phone numbers (starts with 0 and has mostly digits/spaces)
+                        clean_candidate = candidate.replace(" ", "").replace("-", "").replace("(", "").replace(")", "")
+                        if clean_candidate.isdigit() and (candidate.startswith('0') or candidate.startswith('+')):
+                            continue
+                        address = candidate
+                        break
             
             for i in range(len(row)):
                 is_phone = re.search(r'\+?\d{8,}', row[i].replace(" ", ""))
@@ -111,9 +118,14 @@ def process_csv(filename, vets, next_id_num, today):
             if existing:
                 # Always try to update address if we have a good one
                 if address and len(address) > 10 and address != existing.get('address', ''):
-                    existing['address'] = address
-                    updated_count += 1
-                    print(f"Updated Address for {name} to {address}")
+                    # Only update if the new address seems better (contains a 5-digit ZIP or is longer)
+                    new_has_zip = bool(re.search(r'\d{5}', address))
+                    old_has_zip = bool(re.search(r'\d{5}', existing.get('address', '')))
+                    
+                    if (new_has_zip and not old_has_zip) or (len(address) > len(existing.get('address', '')) + 5):
+                        existing['address'] = address
+                        updated_count += 1
+                        print(f"Updated Address for {name} to {address}")
 
                 if signal not in existing['verification']['english_signals']:
                     existing['verification']['english_signals'].append(signal)
