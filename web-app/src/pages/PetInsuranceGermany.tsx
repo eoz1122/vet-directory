@@ -230,11 +230,11 @@ export default function PetInsuranceGermany() {
                             <h2 id="providers" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">Best Pet Insurance Providers for Expats</h2>
                             <p>As an expat, you want a provider that offers English policies and a simple, digital submission process. Here are our top recommendations:</p>
 
-                            <div className="space-y-4 mt-8 mb-4 not-prose">
+                            <div className="space-y-4 my-8 not-prose">
                                 <a href="https://www.getsafe.com" target="_blank" rel="noopener noreferrer" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <h4 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">Getsafe Pet Insurance*</h4>
+                                            <h4 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">Getsafe Pet Insurance</h4>
                                             <p className="text-sm opacity-60">Fully digital, 100% English support, cancel monthly.</p>
                                         </div>
                                         <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">Visit Website →</span>
@@ -243,7 +243,7 @@ export default function PetInsuranceGermany() {
                                 <a href="https://www.feather-insurance.com" target="_blank" rel="noopener noreferrer" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            <h4 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">Feather Insurance*</h4>
+                                            <h4 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">Feather Insurance</h4>
                                             <p className="text-sm opacity-60">Specifically built for expats in Germany. Simple claims via app.</p>
                                         </div>
                                         <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">Visit Website →</span>
@@ -254,7 +254,6 @@ export default function PetInsuranceGermany() {
                                     <p className="text-sm opacity-60">The traditional giants. Extremely reliable coverage, but their English support varies.</p>
                                 </div>
                             </div>
-                            <p className="text-[10px] opacity-40 italic mb-12">*Affiliate Link: This site may earn a commission from your purchase at no extra cost to you.</p>
 
                             <h2 id="decision" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">Quick Decision Guide</h2>
                             <div className="bg-primary text-secondary p-8 rounded-2xl my-10 relative overflow-hidden not-prose">
