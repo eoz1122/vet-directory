@@ -5843,5 +5843,105 @@
       "emergency_services": null
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "Hannover-New-1",
+    "practice_name": "AniCura Kleintierklinik Hannover",
+    "city": "Hannover",
+    "district": "Wülfel",
+    "address": "Hildesheimer Str. 386 30519 Hannover",
+    "coordinates": {
+      "lat": 52.333,
+      "lng": 9.775
+    },
+    "contact": {
+      "phone": "0511 98634848",
+      "website": "https://www.anicura.de/kleintierklinik-hannover/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "24/7 Emergency; English spoken"
+      ],
+      "emergency_services": null
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hannover-New-2",
+    "practice_name": "Stiftung TiHo (Small Animal Clinic)",
+    "city": "Hannover",
+    "district": "Kirchrode",
+    "address": "Bünteweg 9 30559 Hannover",
+    "coordinates": {
+      "lat": 52.36,
+      "lng": 9.815
+    },
+    "contact": {
+      "phone": "0511 9536200",
+      "website": "https://www.tiho-hannover.de/kliniken-institute/kliniken/klinik-fuer-kleintiere",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "University Clinic 24/7; Expert care"
+      ],
+      "emergency_services": null
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hannover-New-3",
+    "practice_name": "Kleintierpraxis Dr. Rüdiger Schmidt",
+    "city": "Langenhagen",
+    "district": "Kaltenweide",
+    "address": "Kaltenweider Platz 7b 30855 Langenhagen",
+    "coordinates": {
+      "lat": 52.485,
+      "lng": 9.735
+    },
+    "contact": {
+      "phone": "0511 86672461",
+      "website": "https://www.tierarztpraxis-schmidt.com/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "Recommended on Reddit"
+      ],
+      "emergency_services": null
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Hannover-New-4",
+    "practice_name": "Kleintierpraxis am Waldheim (Dr. Engelke)",
+    "city": "Hannover",
+    "district": "Waldheim",
+    "address": "Roßkampstraße 38 30519 Hannover",
+    "coordinates": {
+      "lat": 52.35,
+      "lng": 9.78
+    },
+    "contact": {
+      "phone": "0511 832665",
+      "website": "http://www.kleintierpraxis-waldheim.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "Highly recommended; Community favorite"
+      ],
+      "emergency_services": null
+    },
+    "community_status": "Verified"
   }
 ]

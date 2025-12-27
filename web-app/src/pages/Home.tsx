@@ -32,7 +32,7 @@ const Home: React.FC = () => {
     const [searchRadius, setSearchRadius] = useState<number | null>(null);
 
     // Restricted city list to major hubs as requested
-    const cities = ['All', 'Berlin', 'Hamburg', 'Frankfurt', 'Munich', 'Stuttgart', 'Leipzig', 'Cologne'];
+    const cities = ['All', 'Berlin', 'Hamburg', 'Frankfurt', 'Munich', 'Stuttgart', 'Leipzig', 'Cologne', 'Hannover'];
 
     // Filter logic
     const filteredVets = vets.filter(vet => {

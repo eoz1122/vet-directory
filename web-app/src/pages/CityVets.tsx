@@ -107,6 +107,18 @@ Our Cologne directory features veterinary practices that welcome international c
 - **Community Recommended**: Listings based on real expat experiences and recommendations.
 - **Rhineland Coverage**: Finding care on both sides of the Rhine.
 - **Clear Communication**: Ensuring you and your vet are on the same page about your pet's health.`
+    },
+    hannover: {
+        title: "English-Speaking Vets in Hannover",
+        description: "Find trusted English-speaking veterinary practices in Hannover. Verified care including the TiHo University Clinic and local experts.",
+        content: `Hannover is known for its green Eilenriede forest and expo grounds, but finding international-friendly services can sometimes be tricky. Luckily, as a university city home to the prestigious TiHo (University of Veterinary Medicine), the standard of veterinary care here is exceptional.
+
+Our Hannover directory connects you with practices that bridge the language gap. From the university clinics in Bünteweg to private practices in List and Südstadt, we help you find the right care.
+
+**Why Hannover Pet Owners Use Our Directory:**
+- **University Excellence**: Access to one of Europe's leading veterinary schools (TiHo).
+- **Verified Communication**: Practices where English is spoken and understood.
+- **Emergency Options**: Clear info on 24/7 clinics for peace of mind.`
     }
 };
 
