@@ -42,7 +42,7 @@ const Home: React.FC = () => {
             (vet.district || "").toLowerCase().includes(searchTerm.toLowerCase());
         const matchesVerification = !showVerifiedOnly || (vet.community_status === 'Verified');
         const matchesMobile = !showMobileOnly || (vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown'));
-        const matchesEmergency = !showEmergencyOnly || (vet.verification?.emergency === '24/7');
+        const matchesEmergency = !showEmergencyOnly || (vet.verification?.emergency_services === '24/7');
 
         // Distance filter
         let matchesDistance = true;
@@ -371,7 +371,7 @@ const Home: React.FC = () => {
                                                 </p>
                                             </div>
                                         ))}
-                                        {vet.verification?.emergency === '24/7' && (
+                                        {vet.verification?.emergency_services === '24/7' && (
                                             <div className="flex gap-3 items-start group/signal">
                                                 <div className="mt-1 flex-shrink-0 w-4 h-4 bg-red-100 rounded-full flex items-center justify-center animate-pulse">
                                                     <span className="text-[10px]">🚑</span>
