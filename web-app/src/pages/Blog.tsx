@@ -115,6 +115,13 @@ const blogPosts = [
         emoji: "🐕",
         category: "Living",
         desc: "Blending in like a local. From leash laws (Leinenpflicht) to restaurant etiquette and the social rules of the park."
+    },
+    {
+        url: "/blog/pet-medication-germany-guide",
+        title: "💊 Pet Medication Guide",
+        emoji: "💊",
+        category: "HEALTH",
+        desc: "Where to buy, how prescriptions work, and why you can't have antibiotics shipped. Comparing vet prices vs. online pharmacies like Medpets."
     }
 ];
 
