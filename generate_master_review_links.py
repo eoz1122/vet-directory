@@ -33,8 +33,10 @@ def main():
             
             # Fallback
             if not review_url:
+                import urllib.parse
                 query = f"{name} {city} reviews english"
-                review_url = f"https://www.google.com/search?q={query}"
+                encoded_query = urllib.parse.quote(query)
+                review_url = f"https://www.google.com/search?q={encoded_query}"
             
             vets_data.append({
                 "name": name,
@@ -50,7 +52,7 @@ def main():
     # Generate Markdown
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write("# Master Verification List - All Vets\n\n")
-        f.write("List of all vets in the database with links to check reviews. \n")
+        f.write("List of all vets in the database with links to check reviews.\n")
         f.write("**Direct (Place ID)** links open usage specific modal. **Search (Fallback)** links perform a Google Search.\n\n")
         
         f.write("| City | Vet Name | Status | Review Link | Link Type |\n")
