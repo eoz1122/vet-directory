@@ -95,6 +95,18 @@ Our Leipzig directory connects you with verified practices where language isn't 
 - **Local Verification**: We've analyzed thousands of reviews to identify practices with a history of supporting English speakers.
 - **District Coverage**: options across major neighborhoods to save you travel time.
 - **Peace of Mind**: Ensure you fully understand your pet's diagnosis and treatment plan.`
+    },
+    cologne: {
+        title: "English-Speaking Vets in Cologne (Köln)",
+        description: "Find trusted English-speaking veterinarians in Cologne. Verified practices in Ehrenfeld, Nippes, and the city center for your pet's care.",
+        content: `Cologne's cheerful Rhineland spirit extends to its pet culture, with plenty of dog-friendly parks like the Poller Wiesen and Stadtwald. But when it comes to medical care, you want communication to be as clear as the view from the Dom.
+
+Our Cologne directory features veterinary practices that welcome international clients. From the bustling streets of Ehrenfeld to the quiet corners of Lindenthal, we've identified vets who can explain complex medical issues in English.
+
+**Why Cologne Pet Owners Information:**
+- **Community Recommended**: Listings based on real expat experiences and recommendations.
+- **Rhineland Coverage**: Finding care on both sides of the Rhine.
+- **Clear Communication**: Ensuring you and your vet are on the same page about your pet's health.`
     }
 };
 

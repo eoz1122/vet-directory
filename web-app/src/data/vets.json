@@ -5768,5 +5768,80 @@
       "emergency_services": null
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "Cologne-New-1",
+    "practice_name": "Tierarztpraxis am Aachener Weiher",
+    "city": "Cologne",
+    "district": "Lindenthal",
+    "address": "Liliencronstraße 2 50931 Köln",
+    "coordinates": {
+      "lat": 50.935,
+      "lng": 6.925
+    },
+    "contact": {
+      "phone": "0221 29826163",
+      "website": "https://www.taw-koeln.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "Highly recommended on Reddit for English"
+      ],
+      "emergency_services": null
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Cologne-New-2",
+    "practice_name": "Tierarztpraxis an den Poller Wiesen",
+    "city": "Cologne",
+    "district": "Poll",
+    "address": "Siegburger Str. 250 51105 Köln",
+    "coordinates": {
+      "lat": 50.915,
+      "lng": 6.985
+    },
+    "contact": {
+      "phone": "0221 8999701",
+      "website": "https://www.tierarztpraxis-poll.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "Reddit recommended; Online booking"
+      ],
+      "emergency_services": null
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Cologne-New-3",
+    "practice_name": "Vet Zentrum Köln (Kleintierklinik am Kö)",
+    "city": "Cologne",
+    "district": "Braunsfeld",
+    "address": "Scheidtweilerstraße 19 50933 Köln",
+    "coordinates": {
+      "lat": 50.94,
+      "lng": 6.89
+    },
+    "contact": {
+      "phone": "0221 545764",
+      "website": "https://www.vetzentrum-koeln.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-26",
+      "english_signals": [
+        "24/7 Emergency Clinic; Major center"
+      ],
+      "emergency_services": null
+    },
+    "community_status": "Verified"
   }
 ]
