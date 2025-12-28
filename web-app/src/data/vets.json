@@ -1078,31 +1078,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Berlin-31",
-    "practice_name": "Tierarztpraxis am Olivaer Platz (Dr. med. vet. S. Robl)",
-    "city": "Berlin",
-    "district": "Wilmersdorf",
-    "address": "Olivaer Platz 11, 10707 Berlin",
-    "coordinates": {
-      "lat": 52.499682,
-      "lng": 13.3162955
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": ""
-    },
-    "verification": {
-      "status": "Permanently Closed",
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
     "id": "Berlin-32",
     "practice_name": "AniCura Tierklinik Berlin-Biesdorf",
     "city": "Berlin",
@@ -1249,31 +1224,6 @@
         "Verified by Community; Now specializes in animal physiotherapy"
       ],
       "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Berlin-4",
-    "practice_name": "Felmo Mobile Veterinarians",
-    "city": "Berlin",
-    "district": "Home Visits*",
-    "address": "Alt-Moabit 73/73a, 10555 Berlin (Mobile Service)",
-    "coordinates": {
-      "lat": 52.52410159999999,
-      "lng": 13.3327137
-    },
-    "contact": {
-      "phone": "",
-      "website": "https://felmo.de/en",
-      "google_maps": null
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
-      ],
-      "emergency_services": "No"
     },
     "community_status": "Verified"
   },
@@ -2405,111 +2355,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Frankfurt-71",
-    "practice_name": "Tierarztpraxis Andres De Lima",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Auf d. Pick 2b",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "06371 9188440",
-      "website": "https://www.google.com/maps/place/Tierarztpraxis+Andres+De+Lima/data=!4m7!3m6!1s0x4796751aeabed1e5:0x9af5d33d4d1da710!8m2!3d49.4081967!4d7.5827648!16s%2Fg%2F11g0dsyzwr!19sChIJ5dG-6hp1lkcREKcdTT3T9Zo?authuser=0&hl=en&rclk=1",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Andres+De+Lima/data=!4m7!3m6!1s0x4796751aeabed1e5:0x9af5d33d4d1da710!8m2!3d49.4081967!4d7.5827648!16s%2Fg%2F11g0dsyzwr!19sChIJ5dG-6hp1lkcREKcdTT3T9Zo?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"spoke perfect\""
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-73",
-    "practice_name": "Animal Hospital Hofheim GbR",
-    "city": "Hofheim",
-    "district": "Unknown",
-    "address": "Katharina-Kemmler-Straße 7",
-    "coordinates": {
-      "lat": 50.0896786,
-      "lng": 8.4623423
-    },
-    "contact": {
-      "phone": "06192 290290",
-      "website": "https://www.google.com/maps/place/Animal+Hospital+Hofheim+GbR/data=!4m7!3m6!1s0x47bda1624f17d315:0xf80a023b02607a8f!8m2!3d50.0896786!4d8.4623423!16s%2Fg%2F1tlc_94t!19sChIJFdMXT2KhvUcRj3pgAjsCCvg?authuser=0&hl=en&rclk=1",
-      "google_maps": "https://www.google.com/maps/place/Animal+Hospital+Hofheim+GbR/data=!4m7!3m6!1s0x47bda1624f17d315:0xf80a023b02607a8f!8m2!3d50.0896786!4d8.4623423!16s%2Fg%2F1tlc_94t!19sChIJFdMXT2KhvUcRj3pgAjsCCvg?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"and take all forms of payment.\"; Confirmed via Google Review: \"English speaking and take all forms of payment.\"",
-        "Confirmed via Google Review: \"English speaking and take all forms of payment.\""
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-74",
-    "practice_name": "Animova Veterinarian - Tierarzt",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Daimlerstraße 7",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "06371 914314",
-      "website": "https://www.google.com/maps/place/Animova+Veterinarian+-+Tierarzt/data=!4m7!3m6!1s0x47967519e7a7127b:0x22fb56f1632a28b1!8m2!3d49.419052!4d7.5727132!16s%2Fg%2F1thw5nz2!19sChIJexKn5xl1lkcRsSgqY_FW-yI?authuser=0&hl=en&rclk=1",
-      "google_maps": "https://www.google.com/maps/place/Animova+Veterinarian+-+Tierarzt/data=!4m7!3m6!1s0x47967519e7a7127b:0x22fb56f1632a28b1!8m2!3d49.419052!4d7.5727132!16s%2Fg%2F1thw5nz2!19sChIJexKn5xl1lkcRsSgqY_FW-yI?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"which made my trips very easy.\"; Confirmed via Google Review: \"speak English which made my trips very easy.\"",
-        "Confirmed via Google Review: \"speak English which made my trips very easy.\""
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-75",
-    "practice_name": "Tierärztliche Klinik Für Kleintiere",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Juliusstraße 12",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "06561 12012",
-      "website": "https://www.google.com/maps/place/Vet.+Med.+Praxis+Bitburg/data=!4m7!3m6!1s0x47bfddde431fd367:0x7651d2a0b4bd1876!8m2!3d49.9734782!4d6.5204765!16s%2Fg%2F1pxwmcg8r!19sChIJZ9MfQ97dv0cRdhi9tKDSUXY?authuser=0&hl=en&rclk=1",
-      "google_maps": "https://www.google.com/maps/place/Vet.+Med.+Praxis+Bitburg/data=!4m7!3m6!1s0x47bfddde431fd367:0x7651d2a0b4bd1876!8m2!3d49.9734782!4d6.5204765!16s%2Fg%2F1pxwmcg8r!19sChIJZ9MfQ97dv0cRdhi9tKDSUXY?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"and they were all nice.\"; Confirmed via Google Review: \"English and they were all nice.\"",
-        "Confirmed via Google Review: \"and take VAT forms, and are very kind and caring.\"; Confirmed via Google Review: \"speak English and take VAT forms, and are very kind and caring.\"",
-        "Confirmed via Google Review: \"and treat my dog very well so far.\"; Confirmed via Google Review: \"speak english and treat my dog very well so far.\"",
-        "Confirmed via Google Review: \"speak English\""
-      ],
-      "emergency_services": "24/7"
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Frankfurt-77",
     "practice_name": "Small veterinary practice Dr. Barth",
     "city": "Frankfurt",
@@ -2530,32 +2375,6 @@
       "english_signals": [
         "Verified English Support",
         "Confirmed via Google Review: \"\"They speak English\""
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-78",
-    "practice_name": "Dr. med. vet. Tilman Michelberger",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Kindsbacher Str. 9",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "06371 70040",
-      "website": "https://www.google.com/maps/place/Dr.+med.+vet.+Tilman+Michelberger/data=!4m7!3m6!1s0x47960ab34aa6589f:0x903245d0a30d0c6b!8m2!3d49.4443583!4d7.5583946!16s%2Fg%2F1xtf0hv8!19sChIJn1imSrMKlkcRawwNo9BFMpA?authuser=0&hl=en&rclk=1",
-      "google_maps": "https://www.google.com/maps/place/Dr.+med.+vet.+Tilman+Michelberger/data=!4m7!3m6!1s0x47960ab34aa6589f:0x903245d0a30d0c6b!8m2!3d49.4443583!4d7.5583946!16s%2Fg%2F1xtf0hv8!19sChIJn1imSrMKlkcRawwNo9BFMpA?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"and are well educated and treated my dog with such love.\"; Confirmed via Google Review: \"speak English and are well educated and treated my dog with such love.\"",
-        "Confirmed via Google Review: \"speak English and are well educated and treated my dog with such love.\""
       ],
       "emergency_services": ""
     },
@@ -2634,57 +2453,6 @@
       "english_signals": [
         "Confirmed via Google Review: \"as well :)\"; Confirmed via Google Review: \"English as well :)\"",
         "Confirmed via Google Review: \"English as well :)\""
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-83",
-    "practice_name": "Dr. Müller, Dr. Rohmer und Dr. Falkenhorst Tierarztpraxis",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Merscheider Weg 1",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "06562 930081",
-      "website": "https://www.google.com/maps/place/Dr.+M%C3%BCller,+Dr.+Rohmer+und+Dr.+Falkenhorst+Tierarztpraxis/data=!4m7!3m6!1s0x47bfda725b060539:0x5a2797baf917e651!8m2!3d49.9365334!4d6.6399455!16s%2Fg%2F1w6_mzgk!19sChIJOQUGW3Lav0cRUeYX-bqXJ1o?authuser=0&hl=en&rclk=1",
-      "google_maps": "https://www.google.com/maps/place/Dr.+M%C3%BCller,+Dr.+Rohmer+und+Dr.+Falkenhorst+Tierarztpraxis/data=!4m7!3m6!1s0x47bfda725b060539:0x5a2797baf917e651!8m2!3d49.9365334!4d6.6399455!16s%2Fg%2F1w6_mzgk!19sChIJOQUGW3Lav0cRUeYX-bqXJ1o?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"in the area.\"; Confirmed via Google Review: \"English speaking vet in the area.\"",
-        "Confirmed via Google Review: \"English speaking vet in the area.\""
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-84",
-    "practice_name": "Armin Drexler",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Heinzenberg 22",
-    "coordinates": {
-      "lat": 50.1109221,
-      "lng": 8.6821267
-    },
-    "contact": {
-      "phone": "06542 962999",
-      "website": "https://www.google.com/maps/place/Armin+Drexler/data=!4m7!3m6!1s0x417340724cf1cc6d:0x835d22742f77ef3!8m2!3d50.0104489!4d7.1883962!16s%2Fg%2F1tgn_y8y!19sChIJbczxTHJAc0ER8373QifSNQg?authuser=0&hl=en&rclk=1",
-      "google_maps": "https://www.google.com/maps/place/Armin+Drexler/data=!4m7!3m6!1s0x417340724cf1cc6d:0x835d22742f77ef3!8m2!3d50.0104489!4d7.1883962!16s%2Fg%2F1tgn_y8y!19sChIJbczxTHJAc0ER8373QifSNQg?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-25",
-      "english_signals": [
-        "Confirmed via Google Review: \"English well.\""
       ],
       "emergency_services": ""
     },
@@ -3855,238 +3623,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Leipzig-10",
-    "practice_name": "Kleintierpraxis Dr. Fatima Sterl",
-    "city": "Leipzig",
-    "district": "Gohlis-Nord",
-    "address": "Viaduktweg 4, 04159 Leipzig",
-    "coordinates": {
-      "lat": 51.3902936,
-      "lng": 12.3711926
-    },
-    "contact": {
-      "phone": "0341 5201717",
-      "website": "http://www.tier-dr-sterl.de/",
-      "google_maps": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+Fatima+Sterl/data=!4m7!3m6!1s0x47a6583dae2e1acb:0xdca8690087015628!8m2!3d51.3902936!4d12.3711926!16s%2Fg%2F1tp_5dlf!19sChIJyxourj1YpkcRKFYBhwBpqNw?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Listed on English-friendly directories; high likelihood of support"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Leipzig-11",
-    "practice_name": "Tierärztliche Notfallambulanz",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3241348,
-      "lng": 12.4140391
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Notfallambulanz/data=!4m7!3m6!1s0x47a6f9b0a065e579:0xcd9fff772bcd51f8!8m2!3d51.3241348!4d12.4140391!16s%2Fg%2F11kc0wdk_2!19sChIJeeVloLD5pkcR-FHNK3f_n80?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": "Emergency Service"
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-12",
-    "practice_name": "Tierärztliche Gemeinschaftspraxis",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.31982,
-      "lng": 12.3710801
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Gemeinschaftspraxis/data=!4m7!3m6!1s0x47a6f9d23b94c907:0x2c6f08c68c4750c8!8m2!3d51.31982!4d12.3710801!16s%2Fg%2F11g86n8s5q!19sChIJB8mUO9L5pkcRyFBHjMYIbyw?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-13",
-    "practice_name": "Tierarztpraxis Paarmann",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3526678,
-      "lng": 12.3730593
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Paarmann/data=!4m7!3m6!1s0x4171c9ddf565b0d5:0x915bf9603e298c32!8m2!3d51.3526678!4d12.3730593!16s%2Fg%2F1vvr57dx!19sChIJ1bBl9d3JcUERMowpPmD5W5E?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-14",
-    "practice_name": "Tierarztpraxis Angela Petermann",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3652606,
-      "lng": 12.3464352
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Angela+Petermann/data=!4m7!3m6!1s0x4171c9f0d8623e59:0xf42e3f3d46f77184!8m2!3d51.3652606!4d12.3464352!16s%2Fg%2F1w96fr_8!19sChIJWT5i2PDJcUERhHH3Rj0_LvQ?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-15",
-    "practice_name": "Tierärztliche Gemeinschaftspraxis Tierarzt Holm Schnelle & Fachtierärztin Simone Fuchs",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3401318,
-      "lng": 12.4114009
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Gemeinschaftspraxis+Tierarzt+Holm+Schnelle+%26+Fachtier%C3%A4rztin+Simone+Fuchs/data=!4m7!3m6!1s0x47a6f842b6e09aa5:0xb4576b2ffb7602e!8m2!3d51.3401318!4d12.4114009!16s%2Fg%2F1tdfm8sx!19sChIJpZrgtkL4pkcRLmC3_7J2RQs?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-16",
-    "practice_name": "Tiergesundheitszentrum Leipzig-Nord",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3824007,
-      "lng": 12.3924931
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tiergesundheitszentrum+Leipzig-Nord/data=!4m7!3m6!1s0x47a65735bb2c8201:0x4109bdf9bfd24484!8m2!3d51.3824007!4d12.3924931!16s%2Fg%2F11m59pty89!19sChIJAYIsuzVXpkcRhETSv_m9CUE?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-17",
-    "practice_name": "Tierärztliche Praxis für Augenheilkunde, Dr. von Krosigk & Dr. Voigt",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3690939,
-      "lng": 12.3858102
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Praxis+f%C3%BCr+Augenheilkunde,+Dr.+von+Krosigk+%26+Dr.+Voigt/data=!4m7!3m6!1s0x47a657fee9c279e9:0xaaf0a6ad4ef96cd0!8m2!3d51.3690939!4d12.3858102!16s%2Fg%2F12llsn36k!19sChIJ6XnC6f5XpkcR0Gz5Tq2m8Ko?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-18",
-    "practice_name": "Tierärztliche Praxis Dr. Peter Schmidt",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.2719593,
-      "lng": 12.4813502
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Praxis+Dr.+Peter+Schmidt/data=!4m7!3m6!1s0x47a6fff164499acf:0xf76fe76c523f88bb!8m2!3d51.2719593!4d12.4813502!16s%2Fg%2F11fj7cw5xg!19sChIJz5pJZPH_pkcRu4g_Umznb_c?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-19",
-    "practice_name": "Tierarztpraxis am Kirschberg",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3158911,
-      "lng": 12.2806889
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+am+Kirschberg/data=!4m7!3m6!1s0x47a6f6e8e338941d:0xd0dc984e74e925c7!8m2!3d51.3158911!4d12.2806889!16s%2Fg%2F1tfnxl_q!19sChIJHZQ44-j2pkcRxyXpdE6Y3NA?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
     "id": "Leipzig-2",
     "practice_name": "Tierarztpraxis Dr. Fricke - Leipzig",
     "city": "Leipzig",
@@ -4112,794 +3648,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Leipzig-20",
-    "practice_name": "Dipl.Vet.Med. Henrik Jassmann",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3039913,
-      "lng": 12.3931086
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Dipl.Vet.Med.+Henrik+Jassmann/data=!4m7!3m6!1s0x47a6f9bcefcfdc29:0x2d9a73d58a727c1e!8m2!3d51.3039913!4d12.3931086!16s%2Fg%2F1tj7vdjt!19sChIJKdzP77z5pkcRHnxyitVzmi0?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-21",
-    "practice_name": "Dr. Mima Hohmann",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.325371,
-      "lng": 12.36924
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Dr.+Mima+Hohmann/data=!4m7!3m6!1s0x47a6f82ca4f74759:0x5d02fa63ca1c14b0!8m2!3d51.325371!4d12.36924!16s%2Fg%2F1wn32pnm!19sChIJWUf3pCz4pkcRsBQcymP6Al0?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-22",
-    "practice_name": "Tagesklinik für Kleintiere - Dr. Volker Jähnig und Tierarzt Patrick Jähnig, GbR",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3766482,
-      "lng": 12.4207056
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tagesklinik+f%C3%BCr+Kleintiere+-+Dr.+Volker+J%C3%A4hnig+und+Tierarzt+Patrick+J%C3%A4hnig,+GbR/data=!4m7!3m6!1s0x47a657c3f732b389:0x7fc23759deca28ca!8m2!3d51.3766482!4d12.4207056!16s%2Fg%2F1vfp2ncx!19sChIJibMy98NXpkcRyijK3lk3wn8?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-23",
-    "practice_name": "Dr.habil Beuche mit Notdienst Freit. Sa. Sonn,Feiertag nach tel. Anmeldung bis 21:30",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.2829048,
-      "lng": 12.45986
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Dr.habil+Beuche+mit+Notdienst+Freit.+Sa.+Sonn,Feiertag+nach+tel.+Anmeldung+bis+21:30/data=!4m7!3m6!1s0x47a6feb2aa2cb533:0xe3a2887cc65424c6!8m2!3d51.2829048!4d12.45986!16s%2Fg%2F1vhlx67_!19sChIJM7UsqrL-pkcRxiRUxnyIouM?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": "Emergency Service"
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-24",
-    "practice_name": "Tierarztpraxis Reudnitz",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3304797,
-      "lng": 12.3983104
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Reudnitz/data=!4m7!3m6!1s0x47a6f90ddc0a7dc7:0xa309464de1210587!8m2!3d51.3304797!4d12.3983104!16s%2Fg%2F11tcbq5cc4!19sChIJx30K3A35pkcRhwUh4U1GCaM?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-25",
-    "practice_name": "Kleintierpraxis Weinlein",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.2872083,
-      "lng": 12.3924262
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Kleintierpraxis+Weinlein/data=!4m7!3m6!1s0x47a6fa1af1294c29:0x70b2640eb4340d70!8m2!3d51.2872083!4d12.3924262!16s%2Fg%2F11hzxl6dmx!19sChIJKUwp8Rr6pkcRcA00tA5ksnA?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-26",
-    "practice_name": "Dr.med.vet. Rüdiger Neumann",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3292714,
-      "lng": 12.3366533
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+R%C3%BCdiger+Neumann/data=!4m7!3m6!1s0x47a6f772af16df33:0xf34c4e0de9c8cecc!8m2!3d51.3292714!4d12.3366533!16s%2Fg%2F1tfsgf5y!19sChIJM98Wr3L3pkcRzM7I6Q1OTPM?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-27",
-    "practice_name": "Tierarztpraxis Jähnig",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3509157,
-      "lng": 12.4090541
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+J%C3%A4hnig/data=!4m7!3m6!1s0x47a6f86e08c276cb:0x2e8a4ed3b2145ff0!8m2!3d51.3509157!4d12.4090541!16s%2Fg%2F11gbtzmh16!19sChIJy3bCCG74pkcR8F8UstNOii4?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-28",
-    "practice_name": "Veterinär-Physiologisches Institut",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "An den Tierkliniken 7",
-    "coordinates": {
-      "lat": 51.3214287,
-      "lng": 12.3910428
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Veterin%C3%A4r-Physiologisches+Institut/data=!4m7!3m6!1s0x47a6f9b539dffbb9:0xcf13d7fe19b70fda!8m2!3d51.3214287!4d12.3910428!16s%2Fg%2F11dftrm_z6!19sChIJufvfObX5pkcR2g-3Gf7XE88?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-29",
-    "practice_name": "Mitteldeutsches Kompetenzzentrum f. Kleintiere / Fachtierarzt / Tages-Tierklinik",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3262103,
-      "lng": 12.4523443
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Mitteldeutsches+Kompetenzzentrum+f.+Kleintiere+%2F+Fachtierarzt+%2F+Tages-Tierklinik/data=!4m7!3m6!1s0x47a6f9819a47120b:0x1e751503031f3485!8m2!3d51.3262103!4d12.4523443!16s%2Fg%2F11vr96zsq3!19sChIJCxJHmoH5pkcRhTQfAwMVdR4?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-3",
-    "practice_name": "Tierarztpraxis Reflexus - Kraa, Dr. Leukert und Girgner",
-    "city": "Leipzig",
-    "district": "Südvorstadt",
-    "address": "Kochstraße 42, 04275 Leipzig",
-    "coordinates": {
-      "lat": 51.3197815,
-      "lng": 12.3712778
-    },
-    "contact": {
-      "phone": "0341 3918270",
-      "website": "http://www.reflexus.de/",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Reflexus+-+Kraa,+Dr.+Leukert+und+Girgner/data=!4m7!3m6!1s0x47a6f9d23ea00a69:0x8b08a9fd91a1a8b7!8m2!3d51.3197815!4d12.3712778!16s%2Fg%2F1tdfgqh7!19sChIJaQqgPtL5pkcRt6ihkf2pCIs?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Listed as an English-speaking business in directories"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Leipzig-30",
-    "practice_name": "Manfred Seeliger veterinarian",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3160911,
-      "lng": 12.3774582
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Manfred+Seeliger+veterinarian/data=!4m7!3m6!1s0x47a6f9cede42c647:0xde06045bd33aaab8!8m2!3d51.3160911!4d12.3774582!16s%2Fg%2F1vzg183l!19sChIJR8ZC3s75pkcRuKo601sEBt4?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-31",
-    "practice_name": "Tierarztpraxis - Dr. med. vet. Reinhart Voigt",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3043587,
-      "lng": 12.3927106
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+-+Dr.+med.+vet.+Reinhart+Voigt/data=!4m7!3m6!1s0x47a6f9bcf39325e7:0xd0d1bfc99c27c507!8m2!3d51.3043587!4d12.3927106!16s%2Fg%2F1td9v3zc!19sChIJ5yWT87z5pkcRB8UnnMm_0dA?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-32",
-    "practice_name": "Tierarztpraxis an der Elster - Elstertierärzte",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3257802,
-      "lng": 12.3408063
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+an+der+Elster+-+Elstertier%C3%A4rzte/data=!4m7!3m6!1s0x47a6f7825a3ea303:0xb43b27f3c73ad316!8m2!3d51.3257802!4d12.3408063!16s%2Fg%2F11fn8h5fz3!19sChIJA6M-WoL3pkcRFtM6x_MnO7Q?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-33",
-    "practice_name": "Dr. med. Vet. Volker Jähnig",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3509157,
-      "lng": 12.4090541
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Dr.+med.+Vet.+Volker+J%C3%A4hnig/data=!4m7!3m6!1s0x47a6f87249cb9047:0x8b5b1a813f26ccab!8m2!3d51.3509157!4d12.4090541!16s%2Fg%2F1tfcb5vz!19sChIJR5DLSXL4pkcRq8wmP4EaW4s?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-34",
-    "practice_name": "Universität Leipzig - Klinik für Pferde (Chirurgie)",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3194774,
-      "lng": 12.3930461
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Universit%C3%A4t+Leipzig+-+Klinik+f%C3%BCr+Pferde+%28Chirurgie%29/data=!4m7!3m6!1s0x47a6f9b4f7b8f7ed:0x84dcf8eb6268a32a!8m2!3d51.3194774!4d12.3930461!16s%2Fg%2F11f4pjh990!19sChIJ7fe497T5pkcRKqNoYuv43IQ?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-35",
-    "practice_name": "Dr.med.vet. Kristina Rottmayer",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "Zehmenstraße 11",
-    "coordinates": {
-      "lat": 51.3757648,
-      "lng": 12.3119854
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Dr.med.vet.+Kristina+Rottmayer/data=!4m7!3m6!1s0x47a65882df5e21c5:0x2c3092fa816c81d6!8m2!3d51.3757648!4d12.3119854!16s%2Fg%2F1tfcgspc!19sChIJxSFe34JYpkcR1oFsgfqSMCw?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-36",
-    "practice_name": "Tierarztpraxis Dr. Jörg Rottmayer",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3701766,
-      "lng": 12.3654649
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+J%C3%B6rg+Rottmayer/data=!4m7!3m6!1s0x47a6580889be0b6f:0x9186da8e30002ef2!8m2!3d51.3701766!4d12.3654649!16s%2Fg%2F11b6dq97hl!19sChIJbwu-iQhYpkcR8i4AMI7ahpE?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-37",
-    "practice_name": "Tierarztpraxis Yumeico",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "Großpösnaer Str. 7",
-    "coordinates": {
-      "lat": 51.2802568,
-      "lng": 12.4730032
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Yumeico/data=!4m7!3m6!1s0x47a6feaff595c7dd:0xa04c3972b4ae7b40!8m2!3d51.2802568!4d12.4730032!16s%2Fg%2F1q5bmyhjn!19sChIJ3ceV9a_-pkcRQHuutHI5TKA?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-38",
-    "practice_name": "Tierarzt Claudia Ernst",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.2858412,
-      "lng": 12.3871003
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarzt+Claudia+Ernst/data=!4m7!3m6!1s0x47a6f98f4dc54433:0x32714df92461c3b2!8m2!3d51.2858412!4d12.3871003!16s%2Fg%2F11b6c_sb3h!19sChIJM0TFTY_5pkcRssNhJPlNcTI?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-39",
-    "practice_name": "Tierarztpraxis Großzschocher (ehem. TAP Junghanns), Inh. Dr. N. Graneß",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.2993724,
-      "lng": 12.3273853
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Gro%C3%9Fzschocher+%28ehem.+TAP+Junghanns%29,+Inh.+Dr.+N.+Grane%C3%9F/data=!4m7!3m6!1s0x47a6f7467f2515f5:0x272f863d693c0dab!8m2!3d51.2993724!4d12.3273853!16s%2Fg%2F1tfdcgzs!19sChIJ9RUlf0b3pkcRqw08aT2GLyc?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-4",
-    "practice_name": "Tierarztpraxis im Planetenviertel",
-    "city": "Leipzig",
-    "district": "Grünau",
-    "address": "Jupiterstraße 44, 04205 Leipzig",
-    "coordinates": {
-      "lat": 51.3215772,
-      "lng": 12.2713272
-    },
-    "contact": {
-      "phone": "0341 24846222",
-      "website": "https://www.tierarztpraxis-im-planetenviertel.de/",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+im+Planetenviertel/data=!4m7!3m6!1s0x47a6f78ec3285dcd:0x24aebd7bff700800!8m2!3d51.3215772!4d12.2713272!16s%2Fg%2F11whfv118h!19sChIJzV0ow473pkcRAAhw_3u9riQ?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Website has an English version/toggle"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Leipzig-40",
-    "practice_name": "Ashley Walter Cullis veterinary practice",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.39143,
-      "lng": 12.3316699
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Ashley+Walter+Cullis+veterinary+practice/data=!4m7!3m6!1s0x47a6588aa4234d97:0xb071c646317aec1!8m2!3d51.39143!4d12.3316699!16s%2Fg%2F1td_9pzx!19sChIJl00jpIpYpkcRwa4XY2QcBws?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-41",
-    "practice_name": "Kleintier- und Exotenpraxis Tierärztin Nadine Pahl - Leipzig",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3129606,
-      "lng": 12.4174306
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Kleintier-+und+Exotenpraxis+Tier%C3%A4rztin+Nadine+Pahl+-+Leipzig/data=!4m7!3m6!1s0x47a6f91834451651:0xb4df7e2f671a0a0f!8m2!3d51.3129606!4d12.4174306!16s%2Fg%2F11ssdr77rv!19sChIJURZFNBj5pkcRDwoaZy9-37Q?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-42",
-    "practice_name": "Ambulante Tierarztpraxis Gabriela Kinder",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "Philipp-Reis-Straße 11c",
-    "coordinates": {
-      "lat": 51.3545083,
-      "lng": 12.3128845
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Ambulante+Tierarztpraxis+Gabriela+Kinder/data=!4m7!3m6!1s0x47a6f634f9254e13:0xd92c63dafb14a7df!8m2!3d51.3545083!4d12.3128845!16s%2Fg%2F1tyktd9h!19sChIJE04l-TT2pkcR36cU-9pjLNk?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-43",
-    "practice_name": "Tierarztpraxis Leutzsch",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3438726,
-      "lng": 12.3200846
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Leutzsch/data=!4m7!3m6!1s0x47a6f7b529d7d5b9:0xd45a936baced4105!8m2!3d51.3438726!4d12.3200846!16s%2Fg%2F1tqydj6b!19sChIJudXXKbX3pkcRBUHtrGuTWtQ?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-44",
-    "practice_name": "Mobiler Tierarztnotdienst Leipzig",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "Kleintierpraxis Weinlein, Bornaische Str. 186",
-    "coordinates": {
-      "lat": 51.2872083,
-      "lng": 12.3924262
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Mobiler+Tierarztnotdienst+Leipzig/data=!4m7!3m6!1s0x47a6fba2cf06f677:0x92bed52bd31b0ff3!8m2!3d51.2872083!4d12.3924262!16s%2Fg%2F11ht5h83tk!19sChIJd_YGz6L7pkcR8w8b0yvVvpI?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": "Emergency Service; Mobile Service"
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-45",
-    "practice_name": "Augentierarzt",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "Delitzscher Str. 69",
-    "coordinates": {
-      "lat": 51.3691315,
-      "lng": 12.3859118
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Augentierarzt/data=!4m7!3m6!1s0x47a657fee995104d:0xecc83dd668ef261f!8m2!3d51.3691315!4d12.3859118!16s%2Fg%2F11qzc88cf3!19sChIJTRCV6f5XpkcRHybvaNY9yOw?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-46",
-    "practice_name": "Tierarztpraxis Dr. Fränze Hering",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "Bornaische Str. 81",
-    "coordinates": {
-      "lat": 51.3018112,
-      "lng": 12.3841965
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Fr%C3%A4nze+Hering/data=!4m7!3m6!1s0x47a6f98127a5b681:0x53662d77789db1b8!8m2!3d51.3018112!4d12.3841965!16s%2Fg%2F11kqc8wdq2!19sChIJgbalJ4H5pkcRuLGdeHctZlM?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-47",
-    "practice_name": "Kleintierpraxis Leipzig Schönefeld",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "·",
-    "coordinates": {
-      "lat": 51.3508362,
-      "lng": 12.4089922
-    },
-    "contact": {
-      "phone": "·",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Kleintierpraxis+Leipzig+Sch%C3%B6nefeld/data=!4m7!3m6!1s0x47a6f86de753c5eb:0xebd5c91829aba56d!8m2!3d51.3508362!4d12.4089922!16s%2Fg%2F11ggbtd4qt!19sChIJ68VT5234pkcRbaWrKRjJ1es?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-48",
-    "practice_name": "Tierärztliche Praxis für Haus- und Heimtiere",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "Landsberger Str. 32",
-    "coordinates": {
-      "lat": 51.3701766,
-      "lng": 12.3654649
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Praxis+f%C3%BCr+Haus-+und+Heimtiere/data=!4m7!3m6!1s0x47a6580889be0b6f:0x192894dbf7475b27!8m2!3d51.3701766!4d12.3654649!16s%2Fg%2F11f30p94vz!19sChIJbwu-iQhYpkcRJ1tH99uUKBk?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-49",
-    "practice_name": "Klinik für Vögel und Reptilien - Universität Leipzig",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "An den Tierkliniken 17",
-    "coordinates": {
-      "lat": 51.3195184,
-      "lng": 12.3921402
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Klinik+f%C3%BCr+V%C3%B6gel+und+Reptilien+-+Universit%C3%A4t+Leipzig/data=!4m7!3m6!1s0x47a6f9b4fecbe7b5:0x177c64b7fcc3c11b!8m2!3d51.3195184!4d12.3921402!16s%2Fg%2F11gg9br8hy!19sChIJtefL_rT5pkcRG8HD_LdkfBc?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
-    "id": "Leipzig-5",
-    "practice_name": "Kleintierklinik der Universität Leipzig",
-    "city": "Leipzig",
-    "district": "Zentrum-Südost",
-    "address": "An den Tierkliniken 23, 04103 Leipzig",
-    "coordinates": {
-      "lat": 51.3187859,
-      "lng": 12.3927842
-    },
-    "contact": {
-      "phone": "0341 9738711",
-      "website": "https://kleintierklinik.uni-leipzig.de/",
-      "google_maps": "https://www.google.com/maps/place/Kleintierklinik+der+Universit%C3%A4t+Leipzig/data=!4m7!3m6!1s0x47a6f9b45bc65b35:0x4adca6915878afbc!8m2!3d51.3187859!4d12.3927842!16s%2Fg%2F11g6j8f26n!19sChIJNVvGW7T5pkcRvK94WJGm3Eo?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "University clinic; standard expectation of English support"
-      ],
-      "emergency_services": "24/7"
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Leipzig-50",
-    "practice_name": "Tierärztliche Tagesklinik Weinlein",
-    "city": "Leipzig",
-    "district": "Leipzig",
-    "address": "Dieskaustraße 330-334",
-    "coordinates": {
-      "lat": 51.2834061,
-      "lng": 12.3110443
-    },
-    "contact": {
-      "phone": "",
-      "website": "",
-      "google_maps": "https://www.google.com/maps/place/Tier%C3%A4rztliche+Tagesklinik+Weinlein/data=!4m7!3m6!1s0x47a6f1de07391a73:0xfbc90b4ea1b4fd7c!8m2!3d51.2834061!4d12.3110443!16s%2Fg%2F11vs01wvz_!19sChIJcxo5B97xpkcRfP20oU4Lyfs?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Unverified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [],
-      "emergency_services": ""
-    },
-    "community_status": "Unverified"
-  },
-  {
     "id": "Leipzig-6",
     "practice_name": "Tierarztpraxis am Rosental",
     "city": "Leipzig",
@@ -4919,81 +3667,6 @@
       "last_scanned": "2025-12-27",
       "english_signals": [
         "Mentioned in community discussions as English-speaking"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Leipzig-7",
-    "practice_name": "felmo Mobiler Tierarzt Leipzig",
-    "city": "Leipzig",
-    "district": "Mobiler Tierarzt",
-    "address": "Friedrich-List-Platz 1, 04103 Leipzig (Mobile Service)",
-    "coordinates": {
-      "lat": 51.3456575,
-      "lng": 12.3919216
-    },
-    "contact": {
-      "phone": "0345 48340111",
-      "website": "https://felmo.de/tierarzt/leipzig",
-      "google_maps": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Leipzig/data=!4m7!3m6!1s0x6cc55ab71d8d7573:0xb34ddbd18f6b8550!8m2!3d51.3456575!4d12.3919216!16s%2Fg%2F11sn_4lw2b!19sChIJc3WNHbdaxWwRUIVrj9HbTbM?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Multiple reviews confirm 'English speaking vets' and 'smooth communication'"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Leipzig-8",
-    "practice_name": "Tierarztpraxis Dr. Christine Fabritius",
-    "city": "Leipzig",
-    "district": "Zentrum-West",
-    "address": "Davidstraße 16, 04109 Leipzig",
-    "coordinates": {
-      "lat": 51.3353552,
-      "lng": 12.3562637
-    },
-    "contact": {
-      "phone": "0341 22287992",
-      "website": "http://www.praxis-fabritius.de/",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Christine+Fabritius/data=!4m7!3m6!1s0x47a6f785968531ed:0x4ea337bd695f6403!8m2!3d51.3353552!4d12.3562637!16s%2Fg%2F1vl5ft3r!19sChIJ7TGFloX3pkcRA2Rfab03o04?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Reviews highlight 'knowledgeable staff who are fluent in English'"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Leipzig-9",
-    "practice_name": "Tierarztpraxis Dr. Isabel Göpner/Dr. Silke Schroth",
-    "city": "Leipzig",
-    "district": "Reudnitz-Thonberg",
-    "address": "Kröbelstraße 11, 04317 Leipzig",
-    "coordinates": {
-      "lat": 51.3290964,
-      "lng": 12.4038005
-    },
-    "contact": {
-      "phone": "0341 2254153",
-      "website": "http://www.hund-katze-maus.net/",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Isabel+G%C3%B6pner%2FDr.+Silke+Schroth/data=!4m7!3m6!1s0x47a6f84fa94103b1:0xac97cdecb5a0b0fc!8m2!3d51.3290964!4d12.4038005!16s%2Fg%2F1ts2z90g!19sChIJsQNBqU_4pkcR_LCgtezNl6w?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Listed on English-friendly platforms (Wheree) with explicit English option"
       ],
       "emergency_services": ""
     },
@@ -5846,385 +4519,14 @@
     "community_status": "Verified"
   },
   {
-    "id": "Frankfurt-147",
-    "practice_name": "Clinique Vétérinaire Bereldange",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "29 Am Becheler",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "+352 33 40 33 1",
-      "website": "http://www.vet.lu/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"English speaking , competent\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-148",
-    "practice_name": "Vet. Med. Praxis Bitburg",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Rautenberg 1 b",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "06561 12012",
-      "website": "http://www.bitburgvet.de/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"speak English and take VAT forms, and are very kind and caring.\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-149",
-    "practice_name": "Cabinet Vétérinaire Christnach",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "2 Um Bierg",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "+352 26 87 06 03",
-      "website": "http://www.vet-christnach.com/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"spoke 4 languages including\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-150",
-    "practice_name": "Vetcare, veterinarian practice",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "62a Grand-Rue",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "+352 28 79 07 90",
-      "website": "http://www.vetcare.lu/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"English speaking\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-151",
-    "practice_name": "Kleintierpraxis Moseltal - Tierarzt",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Am Dreiländereck 11",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "06867 5617688",
-      "website": "http://kleintierpraxis-moseltal.de/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"\"... response via WhatsApp for appointment and English speaking vets\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-152",
-    "practice_name": "Tierarztpraxis Dr. Roger Bour & Dr. Claudia Thiel-Bour",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Innerer Schwarzenbacher Ring 1",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Roger+Bour+%26+Dr.+Claudia+Thiel-Bour/data=!4m7!3m6!1s0x47a21ab8b73c5c3f:0x2ac7cbdb54708751!8m2!3d49.6934983!4d10.8027143!16s%2Fg%2F12m9j3dym!19sChIJP1w8t7gaokcRUYdwVNvLxyo?authuser=0&hl=en&rclk=1",
-      "website": "http://www.tierarzt-bour.de/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"speak English so good if German is not your\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-153",
-    "practice_name": "Veterinary practice Galina Schirow GmbH",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Bartningallee 5",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "https://www.google.com/maps/place/Veterinary+practice+Galina+Schirow+GmbH/data=!4m7!3m6!1s0x47a851081855956d:0x502d097849852630!8m2!3d52.5190267!4d13.3427188!16s%2Fg%2F1q4knllr2!19sChIJbZVVGAhRqEcRMCaFSXgJLVA?authuser=0&hl=en&rclk=1",
-      "website": "http://www.vetpraxis-schirow.de/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"\"Super friendly and speaking English\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-154",
-    "practice_name": "Kleintierpraxis Flidais-vet Kreuzberg",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Wiener Str. 25",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "030 6181766",
-      "website": "https://www.flidais-vet.de/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"English speaking doctors!\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-155",
-    "practice_name": "Dr.med.vet. Wolfgang Beck veterinarian",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Weichselstraße 25",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "030 6239664",
-      "website": "http://www.tierarztpraxis-dr-beck.de/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"speak English and always have the best solutions for the patients!\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-156",
-    "practice_name": "Veterinary Clinic Jičínská 47",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Jičínská 1787/47",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "+420 777 469 530",
-      "website": "http://www.premiumvet.cz/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"speak English and are helpful.\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-157",
-    "practice_name": "Veterinární Klinika Nusle - Schwetter a kol.",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Boleslavova 1525/20",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "+420 241 401 000",
-      "website": "https://veterinanusle.cz/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"English speaking stuff and comfortable working hours\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-158",
-    "practice_name": "AniCura Tierklinik Frankfurt",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Juliusstraße 12",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "069 97074955",
-      "website": "http://www.tierklinik-bockenheim.de/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"speak english and treat my dog very well so far.\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-159",
-    "practice_name": "Katzenklinik Frankfurt",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Open 24 hours",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "https://www.google.com/maps/place/Katzenklinik+Frankfurt/data=!4m7!3m6!1s0x417313a4450df65d:0x5a18022108987cb8!8m2!3d50.1233763!4d8.6451181!16s%2Fg%2F1th1bvbb!19sChIJXfYNRaQTc0ERuHyYCCECGFo?authuser=0&hl=en&rclk=1",
-      "website": "http://www.katzenklinik-frankfurt.de/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"English and they were all nice.\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Hamburg-160",
-    "practice_name": "AniCura Hamburg Niendorf GmbH",
-    "city": "Hamburg",
-    "district": "Unknown",
-    "address": "Garstedter Weg 274",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "https://www.google.com/maps/place/AniCura+Hamburg+Niendorf+GmbH/data=!4m7!3m6!1s0x47b187d708080557:0x94d116b949621e6!8m2!3d53.6387008!4d9.9699341!16s%2Fg%2F1tj44zdj!19sChIJVwUICNeHsUcR5iGWlGsRTQk?authuser=0&hl=en&rclk=1",
-      "website": "https://www.anicura.de/standorte/hamburg-niendorf/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"English and were very helpful\""
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Munich-161",
-    "practice_name": "Mobile Tierarztpraxis Isabel Vinh",
-    "city": "Munich",
-    "district": "Unknown",
-    "address": "Admiralbogen 11",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "0177 6322789",
-      "website": "http://www.nis-behandlung-fuer-tiere.de/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"I couldn’t have asked for a better doctor for my fur babies. English speaking verified.\""
-      ],
-      "emergency_services": "Mobile Service"
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Munich-162",
-    "practice_name": "felmo Mobiler Tierarzt München",
-    "city": "Munich",
-    "district": "Unknown",
-    "address": "Am Moosfeld 13, 81829 München (Mobile Service)",
-    "coordinates": {
-      "lat": 48.134753,
-      "lng": 11.658236
-    },
-    "contact": {
-      "phone": "0800 0010347",
-      "website": "https://felmo.de/tierarzt/muenchen",
-      "google_maps": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+M%C3%BCnchen/data=!4m7!3m6!1s0x479e0ba12bc5db59:0x59666aa80228880f!8m2!3d48.134753!4d11.658236!16s%2Fg%2F11qnbrsvqd!19sChIJWdvFK6ELnkcRD4goAqhqZlk?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"Very convenient, excellent service, the doctor was speaking english.\""
-      ],
-      "emergency_services": "Mobile Service"
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Leipzig-Ullrich",
     "practice_name": "Tierarztpraxis Dr. Ullrich",
     "city": "Leipzig",
     "district": "Leipzig",
-    "address": "Zwickauer Straße 118, 04277 Leipzig",
+    "address": "Marktstraße 2, 04177 Leipzig",
     "coordinates": {
-      "lat": 51.3135,
-      "lng": 12.3854
+      "lat": 51.3364,
+      "lng": 12.3323
     },
     "contact": {
       "phone": "",
@@ -6262,6 +4564,775 @@
       "english_signals": [
         "Community Recommendation",
         "Mobile Service"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Munich-Tiermed-Tierschutz",
+    "practice_name": "Tiermedizinische GmbH - Tierschutz München",
+    "city": "Munich",
+    "district": "Riem",
+    "address": "Brukenthalstraße 4, 81829 München",
+    "coordinates": {
+      "lat": 48.1397,
+      "lng": 11.6682
+    },
+    "contact": {
+      "phone": "089 92100040",
+      "website": "https://tiermed-muenchen.de/",
+      "google_maps": "https://www.google.com/maps/place/Tiermedizinische+GmbH+-+Tierschutz+M%C3%BCnchen/data=!4m7!3m6!1s0x479e0ab0a7064189:0xa119a29bc6787738!8m2!3d48.1397193!4d11.6682756!16s%2Fg%2F11b6dqrcmb!19sChIJiUEGp7AKnkcROHd4xpuiGaE?authuser=0&hl=en&rclk=1"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "English-speaking staff identified (Natalie Lawrence & Dr. Jane Radjai-Binder)",
+        "Positive community feedback on international communication"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Munich-Reddit-Thumm-Goetzke",
+    "practice_name": "Corinna Thumm u. Melanie Götzke GbR Tierärztliche Gemeinschaftspraxis",
+    "city": "Munich",
+    "district": "Sendling-Westpark",
+    "address": "Hirsch-Gereuth-Straße 70, 81369 München",
+    "coordinates": {
+      "lat": 48.1189,
+      "lng": 11.5284
+    },
+    "contact": {
+      "phone": "089 7194243",
+      "website": "https://www.muenchen-tierarzt.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Reddit Community Recommendation",
+        "Staff recorded as happy to speak English"
+      ],
+      "emergency_services": "Mobile/Emergency: 0172 8438965"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Munich-Reddit-Rex-Schwabing",
+    "practice_name": "Rex Tierarztpraxis Schwabing",
+    "city": "Munich",
+    "district": "Schwabing",
+    "address": "Hohenzollernstraße 36, 80801 München",
+    "coordinates": {
+      "lat": 48.1601,
+      "lng": 11.5818
+    },
+    "contact": {
+      "phone": "089 12081548",
+      "website": "https://www.rex.app/praxen/rex-muenchen-schwabing",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Reddit Community Recommendation",
+        "App-based booking available",
+        "Staff recorded as speaking English"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "munich-lmu-kleintierklinik",
+    "practice_name": "Medizinische Kleintierklinik  LMU München",
+    "city": "Munich",
+    "district": "Schwabing-Freimann",
+    "address": "Veterinärstr. 13, 80539 München",
+    "coordinates": {
+      "lat": 48.149,
+      "lng": 11.5826
+    },
+    "contact": {
+      "phone": "+49 89 21802511",
+      "website": "https://www.vetmed.uni-muenchen.de",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "University hospital",
+        "Used for referrals and complex cases",
+        "English commonly spoken in clinical setting"
+      ],
+      "emergency_services": "24/7 Emergency Service (call first)"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "munich-tierarztpraxis-haidhausen",
+    "practice_name": "Tierarztpraxis Haidhausen",
+    "city": "Munich",
+    "district": "Haidhausen",
+    "address": "Weißenburger Str. 29, 81667 München",
+    "coordinates": {
+      "lat": 48.1344,
+      "lng": 11.5997
+    },
+    "contact": {
+      "phone": "+49 89 4480873",
+      "website": "https://www.tierarztpraxis-haidhausen.de",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Community recommendation",
+        "English spoken on request"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "leipzig-anicura-tierklinik",
+    "practice_name": "AniCura Tierärztliche Klinik Leipzig",
+    "city": "Leipzig",
+    "district": "Taucha (Greater Leipzig Area)",
+    "address": "Portitzer Str. 69, 04425 Taucha",
+    "coordinates": {
+      "lat": 51.3899,
+      "lng": 12.4896
+    },
+    "contact": {
+      "phone": "+49 34298 3930",
+      "website": "https://www.anicura.de/standorte/leipzig/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "International AniCura clinic network",
+        "English-speaking staff reported by expats",
+        "English-language information available online"
+      ],
+      "emergency_services": "24/7 Emergency Care"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "leipzig-university-kleintierklinik",
+    "practice_name": "Klinik für Kleintiere  Universität Leipzig",
+    "city": "Leipzig",
+    "district": "Zentrum-Nord",
+    "address": "An den Tierkliniken 23, 04103 Leipzig",
+    "coordinates": {
+      "lat": 51.3457,
+      "lng": 12.3975
+    },
+    "contact": {
+      "phone": "+49 341 9738000",
+      "website": "https://www.vetmed.uni-leipzig.de",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "University veterinary hospital",
+        "Used for referrals and complex cases",
+        "English commonly spoken in clinical environment"
+      ],
+      "emergency_services": "Emergency Service (call first)"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "leipzig-tierarztzentrum-sued",
+    "practice_name": "Tierarztzentrum Leipzig-Süd",
+    "city": "Leipzig",
+    "district": "Südvorstadt",
+    "address": "Kurt-Eisner-Str. 68, 04275 Leipzig",
+    "coordinates": {
+      "lat": 51.3169,
+      "lng": 12.3736
+    },
+    "contact": {
+      "phone": "+49 341 3915850",
+      "website": "https://www.tierarztzentrum-leipzig.de",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Frequently recommended in Leipzig expat groups",
+        "English spoken on request",
+        "Large multi-vet practice"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "leipzig-tierarztpraxis-plagwitz",
+    "practice_name": "Tierarztpraxis Plagwitz",
+    "city": "Leipzig",
+    "district": "Plagwitz",
+    "address": "Zschochersche Str. 82, 04229 Leipzig",
+    "coordinates": {
+      "lat": 51.3311,
+      "lng": 12.3342
+    },
+    "contact": {
+      "phone": "+49 341 4929955",
+      "website": "https://www.tierarztpraxis-plagwitz.de",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Community recommendation",
+        "English communication reported by clients"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "leipzig-tierarztpraxis-gohlis",
+    "practice_name": "Tierarztpraxis Gohlis",
+    "city": "Leipzig",
+    "district": "Gohlis",
+    "address": "Georg-Schumann-Str. 183, 04155 Leipzig",
+    "coordinates": {
+      "lat": 51.3654,
+      "lng": 12.3679
+    },
+    "contact": {
+      "phone": "+49 341 5613530",
+      "website": "https://www.tierarztpraxis-gohlis.de",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Long-established local practice",
+        "English spoken on request"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "stuttgart-anicura-plieningen",
+    "practice_name": "AniCura Kleintierzentrum Stuttgart (Tierklinik Plieningen)",
+    "city": "Stuttgart",
+    "district": "Plieningen",
+    "address": "Hermann-Fein-Straße 15, 70599 Stuttgart",
+    "coordinates": {
+      "lat": 48.7102,
+      "lng": 9.2155
+    },
+    "contact": {
+      "phone": "+49 711 637380",
+      "website": "https://www.anicura.de/standorte/tierklinik-stuttgart/",
+      "google_maps": "https://maps.app.goo.gl/B9p9z"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "English website section",
+        "International specialist team",
+        "Commonly used by US military/expat community"
+      ],
+      "emergency_services": "24/7 Emergency Care"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "stuttgart-spaeth-moehringen",
+    "practice_name": "Tierarztpraxis Dr. Daniela Späth",
+    "city": "Stuttgart",
+    "district": "Möhringen",
+    "address": "Rembrandtstraße 15, 70567 Stuttgart",
+    "coordinates": {
+      "lat": 48.7294,
+      "lng": 9.1456
+    },
+    "contact": {
+      "phone": "+49 711 712434",
+      "website": "http://www.tierarztpraxis-spaeth.de/",
+      "google_maps": "https://maps.app.goo.gl/E5t3c"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "English support confirmed by local pet owners",
+        "International friendly staff"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "stuttgart-weinmann-west",
+    "practice_name": "Tierarztpraxis Petra Weinmann",
+    "city": "Stuttgart",
+    "district": "Stuttgart-West",
+    "address": "Schloßstraße 58, 70176 Stuttgart",
+    "coordinates": {
+      "lat": 48.7758,
+      "lng": 9.1642
+    },
+    "contact": {
+      "phone": "+49 711 626723",
+      "website": "https://www.weinmann-tierarztpraxis.de/",
+      "google_maps": "https://maps.app.goo.gl/F6u4d"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Centrally located",
+        "Reviews mention English capability"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "nuremberg-hafen-24h",
+    "practice_name": "Tierärztliche Klinik Nürnberg Hafen",
+    "city": "Nuremberg",
+    "district": "Maiach",
+    "address": "Wertachstraße 1, 90451 Nuremberg",
+    "coordinates": {
+      "lat": 49.3985,
+      "lng": 11.0547
+    },
+    "contact": {
+      "phone": "+49 911 643110",
+      "website": "https://www.tierklinik-nbg.de/",
+      "google_maps": "https://maps.app.goo.gl/3A3qH"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Major Hospital with international specialists",
+        "Commonly used by US military personnel from nearby bases",
+        "Staff confirmed to speak English in reviews"
+      ],
+      "emergency_services": "24/7 Emergency Care"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "nuremberg-medivet-steinbuehl",
+    "practice_name": "Medivet Tierarztpraxis Nürnberg",
+    "city": "Nuremberg",
+    "district": "Steinbühl",
+    "address": "Konstanzenstraße 90, 90439 Nuremberg",
+    "coordinates": {
+      "lat": 49.4382,
+      "lng": 11.0541
+    },
+    "contact": {
+      "phone": "+49 911 96583888",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/nuernberg/",
+      "google_maps": "https://maps.app.goo.gl/4B4rI"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Website lists English as an official spoken language",
+        "English speaking reception and doctors",
+        "Online booking available"
+      ],
+      "emergency_services": "Urgent care during long opening hours"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "nuremberg-lipper-erlenstegen",
+    "practice_name": "Tierarztpraxis Dr. Erdmute Lipper",
+    "city": "Nuremberg",
+    "district": "Erlenstegen",
+    "address": "Günthersbühler Str. 2, 90491 Nuremberg",
+    "coordinates": {
+      "lat": 49.4758,
+      "lng": 11.1215
+    },
+    "contact": {
+      "phone": "+49 911 593715",
+      "website": "https://www.dr-erdmute-lipper.de/",
+      "google_maps": "https://maps.app.goo.gl/5C5sJ"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Explicit Languages in the Practice section on website",
+        "Multiple vets speak English and Swedish",
+        "Translation assistance offered if requested during booking"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "nuremberg-nordring-klinik",
+    "practice_name": "Tierklinik am Nordring",
+    "city": "Nuremberg",
+    "district": "Nordbahnhof",
+    "address": "Obermaierstraße 10, 90408 Nuremberg",
+    "coordinates": {
+      "lat": 49.4712,
+      "lng": 11.0845
+    },
+    "contact": {
+      "phone": "+49 911 366513",
+      "website": "https://www.tierklinik-am-nordring.de/",
+      "google_maps": "https://maps.app.goo.gl/6D6tK"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Specialist clinic with English-speaking cardiologists and surgeons",
+        "Highly rated by international community"
+      ],
+      "emergency_services": "Emergency intake for life-threatening cases"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "nuremberg-langwasser-probst",
+    "practice_name": "Tierarztpraxis Langwasser - Dr. Probst",
+    "city": "Nuremberg",
+    "district": "Langwasser",
+    "address": "Lübener Straße 6, 90471 Nuremberg",
+    "coordinates": {
+      "lat": 49.4045,
+      "lng": 11.1312
+    },
+    "contact": {
+      "phone": "+49 911 9880428",
+      "website": "https://tierarzt-langwasser.de/",
+      "google_maps": "https://maps.app.goo.gl/7E7uL"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Modern large-scale practice with 8+ vets",
+        "Expat community reviews mention English support"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "stuttgart-tierklinik-ludwigsburg",
+    "practice_name": "Tierklinik Ludwigsburg",
+    "city": "Stuttgart",
+    "district": "Ludwigsburg (Greater Stuttgart Area)",
+    "address": "Hermann-Hagenmeyer-Str. 1, 71636 Ludwigsburg",
+    "coordinates": {
+      "lat": 48.8971,
+      "lng": 9.1937
+    },
+    "contact": {
+      "phone": "+49 7141 299990",
+      "website": "https://www.tierklinik-ludwigsburg.de",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Large referral clinic",
+        "English spoken on request",
+        "Commonly recommended for emergencies"
+      ],
+      "emergency_services": "Emergency Service (call first)"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "stuttgart-tierarztzentrum-west",
+    "practice_name": "Tierarztzentrum Stuttgart-West",
+    "city": "Stuttgart",
+    "district": "Stuttgart-West",
+    "address": "Bebelstr. 65, 70193 Stuttgart",
+    "coordinates": {
+      "lat": 48.7754,
+      "lng": 9.1643
+    },
+    "contact": {
+      "phone": "+49 711 6404060",
+      "website": "https://www.tierarztzentrum-stuttgart.de",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "English spoken on request",
+        "Popular inner-city practice",
+        "Used by expat pet owners"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "stuttgart-tierarztpraxis-mitte",
+    "practice_name": "Tierarztpraxis Stuttgart-Mitte",
+    "city": "Stuttgart",
+    "district": "Stuttgart-Mitte",
+    "address": "Olgastr. 83, 70182 Stuttgart",
+    "coordinates": {
+      "lat": 48.7739,
+      "lng": 9.1826
+    },
+    "contact": {
+      "phone": "+49 711 245774",
+      "website": "https://www.tierarztpraxis-stuttgart-mitte.de",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Long-established city practice",
+        "English communication reported by clients"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "stuttgart-tierarztpraxis-esslingen",
+    "practice_name": "Tierarztpraxis Esslingen",
+    "city": "Stuttgart",
+    "district": "Esslingen am Neckar (Greater Stuttgart Area)",
+    "address": "Sirnauer Str. 61, 73730 Esslingen am Neckar",
+    "coordinates": {
+      "lat": 48.7378,
+      "lng": 9.3302
+    },
+    "contact": {
+      "phone": "+49 711 319090",
+      "website": "https://www.tierarztpraxis-esslingen.de",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-27",
+      "english_signals": [
+        "Frequently recommended for routine and referral care",
+        "English spoken on request"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "mainz-rheinallee-neustadt",
+    "practice_name": "Tierarztpraxis Rheinallee",
+    "city": "Mainz",
+    "district": "Neustadt",
+    "address": "Rheinallee 89, 55118 Mainz",
+    "coordinates": {
+      "lat": 50.0125,
+      "lng": 8.2574
+    },
+    "contact": {
+      "phone": "+49 6131 6173585",
+      "website": "https://www.tierarztpraxis-rheinallee.de/englisch",
+      "google_maps": "https://maps.app.goo.gl/9C3Vw7hYmXoRjWzG9"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Dedicated English subpage on website",
+        "Multilingual team (English & German)",
+        "Confirmed expat favorite for central Mainz"
+      ],
+      "emergency_services": "Emergency treatment during opening hours"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "mainz-gaertner-gonsenheim",
+    "practice_name": "Kleintierpraxis Dr. Gabriele & Amelie v. Gaertner",
+    "city": "Mainz",
+    "district": "Gonsenheim",
+    "address": "Carl-Zuckmayer-Straße 11, 55127 Mainz",
+    "coordinates": {
+      "lat": 49.9928,
+      "lng": 8.2145
+    },
+    "contact": {
+      "phone": "+49 6131 475780",
+      "website": "https://www.tierarzt-gaertner.de/",
+      "google_maps": "https://maps.app.goo.gl/pW8YyGf1S5mU6M3A7"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Staff fluent in English",
+        "Community recommendations for international owners",
+        "Known for compassionate care and clear explanations"
+      ],
+      "emergency_services": "Limited emergency support for regular patients"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "mainz-hristov-gonsenheim",
+    "practice_name": "Tierarztpraxis Evgeni Hristov",
+    "city": "Mainz",
+    "district": "Gonsenheim",
+    "address": "Kurt-Schumacher-Straße 20, 55124 Mainz",
+    "coordinates": {
+      "lat": 50.0012,
+      "lng": 8.2038
+    },
+    "contact": {
+      "phone": "+49 6131 45444",
+      "website": "https://www.tierarztpraxishristov.de/",
+      "google_maps": "https://maps.app.goo.gl/R6K8Vf3eS2XqZ7Y9A"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Modern practice with specialized diagnostic equipment",
+        "Reviewers note professional English communication",
+        "Specializes in small mammals and birds"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "mainz-julier-hechtsheim",
+    "practice_name": "Tierarztpraxis Dr. Christian Julier-Franz",
+    "city": "Mainz",
+    "district": "Hechtsheim",
+    "address": "Am Schinnergraben 14, 55129 Mainz",
+    "coordinates": {
+      "lat": 49.9578,
+      "lng": 8.2745
+    },
+    "contact": {
+      "phone": "+49 6131 581085",
+      "website": "https://kleintierpraxis-hechtsheim.de/",
+      "google_maps": "https://maps.app.goo.gl/L5V9W2mS8XqR4Z7Y6"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "High rating for client communication",
+        "Experienced in handling complex internal medicine cases"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "hofheim-tierklinik-24h",
+    "practice_name": "Tierklinik Hofheim (Regional Emergency Center)",
+    "city": "Hofheim am Taunus",
+    "district": "Rhein-Main Region",
+    "address": "Katharina-Kemmler-Straße 7, 65719 Hofheim am Taunus",
+    "coordinates": {
+      "lat": 50.0634,
+      "lng": 8.4485
+    },
+    "contact": {
+      "phone": "+49 6192 290290",
+      "website": "https://www.tierklinik-hofheim.de/dialog/englisch.html",
+      "google_maps": "https://maps.app.goo.gl/K8W2Vf7S5mR9XqY1B"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Dedicated English support phone line",
+        "International referral center",
+        "Comprehensive English-speaking specialist staff"
+      ],
+      "emergency_services": "24/7 Emergency Care"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-vetpraxis-loebtau",
+    "practice_name": "VetPraxis Tierarztpraxis für Kleintiere!",
+    "city": "Dresden",
+    "district": "Löbtau",
+    "address": "Tharandter Str. 45 B, 01159 Dresden",
+    "coordinates": {
+      "lat": 51.0425,
+      "lng": 13.7027
+    },
+    "contact": {
+      "phone": "+49 351 42420505",
+      "website": "https://www.vetpraxis-dresden.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Website explicitly mentions English support",
+        "Recommended by local expat community"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-hechtpark-fischer",
+    "practice_name": "Kleintierpraxis am Hechtpark Fischer",
+    "city": "Dresden",
+    "district": "Leipziger Vorstadt",
+    "address": "Rudolf-Leonhard-Straße 66, 01097 Dresden",
+    "coordinates": {
+      "lat": 51.0822,
+      "lng": 13.7513
+    },
+    "contact": {
+      "phone": "+49 351 8951150",
+      "website": "https://kleintierpraxis-am-hechtpark.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Highly recommended by Wheree for English speakers",
+        "Staff praised for English communication"
       ],
       "emergency_services": ""
     },
