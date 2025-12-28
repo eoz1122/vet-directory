@@ -141,6 +141,41 @@ We verify practices in Blasewitz that meet the high standards of the community a
         content: `Striesen is famous for its green streets and architecture, making it a wonderful area for dog owners. For the expat families living here, an English-speaking vet is a key part of the support network.
 
 Our directory features verified veterinary practices in Striesen that welcome international clients.`
+    },
+    'coschütz': {
+        title: "English-Speaking Vets in Dresden-Coschütz",
+        description: "Find English-speaking veterinarians in Dresden-Coschütz. Verified pet care on the southern tech campus near TU Dresden.",
+        content: `Coschütz, home to major tech hubs and the TU Dresden campus, attracts international researchers and students. For those with pets, finding a local vet who can communicate in English is essential.
+
+Our directory lists verified practices in Coschütz that offer professional veterinary services in English.`
+    },
+    'langwasser': {
+        title: "English-Speaking Vets in Nuremberg-Langwasser",
+        description: "Find trusted English-speaking veterinarians in Nuremberg-Langwasser. Verified care for the local international community.",
+        content: `Langwasser offers green living spaces and modern amenities for residents in southeast Nuremberg. For international pet owners, having a vet who speaks English nearby is a top priority.
+
+We verify veterinary practices in Langwasser that provide compassionate care and clear communication in English.`
+    },
+    'oberhaching': {
+        title: "English-Speaking Vets in Oberhaching (Munich)",
+        description: "Premium English-speaking veterinary services in Oberhaching. Verified specialist care just south of Munich.",
+        content: `Oberhaching is a sought-after residential area south of Munich, known for its high quality of life. Access to top-tier, English-speaking veterinary care—including specialist clinics—is a major benefit for residents here.
+
+Our directory lists verified practices and clinics in Oberhaching that serve the international community with expertise.`
+    },
+    'neuhausen-nymphenburg': {
+        title: "English-Speaking Vets in Neuhausen-Nymphenburg",
+        description: "Find trusted English-speaking vets in Neuhausen-Nymphenburg, Munich. Verified care near Nymphenburg Palace.",
+        content: `Neuhausen-Nymphenburg is one of Munich's most beautiful districts, popular with expats for its mix of royal history and lively neighborhoods. Finding a vet who speaks English here ensures your pet gets the best care.
+
+We list verified practices in Neuhausen and Nymphenburg that offer professional services in English.`
+    },
+    'schwabing': {
+        title: "English-Speaking Vets in Schwabing, Munich",
+        description: "Locate English-speaking veterinarians in Munich-Schwabing. Trusted pet care in Munich's most famous artistic district.",
+        content: `Schwabing is synonymous with Munich's bohemian history and modern student life. For the many international residents living near the English Garden, having an English-speaking vet is essential.
+
+Our directory connects you with verified practices in Schwabing that welcome international clients.`
     }
 };
 
