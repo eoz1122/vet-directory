@@ -31,8 +31,15 @@ const Home: React.FC = () => {
 
     const [searchRadius, setSearchRadius] = useState<number | null>(null);
 
-    // Restricted city list to major hubs as requested
-    const cities = ['All', 'Berlin', 'Hamburg', 'Frankfurt', 'Munich', 'Stuttgart', 'Leipzig', 'Cologne', 'Hannover', 'Nuremberg'];
+    // Dynamic city list derived from data
+    const allCities = Array.from(new Set(vets.map(v => v.city || 'Unknown'))).sort();
+
+    // Priority cities to show as immediate buttons
+    const priorityCities = ['Berlin', 'Hamburg', 'Frankfurt', 'Munich', 'Stuttgart', 'Cologne', 'Leipzig', 'Nuremberg', 'Dresden'];
+
+    // Split into priority and others
+    const mainCities = priorityCities.filter(c => allCities.includes(c));
+    const otherCities = allCities.filter(c => !priorityCities.includes(c) && c !== 'Unknown');
 
     // Filter logic
     const filteredVets = vets.filter(vet => {
@@ -178,10 +185,22 @@ const Home: React.FC = () => {
                                     <PlaceAutocomplete onPlaceSelect={handlePlaceSelect} />
                                 </div>
 
-                                {!userLocation ? (
+                                {!userLocation && (
                                     <div className="space-y-3">
                                         <div className="flex flex-wrap gap-2 pb-2">
-                                            {cities.map(city => (
+                                            {/* "All" Button */}
+                                            <button
+                                                onClick={() => handleCityChange('All')}
+                                                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm ${selectedCity === 'All'
+                                                    ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
+                                                    : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
+                                                    }`}
+                                            >
+                                                All
+                                            </button>
+
+                                            {/* Priority Cities */}
+                                            {mainCities.map(city => (
                                                 <button
                                                     key={city}
                                                     onClick={() => handleCityChange(city)}
@@ -193,9 +212,35 @@ const Home: React.FC = () => {
                                                     {city}
                                                 </button>
                                             ))}
+
+                                            {/* Dropdown for Other Cities */}
+                                            {otherCities.length > 0 && (
+                                                <div className="relative group">
+                                                    <select
+                                                        aria-label="Filter vets by other cities"
+                                                        value={otherCities.includes(selectedCity) ? selectedCity : ""}
+                                                        onChange={(e) => handleCityChange(e.target.value)}
+                                                        className={`appearance-none px-4 py-2 pr-8 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/20 ${otherCities.includes(selectedCity)
+                                                            ? 'bg-primary text-secondary border-primary shadow-primary/20'
+                                                            : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
+                                                            }`}
+                                                    >
+                                                        <option value="" disabled>More Cities...</option>
+                                                        {otherCities.map(city => (
+                                                            <option key={city} value={city} className="text-primary bg-white">
+                                                                {city}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                    <div className={`absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none ${otherCities.includes(selectedCity) ? 'text-secondary' : 'text-primary/40'}`}>
+                                                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
-                                ) : (
+                                )}
+                                {userLocation && (
                                     <div className="flex flex-col gap-3 p-4 bg-white/50 backdrop-blur rounded-2xl border border-primary/5">
                                         <div className="flex justify-between items-center">
                                             <div className="flex items-center gap-2">
