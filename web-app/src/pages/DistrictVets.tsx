@@ -106,6 +106,41 @@ We verify practices in Plagwitz and Lindenau that offer services in English. Whe
         content: `The Südvorstadt is a favorite among Leipzig's international community, known for the lively 'KarLi' and its proximity to the Clara-Zetkin-Park. Providing high-quality medical support for pets in English is standard for the practices we list here.
 
 Find a compassionate, English-speaking vet in the heart of Leipzig's south. Our verified listings ensure that your pet's health is discussed clearly and professionally.`
+    },
+    'innere neustadt': {
+        title: "English-Speaking Vets in Dresden-Neustadt",
+        description: "Find verified English-speaking veterinarians in Dresden-Neustadt. Trusted pet care in Dresden's most vibrant district.",
+        content: `Neustadt is the cultural heart of Dresden, attracting artists, students, and expats. For the international community living in this lively district, having a local vet who speaks English is a must.
+
+Our directory connects you with verified practices in Innere Neustadt and Äußere Neustadt. Validated by the community, these vets ensure clear communication for your pet's needs.`
+    },
+    'löbtau': {
+        title: "English-Speaking Vets in Dresden-Löbtau",
+        description: "Trusted English-speaking vets in Dresden-Löbtau. Verified practices for your pet's health in western Dresden.",
+        content: `Löbtau is a popular residential area for families and young professionals. Finding a veterinarian who can communicate effectively in English is crucial for international residents here.
+
+We list verified practices in Löbtau that offer professional care and English-speaking services, ensuring you feel confident in your pet's treatment.`
+    },
+    'friedrichstadt': {
+        title: "English-Speaking Vets in Dresden-Friedrichstadt",
+        description: "Locate English-speaking veterinarians in Dresden-Friedrichstadt. Professional pet care near the Ostragehege.",
+        content: `Friedrichstadt, with its historic charm and proximity to the Ostragehege park, is a great place for pet owners. For expats in the area, access to English-speaking veterinary care provides peace of mind.
+
+Our directory lists verified vets in Friedrichstadt who are experienced in serving the international community.`
+    },
+    'blasewitz': {
+        title: "English-Speaking Vets in Dresden-Blasewitz",
+        description: "Find premium English-speaking veterinary care in Dresden-Blasewitz. Verified clinics in one of Dresden's most elegant districts.",
+        content: `Blasewitz is known for its beautiful villas and the Blue Wonder bridge. For international residents enjoying this scenic part of Dresden, finding a high-quality, English-speaking vet is essential.
+
+We verify practices in Blasewitz that meet the high standards of the community and offer services in English.`
+    },
+    'striesen': {
+        title: "English-Speaking Vets in Dresden-Striesen",
+        description: "Find trusted English-speaking vets in Dresden-Striesen. Verified care in this leafy, family-friendly district.",
+        content: `Striesen is famous for its green streets and architecture, making it a wonderful area for dog owners. For the expat families living here, an English-speaking vet is a key part of the support network.
+
+Our directory features verified veterinary practices in Striesen that welcome international clients.`
     }
 };
 

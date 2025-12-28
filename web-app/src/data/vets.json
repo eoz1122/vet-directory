@@ -5337,5 +5337,233 @@
       "emergency_services": ""
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "dresden-diagnostikzentrum",
+    "practice_name": "Diagnostikzentrum für Kleintiere - Terminsprechstunde",
+    "city": "Dresden",
+    "district": "Friedrichstadt",
+    "address": "Semperstraße 3c, 01069 Dresden",
+    "coordinates": {
+      "lat": 51.0329,
+      "lng": 13.7457
+    },
+    "contact": {
+      "phone": "0351 4722898",
+      "website": "https://www.tagesklinik-kleintiere.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Review mentions: They were able to help us in English"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-animal-hospital-heath",
+    "practice_name": "Animal Hospital Dresden Heath",
+    "city": "Dresden",
+    "district": "Radeberger Vorstadt",
+    "address": "Fischhausstraße 5, 01099 Dresden",
+    "coordinates": {
+      "lat": 51.0683,
+      "lng": 13.7861
+    },
+    "contact": {
+      "phone": "0351 816050",
+      "website": "https://avetia-dresden.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "English reviews present"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-benitz-striesen",
+    "practice_name": "Kleintierpraxis Benitz",
+    "city": "Dresden",
+    "district": "Striesen",
+    "address": "Schandauer Str. 43, 01277 Dresden",
+    "coordinates": {
+      "lat": 51.0417,
+      "lng": 13.8001
+    },
+    "contact": {
+      "phone": "0351 3115063",
+      "website": "http://www.kleintierpraxis-benitz.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Review explicitly states: Also they speak English"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-wolf-tiger-neustadt",
+    "practice_name": "Wolf & Tiger Tierarztpraxis Dresden am Goldenen Reiter",
+    "city": "Dresden",
+    "district": "Innere Neustadt",
+    "address": "Hauptstraße 38, 01097 Dresden",
+    "coordinates": {
+      "lat": 51.0608,
+      "lng": 13.7445
+    },
+    "contact": {
+      "phone": "0351 89676676",
+      "website": "https://www.wolfandtiger.de/locations/dresden/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Review states: They spoke perfect English"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-waldpark-blasewitz",
+    "practice_name": "Kleintierzentrum am Waldpark",
+    "city": "Dresden",
+    "district": "Blasewitz",
+    "address": "Loschwitzer Str. 3, 01309 Dresden",
+    "coordinates": {
+      "lat": 51.0541,
+      "lng": 13.7885
+    },
+    "contact": {
+      "phone": "0351 31906140",
+      "website": "http://www.tierarzt-dresden-waldpark.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Review mentions: English speaking is a great advantage"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-lunavet",
+    "practice_name": "Tierpraxis Lunavet",
+    "city": "Dresden",
+    "district": "Löbtau",
+    "address": "Wernerstraße 38, 01159 Dresden",
+    "coordinates": {
+      "lat": 51.0446,
+      "lng": 13.6988
+    },
+    "contact": {
+      "phone": "0351 49768036",
+      "website": "https://www.luna-vet.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Website explicitly states: Mehrsprachige Praxis (Multilingual Practice)",
+        "Languages: German, English, Russian, Latvian, Ukrainian"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-nachtigall-heidenau",
+    "practice_name": "Tierarztpraxis Dr. Nachtigall",
+    "city": "Dresden",
+    "district": "Heidenau (Greater Dresden Area)",
+    "address": "Mühlenstraße 22, 01809 Heidenau",
+    "coordinates": {
+      "lat": 50.9749,
+      "lng": 13.8627
+    },
+    "contact": {
+      "phone": "03529 519422",
+      "website": "http://www.tierarztpraxis-nachtigall.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Listed on Wheree as offering services in English"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-neustadt-center",
+    "practice_name": "Tierarztpraxis Dresden Neustadt",
+    "city": "Dresden",
+    "district": "Innere Neustadt",
+    "address": "Sebnitzer Str. 6, 01099 Dresden",
+    "coordinates": {
+      "lat": 51.0691,
+      "lng": 13.7547
+    },
+    "contact": {
+      "phone": "0351 8022246",
+      "website": "http://tierarztpraxis-dresden-neustadt.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Listed on Wheree with English reviews",
+        "Reddit recommendations for Neustadt area"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-hoehne-loebtau",
+    "practice_name": "Tierarztpraxis Dr. Silvio Höhne",
+    "city": "Dresden",
+    "district": "Löbtau",
+    "address": "Kesselsdorfer Str. 42, 01159 Dresden",
+    "coordinates": {
+      "lat": 51.0438,
+      "lng": 13.6954
+    },
+    "contact": {
+      "phone": "0351 4222360",
+      "website": "http://www.kleintierpraxis-dd-loebtau.de/",
+      "google_maps": null
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-12-28",
+      "english_signals": [
+        "Dogorama & Wheree list English options",
+        "High ratings from international community"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
   }
 ]

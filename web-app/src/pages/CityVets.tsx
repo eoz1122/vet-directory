@@ -206,6 +206,18 @@ We list verified practices in the Neustadt region that offer professional servic
         content: `Überlingen is one of the most beautiful towns on Lake Constance, attracting residents and visitors from all over the world. For pet owners in the area, finding a vet who speaks fluent English is key to enjoying life on the lake with their furry companions.
 
 Our directory features verified practices in Überlingen that offer expert care and clear communication in English.`
+    },
+    dresden: {
+        title: "English-Speaking Vets in Dresden",
+        description: "Find verified English-speaking veterinarians in Dresden. Trusted pet care in Neustadt, Altstadt, and Blasewitz for the international community.",
+        content: `Dresden, with its stunning Baroque architecture and growing international tech scene, is a beautiful place to call home. For the increasing number of expats moving to the "Florence on the Elbe," finding a veterinarian who can communicate clearly in English is a top priority.
+
+Our Dresden directory connects you with verified veterinary practices across the city. Whether you're in the alternative hip neighborhood of Neustadt, the historic Altstadt, or the leafy Blasewitz, we help you find the right medical care for your pets.
+
+**Why Dresden Pet Owners Use Our Directory:**
+- **Local Verification**: We've identified practices with a proven track record of supporting English speakers.
+- **Neighborhood Coverage**: Options in key districts to ensure care is never too far away.
+- **Peace of Mind**: Ensure you fully understand your pet's diagnosis and treatment plan.`
     }
 };
 
