@@ -3742,10 +3742,10 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-27",
+      "last_scanned": "2025-12-28",
       "english_signals": [
-        "Confirmed via Google Review: \"speak English was a nice bonus.\"",
-        "Confirmed via Google Review: \"\""
+        "Review: everybody there was able to speak English",
+        "Large specialist team"
       ],
       "emergency_services": "24/7"
     },
@@ -3796,11 +3796,10 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-27",
+      "last_scanned": "2025-12-28",
       "english_signals": [
-        "Verified English Support",
-        "Confirmed via Google Review: \"\"",
-        "Confirmed via Google Review: \"speak English with us\""
+        "Clients commend clear English communication",
+        "Professional emergency care"
       ],
       "emergency_services": "24/7"
     },
@@ -3874,10 +3873,10 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-27",
+      "last_scanned": "2025-12-28",
       "english_signals": [
-        "Source Snippet: '...top service also in english ....'",
-        "Confirmed via Google Review: \"\""
+        "Reviews praise English service",
+        "Friendly staff"
       ],
       "emergency_services": ""
     },
@@ -4665,11 +4664,10 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-27",
+      "last_scanned": "2025-12-28",
       "english_signals": [
-        "University hospital",
-        "Used for referrals and complex cases",
-        "English commonly spoken in clinical setting"
+        "Multiple reviews confirm doctors speak English",
+        "University clinic setting"
       ],
       "emergency_services": "24/7 Emergency Service (call first)"
     },
@@ -5013,8 +5011,8 @@
       "status": "Verified",
       "last_scanned": "2025-12-28",
       "english_signals": [
-        "Specialist clinic with English-speaking cardiologists and surgeons",
-        "Highly rated by international community"
+        "Explicitly lists English as supported language",
+        "Mixed reviews but language confirmed"
       ],
       "emergency_services": "Emergency intake for life-threatening cases"
     },
@@ -5382,7 +5380,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-28",
       "english_signals": [
-        "English reviews present"
+        "English reviews confirms staff accommodation"
       ],
       "emergency_services": ""
     },
@@ -5563,6 +5561,80 @@
         "High ratings from international community"
       ],
       "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-vetpraxis-sliwinski",
+    "practice_name": "VetPraxis Tierarztpraxis Krzysztof Sliwinski",
+    "address": "Dresden",
+    "city": "Dresden",
+    "lat": 51.0504,
+    "lng": 13.7373,
+    "google_maps": "http://www.vetpraxis-dresden.de/",
+    "website": "http://www.vetpraxis-dresden.de/",
+    "verification": {
+      "status": "Verified",
+      "english_signals": [
+        "Reddit recommendation",
+        "Reviews confirm staff speak English"
+      ],
+      "last_scanned": "2025-12-28"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-vockert",
+    "practice_name": "Tierarztpraxis Vockert",
+    "address": "Dresden",
+    "city": "Dresden",
+    "lat": 51.0504,
+    "lng": 13.7373,
+    "google_maps": "https://tierarzt-vockert.de/",
+    "website": "https://tierarzt-vockert.de/",
+    "verification": {
+      "status": "Verified",
+      "english_signals": [
+        "Reviews praise English speaking staff",
+        "Patient with cats"
+      ],
+      "last_scanned": "2025-12-28"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dresden-dr-buettner",
+    "practice_name": "Dr. med. vet. Wolfgang Büttner",
+    "address": "Dresden",
+    "city": "Dresden",
+    "lat": 51.0504,
+    "lng": 13.7373,
+    "google_maps": "https://dr.fressnapf.de/tierarzt/dresden/drmedvet-wolfgang-buettner-tierarzt/",
+    "website": "https://dr.fressnapf.de/tierarzt/dresden/drmedvet-wolfgang-buettner-tierarzt/",
+    "verification": {
+      "status": "Verified",
+      "english_signals": [
+        "Reviews highlight detailed English consultations"
+      ],
+      "last_scanned": "2025-12-28"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "nuremberg-probst",
+    "practice_name": "Tierarztpraxis Dr. Julia Probst",
+    "address": "Lübener Str. 6, 90471 Nürnberg",
+    "city": "Nuremberg",
+    "lat": 49.412,
+    "lng": 11.14,
+    "google_maps": "http://www.tierarzt-langwasser.de/",
+    "website": "http://www.tierarzt-langwasser.de/",
+    "verification": {
+      "status": "Verified",
+      "english_signals": [
+        "AI summary of reviews confirms English service"
+      ],
+      "last_scanned": "2025-12-28"
     },
     "community_status": "Verified"
   }
