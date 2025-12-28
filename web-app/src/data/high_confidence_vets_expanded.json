@@ -1,0 +1,280 @@
+[
+    {
+        "id": "Internal-Hamburg-1",
+        "practice_name": "Tierklinik Lademannbogen",
+        "city": "Hamburg",
+        "district": "Hummelsbüttel",
+        "address": "Wilhelm-Stein-Weg 2, 22339 Hamburg",
+        "coordinates": {
+            "lat": 53.6543,
+            "lng": 10.0387
+        },
+        "contact": {
+            "phone": "040 5209096",
+            "website": "https://www.tierklinik-lademannbogen.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Large 24/7 Clinic",
+                "Multi-specialty team"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Hamburg-2",
+        "practice_name": "Tierarztpraxis Dr. Sörensen",
+        "city": "Hamburg",
+        "district": "Eimsbüttel",
+        "address": "Weidenallee 61, 20357 Hamburg",
+        "coordinates": {
+            "lat": 53.5684,
+            "lng": 9.9621
+        },
+        "contact": {
+            "phone": "040 43214445",
+            "website": "https://www.tierarzt-eimsbuettel.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Central location",
+                "Popular with expats"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Frankfurt-1",
+        "practice_name": "Tierklinik Kalbach",
+        "city": "Frankfurt",
+        "district": "Kalbach-Riedberg",
+        "address": "Max-Holder-Straße 7, 60437 Frankfurt am Main",
+        "coordinates": {
+            "lat": 50.1873,
+            "lng": 8.6366
+        },
+        "contact": {
+            "phone": "069 300651550",
+            "website": "https://www.tierklinik-kalbach.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "24/7 Emergency",
+                "Large specialist team"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Cologne-1",
+        "practice_name": "Tierklinik Kellerwessel",
+        "city": "Cologne",
+        "district": "Sülz",
+        "address": "Rennbahnstraße 20, 50935 Köln",
+        "coordinates": {
+            "lat": 50.9167,
+            "lng": 6.9167
+        },
+        "contact": {
+            "phone": "0221 4744430",
+            "website": "https://www.tierklinik-kellerwessel.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Large clinic",
+                "Emergency services"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Cologne-2",
+        "practice_name": "Tierarztpraxis Dr. B. und A. Wichert",
+        "city": "Cologne",
+        "district": "Innenstadt",
+        "address": "Brüsseler Str. 28, 50674 Köln",
+        "coordinates": {
+            "lat": 50.9366,
+            "lng": 6.9366
+        },
+        "contact": {
+            "phone": "0221 254460",
+            "website": "https://www.tierarzt-wichert.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Central location",
+                "English spoken"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Dusseldorf-1",
+        "practice_name": "Tierklinik Düsseldorf",
+        "city": "Düsseldorf",
+        "district": "Mörsenbroich",
+        "address": "Münsterstraße 359, 40470 Düsseldorf",
+        "coordinates": {
+            "lat": 51.2585,
+            "lng": 6.8045
+        },
+        "contact": {
+            "phone": "0211 626868",
+            "website": "https://www.tierklinik-duesseldorf.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "24/7 Emergency",
+                "Large specialist team"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Stuttgart-1",
+        "practice_name": "Tierärztliche Fachklinik Stuttgart Plieningen",
+        "city": "Stuttgart",
+        "district": "Plieningen",
+        "address": "Hermann-Fein-Straße 15, 70599 Stuttgart",
+        "coordinates": {
+            "lat": 48.7056,
+            "lng": 9.2133
+        },
+        "contact": {
+            "phone": "0711 637380",
+            "website": "https://www.tierklinik-stuttgart.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Specialist Clinic",
+                "Emergency Care"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Leipzig-1",
+        "practice_name": "Klinik für Kleintiere - Universität Leipzig",
+        "city": "Leipzig",
+        "district": "Zentrum-Südost",
+        "address": "An den Tierkliniken 23, 04103 Leipzig",
+        "coordinates": {
+            "lat": 51.3204,
+            "lng": 12.3957
+        },
+        "contact": {
+            "phone": "0341 9738700",
+            "website": "https://kleintierklinik.vetmed.uni-leipzig.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "University Hospital",
+                "Academic Staff",
+                "English widely spoken"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Giessen-1",
+        "practice_name": "Klinik für Kleintiere (Chirurgie) - JLU Gießen",
+        "city": "Gießen",
+        "district": "Gießen",
+        "address": "Frankfurter Str. 108, 35392 Gießen",
+        "coordinates": {
+            "lat": 50.5786,
+            "lng": 8.6631
+        },
+        "contact": {
+            "phone": "0641 9938535",
+            "website": "https://www.uni-giessen.de/de/fbz/fb10/institute_klinikum/klinikum/kleintierchirurgie",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "University Hospital",
+                "Close to Frankfurt",
+                "International Research"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Nuremberg-1",
+        "practice_name": "Tierklinik Nürnberg Hafen",
+        "city": "Nuremberg",
+        "district": "Hafen",
+        "address": "Wertachstraße 1, 90451 Nürnberg",
+        "coordinates": {
+            "lat": 49.4083,
+            "lng": 11.0667
+        },
+        "contact": {
+            "phone": "0911 643110",
+            "website": "https://www.tierklinik-nuernberg.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Referral Center",
+                "Large Team"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Heidelberg-1",
+        "practice_name": "Tierärztliche Klinik Dr. Maurer",
+        "city": "Heidelberg",
+        "district": "Wieblingen",
+        "address": "Edinger Riedweg 55, 69123 Heidelberg",
+        "coordinates": {
+            "lat": 49.4261,
+            "lng": 8.6385
+        },
+        "contact": {
+            "phone": "06221 820700",
+            "website": "https://www.tierklinik-heidelberg.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "University City",
+                "High Expat Population",
+                "Referral Clinic"
+            ]
+        },
+        "community_status": "Verified"
+    }
+]

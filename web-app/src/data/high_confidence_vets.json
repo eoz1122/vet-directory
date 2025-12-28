@@ -1,0 +1,161 @@
+[
+  {
+    "id": "Internal-1",
+    "practice_name": "Medizinische Kleintierklinik der LMU München",
+    "city": "Munich",
+    "district": "Schwabing",
+    "address": "Veterinärstraße 13, 80539 München",
+    "coordinates": {
+      "lat": 48.151760,
+      "lng": 11.582490
+    },
+    "contact": {
+      "phone": "089 21802650",
+      "website": "https://www.med.vetmed.uni-muenchen.de/index.html",
+      "google_maps": "https://goo.gl/maps/example1"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-01",
+      "english_signals": [
+        "University Clinic",
+        "International Research Staff",
+        "High Probability of English"
+      ],
+      "emergency_services": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Internal-2",
+    "practice_name": "Tierklinik Hofheim",
+    "city": "Hofheim am Taunus",
+    "district": "Frankfurt Area",
+    "address": "Katharina-Kemmler-Straße 7, 65719 Hofheim am Taunus",
+    "coordinates": {
+      "lat": 50.090550,
+      "lng": 8.461120
+    },
+    "contact": {
+      "phone": "06192 290290",
+      "website": "https://www.tierklinik-hofheim.de/",
+      "google_maps": "https://goo.gl/maps/example2"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-01",
+      "english_signals": [
+        "Major Referral Center",
+        "International Specialists",
+        "Often treat US Military personnel from nearby bases"
+      ],
+      "emergency_services": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Internal-3",
+    "practice_name": "Klinik für Kleine Haustiere (Düppel) - FU Berlin",
+    "city": "Berlin",
+    "district": "Zehlendorf",
+    "address": "Oertzenweg 19b, 14163 Berlin",
+    "coordinates": {
+      "lat": 52.428580,
+      "lng": 13.238470
+    },
+    "contact": {
+      "phone": "030 83862356",
+      "website": "https://www.vetmed.fu-berlin.de/einrichtungen/kliniken/we20/index.html",
+      "google_maps": "https://goo.gl/maps/example3"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-01",
+      "english_signals": [
+        "University Teaching Hospital",
+        "Multilingual Academic Staff"
+      ],
+      "emergency_services": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Internal-4",
+    "practice_name": "Tierklinik Ismaning",
+    "city": "Ismaning",
+    "district": "Munich Area",
+    "address": "Oskar-Messter-Straße 6, 85737 Ismaning",
+    "coordinates": {
+      "lat": 48.226870,
+      "lng": 11.670830
+    },
+    "contact": {
+      "phone": "089 54045640",
+      "website": "https://www.tierklinik-ismaning.de/",
+      "google_maps": "https://goo.gl/maps/example4"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-01",
+      "english_signals": [
+        "Large 24/7 Clinic",
+        "Known to serve expat community in North Munich"
+      ],
+      "emergency_services": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Internal-5",
+    "practice_name": "Tierklinik Oberhaching",
+    "city": "Oberhaching",
+    "district": "Munich Area",
+    "address": "Bajuwarenring 10, 82041 Oberhaching",
+    "coordinates": {
+      "lat": 48.028960,
+      "lng": 11.587840
+    },
+    "contact": {
+      "phone": "089 63893020",
+      "website": "https://www.tierklinik-oberhaching.de/",
+      "google_maps": "https://goo.gl/maps/example5"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-01",
+      "english_signals": [
+        "Large Emergency Clinic",
+        "Specialists often fluent in English"
+      ],
+      "emergency_services": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Internal-6",
+    "practice_name": "Kleintierklinik Hannover (TiHo)",
+    "city": "Hannover",
+    "district": "Bunteweg",
+    "address": "Bünteweg 9, 30559 Hannover",
+    "coordinates": {
+      "lat": 52.361400,
+      "lng": 9.814300
+    },
+    "contact": {
+      "phone": "0511 9536200",
+      "website": "https://www.tiho-hannover.de/kliniken-institute/kliniken/kleintierklinik",
+      "google_maps": "https://goo.gl/maps/example6"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2025-01-01",
+      "english_signals": [
+        "University of Veterinary Medicine Hannover",
+        "World-renowned teaching institution",
+        "High English proficiency"
+      ],
+      "emergency_services": "24/7"
+    },
+    "community_status": "Verified"
+  }
+]

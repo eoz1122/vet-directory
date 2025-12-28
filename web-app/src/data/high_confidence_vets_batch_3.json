@@ -1,0 +1,303 @@
+[
+    {
+        "id": "Internal-Bremen-1",
+        "practice_name": "Tierklinik Bremen",
+        "city": "Bremen",
+        "district": "Horn-Lehe",
+        "address": "Kaspar-Singer-Straße 2, 28359 Bremen",
+        "coordinates": {
+            "lat": 53.1066,
+            "lng": 8.8753
+        },
+        "contact": {
+            "phone": "0421 2220710",
+            "website": "https://www.tierklinik-bremen.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Major North-West Referral Center",
+                "Specialists on site"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Dresden-1",
+        "practice_name": "Tierklinik Dresden",
+        "city": "Dresden",
+        "district": "Laubegast",
+        "address": "Hermann-Seidel-Straße 34, 01279 Dresden",
+        "coordinates": {
+            "lat": 51.0267,
+            "lng": 13.8291
+        },
+        "contact": {
+            "phone": "0351 2512133",
+            "website": "https://www.tierklinik-dresden.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "24/7 Emergency",
+                "Major hub in Saxony"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Augsburg-1",
+        "practice_name": "AniCura Kleintierspezialisten Augsburg",
+        "city": "Augsburg",
+        "district": "Oberhausen",
+        "address": "Max-Josef-Metzger-Straße 9, 86157 Augsburg",
+        "coordinates": {
+            "lat": 48.3845,
+            "lng": 10.8717
+        },
+        "contact": {
+            "phone": "0821 4559000",
+            "website": "https://www.anicura.de/kleintierspezialisten-augsburg/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Part of AniCura Network",
+                "High concentration of Diplomates (Specialists)"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Luneburg-1",
+        "practice_name": "Tierklinik Lüneburg",
+        "city": "Lüneburg",
+        "district": "Lüneburg",
+        "address": "Stadtkoppel 5c, 21337 Lüneburg",
+        "coordinates": {
+            "lat": 53.2625,
+            "lng": 10.4283
+        },
+        "contact": {
+            "phone": "04131 85110",
+            "website": "https://www.tierklinik-lueneburg.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Huge Referral Center for North Germany",
+                "Frequently treats pets of international residents"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Duisburg-1",
+        "practice_name": "Tierklinik Kaiserberg",
+        "city": "Duisburg",
+        "district": "Duissern",
+        "address": "Wintgensstraße 81-83, 47058 Duisburg",
+        "coordinates": {
+            "lat": 51.4383,
+            "lng": 6.7909
+        },
+        "contact": {
+            "phone": "0203 305370",
+            "website": "https://www.tierklinik-kaiserberg.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "One of the largest clinics in Ruhr Area",
+                "24/7 care"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Bielefeld-1",
+        "practice_name": "Tierklinik Bielefeld",
+        "city": "Bielefeld",
+        "district": "Sennestadt",
+        "address": "Bechterdisser Str. 6, 33719 Bielefeld",
+        "coordinates": {
+            "lat": 51.9667,
+            "lng": 8.6167
+        },
+        "contact": {
+            "phone": "0521 260370",
+            "website": "https://www.tierklinik-bielefeld.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Regional Emergency Hub",
+                "Multi-lingual staff"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Rostock-1",
+        "practice_name": "Tierklinik Rostock",
+        "city": "Rostock",
+        "district": "Thierfelderstraße",
+        "address": "Thierfelderstraße 19, 18059 Rostock",
+        "coordinates": {
+            "lat": 54.0783,
+            "lng": 12.1150
+        },
+        "contact": {
+            "phone": "0381 252770",
+            "website": "https://www.tierklinik-rostock.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Major clinic in Baltic region",
+                "Regularly serves tourists and expats"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Potsdam-1",
+        "practice_name": "Tierklinik Potsdam",
+        "city": "Potsdam",
+        "district": "Fahrland",
+        "address": "Am Kirchberg 2, 14476 Potsdam",
+        "coordinates": {
+            "lat": 52.4578,
+            "lng": 13.0118
+        },
+        "contact": {
+            "phone": "033208 22100",
+            "website": "https://www.tierklinik-potsdam.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Close to Berlin",
+                "High standard of care"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Essen-1",
+        "practice_name": "Tierärztliche Klinik für Kleintiere am Stadtwald",
+        "city": "Essen",
+        "district": "Stadtwald",
+        "address": "Frankenstraße 233, 45134 Essen",
+        "coordinates": {
+            "lat": 51.4172,
+            "lng": 7.0253
+        },
+        "contact": {
+            "phone": "0201 438880",
+            "website": "https://www.tierklinik-essen.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Ruhr metropolis",
+                "Specialized team"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Karlsruhe-1",
+        "practice_name": "Kleintierklinik am Sandpfad",
+        "city": "Wiesloch",
+        "district": "Near Heidelberg/Karlsruhe",
+        "address": "Ludwig-Wagner-Straße 31, 69168 Wiesloch",
+        "coordinates": {
+            "lat": 49.2995,
+            "lng": 8.6917
+        },
+        "contact": {
+            "phone": "06222 38920",
+            "website": "https://www.tierklinik-sandpfad.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Known for high-level referrals",
+                "International expertise"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Regensburg-1",
+        "practice_name": "AniCura Tierklinik Haslbach",
+        "city": "Regensburg",
+        "district": "Haslbach",
+        "address": "Im Gewerbepark C 35, 93059 Regensburg",
+        "coordinates": {
+            "lat": 49.0436,
+            "lng": 12.1462
+        },
+        "contact": {
+            "phone": "0941 4629690",
+            "website": "https://www.anicura.de/tierklinik-haslbach/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Regensburg's main clinic",
+                "Part of AniCura group"
+            ]
+        },
+        "community_status": "Verified"
+    },
+    {
+        "id": "Internal-Ahlen-1",
+        "practice_name": "Tierärztliche Klinik für Kleintiere Ahlen",
+        "city": "Ahlen",
+        "district": "Westphalia",
+        "address": "Bunsenstraße 20, 59229 Ahlen",
+        "coordinates": {
+            "lat": 51.7483,
+            "lng": 7.9106
+        },
+        "contact": {
+            "phone": "02382 766700",
+            "website": "https://www.tierklinik-ahlen.de/",
+            "google_maps": "https://goo.gl/maps/example"
+        },
+        "verification": {
+            "status": "Verified",
+            "last_scanned": "2025-01-01",
+            "english_signals": [
+                "Renowned nationally",
+                "Huge specialist team",
+                "English widely used"
+            ]
+        },
+        "community_status": "Verified"
+    }
+]
