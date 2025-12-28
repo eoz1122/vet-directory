@@ -5567,167 +5567,230 @@
   {
     "id": "dresden-vetpraxis-sliwinski",
     "practice_name": "VetPraxis Tierarztpraxis Krzysztof Sliwinski",
-    "address": "Dresden",
     "city": "Dresden",
-    "lat": 51.0504,
-    "lng": 13.7373,
-    "google_maps": "http://www.vetpraxis-dresden.de/",
-    "website": "http://www.vetpraxis-dresden.de/",
+    "district": "Unknown",
+    "address": "Dresden",
+    "coordinates": {
+      "lat": 51.0504,
+      "lng": 13.7373
+    },
+    "contact": {
+      "phone": "",
+      "website": "http://www.vetpraxis-dresden.de/",
+      "google_maps": "http://www.vetpraxis-dresden.de/"
+    },
     "verification": {
       "status": "Verified",
+      "last_scanned": "2025-12-28",
       "english_signals": [
         "Reddit recommendation",
         "Reviews confirm staff speak English"
       ],
-      "last_scanned": "2025-12-28"
+      "emergency_services": ""
     },
     "community_status": "Verified"
   },
   {
     "id": "dresden-vockert",
     "practice_name": "Tierarztpraxis Vockert",
-    "address": "Dresden",
     "city": "Dresden",
-    "lat": 51.0504,
-    "lng": 13.7373,
-    "google_maps": "https://tierarzt-vockert.de/",
-    "website": "https://tierarzt-vockert.de/",
+    "district": "Unknown",
+    "address": "Dresden",
+    "coordinates": {
+      "lat": 51.0504,
+      "lng": 13.7373
+    },
+    "contact": {
+      "phone": "",
+      "website": "https://tierarzt-vockert.de/",
+      "google_maps": "https://tierarzt-vockert.de/"
+    },
     "verification": {
       "status": "Verified",
+      "last_scanned": "2025-12-28",
       "english_signals": [
         "Reviews praise English speaking staff",
         "Patient with cats"
       ],
-      "last_scanned": "2025-12-28"
+      "emergency_services": ""
     },
     "community_status": "Verified"
   },
   {
     "id": "dresden-dr-buettner",
     "practice_name": "Dr. med. vet. Wolfgang Büttner",
-    "address": "Dresden",
     "city": "Dresden",
-    "lat": 51.0504,
-    "lng": 13.7373,
-    "google_maps": "https://dr.fressnapf.de/tierarzt/dresden/drmedvet-wolfgang-buettner-tierarzt/",
-    "website": "https://dr.fressnapf.de/tierarzt/dresden/drmedvet-wolfgang-buettner-tierarzt/",
+    "district": "Unknown",
+    "address": "Dresden",
+    "coordinates": {
+      "lat": 51.0504,
+      "lng": 13.7373
+    },
+    "contact": {
+      "phone": "",
+      "website": "https://dr.fressnapf.de/tierarzt/dresden/drmedvet-wolfgang-buettner-tierarzt/",
+      "google_maps": "https://dr.fressnapf.de/tierarzt/dresden/drmedvet-wolfgang-buettner-tierarzt/"
+    },
     "verification": {
       "status": "Verified",
+      "last_scanned": "2025-12-28",
       "english_signals": [
         "Reviews highlight detailed English consultations"
       ],
-      "last_scanned": "2025-12-28"
+      "emergency_services": ""
     },
     "community_status": "Verified"
   },
   {
     "id": "nuremberg-probst",
     "practice_name": "Tierarztpraxis Dr. Julia Probst",
-    "address": "Lübener Str. 6, 90471 Nürnberg",
     "city": "Nuremberg",
-    "lat": 49.412,
-    "lng": 11.14,
-    "google_maps": "http://www.tierarzt-langwasser.de/",
-    "website": "http://www.tierarzt-langwasser.de/",
+    "district": "Langwasser",
+    "address": "Lübener Str. 6, 90471 Nürnberg",
+    "coordinates": {
+      "lat": 49.412,
+      "lng": 11.14
+    },
+    "contact": {
+      "phone": "",
+      "website": "http://www.tierarzt-langwasser.de/",
+      "google_maps": "http://www.tierarzt-langwasser.de/"
+    },
     "verification": {
       "status": "Verified",
+      "last_scanned": "2025-12-28",
       "english_signals": [
         "AI summary of reviews confirms English service"
       ],
-      "last_scanned": "2025-12-28"
+      "emergency_services": ""
     },
     "community_status": "Verified"
   },
   {
     "id": "dresden-waldpark",
     "practice_name": "Kleintierzentrum am Waldpark",
-    "address": "Loschwitzer Str. 3, 01309 Dresden",
     "city": "Dresden",
-    "lat": 51.0504,
-    "lng": 13.8,
-    "google_maps": "http://www.tierarzt-dresden-waldpark.de/",
-    "website": "http://www.tierarzt-dresden-waldpark.de/",
+    "district": "Striesen",
+    "address": "Loschwitzer Str. 3, 01309 Dresden",
+    "coordinates": {
+      "lat": 51.0504,
+      "lng": 13.8
+    },
+    "contact": {
+      "phone": "",
+      "website": "http://www.tierarzt-dresden-waldpark.de/",
+      "google_maps": "http://www.tierarzt-dresden-waldpark.de/"
+    },
     "verification": {
       "status": "Verified",
+      "last_scanned": "2025-12-28",
       "english_signals": [
         "Review snippet: English speaking is a great advantage",
         "Dogorama lists English"
       ],
-      "last_scanned": "2025-12-28"
+      "emergency_services": ""
     },
     "community_status": "Verified"
   },
   {
     "id": "nuremberg-dietz",
     "practice_name": "Specialist veterinary practice Janka Dietz",
-    "address": "Erlenstegenstraße 7, 90491 Nürnberg",
     "city": "Nuremberg",
-    "lat": 49.467,
-    "lng": 11.126,
-    "google_maps": "http://www.dietz.vet/",
-    "website": "http://www.dietz.vet/",
+    "district": "Unknown",
+    "address": "Erlenstegenstraße 7, 90491 Nürnberg",
+    "coordinates": {
+      "lat": 49.467,
+      "lng": 11.126
+    },
+    "contact": {
+      "phone": "",
+      "website": "http://www.dietz.vet/",
+      "google_maps": "http://www.dietz.vet/"
+    },
     "verification": {
       "status": "Verified",
+      "last_scanned": "2025-12-28",
       "english_signals": [
         "Wheree/Dogorama list English as language option"
       ],
-      "last_scanned": "2025-12-28"
+      "emergency_services": ""
     },
     "community_status": "Verified"
   },
   {
     "id": "munich-kiessling",
     "practice_name": "Tierarztpraxis Christian Kießling",
-    "address": "Donnersbergerstraße 17, 80634 München",
     "city": "Munich",
-    "lat": 48.15,
-    "lng": 11.533,
-    "google_maps": "https://www.tierarzt-rotkreuzplatz.de/",
-    "website": "https://www.tierarzt-rotkreuzplatz.de/",
+    "district": "Neuhausen-Nymphenburg",
+    "address": "Donnersbergerstraße 17, 80634 München",
+    "coordinates": {
+      "lat": 48.15,
+      "lng": 11.533
+    },
+    "contact": {
+      "phone": "",
+      "website": "https://www.tierarzt-rotkreuzplatz.de/",
+      "google_maps": "https://www.tierarzt-rotkreuzplatz.de/"
+    },
     "verification": {
       "status": "Verified",
+      "last_scanned": "2025-12-28",
       "english_signals": [
         "Wheree lists English as language option"
       ],
-      "last_scanned": "2025-12-28"
+      "emergency_services": ""
     },
     "community_status": "Verified"
   },
   {
     "id": "munich-center-small-animal",
     "practice_name": "Center for Small Animal Medicine Munich (Zentrum für Kleintiermedizin)",
-    "address": "Seumestraße 3, 81373 München",
     "city": "Munich",
-    "lat": 48.094,
-    "lng": 11.524,
-    "google_maps": "https://www.zk-muc.de/",
-    "website": "https://www.zk-muc.de/",
+    "district": "Unknown",
+    "address": "Seumestraße 3, 81373 München",
+    "coordinates": {
+      "lat": 48.094,
+      "lng": 11.524
+    },
+    "contact": {
+      "phone": "",
+      "website": "https://www.zk-muc.de/",
+      "google_maps": "https://www.zk-muc.de/"
+    },
     "verification": {
       "status": "Verified",
+      "last_scanned": "2025-12-28",
       "english_signals": [
         "Reviews confirm English speaking staff",
         "Friendly service"
       ],
-      "last_scanned": "2025-12-28"
+      "emergency_services": ""
     },
     "community_status": "Verified"
   },
   {
     "id": "munich-umanski",
     "practice_name": "Tierarzt Michael Umanski",
-    "address": "Anzinger Str. 10, 81671 München",
     "city": "Munich",
-    "lat": 48.121,
-    "lng": 11.608,
-    "google_maps": "http://www.tierarzt-umanski.de/",
-    "website": "http://www.tierarzt-umanski.de/",
+    "district": "Unknown",
+    "address": "Anzinger Str. 10, 81671 München",
+    "coordinates": {
+      "lat": 48.121,
+      "lng": 11.608
+    },
+    "contact": {
+      "phone": "",
+      "website": "http://www.tierarzt-umanski.de/",
+      "google_maps": "http://www.tierarzt-umanski.de/"
+    },
     "verification": {
       "status": "Verified",
+      "last_scanned": "2025-12-28",
       "english_signals": [
         "Wheree summary mentions English",
         "Multilingual practice (Russian)"
       ],
-      "last_scanned": "2025-12-28"
+      "emergency_services": ""
     },
     "community_status": "Verified"
   }
