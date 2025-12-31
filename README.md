@@ -106,16 +106,27 @@ This project requires a Google Maps API key for the location search feature.
 ## 📁 Project Structure
 
 ```text
-web-app/
-├── src/
-│   ├── components/     # Reusable components
-│   ├── pages/          # Page components
-│   ├── data/           # Vet listings (vets.json)
-│   ├── types/          # TypeScript definitions
-│   └── utils/          # Helper functions
-├── public/             # Static assets
-└── dist/               # Production build (generated)
+/
+├── web-app/                # React/Vite Web Application
+│   ├── src/                # Source code
+│   └── dist/               # Production build
+├── scripts/                # Python Utilities
+│   ├── ingestion/          # Scripts for adding new data (e.g., ingest_vets.py)
+│   ├── maintenance/        # Scripts for cleaning/fixing data (e.g., cleanup_vets.py)
+│   ├── analysis/           # Analysis tools
+│   └── legacy/             # Old scripts
+├── data/
+│   ├── input/              # Input CSVs for ingestion
+│   ├── processing/         # Intermediate processing files
+│   └── archive/            # Archived source files
+├── docs/                   # Documentation
+└── requirements.txt        # Python dependencies
 ```
+
+### Data Management
+
+- **Ingestion**: Place new CSV files in `data/input/`. Run `python scripts/ingestion/ingest_vets.py` to merge them into `web-app/src/data/vets.json`.
+- **Cleanup**: Run `python scripts/maintenance/cleanup_vets.py` to standardize the JSON data.
 
 ## 🛠️ Tech Stack
 

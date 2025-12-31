@@ -193,8 +193,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Verified English Support",
-        "Confirmed via Google Review: \"\"They speak English\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
@@ -2373,8 +2372,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Verified English Support",
-        "Confirmed via Google Review: \"\"They speak English\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
@@ -2399,8 +2397,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Confirmed via Google Review: \"English speaking staff;\"",
-        "Confirmed via Google Review: \"staff;\" · 6 pm · Opens 9:30 am Fri\""
+        "Confirmed via Google Review: \"English speaking staff;\""
       ],
       "emergency_services": ""
     },
@@ -2502,8 +2499,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Confirmed via Google Review: \"English\"",
-        "Confirmed via Google Review: \"\"Friendly, accurate, informative, fluent in English\""
+        "Confirmed via Google Review: \"English\""
       ],
       "emergency_services": ""
     },
@@ -2605,8 +2601,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Verified English Support",
-        "Confirmed via Google Review: \"as well\" · 6 pm · Opens 10 am Fri\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
@@ -2631,35 +2626,9 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Confirmed via Google Review: \"and appointments are always fast and easy.\"",
-        "Confirmed via Google Review: \"and appointments are always fast and easy.\" · Closes 7 pm\""
+        "Confirmed via Google Review: \"and appointments are always fast and easy.\""
       ],
       "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-99",
-    "practice_name": "Tierklinik Neu-Isenburg",
-    "city": "Frankfurt",
-    "district": "Neu-Isenburg",
-    "address": "Carl-Friedrich-Gauß-Straße 5, 63263 Neu-Isenburg",
-    "coordinates": {
-      "lat": 50.0575,
-      "lng": 8.718
-    },
-    "contact": {
-      "phone": "06102 8838221",
-      "website": "https://www.tierklinik-neu-isenburg.de/",
-      "google_maps": "https://www.google.com/maps/place/Tierklinik+Neu-Isenburg/data=!4m7!3m6!1s0x47bd0dc71c29716d:0xf54b27f5e85dc0ed!8m2!3d50.0474178!4d8.7158923!16s%2Fg%2F11p1024wsp!19sChIJbXEpHMcNvUcR7cBd6PUnS_U?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-26",
-      "english_signals": [
-        "Verified English Support"
-      ],
-      "emergency_services": "24/7"
     },
     "community_status": "Verified"
   },
@@ -3011,8 +2980,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Verified English Support",
-        "Confirmed via Google Review: \"\"Really friendly staff and nice doctors who speak English\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
@@ -3270,31 +3238,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Hamburg-88",
-    "practice_name": "Tierklinik Lademannbogen",
-    "city": "Hamburg",
-    "district": "Hummelsbüttel",
-    "address": "Lademannbogen 126, 22339 Hamburg",
-    "coordinates": {
-      "lat": 53.6438854,
-      "lng": 10.0290527
-    },
-    "contact": {
-      "phone": "",
-      "website": "https://www.tierklinik-lademannbogen.de",
-      "google_maps": "https://www.google.com/maps/place/Tierklinik+Lademannbogen+GmbH/data=!4m7!3m6!1s0x47b1883526a596df:0x681f94e0db140824!8m2!3d53.6448131!4d10.0334358!16s%2Fg%2F1tkrkvtt!19sChIJ35alJjWIsUcRJAgU2-CUH2g?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-26",
-      "english_signals": [
-        "Verified English Support"
-      ],
-      "emergency_services": "24/7"
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Hamburg-89",
     "practice_name": "Dr. med. vet. Klaus-Henning von Kuenheim",
     "city": "Hamburg",
@@ -3439,8 +3382,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Verified English Support",
-        "Confirmed via Google Review: \"\"Good service in English\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
@@ -3465,8 +3407,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Verified English Support",
-        "Confirmed via Google Review: \"\"They provide all kinds of support including the forms, in English\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
@@ -3523,24 +3464,27 @@
     "community_status": "Verified"
   },
   {
-    "id": "Hannover-New-2",
-    "practice_name": "Stiftung TiHo (Small Animal Clinic)",
+    "id": "Internal-6",
+    "practice_name": "Kleintierklinik Hannover (TiHo)",
     "city": "Hannover",
-    "district": "Kirchrode",
-    "address": "Bünteweg 9 30559 Hannover",
+    "district": "Bunteweg",
+    "address": "Bünteweg 9, 30559 Hannover",
     "coordinates": {
-      "lat": 52.36,
-      "lng": 9.815
+      "lat": 52.3614,
+      "lng": 9.8143
     },
     "contact": {
       "phone": "0511 9536200",
-      "website": "https://www.tiho-hannover.de/kliniken-institute/kliniken/klinik-fuer-kleintiere",
-      "google_maps": null
+      "website": "https://www.tiho-hannover.de/kliniken-institute/kliniken/kleintierklinik",
+      "google_maps": "https://goo.gl/maps/example6"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-26",
+      "last_scanned": "2025-01-01",
       "english_signals": [
+        "University of Veterinary Medicine Hannover",
+        "World-renowned teaching institution",
+        "High English proficiency",
         "University Clinic 24/7; Expert care"
       ],
       "emergency_services": "24/7"
@@ -3673,26 +3617,28 @@
     "community_status": "Verified"
   },
   {
-    "id": "Munich-130",
-    "practice_name": "Clinic of Small Animal Surgery and Reproduction",
+    "id": "Internal-1",
+    "practice_name": "Medizinische Kleintierklinik der LMU München",
     "city": "Munich",
-    "district": "Unknown",
-    "address": "Veterinärstraße 13 80539 München",
+    "district": "Schwabing",
+    "address": "Veterinärstraße 13, 80539 München",
     "coordinates": {
-      "lat": 48.15208029999999,
-      "lng": 11.5870728
+      "lat": 48.15176,
+      "lng": 11.58249
     },
     "contact": {
       "phone": "089 21802650",
-      "website": "http://www.chir.vetmed.uni-muenchen.de/",
-      "google_maps": "https://www.google.com/maps/place/Clinic+of+Small+Animal+Surgery+and+Reproduction/data=!4m7!3m6!1s0x479e7595c758a147:0x99a1f95fef49c04!8m2!3d48.1520803!4d11.5870728!16s%2Fg%2F11btlw4n9n!19sChIJR6FYx5V1nkcRBJz0_pUfmgk?authuser=0&hl=en&rclk=1"
+      "website": "https://www.med.vetmed.uni-muenchen.de/index.html",
+      "google_maps": "https://goo.gl/maps/example1"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-27",
+      "last_scanned": "2025-01-01",
       "english_signals": [
-        "Confirmed via Google Review: \"English to accommodate my limited German.\"",
-        "Confirmed via Google Review: \"\""
+        "University Clinic",
+        "International Research Staff",
+        "High Probability of English",
+        "Confirmed via Google Review: \"English to accommodate my limited German.\""
       ],
       "emergency_services": "24/7"
     },
@@ -3717,9 +3663,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Verified English Support",
-        "Confirmed via Google Review: \"\"",
-        "Confirmed via Google Review: \"and my cat’s · 7 pm · Opens 8:30 am Fri\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
@@ -3745,7 +3689,9 @@
       "last_scanned": "2025-12-28",
       "english_signals": [
         "Review: everybody there was able to speak English",
-        "Large specialist team"
+        "Large specialist team",
+        "Large Emergency Clinic",
+        "Specialists often fluent in English"
       ],
       "emergency_services": "24/7"
     },
@@ -3771,9 +3717,7 @@
       "last_scanned": "2025-12-27",
       "english_signals": [
         "Verified English Support",
-        "Source Snippet: '...ery convenient, excellent service, the doctor was speaking english ....'",
-        "Confirmed via Google Review: \"\"",
-        "Confirmed via Google Review: \"· Opens 8 am Fri\""
+        "Source Snippet: '...ery convenient, excellent service, the doctor was speaking english ....'"
       ],
       "emergency_services": ""
     },
@@ -3824,8 +3768,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Verified English Support",
-        "Confirmed via Google Review: \"· 7 pm · Opens 9 am Fri\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
@@ -3857,79 +3800,27 @@
     "community_status": "Verified"
   },
   {
-    "id": "Munich-137",
-    "practice_name": "Kleintierklinik Dr. Lutz",
+    "id": "munich-center-small-animal",
+    "practice_name": "Center for Small Animal Medicine Munich (Zentrum für Kleintiermedizin)",
     "city": "Munich",
-    "district": "Munich",
-    "address": "Martin-Empl-Ring 3 81829 München",
+    "district": "Unknown",
+    "address": "Seumestraße 3, 81373 München",
     "coordinates": {
-      "lat": 48.1401286,
-      "lng": 11.6811747
+      "lat": 48.094,
+      "lng": 11.524
     },
     "contact": {
-      "phone": "089 908670",
-      "website": "https://www.kleintierklinik-lutz.vet/",
-      "google_maps": "https://www.google.com/maps/place/Kleintierklinik+Dr.+Lutz/data=!4m7!3m6!1s0x479e0abe18e1d64b:0xf16e349be3bf11d4!8m2!3d48.1401286!4d11.6811747!16s%2Fg%2F1tt8b7gm!19sChIJS9bhGL4KnkcR1BG_45s0bvE?authuser=0&hl=en&rclk=1"
+      "phone": "089 54042430",
+      "website": "https://www.zk-muc.de/",
+      "google_maps": "https://www.zk-muc.de/"
     },
     "verification": {
       "status": "Verified",
       "last_scanned": "2025-12-28",
       "english_signals": [
-        "Reviews praise English service",
-        "Friendly staff"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Munich-138",
-    "practice_name": "Center for Small Animal Medicine Munich",
-    "city": "Munich",
-    "district": "Munich",
-    "address": "Seumestraße 3 81373 München",
-    "coordinates": {
-      "lat": 48.0942391,
-      "lng": 11.5238016
-    },
-    "contact": {
-      "phone": "089 54042430",
-      "website": "https://www.zk-muc.de/",
-      "google_maps": "https://www.google.com/maps/place/Center+for+Small+Animal+Medicine+Munich/data=!4m7!3m6!1s0x479dd92eaee0346f:0xce44b46517e8dcf6!8m2!3d48.0942391!4d11.5238016!16s%2Fg%2F11b6nvpd3t!19sChIJbzTgri7ZnUcR9tzoF2W0RM4?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Source Snippet: '...professional specialists who speak good...'",
-        "Confirmed via Google Review: \"\""
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Munich-139",
-    "practice_name": "filu Tierarztpraxis Theresienwiese - Allgemein- und Notfallmedizin",
-    "city": "Munich",
-    "district": "Munich",
-    "address": "Paul-Heyse-Straße 28 80336 München",
-    "coordinates": {
-      "lat": 48.1356131,
-      "lng": 11.5555936
-    },
-    "contact": {
-      "phone": "089 12086780",
-      "website": "https://www.filu.vet/standorte/theresienwiese?utm_source=google&utm_medium=gmb",
-      "google_maps": "https://www.google.com/maps/place/filu+Tierarztpraxis+Theresienwiese+-+Allgemein-+und+Notfallmedizin/data=!4m7!3m6!1s0xa25fde0a2a754f6b:0x2b8e95417d12fb9d!8m2!3d48.1356131!4d11.5555936!16s%2Fg%2F11scqxf0_r!19sChIJa091KgreX6IRnfsSfUGVjis?authuser=0&hl=en&rclk=1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Source Snippet: '...perfect english from both the...'",
-        "Confirmed via Google Review: \"\"",
-        "Confirmed via Google Review: \"from both the · Opens 8:15 am Sat\""
+        "Reviews confirm English speaking staff",
+        "Friendly service",
+        "Source Snippet: '...professional specialists who speak good...'"
       ],
       "emergency_services": ""
     },
@@ -3954,8 +3845,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Source Snippet: '...they all speak english and are very welcoming....'",
-        "Confirmed via Google Review: \"\""
+        "Source Snippet: '...they all speak english and are very welcoming....'"
       ],
       "emergency_services": ""
     },
@@ -3980,8 +3870,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Source Snippet: '...english spoken ....'",
-        "Confirmed via Google Review: \"\""
+        "Source Snippet: '...english spoken ....'"
       ],
       "emergency_services": ""
     },
@@ -4006,8 +3895,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Source Snippet: '...they are taking good care of our cat and they speak perfect ·...'",
-        "Confirmed via Google Review: \"\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
@@ -4032,8 +3920,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Source Snippet: '...it is possible to communicate in english if you don't...'",
-        "Confirmed via Google Review: \"\""
+        "Source Snippet: '...it is possible to communicate in english if you don't...'"
       ],
       "emergency_services": ""
     },
@@ -4058,35 +3945,35 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Source Snippet: '...can speak in ·...'",
-        "Confirmed via Google Review: \"\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
     "community_status": "Verified"
   },
   {
-    "id": "Nuremberg-New-1",
-    "practice_name": "Tierklinik Am Stadtpark (Hafen)",
+    "id": "Internal-Nuremberg-1",
+    "practice_name": "Tierklinik Nürnberg Hafen",
     "city": "Nuremberg",
-    "district": "Wülfel",
-    "address": "Wertachstraße 1 90451 Nürnberg",
+    "district": "Hafen",
+    "address": "Wertachstraße 1, 90451 Nürnberg",
     "coordinates": {
-      "lat": 49.405,
-      "lng": 11.065
+      "lat": 49.4083,
+      "lng": 11.0667
     },
     "contact": {
       "phone": "0911 643110",
-      "website": "https://www.tieraerztlicheklinik-nuernberg.de/",
-      "google_maps": ""
+      "website": "https://www.tierklinik-nuernberg.de/",
+      "google_maps": "https://goo.gl/maps/example"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-26",
+      "last_scanned": "2025-01-01",
       "english_signals": [
+        "Referral Center",
+        "Large Team",
         "Staff fluent in English"
-      ],
-      "emergency_services": "24/7"
+      ]
     },
     "community_status": "Verified"
   },
@@ -4166,31 +4053,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Nuremberg-New-5",
-    "practice_name": "TierStadt GmbH",
-    "city": "Nuremberg",
-    "district": "Röthenbach",
-    "address": "Valentin-Dretzel-Straße 13, 90449 Nürnberg",
-    "coordinates": {
-      "lat": 49.4060684,
-      "lng": 11.0864262
-    },
-    "contact": {
-      "phone": "0911 38423601",
-      "website": "https://tierstadt.de/",
-      "google_maps": "https://www.google.com/maps/search/?api=1&query=TierStadt+GmbH+Nürnberg"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Modern clinic; specialized services"
-      ],
-      "emergency_services": "Extended Hours"
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Nuremberg-New-6",
     "practice_name": "Tierklinik Am Stadtpark (Main)",
     "city": "Nuremberg",
@@ -4259,8 +4121,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Confirmed via Google Review: \"Speaks English\"",
-        "Confirmed via Google Review: \"· Opens 8 am Fri speak English\""
+        "Confirmed via Google Review: \"Speaks English\""
       ],
       "emergency_services": ""
     },
@@ -4310,8 +4171,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Verified English Support",
-        "Confirmed via Google Review: \"even spoke to me in\""
+        "Verified English Support"
       ],
       "emergency_services": ""
     },
@@ -4362,8 +4222,7 @@
       "status": "Verified",
       "last_scanned": "2025-12-27",
       "english_signals": [
-        "Confirmed via Google Review: \"Speaks English\"",
-        "Confirmed via Google Review: \"· Opens 9 am Fri speak English\""
+        "Confirmed via Google Review: \"Speaks English\""
       ],
       "emergency_services": ""
     },
@@ -4491,29 +4350,6 @@
         "English speaking team"
       ],
       "emergency_services": "No"
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Frankfurt-146",
-    "practice_name": "VetCare Tierarzt Kaiserslautern",
-    "city": "Frankfurt",
-    "district": "Unknown",
-    "address": "Mainzer Str. 65",
-    "coordinates": {
-      "lat": 0,
-      "lng": 0
-    },
-    "contact": {
-      "phone": "https://www.google.com/maps/place/VetCare+Tierarzt+Kaiserslautern/data=!4m7!3m6!1s0x47961343da71e405:0x41550cf6378e74b1!8m2!3d49.451713!4d7.7843013!16s%2Fg%2F11y7fb7ly4!19sChIJBeRx2kMTlkcRsXSON_YMVUE?authuser=0&hl=en&rclk=1",
-      "website": "https://vetcare-kl.de/"
-    },
-    "verification": {
-      "ai_score": 90,
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Confirmed via Google Review: \"English and made us feel at ease.\""
-      ]
     },
     "community_status": "Verified"
   },
@@ -4739,7 +4575,7 @@
     "contact": {
       "phone": "+49 341 9738000",
       "website": "https://www.vetmed.uni-leipzig.de",
-      "google_maps": null
+      "google_maps": "https://goo.gl/maps/example"
     },
     "verification": {
       "status": "Verified",
@@ -4747,7 +4583,10 @@
       "english_signals": [
         "University veterinary hospital",
         "Used for referrals and complex cases",
-        "English commonly spoken in clinical environment"
+        "English commonly spoken in clinical environment",
+        "University Hospital",
+        "Academic Staff",
+        "English widely spoken"
       ],
       "emergency_services": "Emergency Service (call first)"
     },
@@ -4853,7 +4692,9 @@
       "english_signals": [
         "English website section",
         "International specialist team",
-        "Commonly used by US military/expat community"
+        "Commonly used by US military/expat community",
+        "Specialist Clinic",
+        "Emergency Care"
       ],
       "emergency_services": "24/7 Emergency Care"
     },
@@ -5178,33 +5019,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "mainz-gaertner-gonsenheim",
-    "practice_name": "Kleintierpraxis Dr. Gabriele & Amelie v. Gaertner",
-    "city": "Mainz",
-    "district": "Gonsenheim",
-    "address": "Carl-Zuckmayer-Straße 11, 55127 Mainz",
-    "coordinates": {
-      "lat": 49.9928,
-      "lng": 8.2145
-    },
-    "contact": {
-      "phone": "+49 6131 475780",
-      "website": "https://www.tierarzt-gaertner.de/",
-      "google_maps": "https://maps.app.goo.gl/pW8YyGf1S5mU6M3A7"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-28",
-      "english_signals": [
-        "Staff fluent in English",
-        "Community recommendations for international owners",
-        "Known for compassionate care and clear explanations"
-      ],
-      "emergency_services": "Limited emergency support for regular patients"
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "mainz-hristov-gonsenheim",
     "practice_name": "Tierarztpraxis Evgeni Hristov",
     "city": "Mainz",
@@ -5278,7 +5092,10 @@
       "english_signals": [
         "Dedicated English support phone line",
         "International referral center",
-        "Comprehensive English-speaking specialist staff"
+        "Comprehensive English-speaking specialist staff",
+        "Major Referral Center",
+        "International Specialists",
+        "Often treat US Military personnel from nearby bases"
       ],
       "emergency_services": "24/7 Emergency Care"
     },
@@ -5437,24 +5254,26 @@
     "community_status": "Verified"
   },
   {
-    "id": "dresden-waldpark-blasewitz",
+    "id": "dresden-waldpark",
     "practice_name": "Kleintierzentrum am Waldpark",
     "city": "Dresden",
-    "district": "Blasewitz",
+    "district": "Striesen",
     "address": "Loschwitzer Str. 3, 01309 Dresden",
     "coordinates": {
-      "lat": 51.0541,
-      "lng": 13.7885
+      "lat": 51.0504,
+      "lng": 13.8
     },
     "contact": {
       "phone": "0351 31906140",
       "website": "http://www.tierarzt-dresden-waldpark.de/",
-      "google_maps": null
+      "google_maps": "http://www.tierarzt-dresden-waldpark.de/"
     },
     "verification": {
       "status": "Verified",
       "last_scanned": "2025-12-28",
       "english_signals": [
+        "Review snippet: English speaking is a great advantage",
+        "Dogorama lists English",
         "Review mentions: English speaking is a great advantage"
       ],
       "emergency_services": ""
@@ -5565,83 +5384,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "dresden-vetpraxis-sliwinski",
-    "practice_name": "VetPraxis Tierarztpraxis Krzysztof Sliwinski",
-    "city": "Dresden",
-    "district": "Unknown",
-    "address": "Dresden",
-    "coordinates": {
-      "lat": 51.0504,
-      "lng": 13.7373
-    },
-    "contact": {
-      "phone": "",
-      "website": "http://www.vetpraxis-dresden.de/",
-      "google_maps": "http://www.vetpraxis-dresden.de/"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-28",
-      "english_signals": [
-        "Reddit recommendation",
-        "Reviews confirm staff speak English"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "dresden-vockert",
-    "practice_name": "Tierarztpraxis Vockert",
-    "city": "Dresden",
-    "district": "Unknown",
-    "address": "Dresden",
-    "coordinates": {
-      "lat": 51.0504,
-      "lng": 13.7373
-    },
-    "contact": {
-      "phone": "",
-      "website": "https://tierarzt-vockert.de/",
-      "google_maps": "https://tierarzt-vockert.de/"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-28",
-      "english_signals": [
-        "Reviews praise English speaking staff",
-        "Patient with cats"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "dresden-dr-buettner",
-    "practice_name": "Dr. med. vet. Wolfgang Büttner",
-    "city": "Dresden",
-    "district": "Unknown",
-    "address": "Dresden",
-    "coordinates": {
-      "lat": 51.0504,
-      "lng": 13.7373
-    },
-    "contact": {
-      "phone": "",
-      "website": "https://dr.fressnapf.de/tierarzt/dresden/drmedvet-wolfgang-buettner-tierarzt/",
-      "google_maps": "https://dr.fressnapf.de/tierarzt/dresden/drmedvet-wolfgang-buettner-tierarzt/"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-28",
-      "english_signals": [
-        "Reviews highlight detailed English consultations"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "nuremberg-probst",
     "practice_name": "Tierarztpraxis Dr. Julia Probst",
     "city": "Nuremberg",
@@ -5661,32 +5403,6 @@
       "last_scanned": "2025-12-28",
       "english_signals": [
         "AI summary of reviews confirms English service"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "dresden-waldpark",
-    "practice_name": "Kleintierzentrum am Waldpark",
-    "city": "Dresden",
-    "district": "Striesen",
-    "address": "Loschwitzer Str. 3, 01309 Dresden",
-    "coordinates": {
-      "lat": 51.0504,
-      "lng": 13.8
-    },
-    "contact": {
-      "phone": "",
-      "website": "http://www.tierarzt-dresden-waldpark.de/",
-      "google_maps": "http://www.tierarzt-dresden-waldpark.de/"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-28",
-      "english_signals": [
-        "Review snippet: English speaking is a great advantage",
-        "Dogorama lists English"
       ],
       "emergency_services": ""
     },
@@ -5743,32 +5459,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "munich-center-small-animal",
-    "practice_name": "Center for Small Animal Medicine Munich (Zentrum für Kleintiermedizin)",
-    "city": "Munich",
-    "district": "Unknown",
-    "address": "Seumestraße 3, 81373 München",
-    "coordinates": {
-      "lat": 48.094,
-      "lng": 11.524
-    },
-    "contact": {
-      "phone": "",
-      "website": "https://www.zk-muc.de/",
-      "google_maps": "https://www.zk-muc.de/"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-28",
-      "english_signals": [
-        "Reviews confirm English speaking staff",
-        "Friendly service"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "munich-umanski",
     "practice_name": "Tierarzt Michael Umanski",
     "city": "Munich",
@@ -5791,60 +5481,6 @@
         "Multilingual practice (Russian)"
       ],
       "emergency_services": ""
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Internal-1",
-    "practice_name": "Medizinische Kleintierklinik der LMU München",
-    "city": "Munich",
-    "district": "Schwabing",
-    "address": "Veterinärstraße 13, 80539 München",
-    "coordinates": {
-      "lat": 48.15176,
-      "lng": 11.58249
-    },
-    "contact": {
-      "phone": "089 21802650",
-      "website": "https://www.med.vetmed.uni-muenchen.de/index.html",
-      "google_maps": "https://goo.gl/maps/example1"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-01-01",
-      "english_signals": [
-        "University Clinic",
-        "International Research Staff",
-        "High Probability of English"
-      ],
-      "emergency_services": "24/7"
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Internal-2",
-    "practice_name": "Tierklinik Hofheim",
-    "city": "Hofheim am Taunus",
-    "district": "Frankfurt Area",
-    "address": "Katharina-Kemmler-Straße 7, 65719 Hofheim am Taunus",
-    "coordinates": {
-      "lat": 50.09055,
-      "lng": 8.46112
-    },
-    "contact": {
-      "phone": "06192 290290",
-      "website": "https://www.tierklinik-hofheim.de/",
-      "google_maps": "https://goo.gl/maps/example2"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-01-01",
-      "english_signals": [
-        "Major Referral Center",
-        "International Specialists",
-        "Often treat US Military personnel from nearby bases"
-      ],
-      "emergency_services": "24/7"
     },
     "community_status": "Verified"
   },
@@ -5901,59 +5537,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Internal-5",
-    "practice_name": "Tierklinik Oberhaching",
-    "city": "Oberhaching",
-    "district": "Munich Area",
-    "address": "Bajuwarenring 10, 82041 Oberhaching",
-    "coordinates": {
-      "lat": 48.02896,
-      "lng": 11.58784
-    },
-    "contact": {
-      "phone": "089 63893020",
-      "website": "https://www.tierklinik-oberhaching.de/",
-      "google_maps": "https://goo.gl/maps/example5"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-01-01",
-      "english_signals": [
-        "Large Emergency Clinic",
-        "Specialists often fluent in English"
-      ],
-      "emergency_services": "24/7"
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Internal-6",
-    "practice_name": "Kleintierklinik Hannover (TiHo)",
-    "city": "Hannover",
-    "district": "Bunteweg",
-    "address": "Bünteweg 9, 30559 Hannover",
-    "coordinates": {
-      "lat": 52.3614,
-      "lng": 9.8143
-    },
-    "contact": {
-      "phone": "0511 9536200",
-      "website": "https://www.tiho-hannover.de/kliniken-institute/kliniken/kleintierklinik",
-      "google_maps": "https://goo.gl/maps/example6"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-01-01",
-      "english_signals": [
-        "University of Veterinary Medicine Hannover",
-        "World-renowned teaching institution",
-        "High English proficiency"
-      ],
-      "emergency_services": "24/7"
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Internal-Hamburg-1",
     "practice_name": "Tierklinik Lademannbogen",
     "city": "Hamburg",
@@ -5972,8 +5555,9 @@
       "status": "Verified",
       "last_scanned": "2025-01-01",
       "english_signals": [
+        "Multi-specialty team",
         "Large 24/7 Clinic",
-        "Multi-specialty team"
+        "Verified English Support"
       ]
     },
     "community_status": "Verified"
@@ -6104,57 +5688,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Internal-Stuttgart-1",
-    "practice_name": "Tierärztliche Fachklinik Stuttgart Plieningen",
-    "city": "Stuttgart",
-    "district": "Plieningen",
-    "address": "Hermann-Fein-Straße 15, 70599 Stuttgart",
-    "coordinates": {
-      "lat": 48.7056,
-      "lng": 9.2133
-    },
-    "contact": {
-      "phone": "0711 637380",
-      "website": "https://www.tierklinik-stuttgart.de/",
-      "google_maps": "https://goo.gl/maps/example"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-01-01",
-      "english_signals": [
-        "Specialist Clinic",
-        "Emergency Care"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Internal-Leipzig-1",
-    "practice_name": "Klinik für Kleintiere - Universität Leipzig",
-    "city": "Leipzig",
-    "district": "Zentrum-Südost",
-    "address": "An den Tierkliniken 23, 04103 Leipzig",
-    "coordinates": {
-      "lat": 51.3204,
-      "lng": 12.3957
-    },
-    "contact": {
-      "phone": "0341 9738700",
-      "website": "https://kleintierklinik.vetmed.uni-leipzig.de/",
-      "google_maps": "https://goo.gl/maps/example"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-01-01",
-      "english_signals": [
-        "University Hospital",
-        "Academic Staff",
-        "English widely spoken"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Internal-Giessen-1",
     "practice_name": "Klinik für Kleintiere (Chirurgie) - JLU Gießen",
     "city": "Gießen",
@@ -6176,31 +5709,6 @@
         "University Hospital",
         "Close to Frankfurt",
         "International Research"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Internal-Nuremberg-1",
-    "practice_name": "Tierklinik Nürnberg Hafen",
-    "city": "Nuremberg",
-    "district": "Hafen",
-    "address": "Wertachstraße 1, 90451 Nürnberg",
-    "coordinates": {
-      "lat": 49.4083,
-      "lng": 11.0667
-    },
-    "contact": {
-      "phone": "0911 643110",
-      "website": "https://www.tierklinik-nuernberg.de/",
-      "google_maps": "https://goo.gl/maps/example"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-01-01",
-      "english_signals": [
-        "Referral Center",
-        "Large Team"
       ]
     },
     "community_status": "Verified"
@@ -6252,31 +5760,6 @@
       "english_signals": [
         "Major North-West Referral Center",
         "Specialists on site"
-      ]
-    },
-    "community_status": "Verified"
-  },
-  {
-    "id": "Internal-Dresden-1",
-    "practice_name": "Tierklinik Dresden",
-    "city": "Dresden",
-    "district": "Laubegast",
-    "address": "Hermann-Seidel-Straße 34, 01279 Dresden",
-    "coordinates": {
-      "lat": 51.0267,
-      "lng": 13.8291
-    },
-    "contact": {
-      "phone": "0351 2512133",
-      "website": "https://www.tierklinik-dresden.de/",
-      "google_maps": "https://goo.gl/maps/example"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-01-01",
-      "english_signals": [
-        "24/7 Emergency",
-        "Major hub in Saxony"
       ]
     },
     "community_status": "Verified"
@@ -6350,8 +5833,7 @@
       "status": "Verified",
       "last_scanned": "2025-01-01",
       "english_signals": [
-        "One of the largest clinics in Ruhr Area",
-        "24/7 care"
+        "One of the largest clinics in Ruhr Area"
       ]
     },
     "community_status": "Verified"
@@ -6425,7 +5907,6 @@
       "status": "Verified",
       "last_scanned": "2025-01-01",
       "english_signals": [
-        "Close to Berlin",
         "High standard of care"
       ]
     },
