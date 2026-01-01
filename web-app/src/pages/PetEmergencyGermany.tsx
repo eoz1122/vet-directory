@@ -108,12 +108,12 @@ export default function PetEmergencyGermany() {
                                 <div className="p-6 bg-white border border-primary/5 rounded-2xl shadow-sm">
                                     <h3 className="text-xl font-bold text-primary mb-1">🏥 Find Vets in Major Cities</h3>
                                     <p className="text-xs text-primary/60 mb-4 italic">
-                                        Note: These are general directories. Dedicated emergency guides for these cities are coming soon.
+                                        Select your city for emergency options or general directories.
                                     </p>
                                     <div className="space-y-3">
-                                        <Link to="/vets/munich" className="block p-3 bg-secondary rounded-lg hover:bg-accent/10 transition-colors flex justify-between items-center group">
-                                            <span className="font-bold text-primary">Munich Directory</span>
-                                            <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                        <Link to="/guides/emergency-vets-munich" className="block p-3 bg-red-50 border border-red-100 rounded-lg hover:bg-red-100 transition-colors flex justify-between items-center group">
+                                            <span className="font-bold text-red-800">🚨 Munich Emergency Guide</span>
+                                            <span className="text-red-600 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                                         </Link>
                                         <Link to="/vets/hamburg" className="block p-3 bg-secondary rounded-lg hover:bg-accent/10 transition-colors flex justify-between items-center group">
                                             <span className="font-bold text-primary">Hamburg Directory</span>
