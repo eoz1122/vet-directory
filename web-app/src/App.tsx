@@ -34,6 +34,8 @@ const GermanDogEtiquette = lazy(() => import('./pages/GermanDogEtiquette'));
 const PetEmergencyGermany = lazy(() => import('./pages/PetEmergencyGermany'));
 const EmergencyVetsBerlin = lazy(() => import('./pages/EmergencyVetsBerlin'));
 const PetEmergencyMunich = lazy(() => import('./pages/PetEmergencyMunich'));
+const PetEmergencyHamburg = lazy(() => import('./pages/PetEmergencyHamburg'));
+const PetEmergencyFrankfurt = lazy(() => import('./pages/PetEmergencyFrankfurt'));
 const PetMedicationGermany = lazy(() => import('./pages/PetMedicationGermany'));
 const Admin = lazy(() => import('./pages/Admin'));
 
@@ -79,6 +81,8 @@ function App() {
             <Route path="/guides/pet-emergency-germany" element={<PetEmergencyGermany />} />
             <Route path="/guides/emergency-vets-berlin" element={<EmergencyVetsBerlin />} />
             <Route path="/guides/emergency-vets-munich" element={<PetEmergencyMunich />} />
+            <Route path="/guides/emergency-vets-hamburg" element={<PetEmergencyHamburg />} />
+            <Route path="/guides/emergency-vets-frankfurt" element={<PetEmergencyFrankfurt />} />
             <Route path="/blog/pet-medication-germany-guide" element={<PetMedicationGermany />} />
 
             <Route path="/vets/:city" element={<CityVets />} />

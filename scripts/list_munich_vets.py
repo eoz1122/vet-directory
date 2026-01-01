@@ -10,9 +10,20 @@ def list_munich_vets():
             munich_vets.append(vet.get('practice_name'))
             
     print(f"Total Munich Vets Found: {len(munich_vets)}")
+    print(f"Missing Data Candidates:")
     print("-" * 30)
-    for name in sorted(munich_vets):
-        print(name)
+    for vet in vets:
+        if vet.get('city') in ['Munich', 'München']:
+            contact = vet.get('contact', {})
+            # Check for missing phone or website (empty string or None)
+            missing_phone = not contact.get('phone')
+            missing_website = not contact.get('website')
+            
+            if missing_phone or missing_website:
+                missing = []
+                if missing_phone: missing.append("Phone")
+                if missing_website: missing.append("Website")
+                print(f"- {vet.get('practice_name')}: Missing {', '.join(missing)}")
 
 if __name__ == "__main__":
     list_munich_vets()
