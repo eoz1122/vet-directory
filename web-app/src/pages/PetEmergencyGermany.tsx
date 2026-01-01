@@ -105,30 +105,26 @@ export default function PetEmergencyGermany() {
                                     <span className="text-accent text-[10px] font-black uppercase tracking-widest mt-4 block">View Berlin List →</span>
                                 </Link>
 
-                                <div className="block p-6 bg-primary/5 border border-primary/5 rounded-2xl opacity-60">
-                                    <h3 className="text-xl font-bold text-primary mb-2">🏥 Other Major Cities</h3>
-                                    <p className="text-sm text-primary/60">Hamburg, Munich, and Frankfurt guides are being verified and updated.</p>
+                                <div className="p-6 bg-white border border-primary/5 rounded-2xl shadow-sm">
+                                    <h3 className="text-xl font-bold text-primary mb-4">🏥 Find Vets in Major Cities</h3>
+                                    <div className="space-y-3">
+                                        <Link to="/vets/munich" className="block p-3 bg-secondary rounded-lg hover:bg-accent/10 transition-colors flex justify-between items-center group">
+                                            <span className="font-bold text-primary">Munich Vets</span>
+                                            <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                        </Link>
+                                        <Link to="/vets/hamburg" className="block p-3 bg-secondary rounded-lg hover:bg-accent/10 transition-colors flex justify-between items-center group">
+                                            <span className="font-bold text-primary">Hamburg Vets</span>
+                                            <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                        </Link>
+                                        <Link to="/vets/frankfurt" className="block p-3 bg-secondary rounded-lg hover:bg-accent/10 transition-colors flex justify-between items-center group">
+                                            <span className="font-bold text-primary">Frankfurt Vets</span>
+                                            <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
 
-                            <h3 className="text-2xl font-bold text-primary mt-12 mb-6">📲 Online Search Tools:</h3>
 
-                            <div className="space-y-4 my-6 not-prose">
-                                <a href="http://www.tierarzt-notdienst.de" target="_blank" rel="noopener" className="flex items-center gap-4 bg-white p-4 rounded-xl border border-primary/5 hover:bg-secondary transition-colors">
-                                    <span className="text-2xl">🌐</span>
-                                    <div>
-                                        <p className="font-bold text-primary">Tierarzt-Notdienst.de</p>
-                                        <p className="text-xs text-primary/50">National directory searchable by postcode</p>
-                                    </div>
-                                </a>
-                                <a href="http://www.vetfinder.de" target="_blank" rel="noopener" className="flex items-center gap-4 bg-white p-4 rounded-xl border border-primary/5 hover:bg-secondary transition-colors">
-                                    <span className="text-2xl">📱</span>
-                                    <div>
-                                        <p className="font-bold text-primary">VetFinder App</p>
-                                        <p className="text-xs text-primary/50">Available for iOS and Android</p>
-                                    </div>
-                                </a>
-                            </div>
 
                             <h2 id="call-ahead" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Step 3: Call Before You Go</h2>
 
