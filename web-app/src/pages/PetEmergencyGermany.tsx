@@ -115,13 +115,13 @@ export default function PetEmergencyGermany() {
                                             <span className="font-bold text-red-800">🚨 Munich Emergency Guide</span>
                                             <span className="text-red-600 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                                         </Link>
-                                        <Link to="/vets/hamburg" className="block p-3 bg-secondary rounded-lg hover:bg-accent/10 transition-colors flex justify-between items-center group">
-                                            <span className="font-bold text-primary">Hamburg Directory</span>
-                                            <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                        <Link to="/guides/emergency-vets-hamburg" className="block p-3 bg-red-50 border border-red-100 rounded-lg hover:bg-red-100 transition-colors flex justify-between items-center group">
+                                            <span className="font-bold text-red-800">🚨 Hamburg Emergency Guide</span>
+                                            <span className="text-red-600 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                                         </Link>
-                                        <Link to="/vets/frankfurt" className="block p-3 bg-secondary rounded-lg hover:bg-accent/10 transition-colors flex justify-between items-center group">
-                                            <span className="font-bold text-primary">Frankfurt Directory</span>
-                                            <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                        <Link to="/guides/emergency-vets-frankfurt" className="block p-3 bg-red-50 border border-red-100 rounded-lg hover:bg-red-100 transition-colors flex justify-between items-center group">
+                                            <span className="font-bold text-red-800">🚨 Frankfurt Emergency Guide</span>
+                                            <span className="text-red-600 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                                         </Link>
                                     </div>
                                 </div>
