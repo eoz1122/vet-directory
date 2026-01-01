@@ -102,7 +102,9 @@ export default function DogTaxGermany() {
                                             <td className="px-4 py-3">€600</td>
                                         </tr>
                                         <tr className="border-t border-primary/10">
-                                            <td className="px-4 py-3 font-semibold">Munich</td>
+                                            <td className="px-4 py-3 font-semibold">
+                                                <Link to="/vets/munich" className="text-accent hover:underline">Munich</Link>
+                                            </td>
                                             <td className="px-4 py-3">€100</td>
                                             <td className="px-4 py-3">€160</td>
                                             <td className="px-4 py-3">€800</td>
@@ -116,7 +118,9 @@ export default function DogTaxGermany() {
                                             <td className="px-4 py-3">€900</td>
                                         </tr>
                                         <tr className="border-t border-primary/10">
-                                            <td className="px-4 py-3 font-semibold">Cologne</td>
+                                            <td className="px-4 py-3 font-semibold">
+                                                <Link to="/vets/cologne" className="text-accent hover:underline">Cologne</Link>
+                                            </td>
                                             <td className="px-4 py-3">€156</td>
                                             <td className="px-4 py-3">€192</td>
                                             <td className="px-4 py-3">€624</td>
