@@ -240,13 +240,16 @@ export default function PetInsuranceGermany() {
                                         <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">Visit Website →</span>
                                     </div>
                                 </a>
-                                <a href="https://www.feather-insurance.com" target="_blank" rel="noopener noreferrer" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
+                                <a href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets" target="_blank" rel="noopener noreferrer" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <h4 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">Feather Insurance</h4>
                                             <p className="text-sm opacity-60">Specifically built for expats in Germany. Simple claims via app.</p>
                                         </div>
-                                        <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">Visit Website →</span>
+                                        <div className="text-right">
+                                            <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity font-bold text-sm block">Get a Quote →</span>
+                                            <span className="text-[10px] text-primary/30 opacity-0 group-hover:opacity-100 transition-opacity block">*Affiliate Link</span>
+                                        </div>
                                     </div>
                                 </a>
                                 <div className="p-6 bg-white rounded-2xl border border-primary/5 shadow-sm">

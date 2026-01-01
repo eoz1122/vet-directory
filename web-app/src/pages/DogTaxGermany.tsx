@@ -197,6 +197,26 @@ export default function DogTaxGermany() {
                                 </ul>
                             </div>
 
+                            <div className="bg-white p-6 rounded-xl shadow-md border-2 border-accent/20 my-8">
+                                <h3 className="font-bold text-lg mb-2 text-primary flex items-center gap-2">
+                                    <span>🛡️</span> Recommended for Expats: Feather Insurance
+                                </h3>
+                                <p className="text-sm opacity-80 mb-4">
+                                    Bureaucracy-free, 100% digital, and fully in English. Feather is designed specifically for expats in Germany.
+                                </p>
+                                <a
+                                    href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
+                                >
+                                    Get an English Quote →
+                                </a>
+                                <p className="text-xs text-primary/40 mt-3 italic">
+                                    *We may earn a commission if you sign up, at no extra cost to you. This helps support our free directory.
+                                </p>
+                            </div>
+
                             <div className="bg-primary text-secondary p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
                                 <div className="relative z-10">
                                     <h2 className="text-3xl font-bold text-accent mb-4 mt-0">🏠 A Note From the Sofa</h2>

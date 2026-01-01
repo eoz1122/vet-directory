@@ -174,6 +174,14 @@ export default function PetEmergencyGermany() {
                                 Most emergency vets require <strong>immediate payment</strong> via EC-Card, Credit Card, or Cash. If you have pet insurance, you will usually pay upfront and get reimbursed later.
                             </p>
 
+                            <div className="bg-white p-4 rounded-xl border-l-4 border-accent shadow-sm my-6 text-sm">
+                                <p className="font-bold text-primary mb-1">💡 Expats Recommend:</p>
+                                <p className="opacity-80">
+                                    <a href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">Feather Insurance</a> is popular among expats because they process claims via a simple English app, often reimbursing within days.
+                                    <span className="text-[10px] opacity-50 block mt-1">*Affiliate Link</span>
+                                </p>
+                            </div>
+
                             <h2 id="resources" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Emergency Numbers & Resources</h2>
 
                             <div className="grid gap-4 my-8 not-prose">
