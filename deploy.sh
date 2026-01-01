@@ -27,7 +27,7 @@ fi
 echo "🚀 Deploying to Public Root..."
 # Move back to root
 cd .. 
-# Copy dist contents to parent directory (public_html equivalent)
-cp -r web-app/dist/* ../
+# Copy dist contents to current directory (Web Root)
+cp -r web-app/dist/* .
 
 echo "🎉 Deployment Complete!"
