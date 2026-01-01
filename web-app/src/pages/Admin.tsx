@@ -6,24 +6,44 @@ import vetsData from '../data/vets.json';
 // Simple client-side auth for local usage safety
 const ACCESS_CODE = 'pack-admin-2026';
 
+type FilterType = 'all' | 'missing_data' | 'pending' | 'modified';
+
 const Admin: React.FC = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('admin_auth') === 'true');
     const [password, setPassword] = useState('');
     const [vets, setVets] = useState<Vet[]>(vetsData as Vet[]);
     // Removed duplicate state for filteredVets, using useMemo instead
     const [searchTerm, setSearchTerm] = useState('');
+    const [filterType, setFilterType] = useState<FilterType>('all');
+    const [modifiedIds, setModifiedIds] = useState<Set<string>>(new Set());
     const [editingVet, setEditingVet] = useState<Vet | null>(null);
     const [showUnsavedChanges, setShowUnsavedChanges] = useState(false);
 
     // Filter logic optimized with useMemo to prevent useEffect state setting loops
     const filteredVets = useMemo(() => {
+        let result = vets;
         const lowerTerm = searchTerm.toLowerCase();
-        return vets.filter(v =>
-            (v.practice_name || '').toLowerCase().includes(lowerTerm) ||
-            (v.city || '').toLowerCase().includes(lowerTerm) ||
-            (v.address || '').toLowerCase().includes(lowerTerm)
-        );
-    }, [searchTerm, vets]);
+
+        // 1. Apply Search
+        if (lowerTerm) {
+            result = result.filter(v =>
+                (v.practice_name || '').toLowerCase().includes(lowerTerm) ||
+                (v.city || '').toLowerCase().includes(lowerTerm) ||
+                (v.address || '').toLowerCase().includes(lowerTerm)
+            );
+        }
+
+        // 2. Apply Filter
+        if (filterType === 'missing_data') {
+            result = result.filter(v => !v.contact?.phone || !v.contact?.website);
+        } else if (filterType === 'pending') {
+            result = result.filter(v => v.community_status === 'Pending' || v.community_status === 'Unverified');
+        } else if (filterType === 'modified') {
+            result = result.filter(v => modifiedIds.has(v.id));
+        }
+
+        return result;
+    }, [searchTerm, vets, filterType, modifiedIds]);
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
@@ -43,6 +63,7 @@ const Admin: React.FC = () => {
     const handleSaveVet = (updatedVet: Vet) => {
         const newVets = vets.map(v => v.id === updatedVet.id ? updatedVet : v);
         setVets(newVets);
+        setModifiedIds(prev => new Set(prev).add(updatedVet.id));
         setEditingVet(null);
         setShowUnsavedChanges(true);
     };
@@ -153,6 +174,19 @@ const Admin: React.FC = () => {
                         />
                         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-lg">🔍</span>
                     </div>
+                    <div className="w-1/3 min-w-[200px]">
+                        <select
+                            value={filterType}
+                            onChange={(e) => setFilterType(e.target.value as FilterType)}
+                            aria-label="Filter Vets"
+                            className="w-full h-full px-4 py-3 bg-white border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/20 text-sm font-bold text-primary"
+                        >
+                            <option value="all">Show All</option>
+                            <option value="missing_data">⚠️ Missing Contact Info</option>
+                            <option value="pending">⏳ Pending / Unverified</option>
+                            <option value="modified">📝 Recently Modified</option>
+                        </select>
+                    </div>
                 </div>
 
                 {/* Table */}
@@ -170,14 +204,18 @@ const Admin: React.FC = () => {
                             </thead>
                             <tbody className="divide-y divide-primary/5 text-sm">
                                 {filteredVets.map(vet => (
-                                    <tr key={vet.id} className="hover:bg-gray-50/50 transition-colors group">
+                                    <tr key={vet.id} className={`hover:bg-gray-50/50 transition-colors group ${modifiedIds.has(vet.id) ? 'bg-amber-50/50' : ''}`}>
                                         <td className="p-4 font-bold text-primary">
                                             {vet.practice_name}
-                                            <div className="text-[10px] font-normal text-primary/40 truncate max-w-[200px]">{vet.id}</div>
+                                            <div className="text-[10px] font-normal text-primary/40 truncate max-w-[200px]">
+                                                {vet.id} {modifiedIds.has(vet.id) && <span className="text-amber-600 font-bold ml-1">(Modified)</span>}
+                                            </div>
                                         </td>
                                         <td className="p-4 text-primary/80">{vet.city}</td>
                                         <td className="p-4">
-                                            <span className={`px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-widest ${vet.community_status === 'Verified' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'
+                                            <span className={`px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-widest ${vet.community_status === 'Verified' ? 'bg-green-100 text-green-700' :
+                                                vet.community_status === 'Pending' ? 'bg-amber-100 text-amber-700' :
+                                                    'bg-gray-100 text-gray-500'
                                                 }`}>
                                                 {vet.community_status}
                                             </span>
