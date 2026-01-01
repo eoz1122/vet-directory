@@ -1,6 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import EmailCourseSignup from './EmailCourseSignup';
-
 const blogPosts = [
     {
         url: "/blog/moving-to-germany-with-pet-2025",
@@ -121,10 +119,6 @@ export default function BlogSidebar() {
                             );
                         })}
                     </nav>
-                </div>
-
-                <div className="mt-6">
-                    <EmailCourseSignup />
                 </div>
 
                 <div className="mt-6 bg-accent/5 rounded-xl p-6 border border-accent/10 text-center">
