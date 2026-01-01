@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, lazy, Suspense } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { APIProvider } from '@vis.gl/react-google-maps';
 // import AppMap from '../components/Map'; // Removed direct import
@@ -19,7 +19,10 @@ const vets = vetsData as Vet[];
 const ITEMS_PER_PAGE = 10;
 
 const Home: React.FC = () => {
-    const [selectedCity, setSelectedCity] = useState('All');
+    // Parse query params for initial city filtering
+    const [searchParams] = useSearchParams();
+
+    const [selectedCity, setSelectedCity] = useState(searchParams.get('city') || 'All');
     const [searchTerm, setSearchTerm] = useState('');
     const [showVerifiedOnly, setShowVerifiedOnly] = useState(true);
     const [showMobileOnly, setShowMobileOnly] = useState(false);
@@ -30,6 +33,12 @@ const Home: React.FC = () => {
     const [reportingVet, setReportingVet] = useState<Vet | null>(null);
 
     const [searchRadius, setSearchRadius] = useState<number | null>(null);
+
+    // Update selected city if URL params change (e.g. back navigation)
+    useEffect(() => {
+        const cityParam = searchParams.get('city');
+        if (cityParam) setSelectedCity(cityParam);
+    }, [searchParams]);
 
     // Dynamic city list derived from data
     const allCities = Array.from(new Set(vets.map(v => v.city || 'Unknown'))).sort();
@@ -189,51 +198,49 @@ const Home: React.FC = () => {
                                     <div className="space-y-3">
                                         <div className="flex flex-wrap gap-2 pb-2">
                                             {/* "All" Button */}
-                                            <button
+                                            <Link
+                                                to="/"
                                                 onClick={() => handleCityChange('All')}
-                                                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm ${selectedCity === 'All'
+                                                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm inline-block text-center ${selectedCity === 'All'
                                                     ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
                                                     : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
                                                     }`}
                                             >
                                                 All
-                                            </button>
+                                            </Link>
 
                                             {/* Priority Cities */}
                                             {mainCities.map(city => (
-                                                <button
+                                                <Link
                                                     key={city}
-                                                    onClick={() => handleCityChange(city)}
-                                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm ${selectedCity === city
-                                                        ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
-                                                        : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
-                                                        }`}
+                                                    to={`/vets/${city.toLowerCase()}`}
+                                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm inline-block text-center bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80`}
                                                 >
                                                     {city}
-                                                </button>
+                                                </Link>
                                             ))}
 
-                                            {/* Dropdown for Other Cities */}
+                                            {/* Custom Dropdown for Other Cities */}
                                             {otherCities.length > 0 && (
-                                                <div className="relative group">
-                                                    <select
-                                                        aria-label="Filter vets by other cities"
-                                                        value={otherCities.includes(selectedCity) ? selectedCity : ""}
-                                                        onChange={(e) => handleCityChange(e.target.value)}
-                                                        className={`appearance-none px-4 py-2 pr-8 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/20 ${otherCities.includes(selectedCity)
-                                                            ? 'bg-primary text-secondary border-primary shadow-primary/20'
-                                                            : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
-                                                            }`}
+                                                <div className="relative group inline-block">
+                                                    <button
+                                                        className={`appearance-none px-4 py-2 pr-8 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm cursor-pointer focus:outline-none bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80 flex items-center`}
                                                     >
-                                                        <option value="" disabled>More Cities...</option>
+                                                        More Cities...
+                                                        <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                                                    </button>
+
+                                                    {/* Dropdown Menu */}
+                                                    <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-primary/10 overflow-hidden z-[100] hidden group-hover:block max-h-64 overflow-y-auto custom-scrollbar">
                                                         {otherCities.map(city => (
-                                                            <option key={city} value={city} className="text-primary bg-white">
+                                                            <Link
+                                                                key={city}
+                                                                to={`/vets/${city.toLowerCase()}`}
+                                                                className="block px-4 py-2 text-xs font-bold text-primary/70 hover:bg-primary/5 hover:text-primary transition-colors text-left"
+                                                            >
                                                                 {city}
-                                                            </option>
+                                                            </Link>
                                                         ))}
-                                                    </select>
-                                                    <div className={`absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none ${otherCities.includes(selectedCity) ? 'text-secondary' : 'text-primary/40'}`}>
-                                                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path></svg>
                                                     </div>
                                                 </div>
                                             )}

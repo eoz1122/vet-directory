@@ -19,7 +19,7 @@ export interface Vet {
         english_signals: string[];
         emergency_services?: string;
     };
-    community_status?: "Verified" | "Community Sourced";
+    community_status?: "Verified" | "Community Sourced" | "Pending" | "Unverified";
 }
 
 export interface VetWithDistance extends Vet {

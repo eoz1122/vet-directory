@@ -225,25 +225,41 @@ export default function CityVets() {
     const { city } = useParams<{ city: string }>();
 
     const cityKey = city?.toLowerCase() || '';
-    const cityData = cityContent[cityKey];
+    const capitalizedCity = city ? city.charAt(0).toUpperCase() + city.slice(1) : '';
+
+    let cityData = cityContent[cityKey];
 
     const cityVets = vets.filter(vet =>
         vet.city.toLowerCase() === cityKey
     );
 
     if (!cityData) {
-        return (
-            <div className="min-h-screen bg-secondary flex items-center justify-center">
-                <div className="text-center">
-                    <h1 className="text-4xl font-bold text-primary mb-4">City Not Found</h1>
-                    <Link to="/" className="text-accent hover:underline">← Back to Directory</Link>
+        if (cityVets.length > 0) {
+            // GENERIC CONTENT GENERATOR
+            cityData = {
+                title: `English-Speaking Vets in ${capitalizedCity}`,
+                description: `Find verified English-speaking veterinarians in ${capitalizedCity}. Browse our directory of ${cityVets.length} local practices trusted by the international community.`,
+                content: `Living in ${capitalizedCity} as an expat comes with many joys, but finding medical care for your pet shouldn't be a challenge. 
+
+Our directory lists verified veterinary practices in ${capitalizedCity} where you can communicate clearly in English. We understand that medical terminology is difficult enough in your native language, let alone in German.
+
+**Why ${capitalizedCity} Pet Owners Use Our Directory:**
+- **Local Verification**: We track practices known to support international clients.
+- **Convenience**: Find care close to home in ${capitalizedCity}.
+- **Peace of Mind**: Ensure your pet gets the best care without language barriers.`
+            };
+        } else {
+            return (
+                <div className="min-h-screen bg-secondary flex items-center justify-center">
+                    <div className="text-center">
+                        <h1 className="text-4xl font-bold text-primary mb-4">City Not Found</h1>
+                        <p className="text-primary/60 mb-6">We currently don't have any verified vets listed for {capitalizedCity}.</p>
+                        <Link to="/" className="text-accent hover:underline">← Back to Directory</Link>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
-
-    const capitalizedCity = city!.charAt(0).toUpperCase() + city!.slice(1);
-
     // JSON-LD Structured Data
     const breadcrumbLd = {
         "@context": "https://schema.org",

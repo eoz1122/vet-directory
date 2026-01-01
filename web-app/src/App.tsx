@@ -35,6 +35,7 @@ const PetEmergencyGermany = lazy(() => import('./pages/PetEmergencyGermany'));
 const EmergencyVetsBerlin = lazy(() => import('./pages/EmergencyVetsBerlin'));
 const PetEmergencyMunich = lazy(() => import('./pages/PetEmergencyMunich'));
 const PetMedicationGermany = lazy(() => import('./pages/PetMedicationGermany'));
+const Admin = lazy(() => import('./pages/Admin'));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -82,6 +83,7 @@ function App() {
 
             <Route path="/vets/:city" element={<CityVets />} />
             <Route path="/vets/:city/:district" element={<DistrictVets />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/privacy" element={<Privacy />} />
           </Routes>
