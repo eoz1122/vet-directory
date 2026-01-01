@@ -57,26 +57,46 @@ The built files will be in the `dist/` folder.
 ### On your VPS
 
 ```bash
-# Navigate to your domain directory
+# Navigate to your domain directory (WHEREVER YOU CLONED THE REPO)
 cd /home/englishspeaking/englishspeakinggermany.online
 
+# Run the one-step deployment script
+chmod +x deploy.sh
+./deploy.sh
+```
+
+### Manual Method (Backup)
+
+```bash
+git pull
+cd web-app
+npm install
+npm run build
+cp -r dist/* ../
+```
+
 # Clone the repository
-git clone https://github.com/eoz1122/vet-directory.git temp
+
+git clone <https://github.com/eoz1122/vet-directory.git> temp
 cd temp/web-app
 
 # Create .env file with your API key
+
 echo "VITE_GOOGLE_MAPS_API_KEY=your_actual_api_key_here" > .env
 
 # Install and build
+
 npm install --legacy-peer-deps
 npm run build
 
 # Move built files to web root
+
 mv dist/* ../../
 cd ../../
 rm -rf temp
 
 # Create .htaccess for React Router
+
 cat > .htaccess << 'EOF'
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -89,8 +109,10 @@ cat > .htaccess << 'EOF'
 EOF
 
 # Set permissions
+
 chown -R www-data:www-data .
 chmod -R 755 .
+
 ```
 
 ## 🔑 Google Maps API Key
