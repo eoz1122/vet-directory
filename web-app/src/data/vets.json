@@ -6012,5 +6012,105 @@
       ]
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "Munich-Szober",
+    "practice_name": "Tierarztpraxis Dr. Szober",
+    "city": "Munich",
+    "district": "Sendling-Westpark",
+    "address": "Johann-Clanze-Straße 23, 81369 München",
+    "coordinates": {
+      "lat": 48.1186,
+      "lng": 11.5366
+    },
+    "contact": {
+      "phone": "",
+      "website": "http://www.tierarzt-szober.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis+Dr.+Szober+Munich"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-01-01",
+      "english_signals": [
+        "Community Recommendation (Native speaker confirmed he speaks good English)"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Munich-Gollierplatz",
+    "practice_name": "Tierarztpraxis am Gollierplatz",
+    "city": "Munich",
+    "district": "Schwanthalerhöhe",
+    "address": "Gollierstraße 34, 80339 München",
+    "coordinates": {
+      "lat": 48.1362,
+      "lng": 11.5399
+    },
+    "contact": {
+      "phone": "",
+      "website": "https://www.tierarztpraxis-am-gollierplatz.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis+am+Gollierplatz+Munich"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-01-01",
+      "english_signals": [
+        "Community Recommendation (Client confirmed English communication)"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Munich-Filu-Theresienwiese",
+    "practice_name": "Filu Tierarztpraxis Theresienwiese (Ludwigsvorstadt)",
+    "city": "Munich",
+    "district": "Ludwigsvorstadt",
+    "address": "Lindwurmstraße 88, 80337 München",
+    "coordinates": {
+      "lat": 48.1265,
+      "lng": 11.5517
+    },
+    "contact": {
+      "phone": "",
+      "website": "https://filu.vet",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Filu+Tierarztpraxis+Theresienwiese"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-01-01",
+      "english_signals": [
+        "Chain with verified English speaking staff"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Munich-Heiss",
+    "practice_name": "Tierarztpraxis Isabelle Heiss",
+    "city": "Munich",
+    "district": "Bogenhausen",
+    "address": "Bogenhausen area",
+    "coordinates": {
+      "lat": 48.148,
+      "lng": 11.62
+    },
+    "contact": {
+      "phone": "",
+      "website": "",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis+Isabelle+Heiss+Munich"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-01-01",
+      "english_signals": [
+        "English speaking confirmed (User requested listing)"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
   }
 ]
