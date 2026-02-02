@@ -188,15 +188,6 @@ export default function DistrictVets() {
     const districtDisplay = districtKey.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
     const cityDisplay = cityKey.charAt(0).toUpperCase() + cityKey.slice(1);
 
-    // Get specific content or generate fallback
-    const content = DISTRICT_CONTENT[districtKey] || {
-        title: `English-Speaking Vets in ${districtDisplay}, ${cityDisplay}`,
-        description: `Find verified English-speaking veterinarians in ${districtDisplay}, ${cityDisplay}. Browse reviews, check services, and book appointments with trusted local practices.`,
-        content: `Living in ${districtDisplay} involves navigating daily life in a foreign language, but your pet's healthcare shouldn't be lost in translation. 
-        
-Our directory connects you with verified English-speaking veterinary practices in ${districtDisplay}. We rely on community feedback to ensure that every listed vet can communicate effectively in English, giving you peace of mind when your furry friend needs care.`
-    };
-
     const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
     const [showMobileOnly, setShowMobileOnly] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
@@ -209,6 +200,22 @@ Our directory connects you with verified English-speaking veterinary practices i
         (!showVerifiedOnly || vet.community_status === 'Verified') &&
         (!showMobileOnly || (vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown')))
     );
+
+    // Get specific content or generate fallback
+    const vetNames = districtVets.slice(0, 3).map(v => v.practice_name).join(', ');
+    const count = districtVets.length;
+
+    const content = DISTRICT_CONTENT[districtKey] || {
+        title: count > 0
+            ? `${count} English-Speaking Vets in ${districtDisplay}, ${cityDisplay}`
+            : `English-Speaking Vets in ${districtDisplay}, ${cityDisplay}`,
+        description: count > 0
+            ? `Find ${count} verified English-speaking veterinarians in ${districtDisplay}, ${cityDisplay}, including ${vetNames}. Browse reviews, check services, and book appointments.`
+            : `Find verified English-speaking veterinarians in ${districtDisplay}, ${cityDisplay}. Browse reviews, check services, and book appointments with trusted local practices.`,
+        content: `Living in ${districtDisplay} involves navigating daily life in a foreign language, but your pet's healthcare shouldn't be lost in translation. 
+        
+Our directory connects you with ${count > 0 ? `${count} ` : ''}verified English-speaking veterinary practices in ${districtDisplay}${count > 0 ? `, such as ${vetNames}` : ''}. We rely on community feedback to ensure that every listed vet can communicate effectively in English, giving you peace of mind when your furry friend needs care.`
+    };
 
     // JSON-LD Structured Data
     const breadcrumbLd = {

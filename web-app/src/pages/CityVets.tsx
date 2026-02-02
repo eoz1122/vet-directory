@@ -235,13 +235,15 @@ export default function CityVets() {
 
     if (!cityData) {
         if (cityVets.length > 0) {
-            // GENERIC CONTENT GENERATOR
+            // GENERIC CONTENT GENERATOR - ENRICHED FOR SEO
+            const vetNames = cityVets.slice(0, 3).map(v => v.practice_name).join(', ');
+
             cityData = {
-                title: `English-Speaking Vets in ${capitalizedCity}`,
-                description: `Find verified English-speaking veterinarians in ${capitalizedCity}. Browse our directory of ${cityVets.length} local practices trusted by the international community.`,
+                title: `${cityVets.length} English-Speaking Vets in ${capitalizedCity}`,
+                description: `Find ${cityVets.length} verified English-speaking veterinarians in ${capitalizedCity}, including ${vetNames}. Browse our directory of local practices trusted by the international community.`,
                 content: `Living in ${capitalizedCity} as an expat comes with many joys, but finding medical care for your pet shouldn't be a challenge. 
 
-Our directory lists verified veterinary practices in ${capitalizedCity} where you can communicate clearly in English. We understand that medical terminology is difficult enough in your native language, let alone in German.
+Our directory lists verified veterinary practices in ${capitalizedCity} where you can communicate clearly in English, including top-rated spots like ${vetNames}. We understand that medical terminology is difficult enough in your native language, let alone in German.
 
 **Why ${capitalizedCity} Pet Owners Use Our Directory:**
 - **Local Verification**: We track practices known to support international clients.
