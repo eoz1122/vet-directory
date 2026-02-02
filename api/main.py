@@ -52,9 +52,15 @@ def contact():
     msg = MIMEMultipart()
     # Resend requires a verified sender. We use the env var FROM_EMAIL.
     from_addr = os.getenv('FROM_EMAIL', SMTP_USER)
-    msg['From'] = from_addr
+    # Add friendly name "ESG Vet Directory"
+    msg['From'] = f"ESG Vet Directory <{from_addr}>"
     msg['To'] = RECIPIENT_EMAIL
+    
+    # Ensure [ESG] prefix is present for easy filtering/recognition
+    if not subject.startswith("[ESG]"):
+        subject = f"[ESG] {subject}"
     msg['Subject'] = subject
+
     # Important for Resend: Reply-To allows the vet to reply directly to the user
     if email:
         msg['Reply-To'] = email
