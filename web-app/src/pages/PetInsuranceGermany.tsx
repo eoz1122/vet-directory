@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { trackAffiliateClick } from '../utils/analytics';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -231,7 +232,9 @@ export default function PetInsuranceGermany() {
                             <p>As an expat, you want a provider that offers English policies and a simple, digital submission process. Here are our top recommendations:</p>
 
                             <div className="space-y-4 my-8 not-prose">
-                                <a href="https://www.getsafe.com" target="_blank" rel="noopener noreferrer" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
+                                <a href="https://www.getsafe.com"
+                                    onClick={() => trackAffiliateClick('Getsafe', 'PetInsurance_List')}
+                                    target="_blank" rel="noopener noreferrer" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <h4 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">Getsafe Pet Insurance</h4>
@@ -240,7 +243,9 @@ export default function PetInsuranceGermany() {
                                         <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity">Visit Website →</span>
                                     </div>
                                 </a>
-                                <a href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets" target="_blank" rel="noopener noreferrer" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
+                                <a href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets"
+                                    onClick={() => trackAffiliateClick('Feather', 'PetInsurance_List')}
+                                    target="_blank" rel="noopener noreferrer" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <h4 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">Feather Insurance</h4>

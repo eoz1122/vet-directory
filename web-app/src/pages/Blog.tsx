@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { trackAffiliateClick } from '../utils/analytics';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -146,6 +147,43 @@ export default function Blog() {
                         "Navigating German bureaucracy is hard. Doing it with four paws is harder. We make it simple."
                     </p>
                 </section>
+
+                {/* Affiliate Banner - Figo */}
+                <a
+                    href="https://tidd.ly/45yENEP"
+                    onClick={() => trackAffiliateClick('Figo', 'Blog_Banner')}
+                    target="_blank"
+                    rel="noopener noreferrer sponsored"
+                    className="block mb-16 relative overflow-hidden rounded-3xl bg-white border border-primary/5 shadow-sm hover:shadow-xl transition-all duration-300 group"
+                >
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -ml-32 -mb-32"></div>
+
+                    <div className="relative p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                        <div className="flex-shrink-0 bg-primary/5 p-6 rounded-2xl border border-primary/5 text-6xl">
+                            🛡️
+                        </div>
+
+                        <div className="flex-1 text-center md:text-left space-y-3">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 text-[10px] font-black uppercase tracking-widest bg-accent/10 text-accent rounded-full border border-accent/10">
+                                <span>Part of the Pack</span>
+                            </div>
+                            <h2 className="text-2xl md:text-3xl font-bold text-primary">
+                                Save 30€ on Pet Health Insurance
+                            </h2>
+                            <p className="text-primary/70 text-lg leading-relaxed max-w-xl">
+                                Vet bills in Germany can be a shock. We've partnered with <span className="font-bold text-primary">Figo</span> to offer comprehensive coverage that speaks your language.
+                            </p>
+                        </div>
+
+                        <div className="flex-shrink-0">
+                            <span className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-secondary font-bold rounded-xl hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 group-hover:scale-105 transform duration-300">
+                                Get Your Quote
+                                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                            </span>
+                        </div>
+                    </div>
+                </a>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogPosts.map((post) => (

@@ -242,6 +242,7 @@ Our directory connects you with verified English-speaking veterinary practices i
                 <title>{content.title} | The Pack</title>
                 <meta name="description" content={content.description} />
                 <link rel="canonical" href={`https://englishspeakinggermany.online/vets/${cityKey}/${districtKey.replace(/\s+/g, '-')}`} />
+                {districtVets.length === 0 && <meta name="robots" content="noindex" />}
                 <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
             </Helmet>
 

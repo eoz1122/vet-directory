@@ -251,6 +251,10 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
         } else {
             return (
                 <div className="min-h-screen bg-secondary flex items-center justify-center">
+                    <Helmet>
+                        <title>City Not Found | The Pack</title>
+                        <meta name="robots" content="noindex" />
+                    </Helmet>
                     <div className="text-center">
                         <h1 className="text-4xl font-bold text-primary mb-4">City Not Found</h1>
                         <p className="text-primary/60 mb-6">We currently don't have any verified vets listed for {capitalizedCity}.</p>

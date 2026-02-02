@@ -2,6 +2,6 @@ export { };
 
 declare global {
     interface Window {
-        gtag: (command: string, targetId: string, config?: object) => void;
+        gtag: (...args: any[]) => void;
     }
 }

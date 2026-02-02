@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { trackAffiliateClick } from '../utils/analytics';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -176,7 +177,9 @@ export default function PetEmergencyGermany() {
                             <div className="bg-white p-4 rounded-xl border-l-4 border-accent shadow-sm my-6 text-sm">
                                 <p className="font-bold text-primary mb-1">💡 Expats Recommend:</p>
                                 <p className="opacity-80">
-                                    <a href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">Feather Insurance</a> is popular among expats because they process claims via a simple English app, often reimbursing within days.
+                                    <a href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets"
+                                        onClick={() => trackAffiliateClick('Feather', 'PetEmergency_Sidebar')}
+                                        target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">Feather Insurance</a> is popular among expats because they process claims via a simple English app, often reimbursing within days.
                                     <span className="text-[10px] opacity-50 block mt-1">*Affiliate Link</span>
                                 </p>
                             </div>

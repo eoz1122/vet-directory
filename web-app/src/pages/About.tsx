@@ -1,9 +1,15 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function About() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary relative overflow-hidden">
+            <Helmet>
+                <title>About Us | The Pack</title>
+                <meta name="description" content="Learn about the mission behind The Pack and our community-driven effort to help expats find English-speaking vets in Germany." />
+                <link rel="canonical" href="https://englishspeakinggermany.online/about" />
+            </Helmet>
 
             {/* Header / Nav */}
             {/* Header / Nav */}

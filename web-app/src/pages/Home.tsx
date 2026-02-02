@@ -22,8 +22,9 @@ const Home: React.FC = () => {
     // Parse query params for initial city filtering
     const [searchParams] = useSearchParams();
 
+    // Initialize state with URL params
     const [selectedCity, setSelectedCity] = useState(searchParams.get('city') || 'All');
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState(searchParams.get('s') || searchParams.get('q') || '');
     const [showVerifiedOnly, setShowVerifiedOnly] = useState(true);
     const [showMobileOnly, setShowMobileOnly] = useState(false);
     const [showEmergencyOnly, setShowEmergencyOnly] = useState(false);
@@ -34,11 +35,17 @@ const Home: React.FC = () => {
 
     const [searchRadius, setSearchRadius] = useState<number | null>(null);
 
-    // Update selected city if URL params change (e.g. back navigation)
-    useEffect(() => {
-        const cityParam = searchParams.get('city');
-        if (cityParam) setSelectedCity(cityParam);
-    }, [searchParams]);
+    // Sync state with URL param during render to avoid cascading updates
+    const cityParam = searchParams.get('city');
+    const queryParam = searchParams.get('s') || searchParams.get('q');
+
+    if (cityParam && cityParam !== selectedCity) {
+        setSelectedCity(cityParam);
+    }
+
+    if (queryParam && queryParam !== searchTerm) {
+        setSearchTerm(queryParam);
+    }
 
     // Dynamic city list derived from data
     const allCities = Array.from(new Set(vets.map(v => v.city || 'Unknown'))).sort();
@@ -150,8 +157,9 @@ const Home: React.FC = () => {
     return (
         <APIProvider apiKey={apiKey} language="en">
             <Helmet>
-                <title>The Pack | 170+ Verified English-Speaking Vets in Germany</title>
+                <title>The Pack | {vets.length} Verified English-Speaking Vets in Germany</title>
                 <meta name="description" content="Find verified English-speaking veterinarians in Berlin, Hamburg, Frankfurt and more. Germany's most comprehensive community-sourced vet directory." />
+                <link rel="canonical" href="https://englishspeakinggermany.online" />
                 <script type="application/ld+json">
                     {JSON.stringify([jsonLd, listingSchema])}
                 </script>

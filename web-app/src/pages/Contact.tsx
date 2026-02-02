@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -53,24 +54,21 @@ export default function Contact() {
         };
 
         try {
-            // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree ID (e.g. 'mqkrpkvn')
-            // You can get one for free at https://formspree.io
-            const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
+            // Send to our custom Python Backend
+            // In development, this points to localhost:5000 via proxy or direct
+            // In production, Nginx will route /api/contact to the Flask app
+            const API_URL = import.meta.env.DEV ? 'http://localhost:5000/api/contact' : '/api/contact';
 
-            if (FORMSPREE_ID === 'YOUR_FORMSPREE_ID') {
-                console.log("Form Submission (Simulated):", JSON.stringify(finalData, null, 2));
-                // If no ID provided, simulate success after delay
-                await new Promise(resolve => setTimeout(resolve, 1500));
-            } else {
-                const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(finalData)
-                });
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(finalData)
+            });
 
-                if (!response.ok) {
-                    throw new Error('Failed to send message. Please try again later.');
-                }
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Failed to send message.');
             }
 
             setSubmitted(true);
@@ -94,6 +92,11 @@ export default function Contact() {
 
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
+            <Helmet>
+                <title>Contact Us | The Pack</title>
+                <meta name="description" content="Get in touch with The Pack. Submit a vet recommendation, report an issue, or ask a question." />
+                <link rel="canonical" href="https://englishspeakinggermany.online/contact" />
+            </Helmet>
             {/* Header / Nav */}
             <Header />
 

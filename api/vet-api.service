@@ -1,0 +1,18 @@
+[Unit]
+Description=Gunicorn instance to serve The Pack API
+After=network.target
+
+[Service]
+# CHANGE THIS to your actual user and path
+User=root
+Group=www-data
+WorkingDirectory=/var/www/englishspeakinggermany.online/api
+Environment="PATH=/var/www/englishspeakinggermany.online/api/venv/bin"
+Environment="PORT=5000"
+# Load env vars from .env file if supported or defining them here
+# EnvironmentFile=/var/www/englishspeakinggermany.online/api/.env
+
+ExecStart=/var/www/englishspeakinggermany.online/api/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:5000 main:app
+
+[Install]
+WantedBy=multi-user.target
