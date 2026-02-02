@@ -50,9 +50,15 @@ def contact():
     """
 
     msg = MIMEMultipart()
-    msg['From'] = SMTP_USER
+    # Resend requires a verified sender. We use the env var FROM_EMAIL.
+    from_addr = os.getenv('FROM_EMAIL', SMTP_USER)
+    msg['From'] = from_addr
     msg['To'] = RECIPIENT_EMAIL
     msg['Subject'] = subject
+    # Important for Resend: Reply-To allows the vet to reply directly to the user
+    if email:
+        msg['Reply-To'] = email
+
     msg.attach(MIMEText(email_body, 'plain'))
 
     try:
