@@ -16,19 +16,19 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
 
-    // Default consent mode (set to denied until user accepts)
+    // Default consent mode - analytics granted for basic tracking
     gtag('consent', 'default', {
-      'analytics_storage': 'denied',
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
+      'analytics_storage': 'granted',  // Enable basic analytics
+      'ad_storage': 'denied',         // No advertising cookies
+      'ad_user_data': 'denied',       // No user data for ads
+      'ad_personalization': 'denied',  // No personalized ads
       'wait_for_update': 500
     });
 
     gtag('js', new Date());
     gtag('config', 'G-J6ZEGYZGVV', {
       'anonymize_ip': true,
-      'send_page_view': false
+      'send_page_view': true  // Enable automatic page view tracking
     });
   </script>
 </head>

@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { sendGAEvent } from '../utils/analytics';
 
 export default function Contact() {
     const [searchParams] = useSearchParams();
@@ -70,6 +71,14 @@ export default function Contact() {
             if (!response.ok) {
                 throw new Error(data.error || 'Failed to send message.');
             }
+
+            // Track successful submission in GA
+            sendGAEvent('form_submit', {
+                form_name: 'contact_form',
+                form_topic: formData.topic,
+                event_category: 'engagement',
+                event_label: `Contact Form - ${formData.topic}`
+            });
 
             setSubmitted(true);
             setFormData({
