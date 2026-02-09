@@ -206,8 +206,7 @@ const Home: React.FC = () => {
                                     <div className="space-y-3">
                                         <div className="flex flex-wrap gap-2 pb-2">
                                             {/* "All" Button */}
-                                            <Link
-                                                to="/"
+                                            <button
                                                 onClick={() => handleCityChange('All')}
                                                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm inline-block text-center ${selectedCity === 'All'
                                                     ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
@@ -215,17 +214,20 @@ const Home: React.FC = () => {
                                                     }`}
                                             >
                                                 All
-                                            </Link>
+                                            </button>
 
                                             {/* Priority Cities */}
                                             {mainCities.map(city => (
-                                                <Link
+                                                <button
                                                     key={city}
-                                                    to={`/vets/${city.toLowerCase()}`}
-                                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm inline-block text-center bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80`}
+                                                    onClick={() => handleCityChange(city)}
+                                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm inline-block text-center ${selectedCity === city
+                                                        ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
+                                                        : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
+                                                        }`}
                                                 >
                                                     {city}
-                                                </Link>
+                                                </button>
                                             ))}
 
                                             {/* Custom Dropdown for Other Cities */}
@@ -241,13 +243,16 @@ const Home: React.FC = () => {
                                                     {/* Dropdown Menu */}
                                                     <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-primary/10 overflow-hidden z-[100] hidden group-hover:block max-h-64 overflow-y-auto custom-scrollbar">
                                                         {otherCities.map(city => (
-                                                            <Link
+                                                            <button
                                                                 key={city}
-                                                                to={`/vets/${city.toLowerCase()}`}
-                                                                className="block px-4 py-2 text-xs font-bold text-primary/70 hover:bg-primary/5 hover:text-primary transition-colors text-left"
+                                                                onClick={() => handleCityChange(city)}
+                                                                className={`w-full block px-4 py-2 text-xs font-bold text-left transition-colors ${selectedCity === city
+                                                                    ? 'bg-primary/10 text-primary'
+                                                                    : 'text-primary/70 hover:bg-primary/5 hover:text-primary'
+                                                                    }`}
                                                             >
                                                                 {city}
-                                                            </Link>
+                                                            </button>
                                                         ))}
                                                     </div>
                                                 </div>
