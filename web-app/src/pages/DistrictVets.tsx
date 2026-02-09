@@ -246,7 +246,7 @@ Our directory connects you with ${count > 0 ? `${count} ` : ''}verified English-
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>{content.title} | The Pack</title>
+                <title>{`${content.title} | The Pack`}</title>
                 <meta name="description" content={content.description} />
                 <link rel="canonical" href={`https://englishspeakinggermany.online/vets/${cityKey}/${districtKey.replace(/\s+/g, '-')}`} />
                 {districtVets.length === 0 && <meta name="robots" content="noindex" />}

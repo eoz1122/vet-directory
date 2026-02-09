@@ -314,7 +314,7 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>{cityData.title} | Verified English-Speaking Clinics | EnglishSpeakingVets</title>
+                <title>{`${cityData.title} | Verified English-Speaking Clinics | EnglishSpeakingVets`}</title>
                 <meta name="description" content={cityData.description} />
                 <meta name="keywords" content={`English speaking vet ${capitalizedCity}, veterinarian ${capitalizedCity}, pet care ${capitalizedCity}, animal hospital ${capitalizedCity}, English vet Germany`} />
                 <link rel="canonical" href={`https://englishspeakinggermany.online/vets/${cityKey}`} />

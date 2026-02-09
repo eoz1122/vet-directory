@@ -157,7 +157,7 @@ const Home: React.FC = () => {
     return (
         <APIProvider apiKey={apiKey} language="en">
             <Helmet>
-                <title>The Pack | {vets.length} Verified English-Speaking Vets in Germany</title>
+                <title>{`The Pack | ${vets.length} Verified English-Speaking Vets in Germany`}</title>
                 <meta name="description" content="Find verified English-speaking veterinarians in Berlin, Hamburg, Frankfurt and more. Germany's most comprehensive community-sourced vet directory." />
                 <link rel="canonical" href="https://englishspeakinggermany.online" />
                 <script type="application/ld+json">
