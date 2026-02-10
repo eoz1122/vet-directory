@@ -257,6 +257,20 @@ export default function PetInsuranceGermany() {
                                         </div>
                                     </div>
                                 </a>
+                                <a href="https://tidd.ly/45yENEP"
+                                    onClick={() => trackAffiliateClick('Figo', 'PetInsurance_List')}
+                                    target="_blank" rel="noopener noreferrer sponsored" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <h4 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">Figo (Luko) Pet Insurance</h4>
+                                            <p className="text-sm opacity-60">High coverage limits and comprehensive English support.</p>
+                                        </div>
+                                        <div className="text-right">
+                                            <span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity font-bold text-sm block">Get a Quote →</span>
+                                            <span className="text-[10px] text-primary/30 opacity-0 group-hover:opacity-100 transition-opacity block">*Affiliate Link</span>
+                                        </div>
+                                    </div>
+                                </a>
                                 <div className="p-6 bg-white rounded-2xl border border-primary/5 shadow-sm">
                                     <h4 className="text-lg font-bold text-primary">Agila / Uelzener</h4>
                                     <p className="text-sm opacity-60">The traditional giants. Extremely reliable coverage, but their English support varies.</p>
