@@ -123,6 +123,13 @@ const blogPosts = [
         emoji: "💊",
         category: "HEALTH",
         desc: "Where to buy, how prescriptions work, and why you can't have antibiotics shipped. Comparing vet prices vs. online pharmacies like Medpets."
+    },
+    {
+        url: "/blog/best-pet-food-germany-dinner-for-dogs",
+        title: "🥘 Best Pet Food in Germany",
+        emoji: "🥘",
+        category: "HEALTH",
+        desc: "Beyond industrial kibble. A guide to high-quality fresh pet food in Germany, featuring a review of Dinner for Dogs direct-to-door delivery."
     }
 ];
 

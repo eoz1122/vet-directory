@@ -37,6 +37,7 @@ const PetEmergencyMunich = lazy(() => import('./pages/PetEmergencyMunich'));
 const PetEmergencyHamburg = lazy(() => import('./pages/PetEmergencyHamburg'));
 const PetEmergencyFrankfurt = lazy(() => import('./pages/PetEmergencyFrankfurt'));
 const PetMedicationGermany = lazy(() => import('./pages/PetMedicationGermany'));
+const PetFoodGermany = lazy(() => import('./pages/PetFoodGermany'));
 const Admin = lazy(() => import('./pages/Admin'));
 
 // Loading fallback component
@@ -84,6 +85,7 @@ function App() {
             <Route path="/guides/emergency-vets-hamburg" element={<PetEmergencyHamburg />} />
             <Route path="/guides/emergency-vets-frankfurt" element={<PetEmergencyFrankfurt />} />
             <Route path="/blog/pet-medication-germany-guide" element={<PetMedicationGermany />} />
+            <Route path="/blog/best-pet-food-germany-dinner-for-dogs" element={<PetFoodGermany />} />
 
             <Route path="/vets/:city" element={<CityVets />} />
             <Route path="/vets/:city/:district" element={<DistrictVets />} />
