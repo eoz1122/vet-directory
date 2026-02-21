@@ -25,6 +25,16 @@ export default function Footer() {
                 <p className="opacity-60 text-xs md:text-sm">
                     © 2025 EnglishSpeakingVets Germany • Made with ❤️ for pets.
                 </p>
+                <div className="mt-2 text-[14px] flex items-center justify-center gap-2 opacity-60">
+                    Software designed by{' '}
+                    <a href="https://aequabil.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
+                        aequabil.com
+                        <span
+                            className="inline-block w-[8px] h-[8px] bg-white rounded-[1px]"
+                            style={{ boxShadow: '0 0 6px 2px rgba(255,255,255,0.8), 0 0 12px 4px rgba(255,255,255,0.4), 0 0 20px 8px rgba(255,255,255,0.2)' }}
+                        />
+                    </a>
+                </div>
             </div>
         </footer>
     );
