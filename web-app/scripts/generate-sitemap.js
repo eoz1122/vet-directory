@@ -26,15 +26,18 @@ function encodePath(urlPath) {
     return urlPath.split('/').map(part => encodeURIComponent(part)).join('/');
 }
 
-// 1. Static Routes
+// Current build date for lastmod
+const BUILD_DATE = new Date().toISOString().split('T')[0];
+
+// 1. Static Routes (with proper priority tiering)
 const staticRoutes = [
-    { url: '/', changefreq: 'weekly', priority: 1.0 },
-    { url: '/about', changefreq: 'monthly', priority: 0.8 },
-    { url: '/quality-promise', changefreq: 'monthly', priority: 0.7 },
-    { url: '/contact', changefreq: 'monthly', priority: 0.7 },
-    { url: '/blog', changefreq: 'weekly', priority: 0.8 }, // Lowered priority for blog index
-    { url: '/impressum', changefreq: 'yearly', priority: 0.3 },
-    { url: '/privacy', changefreq: 'yearly', priority: 0.3 },
+    { url: '/', changefreq: 'weekly', priority: 1.0, lastmod: BUILD_DATE },
+    { url: '/about', changefreq: 'monthly', priority: 0.6, lastmod: BUILD_DATE },
+    { url: '/quality-promise', changefreq: 'monthly', priority: 0.5, lastmod: BUILD_DATE },
+    { url: '/contact', changefreq: 'monthly', priority: 0.5, lastmod: BUILD_DATE },
+    { url: '/blog', changefreq: 'weekly', priority: 0.8, lastmod: BUILD_DATE },
+    { url: '/impressum', changefreq: 'yearly', priority: 0.3, lastmod: BUILD_DATE },
+    { url: '/privacy', changefreq: 'yearly', priority: 0.3, lastmod: BUILD_DATE },
 ];
 
 function getBlogRoutes() {
@@ -52,7 +55,7 @@ function getBlogRoutes() {
             routes.push({
                 url: match[1],
                 changefreq: 'monthly',
-                priority: 0.8 // Updated priority
+                priority: 0.8, // Blog posts - good priority
             });
         }
         console.log(`Found ${routes.length} blog posts.`);
@@ -83,7 +86,7 @@ function getVetRoutes() {
             return {
                 url: `/vets/${sanitizeSlug(city)}`,
                 changefreq: 'weekly',
-                priority: 1.0, // Major landing pages
+                priority: 0.9, // City landing pages - high priority
                 lastmod: latestScan
             };
         });
@@ -117,7 +120,7 @@ function getVetRoutes() {
                     districtRoutes.push({
                         url: `/vets/${key}`,
                         changefreq: 'weekly',
-                        priority: 1.0, // High priority for district pages
+                        priority: 0.7, // District pages - medium priority
                         lastmod: latestScan
                     });
                 }

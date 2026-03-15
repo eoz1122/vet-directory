@@ -85,7 +85,10 @@ const Admin: React.FC = () => {
     if (!isAuthenticated) {
         return (
             <div className="min-h-screen bg-secondary flex items-center justify-center p-4">
-                <Helmet><title>Admin Login | The Pack</title></Helmet>
+                <Helmet>
+                    <title>Admin Login | The Pack</title>
+                    <meta name="robots" content="noindex, nofollow" />
+                </Helmet>
                 <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border border-primary/5">
                     <h1 className="text-2xl font-black text-primary mb-6 text-center">Admin Access</h1>
                     <form onSubmit={handleLogin} className="space-y-4">
@@ -108,7 +111,10 @@ const Admin: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-secondary/30 pb-20">
-            <Helmet><title>Admin Dashboard | The Pack</title></Helmet>
+            <Helmet>
+                <title>Admin Dashboard | The Pack</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Helmet>
 
             {/* Header */}
             <header className="bg-white border-b border-primary/5 sticky top-0 z-30">
