@@ -190,6 +190,39 @@ async function prerender() {
             // Small delay for any final renders
             await new Promise(r => setTimeout(r, 200));
 
+            // Clean up dynamic elements that break React hydration
+            await page.evaluate(() => {
+                // 1. Clear Google Maps containers — the static snapshot breaks the live map
+                document.querySelectorAll('[data-testid="map"], .gm-style, [class*="map"]').forEach(el => {
+                    if (el.closest('[data-testid="map"]') || el.getAttribute('data-testid') === 'map') {
+                        el.innerHTML = '';
+                    }
+                });
+
+                // 2. Remove Google Maps injected styles from <head>
+                document.querySelectorAll('style').forEach(style => {
+                    if (style.textContent && (
+                        style.textContent.includes('.pac-container') ||
+                        style.textContent.includes('.gm-') ||
+                        style.textContent.includes('yNHHyP') ||
+                        style.textContent.includes('IPAZAH')
+                    )) {
+                        style.remove();
+                    }
+                });
+
+                // 3. Remove Google Maps scripts injected at runtime
+                document.querySelectorAll('script[src*="maps.googleapis.com"]').forEach(s => s.remove());
+
+                // 4. Remove cookie consent overlay (should mount fresh)
+                document.querySelectorAll('[class*="cookie"], [class*="consent"]').forEach(el => {
+                    // Only remove the fixed overlay, not inline mentions
+                    if (el.classList.contains('fixed') || getComputedStyle(el).position === 'fixed') {
+                        el.remove();
+                    }
+                });
+            });
+
             const html = await page.content();
 
             // Determine output path
