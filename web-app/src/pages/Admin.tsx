@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import type { Vet } from '../types/vet';
 import vetsData from '../data/vets.json';
 
-// Simple client-side auth for local usage safety
-const ACCESS_CODE = 'pack-admin-2026';
+// Admin access code from environment - never hardcode secrets in source
+const ACCESS_CODE = import.meta.env.VITE_ADMIN_CODE || '';
 
 type FilterType = 'all' | 'missing_data' | 'pending' | 'modified';
 
