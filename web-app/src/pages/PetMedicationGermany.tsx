@@ -6,6 +6,7 @@ import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { appendUTM } from '../utils/url';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PetMedicationGermany() {
     return (
@@ -14,7 +15,20 @@ export default function PetMedicationGermany() {
                 <title>How to Get Pet Medication in Germany: The Complete Guide | EnglishSpeakingVets</title>
                 <meta name="description" content="A complete guide to getting pet medication in Germany. Learn about prescriptions (Rezept), pharmacies (Apotheke), online pet pharmacies like Medpets, and how the German vet medication system works." />
                 <meta name="keywords" content="pet medication Germany, dog medication Germany, cat medication Germany, veterinaray prescription Germany, Medpets Germany, Tierapotheke, apothekenpflichtig, rezeptpflichtig" />
+                <meta property="og:title" content="How to Get Pet Medication in Germany: The Complete Guide" />
+                <meta property="og:description" content="A complete guide to getting pet medication in Germany. Learn about prescriptions (Rezept), pharmacies (Apotheke), online pet pharmacies like Medpets, and how the German vet medication system works." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-medication-germany-guide" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-medication-germany-guide" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "How to Get Pet Medication in Germany: The Complete Guide",
+                        "A complete guide to getting pet medication in Germany. Learn about prescriptions (Rezept), pharmacies (Apotheke), online pet pharmacies like Medpets, and how the German vet medication system works.",
+                        "https://englishspeakinggermany.online/blog/pet-medication-germany-guide",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

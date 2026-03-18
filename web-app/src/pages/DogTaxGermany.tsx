@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function DogTaxGermany() {
     return (
@@ -16,7 +17,17 @@ export default function DogTaxGermany() {
                 <meta property="og:title" content="Hundesteuer (Dog Tax) in Germany: The Complete 2025 Guide" />
                 <meta property="og:description" content="Yes, Germany taxes dogs. Here's everything expats need to know about Hundesteuer, registration, costs, and exemptions." />
                 <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Hundesteuer (Dog Tax) in Germany: The Complete 2025 Guide",
+                        "Yes, Germany taxes dogs. Here's everything expats need to know about Hundesteuer, registration, costs, and exemptions.",
+                        "https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

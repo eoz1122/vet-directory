@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PetInsuranceGermany() {
     return (
@@ -14,7 +15,20 @@ export default function PetInsuranceGermany() {
                 <title>Pet Insurance in Germany (2025): Do You Really Need It? | EnglishSpeakingVets</title>
                 <meta name="description" content="A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2025." />
                 <meta name="keywords" content="pet insurance Germany, dog liability insurance Germany, Hundehaftpflichtversicherung, pet health insurance Germany, vet costs Germany GOT, Tierkrankenversicherung" />
+                <meta property="og:title" content="Pet Insurance in Germany (2025): Do You Really Need It?" />
+                <meta property="og:description" content="A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2025." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-insurance-germany-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-insurance-germany-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Pet Insurance in Germany (2025): Do You Really Need It?",
+                        "A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2025.",
+                        "https://englishspeakinggermany.online/blog/pet-insurance-germany-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

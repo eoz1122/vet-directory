@@ -37,3 +37,32 @@ export function generateListingSchema(vets: Vet[], title: string, description: s
         }))
     };
 }
+
+export function generateArticleSchema(title: string, description: string, url: string, datePublished: string, imageUrl: string = "https://englishspeakinggermany.online/logo.png") {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "description": description,
+        "image": imageUrl,
+        "author": {
+            "@type": "Organization",
+            "name": "EnglishSpeakingVets Germany",
+            "url": "https://englishspeakinggermany.online/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "EnglishSpeakingVets Germany",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://englishspeakinggermany.online/logo.png"
+            }
+        },
+        "datePublished": datePublished,
+        "dateModified": new Date().toISOString().split('T')[0],
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": url
+        }
+    };
+}

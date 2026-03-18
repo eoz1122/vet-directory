@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PublicTransportMunich() {
     return (
@@ -13,7 +14,20 @@ export default function PublicTransportMunich() {
                 <title>Public Transport with Dogs in Munich (2025 MVV Rules) | EnglishSpeakingVets</title>
                 <meta name="description" content="Guide to taking dogs on public transport in Munich (MVV). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
                 <meta name="keywords" content="dogs on public transport Munich, MVV dog rules, Munich U-Bahn with dog, Munich dog ticket cost, Deutschlandticket dog Munich" />
+                <meta property="og:title" content="Public Transport with Dogs in Munich (2025 MVV Rules)" />
+                <meta property="og:description" content="Guide to taking dogs on public transport in Munich (MVV). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-munich-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-munich-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Public Transport with Dogs in Munich (2025 MVV Rules)",
+                        "Guide to taking dogs on public transport in Munich (MVV). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info.",
+                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-munich-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

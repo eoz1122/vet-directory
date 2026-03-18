@@ -5,6 +5,7 @@ import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { trackAffiliateClick } from '../utils/analytics';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PetFoodGermany() {
     const affiliateLink = "https://tidd.ly/4au55tO";
@@ -15,7 +16,20 @@ export default function PetFoodGermany() {
                 <title>Best Pet Food in Germany: Quality Options & Dinner for Dogs Review | EnglishSpeakingVets</title>
                 <meta name="description" content="A guide to choosing the best pet food in Germany. Expert review of Dinner for Dogs, high-quality fresh feeding, and how to navigate German pet food labels for your dog or cat." />
                 <meta name="keywords" content="dog food Germany, cat food Germany, Dinner for Dogs Germany, high quality pet food, fresh pet food delivery Germany, Hundeessen, Katzenfutter, expat pet care" />
+                <meta property="og:title" content="Best Pet Food in Germany: Quality Options & Dinner for Dogs Review" />
+                <meta property="og:description" content="A guide to choosing the best pet food in Germany. Expert review of Dinner for Dogs, high-quality fresh feeding, and how to navigate German pet food labels for your dog or cat." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/best-pet-food-germany-dinner-for-dogs" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/best-pet-food-germany-dinner-for-dogs" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Best Pet Food in Germany: Quality Options & Dinner for Dogs Review",
+                        "A guide to choosing the best pet food in Germany. Expert review of Dinner for Dogs, high-quality fresh feeding, and how to navigate German pet food labels for your dog or cat.",
+                        "https://englishspeakinggermany.online/blog/best-pet-food-germany-dinner-for-dogs",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

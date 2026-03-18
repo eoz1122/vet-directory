@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function GermanVetPhrases() {
     return (
@@ -12,7 +13,20 @@ export default function GermanVetPhrases() {
                 <title>German Vet Survival Kit: Essential Phrases for Expats | EnglishSpeakingVets</title>
                 <meta name="description" content="Learn the essential German words and phrases for visiting the vet with your pet. From making appointments to describing symptoms like Durchfall." />
                 <meta name="keywords" content="German vet phrases, pet emergency German, German medical terms for dogs, expat guide Germany pets" />
+                <meta property="og:title" content="German Vet Survival Kit: Essential Phrases for Expats" />
+                <meta property="og:description" content="Learn the essential German words and phrases for visiting the vet with your pet. From making appointments to describing symptoms like Durchfall." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/german-vet-survival-kit-phrases" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/german-vet-survival-kit-phrases" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "German Vet Survival Kit: Essential Phrases for Expats",
+                        "Learn the essential German words and phrases for visiting the vet with your pet. From making appointments to describing symptoms like Durchfall.",
+                        "https://englishspeakinggermany.online/blog/german-vet-survival-kit-phrases",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

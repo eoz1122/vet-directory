@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PublicTransportStuttgart() {
     return (
@@ -13,7 +14,20 @@ export default function PublicTransportStuttgart() {
                 <title>Public Transport with Dogs in Stuttgart (2025 VVS Guide) | EnglishSpeakingVets</title>
                 <meta name="description" content="Guide to taking dogs on public transport in Stuttgart (VVS). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
                 <meta name="keywords" content="dogs on public transport Stuttgart, VVS dog rules, Stuttgart U-Bahn with dog, Stuttgart dog ticket cost, Deutschlandticket dog Stuttgart" />
+                <meta property="og:title" content="Public Transport with Dogs in Stuttgart (2025 VVS Guide)" />
+                <meta property="og:description" content="Guide to taking dogs on public transport in Stuttgart (VVS). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-stuttgart-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-stuttgart-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Public Transport with Dogs in Stuttgart (2025 VVS Guide)",
+                        "Guide to taking dogs on public transport in Stuttgart (VVS). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info.",
+                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-stuttgart-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

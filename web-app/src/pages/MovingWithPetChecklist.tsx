@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function MovingWithPetChecklist() {
     return (
@@ -16,7 +17,17 @@ export default function MovingWithPetChecklist() {
                 <meta property="og:title" content="Moving to Germany with a Pet: The 2025 Survival Checklist" />
                 <meta property="og:description" content="Don't get stuck at customs. Essential guide for expats bringing pets to Germany in 2025: Microchips, vaccines, and the critical 15-week rule." />
                 <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/moving-to-germany-with-pet-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/moving-to-germany-with-pet-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Moving to Germany with a Pet: The 2025 Survival Checklist",
+                        "Don't get stuck at customs. Essential guide for expats bringing pets to Germany in 2025: Microchips, vaccines, and the critical 15-week rule.",
+                        "https://englishspeakinggermany.online/blog/moving-to-germany-with-pet-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

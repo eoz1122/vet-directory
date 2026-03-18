@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import BlogSidebar from '../components/BlogSidebar';
 import RelatedPosts from '../components/RelatedPosts';
 import GuideDisclaimer from '../components/GuideDisclaimer';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PetEmergencyHamburg() {
     return (
@@ -13,7 +14,20 @@ export default function PetEmergencyHamburg() {
                 <title>24/7 Emergency Vets in Hamburg | English-Speaking Emergency Care | EnglishSpeakingVets</title>
                 <meta name="description" content="Complete guide to 24/7 emergency veterinary clinics in Hamburg with English-speaking staff. Tierklinik Lademannbogen and other verified emergency contacts." />
                 <meta name="keywords" content="emergency vet Hamburg, 24/7 veterinary Hamburg, Tierklinik Lademannbogen, Tiernotdienst Hamburg, English vet emergency Hamburg" />
+                <meta property="og:title" content="24/7 Emergency Vets in Hamburg | English-Speaking Emergency Care" />
+                <meta property="og:description" content="Complete guide to 24/7 emergency veterinary clinics in Hamburg with English-speaking staff. Tierklinik Lademannbogen and other verified emergency contacts." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/guides/emergency-vets-hamburg" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/guides/emergency-vets-hamburg" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "24/7 Emergency Vets in Hamburg | English-Speaking Emergency Care",
+                        "Complete guide to 24/7 emergency veterinary clinics in Hamburg with English-speaking staff. Tierklinik Lademannbogen and other verified emergency contacts.",
+                        "https://englishspeakinggermany.online/guides/emergency-vets-hamburg",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

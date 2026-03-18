@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PublicTransportFrankfurt() {
     return (
@@ -16,7 +17,17 @@ export default function PublicTransportFrankfurt() {
                 <meta property="og:title" content="Public Transport with Dogs in Frankfurt (RMV): The 2025 Expat Survival Guide" />
                 <meta property="og:description" content="Frankfurt's RMV network allows free travel for dogs, but the muzzle rules are tricky. Here is your 2025 survival guide." />
                 <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Public Transport with Dogs in Frankfurt (RMV): The 2025 Expat Survival Guide",
+                        "Frankfurt's RMV network allows free travel for dogs, but the muzzle rules are tricky. Here is your 2025 survival guide.",
+                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

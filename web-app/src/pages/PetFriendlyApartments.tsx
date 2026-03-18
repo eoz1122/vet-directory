@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PetFriendlyApartments() {
     return (
@@ -13,7 +14,20 @@ export default function PetFriendlyApartments() {
                 <title>Finding a Pet-Friendly Apartment in Germany (2025) | Rights & Tips</title>
                 <meta name="description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2025." />
                 <meta name="keywords" content="Finding a pet-friendly apartment in Germany, German rental law pets 2025, dog-friendly neighborhoods Berlin, pet resume for landlords Germany, cat ownership rental laws Germany" />
+                <meta property="og:title" content="Finding a Pet-Friendly Apartment in Germany (2025) | Rights & Tips" />
+                <meta property="og:description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2025." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Finding a Pet-Friendly Apartment in Germany (2025) | Rights & Tips",
+                        "Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2025.",
+                        "https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             {/* Header */}

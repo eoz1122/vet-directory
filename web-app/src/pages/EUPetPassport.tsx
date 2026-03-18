@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function EUPetPassport() {
     return (
@@ -16,7 +17,17 @@ export default function EUPetPassport() {
                 <meta property="og:title" content="EU Pet Passports: The Ultimate Freedom Pass for Expat Pet Owners" />
                 <meta property="og:description" content="Your health certificate expires. An EU Pet Passport doesn't. Here's how to get one in Germany and travel freely across Europe." />
                 <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/eu-pet-passport-germany-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/eu-pet-passport-germany-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "EU Pet Passports: The Ultimate Freedom Pass for Expat Pet Owners",
+                        "Living in Germany? Learn how to get an EU Pet Passport for your dog or cat. Valid indefinitely for travel across Europe. Step-by-step guide for expats in 2025.",
+                        "https://englishspeakinggermany.online/blog/eu-pet-passport-germany-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

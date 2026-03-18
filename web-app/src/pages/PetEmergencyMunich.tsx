@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import BlogSidebar from '../components/BlogSidebar';
 import RelatedPosts from '../components/RelatedPosts';
 import GuideDisclaimer from '../components/GuideDisclaimer';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PetEmergencyMunich() {
     return (
@@ -13,7 +14,20 @@ export default function PetEmergencyMunich() {
                 <title>24/7 Emergency Vets in Munich | English-Speaking Emergency Care | EnglishSpeakingVets</title>
                 <meta name="description" content="Complete guide to 24/7 emergency veterinary clinics in Munich (München) with English-speaking staff. Verified addresses, LMU clinic details, and phone numbers." />
                 <meta name="keywords" content="emergency vet Munich, 24/7 veterinary Munich, Tierklinik LMU emergency, Tiernotdienst München, English vet emergency Munich" />
+                <meta property="og:title" content="24/7 Emergency Vets in Munich | English-Speaking Emergency Care" />
+                <meta property="og:description" content="Complete guide to 24/7 emergency veterinary clinics in Munich (München) with English-speaking staff. Verified addresses, LMU clinic details, and phone numbers." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/guides/emergency-vets-munich" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/guides/emergency-vets-munich" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "24/7 Emergency Vets in Munich | English-Speaking Emergency Care",
+                        "Complete guide to 24/7 emergency veterinary clinics in Munich (München) with English-speaking staff. Verified addresses, LMU clinic details, and phone numbers.",
+                        "https://englishspeakinggermany.online/guides/emergency-vets-munich",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

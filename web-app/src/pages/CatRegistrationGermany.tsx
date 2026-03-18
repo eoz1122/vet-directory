@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function CatRegistrationGermany() {
     return (
@@ -16,7 +17,17 @@ export default function CatRegistrationGermany() {
                 <meta property="og:title" content="Cat Registration in Germany: The 2025 Complete Guide" />
                 <meta property="og:description" content="No cat tax, but microchipping is mandatory in many cities. Here's what expats need to know about cat ownership in Germany." />
                 <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/cat-registration-germany-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/cat-registration-germany-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Cat Registration in Germany: The 2025 Complete Guide",
+                        "Moving to Germany with a cat? Learn the 2025/2026 rules for cat registration, microchipping, and neutering requirements in Berlin, Hamburg, and Frankfurt.",
+                        "https://englishspeakinggermany.online/blog/cat-registration-germany-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

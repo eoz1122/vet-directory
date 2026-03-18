@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PublicTransportBerlin() {
     return (
@@ -16,7 +17,17 @@ export default function PublicTransportBerlin() {
                 <meta property="og:title" content="The 2025 Guide to Taking Dogs on Public Transport in Berlin (BVG)" />
                 <meta property="og:description" content="Is your dog a 'passenger' or 'luggage'? Learn the ticket rules, muzzle laws, and escalator dangers before you board." />
                 <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-berlin-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-berlin-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "The 2025 Guide to Taking Dogs on Public Transport in Berlin (BVG)",
+                        "Is your dog a 'passenger' or 'luggage'? Learn the ticket rules, muzzle laws, and escalator dangers before you board.",
+                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-berlin-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

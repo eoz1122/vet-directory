@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import BlogSidebar from '../components/BlogSidebar';
 import RelatedPosts from '../components/RelatedPosts';
 import GuideDisclaimer from '../components/GuideDisclaimer';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function EmergencyVetsBerlin() {
     return (
@@ -13,7 +14,20 @@ export default function EmergencyVetsBerlin() {
                 <title>24/7 Emergency Vets in Berlin | English-Speaking Emergency Care | EnglishSpeakingVets</title>
                 <meta name="description" content="Complete guide to 24/7 emergency veterinary clinics in Berlin with English-speaking staff. Verified addresses, phone numbers, and what to expect." />
                 <meta name="keywords" content="emergency vet Berlin, 24/7 veterinary Berlin, pet emergency Zehlendorf, Tiernotdienst Berlin, English vet emergency" />
+                <meta property="og:title" content="24/7 Emergency Vets in Berlin | English-Speaking Emergency Care" />
+                <meta property="og:description" content="Complete guide to 24/7 emergency veterinary clinics in Berlin with English-speaking staff. Verified addresses, phone numbers, and what to expect." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/guides/emergency-vets-berlin" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/guides/emergency-vets-berlin" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "24/7 Emergency Vets in Berlin | English-Speaking Emergency Care",
+                        "Complete guide to 24/7 emergency veterinary clinics in Berlin with English-speaking staff. Verified addresses, phone numbers, and what to expect.",
+                        "https://englishspeakinggermany.online/guides/emergency-vets-berlin",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

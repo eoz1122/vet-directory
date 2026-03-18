@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import TableOfContents from '../components/TableOfContents';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PetSittingGermany() {
     return (
@@ -12,7 +13,20 @@ export default function PetSittingGermany() {
             <Helmet>
                 <title>Pet Sitting in Germany (2025): Finding a Safe Home for Your Little Friends</title>
                 <meta name="description" content="A complete guide to finding pet sitters in Germany. Comparing Pawshake, Cat in a Flat, pensions, and community options for expats." />
+                <meta property="og:title" content="Pet Sitting in Germany (2025): Finding a Safe Home for Your Little Friends" />
+                <meta property="og:description" content="A complete guide to finding pet sitters in Germany. Comparing Pawshake, Cat in a Flat, pensions, and community options for expats." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-sitting-germany-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-sitting-germany-2025" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Pet Sitting in Germany (2025): Finding a Safe Home for Your Little Friends",
+                        "A complete guide to finding pet sitters in Germany. Comparing Pawshake, Cat in a Flat, pensions, and community options for expats.",
+                        "https://englishspeakinggermany.online/blog/pet-sitting-germany-2025",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

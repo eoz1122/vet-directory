@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function GermanDogEtiquette() {
     return (
@@ -13,7 +14,20 @@ export default function GermanDogEtiquette() {
                 <title>German Dog Etiquette: The Unwritten Rules | EnglishSpeakingVets</title>
                 <meta name="description" content="A complete guide to German dog etiquette. Learn about leash laws (Leinenpflicht), off-leash areas, Hundeführerschein requirements, and the social rules of owning a dog in Germany." />
                 <meta name="keywords" content="dog etiquette Germany, German leash laws, Leinenpflicht, dog rules Germany, off-leash areas Germany, Hundeauslaufgebiet, dog tax Germany, expat dog owner Germany" />
+                <meta property="og:title" content="German Dog Etiquette: The Unwritten Rules" />
+                <meta property="og:description" content="A complete guide to German dog etiquette. Learn about leash laws (Leinenpflicht), off-leash areas, Hundeführerschein requirements, and the social rules of owning a dog in Germany." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/german-dog-etiquette-rules" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/german-dog-etiquette-rules" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "German Dog Etiquette: The Unwritten Rules",
+                        "A complete guide to German dog etiquette. Learn about leash laws (Leinenpflicht), off-leash areas, Hundeführerschein requirements, and the social rules of owning a dog in Germany.",
+                        "https://englishspeakinggermany.online/blog/german-dog-etiquette-rules",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

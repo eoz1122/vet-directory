@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import BlogSidebar from '../components/BlogSidebar';
 import RelatedPosts from '../components/RelatedPosts';
 import GuideDisclaimer from '../components/GuideDisclaimer';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PetEmergencyFrankfurt() {
     return (
@@ -13,7 +14,20 @@ export default function PetEmergencyFrankfurt() {
                 <title>24/7 Emergency Vets in Frankfurt | English-Speaking Emergency Care | EnglishSpeakingVets</title>
                 <meta name="description" content="Complete guide to 24/7 emergency veterinary clinics in Frankfurt am Main with English-speaking staff. Tierklinik Hofheim, Kalbach, and verified emergency contacts." />
                 <meta name="keywords" content="emergency vet Frankfurt, 24/7 veterinary Frankfurt, Tierklinik Hofheim, Tierklinik Kalbach, English vet emergency Frankfurt" />
+                <meta property="og:title" content="24/7 Emergency Vets in Frankfurt | English-Speaking Emergency Care" />
+                <meta property="og:description" content="Complete guide to 24/7 emergency veterinary clinics in Frankfurt am Main with English-speaking staff. Tierklinik Hofheim, Kalbach, and verified emergency contacts." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/guides/emergency-vets-frankfurt" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/guides/emergency-vets-frankfurt" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "24/7 Emergency Vets in Frankfurt | English-Speaking Emergency Care",
+                        "Complete guide to 24/7 emergency veterinary clinics in Frankfurt am Main with English-speaking staff. Tierklinik Hofheim, Kalbach, and verified emergency contacts.",
+                        "https://englishspeakinggermany.online/guides/emergency-vets-frankfurt",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />

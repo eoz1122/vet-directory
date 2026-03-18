@@ -7,6 +7,7 @@ import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import GuideDisclaimer from '../components/GuideDisclaimer';
+import { generateArticleSchema } from '../utils/schema';
 
 export default function PetEmergencyGermany() {
     return (
@@ -15,7 +16,20 @@ export default function PetEmergencyGermany() {
                 <title>Pet Emergency in Germany: 24/7 Vet Care Guide | EnglishSpeakingVets</title>
                 <meta name="description" content="Complete guide to pet emergencies in Germany: Find 24/7 emergency vets, understand costs, learn when to go, and get emergency numbers. Berlin, Hamburg, Munich, Frankfurt, Stuttgart." />
                 <meta name="keywords" content="emergency vet Germany, 24/7 veterinary care, pet emergency Berlin, Hamburg emergency vet, Munich emergency clinic, pet poison control Germany" />
+                <meta property="og:title" content="Pet Emergency in Germany: 24/7 Vet Care Guide" />
+                <meta property="og:description" content="Complete guide to pet emergencies in Germany: Find 24/7 emergency vets, understand costs, learn when to go, and get emergency numbers. Berlin, Hamburg, Munich, Frankfurt, Stuttgart." />
+                <meta property="og:type" content="article" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/guides/pet-emergency-germany" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/guides/pet-emergency-germany" />
+                <script type="application/ld+json">
+                    {JSON.stringify(generateArticleSchema(
+                        "Pet Emergency in Germany: 24/7 Vet Care Guide",
+                        "Complete guide to pet emergencies in Germany: Find 24/7 emergency vets, understand costs, learn when to go, and get emergency numbers. Berlin, Hamburg, Munich, Frankfurt, Stuttgart.",
+                        "https://englishspeakinggermany.online/guides/pet-emergency-germany",
+                        "2025-01-01"
+                    ))}
+                </script>
             </Helmet>
 
             <Header />
