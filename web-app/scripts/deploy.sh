@@ -24,7 +24,11 @@ fi
 echo "📦 Installing Dependencies..."
 npm install --silent
 
-# 4. Build the project
+# 3. Install Puppeteer's Chrome if not already present (required for prerender step)
+echo "🌐 Ensuring Puppeteer Chrome is installed..."
+npx puppeteer browsers install chrome --silent 2>/dev/null || true
+
+# 4. Build the project (includes prerender of all pages)
 echo "🏗️ Building Project..."
 npm run build
 
