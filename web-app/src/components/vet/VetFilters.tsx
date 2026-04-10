@@ -69,11 +69,11 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
 
                 {!userLocation && (
                     <div className="space-y-3">
-                        <div className="flex flex-wrap gap-2 pb-2">
+                        <div className="flex flex-wrap gap-2 pb-2 overflow-x-hidden">
                             {/* "All" Button */}
                             <button
                                 onClick={() => handleCityChange('All')}
-                                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm inline-block text-center ${selectedCity === 'All'
+                                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm inline-block text-center active:scale-90 ${selectedCity === 'All'
                                     ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
                                     : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
                                     }`}
@@ -86,7 +86,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                                 <button
                                     key={city}
                                     onClick={() => handleCityChange(city)}
-                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm inline-block text-center ${selectedCity === city
+                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm inline-block text-center active:scale-90 ${selectedCity === city
                                         ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
                                         : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
                                         }`}
@@ -99,7 +99,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                             {otherCities.length > 0 && (
                                 <div className="relative group inline-block">
                                     <button
-                                        className={`appearance-none px-4 py-2 pr-8 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm cursor-pointer focus:outline-none bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80 flex items-center`}
+                                        className={`appearance-none px-4 py-2 pr-8 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm cursor-pointer focus:outline-none bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80 active:scale-90 flex items-center`}
                                     >
                                         More Cities...
                                         <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path></svg>
@@ -180,10 +180,10 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                     />
                     <svg className="w-4.5 h-4.5 text-primary/20 absolute left-4 top-1/2 -translate-y-1/2 transition-colors group-focus-within/filter:text-accent/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <div className="flex gap-2 flex-wrap md:flex-nowrap overflow-x-auto pb-1 no-scrollbar">
+                <div className="flex gap-2 flex-wrap md:flex-nowrap overflow-x-hidden pb-1 no-scrollbar">
                     <button
                         onClick={() => { setShowVerifiedOnly(!showVerifiedOnly); onResetPagination(); }}
-                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-300 border shadow-sm flex items-center justify-center gap-2 ${showVerifiedOnly
+                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-200 border shadow-sm flex items-center justify-center gap-2 active:scale-95 ${showVerifiedOnly
                             ? 'bg-green-500 text-white border-green-500 shadow-green-500/20'
                             : 'bg-white border-primary/5 text-primary/60 hover:border-green-500/30 hover:text-green-600 hover:bg-green-50/50'
                             }`}
@@ -192,7 +192,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                     </button>
                     <button
                         onClick={() => { setShowEmergencyOnly(!showEmergencyOnly); onResetPagination(); }}
-                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-300 border shadow-sm flex items-center justify-center gap-2 ${showEmergencyOnly
+                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-200 border shadow-sm flex items-center justify-center gap-2 active:scale-95 ${showEmergencyOnly
                             ? 'bg-red-500 text-white border-red-500 shadow-red-500/20'
                             : 'bg-white border-primary/5 text-primary/60 hover:border-red-500/30 hover:text-red-600 hover:bg-red-50/50'
                             }`}
@@ -201,7 +201,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                     </button>
                     <button
                         onClick={() => { setShowMobileOnly(!showMobileOnly); onResetPagination(); }}
-                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-300 border shadow-sm flex items-center justify-center gap-2 ${showMobileOnly
+                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-200 border shadow-sm flex items-center justify-center gap-2 active:scale-95 ${showMobileOnly
                             ? 'bg-amber-400 text-white border-amber-400 shadow-amber-400/20'
                             : 'bg-white border-primary/5 text-primary/60 hover:border-amber-400/30 hover:text-amber-500 hover:bg-amber-50/50'
                             }`}

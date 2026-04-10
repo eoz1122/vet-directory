@@ -256,7 +256,7 @@ const Home: React.FC = () => {
                                         </Link>
                                     ))}
                                     <div className="pt-2">
-                                        <Link to="/contact?topic=submit_vet" className="block w-full text-center py-3 bg-accent text-white rounded-xl font-bold text-sm hover:translate-y-[-2px] hover:shadow-lg transition-all">
+                                        <Link to="/contact?topic=submit_vet" className="block w-full text-center py-3 bg-accent text-white rounded-xl font-bold text-sm hover:translate-y-[-2px] hover:shadow-lg transition-all active:scale-95">
                                             ⊕ Add to the Directory
                                         </Link>
                                     </div>

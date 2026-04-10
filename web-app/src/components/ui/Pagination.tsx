@@ -14,7 +14,7 @@ export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages,
             <button
                 onClick={() => onPageChange(Math.max(1, currentPage - 1))}
                 disabled={currentPage === 1}
-                className="px-5 py-2 text-xs font-bold bg-white border border-primary/10 rounded-xl hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-primary"
+                className="px-5 py-2 text-xs font-bold bg-white border border-primary/10 rounded-xl hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-primary active:scale-95"
             >
                 ← Prev
             </button>
@@ -24,7 +24,7 @@ export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages,
             <button
                 onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
                 disabled={currentPage === totalPages}
-                className="px-5 py-2 text-xs font-bold bg-white border border-primary/10 rounded-xl hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-primary"
+                className="px-5 py-2 text-xs font-bold bg-white border border-primary/10 rounded-xl hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-primary active:scale-95"
             >
                 Next →
             </button>
