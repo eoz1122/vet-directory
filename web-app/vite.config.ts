@@ -26,7 +26,11 @@ export default defineConfig({
   plugins: [react()],
   // Optimize dependencies
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
+    include: ['react', 'react-dom', 'react-router-dom', 'fast-deep-equal'],
     exclude: ['@vis.gl/react-google-maps'] // Load maps only when needed
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true,
   }
-})
+} as any)

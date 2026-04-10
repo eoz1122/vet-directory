@@ -3,9 +3,32 @@ import { useMapsLibrary } from '@vis.gl/react-google-maps';
 
 interface Props {
     onPlaceSelect: (location: { lat: number; lng: number } | null, address: string) => void;
+    apiError?: boolean;
 }
 
-export default function PlaceAutocomplete({ onPlaceSelect }: Props) {
+// Pure static fallback - NO SDK hooks, prevents Google Maps from injecting error bubbles
+function PlaceAutocompleteFallback() {
+    return (
+        <div className="relative w-full rounded-xl">
+            <input
+                type="text"
+                disabled
+                placeholder="Location search unavailable"
+                className="w-full pl-11 pr-4 py-3 bg-primary/5 border border-primary/5 rounded-xl text-sm font-medium text-primary/30 placeholder:text-primary/30 cursor-not-allowed"
+            />
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/20">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </div>
+            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-bold uppercase tracking-widest text-primary/20">Use city filters below</span>
+        </div>
+    );
+}
+
+// Full SDK-connected component - only mounted when API is healthy
+function PlaceAutocompleteSDK({ onPlaceSelect }: Pick<Props, 'onPlaceSelect'>) {
     const [inputValue, setInputValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
     const places = useMapsLibrary('places');
@@ -19,7 +42,7 @@ export default function PlaceAutocomplete({ onPlaceSelect }: Props) {
 
         const options = {
             fields: ['geometry', 'name', 'formatted_address'],
-            componentRestrictions: { country: 'de' }, // Restrict to Germany
+            componentRestrictions: { country: 'de' },
         };
 
         setAutocomplete(new places.Autocomplete(inputRef.current, options));
@@ -64,7 +87,6 @@ export default function PlaceAutocomplete({ onPlaceSelect }: Props) {
                 const lat = position.coords.latitude;
                 const lng = position.coords.longitude;
 
-                // Reverse geocode to get address text
                 if (geocodingLib) {
                     const geocoder = new geocodingLib.Geocoder();
                     geocoder.geocode({ location: { lat, lng } }, (results: any, status: any) => {
@@ -73,7 +95,6 @@ export default function PlaceAutocomplete({ onPlaceSelect }: Props) {
                             setInputValue(address);
                             onPlaceSelect({ lat, lng }, address);
                         } else {
-                            // Fallback if geocoding fails
                             const fallbackText = `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
                             setInputValue(fallbackText);
                             onPlaceSelect({ lat, lng }, fallbackText);
@@ -81,7 +102,6 @@ export default function PlaceAutocomplete({ onPlaceSelect }: Props) {
                         setIsLoadingLocation(false);
                     });
                 } else {
-                    // Fallback if google maps not ready
                     const fallbackText = `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
                     setInputValue(fallbackText);
                     onPlaceSelect({ lat, lng }, fallbackText);
@@ -156,4 +176,10 @@ export default function PlaceAutocomplete({ onPlaceSelect }: Props) {
             </div>
         </div>
     );
+}
+
+// Wrapper: mounts SDK-free fallback OR full SDK component based on API health
+export default function PlaceAutocomplete({ onPlaceSelect, apiError = false }: Props) {
+    if (apiError) return <PlaceAutocompleteFallback />;
+    return <PlaceAutocompleteSDK onPlaceSelect={onPlaceSelect} />;
 }

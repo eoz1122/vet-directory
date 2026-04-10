@@ -3,13 +3,14 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { APIProvider } from '@vis.gl/react-google-maps';
 // import AppMap from '../components/Map'; // Removed direct import
-import PlaceAutocomplete from '../components/PlaceAutocomplete';
 import Footer from '../components/Footer';
 import type { Vet, VetWithDistance } from '../types/vet';
 import vetsData from '../data/vets.json';
 import { calculateDistance } from '../utils/distance';
-import { appendUTM } from '../utils/url';
 import { generateListingSchema } from '../utils/schema';
+import { VetCard } from '../components/vet/VetCard';
+import { VetFilters } from '../components/vet/VetFilters';
+import { Pagination } from '../components/ui/Pagination';
 
 // Lazy load the Map component to reduce initial bundle size causing TBT
 const AppMap = lazy(() => import('../components/Map'));
@@ -19,6 +20,7 @@ const vets = vetsData as Vet[];
 const ITEMS_PER_PAGE = 10;
 
 const Home: React.FC = () => {
+    const [mapApiError, setMapApiError] = useState(false);
     // Parse query params for initial city filtering
     const [searchParams] = useSearchParams();
 
@@ -46,16 +48,6 @@ const Home: React.FC = () => {
     if (queryParam && queryParam !== searchTerm) {
         setSearchTerm(queryParam);
     }
-
-    // Dynamic city list derived from data
-    const allCities = Array.from(new Set(vets.map(v => v.city || 'Unknown'))).sort();
-
-    // Priority cities to show as immediate buttons
-    const priorityCities = ['Berlin', 'Hamburg', 'Frankfurt', 'Munich', 'Stuttgart', 'Cologne', 'Leipzig', 'Nuremberg', 'Dresden'];
-
-    // Split into priority and others
-    const mainCities = priorityCities.filter(c => allCities.includes(c));
-    const otherCities = allCities.filter(c => !priorityCities.includes(c) && c !== 'Unknown');
 
     // Filter logic
     const filteredVets = vets.filter(vet => {
@@ -101,17 +93,6 @@ const Home: React.FC = () => {
     );
 
     // Event Handlers
-    const handleCityChange = (city: string) => {
-        setSelectedCity(city);
-        setSelectedVet(null);
-        setCurrentPage(1);
-    };
-
-    const handleSearchChange = (val: string) => {
-        setSearchTerm(val);
-        setCurrentPage(1);
-    };
-
     const handlePlaceSelect = (location: { lat: number; lng: number } | null) => {
         if (location) {
             setUserLocation(location);
@@ -154,8 +135,19 @@ const Home: React.FC = () => {
         }
     }, [currentPage, selectedCity, searchTerm, searchRadius, userLocation, showMobileOnly]);
 
+    // Google Maps fires window.gm_authFailure for RefererNotAllowedMapError -
+    // the APIProvider.onError prop does NOT catch this specific error type.
+    useEffect(() => {
+        (window as Window & { gm_authFailure?: () => void }).gm_authFailure = () => {
+            setMapApiError(true);
+        };
+        return () => {
+            delete (window as Window & { gm_authFailure?: () => void }).gm_authFailure;
+        };
+    }, []);
+
     return (
-        <APIProvider apiKey={apiKey} language="en">
+        <APIProvider apiKey={apiKey} language="en" onError={() => setMapApiError(true)}>
             <Helmet>
                 <title>{`The Pack | ${vets.length} Verified English-Speaking Vets in Germany`}</title>
                 <meta name="description" content="Find verified English-speaking veterinarians in Berlin, Hamburg, Frankfurt and more. Germany's most comprehensive community-sourced vet directory." />
@@ -192,160 +184,26 @@ const Home: React.FC = () => {
                     </header>
 
                     <div ref={scrollContainerRef} className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth custom-scrollbar bg-secondary/30">
-                        <div className="space-y-6">
-                            {/* Location Section */}
-                            <div className="space-y-3">
-                                <label className="text-[10px] font-bold text-primary/40 uppercase tracking-widest px-1">
-                                    Where to look?
-                                </label>
-                                <div className="group/search relative z-50">
-                                    <PlaceAutocomplete onPlaceSelect={handlePlaceSelect} />
-                                </div>
-
-                                {!userLocation && (
-                                    <div className="space-y-3">
-                                        <div className="flex flex-wrap gap-2 pb-2">
-                                            {/* "All" Button */}
-                                            <button
-                                                onClick={() => handleCityChange('All')}
-                                                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm inline-block text-center ${selectedCity === 'All'
-                                                    ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
-                                                    : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
-                                                    }`}
-                                            >
-                                                All
-                                            </button>
-
-                                            {/* Priority Cities */}
-                                            {mainCities.map(city => (
-                                                <button
-                                                    key={city}
-                                                    onClick={() => handleCityChange(city)}
-                                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm inline-block text-center ${selectedCity === city
-                                                        ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
-                                                        : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
-                                                        }`}
-                                                >
-                                                    {city}
-                                                </button>
-                                            ))}
-
-                                            {/* Custom Dropdown for Other Cities */}
-                                            {otherCities.length > 0 && (
-                                                <div className="relative group inline-block">
-                                                    <button
-                                                        className={`appearance-none px-4 py-2 pr-8 rounded-xl text-xs font-bold transition-all duration-300 border shadow-sm cursor-pointer focus:outline-none bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80 flex items-center`}
-                                                    >
-                                                        More Cities...
-                                                        <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path></svg>
-                                                    </button>
-
-                                                    {/* Dropdown Menu */}
-                                                    <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-primary/10 overflow-hidden z-[100] hidden group-hover:block max-h-64 overflow-y-auto custom-scrollbar">
-                                                        {otherCities.map(city => (
-                                                            <button
-                                                                key={city}
-                                                                onClick={() => handleCityChange(city)}
-                                                                className={`w-full block px-4 py-2 text-xs font-bold text-left transition-colors ${selectedCity === city
-                                                                    ? 'bg-primary/10 text-primary'
-                                                                    : 'text-primary/70 hover:bg-primary/5 hover:text-primary'
-                                                                    }`}
-                                                            >
-                                                                {city}
-                                                            </button>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-                                )}
-                                {userLocation && (
-                                    <div className="flex flex-col gap-3 p-4 bg-white/50 backdrop-blur rounded-2xl border border-primary/5">
-                                        <div className="flex justify-between items-center">
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                                                <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">
-                                                    {searchRadius ? `Within ${searchRadius}km` : 'Sorted by Proximity'}
-                                                </span>
-                                            </div>
-                                            <button onClick={() => setUserLocation(null)} className="text-[10px] font-black uppercase tracking-widest text-accent hover:opacity-70 transition-opacity">Change Location</button>
-                                        </div>
-                                        <div className="flex gap-2 text-[10px] font-bold uppercase tracking-widest overflow-x-auto pb-1 no-scrollbar">
-                                            {[1, 3, 5, 10, 25, 50].map(km => (
-                                                <button
-                                                    key={km}
-                                                    onClick={() => setSearchRadius(km)}
-                                                    className={`px-3 py-1.5 rounded-xl border transition-all whitespace-nowrap ${searchRadius === km
-                                                        ? 'bg-primary text-white border-primary'
-                                                        : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
-                                                        }`}
-                                                >
-                                                    {km} km
-                                                </button>
-                                            ))}
-                                            <button
-                                                onClick={() => setSearchRadius(null)}
-                                                className={`px-3 py-1.5 rounded-xl border transition-all whitespace-nowrap ${searchRadius === null
-                                                    ? 'bg-primary text-white border-primary'
-                                                    : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
-                                                    }`}
-                                            >
-                                                Any Distance
-                                            </button>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-
-                            <hr className="border-primary/5" />
-
-                            {/* Refine Section */}
-                            <div className="space-y-3">
-                                <label className="text-[10px] font-bold text-primary/40 uppercase tracking-widest px-1">
-                                    Refine Results
-                                </label>
-                                <div className="relative w-full group/filter z-0">
-                                    <input
-                                        type="text"
-                                        placeholder="Filter by practice name..."
-                                        className="w-full pl-11 pr-4 py-3 bg-white border border-primary/5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-accent/5 focus:border-accent/20 text-sm font-medium transition-all shadow-sm hover:border-primary/20"
-                                        value={searchTerm}
-                                        onChange={(e) => handleSearchChange(e.target.value)}
-                                    />
-                                    <svg className="w-4.5 h-4.5 text-primary/20 absolute left-4 top-1/2 -translate-y-1/2 transition-colors group-focus-within/filter:text-accent/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                                </div>
-                                <div className="flex gap-2 flex-wrap md:flex-nowrap overflow-x-auto pb-1 no-scrollbar">
-                                    <button
-                                        onClick={() => setShowVerifiedOnly(!showVerifiedOnly)}
-                                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-300 border shadow-sm flex items-center justify-center gap-2 ${showVerifiedOnly
-                                            ? 'bg-green-500 text-white border-green-500 shadow-green-500/20'
-                                            : 'bg-white border-primary/5 text-primary/60 hover:border-green-500/30 hover:text-green-600 hover:bg-green-50/50'
-                                            }`}
-                                    >
-                                        <span>✅</span> Verified
-                                    </button>
-                                    <button
-                                        onClick={() => setShowEmergencyOnly(!showEmergencyOnly)}
-                                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-300 border shadow-sm flex items-center justify-center gap-2 ${showEmergencyOnly
-                                            ? 'bg-red-500 text-white border-red-500 shadow-red-500/20'
-                                            : 'bg-white border-primary/5 text-primary/60 hover:border-red-500/30 hover:text-red-600 hover:bg-red-50/50'
-                                            }`}
-                                    >
-                                        <span>🚑</span> 24h Emergency
-                                    </button>
-                                    <button
-                                        onClick={() => setShowMobileOnly(!showMobileOnly)}
-                                        className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-300 border shadow-sm flex items-center justify-center gap-2 ${showMobileOnly
-                                            ? 'bg-amber-400 text-white border-amber-400 shadow-amber-400/20'
-                                            : 'bg-white border-primary/5 text-primary/60 hover:border-amber-400/30 hover:text-amber-500 hover:bg-amber-50/50'
-                                            }`}
-                                    >
-                                        <span>🚐</span> Mobile
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <VetFilters
+                            vets={vets}
+                            selectedCity={selectedCity}
+                            setSelectedCity={(city) => { setSelectedCity(city); setSelectedVet(null); }}
+                            searchTerm={searchTerm}
+                            setSearchTerm={setSearchTerm}
+                            showVerifiedOnly={showVerifiedOnly}
+                            setShowVerifiedOnly={setShowVerifiedOnly}
+                            showMobileOnly={showMobileOnly}
+                            setShowMobileOnly={setShowMobileOnly}
+                            showEmergencyOnly={showEmergencyOnly}
+                            setShowEmergencyOnly={setShowEmergencyOnly}
+                            userLocation={userLocation}
+                            setUserLocation={setUserLocation}
+                            searchRadius={searchRadius}
+                            setSearchRadius={setSearchRadius}
+                            onPlaceSelect={handlePlaceSelect}
+                            onResetPagination={() => setCurrentPage(1)}
+                            mapApiError={mapApiError}
+                        />
 
                         <div className="flex justify-between items-end px-2 pt-4">
                             <div className="flex flex-col">
@@ -360,159 +218,21 @@ const Home: React.FC = () => {
 
                         <div className="space-y-4 pt-2">
                             {paginatedVets.map((vet: VetWithDistance) => (
-                                <article
+                                <VetCard
                                     key={vet.id}
-                                    onClick={() => setSelectedVet(vet)}
-                                    className={`group/card relative bg-white p-6 rounded-[2rem] border transition-all duration-500 cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-1 ${selectedVet?.id === vet.id ? 'border-accent ring-1 ring-accent shadow-lg shadow-accent/5' : 'border-primary/5 hover:border-accent/20'
-                                        }`}
-                                >
-                                    <div className="flex justify-between items-start mb-4">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-2 mb-1">
-                                                <span className="px-2 py-0.5 bg-primary/5 text-primary text-[9px] font-black uppercase tracking-widest rounded-full">
-                                                    {vet.city}
-                                                </span>
-                                                {vet.district && vet.district !== "Unknown" && (
-                                                    <span className="px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-black uppercase tracking-widest rounded-full">
-                                                        {vet.district}
-                                                    </span>
-                                                )}
-                                            </div>
-                                            <h2 className="text-lg font-black text-primary group-hover/card:text-accent transition-colors leading-tight">
-                                                {vet.practice_name}
-                                            </h2>
-                                        </div>
-                                        <div className="flex flex-col items-end gap-2">
-                                            <div className="relative group/tooltip z-20">
-                                                <div className="px-3 py-1 bg-accent/20 text-primary text-[10px] font-black uppercase tracking-tighter rounded-xl border border-accent/20 flex items-center gap-1.5 shadow-sm cursor-help">
-                                                    <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></div>
-                                                    Verified
-                                                </div>
-                                                <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-secondary border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
-                                                    <p className="text-[11px] leading-relaxed font-medium text-secondary/90 normal-case tracking-normal">
-                                                        <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">Community Verified</span>
-                                                        We analyze thousands of patient reviews to identify "English signals"—confirming that other international pet owners successfully communicated in English.
-                                                    </p>
-                                                    <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-primary border-b border-r border-white/10 rotate-45"></div>
-                                                </div>
-                                            </div>
-                                            {vet.distance !== undefined && vet.distance !== 9999 && (
-                                                <span className="text-[10px] font-bold text-primary/40 bg-secondary/50 px-2 py-0.5 rounded-lg border border-primary/5">
-                                                    📍 {vet.distance.toFixed(1)} km
-                                                </span>
-                                            )}
-                                        </div>
-                                    </div>
-
-                                    {/* Address Display - Mobile vs Fixed */}
-                                    {vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown') ? (
-                                        <div className="text-[12px] text-primary/60 mb-5 font-bold leading-relaxed bg-accent/10 p-4 rounded-xl border border-accent/20 flex items-center gap-2">
-                                            <span>🚐</span> Mobile Service - {vet.city}
-                                        </div>
-                                    ) : (
-                                        <a
-                                            href={`https://www.google.com/search?q=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            onClick={(e) => e.stopPropagation()}
-                                            className="block text-[12px] text-primary/60 mb-5 font-medium leading-relaxed bg-secondary/30 p-4 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors hover:text-accent hover:border-accent/30"
-                                        >
-                                            {vet.address}
-                                        </a>
-                                    )}
-
-                                    <div className="space-y-2 mb-6">
-                                        {vet.verification.english_signals && vet.verification.english_signals.slice(0, 1).map((signal, idx) => (
-                                            <div key={idx} className="flex gap-3 items-start group/signal">
-                                                <div className="mt-1 flex-shrink-0 w-4 h-4 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/20">
-                                                    <svg className="w-2.5 h-2.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7"></path></svg>
-                                                </div>
-                                                <p className="text-[11px] text-primary/60 italic leading-snug group-hover/signal:text-primary/80 transition-colors line-clamp-2">
-                                                    "{signal}"
-                                                </p>
-                                            </div>
-                                        ))}
-                                        {vet.verification?.emergency_services === '24/7' && (
-                                            <div className="flex gap-3 items-start group/signal">
-                                                <div className="mt-1 flex-shrink-0 w-4 h-4 bg-red-100 rounded-full flex items-center justify-center animate-pulse">
-                                                    <span className="text-[10px]">🚑</span>
-                                                </div>
-                                                <p className="text-[11px] text-red-600 font-bold leading-snug">
-                                                    24h Emergency Service
-                                                </p>
-                                            </div>
-                                        )}
-                                    </div>
-
-                                    <div className="flex gap-3">
-                                        {(vet.contact && vet.contact.website) ? (
-                                            <a
-                                                href={appendUTM(vet.contact.website)}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                onClick={(e) => e.stopPropagation()}
-                                                className="flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary/95 transition-all shadow-xl shadow-primary/10 active:scale-95 flex items-center justify-center gap-2"
-                                            >
-                                                <span>🌐</span> Visit Website
-                                            </a>
-                                        ) : (
-                                            <a
-                                                href={vet.contact?.phone ? `tel:${vet.contact.phone}` : '#'}
-                                                onClick={(e) => e.stopPropagation()}
-                                                className={`flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest rounded-xl transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 ${vet.contact?.phone ? 'bg-primary text-secondary hover:bg-primary/95 shadow-primary/10' : 'bg-gray-100 text-gray-400 cursor-not-allowed hidden'}`}
-                                            >
-                                                <span>📞</span> Call Practice
-                                            </a>
-                                        )}
-
-                                        {/* Hide Map button for Mobile Services */}
-                                        {!(vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown')) && (
-                                            <a
-                                                href={vet.contact?.google_maps || `https://www.google.com/search?q=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                onClick={(e) => e.stopPropagation()}
-                                                className="px-4 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-white border border-primary/10 text-primary rounded-xl hover:bg-gray-50 transition-all hover:border-primary/30 flex items-center justify-center"
-                                                title="View on Maps"
-                                            >
-                                                📍
-                                            </a>
-                                        )}
-                                    </div>
-
-                                    <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
-                                        <span className="text-[10px] text-gray-400">
-                                            Last Verified: {vet.verification?.last_scanned ? new Date(vet.verification.last_scanned).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '2025'}
-                                        </span>
-                                        <button
-                                            onClick={(e) => { e.stopPropagation(); setReportingVet(vet); }}
-                                            className="text-gray-300 hover:text-red-400 transition-colors flex items-center gap-1 group/report"
-                                        >
-                                            <span className="text-[9px] opacity-0 group-hover/report:opacity-100 transition-opacity">Report Issue</span>
-                                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                                        </button>
-                                    </div>
-                                </article>
+                                    vet={vet}
+                                    isSelected={selectedVet?.id === vet.id}
+                                    onSelect={setSelectedVet}
+                                    onReportIssue={setReportingVet}
+                                />
                             ))}
 
-                            {totalPages > 1 && (
-                                <div className="flex justify-center gap-3 py-4">
-                                    <button
-                                        onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                                        disabled={currentPage === 1}
-                                        className="px-5 py-2 text-xs font-bold bg-white border border-primary/10 rounded-xl hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-primary"
-                                    >
-                                        ← Prev
-                                    </button>
-                                    <button
-                                        onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                                        disabled={currentPage === totalPages}
-                                        className="px-5 py-2 text-xs font-bold bg-white border border-primary/10 rounded-xl hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-primary"
-                                    >
-                                        Next →
-                                    </button>
-                                </div>
-                            )}
+                            <Pagination
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                                onPageChange={setCurrentPage}
+                            />
+
 
                             <div className="bg-secondary p-6 rounded-[2rem] border border-primary/10">
                                 <h2 className="text-lg font-bold text-primary mb-2">Resource Center</h2>
@@ -555,9 +275,33 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="hidden md:block md:w-[58%] lg:w-[60%] h-screen relative bg-secondary/10">
-                    <Suspense fallback={<div className="h-full w-full flex items-center justify-center text-primary/40 font-bold uppercase tracking-widest text-sm">Loading Map...</div>}>
-                        <AppMap vets={sortedVets} selectedCity={selectedCity} selectedVet={selectedVet} onSelectVet={setSelectedVet} />
-                    </Suspense>
+                    {mapApiError ? (
+                        <div className="h-full w-full flex flex-col items-center justify-center gap-6 bg-secondary/30 p-12">
+                            <div className="w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center">
+                                <svg className="w-10 h-10 text-primary/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                </svg>
+                            </div>
+                            <div className="text-center max-w-xs">
+                                <h3 className="font-black text-primary text-lg mb-2">Map unavailable</h3>
+                                <p className="text-sm text-primary/50 leading-relaxed">
+                                    The interactive map couldn't load. Use the list on the left to browse all {vets.length} verified vets - it has everything you need.
+                                </p>
+                            </div>
+                            <a
+                                href="https://www.google.com/maps/search/english+speaking+vet+germany"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="px-6 py-3 bg-accent text-white text-sm font-bold rounded-xl hover:bg-accent/90 transition-all shadow-sm hover:shadow-md"
+                            >
+                                Open Google Maps instead
+                            </a>
+                        </div>
+                    ) : (
+                        <Suspense fallback={<div className="h-full w-full flex items-center justify-center text-primary/40 font-bold uppercase tracking-widest text-sm">Loading Map...</div>}>
+                            <AppMap vets={sortedVets} selectedCity={selectedCity} selectedVet={selectedVet} onSelectVet={setSelectedVet} />
+                        </Suspense>
+                    )}
                 </div>
 
                 {/* Mobile Navigation */}

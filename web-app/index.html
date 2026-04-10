@@ -18,9 +18,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
 
-    // Default consent mode - analytics granted for basic tracking
+    // Default consent mode - analytics denied until explicitly granted
     gtag('consent', 'default', {
-      'analytics_storage': 'granted',  // Enable basic analytics
+      'analytics_storage': 'denied',   // Disabled by default
       'ad_storage': 'denied',         // No advertising cookies
       'ad_user_data': 'denied',       // No user data for ads
       'ad_personalization': 'denied',  // No personalized ads
