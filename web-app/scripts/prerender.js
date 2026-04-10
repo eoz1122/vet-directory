@@ -179,16 +179,40 @@ async function prerender() {
         const page = await browser.newPage();
         try {
             const url = `http://localhost:${PREVIEW_PORT}${route}`;
-            await page.goto(url, { waitUntil: 'networkidle0', timeout: 15000 });
+            // networkidle2 is more resilient than networkidle0 (tolerates analytics/maps)
+            await page.goto(url, { waitUntil: 'networkidle2', timeout: 15000 });
 
-            // Wait for React to mount (the root div should have children)
+            // Step 1: Wait for React to mount (the root div must have children)
             await page.waitForFunction(
-                () => document.getElementById('root')?.children.length > 0,
+                () => {
+                    const root = document.getElementById('root');
+                    return root && root.children.length > 0;
+                },
                 { timeout: 10000 }
             );
 
-            // Small delay for any final renders
-            await new Promise(r => setTimeout(r, 200));
+            // Step 2: Wait for react-helmet-async to apply the page-specific title.
+            // We poll document.title for up to 3s. If it never changes from the
+            // fallback, we proceed anyway (handles static pages and edge cases).
+            const FALLBACK_TITLE = 'English-Speaking Vets in Germany | Verified Expat Directory';
+            await page.evaluate((fallback, maxWaitMs) => {
+                return new Promise((resolve) => {
+                    if (document.title !== fallback || window.location.pathname === '/') {
+                        return resolve(true);
+                    }
+                    const deadline = Date.now() + maxWaitMs;
+                    const iv = setInterval(() => {
+                        if (document.title !== fallback || Date.now() >= deadline) {
+                            clearInterval(iv);
+                            resolve(true);
+                        }
+                    }, 50);
+                });
+            }, FALLBACK_TITLE, 3000);
+
+            // Extra breathing room for Helmet to flush all remaining head mutations
+            // (og:title, og:description, canonical, JSON-LD scripts)
+            await new Promise(r => setTimeout(r, 300));
 
             // Clean up dynamic elements that break React hydration
             await page.evaluate(() => {

@@ -311,15 +311,55 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
         }
     };
 
+    const faqLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": `Do vets in ${capitalizedCity} speak English?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Yes - our directory lists ${cityVets.length} verified English-speaking veterinary practices in ${capitalizedCity}. Every practice has been confirmed by the international expat community to communicate clearly in English.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": `How do I find a vet in ${capitalizedCity} as an expat?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `EnglishSpeakingVets maintains a community-verified directory of English-speaking vets in ${capitalizedCity}. Browse by neighbourhood, filter for 24/7 emergency services, or search by practice name. Every listed vet has been confirmed by other expat pet owners.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": `Are there emergency English-speaking vets in ${capitalizedCity}?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Yes, several practices in ${capitalizedCity} offer 24/7 emergency services (Notdienst). Use the emergency filter on our ${capitalizedCity} vet directory to find clinics with round-the-clock English-speaking care.`
+                }
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>{`${cityData.title} | Verified English-Speaking Clinics | EnglishSpeakingVets`}</title>
+                <title>{`${cityData.title} | EnglishSpeakingVets`}</title>
                 <meta name="description" content={cityData.description} />
                 <meta name="keywords" content={`English speaking vet ${capitalizedCity}, veterinarian ${capitalizedCity}, pet care ${capitalizedCity}, animal hospital ${capitalizedCity}, English vet Germany`} />
                 <link rel="canonical" href={`https://englishspeakinggermany.online/vets/${cityKey}`} />
+                <meta property="og:title" content={`${cityData.title} | EnglishSpeakingVets`} />
+                <meta property="og:description" content={cityData.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`https://englishspeakinggermany.online/vets/${cityKey}`} />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${cityData.title} | EnglishSpeakingVets`} />
+                <meta name="twitter:description" content={cityData.description} />
                 <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
                 <script type="application/ld+json">{JSON.stringify(collectionLd)}</script>
+                <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
             </Helmet>
 
             <Header />

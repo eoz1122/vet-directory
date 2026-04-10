@@ -149,9 +149,17 @@ const Home: React.FC = () => {
     return (
         <APIProvider apiKey={apiKey} language="en" onError={() => setMapApiError(true)}>
             <Helmet>
-                <title>{`The Pack | ${vets.length} Verified English-Speaking Vets in Germany`}</title>
-                <meta name="description" content="Find verified English-speaking veterinarians in Berlin, Hamburg, Frankfurt and more. Germany's most comprehensive community-sourced vet directory." />
+                <title>English-Speaking Vets in Germany | Verified Expat Directory</title>
+                <meta name="description" content="The trusted directory for expat pet owners in Germany. Find verified English-speaking veterinarians in Berlin, Hamburg, Munich, Frankfurt and 30+ cities." />
                 <link rel="canonical" href="https://englishspeakinggermany.online" />
+                <meta property="og:title" content="English-Speaking Vets in Germany | Verified Expat Directory" />
+                <meta property="og:description" content="The trusted directory for expat pet owners in Germany. Find verified English-speaking veterinarians in Berlin, Hamburg, Munich, Frankfurt and 30+ cities." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://englishspeakinggermany.online" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="English-Speaking Vets in Germany | Verified Expat Directory" />
+                <meta name="twitter:description" content="The trusted directory for expat pet owners in Germany. Find verified English-speaking veterinarians in Berlin, Hamburg, Munich, Frankfurt and 30+ cities." />
                 <script type="application/ld+json">
                     {JSON.stringify([jsonLd, listingSchema])}
                 </script>
@@ -159,6 +167,7 @@ const Home: React.FC = () => {
 
             <div className="min-h-screen flex flex-col md:flex-row bg-secondary">
                 <div className="md:w-[42%] lg:w-[40%] flex flex-col h-screen overflow-hidden border-r border-primary/5">
+                <h1 className="sr-only">Find English-Speaking Vets in Germany</h1>
                     <header className="sticky top-0 z-10 bg-secondary backdrop-blur-xl border-b border-primary/5 p-6 space-y-5">
                         <Link to="/" className="flex items-center gap-5 group">
                             <div className="relative">

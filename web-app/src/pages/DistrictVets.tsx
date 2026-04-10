@@ -246,10 +246,18 @@ Our directory connects you with ${count > 0 ? `${count} ` : ''}verified English-
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>{`${content.title} | The Pack`}</title>
+                <title>{`${content.title} | EnglishSpeakingVets`}</title>
                 <meta name="description" content={content.description} />
                 <link rel="canonical" href={`https://englishspeakinggermany.online/vets/${cityKey}/${districtKey.replace(/\s+/g, '-')}`} />
                 {districtVets.length === 0 && <meta name="robots" content="noindex" />}
+                <meta property="og:title" content={`${content.title} | EnglishSpeakingVets`} />
+                <meta property="og:description" content={content.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`https://englishspeakinggermany.online/vets/${cityKey}/${districtKey.replace(/\s+/g, '-')}`} />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${content.title} | EnglishSpeakingVets`} />
+                <meta name="twitter:description" content={content.description} />
                 <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
             </Helmet>
 
