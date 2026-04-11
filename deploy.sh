@@ -12,9 +12,10 @@ set -e
 
 echo "🚀 Starting Deployment..."
 
-# 1. Pull latest code
+# 1. Pull latest code (forcing reset to prevent generated files like sitemap from blocking)
 echo "📥 Pulling from GitHub..."
-git pull origin main
+git fetch origin main
+git reset --hard origin/main
 
 # 2. Install frontend dependencies
 echo "📦 Installing dependencies..."
