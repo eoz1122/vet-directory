@@ -1,5 +1,5 @@
-import pytest
-from main import validate_contact_payload, sanitize
+import pytest  # type: ignore
+from main import validate_contact_payload, sanitize  # type: ignore
 
 def test_sanitize():
     assert sanitize("<script>alert(1)</script>") == "alert(1)"
