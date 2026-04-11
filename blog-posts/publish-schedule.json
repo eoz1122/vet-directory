@@ -1,0 +1,47 @@
+[
+  {
+    "post": "post-01",
+    "slug": "first-vet-visit-germany",
+    "url": "/blog/first-vet-visit-germany",
+    "title": "What to Expect at Your First Vet Visit in Germany",
+    "publishDate": "2026-04-14",
+    "status": "live",
+    "notes": "Week 1 of 4."
+  },
+  {
+    "post": "post-02",
+    "slug": "emergency-vet-berlin-english",
+    "url": "/blog/emergency-vet-berlin-english",
+    "title": "Emergency Vets in Berlin: 24-Hour English-Speaking Clinics",
+    "publishDate": "2026-04-21",
+    "status": "live",
+    "notes": "Contains 5 verified 24h clinics from vets.json. Review annually."
+  },
+  {
+    "post": "post-03",
+    "slug": "breed-restrictions-germany",
+    "url": "/blog/breed-restrictions-germany",
+    "title": "Breed Restrictions in Germany: The Complete Guide for Expats",
+    "publishDate": "2026-04-28",
+    "status": "live",
+    "notes": "Last verified: April 2026. Review annually - German state law changes."
+  },
+  {
+    "post": "post-04",
+    "slug": "public-transport-with-dogs-cologne",
+    "url": "/blog/public-transport-with-dogs-cologne",
+    "title": "Public Transport with Dogs in Cologne: The KVB Guide",
+    "publishDate": "2026-05-05",
+    "status": "live",
+    "notes": "Completes city transport series. Verify KVB prices annually."
+  },
+  {
+    "post": "post-05",
+    "slug": "leaving-germany-with-your-pet",
+    "url": "/blog/leaving-germany-with-your-pet",
+    "title": "Leaving Germany with Your Pet: The Complete Re-Export Guide",
+    "publishDate": "2026-05-12",
+    "status": "planned",
+    "notes": "REPLACES 'Importing a Pet' (duplicate of Moving post). Covers: rabies titre tests, timing windows, USDA/APHA endorsements, country-specific re-entry rules. Not covered anywhere on the site. High search intent."
+  }
+]

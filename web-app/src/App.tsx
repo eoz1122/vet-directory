@@ -39,6 +39,14 @@ const PetEmergencyFrankfurt = lazy(() => import('./pages/PetEmergencyFrankfurt')
 const PetMedicationGermany = lazy(() => import('./pages/PetMedicationGermany'));
 const PetFoodGermany = lazy(() => import('./pages/PetFoodGermany'));
 const Admin = lazy(() => import('./pages/Admin'));
+const FirstVetVisitGermany = lazy(() => import('./pages/FirstVetVisitGermany'));
+const EmergencyVetBerlinGuide = lazy(() => import('./pages/EmergencyVetBerlinGuide'));
+const BreedRestrictionsGermany = lazy(() => import('./pages/BreedRestrictionsGermany'));
+const PublicTransportCologne = lazy(() => import('./pages/PublicTransportCologne'));
+const CatMicrochippingGermany = lazy(() => import('./pages/CatMicrochippingGermany'));
+const TickSeasonGermanyPets = lazy(() => import('./pages/TickSeasonGermanyPets'));
+const EmergencyVetHamburgGuide = lazy(() => import('./pages/EmergencyVetHamburgGuide'));
+const BestDogParksBerlin = lazy(() => import('./pages/BestDogParksBerlin'));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -86,6 +94,14 @@ function App() {
             <Route path="/guides/emergency-vets-frankfurt" element={<PetEmergencyFrankfurt />} />
             <Route path="/blog/pet-medication-germany-guide" element={<PetMedicationGermany />} />
             <Route path="/blog/best-pet-food-germany-dinner-for-dogs" element={<PetFoodGermany />} />
+            <Route path="/blog/first-vet-visit-germany" element={<FirstVetVisitGermany />} />
+            <Route path="/blog/emergency-vet-berlin-english" element={<EmergencyVetBerlinGuide />} />
+            <Route path="/blog/breed-restrictions-germany" element={<BreedRestrictionsGermany />} />
+            <Route path="/blog/public-transport-with-dogs-cologne" element={<PublicTransportCologne />} />
+            <Route path="/blog/cat-microchipping-germany" element={<CatMicrochippingGermany />} />
+            <Route path="/blog/tick-season-germany-pets" element={<TickSeasonGermanyPets />} />
+            <Route path="/blog/emergency-vet-hamburg-english" element={<EmergencyVetHamburgGuide />} />
+            <Route path="/blog/best-dog-parks-berlin" element={<BestDogParksBerlin />} />
 
             <Route path="/vets/:city" element={<CityVets />} />
             <Route path="/vets/:city/:district" element={<DistrictVets />} />

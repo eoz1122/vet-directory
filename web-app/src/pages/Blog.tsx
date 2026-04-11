@@ -130,6 +130,62 @@ const blogPosts = [
         emoji: "🥘",
         category: "HEALTH",
         desc: "Beyond industrial kibble. A guide to high-quality fresh pet food in Germany, featuring a review of Dinner for Dogs direct-to-door delivery."
+    },
+    {
+        url: "/blog/first-vet-visit-germany",
+        title: "🩺 Your First Vet Visit in Germany",
+        emoji: "🩺",
+        category: "VET CARE",
+        desc: "From booking the appointment to paying the bill. A step-by-step guide for English-speaking expats at their first German vet visit."
+    },
+    {
+        url: "/blog/emergency-vet-berlin-english",
+        title: "🚨 Emergency Vets in Berlin: 24h English Guide",
+        emoji: "🚨",
+        category: "EMERGENCY",
+        desc: "Verified 24-hour clinics, what to say when you call, how to get there at 2am, and what emergency vet care will cost."
+    },
+    {
+        url: "/blog/breed-restrictions-germany",
+        title: "⚠️ Breed Restrictions in Germany",
+        emoji: "⚠️",
+        category: "BUREAUCRACY",
+        desc: "State-by-state breakdown of banned and restricted breeds in Germany. What's banned, what's restricted, and how the Wesenstest can change everything."
+    },
+    {
+        url: "/blog/public-transport-with-dogs-cologne",
+        title: "🚋 Dogs on the KVB in Cologne",
+        emoji: "🚋",
+        category: "TRANSPORT",
+        desc: "Tickets, muzzle rules, peak hour tips, the best dog-friendly routes, and where to go once you get off the tram."
+    },
+    {
+        url: "/blog/public-transport-with-dogs-cologne",
+        title: 'Cologne Public Transport with Dogs (KVB)',
+        emoji: "🚋",
+        category: 'TRANSPORT',
+        desc: 'Taking your dog on the KVB in Cologne? Here are the rules for tickets, muzzles, and rush hour travel in 2026.'
+    },
+    {
+        url: "/blog/cat-microchipping-germany",
+        title: 'Cat Microchipping in Germany 2026',
+        emoji: "🐱",
+        category: 'BUREAUCRACY',
+        desc: 'Germany is tightening cat microchipping and registration rules. Here is what expat cat owners need to know, and what you must do before it affects you.'
+    },
+    {
+        url: "/blog/tick-season-germany-pets",
+        title: 'Tick Season in Germany: Pet Prevention Guide',
+        emoji: "🦟",
+        category: 'HEALTH',
+        desc: 'Germany has one of Europe\'s highest tick burdens. Here is when tick season peaks, which diseases to watch for, and how to protect your pet.'
+    },
+    {
+        url: "/blog/emergency-vet-hamburg-english",
+        title: 'Emergency Vets in Hamburg: 24/7 English-Speaking Clinics',
+        emoji: "🏥",
+        category: 'EMERGENCY',
+        desc: 'Pet emergency in Hamburg? Find 24-hour English-speaking vet services and learn the emergency system.'
     }
 ];
 
