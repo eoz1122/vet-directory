@@ -23,18 +23,5 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           script: |
             set -e
-            echo "🚀 Starting deployment..."
-
             cd ${{ secrets.VPS_APP_PATH }}
-
-            echo "📥 Pulling latest changes from GitHub..."
-            git pull origin main
-
-            echo "📦 Installing dependencies..."
-            cd web-app
-            npm ci --silent
-
-            echo "🏗️ Building project (includes prerender of all 203 pages)..."
-            npm run build
-
-            echo "✅ Deployment complete!"
+            bash deploy.sh

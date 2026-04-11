@@ -16,15 +16,17 @@ This project is a React-based SPA (Single Page Application) directory for Englis
 *   **CSS System**: Use the single Tailwind v4 `@theme` block in `index.css`. Do not re-introduce `tailwind.config.js`.
 
 ## Deployment Workflow
-```bash
-# Web-App
-cd web-app
-npm run build 
-# (This automatically triggers postbuild: sitemap generation, export-db, and prerendering)
 
-# API
-cd api
-source venv/bin/activate
-pip install -r requirements.txt
-systemctl restart vet-api
+**Single canonical path: `git push origin main`**
+
+GitHub Actions (`.github/workflows/deploy.yml`) automatically:
+1. SSHs into VPS (`72.62.95.46`) as `root`
+2. Runs `bash deploy.sh` from the project root
+
+`deploy.sh` handles everything: `git pull` -> `npm ci` -> Puppeteer Chrome install -> `npm run build` (vite + prerender 203 pages) -> `cp -r web-app/dist/* .` (copies to nginx root) -> backend pip install.
+
+**Manual fallback** (run on VPS directly):
+```bash
+cd /home/englishspeaking/englishspeakinggermany.online
+bash deploy.sh
 ```
