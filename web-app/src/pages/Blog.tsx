@@ -160,11 +160,11 @@ const blogPosts = [
         desc: "Tickets, muzzle rules, peak hour tips, the best dog-friendly routes, and where to go once you get off the tram."
     },
     {
-        url: "/blog/public-transport-with-dogs-cologne",
-        title: 'Cologne Public Transport with Dogs (KVB)',
-        emoji: "🚋",
-        category: 'TRANSPORT',
-        desc: 'Taking your dog on the KVB in Cologne? Here are the rules for tickets, muzzles, and rush hour travel in 2026.'
+        url: "/blog/best-dog-parks-berlin",
+        title: 'Best Dog Parks in Berlin: Off-Leash Guide',
+        emoji: "🌳",
+        category: 'CITY LIVING',
+        desc: 'The definitive guide to off-leash dog areas in Berlin. Hundeauslaufgebiete by neighbourhood, leash rules, and more.'
     },
     {
         url: "/blog/cat-microchipping-germany",
