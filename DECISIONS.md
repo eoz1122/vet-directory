@@ -31,3 +31,21 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 1.  **Backend Testing:** Use `pytest` for the Python API, specifically testing the input validation logic and rate limiting handling.
 2.  **Frontend Testing:** Use `vitest` + `jsdom` + `@testing-library/react` for the React application. Vitest is the native choice for Vite-based projects and provides seamless ESM support.
 3.  **TDD Policy:** No production logic changes (especially to critical modules like distance calculations or API validation) without writing failing tests first.
+
+---
+
+## 2026-06-21T17:30:00+02:00 — URL Canonicalization: No Trailing Slash
+
+**Context:** Google Search Console showed 50 pages as "Page with redirect" + 15 as "Alternative page with proper canonical" (≈68 of 115 not-indexed URLs). Root cause: the sitemap and all 35 `<link rel="canonical">` tags use the no-trailing-slash form (`/vets/berlin`), but nginx 301-redirected those to `/vets/berlin/` because the prerendered output is a directory (`/vets/berlin/index.html`), and nginx auto-appends a slash when `try_files` matches a directory before a file.
+
+**Decision:** Standardize on the **no-trailing-slash** canonical form (the form the entire codebase already uses). Fix at the server, not in 60+ files: prepend `$uri/index.html` to nginx `try_files` so the prerendered file is matched first and served with HTTP 200, eliminating the directory trailing-slash redirect. Live change (in `/etc/nginx/sites-available/englishspeakinggermany.online`, web root `/home/englishspeaking/englishspeakinggermany.online`):
+`try_files $uri $uri/ /index.html;` → `try_files $uri/index.html $uri $uri/ /index.html;`
+`$uri` is kept in the list because this live server block has no separate static-asset `location`, so JS/CSS also resolve through this directive.
+
+**Trade-offs:** Both `/vets/berlin` and `/vets/berlin/` now return 200, but the canonical tag and sitemap point only to the no-slash form, so Google consolidates correctly. Rejected the alternative (rewrite every canonical + sitemap loc + og:url to trailing slash) as a 60-file change that would chase a server quirk instead of fixing it.
+
+**Verification:** `web-app/scripts/seo-smoke-test.sh` asserts canonical URLs return 200 (not 3xx). Confirmed RED pre-fix (6/7 paths 301), GREEN post-fix (7/7 = 200) on 2026-06-21. Asset load + per-page prerendered titles re-confirmed.
+
+**Applied:** Live on 2026-06-21 via `nginx -t && systemctl reload nginx` (graceful, zero downtime). The deploy pipeline (`deploy.sh`) does NOT manage nginx config, so this was a manual server edit; the repo's `web-app/nginx_site.conf` is a stale reference and does not match the live config (different root, no asset block).
+
+**Rollback:** `cp /etc/nginx/sites-available/englishspeakinggermany.online.bak-20260621 /etc/nginx/sites-available/englishspeakinggermany.online && nginx -t && systemctl reload nginx`.
