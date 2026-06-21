@@ -10,15 +10,16 @@ const OUTPUT_FILE = path.resolve(__dirname, '../public/sitemap.xml');
 const VETS_DATA_PATH = path.resolve(__dirname, '../src/data/vets.json');
 const BLOG_FILE_PATH = path.resolve(__dirname, '../src/pages/Blog.tsx');
 
-// Helper to sanitize slugs
+// Helper to sanitize slugs.
+// MIRRORS slugify() in src/utils/url.ts — keep identical (see src/utils/url.test.ts).
 function sanitizeSlug(text) {
     if (!text) return '';
     return text
         .toLowerCase()
-        .replace(/\s+/g, '-') // Replace spaces with hyphens
-        .replace(/[()&]/g, '') // Remove parentheses and ampersands
-        .replace(/-+/g, '-')   // Remove double hyphens
-        .trim();
+        .replace(/[()&]/g, '')        // drop parentheses and ampersands
+        .replace(/[\s/\\,.]+/g, '-')  // spaces, slashes, commas, dots -> hyphen
+        .replace(/-+/g, '-')          // collapse repeats
+        .replace(/^-+|-+$/g, '');     // trim leading/trailing hyphens
 }
 
 // Helper to URL encode path parts specifically (leaving slashes alone)
@@ -163,11 +164,11 @@ function generateSitemap() {
     const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allRoutes.map(route => {
-        // Correct URL encoding and escaping
+        // Slugs are pre-sanitized (no spaces/special chars; unicode letters kept).
+        // Emit raw UTF-8 so the sitemap <loc> matches the page <link rel="canonical">
+        // exactly (avoids the %-encoded-vs-raw "Alternative page with proper canonical" issue).
         const formattedUrl = route.url.startsWith('/') ? route.url : `/${route.url}`;
-        const parts = formattedUrl.split('/').map(part => encodeURIComponent(part));
-        const encodedUrl = parts.join('/');
-        const fullUrl = `${BASE_URL}${encodedUrl}`.replace(/\/+/g, '/').replace('https:/', 'https://');
+        const fullUrl = `${BASE_URL}${formattedUrl}`;
 
         const lastmod = route.lastmod || new Date().toISOString().split('T')[0];
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
-import { appendUTM } from '../utils/url';
+import { appendUTM, slugify } from '../utils/url';
 import type { Vet } from '../types/vet';
 
 const vets = vetsData as Vet[];
@@ -184,8 +184,9 @@ export default function DistrictVets() {
 
     // Normalize params
     const cityKey = city?.toLowerCase() || '';
-    const districtKey = district?.toLowerCase().replace(/-/g, ' ').replace(/%20/g, ' ') || '';
-    const districtDisplay = districtKey.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    const districtSlug = district?.toLowerCase() || '';            // raw URL slug == canonical form
+    const districtSpace = districtSlug.replace(/-/g, ' ');         // spaced form for content lookup + display
+    const districtDisplay = districtSpace.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
     const cityDisplay = cityKey.charAt(0).toUpperCase() + cityKey.slice(1);
 
     const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
@@ -193,8 +194,8 @@ export default function DistrictVets() {
     const [searchTerm, setSearchTerm] = useState('');
 
     const districtVets = vets.filter(vet =>
-        vet.city.toLowerCase() === cityKey &&
-        vet.district?.toLowerCase() === districtKey &&
+        slugify(vet.city) === cityKey &&
+        slugify(vet.district) === districtSlug &&
         ((vet.practice_name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
             (vet.address || "").toLowerCase().includes(searchTerm.toLowerCase())) &&
         (!showVerifiedOnly || vet.community_status === 'Verified') &&
@@ -205,7 +206,7 @@ export default function DistrictVets() {
     const vetNames = districtVets.slice(0, 3).map(v => v.practice_name).join(', ');
     const count = districtVets.length;
 
-    const content = DISTRICT_CONTENT[districtKey] || {
+    const content = DISTRICT_CONTENT[districtSpace] || {
         title: count > 0
             ? `${count} English-Speaking Vets in ${districtDisplay}, ${cityDisplay}`
             : `English-Speaking Vets in ${districtDisplay}, ${cityDisplay}`,
@@ -238,7 +239,7 @@ Our directory connects you with ${count > 0 ? `${count} ` : ''}verified English-
                 "@type": "ListItem",
                 "position": 3,
                 "name": districtDisplay,
-                "item": `https://englishspeakinggermany.online/vets/${cityKey}/${districtKey.replace(/\s+/g, '-')}`
+                "item": `https://englishspeakinggermany.online/vets/${cityKey}/${districtSlug}`
             }
         ]
     };
@@ -248,12 +249,12 @@ Our directory connects you with ${count > 0 ? `${count} ` : ''}verified English-
             <Helmet>
                 <title>{`${content.title} | EnglishSpeakingVets`}</title>
                 <meta name="description" content={content.description} />
-                <link rel="canonical" href={`https://englishspeakinggermany.online/vets/${cityKey}/${districtKey.replace(/\s+/g, '-')}`} />
+                <link rel="canonical" href={`https://englishspeakinggermany.online/vets/${cityKey}/${districtSlug}`} />
                 {districtVets.length === 0 && <meta name="robots" content="noindex" />}
                 <meta property="og:title" content={`${content.title} | EnglishSpeakingVets`} />
                 <meta property="og:description" content={content.description} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content={`https://englishspeakinggermany.online/vets/${cityKey}/${districtKey.replace(/\s+/g, '-')}`} />
+                <meta property="og:url" content={`https://englishspeakinggermany.online/vets/${cityKey}/${districtSlug}`} />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`${content.title} | EnglishSpeakingVets`} />

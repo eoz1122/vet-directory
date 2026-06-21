@@ -1,4 +1,20 @@
 /**
+ * Canonical slug generator. SINGLE SOURCE OF TRUTH for turning a city/district
+ * name into a URL segment. The build scripts (scripts/generate-sitemap.js and
+ * scripts/prerender.js) MUST mirror this exact logic so the sitemap loc, the
+ * pre-rendered file path, the internal links, and the <link rel="canonical">
+ * all agree. Matching is done as `slugify(candidate) === param`, never by
+ * reversing the slug (which loses information for '/', '()', '&', etc.).
+ */
+export const slugify = (s: string | null | undefined): string =>
+    (s ?? '')
+        .toLowerCase()
+        .replace(/[()&]/g, '')        // drop parentheses and ampersands
+        .replace(/[\s/\\,.]+/g, '-')  // spaces, slashes, commas, dots -> hyphen
+        .replace(/-+/g, '-')          // collapse repeats
+        .replace(/^-+|-+$/g, '');     // trim leading/trailing hyphens
+
+/**
  * Appends UTM parameters to a URL for outbound tracking.
  */
 export const appendUTM = (url: string | null | undefined): string => {

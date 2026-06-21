@@ -29,10 +29,10 @@ function sanitizeSlug(text) {
     if (!text) return '';
     return text
         .toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[()&]/g, '')
-        .replace(/-+/g, '-')
-        .trim();
+        .replace(/[()&]/g, '')        // drop parentheses and ampersands
+        .replace(/[\s/\\,.]+/g, '-')  // spaces, slashes, commas, dots -> hyphen
+        .replace(/-+/g, '-')          // collapse repeats
+        .replace(/^-+|-+$/g, '');     // trim leading/trailing hyphens
 }
 
 // ─── Route Collection ───

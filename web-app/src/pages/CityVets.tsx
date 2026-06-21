@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
-import { appendUTM } from '../utils/url';
+import { appendUTM, slugify } from '../utils/url';
 import type { Vet } from '../types/vet';
 
 const vets = vetsData as Vet[];
@@ -230,7 +230,7 @@ export default function CityVets() {
     let cityData = cityContent[cityKey];
 
     const cityVets = vets.filter(vet =>
-        vet.city.toLowerCase() === cityKey
+        slugify(vet.city) === cityKey
     );
 
     if (!cityData) {
