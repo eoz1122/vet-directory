@@ -15,6 +15,17 @@ export const slugify = (s: string | null | undefined): string =>
         .replace(/^-+|-+$/g, '');     // trim leading/trailing hyphens
 
 /**
+ * Turns a URL slug back into a human display name ("bad-homburg" -> "Bad Homburg").
+ * Used only as a fallback; prefer the real name from the data when a record exists.
+ */
+export const titleCaseSlug = (slug: string): string =>
+    (slug || '')
+        .split('-')
+        .filter(Boolean)
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ');
+
+/**
  * Appends UTM parameters to a URL for outbound tracking.
  */
 export const appendUTM = (url: string | null | undefined): string => {

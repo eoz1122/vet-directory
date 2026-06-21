@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
-import { appendUTM, slugify } from '../utils/url';
+import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
 import type { Vet } from '../types/vet';
 
 const vets = vetsData as Vet[];
@@ -185,9 +185,11 @@ export default function DistrictVets() {
     // Normalize params
     const cityKey = city?.toLowerCase() || '';
     const districtSlug = district?.toLowerCase() || '';            // raw URL slug == canonical form
-    const districtSpace = districtSlug.replace(/-/g, ' ');         // spaced form for content lookup + display
-    const districtDisplay = districtSpace.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-    const cityDisplay = cityKey.charAt(0).toUpperCase() + cityKey.slice(1);
+    const districtSpace = districtSlug.replace(/-/g, ' ');         // spaced form for DISTRICT_CONTENT lookup
+    // Prefer real names from the data ("Friedrichshain / Others"); fall back to titled slugs.
+    const sampleVet = vets.find(v => slugify(v.city) === cityKey && slugify(v.district) === districtSlug);
+    const cityDisplay = sampleVet?.city || titleCaseSlug(cityKey);
+    const districtDisplay = sampleVet?.district || titleCaseSlug(districtSlug);
 
     const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
     const [showMobileOnly, setShowMobileOnly] = useState(false);
@@ -208,10 +210,10 @@ export default function DistrictVets() {
 
     const content = DISTRICT_CONTENT[districtSpace] || {
         title: count > 0
-            ? `${count} English-Speaking Vets in ${districtDisplay}, ${cityDisplay}`
+            ? `${count} English-Speaking ${count === 1 ? 'Vet' : 'Vets'} in ${districtDisplay}, ${cityDisplay}`
             : `English-Speaking Vets in ${districtDisplay}, ${cityDisplay}`,
         description: count > 0
-            ? `Find ${count} verified English-speaking veterinarians in ${districtDisplay}, ${cityDisplay}, including ${vetNames}. Browse reviews, check services, and book appointments.`
+            ? `Find ${count} verified English-speaking ${count === 1 ? 'veterinarian' : 'veterinarians'} in ${districtDisplay}, ${cityDisplay}, including ${vetNames}. Browse reviews, check services, and book appointments.`
             : `Find verified English-speaking veterinarians in ${districtDisplay}, ${cityDisplay}. Browse reviews, check services, and book appointments with trusted local practices.`,
         content: `Living in ${districtDisplay} involves navigating daily life in a foreign language, but your pet's healthcare shouldn't be lost in translation. 
         

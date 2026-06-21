@@ -1,5 +1,16 @@
 import { describe, it, expect } from 'vitest';
-import { slugify } from './url';
+import { slugify, titleCaseSlug } from './url';
+
+describe('titleCaseSlug', () => {
+    it('title-cases a hyphenated slug into words (fixes "Bad-homburg")', () => {
+        expect(titleCaseSlug('bad-homburg')).toBe('Bad Homburg');
+        expect(titleCaseSlug('neustadt-near-hamburg')).toBe('Neustadt Near Hamburg');
+        expect(titleCaseSlug('prenzlauer-berg')).toBe('Prenzlauer Berg');
+    });
+    it('is empty-safe', () => {
+        expect(titleCaseSlug('')).toBe('');
+    });
+});
 
 describe('slugify', () => {
     it('lowercases and hyphenates spaces (multi-word cities/districts)', () => {

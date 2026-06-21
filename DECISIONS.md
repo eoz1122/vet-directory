@@ -49,3 +49,18 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Applied:** Live on 2026-06-21 via `nginx -t && systemctl reload nginx` (graceful, zero downtime). The deploy pipeline (`deploy.sh`) does NOT manage nginx config, so this was a manual server edit; the repo's `web-app/nginx_site.conf` is a stale reference and does not match the live config (different root, no asset block).
 
 **Rollback:** `cp /etc/nginx/sites-available/englishspeakinggermany.online.bak-20260621 /etc/nginx/sites-available/englishspeakinggermany.online && nginx -t && systemctl reload nginx`.
+
+---
+
+## 2026-06-21T21:00:00+02:00 — Single Slug Contract (city/district URLs)
+
+**Context:** A full live crawl of all 211 sitemap URLs found ~9 pages broken + 25 canonical mismatches. Root cause was three divergent slug implementations plus lossy reverse-slug matching:
+- `DistrictVets` matched by reversing the slug (`hyphens -> spaces`), which cannot undo `/`, `()`, `&`. Districts like "Friedrichshain / Others" produced a 3-segment path that matched no route -> homepage fallback (6 pages, no H1, ~47 words).
+- `CityVets` compared the hyphenated slug directly to `vet.city.toLowerCase()` (spaces) -> every multi-word city ("Bad Homburg") rendered the noindex "City Not Found" page (3 pages).
+- The sitemap percent-encoded unicode (`/vets/k%C3%B6nigstein`) while canonicals used raw UTF-8 (`/vets/königstein`) -> ~25 "Alternative page with proper canonical" flags.
+
+**Decision:** One canonical `slugify()` in `src/utils/url.ts` is the single source of truth. Matching is always `slugify(candidate) === param` — never reverse-slug. The two build scripts (`generate-sitemap.js`, `prerender.js`) mirror the exact algorithm; `src/utils/url.test.ts` locks the contract. Display names are taken from the real data (`vet.city`/`vet.district`), falling back to `titleCaseSlug()`. Sitemap now emits raw UTF-8 so `<loc>` equals `<link rel="canonical">` byte-for-byte.
+
+**Trade-offs:** Slug logic is duplicated across the TS app and the plain-JS build scripts (tsconfig has no `allowJs`, and node cannot import `.ts`). Accepted because the contract test + end-to-end crawl guard against drift. The alternative (a shared JS module imported by both) was rejected as more fragile under the current bundler/TS setup.
+
+**Verification:** vitest 12/12, `tsc -b` clean. Post-deploy crawl confirmed the 6 districts + 3 cities now return 200 with unique titles/H1/~290-470 words, and a previously-working page was unchanged (no regression). Ships through the normal git -> deploy pipeline (no manual step).

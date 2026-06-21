@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
-import { appendUTM, slugify } from '../utils/url';
+import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
 import type { Vet } from '../types/vet';
 
 const vets = vetsData as Vet[];
@@ -225,13 +225,15 @@ export default function CityVets() {
     const { city } = useParams<{ city: string }>();
 
     const cityKey = city?.toLowerCase() || '';
-    const capitalizedCity = city ? city.charAt(0).toUpperCase() + city.slice(1) : '';
-
-    let cityData = cityContent[cityKey];
 
     const cityVets = vets.filter(vet =>
         slugify(vet.city) === cityKey
     );
+
+    // Prefer the real city name from the data ("Bad Homburg"); fall back to a titled slug.
+    const capitalizedCity = cityVets[0]?.city || titleCaseSlug(cityKey);
+
+    let cityData = cityContent[cityKey];
 
     if (!cityData) {
         if (cityVets.length > 0) {
@@ -239,8 +241,8 @@ export default function CityVets() {
             const vetNames = cityVets.slice(0, 3).map(v => v.practice_name).join(', ');
 
             cityData = {
-                title: `${cityVets.length} English-Speaking Vets in ${capitalizedCity}`,
-                description: `Find ${cityVets.length} verified English-speaking veterinarians in ${capitalizedCity}, including ${vetNames}. Browse our directory of local practices trusted by the international community.`,
+                title: `${cityVets.length} English-Speaking ${cityVets.length === 1 ? 'Vet' : 'Vets'} in ${capitalizedCity}`,
+                description: `Find ${cityVets.length} verified English-speaking ${cityVets.length === 1 ? 'veterinarian' : 'veterinarians'} in ${capitalizedCity}, including ${vetNames}. Browse our directory of local practices trusted by the international community.`,
                 content: `Living in ${capitalizedCity} as an expat comes with many joys, but finding medical care for your pet shouldn't be a challenge. 
 
 Our directory lists verified veterinary practices in ${capitalizedCity} where you can communicate clearly in English, including top-rated spots like ${vetNames}. We understand that medical terminology is difficult enough in your native language, let alone in German.
