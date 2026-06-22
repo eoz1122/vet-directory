@@ -64,3 +64,22 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Trade-offs:** Slug logic is duplicated across the TS app and the plain-JS build scripts (tsconfig has no `allowJs`, and node cannot import `.ts`). Accepted because the contract test + end-to-end crawl guard against drift. The alternative (a shared JS module imported by both) was rejected as more fragile under the current bundler/TS setup.
 
 **Verification:** vitest 12/12, `tsc -b` clean. Post-deploy crawl confirmed the 6 districts + 3 cities now return 200 with unique titles/H1/~290-470 words, and a previously-working page was unchanged (no regression). Ships through the normal git -> deploy pipeline (no manual step).
+
+---
+
+## 2026-06-22T22:50:00+02:00 — Deploy model: GitHub-push-SSH -> VPS pull poller
+
+**Context:** The push -> GitHub Action -> `appleboy/ssh-action` deploy failed repeatedly. Diagnosis from VPS logs: GitHub-hosted runner SYN packets to the VPS never reach sshd (no auth log, no UFW entry) and the action reports `dial tcp: i/o timeout`, while SSH from a normal IP and the VPS's own outbound traffic both work fine. Conclusion: inbound GitHub-runner -> VPS:22 is dropped at the **provider network edge** (not fixable from inside the box). Earlier this also manifested as silent staleness (a push "succeeds" but the red Action means the site never updated) and as `npm ci` races (a manual deploy overlapping an Action wiped node_modules -> `tsc: not found`).
+
+**Decision:** Invert the deploy to **pull-based**, since outbound VPS -> GitHub is reliable.
+- VPS systemd timer `esv-deploy.timer` runs `/usr/local/bin/esv-poll-deploy.sh` every 2 min; it `git fetch`es origin/main and runs `deploy.sh` only on change.
+- `deploy.sh` hardened: `flock` serializes deploys (no more `npm ci` races) and a post-deploy `curl` liveness check fails loud.
+- Host one-time setup: `git config --system --add safe.directory <repo>` (service runs as root; repo owned by `englishspeaking`) and `Environment=HOME=/root` in the unit.
+- The GitHub Action is reduced to a manual-only no-op so pushes stop failing on the dead SSH step.
+- Reference copies of the units/script live in `deploy/`.
+
+**Trade-offs:** Up to ~2 min latency between push and deploy (fine; the prerender already takes ~3 min). Deploy now depends on the VPS timer rather than CI; mitigated by the units being version-controlled in `deploy/` for quick rebuild.
+
+**Verification:** The timer/service deployed `4bd4a64` end-to-end (the commit the broken Action never shipped); server HEAD confirmed. `deploy.sh` liveness check passed.
+
+**Rollback:** `systemctl disable --now esv-deploy.timer` reverts to manual `bash deploy.sh`; the old push->SSH workflow remains in git history.

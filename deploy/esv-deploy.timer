@@ -1,0 +1,12 @@
+# Installed at /etc/systemd/system/esv-deploy.timer on the VPS.
+# Enable with: systemctl enable --now esv-deploy.timer
+[Unit]
+Description=Poll GitHub for new commits and deploy (every 2 min)
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+AccuracySec=15s
+
+[Install]
+WantedBy=timers.target

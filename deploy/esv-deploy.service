@@ -1,0 +1,13 @@
+# Installed at /etc/systemd/system/esv-deploy.service on the VPS.
+# Runs the pull-based deploy poller once (triggered by esv-deploy.timer).
+# Requires (one-time host setup):
+#   git config --system --add safe.directory /home/englishspeaking/englishspeakinggermany.online
+[Unit]
+Description=Pull-based deploy for englishspeakinggermany.online
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+Environment=HOME=/root
+ExecStart=/usr/local/bin/esv-poll-deploy.sh
