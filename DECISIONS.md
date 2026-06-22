@@ -83,3 +83,17 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** The timer/service deployed `4bd4a64` end-to-end (the commit the broken Action never shipped); server HEAD confirmed. `deploy.sh` liveness check passed.
 
 **Rollback:** `systemctl disable --now esv-deploy.timer` reverts to manual `bash deploy.sh`; the old push->SSH workflow remains in git history.
+
+---
+
+## 2026-06-23T00:30:00+02:00 — Evergreen blog URLs (drop -2025) + 301 redirects
+
+**Context:** 12 blog posts had year-stamped slugs (`/blog/...-2025`) that read as permanently dated. The April SEO audit recommended evergreen URLs.
+
+**Decision:** Rename all 12 to drop `-2025` and 301-redirect the old URLs so indexed equity and inbound links survive. Updated in lockstep so sitemap loc = `<link rel="canonical">` = `og:url` = Article schema url = App.tsx route = internal `<Link>` refs (the same agreement that the slug-contract fix established for city/district pages — a mismatch recreates the "Page with redirect" / "Alternative page" indexing failures). Redirects are exact-match nginx rules (`location = /blog/<old> { return 301 .../<new>; }`) placed before `location /`, so they intercept before try_files. Kept the no-trailing-slash convention.
+
+**Trade-offs:** Redirects live only in the hand-maintained nginx config (not deploy-managed), so a VPS rebuild must reapply them from `web-app/nginx_site.conf`. `datePublished` left at the real historical date.
+
+**Verification:** `web-app/scripts/seo-smoke-test.sh` extended — new URLs must 200, all 12 retired URLs must 301 to the evergreen target. Confirmed PASS live. Orphaned `-2025` prerendered dirs removed from the web root.
+
+**Follow-up:** Resubmit the sitemap in Google Search Console so the new URLs are recrawled and the redirects validated.
