@@ -84,7 +84,7 @@ export default function DogTaxGermany() {
                                 <li>Dogs classified as <strong>"dangerous breeds"</strong> are taxed much higher</li>
                             </ul>
 
-                            <h3 className="text-lg font-bold mb-4 mt-8">Typical Annual Rates (as of 2024–2025)</h3>
+                            <h3 className="text-lg font-bold mb-4 mt-8">Typical Annual Rates (approximate)</h3>
                             <div className="overflow-x-auto my-6 not-prose">
                                 <table className="min-w-full bg-white rounded-xl shadow-sm border border-primary/10">
                                     <thead className="bg-primary text-secondary">

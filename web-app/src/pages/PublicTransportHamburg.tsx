@@ -61,7 +61,7 @@ export default function PublicTransportHamburg() {
                             </p>
 
                             <p>
-                                However, "easy" doesn't mean "lawless." Hamburg has very clear expectations regarding leashes, dangerous breeds, and passenger etiquette. Here is the comprehensive, human-to-human guide to navigating the HVV (Hamburg Transport Association) with your dog in 2026 and 2026.
+                                However, "easy" doesn't mean "lawless." Hamburg has very clear expectations regarding leashes, dangerous breeds, and passenger etiquette. Here is the comprehensive, human-to-human guide to navigating the HVV (Hamburg Transport Association) with your dog in 2026.
                             </p>
 
                             <hr className="my-8 border-primary/10" />
@@ -81,7 +81,7 @@ export default function PublicTransportHamburg() {
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <span className="text-accent">✔</span>
-                                        <span><strong>No Limit on Ticket Type:</strong> Whether you are using a single ticket, a monthly pass, or the Deutschland-Ticket (€58 in 2025, rising to €63 in January 2026), your dog is included at no extra cost.</span>
+                                        <span><strong>No Limit on Ticket Type:</strong> Whether you are using a single ticket, a monthly pass, or the Deutschland-Ticket (€63/month as of 2026), your dog is included at no extra cost.</span>
                                     </li>
                                 </ul>
                             </div>

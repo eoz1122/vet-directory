@@ -60,7 +60,7 @@ export default function CatRegistrationGermany() {
                                 <strong>The short answer:</strong> It's simpler than dogs, but not invisible. Unlike dogs, cats don't have the famous (or infamous) <em>Hundesteuer</em> (pet tax)—but the rules are changing, and they vary depending on where you live.
                             </p>
                             <p>
-                                I've watched countless expats panic over this, so let's cut through the confusion with the real facts about cat ownership in Germany for 2026 and 2026.
+                                I've watched countless expats panic over this, so let's cut through the confusion with the real facts about cat ownership in Germany for 2026.
                             </p>
 
                             <div className="bg-primary/5 p-8 rounded-2xl shadow-sm my-8 border border-primary/10 not-prose">

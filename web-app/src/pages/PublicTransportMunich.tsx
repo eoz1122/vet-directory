@@ -148,7 +148,7 @@ export default function PublicTransportMunich() {
 
                             <h2 id="deutschlandticket" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Deutschlandticket: Dogs Ride Free Too</h2>
                             <p>
-                                The Deutschlandticket (€58) is personal and non-transferable. In the MVV (Munich) network, it allows you to bring <strong>one dog for free</strong>.
+                                The Deutschlandticket (€63) is personal and non-transferable. In the MVV (Munich) network, it allows you to bring <strong>one dog for free</strong>.
                             </p>
                             <p className="bg-accent/10 p-4 rounded-lg border-l-4 border-accent text-sm text-primary/80">
                                 <strong>Check the fine print:</strong> While MVV accepts this, if you travel Regional Express to Nürnberg or Salzburg, different rules may kickoff once you leave the MVV zone.

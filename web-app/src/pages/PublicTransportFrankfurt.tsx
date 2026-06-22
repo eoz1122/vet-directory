@@ -45,7 +45,7 @@ export default function PublicTransportFrankfurt() {
                         <TableOfContents items={[
                             { id: 'ticket-rules', label: '1. Ticket Rules: No "Dog Fares" Here' },
                             { id: 'leash-muzzle', label: '2. Leash & Muzzle: The "Gray Zone"' },
-                            { id: 'deutschland-ticket', label: '3. The Deutschland-Ticket (€58)' },
+                            { id: 'deutschland-ticket', label: '3. The Deutschland-Ticket (€63)' },
                             { id: 'navigation', label: '4. Navigation Tips for Commuters' },
                             { id: 'small-pets', label: '5. Cats & Small Pets' }
                         ]} />
@@ -60,7 +60,7 @@ export default function PublicTransportFrankfurt() {
                             </p>
 
                             <p>
-                                Here is everything you need to know to navigate the <strong>RMV (Rhine-Main Transport Association)</strong> with your dog in 2026 and 2026.
+                                Here is everything you need to know to navigate the <strong>RMV (Rhine-Main Transport Association)</strong> with your dog in 2026.
                             </p>
 
                             <hr className="my-8 border-primary/10" />
@@ -120,9 +120,9 @@ export default function PublicTransportFrankfurt() {
                                 </p>
                             </div>
 
-                            <h2 id="deutschland-ticket" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">3. The Deutschland-Ticket (€58) in Frankfurt</h2>
+                            <h2 id="deutschland-ticket" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">3. The Deutschland-Ticket (€63) in Frankfurt</h2>
                             <p>
-                                As of 2025, the Deutschland-Ticket costs €58/month (rising to €63 in January 2026).
+                                As of 2026, the Deutschland-Ticket costs €63/month.
                             </p>
                             <ul className="list-disc pl-5 space-y-2">
                                 <li><strong>Within Frankfurt/RMV:</strong> Since dogs travel for free on the RMV anyway, your D-Ticket is all you need.</li>

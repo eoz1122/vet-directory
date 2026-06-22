@@ -92,7 +92,7 @@ export default function PublicTransportStuttgart() {
                             </p>
 
                             <h2 id="ticket-prices" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Ticket Prices (Updated for 2026)</h2>
-                            <p>Prices were adjusted in January 2025. Here is the breakdown for <strong>Zone 1 (Stuttgart City Center)</strong>:</p>
+                            <p>Prices were last adjusted in January 2026. Here is the breakdown for <strong>Zone 1 (Stuttgart City Center)</strong>:</p>
 
                             <div className="overflow-x-auto bg-white rounded-xl shadow-sm border border-primary/10 p-4 not-prose">
                                 <table className="w-full text-left border-collapse">
@@ -106,12 +106,12 @@ export default function PublicTransportStuttgart() {
                                     <tbody className="text-sm">
                                         <tr className="border-b border-primary/5 hover:bg-primary/5 transition-colors">
                                             <td className="p-3 font-medium text-primary/80">Single Trip (Einzelfahrkarte)</td>
-                                            <td className="p-3 text-primary/70">€3.50</td>
+                                            <td className="p-3 text-primary/70">€3.30</td>
                                             <td className="p-3 font-bold text-accent">€1.70</td>
                                         </tr>
                                         <tr className="border-b border-primary/5 hover:bg-primary/5 transition-colors">
                                             <td className="p-3 font-medium text-primary/80">Short Trip (Kurzstrecke)</td>
-                                            <td className="p-3 text-primary/70">€1.90</td>
+                                            <td className="p-3 text-primary/70">€2.00</td>
                                             <td className="p-3 font-bold text-accent">€1.40</td>
                                         </tr>
                                         <tr className="border-b border-primary/5 hover:bg-primary/5 transition-colors">
@@ -141,7 +141,7 @@ export default function PublicTransportStuttgart() {
                             <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 my-6 not-prose">
                                 <h3 className="text-xl font-bold text-primary mt-0 mb-3">Important: The local exemption</h3>
                                 <p className="mb-4 text-primary/80">
-                                    If you have a <strong>Deutschlandticket</strong> (€58/month in 2025), traveling with your dog in Stuttgart has a very specific "local vs. visitor" rule:
+                                    If you have a <strong>Deutschlandticket</strong> (€63/month in 2026), traveling with your dog in Stuttgart has a very specific "local vs. visitor" rule:
                                 </p>
                                 <ul className="list-disc pl-5 mb-4 text-primary/80">
                                     <li><strong>Within VVS Network:</strong> You can take <strong>one dog free of charge</strong>. No extra ticket needed.</li>

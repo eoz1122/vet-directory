@@ -44,7 +44,7 @@ export default function PublicTransportBerlin() {
 
                         <TableOfContents items={[
                             { id: 'ticket-rules', label: '1. Ticket Rules: The "Dog Fare"' },
-                            { id: 'deutschland-ticket', label: '2. The Deutschland-Ticket (€58) & Dogs' },
+                            { id: 'deutschland-ticket', label: '2. The Deutschland-Ticket (€63) & Dogs' },
                             { id: 'muzzle-leash', label: '3. Muzzle & Leash Rules' },
                             { id: 'navigation', label: '4. Tips for a Stress-Free Ride' },
                             { id: 'etiquette', label: '5. Etiquette: Being a Good "Dog Guest"' }
@@ -91,7 +91,7 @@ export default function PublicTransportBerlin() {
                                 </p>
                                 <ul className="list-disc pl-5 mt-0 text-primary/80">
                                     <li>A <strong>reduced fare ticket</strong> (<em>Ermäßigungstarif</em>) is required</li>
-                                    <li>Standard AB single trip: <strong>€2.40</strong> (2025 rates)</li>
+                                    <li>Standard AB single trip: <strong>€4.00</strong> (2026 rates)</li>
                                     <li>Dog must be on a leash</li>
                                 </ul>
                             </div>
@@ -109,7 +109,7 @@ export default function PublicTransportBerlin() {
                                 <p className="text-primary/80 mt-2 font-medium">This is one of Berlin’s best hidden perks for dog owners.</p>
                             </div>
 
-                            <h2 id="deutschland-ticket" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">2. Does the Deutschland-Ticket (€58) Include Dogs?</h2>
+                            <h2 id="deutschland-ticket" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">2. Does the Deutschland-Ticket (€63) Include Dogs?</h2>
                             <p>This is the number-one expat question.</p>
 
                             <div className="bg-white p-8 rounded-2xl border border-primary/10 text-center my-6 not-prose">
