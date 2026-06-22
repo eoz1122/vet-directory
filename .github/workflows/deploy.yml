@@ -6,6 +6,13 @@ on:
       - main
   workflow_dispatch: # allow manual trigger from GitHub UI or gh CLI
 
+# Serialize deploy runs: never let two runs deploy at once (they would race on
+# `npm ci` / `git reset` on the VPS). Queue new runs rather than cancelling, so an
+# in-flight prerender always finishes cleanly.
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: false
+
 jobs:
   deploy:
     name: Build & Deploy
@@ -23,6 +30,7 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
           command_timeout: 30m  # prerender 203 pages takes ~5-10 mins
+          timeout: 120s         # SSH connect timeout (was 30s default) - tolerate transient blips
           script: |
             set -e
             cd ${{ secrets.VPS_APP_PATH }}

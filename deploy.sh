@@ -1,6 +1,17 @@
 #!/bin/bash
 set -e
 
+# ─── Concurrency guard ────────────────────────────────────────────────────────
+# Serialize deploys so a manual run and the GitHub Action (or two Actions) never
+# run `npm ci` at the same time and wipe node_modules mid-build (caused real
+# `tsc: not found` failures). Waits up to 15 min for any in-flight deploy, then
+# proceeds; the lock auto-releases when this script exits (even on error).
+exec 9>/tmp/esv-deploy.lock
+if ! flock -w 900 9; then
+    echo "❌ Another deploy held the lock for >15min. Aborting to avoid a race."
+    exit 1
+fi
+
 # ─── EnglishSpeakingVets - VPS Deploy Script ──────────────────────────────────
 #
 # SINGLE source of truth for deployment.
@@ -46,6 +57,15 @@ pip install -r requirements.txt --quiet
 echo "🚀 Copying build output to nginx root..."
 cd ..
 cp -r web-app/dist/* .
+
+# 7. Verify the live site actually serves after the swap (fail loud, not silent).
+echo "🔎 Verifying live site responds..."
+if curl -fsS -o /dev/null --max-time 25 https://englishspeakinggermany.online/; then
+    echo "✅ Live site responding (HTTP 200)."
+else
+    echo "❌ Post-deploy check FAILED: site did not return 200. Investigate now."
+    exit 1
+fi
 
 echo ""
 echo "🎉 Deployment complete!"
