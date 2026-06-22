@@ -11,19 +11,19 @@ export default function MovingWithPetChecklist() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Moving to Germany with a Pet: The 2025 Survival Checklist</title>
-                <meta name="description" content="Moving to Germany with a dog or cat in 2025? Follow this essential 6-step checklist covering microchips, rabies vaccines, the 15-week rule, and EU health certificates to avoid quarantine." />
-                <meta name="keywords" content="moving to Germany with pet, bringing dog to Germany, bringing cat to Germany, pet relocation Germany, Germany pet import regulations 2025, EU animal health certificate Germany, Germany dangerous dog breed restrictions" />
-                <meta property="og:title" content="Moving to Germany with a Pet: The 2025 Survival Checklist" />
-                <meta property="og:description" content="Don't get stuck at customs. Essential guide for expats bringing pets to Germany in 2025: Microchips, vaccines, and the critical 15-week rule." />
+                <title>Moving to Germany with a Pet: The 2026 Survival Checklist</title>
+                <meta name="description" content="Moving to Germany with a dog or cat in 2026? Follow this essential 6-step checklist covering microchips, rabies vaccines, the 15-week rule, and EU health certificates to avoid quarantine." />
+                <meta name="keywords" content="moving to Germany with pet, bringing dog to Germany, bringing cat to Germany, pet relocation Germany, Germany pet import regulations 2026, EU animal health certificate Germany, Germany dangerous dog breed restrictions" />
+                <meta property="og:title" content="Moving to Germany with a Pet: The 2026 Survival Checklist" />
+                <meta property="og:description" content="Don't get stuck at customs. Essential guide for expats bringing pets to Germany in 2026: Microchips, vaccines, and the critical 15-week rule." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <meta property="og:url" content="https://englishspeakinggermany.online/blog/moving-to-germany-with-pet-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/moving-to-germany-with-pet-2025" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "Moving to Germany with a Pet: The 2025 Survival Checklist",
-                        "Don't get stuck at customs. Essential guide for expats bringing pets to Germany in 2025: Microchips, vaccines, and the critical 15-week rule.",
+                        "Moving to Germany with a Pet: The 2026 Survival Checklist",
+                        "Don't get stuck at customs. Essential guide for expats bringing pets to Germany in 2026: Microchips, vaccines, and the critical 15-week rule.",
                         "https://englishspeakinggermany.online/blog/moving-to-germany-with-pet-2025",
                         "2025-01-01"
                     ))}
@@ -39,7 +39,7 @@ export default function MovingWithPetChecklist() {
                     <article className="lg:flex-1 max-w-4xl">
                         <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            Moving to Germany with a Pet: <br />The 2025 Survival Checklist
+                            Moving to Germany with a Pet: <br />The 2026 Survival Checklist
                         </h1>
 
                         <TableOfContents items={[
@@ -57,7 +57,7 @@ export default function MovingWithPetChecklist() {
                             </p>
 
                             <p className="mt-8">
-                                I’ve been through the expat pet panic myself. German bureaucracy has its reputation for a reason, and when it comes to animal health, they don’t mess around. To save you from a nightmare at the airport, here’s the essential, human-to-human checklist for relocating your pet to Germany in 2025.
+                                I’ve been through the expat pet panic myself. German bureaucracy has its reputation for a reason, and when it comes to animal health, they don’t mess around. To save you from a nightmare at the airport, here’s the essential, human-to-human checklist for relocating your pet to Germany in 2026.
                             </p>
 
                             <div className="bg-white p-8 rounded-2xl shadow-sm my-8 border border-primary/10 not-prose">

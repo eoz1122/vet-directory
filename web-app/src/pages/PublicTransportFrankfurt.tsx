@@ -11,19 +11,19 @@ export default function PublicTransportFrankfurt() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Public Transport with Dogs in Frankfurt (RMV): The 2025 Expat Survival Guide | EnglishSpeakingVets</title>
-                <meta name="description" content="Moving to Frankfurt with a dog? Read the 2025 guide to RMV transport rules. Learn why dogs ride for free and how to navigate the 'muzzle gray zone'." />
-                <meta name="keywords" content="Public transport with dogs in Frankfurt, RMV dog rules 2025, dogs on Frankfurt U-Bahn, Frankfurt muzzle requirement dogs, RMV Deutschland-Ticket dog free" />
-                <meta property="og:title" content="Public Transport with Dogs in Frankfurt (RMV): The 2025 Expat Survival Guide" />
-                <meta property="og:description" content="Frankfurt's RMV network allows free travel for dogs, but the muzzle rules are tricky. Here is your 2025 survival guide." />
+                <title>Public Transport with Dogs in Frankfurt (RMV): The 2026 Expat Survival Guide | EnglishSpeakingVets</title>
+                <meta name="description" content="Moving to Frankfurt with a dog? Read the 2026 guide to RMV transport rules. Learn why dogs ride for free and how to navigate the 'muzzle gray zone'." />
+                <meta name="keywords" content="Public transport with dogs in Frankfurt, RMV dog rules 2026, dogs on Frankfurt U-Bahn, Frankfurt muzzle requirement dogs, RMV Deutschland-Ticket dog free" />
+                <meta property="og:title" content="Public Transport with Dogs in Frankfurt (RMV): The 2026 Expat Survival Guide" />
+                <meta property="og:description" content="Frankfurt's RMV network allows free travel for dogs, but the muzzle rules are tricky. Here is your 2026 survival guide." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt-2025" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "Public Transport with Dogs in Frankfurt (RMV): The 2025 Expat Survival Guide",
-                        "Frankfurt's RMV network allows free travel for dogs, but the muzzle rules are tricky. Here is your 2025 survival guide.",
+                        "Public Transport with Dogs in Frankfurt (RMV): The 2026 Expat Survival Guide",
+                        "Frankfurt's RMV network allows free travel for dogs, but the muzzle rules are tricky. Here is your 2026 survival guide.",
                         "https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt-2025",
                         "2025-01-01"
                     ))}
@@ -39,7 +39,7 @@ export default function PublicTransportFrankfurt() {
                     <article className="lg:flex-1 max-w-4xl">
                         <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Survival Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            🚇 Public Transport with Dogs in Frankfurt (RMV): The 2025 Expat Survival Guide
+                            🚇 Public Transport with Dogs in Frankfurt (RMV): The 2026 Expat Survival Guide
                         </h1>
 
                         <TableOfContents items={[
@@ -60,7 +60,7 @@ export default function PublicTransportFrankfurt() {
                             </p>
 
                             <p>
-                                Here is everything you need to know to navigate the <strong>RMV (Rhine-Main Transport Association)</strong> with your dog in 2025 and 2026.
+                                Here is everything you need to know to navigate the <strong>RMV (Rhine-Main Transport Association)</strong> with your dog in 2026 and 2026.
                             </p>
 
                             <hr className="my-8 border-primary/10" />

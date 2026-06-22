@@ -21,7 +21,7 @@ const blogPosts = [
     },
     {
         url: "/blog/pet-sitting-germany-2025",
-        title: "Pet Sitting in Germany (2025)",
+        title: "Pet Sitting in Germany (2026)",
         emoji: "🏡",
         category: "Living",
         desc: "Finding a safe home for your little friends. Comparing platforms like Pawshake vs. Pensions vs. Community Swaps."
@@ -31,7 +31,7 @@ const blogPosts = [
         title: "Moving to Germany with a Pet",
         emoji: "🐕",
         category: "Moving",
-        desc: "The complete 2025 survival checklist for bringing your dog or cat to Germany. Customs, vaccinations, and paperwork explained."
+        desc: "The complete 2026 survival checklist for bringing your dog or cat to Germany. Customs, vaccinations, and paperwork explained."
     },
     {
         url: "/blog/pet-friendly-apartments-germany-2025",
@@ -73,7 +73,7 @@ const blogPosts = [
         title: "Public Transport with Dogs: Stuttgart",
         emoji: "🏎️",
         category: "Transport",
-        desc: "VVS 2025 Guide: The 'Children's Ticket' rule, local Deutschlandticket bonuses, and the Zacke."
+        desc: "VVS 2026 Guide: The 'Children's Ticket' rule, local Deutschlandticket bonuses, and the Zacke."
     },
     {
         url: "/blog/public-transport-with-dogs-berlin-2025",
@@ -105,7 +105,7 @@ const blogPosts = [
     },
     {
         url: "/blog/pet-insurance-germany-2025",
-        title: "Pet Insurance in Germany (2025)",
+        title: "Pet Insurance in Germany (2026)",
         emoji: "💰",
         category: "Bureaucracy",
         desc: "Do you really need it? Understanding liability vs. health insurance, the GOT fees, and why emergencies are so expensive."

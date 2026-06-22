@@ -11,9 +11,9 @@ export default function PetSittingGermany() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Pet Sitting in Germany (2025): Finding a Safe Home for Your Little Friends</title>
+                <title>Pet Sitting in Germany (2026): Finding a Safe Home for Your Little Friends</title>
                 <meta name="description" content="A complete guide to finding pet sitters in Germany. Comparing Pawshake, Cat in a Flat, pensions, and community options for expats." />
-                <meta property="og:title" content="Pet Sitting in Germany (2025): Finding a Safe Home for Your Little Friends" />
+                <meta property="og:title" content="Pet Sitting in Germany (2026): Finding a Safe Home for Your Little Friends" />
                 <meta property="og:description" content="A complete guide to finding pet sitters in Germany. Comparing Pawshake, Cat in a Flat, pensions, and community options for expats." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
@@ -21,7 +21,7 @@ export default function PetSittingGermany() {
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-sitting-germany-2025" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "Pet Sitting in Germany (2025): Finding a Safe Home for Your Little Friends",
+                        "Pet Sitting in Germany (2026): Finding a Safe Home for Your Little Friends",
                         "A complete guide to finding pet sitters in Germany. Comparing Pawshake, Cat in a Flat, pensions, and community options for expats.",
                         "https://englishspeakinggermany.online/blog/pet-sitting-germany-2025",
                         "2025-01-01"
@@ -40,7 +40,7 @@ export default function PetSittingGermany() {
                     <article className="lg:flex-1 max-w-4xl">
                         <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
-                            🏡 Pet Sitting in Germany (2025): Finding a Safe Home for Your Little Friends
+                            🏡 Pet Sitting in Germany (2026): Finding a Safe Home for Your Little Friends
                         </h1>
 
                         <TableOfContents items={[
@@ -102,7 +102,7 @@ export default function PetSittingGermany() {
                                 If you have a <strong>cat</strong>, never move them to a pension unless absolutely necessary. Cats are territorial. Use <a href="https://catinaflat.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">Cat in a Flat</a> or a neighbor check-in service.
                             </p>
 
-                            <h2 id="costs" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">2. What Does Pet Sitting Cost in 2025?</h2>
+                            <h2 id="costs" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">2. What Does Pet Sitting Cost in 2026?</h2>
                             <p>Prices have risen significantly in major cities like Berlin and Munich. Here are the realistic averages you should budget for:</p>
 
                             <ul className="space-y-4 my-6 list-none pl-0">

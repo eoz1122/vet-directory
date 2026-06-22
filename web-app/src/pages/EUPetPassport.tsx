@@ -12,7 +12,7 @@ export default function EUPetPassport() {
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>EU Pet Passports: Why You Need One and How to Get It | EnglishSpeakingVets</title>
-                <meta name="description" content="Living in Germany? Learn how to get an EU Pet Passport for your dog or cat. Valid indefinitely for travel across Europe. Step-by-step guide for expats in 2025." />
+                <meta name="description" content="Living in Germany? Learn how to get an EU Pet Passport for your dog or cat. Valid indefinitely for travel across Europe. Step-by-step guide for expats in 2026." />
                 <meta name="keywords" content="EU pet passport Germany, pet passport Berlin, pet passport Hamburg, EU pet travel, dog passport Europe, cat passport EU, pet travel Europe, rabies vaccination EU" />
                 <meta property="og:title" content="EU Pet Passports: The Ultimate Freedom Pass for Expat Pet Owners" />
                 <meta property="og:description" content="Your health certificate expires. An EU Pet Passport doesn't. Here's how to get one in Germany and travel freely across Europe." />
@@ -23,7 +23,7 @@ export default function EUPetPassport() {
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "EU Pet Passports: The Ultimate Freedom Pass for Expat Pet Owners",
-                        "Living in Germany? Learn how to get an EU Pet Passport for your dog or cat. Valid indefinitely for travel across Europe. Step-by-step guide for expats in 2025.",
+                        "Living in Germany? Learn how to get an EU Pet Passport for your dog or cat. Valid indefinitely for travel across Europe. Step-by-step guide for expats in 2026.",
                         "https://englishspeakinggermany.online/blog/eu-pet-passport-germany-2025",
                         "2025-01-01"
                     ))}
@@ -45,7 +45,7 @@ export default function EUPetPassport() {
                         <TableOfContents items={[
                             { id: 'what-is-it', label: 'What Is an EU Pet Passport?' },
                             { id: 'why-need-one', label: 'Why You Need One (vs. Certificates)' },
-                            { id: 'cost', label: 'How Much Does It Cost? (2025)' },
+                            { id: 'cost', label: 'How Much Does It Cost? (2026)' },
                             { id: 'how-to', label: 'How to Get One (Step-by-Step)' },
                             { id: 'tapeworm', label: 'Special Rule: The Tapeworm Treatment' },
                             { id: 'travel-back', label: 'Traveling to UK/USA?' }
@@ -110,7 +110,7 @@ export default function EUPetPassport() {
                             </ul>
 
                             <h2 id="cost" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">How Much Does It Cost?</h2>
-                            <p>In 2025, expect to pay approximately:</p>
+                            <p>In 2026, expect to pay approximately:</p>
                             <div className="bg-white p-6 rounded-xl shadow-sm border border-primary/5 my-6 not-prose">
                                 <ul className="list-none pl-0 space-y-2 mb-4 text-primary/80">
                                     <li><strong>Passport booklet:</strong> €30–€50</li>

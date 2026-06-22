@@ -11,7 +11,7 @@ const CatMicrochippingGermany: React.FC = () => {
     const publishDate = '2026-05-19';
     
     const schema = generateArticleSchema(
-        'Cat Microchipping in Germany: What Changed in 2025/2026',
+        'Cat Microchipping in Germany: What Changed in 2026',
         'Germany is tightening cat microchipping and registration rules. Here is what expat cat owners need to know, and what you must do before it affects you.',
         'https://englishspeakinggermany.online/blog/cat-microchipping-germany',
         publishDate

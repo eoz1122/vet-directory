@@ -12,9 +12,9 @@ export default function CatRegistrationGermany() {
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Cat Registration in Germany: Do You Need to Tell the Bürgeramt? | EnglishSpeakingVets</title>
-                <meta name="description" content="Moving to Germany with a cat? Learn the 2025/2026 rules for cat registration, microchipping, and neutering requirements in Berlin, Hamburg, and Frankfurt." />
+                <meta name="description" content="Moving to Germany with a cat? Learn the 2026 rules for cat registration, microchipping, and neutering requirements in Berlin, Hamburg, and Frankfurt." />
                 <meta name="keywords" content="cat registration Germany, register cat Berlin, cat microchip Germany, Katzenschutzverordnung, TASSO registration, cat tax Germany, Freigängerkatze, cat neutering Germany" />
-                <meta property="og:title" content="Cat Registration in Germany: The 2025 Complete Guide" />
+                <meta property="og:title" content="Cat Registration in Germany: The 2026 Complete Guide" />
                 <meta property="og:description" content="No cat tax, but microchipping is mandatory in many cities. Here's what expats need to know about cat ownership in Germany." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
@@ -22,8 +22,8 @@ export default function CatRegistrationGermany() {
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/cat-registration-germany-2025" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "Cat Registration in Germany: The 2025 Complete Guide",
-                        "Moving to Germany with a cat? Learn the 2025/2026 rules for cat registration, microchipping, and neutering requirements in Berlin, Hamburg, and Frankfurt.",
+                        "Cat Registration in Germany: The 2026 Complete Guide",
+                        "Moving to Germany with a cat? Learn the 2026 rules for cat registration, microchipping, and neutering requirements in Berlin, Hamburg, and Frankfurt.",
                         "https://englishspeakinggermany.online/blog/cat-registration-germany-2025",
                         "2025-01-01"
                     ))}
@@ -60,7 +60,7 @@ export default function CatRegistrationGermany() {
                                 <strong>The short answer:</strong> It's simpler than dogs, but not invisible. Unlike dogs, cats don't have the famous (or infamous) <em>Hundesteuer</em> (pet tax)—but the rules are changing, and they vary depending on where you live.
                             </p>
                             <p>
-                                I've watched countless expats panic over this, so let's cut through the confusion with the real facts about cat ownership in Germany for 2025 and 2026.
+                                I've watched countless expats panic over this, so let's cut through the confusion with the real facts about cat ownership in Germany for 2026 and 2026.
                             </p>
 
                             <div className="bg-primary/5 p-8 rounded-2xl shadow-sm my-8 border border-primary/10 not-prose">
@@ -93,7 +93,7 @@ export default function CatRegistrationGermany() {
                             </div>
 
                             <h2 id="city-rules" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🗺️ City-by-City Rules (The Patchwork Map)</h2>
-                            <p>Germany is a fan of local ordinances. Here's the 2025/2026 status for the big hubs:</p>
+                            <p>Germany is a fan of local ordinances. Here's the 2026 status for the big hubs:</p>
 
                             <div className="space-y-4 my-8 not-prose">
                                 <div className="bg-white p-6 rounded-xl border-l-4 border-accent shadow-sm">

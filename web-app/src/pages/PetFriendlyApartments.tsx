@@ -11,19 +11,19 @@ export default function PetFriendlyApartments() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Finding a Pet-Friendly Apartment in Germany (2025) | Rights & Tips</title>
-                <meta name="description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2025." />
-                <meta name="keywords" content="Finding a pet-friendly apartment in Germany, German rental law pets 2025, dog-friendly neighborhoods Berlin, pet resume for landlords Germany, cat ownership rental laws Germany" />
-                <meta property="og:title" content="Finding a Pet-Friendly Apartment in Germany (2025) | Rights & Tips" />
-                <meta property="og:description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2025." />
+                <title>Finding a Pet-Friendly Apartment in Germany (2026) | Rights & Tips</title>
+                <meta name="description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026." />
+                <meta name="keywords" content="Finding a pet-friendly apartment in Germany, German rental law pets 2026, dog-friendly neighborhoods Berlin, pet resume for landlords Germany, cat ownership rental laws Germany" />
+                <meta property="og:title" content="Finding a Pet-Friendly Apartment in Germany (2026) | Rights & Tips" />
+                <meta property="og:description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany-2025" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "Finding a Pet-Friendly Apartment in Germany (2025) | Rights & Tips",
-                        "Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2025.",
+                        "Finding a Pet-Friendly Apartment in Germany (2026) | Rights & Tips",
+                        "Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026.",
                         "https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany-2025",
                         "2025-01-01"
                     ))}
@@ -41,13 +41,13 @@ export default function PetFriendlyApartments() {
                     <article className="lg:flex-1 max-w-4xl">
                         <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
-                            🏠 Finding a Pet-Friendly Apartment in Berlin, Hamburg & Frankfurt (2025)
+                            🏠 Finding a Pet-Friendly Apartment in Berlin, Hamburg & Frankfurt (2026)
                         </h1>
 
                         <TableOfContents items={[
                             { id: 'legal-rights', label: 'Your Legal Rights: What Landlords Can Do' },
                             { id: 'pet-resume', label: 'The "Pet Resume": Your Secret Weapon' },
-                            { id: 'best-districts', label: 'Best Pet-Friendly Districts (2025)' },
+                            { id: 'best-districts', label: 'Best Pet-Friendly Districts (2026)' },
                             { id: 'strategy', label: 'How to Apply: The Strategy' }
                         ]} />
 

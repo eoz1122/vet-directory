@@ -11,19 +11,19 @@ export default function PublicTransportHamburg() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Public Transport with Dogs in Hamburg (HVV): The 2025 Expat Survival Guide | EnglishSpeakingVets</title>
+                <title>Public Transport with Dogs in Hamburg (HVV): The 2026 Expat Survival Guide | EnglishSpeakingVets</title>
                 <meta name="description" content="Navigating Hamburg with a dog? Learn why HVV is Germany's most pet-friendly transit system. Rules on tickets, muzzles, and taking the ferry with your pup." />
-                <meta name="keywords" content="Public transport with dogs in Hamburg, HVV dog rules 2025, dogs on Hamburg ferries, Hamburg dangerous dog breeds list, HVV Deutschland-Ticket dog" />
-                <meta property="og:title" content="Public Transport with Dogs in Hamburg (HVV): The 2025 Expat Survival Guide" />
-                <meta property="og:description" content="Hamburg is Germany's most dog-friendly transit city. No tickets, no general muzzle rule, and free ferries. Here is your 2025 guide." />
+                <meta name="keywords" content="Public transport with dogs in Hamburg, HVV dog rules 2026, dogs on Hamburg ferries, Hamburg dangerous dog breeds list, HVV Deutschland-Ticket dog" />
+                <meta property="og:title" content="Public Transport with Dogs in Hamburg (HVV): The 2026 Expat Survival Guide" />
+                <meta property="og:description" content="Hamburg is Germany's most dog-friendly transit city. No tickets, no general muzzle rule, and free ferries. Here is your 2026 guide." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-hamburg-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-hamburg-2025" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "Public Transport with Dogs in Hamburg (HVV): The 2025 Expat Survival Guide",
-                        "Hamburg is Germany's most dog-friendly transit city. No tickets, no general muzzle rule, and free ferries. Here is your 2025 guide.",
+                        "Public Transport with Dogs in Hamburg (HVV): The 2026 Expat Survival Guide",
+                        "Hamburg is Germany's most dog-friendly transit city. No tickets, no general muzzle rule, and free ferries. Here is your 2026 guide.",
                         "https://englishspeakinggermany.online/blog/public-transport-with-dogs-hamburg-2025",
                         "2025-01-01"
                     ))}
@@ -39,7 +39,7 @@ export default function PublicTransportHamburg() {
                     <article className="lg:flex-1 max-w-4xl">
                         <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Survival Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            🚇 Public Transport with Dogs in Hamburg (HVV): The 2025 Expat Survival Guide
+                            🚇 Public Transport with Dogs in Hamburg (HVV): The 2026 Expat Survival Guide
                         </h1>
 
                         <TableOfContents items={[
@@ -61,7 +61,7 @@ export default function PublicTransportHamburg() {
                             </p>
 
                             <p>
-                                However, "easy" doesn't mean "lawless." Hamburg has very clear expectations regarding leashes, dangerous breeds, and passenger etiquette. Here is the comprehensive, human-to-human guide to navigating the HVV (Hamburg Transport Association) with your dog in 2025 and 2026.
+                                However, "easy" doesn't mean "lawless." Hamburg has very clear expectations regarding leashes, dangerous breeds, and passenger etiquette. Here is the comprehensive, human-to-human guide to navigating the HVV (Hamburg Transport Association) with your dog in 2026 and 2026.
                             </p>
 
                             <hr className="my-8 border-primary/10" />

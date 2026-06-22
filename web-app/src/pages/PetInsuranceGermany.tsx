@@ -12,19 +12,19 @@ export default function PetInsuranceGermany() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Pet Insurance in Germany (2025): Do You Really Need It? | EnglishSpeakingVets</title>
-                <meta name="description" content="A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2025." />
+                <title>Pet Insurance in Germany (2026): Do You Really Need It? | EnglishSpeakingVets</title>
+                <meta name="description" content="A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2026." />
                 <meta name="keywords" content="pet insurance Germany, dog liability insurance Germany, Hundehaftpflichtversicherung, pet health insurance Germany, vet costs Germany GOT, Tierkrankenversicherung" />
-                <meta property="og:title" content="Pet Insurance in Germany (2025): Do You Really Need It?" />
-                <meta property="og:description" content="A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2025." />
+                <meta property="og:title" content="Pet Insurance in Germany (2026): Do You Really Need It?" />
+                <meta property="og:description" content="A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2026." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-insurance-germany-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-insurance-germany-2025" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "Pet Insurance in Germany (2025): Do You Really Need It?",
-                        "A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2025.",
+                        "Pet Insurance in Germany (2026): Do You Really Need It?",
+                        "A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2026.",
                         "https://englishspeakinggermany.online/blog/pet-insurance-germany-2025",
                         "2025-01-01"
                     ))}
@@ -170,7 +170,7 @@ export default function PetInsuranceGermany() {
                                 </table>
                             </div>
 
-                            <h2 id="costs" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Real-World Costs (2025 Rates)</h2>
+                            <h2 id="costs" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Real-World Costs (2026 Rates)</h2>
                             <p>If you skip health insurance, these are the "out-of-pocket" numbers you need to be ready for:</p>
 
                             <div className="grid md:grid-cols-2 gap-4 my-8 not-prose">

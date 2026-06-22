@@ -11,10 +11,10 @@ export default function PublicTransportBerlin() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Public Transport with Dogs in Berlin (BVG): The 2025 Expat Survival Guide | EnglishSpeakingVets</title>
-                <meta name="description" content="Can dogs take the U-Bahn in Berlin? Do they need a ticket? Complete 2025 guide to BVG dog rules, muzzles, prices, and the Deutschland-Ticket for expats." />
+                <title>Public Transport with Dogs in Berlin (BVG): The 2026 Expat Survival Guide | EnglishSpeakingVets</title>
+                <meta name="description" content="Can dogs take the U-Bahn in Berlin? Do they need a ticket? Complete 2026 guide to BVG dog rules, muzzles, prices, and the Deutschland-Ticket for expats." />
                 <meta name="keywords" content="dogs BVG Berlin, dog ticket Berlin U-Bahn, Berlin public transport dogs, muzzle rules Berlin, Deutschland ticket dog rules, Berlin expat dog guide" />
-                <meta property="og:title" content="The 2025 Guide to Taking Dogs on Public Transport in Berlin (BVG)" />
+                <meta property="og:title" content="The 2026 Guide to Taking Dogs on Public Transport in Berlin (BVG)" />
                 <meta property="og:description" content="Is your dog a 'passenger' or 'luggage'? Learn the ticket rules, muzzle laws, and escalator dangers before you board." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
@@ -22,7 +22,7 @@ export default function PublicTransportBerlin() {
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-berlin-2025" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "The 2025 Guide to Taking Dogs on Public Transport in Berlin (BVG)",
+                        "The 2026 Guide to Taking Dogs on Public Transport in Berlin (BVG)",
                         "Is your dog a 'passenger' or 'luggage'? Learn the ticket rules, muzzle laws, and escalator dangers before you board.",
                         "https://englishspeakinggermany.online/blog/public-transport-with-dogs-berlin-2025",
                         "2025-01-01"
@@ -39,7 +39,7 @@ export default function PublicTransportBerlin() {
                     <article className="lg:flex-1 max-w-4xl">
                         <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Survival Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            🚇 Public Transport with Dogs in Berlin (BVG): The 2025 Expat Survival Guide
+                            🚇 Public Transport with Dogs in Berlin (BVG): The 2026 Expat Survival Guide
                         </h1>
 
                         <TableOfContents items={[
@@ -61,7 +61,7 @@ export default function PublicTransportBerlin() {
                                 While Berlin is welcoming, the rules for traveling with a dog can be confusing at first. Is your dog considered “luggage” or a “passenger”? Do you need a ticket if you have the Deutschland-Ticket?
                             </p>
                             <p>
-                                Let’s break down everything you need to know to travel legally, confidently, and stress-free in 2025.
+                                Let’s break down everything you need to know to travel legally, confidently, and stress-free in 2026.
                             </p>
 
                             <hr className="my-8 border-primary/10" />

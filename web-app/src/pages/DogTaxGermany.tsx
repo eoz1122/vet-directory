@@ -11,10 +11,10 @@ export default function DogTaxGermany() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>The Expat Guide to Hundesteuer (Dog Tax) in Germany – 2025 | EnglishSpeakingVets</title>
+                <title>The Expat Guide to Hundesteuer (Dog Tax) in Germany – 2026 | EnglishSpeakingVets</title>
                 <meta name="description" content="Complete guide to Hundesteuer (dog tax) in Germany for expats. Learn registration requirements, costs, exemptions, and how to avoid fines in Berlin, Hamburg, Munich, and Frankfurt." />
                 <meta name="keywords" content="Hundesteuer Germany, dog tax Berlin, dog tax Hamburg, dog registration Germany, Hunderegister, dog tax exemption, dangerous dog breeds Germany, Hundesteuermarke" />
-                <meta property="og:title" content="Hundesteuer (Dog Tax) in Germany: The Complete 2025 Guide" />
+                <meta property="og:title" content="Hundesteuer (Dog Tax) in Germany: The Complete 2026 Guide" />
                 <meta property="og:description" content="Yes, Germany taxes dogs. Here's everything expats need to know about Hundesteuer, registration, costs, and exemptions." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
@@ -22,7 +22,7 @@ export default function DogTaxGermany() {
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany-2025" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "Hundesteuer (Dog Tax) in Germany: The Complete 2025 Guide",
+                        "Hundesteuer (Dog Tax) in Germany: The Complete 2026 Guide",
                         "Yes, Germany taxes dogs. Here's everything expats need to know about Hundesteuer, registration, costs, and exemptions.",
                         "https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany-2025",
                         "2025-01-01"
@@ -39,12 +39,12 @@ export default function DogTaxGermany() {
                     <article className="lg:flex-1 max-w-4xl">
                         <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            🐕 The Expat Guide to Hundesteuer (Dog Tax) – 2025
+                            🐕 The Expat Guide to Hundesteuer (Dog Tax) – 2026
                         </h1>
 
                         <TableOfContents items={[
                             { id: 'what-is-it', label: '1. What Is Hundesteuer?' },
-                            { id: 'costs', label: '2. Costs & Rates (2025)' },
+                            { id: 'costs', label: '2. Costs & Rates (2026)' },
                             { id: 'tags', label: '3. No More Metal Tags?' },
                             { id: 'how-to', label: '4. How to Register' },
                             { id: 'insurance', label: '5. Liability Insurance (Haftpflicht)' }
@@ -58,7 +58,7 @@ export default function DogTaxGermany() {
                                 If the idea of paying an annual fee just for owning a dog makes you do a double take, you're not alone. Most expats find this requirement uniquely German and slightly baffling.
                             </p>
                             <p>
-                                But here's the reality: <strong>Hundesteuer (dog tax) is not optional</strong>. Ignoring it can lead to backdated bills, fines, and very unfriendly letters from the city. Let's break down the expat-friendly guide to Hundesteuer in 2025 so you can stay firmly on the right side of the rules.
+                                But here's the reality: <strong>Hundesteuer (dog tax) is not optional</strong>. Ignoring it can lead to backdated bills, fines, and very unfriendly letters from the city. Let's break down the expat-friendly guide to Hundesteuer in 2026 so you can stay firmly on the right side of the rules.
                             </p>
 
                             <h2 id="what-is-it" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">1. What Is Hundesteuer (and Why?)</h2>
@@ -75,7 +75,7 @@ export default function DogTaxGermany() {
                                 </p>
                             </div>
 
-                            <h2 id="costs" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">2. How Much Does It Cost? (Typical 2025 Rates)</h2>
+                            <h2 id="costs" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">2. How Much Does It Cost? (Typical 2026 Rates)</h2>
                             <p>
                                 Hundesteuer is set by your city (<em>Stadt</em>) or municipality (<em>Gemeinde</em>), so rates vary widely. As a rule:
                             </p>

@@ -11,19 +11,19 @@ export default function PublicTransportStuttgart() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Public Transport with Dogs in Stuttgart (2025 VVS Guide) | EnglishSpeakingVets</title>
-                <meta name="description" content="Guide to taking dogs on public transport in Stuttgart (VVS). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
+                <title>Public Transport with Dogs in Stuttgart (2026 VVS Guide) | EnglishSpeakingVets</title>
+                <meta name="description" content="Guide to taking dogs on public transport in Stuttgart (VVS). 2026 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
                 <meta name="keywords" content="dogs on public transport Stuttgart, VVS dog rules, Stuttgart U-Bahn with dog, Stuttgart dog ticket cost, Deutschlandticket dog Stuttgart" />
-                <meta property="og:title" content="Public Transport with Dogs in Stuttgart (2025 VVS Guide)" />
-                <meta property="og:description" content="Guide to taking dogs on public transport in Stuttgart (VVS). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
+                <meta property="og:title" content="Public Transport with Dogs in Stuttgart (2026 VVS Guide)" />
+                <meta property="og:description" content="Guide to taking dogs on public transport in Stuttgart (VVS). 2026 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-stuttgart-2025" />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-stuttgart-2025" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "Public Transport with Dogs in Stuttgart (2025 VVS Guide)",
-                        "Guide to taking dogs on public transport in Stuttgart (VVS). 2025 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info.",
+                        "Public Transport with Dogs in Stuttgart (2026 VVS Guide)",
+                        "Guide to taking dogs on public transport in Stuttgart (VVS). 2026 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info.",
                         "https://englishspeakinggermany.online/blog/public-transport-with-dogs-stuttgart-2025",
                         "2025-01-01"
                     ))}
@@ -39,17 +39,17 @@ export default function PublicTransportStuttgart() {
                     <article className="lg:flex-1 max-w-4xl">
                         <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            🚇 Public Transport with Dogs in Stuttgart: The 2025 VVS Guide
+                            🚇 Public Transport with Dogs in Stuttgart: The 2026 VVS Guide
                         </h1>
 
                         <TableOfContents items={[
                             { id: 'ticket-rules', label: 'The Ticket: Dogs Need Children\'s Tickets' },
-                            { id: 'ticket-prices', label: 'Ticket Prices (2025)' },
+                            { id: 'ticket-prices', label: 'Ticket Prices (2026)' },
                             { id: 'deutschlandticket', label: 'Deutschlandticket: The Stuttgart Bonus' },
                             { id: 'leash-muzzle', label: 'Leash & Muzzle Requirements' },
                             { id: 'small-pets', label: 'Cats & Small Pets' },
                             { id: 'practical-tips', label: 'Practical Tips' },
-                            { id: 'summary-table', label: 'Quick Summary Table (2025)' },
+                            { id: 'summary-table', label: 'Quick Summary Table (2026)' },
                             { id: 'faq', label: 'Common Questions' }
                         ]} />
 
@@ -91,7 +91,7 @@ export default function PublicTransportStuttgart() {
                                 <strong>Group Day Ticket Perk:</strong> If you're traveling with a Group Day Ticket (Gruppentageskarte), your dog counts as one of the five passengers allowed. This is a great deal for groups!
                             </p>
 
-                            <h2 id="ticket-prices" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Ticket Prices (Updated for 2025)</h2>
+                            <h2 id="ticket-prices" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Ticket Prices (Updated for 2026)</h2>
                             <p>Prices were adjusted in January 2025. Here is the breakdown for <strong>Zone 1 (Stuttgart City Center)</strong>:</p>
 
                             <div className="overflow-x-auto bg-white rounded-xl shadow-sm border border-primary/10 p-4 not-prose">
@@ -201,7 +201,7 @@ export default function PublicTransportStuttgart() {
                                 </div>
                             </div>
 
-                            <h2 id="summary-table" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🐾 Quick Summary Table (2025)</h2>
+                            <h2 id="summary-table" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🐾 Quick Summary Table (2026)</h2>
                             <div className="overflow-x-auto bg-white rounded-xl shadow-sm border border-primary/10 p-4 not-prose">
                                 <table className="w-full text-left border-collapse">
                                     <thead>
