@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 const blogPosts = [
     {
-        url: "/blog/moving-to-germany-with-pet-2025",
+        url: "/blog/moving-to-germany-with-pet",
         title: "Moving to Germany Guide",
         emoji: "📦"
     },
@@ -21,27 +21,27 @@ const blogPosts = [
         emoji: "💊"
     },
     {
-        url: "/blog/eu-pet-passport-germany-2025",
+        url: "/blog/eu-pet-passport-germany",
         title: "EU Pet Passport",
         emoji: "🛂"
     },
     {
-        url: "/blog/pet-friendly-apartments-germany-2025",
+        url: "/blog/pet-friendly-apartments-germany",
         title: "Finding Apartments",
         emoji: "🏠"
     },
     {
-        url: "/blog/hundesteuer-dog-tax-germany-2025",
+        url: "/blog/hundesteuer-dog-tax-germany",
         title: "Dog Tax (Hundesteuer)",
         emoji: "💶"
     },
     {
-        url: "/blog/cat-registration-germany-2025",
+        url: "/blog/cat-registration-germany",
         title: "Cat Registration",
         emoji: "🐱"
     },
     {
-        url: "/blog/pet-sitting-germany-2025",
+        url: "/blog/pet-sitting-germany",
         title: "Pet Sitting & Boarding",
         emoji: "🏡"
     },
@@ -51,7 +51,7 @@ const blogPosts = [
         emoji: "🇩🇪"
     },
     {
-        url: "/blog/pet-insurance-germany-2025",
+        url: "/blog/pet-insurance-germany",
         title: "Pet Insurance Guide",
         emoji: "💰"
     },
@@ -61,27 +61,27 @@ const blogPosts = [
         emoji: "🐕"
     },
     {
-        url: "/blog/public-transport-with-dogs-berlin-2025",
+        url: "/blog/public-transport-with-dogs-berlin",
         title: "Transport: Berlin",
         emoji: "🐻"
     },
     {
-        url: "/blog/public-transport-with-dogs-hamburg-2025",
+        url: "/blog/public-transport-with-dogs-hamburg",
         title: "Transport: Hamburg",
         emoji: "⚓"
     },
     {
-        url: "/blog/public-transport-with-dogs-munich-2025",
+        url: "/blog/public-transport-with-dogs-munich",
         title: "Transport: Munich",
         emoji: "🥨"
     },
     {
-        url: "/blog/public-transport-with-dogs-frankfurt-2025",
+        url: "/blog/public-transport-with-dogs-frankfurt",
         title: "Transport: Frankfurt",
         emoji: "🏙️"
     },
     {
-        url: "/blog/public-transport-with-dogs-stuttgart-2025",
+        url: "/blog/public-transport-with-dogs-stuttgart",
         title: "Transport: Stuttgart",
         emoji: "🚗"
     }

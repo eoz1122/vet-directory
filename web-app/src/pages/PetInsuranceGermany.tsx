@@ -19,13 +19,13 @@ export default function PetInsuranceGermany() {
                 <meta property="og:description" content="A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2026." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-insurance-germany-2025" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-insurance-germany-2025" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-insurance-germany" />
+                <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-insurance-germany" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "Pet Insurance in Germany (2026): Do You Really Need It?",
                         "A complete guide to German pet insurance. Understand Hundehaftpflicht (liability) vs Tierkrankenversicherung (health), costs, and the GOT fee schedule for 2026.",
-                        "https://englishspeakinggermany.online/blog/pet-insurance-germany-2025",
+                        "https://englishspeakinggermany.online/blog/pet-insurance-germany",
                         "2025-01-01"
                     ))}
                 </script>
@@ -330,7 +330,7 @@ export default function PetInsuranceGermany() {
                             </div>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/pet-insurance-germany-2025" />
+                        <RelatedPosts currentPath="/blog/pet-insurance-germany" />
                     </article>
                 </div>
             </main>

@@ -18,13 +18,13 @@ export default function DogTaxGermany() {
                 <meta property="og:description" content="Yes, Germany taxes dogs. Here's everything expats need to know about Hundesteuer, registration, costs, and exemptions." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany-2025" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany-2025" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany" />
+                <link rel="canonical" href="https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "Hundesteuer (Dog Tax) in Germany: The Complete 2026 Guide",
                         "Yes, Germany taxes dogs. Here's everything expats need to know about Hundesteuer, registration, costs, and exemptions.",
-                        "https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany-2025",
+                        "https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany",
                         "2025-01-01"
                     ))}
                 </script>
@@ -243,7 +243,7 @@ export default function DogTaxGermany() {
                                     </p>
                                     <div className="mt-8 pt-6 border-t border-white/20">
                                         <p className="font-bold mb-2">Planning to travel with your dog?</p>
-                                        <Link to="/blog/eu-pet-passport-germany-2025" className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors font-bold text-lg">
+                                        <Link to="/blog/eu-pet-passport-germany" className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors font-bold text-lg">
                                             Get an EU Pet Passport for hassle-free travel
                                             <span>→</span>
                                         </Link>
@@ -266,7 +266,7 @@ export default function DogTaxGermany() {
                             </section>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/hundesteuer-dog-tax-germany-2025" />
+                        <RelatedPosts currentPath="/blog/hundesteuer-dog-tax-germany" />
                     </article>
                 </div>
             </main>

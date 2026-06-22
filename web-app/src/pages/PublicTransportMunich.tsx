@@ -18,13 +18,13 @@ export default function PublicTransportMunich() {
                 <meta property="og:description" content="Guide to taking dogs on public transport in Munich (MVV). 2026 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-munich-2025" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-munich-2025" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-munich" />
+                <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-munich" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "Public Transport with Dogs in Munich (2026 MVV Rules)",
                         "Guide to taking dogs on public transport in Munich (MVV). 2026 rules for U-Bahn, S-Bahn, trams & buses. Ticket prices, muzzles, and Deutschlandticket info.",
-                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-munich-2025",
+                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-munich",
                         "2025-01-01"
                     ))}
                 </script>
@@ -247,7 +247,7 @@ export default function PublicTransportMunich() {
                             </section>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/public-transport-with-dogs-munich-2025" />
+                        <RelatedPosts currentPath="/blog/public-transport-with-dogs-munich" />
                     </article>
                 </div>
             </main>

@@ -10,11 +10,11 @@ import type { Vet } from '../types/vet';
 const vets = vetsData as Vet[];
 
 const CITY_CONFIG: Record<string, { guideLink?: string }> = {
-    'Berlin': { guideLink: '/blog/public-transport-with-dogs-berlin-2025' },
-    'Hamburg': { guideLink: '/blog/public-transport-with-dogs-hamburg-2025' },
-    'Frankfurt': { guideLink: '/blog/public-transport-with-dogs-frankfurt-2025' },
-    'Munich': { guideLink: '/blog/public-transport-with-dogs-munich-2025' },
-    'Stuttgart': { guideLink: '/blog/public-transport-with-dogs-stuttgart-2025' }
+    'Berlin': { guideLink: '/blog/public-transport-with-dogs-berlin' },
+    'Hamburg': { guideLink: '/blog/public-transport-with-dogs-hamburg' },
+    'Frankfurt': { guideLink: '/blog/public-transport-with-dogs-frankfurt' },
+    'Munich': { guideLink: '/blog/public-transport-with-dogs-munich' },
+    'Stuttgart': { guideLink: '/blog/public-transport-with-dogs-stuttgart' }
 };
 
 const cityContent: Record<string, { title: string; description: string; content: string }> = {

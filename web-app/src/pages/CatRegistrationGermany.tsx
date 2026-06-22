@@ -18,13 +18,13 @@ export default function CatRegistrationGermany() {
                 <meta property="og:description" content="No cat tax, but microchipping is mandatory in many cities. Here's what expats need to know about cat ownership in Germany." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/cat-registration-germany-2025" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/cat-registration-germany-2025" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/cat-registration-germany" />
+                <link rel="canonical" href="https://englishspeakinggermany.online/blog/cat-registration-germany" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "Cat Registration in Germany: The 2026 Complete Guide",
                         "Moving to Germany with a cat? Learn the 2026 rules for cat registration, microchipping, and neutering requirements in Berlin, Hamburg, and Frankfurt.",
-                        "https://englishspeakinggermany.online/blog/cat-registration-germany-2025",
+                        "https://englishspeakinggermany.online/blog/cat-registration-germany",
                         "2025-01-01"
                     ))}
                 </script>
@@ -241,7 +241,7 @@ export default function CatRegistrationGermany() {
                             </section>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/cat-registration-germany-2025" />
+                        <RelatedPosts currentPath="/blog/cat-registration-germany" />
                     </article>
                 </div>
             </main>

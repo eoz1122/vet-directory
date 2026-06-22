@@ -18,13 +18,13 @@ export default function PublicTransportHamburg() {
                 <meta property="og:description" content="Hamburg is Germany's most dog-friendly transit city. No tickets, no general muzzle rule, and free ferries. Here is your 2026 guide." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-hamburg-2025" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-hamburg-2025" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-hamburg" />
+                <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-hamburg" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "Public Transport with Dogs in Hamburg (HVV): The 2026 Expat Survival Guide",
                         "Hamburg is Germany's most dog-friendly transit city. No tickets, no general muzzle rule, and free ferries. Here is your 2026 guide.",
-                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-hamburg-2025",
+                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-hamburg",
                         "2025-01-01"
                     ))}
                 </script>
@@ -188,11 +188,11 @@ export default function PublicTransportHamburg() {
 
                             <p className="text-sm italic opacity-70 mt-12 not-prose">
                                 🔗 Moving to the capital? Berlin’s rules are completely different.
-                                <Link to="/blog/public-transport-with-dogs-berlin-2025" className="text-accent underline ml-1 hover:text-primary">Check out our Berlin Dog Transport Guide.</Link>
+                                <Link to="/blog/public-transport-with-dogs-berlin" className="text-accent underline ml-1 hover:text-primary">Check out our Berlin Dog Transport Guide.</Link>
                             </p>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/public-transport-with-dogs-hamburg-2025" />
+                        <RelatedPosts currentPath="/blog/public-transport-with-dogs-hamburg" />
                     </article>
                 </div>
             </main>

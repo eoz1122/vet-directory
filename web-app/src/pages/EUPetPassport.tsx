@@ -18,13 +18,13 @@ export default function EUPetPassport() {
                 <meta property="og:description" content="Your health certificate expires. An EU Pet Passport doesn't. Here's how to get one in Germany and travel freely across Europe." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/eu-pet-passport-germany-2025" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/eu-pet-passport-germany-2025" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/eu-pet-passport-germany" />
+                <link rel="canonical" href="https://englishspeakinggermany.online/blog/eu-pet-passport-germany" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "EU Pet Passports: The Ultimate Freedom Pass for Expat Pet Owners",
                         "Living in Germany? Learn how to get an EU Pet Passport for your dog or cat. Valid indefinitely for travel across Europe. Step-by-step guide for expats in 2026.",
-                        "https://englishspeakinggermany.online/blog/eu-pet-passport-germany-2025",
+                        "https://englishspeakinggermany.online/blog/eu-pet-passport-germany",
                         "2025-01-01"
                     ))}
                 </script>
@@ -225,7 +225,7 @@ export default function EUPetPassport() {
                             </section>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/eu-pet-passport-germany-2025" />
+                        <RelatedPosts currentPath="/blog/eu-pet-passport-germany" />
                     </article>
                 </div>
             </main>

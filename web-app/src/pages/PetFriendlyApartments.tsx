@@ -18,13 +18,13 @@ export default function PetFriendlyApartments() {
                 <meta property="og:description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany-2025" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany-2025" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany" />
+                <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "Finding a Pet-Friendly Apartment in Germany (2026) | Rights & Tips",
                         "Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026.",
-                        "https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany-2025",
+                        "https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany",
                         "2025-01-01"
                     ))}
                 </script>
@@ -209,7 +209,7 @@ export default function PetFriendlyApartments() {
                             </div>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/pet-friendly-apartments-germany-2025" />
+                        <RelatedPosts currentPath="/blog/pet-friendly-apartments-germany" />
                     </article>
                 </div>
             </main>

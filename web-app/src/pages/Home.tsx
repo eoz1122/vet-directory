@@ -250,13 +250,13 @@ const Home: React.FC = () => {
                                 </p>
                                 <nav className="space-y-4">
                                     {[
-                                        { emoji: '🏠', title: 'Pet-Friendly Housing', link: '/blog/pet-friendly-apartments-germany-2025' },
-                                        { emoji: '🐕', title: 'Moving to Germany Guide', link: '/blog/moving-to-germany-with-pet-2025' },
-                                        { emoji: '🐱', title: 'Cat Registration', link: '/blog/cat-registration-germany-2025' },
-                                        { emoji: '🛂', title: 'EU Pet Passports', link: '/blog/eu-pet-passport-germany-2025' },
+                                        { emoji: '🏠', title: 'Pet-Friendly Housing', link: '/blog/pet-friendly-apartments-germany' },
+                                        { emoji: '🐕', title: 'Moving to Germany Guide', link: '/blog/moving-to-germany-with-pet' },
+                                        { emoji: '🐱', title: 'Cat Registration', link: '/blog/cat-registration-germany' },
+                                        { emoji: '🛂', title: 'EU Pet Passports', link: '/blog/eu-pet-passport-germany' },
                                         { emoji: '💊', title: 'Pet Medication Guide', link: '/blog/pet-medication-germany-guide' },
-                                        { emoji: '💶', title: 'Dog Tax (Hundesteuer)', link: '/blog/hundesteuer-dog-tax-germany-2025' },
-                                        { emoji: '💰', title: 'Pet Insurance Guide', link: '/blog/pet-insurance-germany-2025' }
+                                        { emoji: '💶', title: 'Dog Tax (Hundesteuer)', link: '/blog/hundesteuer-dog-tax-germany' },
+                                        { emoji: '💰', title: 'Pet Insurance Guide', link: '/blog/pet-insurance-germany' }
                                     ].map(item => (
 
                                         <Link key={item.link} to={item.link} className="flex items-center gap-3 text-primary group">

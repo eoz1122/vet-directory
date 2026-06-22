@@ -9,55 +9,55 @@ interface BlogPost {
 
 const allPosts: BlogPost[] = [
     {
-        url: "/blog/pet-sitting-germany-2025",
+        url: "/blog/pet-sitting-germany",
         title: "Pet Sitting in Germany (2025)",
         emoji: "🏡",
         desc: "Finding a safe home for your little friends"
     },
     {
-        url: "/blog/moving-to-germany-with-pet-2025",
+        url: "/blog/moving-to-germany-with-pet",
         title: "Moving to Germany with a Pet",
         emoji: "🐕",
         desc: "The 2025 Survival Checklist"
     },
     {
-        url: "/blog/cat-registration-germany-2025",
+        url: "/blog/cat-registration-germany",
         title: "Cat Registration in Germany",
         emoji: "🐱",
         desc: "TASSO, microchipping & rules"
     },
     {
-        url: "/blog/pet-friendly-apartments-germany-2025",
+        url: "/blog/pet-friendly-apartments-germany",
         title: "Finding a Pet-Friendly Apartment",
         emoji: "🏠",
         desc: "Rights, strategies & best districts"
     },
     {
-        url: "/blog/eu-pet-passport-germany-2025",
+        url: "/blog/eu-pet-passport-germany",
         title: "EU Pet Passports",
         emoji: "🛂",
         desc: "Why you need one & how to get it"
     },
     {
-        url: "/blog/hundesteuer-dog-tax-germany-2025",
+        url: "/blog/hundesteuer-dog-tax-germany",
         title: "Hundesteuer (Dog Tax)",
         emoji: "💶",
         desc: "Costs, exemptions & registration"
     },
     {
-        url: "/blog/public-transport-with-dogs-berlin-2025",
+        url: "/blog/public-transport-with-dogs-berlin",
         title: "Public Transport with Dogs (Berlin)",
         emoji: "🚇",
         desc: "BVG survival guide: Tickets & rules"
     },
     {
-        url: "/blog/public-transport-with-dogs-hamburg-2025",
+        url: "/blog/public-transport-with-dogs-hamburg",
         title: "Public Transport with Dogs (Hamburg)",
         emoji: "🚢",
         desc: "HVV guide: Ferries & free travel"
     },
     {
-        url: "/blog/public-transport-with-dogs-frankfurt-2025",
+        url: "/blog/public-transport-with-dogs-frankfurt",
         title: "Public Transport with Dogs (Frankfurt)",
         emoji: "🚆",
         desc: "RMV guide: Free dogs & muzzle rules"
@@ -69,7 +69,7 @@ const allPosts: BlogPost[] = [
         desc: "Essential medical German medical terms"
     },
     {
-        url: "/blog/pet-insurance-germany-2025",
+        url: "/blog/pet-insurance-germany",
         title: "Pet Insurance Guide",
         emoji: "💰",
         desc: "Understanding liability & health insurance"

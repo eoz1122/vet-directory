@@ -17,13 +17,13 @@ export default function PetSittingGermany() {
                 <meta property="og:description" content="A complete guide to finding pet sitters in Germany. Comparing Pawshake, Cat in a Flat, pensions, and community options for expats." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-sitting-germany-2025" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-sitting-germany-2025" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-sitting-germany" />
+                <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-sitting-germany" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "Pet Sitting in Germany (2026): Finding a Safe Home for Your Little Friends",
                         "A complete guide to finding pet sitters in Germany. Comparing Pawshake, Cat in a Flat, pensions, and community options for expats.",
-                        "https://englishspeakinggermany.online/blog/pet-sitting-germany-2025",
+                        "https://englishspeakinggermany.online/blog/pet-sitting-germany",
                         "2025-01-01"
                     ))}
                 </script>
@@ -162,7 +162,7 @@ export default function PetSittingGermany() {
                             </div>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/pet-sitting-germany-2025" />
+                        <RelatedPosts currentPath="/blog/pet-sitting-germany" />
                     </article>
                 </div>
             </main>

@@ -18,13 +18,13 @@ export default function PublicTransportFrankfurt() {
                 <meta property="og:description" content="Frankfurt's RMV network allows free travel for dogs, but the muzzle rules are tricky. Here is your 2026 survival guide." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt-2025" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt-2025" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt" />
+                <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "Public Transport with Dogs in Frankfurt (RMV): The 2026 Expat Survival Guide",
                         "Frankfurt's RMV network allows free travel for dogs, but the muzzle rules are tricky. Here is your 2026 survival guide.",
-                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt-2025",
+                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-frankfurt",
                         "2025-01-01"
                     ))}
                 </script>
@@ -162,11 +162,11 @@ export default function PublicTransportFrankfurt() {
 
                             <p className="text-sm italic opacity-70 mt-12 not-prose">
                                 🔗 Traveling further? Don't forget that the rules change the moment you step onto a long-distance ICE train.
-                                <Link to="/blog/moving-to-germany-with-pet-2025" className="text-accent underline ml-1 hover:text-primary">Check out our Guide to Moving with Pets</Link> for more national travel tips!
+                                <Link to="/blog/moving-to-germany-with-pet" className="text-accent underline ml-1 hover:text-primary">Check out our Guide to Moving with Pets</Link> for more national travel tips!
                             </p>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/public-transport-with-dogs-frankfurt-2025" />
+                        <RelatedPosts currentPath="/blog/public-transport-with-dogs-frankfurt" />
                     </article>
                 </div>
             </main>

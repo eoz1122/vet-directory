@@ -20,77 +20,77 @@ const blogPosts = [
         desc: "5 verified 24/7 emergency clinics in Berlin with English-speaking staff. Phone numbers, addresses, and what to expect."
     },
     {
-        url: "/blog/pet-sitting-germany-2025",
+        url: "/blog/pet-sitting-germany",
         title: "Pet Sitting in Germany (2026)",
         emoji: "🏡",
         category: "Living",
         desc: "Finding a safe home for your little friends. Comparing platforms like Pawshake vs. Pensions vs. Community Swaps."
     },
     {
-        url: "/blog/moving-to-germany-with-pet-2025",
+        url: "/blog/moving-to-germany-with-pet",
         title: "Moving to Germany with a Pet",
         emoji: "🐕",
         category: "Moving",
         desc: "The complete 2026 survival checklist for bringing your dog or cat to Germany. Customs, vaccinations, and paperwork explained."
     },
     {
-        url: "/blog/pet-friendly-apartments-germany-2025",
+        url: "/blog/pet-friendly-apartments-germany",
         title: "Finding a Pet-Friendly Apartment",
         emoji: "🏠",
         category: "Living",
         desc: "How to convince a German landlord to say 'Ja'. Understanding your rights, legal phrases, and where to look."
     },
     {
-        url: "/blog/eu-pet-passport-germany-2025",
+        url: "/blog/eu-pet-passport-germany",
         title: "The EU Pet Passport Guide",
         emoji: "🛂",
         category: "Bureaucracy",
         desc: "Why you need one, how to get it, and how much it costs. The golden ticket for travel within Europe."
     },
     {
-        url: "/blog/hundesteuer-dog-tax-germany-2025",
+        url: "/blog/hundesteuer-dog-tax-germany",
         title: "Hundesteuer (Dog Tax) 101",
         emoji: "💶",
         category: "Bureaucracy",
         desc: "Everything you need to know about German Dog Tax. Costs by city, how to register, and who is exempt."
     },
     {
-        url: "/blog/cat-registration-germany-2025",
+        url: "/blog/cat-registration-germany",
         title: "Cat Registration (Tasso & Finds)",
         emoji: "🐱",
         category: "Safety",
         desc: "Germany has no dog tax for cats, but registration is vital. Learn about Tasso e.V., microchipping, and Findefix."
     },
     {
-        url: "/blog/public-transport-with-dogs-munich-2025",
+        url: "/blog/public-transport-with-dogs-munich",
         title: "Public Transport with Dogs: Munich",
         emoji: "🥨",
         category: "Transport",
         desc: "MVV Guide: Navigating the 'muzzle gray zone' and utilizing the free travel rules in Germany's financial hub."
     },
     {
-        url: "/blog/public-transport-with-dogs-stuttgart-2025",
+        url: "/blog/public-transport-with-dogs-stuttgart",
         title: "Public Transport with Dogs: Stuttgart",
         emoji: "🏎️",
         category: "Transport",
         desc: "VVS 2026 Guide: The 'Children's Ticket' rule, local Deutschlandticket bonuses, and the Zacke."
     },
     {
-        url: "/blog/public-transport-with-dogs-berlin-2025",
+        url: "/blog/public-transport-with-dogs-berlin",
         title: "Public Transport with Dogs: Berlin",
         emoji: "🚇",
         category: "Transport",
         desc: "The BVG survival guide. Ticket rules, muzzles, and safety tips for taking your dog on the U-Bahn and S-Bahn in the capital."
     },
     {
-        url: "/blog/public-transport-with-dogs-hamburg-2025",
+        url: "/blog/public-transport-with-dogs-hamburg",
         title: "Public Transport with Dogs: Hamburg",
         emoji: "🚢",
         category: "Transport",
         desc: "HVV Guide: Why dogs travel free, taking the harbor ferries, and the relaxed leash policies of the North."
     },
     {
-        url: "/blog/public-transport-with-dogs-frankfurt-2025",
+        url: "/blog/public-transport-with-dogs-frankfurt",
         title: "Public Transport with Dogs: Frankfurt",
         emoji: "🚆",
         category: "Transport",
@@ -104,7 +104,7 @@ const blogPosts = [
         desc: "Essential medical German for pet owners. From describing symptoms like 'Durchfall' to making emergency appointments."
     },
     {
-        url: "/blog/pet-insurance-germany-2025",
+        url: "/blog/pet-insurance-germany",
         title: "Pet Insurance in Germany (2026)",
         emoji: "💰",
         category: "Bureaucracy",

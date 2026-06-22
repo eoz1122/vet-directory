@@ -18,13 +18,13 @@ export default function MovingWithPetChecklist() {
                 <meta property="og:description" content="Don't get stuck at customs. Essential guide for expats bringing pets to Germany in 2026: Microchips, vaccines, and the critical 15-week rule." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/moving-to-germany-with-pet-2025" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/moving-to-germany-with-pet-2025" />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/moving-to-germany-with-pet" />
+                <link rel="canonical" href="https://englishspeakinggermany.online/blog/moving-to-germany-with-pet" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
                         "Moving to Germany with a Pet: The 2026 Survival Checklist",
                         "Don't get stuck at customs. Essential guide for expats bringing pets to Germany in 2026: Microchips, vaccines, and the critical 15-week rule.",
-                        "https://englishspeakinggermany.online/blog/moving-to-germany-with-pet-2025",
+                        "https://englishspeakinggermany.online/blog/moving-to-germany-with-pet",
                         "2025-01-01"
                     ))}
                 </script>
@@ -171,7 +171,7 @@ export default function MovingWithPetChecklist() {
                             </section>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/moving-to-germany-with-pet-2025" />
+                        <RelatedPosts currentPath="/blog/moving-to-germany-with-pet" />
                     </article>
                 </div>
             </main>

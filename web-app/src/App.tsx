@@ -74,18 +74,18 @@ function App() {
             <Route path="/quality-promise" element={<QualityPromise />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/blog/moving-to-germany-with-pet-2025" element={<MovingWithPetChecklist />} />
-            <Route path="/blog/cat-registration-germany-2025" element={<CatRegistrationGermany />} />
-            <Route path="/blog/eu-pet-passport-germany-2025" element={<EUPetPassport />} />
-            <Route path="/blog/hundesteuer-dog-tax-germany-2025" element={<DogTaxGermany />} />
-            <Route path="/blog/pet-friendly-apartments-germany-2025" element={<PetFriendlyApartments />} />
-            <Route path="/blog/public-transport-with-dogs-berlin-2025" element={<PublicTransportBerlin />} />
-            <Route path="/blog/public-transport-with-dogs-hamburg-2025" element={<PublicTransportHamburg />} />
-            <Route path="/blog/public-transport-with-dogs-frankfurt-2025" element={<PublicTransportFrankfurt />} />
-            <Route path="/blog/public-transport-with-dogs-munich-2025" element={<PublicTransportMunich />} />
-            <Route path="/blog/public-transport-with-dogs-stuttgart-2025" element={<PublicTransportStuttgart />} />
-            <Route path="/blog/pet-sitting-germany-2025" element={<PetSittingGermany />} />
-            <Route path="/blog/pet-insurance-germany-2025" element={<PetInsuranceGermany />} />
+            <Route path="/blog/moving-to-germany-with-pet" element={<MovingWithPetChecklist />} />
+            <Route path="/blog/cat-registration-germany" element={<CatRegistrationGermany />} />
+            <Route path="/blog/eu-pet-passport-germany" element={<EUPetPassport />} />
+            <Route path="/blog/hundesteuer-dog-tax-germany" element={<DogTaxGermany />} />
+            <Route path="/blog/pet-friendly-apartments-germany" element={<PetFriendlyApartments />} />
+            <Route path="/blog/public-transport-with-dogs-berlin" element={<PublicTransportBerlin />} />
+            <Route path="/blog/public-transport-with-dogs-hamburg" element={<PublicTransportHamburg />} />
+            <Route path="/blog/public-transport-with-dogs-frankfurt" element={<PublicTransportFrankfurt />} />
+            <Route path="/blog/public-transport-with-dogs-munich" element={<PublicTransportMunich />} />
+            <Route path="/blog/public-transport-with-dogs-stuttgart" element={<PublicTransportStuttgart />} />
+            <Route path="/blog/pet-sitting-germany" element={<PetSittingGermany />} />
+            <Route path="/blog/pet-insurance-germany" element={<PetInsuranceGermany />} />
             <Route path="/blog/german-dog-etiquette-rules" element={<GermanDogEtiquette />} />
             <Route path="/guides/pet-emergency-germany" element={<PetEmergencyGermany />} />
             <Route path="/guides/emergency-vets-berlin" element={<EmergencyVetsBerlin />} />

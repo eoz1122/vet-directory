@@ -87,7 +87,7 @@ export default function PetEmergencyMunich() {
                             <p className="text-sm opacity-70 mb-4 font-medium leading-relaxed">
                                 Emergency visits in Germany incur a mandatory <strong>€50 "Notdienstgebühr"</strong> plus higher billing rates (up to 4x).
                             </p>
-                            <Link to="/blog/pet-insurance-germany-2025" className="text-accent hover:underline text-xs font-bold uppercase tracking-widest">Learn about Insurance Coverage →</Link>
+                            <Link to="/blog/pet-insurance-germany" className="text-accent hover:underline text-xs font-bold uppercase tracking-widest">Learn about Insurance Coverage →</Link>
                         </div>
 
                         <div className="bg-accent/10 p-8 rounded-2xl my-16 text-center shadow-lg border border-accent/20 not-prose">
