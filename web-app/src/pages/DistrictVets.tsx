@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
 import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
+import { generateDistrictContent } from '../utils/districtContent';
 import type { Vet } from '../types/vet';
 
 const vets = vetsData as Vet[];
@@ -189,7 +190,8 @@ export default function DistrictVets() {
     // Prefer real names from the data ("Friedrichshain / Others"); fall back to titled slugs.
     const sampleVet = vets.find(v => slugify(v.city) === cityKey && slugify(v.district) === districtSlug);
     const cityDisplay = sampleVet?.city || titleCaseSlug(cityKey);
-    const districtDisplay = sampleVet?.district || titleCaseSlug(districtSlug);
+    const districtRaw = sampleVet?.district || titleCaseSlug(districtSlug);
+    const districtDisplay = districtRaw.charAt(0).toUpperCase() + districtRaw.slice(1);
 
     const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
     const [showMobileOnly, setShowMobileOnly] = useState(false);
@@ -204,9 +206,13 @@ export default function DistrictVets() {
         (!showMobileOnly || (vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown')))
     );
 
-    // Get specific content or generate fallback
-    const vetNames = districtVets.slice(0, 3).map(v => v.practice_name).join(', ');
-    const count = districtVets.length;
+    // Generate unique, data-driven content + FAQs (used for non-curated districts).
+    const cityVetsAll = vets.filter(v => slugify(v.city) === cityKey);
+    const districtVetsAll = cityVetsAll.filter(v => slugify(v.district) === districtSlug);
+    const generated = generateDistrictContent(districtDisplay, cityDisplay, districtVetsAll, cityVetsAll);
+
+    const vetNames = districtVetsAll.slice(0, 3).map(v => v.practice_name).join(', ');
+    const count = districtVetsAll.length;
 
     const content = DISTRICT_CONTENT[districtSpace] || {
         title: count > 0
@@ -215,9 +221,7 @@ export default function DistrictVets() {
         description: count > 0
             ? `Find ${count} verified English-speaking ${count === 1 ? 'veterinarian' : 'veterinarians'} in ${districtDisplay}, ${cityDisplay}, including ${vetNames}. Browse reviews, check services, and book appointments.`
             : `Find verified English-speaking veterinarians in ${districtDisplay}, ${cityDisplay}. Browse reviews, check services, and book appointments with trusted local practices.`,
-        content: `Living in ${districtDisplay} involves navigating daily life in a foreign language, but your pet's healthcare shouldn't be lost in translation. 
-        
-Our directory connects you with ${count > 0 ? `${count} ` : ''}verified English-speaking veterinary practices in ${districtDisplay}${count > 0 ? `, such as ${vetNames}` : ''}. We rely on community feedback to ensure that every listed vet can communicate effectively in English, giving you peace of mind when your furry friend needs care.`
+        content: generated.intro,
     };
 
     // JSON-LD Structured Data
@@ -246,6 +250,16 @@ Our directory connects you with ${count > 0 ? `${count} ` : ''}verified English-
         ]
     };
 
+    const faqLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": generated.faqs.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": { "@type": "Answer", "text": f.a },
+        })),
+    };
+
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
@@ -262,6 +276,7 @@ Our directory connects you with ${count > 0 ? `${count} ` : ''}verified English-
                 <meta name="twitter:title" content={`${content.title} | EnglishSpeakingVets`} />
                 <meta name="twitter:description" content={content.description} />
                 <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
+                <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
             </Helmet>
 
             <Header />
@@ -453,6 +468,23 @@ Our directory connects you with ${count > 0 ? `${count} ` : ''}verified English-
                         </div>
                     )}
                 </section>
+
+                {generated.faqs.length > 0 && (
+                    <section className="mt-12">
+                        <h2 className="text-2xl font-bold text-primary mb-6">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+                            {generated.faqs.map((f, i) => (
+                                <details key={i} className="group bg-white p-6 rounded-2xl border border-primary/5 shadow-sm">
+                                    <summary className="font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4">
+                                        <span>{f.q}</span>
+                                        <span className="text-accent text-xl transition-transform group-open:rotate-45 shrink-0">+</span>
+                                    </summary>
+                                    <p className="mt-3 text-primary/70 leading-relaxed">{f.a}</p>
+                                </details>
+                            ))}
+                        </div>
+                    </section>
+                )}
             </main>
             <Footer />
         </div >
