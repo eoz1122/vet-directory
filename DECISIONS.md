@@ -86,6 +86,20 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 
 ---
 
+## 2026-06-23T03:15:00+02:00 — Community "confirm English-speaking" (email relay, no DB)
+
+**Context:** Wanted a positive community-verification signal (the directory is community-sourced) without adding a database, staying consistent with the "no server-side state" decision. At current traffic, live confirm-counts would mostly read "0", so deferred storage.
+
+**Decision:** One-click "Confirm they speak English" button on vet cards posts to a new `POST /api/confirm-vet` (Flask), which validates + sanitizes + honeypots + rate-limits (10/min) and emails the admin; the admin then bumps `community_status`/`last_scanned` in `vets.json`. Mirrors the existing `submit_vet`/`report_issue` email-relay pattern. Added a `company` honeypot to the contact form too, and a shared `send_email` helper (DRY). TDD: 11 backend tests.
+
+**Deploy note (gotcha):** `deploy.sh` now `systemctl restart vet-api` so backend code changes take effect (gunicorn does not auto-reload). BUT `deploy.sh` git-resets itself at step 1, so a change *to deploy.sh* lands a deploy late (bash already buffered the old script). The restart line therefore first took effect one deploy after it was added; the initial rollout needed a manual `systemctl restart vet-api`.
+
+**Trade-offs:** No live social-proof counts (Option B / SQLite deferred until traffic justifies it). Anonymous confirmations are spammable; mitigated by rate-limit + honeypot, and they only *notify* the admin (no automatic data change).
+
+**Verification:** Backend pytest 11/11; live endpoint returns 400 on bad input and 200 on honeypot (no email); button renders on prerendered city/district pages.
+
+---
+
 ## 2026-06-23T00:30:00+02:00 — Evergreen blog URLs (drop -2025) + 301 redirects
 
 **Context:** 12 blog posts had year-stamped slugs (`/blog/...-2025`) that read as permanently dated. The April SEO audit recommended evergreen URLs.
