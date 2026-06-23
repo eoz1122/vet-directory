@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
 import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
 import type { Vet } from '../types/vet';
+import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
 
 const vets = vetsData as Vet[];
 
@@ -502,6 +503,8 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
                                         </a>
                                     )}
                                 </div>
+
+                                <ConfirmEnglish vet={vet} />
 
                                 <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
                                     <span className="text-[10px] text-gray-400">

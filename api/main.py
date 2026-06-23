@@ -75,6 +75,10 @@ def validate_contact_payload(data: dict) -> tuple[dict | None, str | None]:
     if not data or not isinstance(data, dict):
         return None, "No data provided."
 
+    # Honeypot: the hidden "company" field must be empty for real users.
+    if data.get("company"):
+        return None, "Spam detected."
+
     name = sanitize(data.get("name", ""))
     email = data.get("email", "").strip()
     topic = data.get("topic", "").strip()
@@ -124,6 +128,49 @@ def validate_contact_payload(data: dict) -> tuple[dict | None, str | None]:
     return sanitized, None
 
 
+def validate_confirm_payload(data: dict) -> tuple[dict | None, str | None]:
+    """Validate a community 'speaks English' confirmation (one-click, anonymous).
+
+    Returns (sanitized_data, error_message). error_message is None on success.
+    """
+    if not data or not isinstance(data, dict):
+        return None, "No data provided."
+
+    # Honeypot
+    if data.get("company"):
+        return None, "Spam detected."
+
+    vet_name = sanitize(data.get("vetName", ""))
+    if not vet_name:
+        return None, "vetName is required."
+    if len(vet_name) > 200:
+        return None, "vetName must be under 200 characters."
+
+    return {
+        "vetName": vet_name,
+        "vetId": sanitize(data.get("vetId", ""))[:100],
+        "vetCity": sanitize(data.get("vetCity", ""))[:100],
+    }, None
+
+
+def send_email(subject: str, body: str, reply_to: str | None = None) -> None:
+    """Send a plain-text email to the directory admin over SMTP."""
+    msg = MIMEMultipart()
+    from_addr = os.getenv("FROM_EMAIL", SMTP_USER)
+    msg["From"] = f"ESG Vet Directory <{from_addr}>"
+    msg["To"] = RECIPIENT_EMAIL
+    msg["Subject"] = subject
+    if reply_to:
+        msg["Reply-To"] = reply_to
+    msg.attach(MIMEText(body, "plain"))
+
+    server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
+    server.starttls()
+    server.login(SMTP_USER, SMTP_PASS)
+    server.send_message(msg)
+    server.quit()
+
+
 @app.route("/api/contact", methods=["POST"])
 @limiter.limit("5 per minute")  # Strict limit on contact form submissions
 def contact():
@@ -165,31 +212,44 @@ def contact():
     Website: {sanitized.get('vetWebsite', '')}
     """
 
-    msg = MIMEMultipart()
-    from_addr = os.getenv("FROM_EMAIL", SMTP_USER)
-    msg["From"] = f"ESG Vet Directory <{from_addr}>"
-    msg["To"] = RECIPIENT_EMAIL
-    msg["Subject"] = subject
-
-    # Reply-To allows replying directly to the user
-    if email:
-        msg["Reply-To"] = email
-
-    msg.attach(MIMEText(email_body, "plain"))
-
     try:
-        server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
-        server.starttls()
-        server.login(SMTP_USER, SMTP_PASS)
-        server.send_message(msg)
-        server.quit()
-
+        send_email(subject, email_body, reply_to=email)
         logger.info("Contact email sent: topic=%s from=%s", topic, email)
         return jsonify({"success": True, "message": "Email sent successfully"})
     except Exception as e:
         logger.error("Failed to send contact email: %s", str(e))
         # Never leak internal error details to the client
         return jsonify({"error": "Failed to send message. Please try again later."}), 500
+
+
+@app.route("/api/confirm-vet", methods=["POST"])
+@limiter.limit("10 per minute")
+def confirm_vet():
+    """Record a community confirmation that a practice speaks English (emails admin)."""
+    sanitized, error = validate_confirm_payload(request.json)
+    if error:
+        # Don't tip off bots that the honeypot caught them.
+        if error == "Spam detected.":
+            return jsonify({"success": True})
+        return jsonify({"error": error}), 400
+
+    subject = f"[ESG] CONFIRM ENGLISH - {sanitized['vetName']}"[:MAX_SUBJECT_LEN]
+    email_body = f"""
+    Community confirmation: a visitor confirmed this practice speaks English.
+    ---------------------------------------------------------------
+    Practice: {sanitized['vetName']}
+    City: {sanitized['vetCity']}
+    Vet ID: {sanitized['vetId']}
+
+    Suggested action: bump community_status / last_scanned for this vet in vets.json.
+    """
+    try:
+        send_email(subject, email_body)
+        logger.info("Confirm-vet email sent: vet=%s id=%s", sanitized["vetName"], sanitized["vetId"])
+        return jsonify({"success": True, "message": "Thanks for confirming!"})
+    except Exception as e:
+        logger.error("Failed to send confirm-vet email: %s", str(e))
+        return jsonify({"error": "Could not record confirmation. Please try again later."}), 500
 
 
 @app.route("/api/health", methods=["GET"])

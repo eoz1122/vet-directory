@@ -1,5 +1,5 @@
 import pytest  # type: ignore
-from main import validate_contact_payload, sanitize  # type: ignore
+from main import validate_contact_payload, validate_confirm_payload, sanitize  # type: ignore
 
 def test_sanitize():
     assert sanitize("<script>alert(1)</script>") == "alert(1)"
@@ -49,3 +49,40 @@ def test_validate_contact_payload_invalid_topic():
     }
     sanitized, error = validate_contact_payload(data)
     assert error == "Invalid topic."
+
+def test_contact_honeypot_rejected():
+    # A filled honeypot ("company") means a bot — reject before sending.
+    data = {"name": "Jane", "email": "j@x.com", "message": "hi", "company": "spam-bot"}
+    sanitized, error = validate_contact_payload(data)
+    assert sanitized is None
+    assert error == "Spam detected."
+
+# --- confirm-vet (community "speaks English" confirmation) ---
+
+def test_validate_confirm_payload_valid():
+    data = {"vetName": "Tierklinik Berlin", "vetId": "Internal-5", "vetCity": "Berlin"}
+    sanitized, error = validate_confirm_payload(data)
+    assert error is None
+    assert sanitized["vetName"] == "Tierklinik Berlin"
+    assert sanitized["vetId"] == "Internal-5"
+    assert sanitized["vetCity"] == "Berlin"
+
+def test_validate_confirm_payload_requires_vetname():
+    sanitized, error = validate_confirm_payload({"vetCity": "Berlin"})
+    assert sanitized is None
+    assert error == "vetName is required."
+
+def test_validate_confirm_payload_honeypot():
+    sanitized, error = validate_confirm_payload({"vetName": "X", "company": "bot"})
+    assert sanitized is None
+    assert error == "Spam detected."
+
+def test_validate_confirm_payload_sanitizes_xss():
+    sanitized, error = validate_confirm_payload({"vetName": "<script>evil</script>Clinic"})
+    assert error is None
+    assert "<script>" not in sanitized["vetName"]
+
+def test_validate_confirm_payload_length_limit():
+    sanitized, error = validate_confirm_payload({"vetName": "x" * 201})
+    assert sanitized is None
+    assert "200" in error

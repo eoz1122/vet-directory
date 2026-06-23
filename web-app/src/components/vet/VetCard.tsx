@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Vet, VetWithDistance } from '../../types/vet';
+import { ConfirmEnglish } from './ConfirmEnglish';
 import { appendUTM } from '../../utils/url';
 
 interface VetCardProps {
@@ -129,6 +130,8 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
                     </a>
                 )}
             </div>
+
+            <ConfirmEnglish vet={vet} />
 
             <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
                 <span className="text-[10px] text-gray-400">

@@ -53,6 +53,9 @@ fi
 source venv/bin/activate
 pip install -r requirements.txt --quiet
 
+# Restart the API so backend code changes take effect (gunicorn does not auto-reload).
+systemctl restart vet-api 2>/dev/null || echo "⚠️  vet-api restart skipped (run 'systemctl restart vet-api' manually if the API changed)"
+
 # 6. Copy prerendered output to the nginx-served root
 echo "🚀 Copying build output to nginx root..."
 cd ..
