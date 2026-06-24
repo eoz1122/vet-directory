@@ -12,6 +12,7 @@ export default function Footer() {
                         Directory
                     </Link>
                     <Link to="/blog" className="hover:text-accent transition-colors">Guides</Link>
+                    <Link to="/english-speaking-vet-access-germany" className="hover:text-accent transition-colors">Coverage Map</Link>
                     <Link to="/about" className="hover:text-accent transition-colors">About</Link>
                     <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality</Link>
                     <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
