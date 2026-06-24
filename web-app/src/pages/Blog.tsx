@@ -139,6 +139,13 @@ const blogPosts = [
         desc: "Wet vs dry, why cats need taurine and moisture, decoding German labels, and where to buy. A practical buyer's guide for expat cat owners."
     },
     {
+        url: "/english-speaking-vet-access-germany",
+        title: "📊 English-Speaking Vet Access in Germany",
+        emoji: "📊",
+        category: "REPORT",
+        desc: "A data study: 240+ verified practices across 38 cities, where coverage is strongest, and which major cities are underserved."
+    },
+    {
         url: "/blog/first-vet-visit-germany",
         title: "🩺 Your First Vet Visit in Germany",
         emoji: "🩺",
