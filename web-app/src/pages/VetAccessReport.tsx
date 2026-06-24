@@ -9,11 +9,12 @@ import type { Vet } from '../types/vet';
 
 const vets = vetsData as Vet[];
 
-const TITLE = "The State of English-Speaking Veterinary Access in Germany (2026)";
-const DESCRIPTION = "A data study of English-speaking veterinary access across Germany: how many verified practices exist, where coverage is strongest, which cities are underserved, and where emergency care falls short.";
+const TITLE = "Mapping English-Speaking Vets Across Germany (2026)";
+const DESCRIPTION = "A snapshot of our community directory's coverage of English-speaking veterinary practices in Germany: how many we have mapped, where coverage is strongest, and which cities we are still expanding into.";
 const URL = "https://englishspeakinggermany.online/english-speaking-vet-access-germany";
 
-// Germany's largest cities by population (rounded, public figures) for the coverage gap analysis.
+// Germany's largest cities by population (rounded, public figures), used to show how far
+// our mapping has reached so far. A low count means "not yet researched", not "none exist".
 const BIG_CITIES: { city: string; pop: string }[] = [
     { city: 'Berlin', pop: '3.7M' }, { city: 'Hamburg', pop: '1.9M' }, { city: 'Munich', pop: '1.5M' },
     { city: 'Cologne', pop: '1.1M' }, { city: 'Frankfurt', pop: '770k' }, { city: 'Stuttgart', pop: '630k' },
@@ -28,20 +29,17 @@ function computeStats() {
     const districts = new Set(
         vets.filter((v) => v.district && v.district !== 'Unknown').map((v) => `${v.city}/${v.district}`),
     );
-    const emergencyVets = vets.filter((v) => v.verification?.emergency_services);
-    const emergencyCities = new Set(emergencyVets.map((v) => v.city));
-    const singleVetCities = ranked.filter(([, k]) => k === 1).length;
+    const multi = ranked.filter(([, k]) => k >= 2);
+    const single = ranked.filter(([, k]) => k === 1).map(([c]) => c).sort();
     const withSite = vets.filter((v) => v.contact?.website).length;
     const berlin = counts.get('Berlin') ?? 0;
     return {
         total: vets.length,
         cityCount: counts.size,
         districtCount: districts.size,
-        ranked,
+        multi,
+        single,
         topMax: ranked[0]?.[1] ?? 1,
-        singleVetCities,
-        emergencyVetCount: emergencyVets.length,
-        emergencyCityCount: emergencyCities.size,
         withSitePct: Math.round((100 * withSite) / vets.length),
         berlinShare: Math.round((100 * berlin) / vets.length),
         bigGaps: BIG_CITIES.map((b) => ({ ...b, count: counts.get(b.city) ?? 0 })),
@@ -56,7 +54,7 @@ export default function VetAccessReport() {
             <Helmet>
                 <title>{`${TITLE} | EnglishSpeakingVets`}</title>
                 <meta name="description" content={DESCRIPTION} />
-                <meta name="keywords" content="English-speaking vets Germany data, veterinary access Germany, expat vet coverage Germany, English veterinarian statistics, vet directory study" />
+                <meta name="keywords" content="English-speaking vets Germany, veterinary coverage Germany, expat vet directory, English veterinarian Germany cities" />
                 <meta property="og:title" content={TITLE} />
                 <meta property="og:description" content={DESCRIPTION} />
                 <meta property="og:type" content="article" />
@@ -71,19 +69,24 @@ export default function VetAccessReport() {
             <Header />
 
             <main className="max-w-4xl mx-auto p-6 md:p-12 mb-12">
-                <span className="text-accent font-bold tracking-wider text-sm uppercase">Data Study</span>
+                <span className="text-accent font-bold tracking-wider text-sm uppercase">Coverage Snapshot</span>
                 <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6 leading-tight">
-                    The State of English-Speaking Veterinary Access in Germany
+                    Mapping English-Speaking Vets Across Germany
                 </h1>
+
+                <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8 text-sm text-amber-900 not-prose">
+                    <strong>What this is:</strong> a snapshot of <em>our directory's</em> coverage so far, built from expat recommendations and research focused on Germany's biggest international-community cities. It is <strong>not</strong> a census of every English-speaking vet in the country. Where a city shows a low or zero count, it usually means <strong>we have not mapped it yet</strong>, not that English-speaking care is unavailable there.
+                </div>
+
                 <p className="text-lg text-primary/70 mb-10 leading-relaxed">
-                    For Germany's millions of internationals, a language barrier in the vet's office is more than an inconvenience. It can mean a misunderstood diagnosis at the worst possible moment. We analysed our community-sourced directory of verified English-speaking veterinary practices to map where that care actually exists, and where it does not.
+                    For Germany's millions of internationals, a language barrier at the vet can turn a stressful moment into a frightening one. We have been mapping the practices our community confirms as English-speaking. Here is where that map stands today, and where we are still filling it in.
                 </p>
 
                 {/* Headline stats */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-10 not-prose">
                     {[
-                        { n: s.total, l: 'Verified practices' },
-                        { n: s.cityCount, l: 'Cities covered' },
+                        { n: s.total, l: 'Practices mapped' },
+                        { n: s.cityCount, l: 'Cities so far' },
                         { n: s.districtCount, l: 'Districts mapped' },
                         { n: `${s.withSitePct}%`, l: 'With a website' },
                     ].map((x) => (
@@ -94,44 +97,49 @@ export default function VetAccessReport() {
                     ))}
                 </div>
 
-                <h2 className="text-2xl font-bold text-primary mt-14 mb-4">Key findings</h2>
+                <h2 className="text-2xl font-bold text-primary mt-14 mb-4">What the map shows</h2>
                 <ul className="space-y-3 text-primary/80 leading-relaxed list-disc pl-5">
-                    <li><strong>Coverage is heavily concentrated in expat hubs.</strong> Berlin alone accounts for roughly {s.berlinShare}% of all listed English-speaking practices, with Frankfurt punching well above its size thanks to its international finance community.</li>
-                    <li><strong>{s.singleVetCities} cities have just one</strong> listed English-speaking vet, leaving expats in much of the country with a single option, or none.</li>
-                    <li><strong>Several major cities are underserved.</strong> Some of Germany's largest cities have little or no English-speaking coverage in our data (see below).</li>
-                    <li><strong>Emergency care is the thinnest layer.</strong> Only {s.emergencyCityCount} of {s.cityCount} covered cities have a practice noting emergency or out-of-hours service, the moment a language barrier matters most.</li>
+                    <li><strong>Coverage tracks the biggest expat communities.</strong> Berlin alone accounts for roughly {s.berlinShare}% of everything we have mapped, with Frankfurt and Hamburg close behind, which mirrors where we have focused our research first.</li>
+                    <li><strong>{s.single.length} cities currently have a single listed practice.</strong> These are usually places a community member flagged one vet, with more almost certainly out there to add.</li>
+                    <li><strong>Several large cities are still on our list to map</strong> (see below). A blank there is a to-do for us, not a verdict on the city.</li>
+                    <li><strong>This is a living map.</strong> Every confirmation and submission makes it more complete, especially outside the classic expat hubs.</li>
                 </ul>
 
                 {/* Coverage ranking */}
-                <h2 className="text-2xl font-bold text-primary mt-14 mb-4">Where coverage is strongest</h2>
-                <p className="text-primary/70 mb-6">English-speaking veterinary practices by city (top of the directory):</p>
+                <h2 className="text-2xl font-bold text-primary mt-14 mb-4">Cities we have mapped</h2>
+                <p className="text-primary/70 mb-6">Practices per city, where we currently list two or more:</p>
                 <div className="space-y-2 my-6 not-prose">
-                    {s.ranked.slice(0, 12).map(([city, count]) => (
-                        <Link
-                            key={city}
-                            to={`/vets/${slugify(city)}`}
-                            className="flex items-center gap-3 group"
-                            title={`English-speaking vets in ${city}`}
-                        >
+                    {s.multi.map(([city, count]) => (
+                        <Link key={city} to={`/vets/${slugify(city)}`} className="flex items-center gap-3 group" title={`English-speaking vets in ${city}`}>
                             <span className="w-28 text-sm font-bold text-primary/70 group-hover:text-accent transition-colors text-right shrink-0">{city}</span>
                             <span className="flex-1 bg-primary/5 rounded-full h-6 overflow-hidden">
-                                <span className="block h-full bg-accent/70 group-hover:bg-accent rounded-full transition-all" style={{ width: `${Math.max(6, (100 * count) / s.topMax)}%` }} />
+                                <span className="block h-full bg-accent/70 group-hover:bg-accent rounded-full transition-all" style={{ width: `${Math.max(5, (100 * count) / s.topMax)}%` }} />
                             </span>
                             <span className="w-8 text-sm font-black text-primary text-right shrink-0">{count}</span>
                         </Link>
                     ))}
                 </div>
+                {s.single.length > 0 && (
+                    <p className="text-sm text-primary/60 leading-relaxed">
+                        <strong>Plus {s.single.length} more cities</strong> with a single listed practice so far:{' '}
+                        {s.single.map((c, i) => (
+                            <span key={c}>
+                                <Link to={`/vets/${slugify(c)}`} className="text-accent hover:underline">{c}</Link>{i < s.single.length - 1 ? ', ' : '.'}
+                            </span>
+                        ))}
+                    </p>
+                )}
 
-                {/* Gaps */}
-                <h2 className="text-2xl font-bold text-primary mt-14 mb-4">The coverage gaps</h2>
-                <p className="text-primary/70 mb-6">Coverage against Germany's twelve largest cities. A handful of major population centres remain thinly served or unserved:</p>
+                {/* Largest cities coverage */}
+                <h2 className="text-2xl font-bold text-primary mt-14 mb-4">How far we have reached</h2>
+                <p className="text-primary/70 mb-6">Our coverage across Germany's twelve largest cities. The thin and blank rows are simply where our mapping has not reached yet, our priority list for expansion:</p>
                 <div className="overflow-x-auto not-prose">
                     <table className="w-full text-left border-collapse bg-white rounded-xl shadow-sm border border-primary/10">
                         <thead className="bg-primary text-secondary text-sm">
                             <tr>
                                 <th className="px-4 py-3 font-bold">City</th>
                                 <th className="px-4 py-3 font-bold">Population (approx.)</th>
-                                <th className="px-4 py-3 font-bold">English-speaking vets</th>
+                                <th className="px-4 py-3 font-bold">Practices mapped</th>
                             </tr>
                         </thead>
                         <tbody className="text-sm">
@@ -139,28 +147,25 @@ export default function VetAccessReport() {
                                 <tr key={b.city} className="border-t border-primary/10">
                                     <td className="px-4 py-3 font-semibold">{b.city}</td>
                                     <td className="px-4 py-3 text-primary/70">{b.pop}</td>
-                                    <td className={`px-4 py-3 font-bold ${b.count === 0 ? 'text-red-500' : b.count <= 2 ? 'text-amber-600' : 'text-primary'}`}>
-                                        {b.count === 0 ? 'None listed' : b.count}
+                                    <td className={`px-4 py-3 font-bold ${b.count === 0 ? 'text-primary/40' : 'text-primary'}`}>
+                                        {b.count === 0 ? 'Not yet mapped' : b.count}
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                 </div>
-                <p className="text-primary/70 mt-6 leading-relaxed">
-                    The pattern is clear: international communities cluster where English-speaking care has grown, while large industrial cities outside the classic expat magnets, such as the Ruhr area, are left with thin or non-existent coverage. As more pet owners confirm and submit practices, these gaps are the ones most worth closing.
-                </p>
 
                 {/* Methodology */}
-                <h2 className="text-2xl font-bold text-primary mt-14 mb-4">Methodology</h2>
+                <h2 className="text-2xl font-bold text-primary mt-14 mb-4">Methodology & limits</h2>
                 <p className="text-primary/70 leading-relaxed">
-                    Figures are drawn from the EnglishSpeakingVets directory, a community-sourced list of veterinary practices in Germany identified as English-speaking. Practices are added through expat recommendations and checked for English-language signals (such as an English website, English-language reviews, or international staff). The data updates as practices are added and confirmed, so these numbers reflect a living snapshot rather than a one-off survey. They capture practices known to our community, not every English-speaking vet in the country, so true access is likely somewhat higher than shown, especially in smaller cities.
+                    Figures come from the EnglishSpeakingVets directory, a community-sourced list of veterinary practices in Germany identified as English-speaking. Practices are added through expat recommendations and research, then checked for English-language signals such as an English website, English-language reviews, or international staff. Importantly, our research has so far concentrated on the cities with the largest international communities, so the map is densest there by design. A low or zero count for any city reflects how much we have mapped it, not how much English-speaking care exists there. These numbers therefore undercount true availability, particularly in cities we have not yet focused on.
                 </p>
 
                 {/* CTA */}
                 <div className="bg-accent/10 p-8 md:p-10 rounded-3xl mt-14 border border-accent/20 text-center not-prose">
-                    <h3 className="text-2xl font-black text-primary mb-3">Help close the gaps</h3>
-                    <p className="text-primary/70 mb-6 max-w-xl mx-auto">Know an English-speaking vet we are missing, especially in an underserved city? Every confirmation makes the map more accurate for the next expat.</p>
+                    <h3 className="text-2xl font-black text-primary mb-3">Help us fill in the map</h3>
+                    <p className="text-primary/70 mb-6 max-w-xl mx-auto">Know an English-speaking vet we are missing, especially in a city we have not reached yet? Every submission makes the map more accurate for the next expat.</p>
                     <div className="flex flex-wrap gap-3 justify-center">
                         <Link to="/" className="inline-block bg-primary text-secondary font-bold py-3 px-8 rounded-2xl hover:bg-black transition-all">Browse the directory</Link>
                         <Link to="/contact?topic=submit_vet" className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-2xl border border-primary/10 hover:border-accent/40 transition-all">Submit a vet</Link>
@@ -168,7 +173,7 @@ export default function VetAccessReport() {
                 </div>
 
                 <p className="text-xs text-primary/40 mt-8 italic">
-                    Free to cite with attribution to EnglishSpeakingVets (englishspeakinggermany.online). Last updated June 2026.
+                    Free to cite with attribution to EnglishSpeakingVets (englishspeakinggermany.online), provided figures are described as our directory's current coverage rather than a national total. Last updated June 2026.
                 </p>
             </main>
 

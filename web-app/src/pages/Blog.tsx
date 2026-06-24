@@ -140,10 +140,10 @@ const blogPosts = [
     },
     {
         url: "/english-speaking-vet-access-germany",
-        title: "📊 English-Speaking Vet Access in Germany",
+        title: "📊 Mapping English-Speaking Vets in Germany",
         emoji: "📊",
         category: "REPORT",
-        desc: "A data study: 240+ verified practices across 38 cities, where coverage is strongest, and which major cities are underserved."
+        desc: "A coverage snapshot of our directory: 240+ practices mapped across 38 cities, where coverage is strongest, and the cities we are still expanding into."
     },
     {
         url: "/blog/first-vet-visit-germany",
