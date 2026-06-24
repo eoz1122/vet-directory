@@ -17,6 +17,7 @@ export function MoreCitiesDropdown({ cities, selectedCity, onSelect }: Props) {
     const [open, setOpen] = useState(false);
     const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
     const btnRef = useRef<HTMLButtonElement>(null);
+    const menuRef = useRef<HTMLDivElement>(null);
 
     const place = () => {
         const r = btnRef.current?.getBoundingClientRect();
@@ -32,13 +33,19 @@ export function MoreCitiesDropdown({ cities, selectedCity, onSelect }: Props) {
     useEffect(() => {
         if (!open) return;
         const close = () => setOpen(false);
+        const onScroll = (e: Event) => {
+            // Don't close when scrolling INSIDE the menu; only on page/panel scroll.
+            const t = e.target as Node | null;
+            if (menuRef.current && t && menuRef.current.contains(t)) return;
+            setOpen(false);
+        };
         window.addEventListener('click', close);
         window.addEventListener('resize', close);
-        window.addEventListener('scroll', close, true); // any scroll closes it
+        window.addEventListener('scroll', onScroll, true);
         return () => {
             window.removeEventListener('click', close);
             window.removeEventListener('resize', close);
-            window.removeEventListener('scroll', close, true);
+            window.removeEventListener('scroll', onScroll, true);
         };
     }, [open]);
 
@@ -56,9 +63,10 @@ export function MoreCitiesDropdown({ cities, selectedCity, onSelect }: Props) {
 
             {open && pos && createPortal(
                 <div
+                    ref={menuRef}
                     style={{ position: 'fixed', top: pos.top, left: pos.left, width: 192 }}
                     onClick={(e) => e.stopPropagation()}
-                    className="bg-white rounded-xl shadow-xl border border-primary/10 overflow-y-auto max-h-64 z-[1000] custom-scrollbar"
+                    className="bg-white rounded-xl shadow-xl border border-primary/10 overflow-y-auto overscroll-contain max-h-64 z-[1000] custom-scrollbar"
                 >
                     {cities.map((city) => (
                         <button
