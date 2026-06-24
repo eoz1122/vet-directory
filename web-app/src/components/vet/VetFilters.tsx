@@ -1,5 +1,6 @@
 import React from 'react';
 import PlaceAutocomplete from '../PlaceAutocomplete';
+import { MoreCitiesDropdown } from './MoreCitiesDropdown';
 import type { Vet } from '../../types/vet';
 
 interface VetFiltersProps {
@@ -95,32 +96,13 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                                 </button>
                             ))}
 
-                            {/* Custom Dropdown for Other Cities */}
+                            {/* Other Cities — portal dropdown escapes the panel's overflow clipping */}
                             {otherCities.length > 0 && (
-                                <div className="relative group inline-block">
-                                    <button
-                                        className={`appearance-none px-4 py-2 pr-8 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm cursor-pointer focus:outline-none bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80 active:scale-90 flex items-center`}
-                                    >
-                                        More Cities...
-                                        <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path></svg>
-                                    </button>
-
-                                    {/* Dropdown Menu */}
-                                    <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-primary/10 overflow-hidden z-[100] hidden group-hover:block max-h-64 overflow-y-auto custom-scrollbar">
-                                        {otherCities.map(city => (
-                                            <button
-                                                key={city}
-                                                onClick={() => handleCityChange(city)}
-                                                className={`w-full block px-4 py-2 text-xs font-bold text-left transition-colors ${selectedCity === city
-                                                    ? 'bg-primary/10 text-primary'
-                                                    : 'text-primary/70 hover:bg-primary/5 hover:text-primary'
-                                                    }`}
-                                            >
-                                                {city}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
+                                <MoreCitiesDropdown
+                                    cities={otherCities}
+                                    selectedCity={selectedCity}
+                                    onSelect={handleCityChange}
+                                />
                             )}
                         </div>
                     </div>
