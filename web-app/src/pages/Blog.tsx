@@ -125,11 +125,18 @@ const blogPosts = [
         desc: "Where to buy, how prescriptions work, and why you can't have antibiotics shipped. Comparing vet prices vs. online pharmacies like Medpets."
     },
     {
-        url: "/blog/best-pet-food-germany-dinner-for-dogs",
-        title: "🥘 Best Pet Food in Germany",
-        emoji: "🥘",
+        url: "/blog/best-dog-food-germany",
+        title: "🐕 Best Dog Food in Germany",
+        emoji: "🐕",
         category: "HEALTH",
-        desc: "Beyond industrial kibble. A guide to high-quality fresh pet food in Germany, featuring a review of Dinner for Dogs direct-to-door delivery."
+        desc: "Dry vs wet vs raw (BARF), decoding German food labels, where to buy, and how to choose the right food for your dog. A practical buyer's guide for expats."
+    },
+    {
+        url: "/blog/best-cat-food-germany",
+        title: "🐈 Best Cat Food in Germany",
+        emoji: "🐈",
+        category: "HEALTH",
+        desc: "Wet vs dry, why cats need taurine and moisture, decoding German labels, and where to buy. A practical buyer's guide for expat cat owners."
     },
     {
         url: "/blog/first-vet-visit-germany",

@@ -10,7 +10,7 @@ import { generateArticleSchema } from '../utils/schema';
 
 const TITLE = "Best Dog Food in Germany (2026): A Buyer's Guide for Expats";
 const DESCRIPTION = "How to choose the best dog food in Germany: dry vs wet vs raw (BARF), decoding German food labels, where to buy, and a recommended fresh-delivery option. A practical guide for expat dog owners.";
-const URL = "https://englishspeakinggermany.online/blog/best-pet-food-germany-dinner-for-dogs";
+const URL = "https://englishspeakinggermany.online/blog/best-dog-food-germany";
 
 const FAQS = [
     {
@@ -226,7 +226,7 @@ export default function PetFoodGermany() {
                             </div>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/best-pet-food-germany-dinner-for-dogs" />
+                        <RelatedPosts currentPath="/blog/best-dog-food-germany" />
                     </article>
                 </div>
             </main>

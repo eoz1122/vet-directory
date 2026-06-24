@@ -25,6 +25,8 @@ PATHS=(
   "/blog/moving-to-germany-with-pet"
   "/blog/public-transport-with-dogs-berlin"
   "/blog/pet-insurance-germany"
+  "/blog/best-dog-food-germany"
+  "/blog/best-cat-food-germany"
   "/about"
   "/guides/emergency-vets-berlin"
 )
@@ -43,6 +45,7 @@ REDIRECTS=(
   "/blog/public-transport-with-dogs-stuttgart-2025|/blog/public-transport-with-dogs-stuttgart"
   "/blog/pet-sitting-germany-2025|/blog/pet-sitting-germany"
   "/blog/pet-insurance-germany-2025|/blog/pet-insurance-germany"
+  "/blog/best-pet-food-germany-dinner-for-dogs|/blog/best-dog-food-germany"
 )
 
 echo "SEO smoke test against: $BASE_URL"
