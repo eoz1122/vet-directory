@@ -6,7 +6,7 @@ import CookieConsent from './components/CookieConsent';
 import GoogleAnalyticsTracker from './components/GoogleAnalyticsTracker';
 
 // Critical routes - load immediately
-import Home from './pages/Home';
+const Home = lazy(() => import('./pages/Home'));
 
 // Lazy load all other routes for better performance
 const QualityPromise = lazy(() => import('./pages/QualityPromise'));
