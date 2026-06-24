@@ -245,6 +245,18 @@ async function prerender() {
                         el.remove();
                     }
                 });
+
+                // 5. Drop preload hints for directory-only chunks (vet dataset, map) on pages
+                //    that never use them, so blog/content landing pages don't background-fetch
+                //    ~40KB of JS they don't need. Directory pages (/ and /vets/*) keep them.
+                const pathname = window.location.pathname;
+                if (pathname !== '/' && !pathname.startsWith('/vets/')) {
+                    document.querySelectorAll('link[rel="modulepreload"]').forEach(l => {
+                        if (/\/(vets|Home|Map|maps-vendor|ConfirmEnglish)-/.test(l.getAttribute('href') || '')) {
+                            l.remove();
+                        }
+                    });
+                }
             });
 
             const html = await page.content();
