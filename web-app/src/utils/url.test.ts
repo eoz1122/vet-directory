@@ -1,5 +1,21 @@
 import { describe, it, expect } from 'vitest';
-import { slugify, titleCaseSlug } from './url';
+import { slugify, titleCaseSlug, appendUTM } from './url';
+
+describe('appendUTM', () => {
+    it('tags outbound links with the .online domain (not .info)', () => {
+        const out = appendUTM('https://deine-haustierpraxis.de');
+        expect(out).toContain('utm_source=englishspeakinggermany.online');
+        expect(out).not.toContain('.info');
+    });
+    it('uses .online on the malformed-url fallback path too', () => {
+        const out = appendUTM('not-a-valid-url');
+        expect(out).toContain('utm_source=englishspeakinggermany.online');
+        expect(out).not.toContain('.info');
+    });
+    it('returns empty string for empty input', () => {
+        expect(appendUTM('')).toBe('');
+    });
+});
 
 describe('titleCaseSlug', () => {
     it('title-cases a hyphenated slug into words (fixes "Bad-homburg")', () => {
