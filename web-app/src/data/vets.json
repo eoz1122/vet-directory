@@ -6112,5 +6112,31 @@
       "emergency_services": ""
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "Herford-DeineHaustierpraxis",
+    "practice_name": "Deine Haustierpraxis",
+    "city": "Herford",
+    "district": "Unknown",
+    "address": "Oststraße 23, 32051 Herford",
+    "coordinates": {
+      "lat": 52.1266672,
+      "lng": 8.6396479
+    },
+    "contact": {
+      "phone": "05221 342220",
+      "website": "https://deine-haustierpraxis.de",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Deine+Haustierpraxis+Oststra%C3%9Fe+23+Herford"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-23",
+      "english_signals": [
+        "Practice website offers an English version and welcomes English-speaking pet owners",
+        "Community-submitted recommendation; practice founded 2026 (no patient reviews yet)"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
   }
 ]
