@@ -6138,5 +6138,256 @@
       "emergency_services": ""
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "Duesseldorf-Beyer",
+    "practice_name": "Kleintierpraxis Dr. med. vet. Katja Beyer",
+    "city": "Düsseldorf",
+    "district": "Unterbilk",
+    "address": "Lorettostraße 33, 40219 Düsseldorf",
+    "coordinates": {
+      "lat": 51.2134835,
+      "lng": 6.7650829
+    },
+    "contact": {
+      "phone": "+49 211 3033343",
+      "website": "https://kleintierpraxis-beyer.de",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20Dr.%20med.%20vet.%20Katja%20Beyer%20Lorettostra%C3%9Fe%2033%2C%2040219%20D%C3%BCsseldorf"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-24",
+      "english_signals": [
+        "Recommended on lifeinduesseldorf.com's curated list of English-speaking vets in Düsseldorf (expat community source)"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Duesseldorf-Niessen",
+    "practice_name": "Tierarztpraxis Ferdinand Nießen",
+    "city": "Düsseldorf",
+    "district": "Oberkassel",
+    "address": "Arnulfstraße 22, 40545 Düsseldorf",
+    "coordinates": {
+      "lat": 51.2332422,
+      "lng": 6.7492723
+    },
+    "contact": {
+      "phone": "+49 211 578611",
+      "website": "https://tierarztinduesseldorf.de",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Ferdinand%20Nie%C3%9Fen%20Arnulfstra%C3%9Fe%2022%2C%2040545%20D%C3%BCsseldorf"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-24",
+      "english_signals": [
+        "Recommended on lifeinduesseldorf.com's curated list of English-speaking vets in Düsseldorf (expat community source)"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Duesseldorf-Gutshof",
+    "practice_name": "Tierarztpraxis im Gutshof",
+    "city": "Düsseldorf",
+    "district": "Kaiserswerth",
+    "address": "Arnheimer Str. 18, 40489 Düsseldorf",
+    "coordinates": {
+      "lat": 51.3030191,
+      "lng": 6.7401382
+    },
+    "contact": {
+      "phone": "+49 211 22975516",
+      "website": "https://tierarzt-kaiserswerth.de",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20im%20Gutshof%20Arnheimer%20Str.%2018%2C%2040489%20D%C3%BCsseldorf"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-24",
+      "english_signals": [
+        "Recommended on lifeinduesseldorf.com's curated list of English-speaking vets in Düsseldorf (expat community source)",
+        "Practice website offers an English version"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Duesseldorf-Morys",
+    "practice_name": "Morys Kleintierpraxis",
+    "city": "Düsseldorf",
+    "district": "Kaiserswerth",
+    "address": "Niederrheinstr. 124, 40474 Düsseldorf",
+    "coordinates": {
+      "lat": 51.2768995,
+      "lng": 6.7418628
+    },
+    "contact": {
+      "phone": "+49 211 4543560",
+      "website": "https://kleintierpraxis-morys.de",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Morys%20Kleintierpraxis%20Niederrheinstr.%20124%2C%2040474%20D%C3%BCsseldorf"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-24",
+      "english_signals": [
+        "Recommended on lifeinduesseldorf.com's curated list of English-speaking vets in Düsseldorf (expat community source)"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Duesseldorf-Duesselpfoten",
+    "practice_name": "Tierarztpraxis Düsselpfoten",
+    "city": "Düsseldorf",
+    "district": "Düsseltal",
+    "address": "Eduard-Schloemann-Straße 51, 40237 Düsseldorf",
+    "coordinates": {
+      "lat": 51.2385558,
+      "lng": 6.8163229
+    },
+    "contact": {
+      "phone": "+49 211 22962822",
+      "website": "",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20D%C3%BCsselpfoten%20Eduard-Schloemann-Stra%C3%9Fe%2051%2C%2040237%20D%C3%BCsseldorf"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-24",
+      "english_signals": [
+        "Recommended on lifeinduesseldorf.com's curated list of English-speaking vets in Düsseldorf (expat community source)"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Duesseldorf-TierklinikZentrum",
+    "practice_name": "Tierklinik Düsseldorf Zentrum",
+    "city": "Düsseldorf",
+    "district": "Stadtmitte",
+    "address": "Adlerstraße 63, 40211 Düsseldorf",
+    "coordinates": {
+      "lat": 51.2301204,
+      "lng": 6.7942367
+    },
+    "contact": {
+      "phone": "+49 211 3227770",
+      "website": "https://tierklinik-duesseldorf-zentrum.de",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik%20D%C3%BCsseldorf%20Zentrum%20Adlerstra%C3%9Fe%2063%2C%2040211%20D%C3%BCsseldorf"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-24",
+      "english_signals": [
+        "Recommended on lifeinduesseldorf.com's curated list of English-speaking vets in Düsseldorf (expat community source)"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Duesseldorf-TKD",
+    "practice_name": "Tierärztliche Klinik für Kleintiere",
+    "city": "Düsseldorf",
+    "district": "Mörsenbroich",
+    "address": "Münsterstraße 359, 40470 Düsseldorf",
+    "coordinates": {
+      "lat": 51.2534474,
+      "lng": 6.8028133
+    },
+    "contact": {
+      "phone": "+49 211 626868",
+      "website": "https://tkd.de",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliche%20Klinik%20f%C3%BCr%20Kleintiere%20M%C3%BCnsterstra%C3%9Fe%20359%2C%2040470%20D%C3%BCsseldorf"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-24",
+      "english_signals": [
+        "Recommended on lifeinduesseldorf.com's curated list of English-speaking vets in Düsseldorf (expat community source)"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Duesseldorf-Filu",
+    "practice_name": "filu Veterinary Düsseldorf",
+    "city": "Düsseldorf",
+    "district": "Pempelfort",
+    "address": "Duisburger Straße 32, 40477 Düsseldorf",
+    "coordinates": {
+      "lat": 51.2360635,
+      "lng": 6.7816361
+    },
+    "contact": {
+      "phone": "+49 211 41873373",
+      "website": "https://filu.vet",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20D%C3%BCsseldorf%20Duisburger%20Stra%C3%9Fe%2032%2C%2040477%20D%C3%BCsseldorf"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-24",
+      "english_signals": [
+        "Practice website (English) confirms the team speaks German, English, Bulgarian and Chinese"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Cologne-Filu",
+    "practice_name": "filu Veterinary Cologne Rudolfplatz",
+    "city": "Cologne",
+    "district": "Neustadt-Süd",
+    "address": "Pilgrimstraße 6, 50674 Köln",
+    "coordinates": {
+      "lat": 50.9356535,
+      "lng": 6.9396304
+    },
+    "contact": {
+      "phone": "+49 221 58609808",
+      "website": "https://filu.vet",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20Cologne%20Rudolfplatz%20Pilgrimstra%C3%9Fe%206%2C%2050674%20K%C3%B6ln"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-24",
+      "english_signals": [
+        "Practice website (English) confirms the team at Rudolfplatz speaks German and English"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "Bremen-Medivet",
+    "practice_name": "Medivet Bremen",
+    "city": "Bremen",
+    "district": "Oslebshausen",
+    "address": "Oslebshauser Tor 7, 28239 Bremen",
+    "coordinates": {
+      "lat": 53.137275,
+      "lng": 8.7412599
+    },
+    "contact": {
+      "phone": "+49 421 6491514",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/bremen/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet%20Bremen%20Oslebshauser%20Tor%207%2C%2028239%20Bremen"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-06-24",
+      "english_signals": [
+        "Practice website lists English among the team's spoken languages"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
   }
 ]
