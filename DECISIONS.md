@@ -111,3 +111,14 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** `web-app/scripts/seo-smoke-test.sh` extended — new URLs must 200, all 12 retired URLs must 301 to the evergreen target. Confirmed PASS live. Orphaned `-2025` prerendered dirs removed from the web root.
 
 **Follow-up:** Resubmit the sitemap in Google Search Console so the new URLs are recrawled and the redirects validated.
+
+## 2026-07-10T14:00:00+02:00 — IndexNow for Bing/Yandex Recrawl
+
+**Context:** Google indexing of the directory's long tail is throttled by processing lag and thin-page authority, which more code cannot fix. IndexNow is a free, legitimate lever for the non-Google engines (Bing, Yandex, Seznam) that honor push notifications.
+
+**Decisions:**
+1.  **Key file:** `web-app/public/fcf5c3b58393e18fa2aa5f59fede4a13.txt` (bare 32-hex key, no newline). Ships in the build to the web root and is served at `https://englishspeakinggermany.online/<key>.txt` as IndexNow's ownership proof. Public by design, not a secret.
+2.  **Submit script:** `web-app/scripts/indexnow-submit.js` auto-detects the key file, reads `public/sitemap.xml`, and bulk-POSTs all URLs to `api.indexnow.org/indexnow`. Non-fatal: logs and exits 0 on any API error.
+3.  **Deploy hook:** `deploy.sh` step 8 runs the submit after the liveness check, so every deploy nudges the non-Google engines automatically.
+
+**Trade-offs:** Google ignores IndexNow entirely, so this does not move the primary GSC numbers; it only serves Bing/Yandex traffic (~3-5% of search). First submission returns `403 SiteVerificationNotCompleted` until the engine fetches the key file async; it self-heals on retry (confirmed HTTP 200 for 222 URLs on 2026-07-10).
