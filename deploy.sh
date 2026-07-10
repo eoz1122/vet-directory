@@ -70,6 +70,10 @@ else
     exit 1
 fi
 
+# 8. Notify IndexNow (Bing/Yandex/Seznam) of the current URL set. Non-fatal.
+echo "🔔 Submitting URLs to IndexNow..."
+node web-app/scripts/indexnow-submit.js || echo "IndexNow submit skipped (non-fatal)"
+
 echo ""
 echo "🎉 Deployment complete!"
 echo "   Next: check Google Search Console and request indexing for key pages."
