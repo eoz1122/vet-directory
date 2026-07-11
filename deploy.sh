@@ -6,7 +6,10 @@ set -e
 # run `npm ci` at the same time and wipe node_modules mid-build (caused real
 # `tsc: not found` failures). Waits up to 15 min for any in-flight deploy, then
 # proceeds; the lock auto-releases when this script exits (even on error).
-exec 9>/tmp/esv-deploy.lock
+# Lock lives in the deploy user's home, not /tmp: a stale root-owned /tmp lock
+# blocked the first non-root deploy (Permission denied) after the least-privilege
+# switch on 2026-07-11.
+exec 9>"${HOME}/.esv-deploy.lock"
 if ! flock -w 900 9; then
     echo "❌ Another deploy held the lock for >15min. Aborting to avoid a race."
     exit 1
