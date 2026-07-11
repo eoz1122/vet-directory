@@ -73,7 +73,10 @@ function getVetRoutes() {
             console.warn(`Vets data not found at ${VETS_DATA_PATH}`);
             return [];
         }
-        const vets = JSON.parse(fs.readFileSync(VETS_DATA_PATH, 'utf-8'));
+        const allVets = JSON.parse(fs.readFileSync(VETS_DATA_PATH, 'utf-8'));
+        // Mirror the app's display filter (src/utils/activeVets.ts): closed
+        // practices must not create or sustain routes.
+        const vets = allVets.filter(v => v.verification?.status !== 'Permanently Closed');
 
         // Cities
         const cities = [...new Set(vets.map(v => v.city))];

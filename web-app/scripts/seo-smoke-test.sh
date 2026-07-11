@@ -46,6 +46,7 @@ REDIRECTS=(
   "/blog/pet-sitting-germany-2025|/blog/pet-sitting-germany"
   "/blog/pet-insurance-germany-2025|/blog/pet-insurance-germany"
   "/blog/best-pet-food-germany-dinner-for-dogs|/blog/best-dog-food-germany"
+  "/vets/nuremberg/schweinau|/vets/nuremberg"
 )
 
 echo "SEO smoke test against: $BASE_URL"

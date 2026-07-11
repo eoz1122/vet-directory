@@ -3,11 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
+import { filterDisplayableVets } from '../utils/activeVets';
 import { slugify } from '../utils/url';
 import { generateArticleSchema } from '../utils/schema';
 import type { Vet } from '../types/vet';
 
-const vets = vetsData as Vet[];
+const vets = filterDisplayableVets(vetsData as Vet[]);
 
 const TITLE = "Mapping English-Speaking Vets Across Germany (2026)";
 const DESCRIPTION = "A snapshot of our community directory's coverage of English-speaking veterinary practices in Germany: how many we have mapped, where coverage is strongest, and which cities we are still expanding into.";

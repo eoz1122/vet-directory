@@ -4,11 +4,12 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
+import { filterDisplayableVets } from '../utils/activeVets';
 import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
 import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
 
-const vets = vetsData as Vet[];
+const vets = filterDisplayableVets(vetsData as Vet[]);
 
 const CITY_CONFIG: Record<string, { guideLink?: string }> = {
     'Berlin': { guideLink: '/blog/public-transport-with-dogs-berlin' },

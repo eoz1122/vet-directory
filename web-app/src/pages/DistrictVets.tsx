@@ -4,12 +4,13 @@ import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
+import { filterDisplayableVets } from '../utils/activeVets';
 import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
 import { generateDistrictContent } from '../utils/districtContent';
 import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
 
-const vets = vetsData as Vet[];
+const vets = filterDisplayableVets(vetsData as Vet[]);
 
 interface DistrictContent {
     title: string;

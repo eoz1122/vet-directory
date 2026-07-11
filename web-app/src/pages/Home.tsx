@@ -6,6 +6,7 @@ import { APIProvider } from '@vis.gl/react-google-maps';
 import Footer from '../components/Footer';
 import type { Vet, VetWithDistance } from '../types/vet';
 import vetsData from '../data/vets.json';
+import { filterDisplayableVets } from '../utils/activeVets';
 import { calculateDistance } from '../utils/distance';
 import { generateListingSchema } from '../utils/schema';
 import { VetCard } from '../components/vet/VetCard';
@@ -16,7 +17,7 @@ import { Pagination } from '../components/ui/Pagination';
 const AppMap = lazy(() => import('../components/Map'));
 
 // Cast the JSON data to our Vet type
-const vets = vetsData as Vet[];
+const vets = filterDisplayableVets(vetsData as Vet[]);
 const ITEMS_PER_PAGE = 10;
 
 const Home: React.FC = () => {

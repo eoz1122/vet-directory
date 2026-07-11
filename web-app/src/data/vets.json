@@ -3476,7 +3476,7 @@
     "contact": {
       "phone": "0511 9536200",
       "website": "https://www.tiho-hannover.de/kliniken-institute/kliniken/kleintierklinik",
-      "google_maps": "https://goo.gl/maps/example6"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierklinik+Hannover+%28TiHo%29+B%C3%BCnteweg+9%2C+30559+Hannover"
     },
     "verification": {
       "status": "Verified",
@@ -3629,7 +3629,7 @@
     "contact": {
       "phone": "089 21802650",
       "website": "https://www.med.vetmed.uni-muenchen.de/index.html",
-      "google_maps": "https://goo.gl/maps/example1"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medizinische+Kleintierklinik+der+LMU+M%C3%BCnchen+Veterin%C3%A4rstra%C3%9Fe+13%2C+80539+M%C3%BCnchen"
     },
     "verification": {
       "status": "Verified",
@@ -3708,7 +3708,7 @@
       "lng": 11.658236
     },
     "contact": {
-      "phone": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+M%C3%BCnchen/data=!4m7!3m6!1s0x479e0ba12bc5db59:0x59666aa80228880f!8m2!3d48.134753!4d11.658236!16s%2Fg%2F11qnbrsvqd!19sChIJWdvFK6ELnkcRD4goAqhqZlk?authuser=0&hl=en&rclk=1",
+      "phone": null,
       "website": "https://felmo.de/tierarzt/muenchen?utm_medium=referral&utm_source=google_my_business&utm_term=muenchen",
       "google_maps": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+M%C3%BCnchen/data=!4m7!3m6!1s0x479e0ba12bc5db59:0x59666aa80228880f!8m2!3d48.134753!4d11.658236!16s%2Fg%2F11qnbrsvqd!19sChIJWdvFK6ELnkcRD4goAqhqZlk?authuser=0&hl=en&rclk=1"
     },
@@ -3964,7 +3964,7 @@
     "contact": {
       "phone": "0911 643110",
       "website": "https://www.tierklinik-nuernberg.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+N%C3%BCrnberg+Hafen+Wertachstra%C3%9Fe+1%2C+90451+N%C3%BCrnberg"
     },
     "verification": {
       "status": "Verified",
@@ -4028,31 +4028,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Nuremberg-New-4",
-    "practice_name": "Medivet Nürnberg",
-    "city": "Nuremberg",
-    "district": "Schweinau",
-    "address": "Konstanzenstraße 90, 90439 Nürnberg",
-    "coordinates": {
-      "lat": 49.435292,
-      "lng": 11.0402869
-    },
-    "contact": {
-      "phone": "0911 96583888",
-      "website": "https://www.medivetgroup.com/de-de/tierarzt/nuernberg/",
-      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet+Nürnberg+Konstanzenstraße+90"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-27",
-      "english_signals": [
-        "Primary clinic chain; staff usually English-speaking"
-      ],
-      "emergency_services": "Extended Hours"
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Nuremberg-New-6",
     "practice_name": "Tierklinik Am Stadtpark (Main)",
     "city": "Nuremberg",
@@ -4088,9 +4063,9 @@
       "lng": 9.175696799999999
     },
     "contact": {
-      "phone": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+Ernst/data=!4m7!3m6!1s0x4799dad816650777:0x5eaf75115e7ef513!8m2!3d48.7984113!4d9.1756968!16s%2Fg%2F1v_s4w1t!19sChIJdwdlFtjamUcRE_V-XhF1r14?authuser=0&hl=en&rclk=1",
+      "phone": null,
       "website": "http://www.kleintierpraxis-ernst.de/",
-      "google_maps": null
+      "google_maps": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+Ernst/data=!4m7!3m6!1s0x4799dad816650777:0x5eaf75115e7ef513!8m2!3d48.7984113!4d9.1756968!16s%2Fg%2F1v_s4w1t!19sChIJdwdlFtjamUcRE_V-XhF1r14?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
@@ -4113,9 +4088,9 @@
       "lng": 9.1751811
     },
     "contact": {
-      "phone": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Stuttgart/data=!4m7!3m6!1s0x4799db0d1df75241:0xe4615968680cec2b!8m2!3d48.7520867!4d9.1751811!16s%2Fg%2F11r3s60j5q!19sChIJQVL3HQ3bmUcRK-wMaGhZYeQ?authuser=0&hl=en&rclk=1",
+      "phone": null,
       "website": "https://felmo.de/tierarzt/stuttgart/?utm_medium=referral&utm_source=google_my_business&utm_term=stuttgart",
-      "google_maps": null
+      "google_maps": "https://www.google.com/maps/place/felmo+Mobiler+Tierarzt+Stuttgart/data=!4m7!3m6!1s0x4799db0d1df75241:0xe4615968680cec2b!8m2!3d48.7520867!4d9.1751811!16s%2Fg%2F11r3s60j5q!19sChIJQVL3HQ3bmUcRK-wMaGhZYeQ?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
@@ -4188,9 +4163,9 @@
       "lng": 8.927621
     },
     "contact": {
-      "phone": "https://www.google.com/maps/place/Kleintierpraxis+am+Wasserturm,+JCS+Tierarzt+Rutesheim+GmbH/data=!4m7!3m6!1s0x479763840e2a26c9:0xf95fa42b0dd769d1!8m2!3d48.8103808!4d8.927621!16s%2Fg%2F11wx1j1ktj!19sChIJySYqDoRjl0cR0WnXDSukX_k?authuser=0&hl=en&rclk=1",
+      "phone": null,
       "website": "https://tierarzt-rutesheim.de/",
-      "google_maps": null
+      "google_maps": "https://www.google.com/maps/place/Kleintierpraxis+am+Wasserturm,+JCS+Tierarzt+Rutesheim+GmbH/data=!4m7!3m6!1s0x479763840e2a26c9:0xf95fa42b0dd769d1!8m2!3d48.8103808!4d8.927621!16s%2Fg%2F11wx1j1ktj!19sChIJySYqDoRjl0cR0WnXDSukX_k?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
@@ -4575,7 +4550,7 @@
     "contact": {
       "phone": "+49 341 9738000",
       "website": "https://www.vetmed.uni-leipzig.de",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Klinik+f%C3%BCr+Kleintiere++Universit%C3%A4t+Leipzig+An+den+Tierkliniken+23%2C+04103+Leipzig"
     },
     "verification": {
       "status": "Verified",
@@ -5485,32 +5460,6 @@
     "community_status": "Verified"
   },
   {
-    "id": "Internal-3",
-    "practice_name": "Klinik für Kleine Haustiere (Düppel) - FU Berlin",
-    "city": "Berlin",
-    "district": "Zehlendorf",
-    "address": "Oertzenweg 19b, 14163 Berlin",
-    "coordinates": {
-      "lat": 52.42858,
-      "lng": 13.23847
-    },
-    "contact": {
-      "phone": "030 83862356",
-      "website": "https://www.vetmed.fu-berlin.de/einrichtungen/kliniken/we20/index.html",
-      "google_maps": "https://goo.gl/maps/example3"
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-01-01",
-      "english_signals": [
-        "University Teaching Hospital",
-        "Multilingual Academic Staff"
-      ],
-      "emergency_services": "24/7"
-    },
-    "community_status": "Verified"
-  },
-  {
     "id": "Internal-4",
     "practice_name": "Tierklinik Ismaning",
     "city": "Ismaning",
@@ -5523,7 +5472,7 @@
     "contact": {
       "phone": "089 54045640",
       "website": "https://www.tierklinik-ismaning.de/",
-      "google_maps": "https://goo.gl/maps/example4"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Ismaning+Oskar-Messter-Stra%C3%9Fe+6%2C+85737+Ismaning"
     },
     "verification": {
       "status": "Verified",
@@ -5549,7 +5498,7 @@
     "contact": {
       "phone": "040 5209096",
       "website": "https://www.tierklinik-lademannbogen.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Lademannbogen+Wilhelm-Stein-Weg+2%2C+22339+Hamburg"
     },
     "verification": {
       "status": "Verified",
@@ -5575,7 +5524,7 @@
     "contact": {
       "phone": "040 43214445",
       "website": "https://www.tierarzt-eimsbuettel.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis+Dr.+S%C3%B6rensen+Weidenallee+61%2C+20357+Hamburg"
     },
     "verification": {
       "status": "Verified",
@@ -5600,7 +5549,7 @@
     "contact": {
       "phone": "069 300651550",
       "website": "https://www.tierklinik-kalbach.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Kalbach+Max-Holder-Stra%C3%9Fe+7%2C+60437+Frankfurt+am+Main"
     },
     "verification": {
       "status": "Verified",
@@ -5625,7 +5574,7 @@
     "contact": {
       "phone": "0221 4744430",
       "website": "https://www.tierklinik-kellerwessel.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Kellerwessel+Rennbahnstra%C3%9Fe+20%2C+50935+K%C3%B6ln"
     },
     "verification": {
       "status": "Verified",
@@ -5650,7 +5599,7 @@
     "contact": {
       "phone": "0221 254460",
       "website": "https://www.tierarzt-wichert.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis+Dr.+B.+und+A.+Wichert+Br%C3%BCsseler+Str.+28%2C+50674+K%C3%B6ln"
     },
     "verification": {
       "status": "Verified",
@@ -5675,7 +5624,7 @@
     "contact": {
       "phone": "0211 626868",
       "website": "https://www.tierklinik-duesseldorf.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+D%C3%BCsseldorf+M%C3%BCnsterstra%C3%9Fe+359%2C+40470+D%C3%BCsseldorf"
     },
     "verification": {
       "status": "Verified",
@@ -5700,7 +5649,7 @@
     "contact": {
       "phone": "0641 9938535",
       "website": "https://www.uni-giessen.de/de/fbz/fb10/institute_klinikum/klinikum/kleintierchirurgie",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Klinik+f%C3%BCr+Kleintiere+%28Chirurgie%29+-+JLU+Gie%C3%9Fen+Frankfurter+Str.+108%2C+35392+Gie%C3%9Fen"
     },
     "verification": {
       "status": "Verified",
@@ -5726,7 +5675,7 @@
     "contact": {
       "phone": "06221 820700",
       "website": "https://www.tierklinik-heidelberg.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliche+Klinik+Dr.+Maurer+Edinger+Riedweg+55%2C+69123+Heidelberg"
     },
     "verification": {
       "status": "Verified",
@@ -5752,7 +5701,7 @@
     "contact": {
       "phone": "0421 2220710",
       "website": "https://www.tierklinik-bremen.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Bremen+Kaspar-Singer-Stra%C3%9Fe+2%2C+28359+Bremen"
     },
     "verification": {
       "status": "Verified",
@@ -5777,7 +5726,7 @@
     "contact": {
       "phone": "0821 4559000",
       "website": "https://www.anicura.de/kleintierspezialisten-augsburg/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=AniCura+Kleintierspezialisten+Augsburg+Max-Josef-Metzger-Stra%C3%9Fe+9%2C+86157+Augsburg"
     },
     "verification": {
       "status": "Verified",
@@ -5802,7 +5751,7 @@
     "contact": {
       "phone": "04131 85110",
       "website": "https://www.tierklinik-lueneburg.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+L%C3%BCneburg+Stadtkoppel+5c%2C+21337+L%C3%BCneburg"
     },
     "verification": {
       "status": "Verified",
@@ -5827,7 +5776,7 @@
     "contact": {
       "phone": "0203 305370",
       "website": "https://www.tierklinik-kaiserberg.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Kaiserberg+Wintgensstra%C3%9Fe+81-83%2C+47058+Duisburg"
     },
     "verification": {
       "status": "Verified",
@@ -5851,7 +5800,7 @@
     "contact": {
       "phone": "0521 260370",
       "website": "https://www.tierklinik-bielefeld.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Bielefeld+Bechterdisser+Str.+6%2C+33719+Bielefeld"
     },
     "verification": {
       "status": "Verified",
@@ -5876,7 +5825,7 @@
     "contact": {
       "phone": "0381 252770",
       "website": "https://www.tierklinik-rostock.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Rostock+Thierfelderstra%C3%9Fe+19%2C+18059+Rostock"
     },
     "verification": {
       "status": "Verified",
@@ -5901,7 +5850,7 @@
     "contact": {
       "phone": "033208 22100",
       "website": "https://www.tierklinik-potsdam.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Potsdam+Am+Kirchberg+2%2C+14476+Potsdam"
     },
     "verification": {
       "status": "Verified",
@@ -5925,7 +5874,7 @@
     "contact": {
       "phone": "0201 438880",
       "website": "https://www.tierklinik-essen.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliche+Klinik+f%C3%BCr+Kleintiere+am+Stadtwald+Frankenstra%C3%9Fe+233%2C+45134+Essen"
     },
     "verification": {
       "status": "Verified",
@@ -5950,7 +5899,7 @@
     "contact": {
       "phone": "06222 38920",
       "website": "https://www.tierklinik-sandpfad.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierklinik+am+Sandpfad+Ludwig-Wagner-Stra%C3%9Fe+31%2C+69168+Wiesloch"
     },
     "verification": {
       "status": "Verified",
@@ -5975,7 +5924,7 @@
     "contact": {
       "phone": "0941 4629690",
       "website": "https://www.anicura.de/tierklinik-haslbach/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=AniCura+Tierklinik+Haslbach+Im+Gewerbepark+C+35%2C+93059+Regensburg"
     },
     "verification": {
       "status": "Verified",
@@ -6000,7 +5949,7 @@
     "contact": {
       "phone": "02382 766700",
       "website": "https://www.tierklinik-ahlen.de/",
-      "google_maps": "https://goo.gl/maps/example"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliche+Klinik+f%C3%BCr+Kleintiere+Ahlen+Bunsenstra%C3%9Fe+20%2C+59229+Ahlen"
     },
     "verification": {
       "status": "Verified",
