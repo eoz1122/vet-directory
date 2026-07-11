@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { pickRelated } from './relatedSelection';
 
 interface BlogPost {
     url: string;
@@ -79,6 +80,42 @@ const allPosts: BlogPost[] = [
         title: "Dog Etiquette & Rules",
         emoji: "🐕",
         desc: "Leash laws & social unwritten rules"
+    },
+    {
+        url: "/blog/vet-costs-germany",
+        title: "Vet Costs in Germany (GOT)",
+        emoji: "💶",
+        desc: "The fee schedule & multipliers explained"
+    },
+    {
+        url: "/blog/neutering-cost-germany",
+        title: "Neutering & Spaying Costs",
+        emoji: "✂️",
+        desc: "Kastration prices & mandatory rules"
+    },
+    {
+        url: "/blog/pet-vaccination-costs-germany",
+        title: "Vaccination Schedule & Costs",
+        emoji: "💉",
+        desc: "StIKo Vet schedules & prices per jab"
+    },
+    {
+        url: "/blog/adopting-pet-tierheim-germany",
+        title: "Adopting from a Tierheim",
+        emoji: "🏠",
+        desc: "Schutzgebühr, home checks & documents"
+    },
+    {
+        url: "/blog/puppy-first-year-germany",
+        title: "Puppy's First Year in Germany",
+        emoji: "🐶",
+        desc: "Timeline & realistic first-year budget"
+    },
+    {
+        url: "/blog/new-pet-checklist-germany",
+        title: "New Pet: First 30 Days",
+        emoji: "✅",
+        desc: "Registrations, insurance & deadlines"
     }
 ];
 
@@ -87,10 +124,9 @@ interface RelatedPostsProps {
 }
 
 export default function RelatedPosts({ currentPath }: RelatedPostsProps) {
-    const related = allPosts.filter(p => p.url !== currentPath);
-
-    // Show only 4 related posts max to keep grid nice
-    const displayPosts = related.slice(0, 4);
+    // Deterministic per-page pick (prerender-stable) instead of always the first 4,
+    // so internal links spread across the whole blog.
+    const displayPosts = pickRelated(allPosts, currentPath, 4);
 
     return (
         <section className="bg-secondary p-8 rounded-2xl border border-primary/10 mt-12">

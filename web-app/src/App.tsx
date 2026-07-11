@@ -21,6 +21,12 @@ const DistrictVets = lazy(() => import('./pages/DistrictVets'));
 const Impressum = lazy(() => import('./pages/Impressum'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const VetCostsGermany = lazy(() => import('./pages/VetCostsGermany'));
+const NeuteringCostsGermany = lazy(() => import('./pages/NeuteringCostsGermany'));
+const VaccinationCostsGermany = lazy(() => import('./pages/VaccinationCostsGermany'));
+const TierheimAdoptionGermany = lazy(() => import('./pages/TierheimAdoptionGermany'));
+const PuppyFirstYearGermany = lazy(() => import('./pages/PuppyFirstYearGermany'));
+const NewPetChecklistGermany = lazy(() => import('./pages/NewPetChecklistGermany'));
 const PetFriendlyApartments = lazy(() => import('./pages/PetFriendlyApartments'));
 const PublicTransportBerlin = lazy(() => import('./pages/PublicTransportBerlin'));
 const PublicTransportHamburg = lazy(() => import('./pages/PublicTransportHamburg'));
@@ -107,6 +113,12 @@ function App() {
             <Route path="/blog/tick-season-germany-pets" element={<TickSeasonGermanyPets />} />
             <Route path="/blog/emergency-vet-hamburg-english" element={<EmergencyVetHamburgGuide />} />
             <Route path="/blog/best-dog-parks-berlin" element={<BestDogParksBerlin />} />
+            <Route path="/blog/vet-costs-germany" element={<VetCostsGermany />} />
+            <Route path="/blog/neutering-cost-germany" element={<NeuteringCostsGermany />} />
+            <Route path="/blog/pet-vaccination-costs-germany" element={<VaccinationCostsGermany />} />
+            <Route path="/blog/adopting-pet-tierheim-germany" element={<TierheimAdoptionGermany />} />
+            <Route path="/blog/puppy-first-year-germany" element={<PuppyFirstYearGermany />} />
+            <Route path="/blog/new-pet-checklist-germany" element={<NewPetChecklistGermany />} />
 
             <Route path="/vets/:city" element={<CityVets />} />
             <Route path="/vets/:city/:district" element={<DistrictVets />} />

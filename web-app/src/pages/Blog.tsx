@@ -125,6 +125,48 @@ const blogPosts = [
         desc: "Essential medical German for pet owners. From describing symptoms like 'Durchfall' to making emergency appointments."
     },
     {
+        url: "/blog/adopting-pet-tierheim-germany",
+        title: "🏠 Adopting from a Tierheim",
+        emoji: "🏠",
+        category: "NEW PET",
+        desc: "The Schutzgebühr, the interview and home check, documents expats need, and what happens after you adopt from a German shelter."
+    },
+    {
+        url: "/blog/puppy-first-year-germany",
+        title: "🐶 Puppy's First Year in Germany",
+        emoji: "🐶",
+        category: "NEW PET",
+        desc: "Month-by-month timeline and a realistic 1,500-3,000 EUR budget: registrations, vaccinations, dog school, and the deadlines that matter."
+    },
+    {
+        url: "/blog/new-pet-checklist-germany",
+        title: "✅ New Pet: First 30 Days Checklist",
+        emoji: "✅",
+        category: "NEW PET",
+        desc: "Everything to register, insure, and organize in the first month with a new dog or cat in Germany, in the right order."
+    },
+    {
+        url: "/blog/vet-costs-germany",
+        title: "💶 Vet Costs in Germany (GOT)",
+        emoji: "💶",
+        category: "Bureaucracy",
+        desc: "How much a vet visit really costs: the GOT fee schedule, the 1x-4x multiplier system, emergency surcharges, and 6 legitimate ways to save."
+    },
+    {
+        url: "/blog/neutering-cost-germany",
+        title: "✂️ Neutering & Spaying Costs",
+        emoji: "✂️",
+        category: "HEALTH",
+        desc: "Realistic Kastration prices for cats and dogs, what quotes include, mandatory neutering rules for outdoor cats, and how to compare estimates."
+    },
+    {
+        url: "/blog/pet-vaccination-costs-germany",
+        title: "💉 Vaccination Schedule & Costs",
+        emoji: "💉",
+        category: "HEALTH",
+        desc: "The StIKo Vet puppy and kitten schedules, why rabies is now a travel vaccine, and what every jab costs under the GOT."
+    },
+    {
         url: "/blog/pet-insurance-germany",
         title: "Pet Insurance in Germany (2026)",
         emoji: "💰",
