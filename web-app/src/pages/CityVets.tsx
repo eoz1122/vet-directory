@@ -399,6 +399,39 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
                     )}
                 </section>
 
+                {/* District index: gives every district page a crawlable inbound link */}
+                {(() => {
+                    const districtCounts = new Map<string, { name: string; count: number }>();
+                    cityVets.forEach((v: Vet) => {
+                        if (!v.district || v.district === 'Unknown') return;
+                        const dSlug = slugify(v.district);
+                        if (dSlug === cityKey) return; // mirrors prerender/sitemap rule
+                        const entry = districtCounts.get(dSlug);
+                        if (entry) entry.count += 1;
+                        else districtCounts.set(dSlug, { name: v.district, count: 1 });
+                    });
+                    if (districtCounts.size < 2) return null;
+                    return (
+                        <section className="mb-10">
+                            <h2 className="text-xl font-bold text-primary mb-4">Browse {capitalizedCity} by district</h2>
+                            <div className="flex flex-wrap gap-2">
+                                {[...districtCounts.entries()]
+                                    .sort((a, b) => b[1].count - a[1].count || a[1].name.localeCompare(b[1].name))
+                                    .map(([dSlug, d]) => (
+                                        <Link
+                                            key={dSlug}
+                                            to={`/vets/${cityKey}/${dSlug}`}
+                                            className="px-4 py-2 bg-white border border-primary/10 rounded-2xl text-sm font-bold text-primary hover:border-accent/40 hover:text-accent transition-all"
+                                            title={`English-speaking vets in ${d.name}, ${capitalizedCity}`}
+                                        >
+                                            {d.name} <span className="text-primary/40 font-normal">({d.count})</span>
+                                        </Link>
+                                    ))}
+                            </div>
+                        </section>
+                    );
+                })()}
+
                 <section>
                     <h2 className="text-2xl font-bold text-primary mb-6">
                         {cityVets.length} Verified Practices in {capitalizedCity}
@@ -417,9 +450,19 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
                                                 {vet.city}
                                             </span>
                                             {vet.district && vet.district !== "Unknown" && (
-                                                <span className="px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-black uppercase tracking-widest rounded-full">
-                                                    {vet.district}
-                                                </span>
+                                                slugify(vet.district) !== cityKey ? (
+                                                    <Link
+                                                        to={`/vets/${cityKey}/${slugify(vet.district)}`}
+                                                        className="px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-black uppercase tracking-widest rounded-full hover:bg-accent/15 transition-colors"
+                                                        title={`All English-speaking vets in ${vet.district}`}
+                                                    >
+                                                        {vet.district}
+                                                    </Link>
+                                                ) : (
+                                                    <span className="px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-black uppercase tracking-widest rounded-full">
+                                                        {vet.district}
+                                                    </span>
+                                                )
                                             )}
                                         </div>
                                         <h3 className="text-lg font-black text-primary group-hover/card:text-accent transition-colors leading-tight">

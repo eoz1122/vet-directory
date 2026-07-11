@@ -1,9 +1,19 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function Privacy() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
+            <Helmet>
+                <title>Privacy Policy (Datenschutz) | EnglishSpeakingVets</title>
+                <meta name="description" content="Privacy policy and Datenschutzerklaerung for EnglishSpeakingVets: what data we process, why, and your rights under the GDPR." />
+                <link rel="canonical" href="https://englishspeakinggermany.online/privacy" />
+                <meta property="og:title" content="Privacy Policy (Datenschutz) | EnglishSpeakingVets" />
+                <meta property="og:description" content="Privacy policy and Datenschutzerklaerung for EnglishSpeakingVets: what data we process, why, and your rights under the GDPR." />
+                <meta property="og:url" content="https://englishspeakinggermany.online/privacy" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+            </Helmet>
             {/* Header */}
             {/* Header */}
             <Header />

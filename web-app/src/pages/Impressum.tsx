@@ -1,9 +1,19 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function Impressum() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
+            <Helmet>
+                <title>Impressum (Legal Notice) | EnglishSpeakingVets</title>
+                <meta name="description" content="Impressum and legal notice for EnglishSpeakingVets, the community directory of English-speaking veterinary practices in Germany." />
+                <link rel="canonical" href="https://englishspeakinggermany.online/impressum" />
+                <meta property="og:title" content="Impressum (Legal Notice) | EnglishSpeakingVets" />
+                <meta property="og:description" content="Impressum and legal notice for EnglishSpeakingVets, the community directory of English-speaking veterinary practices in Germany." />
+                <meta property="og:url" content="https://englishspeakinggermany.online/impressum" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+            </Helmet>
             {/* Header */}
             {/* Header */}
             <Header />

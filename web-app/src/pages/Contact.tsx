@@ -105,6 +105,10 @@ export default function Contact() {
                 <title>Contact Us | The Pack</title>
                 <meta name="description" content="Get in touch with The Pack. Submit a vet recommendation, report an issue, or ask a question." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/contact" />
+                <meta property="og:title" content="Contact Us | The Pack" />
+                <meta property="og:description" content="Get in touch with The Pack. Submit a vet recommendation, report an issue, or ask a question." />
+                <meta property="og:url" content="https://englishspeakinggermany.online/contact" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
             </Helmet>
             {/* Header / Nav */}
             <Header />

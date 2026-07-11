@@ -20,6 +20,7 @@ const CityVets = lazy(() => import('./pages/CityVets'));
 const DistrictVets = lazy(() => import('./pages/DistrictVets'));
 const Impressum = lazy(() => import('./pages/Impressum'));
 const Privacy = lazy(() => import('./pages/Privacy'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 const PetFriendlyApartments = lazy(() => import('./pages/PetFriendlyApartments'));
 const PublicTransportBerlin = lazy(() => import('./pages/PublicTransportBerlin'));
 const PublicTransportHamburg = lazy(() => import('./pages/PublicTransportHamburg'));
@@ -112,6 +113,8 @@ function App() {
             <Route path="/admin" element={<Admin />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
         <CookieConsent />

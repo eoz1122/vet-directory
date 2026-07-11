@@ -46,6 +46,7 @@ function getStaticRoutes() {
         '/blog',
         '/impressum',
         '/privacy',
+        '/404', // prerendered so nginx error_page can serve it with a real 404 status
     ];
 }
 

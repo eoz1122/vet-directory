@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -6,6 +7,15 @@ import RelatedPosts from '../components/RelatedPosts';
 export default function QualityPromise() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
+            <Helmet>
+                <title>Our Quality Promise | EnglishSpeakingVets</title>
+                <meta name="description" content="How we verify English-speaking vets in Germany: community confirmations, English-language signals, and honest listings. Our quality standards explained." />
+                <link rel="canonical" href="https://englishspeakinggermany.online/quality-promise" />
+                <meta property="og:title" content="Our Quality Promise | EnglishSpeakingVets" />
+                <meta property="og:description" content="How we verify English-speaking vets in Germany: community confirmations, English-language signals, and honest listings. Our quality standards explained." />
+                <meta property="og:url" content="https://englishspeakinggermany.online/quality-promise" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
+            </Helmet>
             {/* Header / Nav */}
             {/* Header / Nav */}
             <Header />

@@ -140,7 +140,7 @@ export default function GermanDogEtiquette() {
                             </p>
 
                             <h2 id="fines" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Fines: How Expensive Can It Get?</h2>
-                            <div className="overflow-hidden rounded-2xl border border-primary/10 my-8 not-prose">
+                            <div className="overflow-x-auto rounded-2xl border border-primary/10 my-8 not-prose">
                                 <table className="w-full text-left border-collapse">
                                     <thead className="bg-primary text-secondary text-center">
                                         <tr>

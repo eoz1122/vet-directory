@@ -9,6 +9,10 @@ export default function About() {
                 <title>About Us | The Pack</title>
                 <meta name="description" content="Learn about the mission behind The Pack and our community-driven effort to help expats find English-speaking vets in Germany." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/about" />
+                <meta property="og:title" content="About Us | The Pack" />
+                <meta property="og:description" content="Learn about the mission behind The Pack and our community-driven effort to help expats find English-speaking vets in Germany." />
+                <meta property="og:url" content="https://englishspeakinggermany.online/about" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
             </Helmet>
 
             {/* Header / Nav */}

@@ -24,6 +24,10 @@ const EmergencyVetHamburgGuide: React.FC = () => {
                 <title>Emergency Vets in Hamburg: 24-Hour English-Speaking Clinics | English Speaking Vets</title>
                 <meta name="description" content="Pet emergency in Hamburg? Find 24-hour English-speaking vet services, learn the emergency system, what to say when you call, and what it will cost." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/emergency-vet-hamburg-english" />
+                <meta property="og:title" content="Emergency Vets in Hamburg: 24-Hour English-Speaking Clinics | English Speaking Vets" />
+                <meta property="og:description" content="Pet emergency in Hamburg? Find 24-hour English-speaking vet services, learn the emergency system, what to say when you call, and what it will cost." />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/emergency-vet-hamburg-english" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <script type="application/ld+json">{JSON.stringify(schema)}</script>
             </Helmet>
 

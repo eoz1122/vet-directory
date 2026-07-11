@@ -141,7 +141,7 @@ export default function PetInsuranceGermany() {
                             <p>Vet bills in Germany are non-negotiable. They follow a government-regulated price list called the <strong>Gebührenordnung für Tierärzte (GOT)</strong>.</p>
                             <p>Vets can charge 1× to 4× the base price depending on the time of day and complexity:</p>
 
-                            <div className="overflow-hidden rounded-2xl border border-primary/10 my-8 not-prose">
+                            <div className="overflow-x-auto rounded-2xl border border-primary/10 my-8 not-prose">
                                 <table className="w-full text-left border-collapse">
                                     <thead className="bg-primary text-secondary">
                                         <tr>

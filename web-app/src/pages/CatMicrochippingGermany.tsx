@@ -23,6 +23,10 @@ const CatMicrochippingGermany: React.FC = () => {
                 <title>Cat Microchipping in Germany 2026 | English Speaking Vets</title>
                 <meta name="description" content="Germany is tightening cat microchipping and registration rules. Here is what expat cat owners need to know, and what you must do before it affects you." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/cat-microchipping-germany" />
+                <meta property="og:title" content="Cat Microchipping in Germany 2026 | English Speaking Vets" />
+                <meta property="og:description" content="Germany is tightening cat microchipping and registration rules. Here is what expat cat owners need to know, and what you must do before it affects you." />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/cat-microchipping-germany" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <script type="application/ld+json">{JSON.stringify(schema)}</script>
             </Helmet>
 

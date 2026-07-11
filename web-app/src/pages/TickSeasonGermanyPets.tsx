@@ -23,6 +23,10 @@ const TickSeasonGermanyPets: React.FC = () => {
                 <title>Tick Season in Germany: Pet Prevention Guide 2026 | English Speaking Vets</title>
                 <meta name="description" content="Germany has one of Europe's highest tick burdens. Here is when tick season peaks, which diseases to watch for, and how to protect your dog or cat in 2026." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/tick-season-germany-pets" />
+                <meta property="og:title" content="Tick Season in Germany: Pet Prevention Guide 2026 | English Speaking Vets" />
+                <meta property="og:description" content="Germany has one of Europe's highest tick burdens. Here is when tick season peaks, which diseases to watch for, and how to protect your dog or cat in 2026." />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/tick-season-germany-pets" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <script type="application/ld+json">{JSON.stringify(schema)}</script>
             </Helmet>
 

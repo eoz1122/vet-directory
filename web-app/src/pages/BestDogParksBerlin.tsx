@@ -24,6 +24,10 @@ const BestDogParksBerlin: React.FC = () => {
                 <title>Best Dog Parks in Berlin: Off-Leash Areas Guide | English Speaking Vets</title>
                 <meta name="description" content="The definitive guide to off-leash dog areas in Berlin. Hundeauslaufgebiete by neighbourhood, leash rules, and where to take reactive or large dogs." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/best-dog-parks-berlin" />
+                <meta property="og:title" content="Best Dog Parks in Berlin: Off-Leash Areas Guide | English Speaking Vets" />
+                <meta property="og:description" content="The definitive guide to off-leash dog areas in Berlin. Hundeauslaufgebiete by neighbourhood, leash rules, and where to take reactive or large dogs." />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog/best-dog-parks-berlin" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <script type="application/ld+json">{JSON.stringify(schema)}</script>
             </Helmet>
 

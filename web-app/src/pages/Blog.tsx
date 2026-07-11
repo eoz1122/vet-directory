@@ -20,6 +20,27 @@ const blogPosts = [
         desc: "5 verified 24/7 emergency clinics in Berlin with English-speaking staff. Phone numbers, addresses, and what to expect."
     },
     {
+        url: "/guides/emergency-vets-munich",
+        title: "24/7 Emergency Vets: Munich",
+        emoji: "🏥",
+        category: "EMERGENCY",
+        desc: "24/7 emergency veterinary clinics in Munich with English-speaking staff. Phone numbers, addresses, and out-of-hours costs."
+    },
+    {
+        url: "/guides/emergency-vets-hamburg",
+        title: "24/7 Emergency Vets: Hamburg",
+        emoji: "🏥",
+        category: "EMERGENCY",
+        desc: "24/7 emergency veterinary clinics in Hamburg with English-speaking staff. Phone numbers, addresses, and out-of-hours costs."
+    },
+    {
+        url: "/guides/emergency-vets-frankfurt",
+        title: "24/7 Emergency Vets: Frankfurt",
+        emoji: "🏥",
+        category: "EMERGENCY",
+        desc: "24/7 emergency veterinary clinics in Frankfurt with English-speaking staff. Phone numbers, addresses, and out-of-hours costs."
+    },
+    {
         url: "/blog/pet-sitting-germany",
         title: "Pet Sitting in Germany (2026)",
         emoji: "🏡",
@@ -210,6 +231,10 @@ export default function Blog() {
                 <title>Expat Dog & Cat Guides Germany | EnglishSpeakingVets</title>
                 <meta name="description" content="Essential guides for pet owners in Germany. Dog tax, public transport rules, finding apartments, and EU pet passports explained for expats." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog" />
+                <meta property="og:title" content="Expat Dog & Cat Guides Germany | EnglishSpeakingVets" />
+                <meta property="og:description" content="Essential guides for pet owners in Germany. Dog tax, public transport rules, finding apartments, and EU pet passports explained for expats." />
+                <meta property="og:url" content="https://englishspeakinggermany.online/blog" />
+                <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
             </Helmet>
 
             <Header />
