@@ -111,7 +111,7 @@ export default function VetCostsGermany() {
                                 The <strong>Gebührenordnung für Tierärzte (GOT)</strong> is Germany's legally binding veterinary fee schedule. It lists over 1,000 individual services, each with a fixed base price. Every vet in Germany must bill from this list; it is a federal regulation, not a suggestion.
                             </p>
                             <p>
-                                The current version took effect in <strong>November 2022</strong>, the first major overhaul in 20 years. Prices rose noticeably then (a standard cat exam went from about 9 EUR to 23.62 EUR base), which is why older forum posts about "cheap German vets" no longer match reality.
+                                The current version took effect in <strong>November 2022</strong>, the first major overhaul in 20 years, and it is still the fee schedule in force in 2026. Prices rose noticeably then (a standard cat exam went from about 9 EUR to 23.62 EUR base), which is why older forum posts about "cheap German vets" no longer match reality. Heads up for the future: the agriculture ministry began its scheduled evaluation of the GOT in 2025, with results expected at the end of 2026, so another fee adjustment may follow in the coming years.
                             </p>
                             <p className="bg-primary/5 p-6 rounded-xl border border-primary/10 not-prose text-sm">
                                 <strong>Two things to know when reading any German vet quote:</strong> GOT prices are <em>net</em> (add 19% VAT to everything), and the listed price is only the <em>starting point</em>. The multiplier decides what you actually pay.
