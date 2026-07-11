@@ -122,3 +122,18 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 3.  **Deploy hook:** `deploy.sh` step 8 runs the submit after the liveness check, so every deploy nudges the non-Google engines automatically.
 
 **Trade-offs:** Google ignores IndexNow entirely, so this does not move the primary GSC numbers; it only serves Bing/Yandex traffic (~3-5% of search). First submission returns `403 SiteVerificationNotCompleted` until the engine fetches the key file async; it self-heals on retry (confirmed HTTP 200 for 222 URLs on 2026-07-10).
+
+## 2026-07-11T02:20:00+02:00 — End-to-End Audit: Data Honesty, 404s, and Hardening
+
+**Context:** A six-dimension audit (live infra, security, frontend/SEO, data integrity, dependencies, tests) found user-facing data bugs, on-site SEO defects feeding the GSC "not indexed" pile, and security gaps. Fixes were approved in four waves.
+
+**Decisions:**
+1.  **Display filter over deletion for closed practices:** `src/utils/activeVets.ts` (`filterDisplayableVets`) is the single source of truth. Records marked `Permanently Closed` stay in `vets.json` as an audit trail but never render, and never create sitemap/prerender routes (both scripts mirror the filter). True duplicates, by contrast, are deleted outright (Internal-3, Nuremberg-New-4; 252 -> 250).
+2.  **Real 404s replace soft-404s:** every legitimate route is prerendered, so nginx `try_files` now ends in `=404` with `error_page 404 /404/index.html` (a prerendered, noindexed NotFound page). `/admin` is the only SPA-shell exception (`location = /admin`). Trailing-slash URLs 301 to the canonical no-slash form.
+3.  **Guides must live in Blog.tsx to exist:** the sitemap and prerender harvest routes from Blog.tsx `url:` fields; the Munich/Hamburg/Frankfurt emergency guides were routed but invisible to crawlers. Rule: any new content page MUST be added to Blog.tsx `blogPosts` (or the scripts' static lists).
+4.  **District pages get inbound links:** CityVets renders a "Browse by district" index plus linked district chips, ending the orphan-page pattern (129 district pages had zero internal inbound links).
+5.  **Secrets:** the hardcoded Google API key in `scripts/maintenance/fix_addresses.py` was removed (argv pattern, matching `geocode_missing.py`). The key itself must be rotated by the owner - removal from HEAD does not purge git history in the public repo.
+6.  **Least-privilege deploy:** `esv-deploy.service` runs as `englishspeaking` (npm lifecycle scripts no longer execute as root); `vet-api` restart is delegated via a narrow sudoers rule (`NOPASSWD: /usr/bin/systemctl restart vet-api`).
+7.  **HSTS with training wheels:** enabled at `max-age=86400` (1 day) for easy rollback; bump to 31536000 after a quiet week. Permissions-Policy allows `geolocation=(self)` because the "near me" search uses it. CSP deferred: needs testing against Google Maps/GA before enforcement.
+
+**Rollback:** wave commits are atomic and revertable individually; nginx changes are manual on the VPS (previous conf retained as a dated .bak before edit; `sudo nginx -t` gate before reload).

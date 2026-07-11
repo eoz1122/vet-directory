@@ -9,5 +9,11 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-Environment=HOME=/root
+# Least privilege: npm ci/build lifecycle scripts must NOT run as root.
+# The englishspeaking user owns the web root; systemctl restart vet-api is
+# delegated via a narrow sudoers rule (see deploy/README or DECISIONS.md):
+#   englishspeaking ALL=(root) NOPASSWD: /usr/bin/systemctl restart vet-api
+User=englishspeaking
+Group=englishspeaking
+Environment=HOME=/home/englishspeaking
 ExecStart=/usr/local/bin/esv-poll-deploy.sh

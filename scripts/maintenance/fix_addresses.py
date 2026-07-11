@@ -34,7 +34,11 @@ def geocode_full_info(query, api_key):
         return None
 
 def main():
-    api_key = "AIzaSyC4EN0MA51sNv7a5hNrDrgNMwV_Moz2CsY"
+    # Key passed as argv (never hardcoded - this file is in a public repo).
+    if len(sys.argv) < 2:
+        print("Usage: python fix_addresses.py <GOOGLE_MAPS_API_KEY>")
+        sys.exit(1)
+    api_key = sys.argv[1]
     vets_file = 'web-app/src/data/vets.json'
     
     if not os.path.exists(vets_file):
