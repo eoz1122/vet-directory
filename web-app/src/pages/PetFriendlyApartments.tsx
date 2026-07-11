@@ -7,14 +7,46 @@ import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do I find a pet-friendly apartment in Germany?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Filter for 'Haustiere erlaubt' on ImmoScout24 and similar portals, but do not stop there: most listings simply say nothing about pets. Apply normally, disclose the pet honestly, and attach a short pet resume (photo, breed/size, liability insurance proof, previous landlord reference). Blanket pet bans in standard leases are invalid under a 2013 Federal Court ruling, so 'no pets' listings are often negotiable." }
+        },
+        {
+            "@type": "Question",
+            "name": "Can a landlord ban pets in Germany?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not with a blanket clause. Germany's Federal Court of Justice ruled in 2013 that general bans on dogs and cats in rental contracts are invalid. Landlords must assess each case individually and can only refuse with an objective reason. Small pets like hamsters, fish, and budgies never need permission." }
+        },
+        {
+            "@type": "Question",
+            "name": "Are pet-friendly apartments hard to find in Berlin?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Berlin is one of Germany's most pet-tolerant rental markets: dogs are a normal sight in cafes and on the U-Bahn, and districts like Prenzlauer Berg, Neukölln, Kreuzberg, and Friedrichshain are known for accepting pet owners. The bottleneck is Berlin's general housing shortage rather than pet policy, so a strong application with a pet resume matters more than hiding the animal." }
+        },
+        {
+            "@type": "Question",
+            "name": "What should a pet clause in a German lease say?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ideally written permission naming the specific animal ('one cat' or the dog's breed and size). Watch for monthly 'pet rent' surcharges: courts have increasingly ruled them unenforceable, though a moderately higher deposit within legal limits is allowed. Get any verbal promise in writing before signing." }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I tell my landlord about my cat?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Cats and dogs formally require permission, and an undisclosed pet discovered later puts you in breach of contract, a far weaker position than asking upfront. Since refusal requires an objective reason, an ordinary indoor cat is hard to refuse. Honesty plus a pet resume wins in most cases." }
+        }
+    ]
+};
+
 export default function PetFriendlyApartments() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Finding a Pet-Friendly Apartment in Germany (2026) | Rights & Tips</title>
+                <title>Pet-Friendly Apartments in Germany: Rights & Berlin Guide (2026)</title>
                 <meta name="description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026." />
                 <meta name="keywords" content="Finding a pet-friendly apartment in Germany, German rental law pets 2026, dog-friendly neighborhoods Berlin, pet resume for landlords Germany, cat ownership rental laws Germany" />
-                <meta property="og:title" content="Finding a Pet-Friendly Apartment in Germany (2026) | Rights & Tips" />
+                <meta property="og:title" content="Pet-Friendly Apartments in Germany: Rights & Berlin Guide (2026)" />
                 <meta property="og:description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026." />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
@@ -22,11 +54,14 @@ export default function PetFriendlyApartments() {
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany" />
                 <script type="application/ld+json">
                     {JSON.stringify(generateArticleSchema(
-                        "Finding a Pet-Friendly Apartment in Germany (2026) | Rights & Tips",
+                        "Pet-Friendly Apartments in Germany: Rights & Berlin Guide (2026)",
                         "Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026.",
                         "https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany",
                         "2025-01-01"
                     ))}
+                </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(faqSchema)}
                 </script>
             </Helmet>
 
@@ -61,7 +96,7 @@ export default function PetFriendlyApartments() {
                             </p>
 
                             <p>
-                                But here’s the hobbyist’s secret: <strong>German rental law is actually more pet-friendly than most people think.</strong> Landlords can’t simply blanket-ban pets anymore. With the right strategy — and a bit of expat charm — you can find a home for your whole pack.
+                                But here’s the hobbyist’s secret: <strong>German rental law is actually more pet-friendly than most people think.</strong> Landlords can’t simply blanket-ban pets anymore. With the right strategy (and a bit of expat charm) you can find a home for your whole pack.
                             </p>
 
                             <hr className="my-8 border-primary/10" />
@@ -77,7 +112,7 @@ export default function PetFriendlyApartments() {
                                     Hamsters, fish, birds, guinea pigs, and similar small animals are considered part of “normal use” of an apartment. <strong>You do not need permission to keep them.</strong>
                                 </p>
 
-                                <h3 className="text-xl font-bold text-primary mt-6 mb-2">🐕 Cats & Dogs (Permission Required — But…)</h3>
+                                <h3 className="text-xl font-bold text-primary mt-6 mb-2">🐕 Cats & Dogs (Permission Required, But...)</h3>
                                 <p className="mb-2">
                                     Yes, you need written permission for dogs and cats.
                                     However, a landlord must assess each case individually and cannot refuse without an <strong>objective, reasonable justification</strong>.
@@ -165,7 +200,7 @@ export default function PetFriendlyApartments() {
                                     </ul>
                                 </div>
                             </div>
-                            <p className="text-xs text-center opacity-60 italic">(Pet-friendly doesn’t mean guaranteed — but these areas are known to be more accepting.)</p>
+                            <p className="text-xs text-center opacity-60 italic">(Pet-friendly doesn’t mean guaranteed, but these areas are known to be more accepting.)</p>
 
                             <h2 id="strategy" className="text-2xl font-bold text-primary mt-10 mb-4 scroll-mt-24">The Hobbyist Strategy: How to Apply</h2>
                             <ol className="list-decimal pl-5 space-y-2 mb-6 font-medium">
@@ -207,6 +242,19 @@ export default function PetFriendlyApartments() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <h2 className="text-2xl font-bold text-primary mt-16 mb-6">FAQ: Pet-Friendly Renting in Germany</h2>
+                        <div className="space-y-4 my-8 not-prose">
+                            {faqSchema.mainEntity.map((q) => (
+                                <details key={q.name} className="bg-white rounded-xl border border-primary/5 shadow-sm p-5 group">
+                                    <summary className="font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4">
+                                        {q.name}
+                                        <span className="text-accent transition-transform group-open:rotate-45 shrink-0">+</span>
+                                    </summary>
+                                    <p className="text-primary/70 text-sm mt-3 leading-relaxed">{q.acceptedAnswer.text}</p>
+                                </details>
+                            ))}
                         </div>
 
                         <RelatedPosts currentPath="/blog/pet-friendly-apartments-germany" />

@@ -24,15 +24,31 @@ describe('generateDistrictContent', () => {
         expect(c.intro).not.toMatch(/undefined|NaN|—/);   // no holes, no em dash
     });
 
-    it('returns exactly 3 data-driven FAQs with answers', () => {
+    it('returns exactly 4 data-driven FAQs with answers', () => {
         const c = generateDistrictContent('Mitte', 'Berlin', vets);
-        expect(c.faqs).toHaveLength(3);
+        expect(c.faqs).toHaveLength(4);
         for (const f of c.faqs) {
             expect(f.q.length).toBeGreaterThan(8);
             expect(f.a.length).toBeGreaterThan(15);
             expect(f.a).not.toMatch(/undefined|—/);
         }
         expect(c.faqs[0].q.toLowerCase()).toContain('english');
+    });
+
+    // GSC data (July 2026): real searches phrase this conversationally, e.g.
+    // "is there an english-speaking vet in berlin prenzlauer berg you can recommend?"
+    it('includes a recommendation-shaped FAQ naming real practices when vets exist', () => {
+        const c = generateDistrictContent('Prenzlauer Berg', 'Berlin', vets);
+        const rec = c.faqs.find(f => /recommend/i.test(f.q));
+        expect(rec).toBeDefined();
+        expect(rec!.q).toContain('Prenzlauer Berg');
+        expect(rec!.a).toContain('Tierklinik A');
+        expect(rec!.a).not.toMatch(/undefined|—/);
+    });
+
+    it('omits the recommendation FAQ when the district has no vets', () => {
+        const c = generateDistrictContent('Empty District', 'Berlin', []);
+        expect(c.faqs.some(f => /recommend/i.test(f.q))).toBe(false);
     });
 
     it('surfaces emergency availability when present in the data', () => {

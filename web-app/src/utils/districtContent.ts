@@ -143,7 +143,20 @@ export function generateDistrictContent(
             `Practices marked Verified have been confirmed by expat pet owners who have been seen there.`,
     };
 
-    const faqs: DistrictFaq[] = [englishFaq, ...(emergencyFaq ? [emergencyFaq] : []), verifyFaq];
+    // Matches the conversational phrasing real searchers use (GSC, July 2026):
+    // "is there an english-speaking vet in <district> you can recommend?".
+    // Only included when there is at least one practice to point to, and the
+    // answer sticks to what the data supports: community confirmations.
+    const recommendFaq: DistrictFaq | null = count > 0
+        ? {
+            q: `Is there an English-speaking vet in ${district} you can recommend?`,
+            a: verifiedNames.length
+                ? `${prose(verifiedNames.slice(0, 3))} ${verifiedNames.length === 1 ? 'is' : 'are'} the community-Verified ${verifiedNames.length === 1 ? 'choice' : 'choices'} in ${district}: expat pet owners have confirmed being seen there in English. Each listing shows the practice's contact details and the evidence behind the verification.`
+                : `Our ${district} ${count === 1 ? 'listing is' : 'listings are'} community-sourced${count <= 3 ? ` (${prose(names)})` : ''} rather than independently Verified yet, so we would not call ${count === 1 ? 'it' : 'any of them'} a firm recommendation. Check the English signals on each listing and confirm when booking.`,
+        }
+        : null;
+
+    const faqs: DistrictFaq[] = [englishFaq, ...(recommendFaq ? [recommendFaq] : []), ...(emergencyFaq ? [emergencyFaq] : []), verifyFaq];
 
     return { intro: paragraphs.join('\n\n'), faqs };
 }
