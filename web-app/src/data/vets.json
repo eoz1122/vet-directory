@@ -3079,9 +3079,10 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-26",
+      "last_scanned": "2026-07-15",
       "english_signals": [
-        "Verified English Support; Jameda Verified"
+        "Verified English Support; Jameda Verified",
+        "Community confirmation via site button (2026-07-15)"
       ],
       "emergency_services": ""
     },
