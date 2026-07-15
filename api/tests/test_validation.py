@@ -86,3 +86,26 @@ def test_validate_confirm_payload_length_limit():
     sanitized, error = validate_confirm_payload({"vetName": "x" * 201})
     assert sanitized is None
     assert "200" in error
+
+
+# --- confirmation JSONL log (source of truth for the weekly sweep) ---
+
+def test_append_confirmation_writes_jsonl_line(tmp_path):
+    from main import append_confirmation  # type: ignore
+    import json as _json
+    log = tmp_path / "confirmations.jsonl"
+    append_confirmation({"vetId": "Berlin-1", "vetName": "Test Vet", "vetCity": "Berlin"}, path=str(log))
+    append_confirmation({"vetId": "Hamburg-2", "vetName": "Second Vet", "vetCity": "Hamburg"}, path=str(log))
+    lines = log.read_text(encoding="utf-8").strip().splitlines()
+    assert len(lines) == 2
+    rec = _json.loads(lines[0])
+    assert rec["vetId"] == "Berlin-1"
+    assert rec["vetName"] == "Test Vet"
+    assert rec["vetCity"] == "Berlin"
+    assert len(rec["date"]) == 10 and rec["date"][4] == "-"  # ISO date YYYY-MM-DD
+
+
+def test_append_confirmation_never_raises_on_bad_path():
+    from main import append_confirmation  # type: ignore
+    # Unwritable path must not raise - logging is best-effort, the request must succeed
+    append_confirmation({"vetId": "x", "vetName": "y", "vetCity": "z"}, path="/nonexistent-dir/f.jsonl")

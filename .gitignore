@@ -32,3 +32,4 @@ web-app/README.md.resolved.0
 # ─── Logs ──────────────────────────────────────────────────────────────────────
 *.log
 npm-debug.log*
+confirmations.jsonl

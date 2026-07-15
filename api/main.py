@@ -1,5 +1,7 @@
 import os
 import re
+import json
+from datetime import datetime, timezone
 import smtplib
 import logging
 from html import escape as html_escape
@@ -222,6 +224,29 @@ def contact():
         return jsonify({"error": "Failed to send message. Please try again later."}), 500
 
 
+# Machine-readable confirmation log: the source of truth swept weekly into
+# vets.json (the email below is only a human notification). Lives in the api/
+# directory (systemd ReadWritePaths) and is untracked, so git resets keep it.
+CONFIRMATIONS_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "confirmations.jsonl")
+
+
+def append_confirmation(sanitized: dict, path: str = CONFIRMATIONS_LOG) -> bool:
+    """Append one confirmation as a JSONL line. Best-effort: never raises."""
+    try:
+        record = {
+            "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            "vetId": sanitized.get("vetId", ""),
+            "vetName": sanitized.get("vetName", ""),
+            "vetCity": sanitized.get("vetCity", ""),
+        }
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+        return True
+    except Exception as e:
+        logger.error("Failed to append confirmation log: %s", str(e))
+        return False
+
+
 @app.route("/api/confirm-vet", methods=["POST"])
 @limiter.limit("10 per minute")
 def confirm_vet():
@@ -243,13 +268,20 @@ def confirm_vet():
 
     Suggested action: bump community_status / last_scanned for this vet in vets.json.
     """
+    logged = append_confirmation(sanitized)
+
+    email_sent = False
     try:
         send_email(subject, email_body)
+        email_sent = True
         logger.info("Confirm-vet email sent: vet=%s id=%s", sanitized["vetName"], sanitized["vetId"])
-        return jsonify({"success": True, "message": "Thanks for confirming!"})
     except Exception as e:
+        # Notification only - the JSONL log above is the record of truth.
         logger.error("Failed to send confirm-vet email: %s", str(e))
-        return jsonify({"error": "Could not record confirmation. Please try again later."}), 500
+
+    if logged or email_sent:
+        return jsonify({"success": True, "message": "Thanks for confirming!"})
+    return jsonify({"error": "Could not record confirmation. Please try again later."}), 500
 
 
 @app.route("/api/health", methods=["GET"])
