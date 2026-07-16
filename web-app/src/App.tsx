@@ -27,6 +27,7 @@ const VaccinationCostsGermany = lazy(() => import('./pages/VaccinationCostsGerma
 const TierheimAdoptionGermany = lazy(() => import('./pages/TierheimAdoptionGermany'));
 const PuppyFirstYearGermany = lazy(() => import('./pages/PuppyFirstYearGermany'));
 const NewPetChecklistGermany = lazy(() => import('./pages/NewPetChecklistGermany'));
+const PetGpsTrackerGermany = lazy(() => import('./pages/PetGpsTrackerGermany'));
 const PetFriendlyApartments = lazy(() => import('./pages/PetFriendlyApartments'));
 const PublicTransportBerlin = lazy(() => import('./pages/PublicTransportBerlin'));
 const PublicTransportHamburg = lazy(() => import('./pages/PublicTransportHamburg'));
@@ -119,6 +120,7 @@ function App() {
             <Route path="/blog/adopting-pet-tierheim-germany" element={<TierheimAdoptionGermany />} />
             <Route path="/blog/puppy-first-year-germany" element={<PuppyFirstYearGermany />} />
             <Route path="/blog/new-pet-checklist-germany" element={<NewPetChecklistGermany />} />
+            <Route path="/blog/pet-gps-tracker-germany" element={<PetGpsTrackerGermany />} />
 
             <Route path="/vets/:city" element={<CityVets />} />
             <Route path="/vets/:city/:district" element={<DistrictVets />} />

@@ -116,6 +116,12 @@ const allPosts: BlogPost[] = [
         title: "New Pet: First 30 Days",
         emoji: "✅",
         desc: "Registrations, insurance & deadlines"
+    },
+    {
+        url: "/blog/pet-gps-tracker-germany",
+        title: "GPS Trackers for Pets",
+        emoji: "📡",
+        desc: "Tractive vs Kippy vs AirTag, honestly"
     }
 ];
 

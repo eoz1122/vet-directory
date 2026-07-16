@@ -125,6 +125,13 @@ const blogPosts = [
         desc: "Essential medical German for pet owners. From describing symptoms like 'Durchfall' to making emergency appointments."
     },
     {
+        url: "/blog/pet-gps-tracker-germany",
+        title: "📡 GPS Trackers for Pets in Germany",
+        emoji: "📡",
+        category: "Safety",
+        desc: "Tractive vs Kippy vs AirTag: real subscription costs, what works for outdoor cats, and the breakaway-collar safety rules nobody mentions."
+    },
+    {
         url: "/blog/adopting-pet-tierheim-germany",
         title: "🏠 Adopting from a Tierheim",
         emoji: "🏠",
