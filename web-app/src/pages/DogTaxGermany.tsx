@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { trackAffiliateClick } from '../utils/analytics';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
@@ -221,8 +222,9 @@ export default function DogTaxGermany() {
                                 </p>
                                 <a
                                     href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets"
+                                    onClick={() => trackAffiliateClick('Feather', 'DogTax_Page')}
                                     target="_blank"
-                                    rel="noopener noreferrer"
+                                    rel="noopener noreferrer sponsored"
                                     className="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
                                 >
                                     Get an English Quote →

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { trackAffiliateClick } from '../utils/analytics';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import RelatedPosts from '../components/RelatedPosts';
@@ -99,7 +100,7 @@ export default function PetSittingGermany() {
                                 If you have an <strong>anxious dog</strong>, a loud "Hundepension" with 20 other barking dogs is probably hell on earth for them. Look for a 1-on-1 sitter on Rover or Pawshake.
                             </p>
                             <p>
-                                If you have a <strong>cat</strong>, never move them to a pension unless absolutely necessary. Cats are territorial. Use <a href="https://catinaflat.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">Cat in a Flat</a> or a neighbor check-in service.
+                                If you have a <strong>cat</strong>, never move them to a pension unless absolutely necessary. Cats are territorial. Use <a href="https://catinaflat.com" onClick={() => trackAffiliateClick('CatInAFlat', 'PetSitting_Page')} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">Cat in a Flat</a> or a neighbor check-in service.
                             </p>
 
                             <h2 id="costs" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">2. What Does Pet Sitting Cost in 2026?</h2>

@@ -193,7 +193,7 @@ export default function PetEmergencyGermany() {
                                 <p className="opacity-80">
                                     <a href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets"
                                         onClick={() => trackAffiliateClick('Feather', 'PetEmergency_Sidebar')}
-                                        target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">Feather Insurance</a> is popular among expats because they process claims via a simple English app, often reimbursing within days.
+                                        target="_blank" rel="noopener noreferrer sponsored" className="text-accent hover:underline font-bold">Feather Insurance</a> is popular among expats because they process claims via a simple English app, often reimbursing within days.
                                     <span className="text-[10px] opacity-50 block mt-1">*Affiliate Link</span>
                                 </p>
                             </div>

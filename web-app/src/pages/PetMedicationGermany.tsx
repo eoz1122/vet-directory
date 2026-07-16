@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { trackAffiliateClick } from '../utils/analytics';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
@@ -155,13 +156,13 @@ export default function PetMedicationGermany() {
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-6 my-12 not-prose">
-                                <a href={appendUTM("https://www.medpets.de")} target="_blank" rel="noopener" className="bg-white p-6 rounded-2xl border-l-4 border-accent shadow-sm hover:translate-y-[-4px] transition-all group">
+                                <a href={appendUTM("https://www.medpets.de")} onClick={() => trackAffiliateClick('Medpets', 'PetMedication_Page')} target="_blank" rel="noopener" className="bg-white p-6 rounded-2xl border-l-4 border-accent shadow-sm hover:translate-y-[-4px] transition-all group">
                                     <h4 className="font-bold text-primary text-xl group-hover:text-accent transition-colors">Medpets.de</h4>
                                     <p className="text-xs opacity-50 mb-4">Largest Online Tierapotheke</p>
                                     <p className="text-sm opacity-70 mb-4 leading-relaxed">Huge selection, English customer service available, and free shipping over €49.</p>
                                     <span className="text-accent text-[10px] font-black uppercase tracking-widest">Visit Site →</span>
                                 </a>
-                                <a href={appendUTM("https://www.shop-apotheke.com")} target="_blank" rel="noopener" className="bg-white p-6 rounded-2xl border-l-4 border-primary shadow-sm hover:translate-y-[-4px] transition-all group">
+                                <a href={appendUTM("https://www.shop-apotheke.com")} onClick={() => trackAffiliateClick('ShopApotheke', 'PetMedication_Page')} target="_blank" rel="noopener" className="bg-white p-6 rounded-2xl border-l-4 border-primary shadow-sm hover:translate-y-[-4px] transition-all group">
                                     <h4 className="font-bold text-primary text-xl group-hover:text-accent transition-colors">Shop-Apotheke</h4>
                                     <p className="text-xs opacity-50 mb-4">Fastest Delivery (App available)</p>
                                     <p className="text-sm opacity-70 mb-4 leading-relaxed">Wide selection of OTC and Pharmacy-only products. Often offers massive discounts for bulk orders.</p>

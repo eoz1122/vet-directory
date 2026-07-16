@@ -197,7 +197,7 @@ export default function PetFoodGermany() {
                                     href={affiliateLink}
                                     onClick={() => trackAffiliateClick('DinnerForDogs', 'PetFood_Page')}
                                     target="_blank"
-                                    rel="noopener noreferrer"
+                                    rel="noopener noreferrer sponsored"
                                     className="inline-block bg-primary hover:bg-black text-secondary font-black py-5 px-12 rounded-2xl transition-all transform hover:scale-105 shadow-xl active:scale-95"
                                 >
                                     Explore Dinner for Dogs →

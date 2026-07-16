@@ -259,7 +259,7 @@ export default function PetInsuranceGermany() {
                                 </a>
                                 <a href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets"
                                     onClick={() => trackAffiliateClick('Feather', 'PetInsurance_List')}
-                                    target="_blank" rel="noopener noreferrer" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
+                                    target="_blank" rel="noopener noreferrer sponsored" className="block p-6 bg-white rounded-2xl border border-primary/5 hover:border-accent transition-all group shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <h4 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">Feather Insurance</h4>
