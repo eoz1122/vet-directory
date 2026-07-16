@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { trackAffiliateClick } from '../utils/analytics';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
@@ -116,6 +117,21 @@ export default function PuppyFirstYearGermany() {
                             <p>
                                 Deep dives: <Link to="/blog/hundesteuer-dog-tax-germany" className="text-accent font-bold hover:underline">Hundesteuer guide</Link>, <Link to="/blog/pet-insurance-germany" className="text-accent font-bold hover:underline">insurance guide</Link>, and <Link to="/blog/first-vet-visit-germany" className="text-accent font-bold hover:underline">what the first vet visit looks like</Link>.
                             </p>
+                            <div className="bg-white border-l-4 border-accent p-6 rounded-xl shadow-sm my-8 not-prose">
+                                <h3 className="text-lg font-bold text-primary mb-2">🛡️ Need Hundehaftpflicht?</h3>
+                                <p className="text-sm text-primary/70 mb-4">It is item two on the week-one list, and puppies are precisely when accidents happen. Coverage from around 5 EUR/month; the site is in German, but sign-up is a short digital form.</p>
+                                <a
+                                    href="https://www.awin1.com/cread.php?awinmid=14361&awinaffid=2707844&ued=https%3A%2F%2Fhelden.de%2Fprodukte%2Ftierversicherung%2Fhundehaftpflicht%2F"
+                                    onClick={() => trackAffiliateClick('Helden', 'PuppyFirstYear_Week1')}
+                                    target="_blank"
+                                    rel="noopener noreferrer sponsored"
+                                    className="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
+                                >
+                                    Compare Dog Liability Cover at helden.de →
+                                </a>
+                                <p className="text-xs text-primary/40 mt-3 italic">*Affiliate link. We may earn a commission at no extra cost to you.</p>
+                            </div>
+
 
                             <h2 id="timeline" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">The Month-by-Month Timeline</h2>
                             <div className="overflow-x-auto rounded-2xl border border-primary/10 my-8 not-prose">

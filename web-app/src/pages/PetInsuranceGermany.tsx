@@ -137,7 +137,22 @@ export default function PetInsuranceGermany() {
                                 </div>
                             </div>
 
-                            <h2 id="health" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">2. Health Insurance: The GOT Fee Schedule</h2>
+                            
+                            <div className="bg-white border-l-4 border-accent p-6 rounded-xl shadow-sm my-8 not-prose">
+                                <h3 className="text-lg font-bold text-primary mb-2">🛡️ Need Hundehaftpflicht?</h3>
+                                <p className="text-sm text-primary/70 mb-4">It is the mandatory half of the equation in five states and the cheap protection against uncapped liability everywhere else. Coverage from around 5 EUR/month; the site is in German, but sign-up is a short digital form.</p>
+                                <a
+                                    href="https://www.awin1.com/cread.php?awinmid=14361&awinaffid=2707844&ued=https%3A%2F%2Fhelden.de%2Fprodukte%2Ftierversicherung%2Fhundehaftpflicht%2F"
+                                    onClick={() => trackAffiliateClick('Helden', 'PetInsurance_LiabilitySection')}
+                                    target="_blank"
+                                    rel="noopener noreferrer sponsored"
+                                    className="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
+                                >
+                                    Compare Dog Liability Cover at helden.de →
+                                </a>
+                                <p className="text-xs text-primary/40 mt-3 italic">*Affiliate link. We may earn a commission at no extra cost to you.</p>
+                            </div>
+<h2 id="health" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">2. Health Insurance: The GOT Fee Schedule</h2>
                             <p>Vet bills in Germany are non-negotiable. They follow a government-regulated price list called the <strong>Gebührenordnung für Tierärzte (GOT)</strong>.</p>
                             <p>Vets can charge 1× to 4× the base price depending on the time of day and complexity:</p>
 

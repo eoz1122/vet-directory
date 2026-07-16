@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { trackAffiliateClick } from '../utils/analytics';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
@@ -176,6 +177,21 @@ export default function BreedRestrictionsGermany() {
                             <Link to="/vets/berlin" className="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-primary transition-colors">
                                 Find an English-speaking vet who can help with breed registration →
                             </Link>
+
+                            <div className="bg-white border-l-4 border-accent p-6 rounded-xl shadow-sm my-8 not-prose">
+                                <h3 className="text-lg font-bold text-primary mb-2">🛡️ Step 3 sorted: Hundehaftpflicht</h3>
+                                <p className="text-sm text-primary/70 mb-4">For restricted breeds, liability cover with at least 1 million EUR is not optional. Coverage from around 5 EUR/month; the site is in German, but sign-up is a short digital form.</p>
+                                <a
+                                    href="https://www.awin1.com/cread.php?awinmid=14361&awinaffid=2707844&ued=https%3A%2F%2Fhelden.de%2Fprodukte%2Ftierversicherung%2Fhundehaftpflicht%2F"
+                                    onClick={() => trackAffiliateClick('Helden', 'BreedRestrictions_Page')}
+                                    target="_blank"
+                                    rel="noopener noreferrer sponsored"
+                                    className="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
+                                >
+                                    Compare Dog Liability Cover at helden.de →
+                                </a>
+                                <p className="text-xs text-primary/40 mt-3 italic">*Affiliate link. We may earn a commission at no extra cost to you.</p>
+                            </div>
 
                             <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 my-8 not-prose">
                                 <h3 className="font-bold text-primary mb-2">A note on landlords</h3>
