@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { trackAffiliateClick } from '../utils/analytics';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
@@ -136,9 +137,10 @@ export default function CatFoodGermany() {
                             <ul className="space-y-3 my-6">
                                 <li><strong>Pet superstores:</strong> Fressnapf and Das Futterhaus carry budget to premium, with staff advice.</li>
                                 <li><strong>Supermarkets & drugstores:</strong> REWE, EDEKA, DM, and Rossmann stock mainstream wet and dry food.</li>
-                                <li><strong>Online:</strong> zooplus, fressnapf.de, and Amazon have the widest premium wet-food range and the best bulk prices.</li>
+                                <li><strong>Online:</strong> <a href="https://www.awin1.com/cread.php?awinmid=11330&awinaffid=2707844&campaign=Germany+Co-Ma&clickref=englishspeaking" onClick={() => trackAffiliateClick('Zooplus', 'CatFood_WhereToBuy')} target="_blank" rel="noopener noreferrer sponsored" className="text-accent font-bold hover:underline">zooplus</a>*, fressnapf.de, and Amazon have the widest premium wet-food range and the best bulk prices.</li>
                                 <li><strong>Your vet clinic:</strong> prescription urinary, kidney, and weight diets for medical needs. Discuss these with a vet first.</li>
                             </ul>
+                            <p className="text-[10px] font-bold uppercase tracking-widest opacity-40 italic mt-2">*Affiliate link. We may earn a commission at no extra cost to you.</p>
 
                             <h2 id="how-to-choose" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">5. How to Choose the Right Food for Your Cat</h2>
                             <ul className="space-y-3 my-6">

@@ -145,7 +145,7 @@ export default function PetFoodGermany() {
                             <ul className="space-y-3 my-6">
                                 <li><strong>Pet superstores:</strong> Fressnapf and Das Futterhaus carry everything from budget to premium, plus staff advice.</li>
                                 <li><strong>Supermarkets & drugstores:</strong> REWE, EDEKA, DM, and Rossmann stock mainstream brands. Convenient, but the premium range is limited.</li>
-                                <li><strong>Online:</strong> zooplus, fressnapf.de, and Amazon have the widest selection and the best prices on bulk, and they save you carrying a 12kg bag up four flights of Altbau stairs.</li>
+                                <li><strong>Online:</strong> <a href="https://www.awin1.com/cread.php?awinmid=11330&awinaffid=2707844&campaign=Germany+Co-Ma&clickref=englishspeaking" onClick={() => trackAffiliateClick('Zooplus', 'PetFood_WhereToBuy')} target="_blank" rel="noopener noreferrer sponsored" className="text-accent font-bold hover:underline">zooplus</a>*, fressnapf.de, and Amazon have the widest selection and the best prices on bulk, and they save you carrying a 12kg bag up four flights of Altbau stairs.</li>
                                 <li><strong>Your vet clinic:</strong> prescription and veterinary diets for medical needs (allergies, kidney, weight). For these, talk to a vet first.</li>
                                 <li><strong>Fresh delivery services:</strong> direct-to-door cooked menus (covered below).</li>
                             </ul>
