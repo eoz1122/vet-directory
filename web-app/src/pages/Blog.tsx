@@ -280,6 +280,23 @@ export default function Blog() {
                 <title>Expat Dog & Cat Guides Germany | EnglishSpeakingVets</title>
                 <meta name="description" content="Essential guides for pet owners in Germany. Dog tax, public transport rules, finding apartments, and EU pet passports explained for expats." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog" />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Blog",
+                        "url": "https://englishspeakinggermany.online/blog",
+                        "name": "Expat Pet Guides for Germany",
+                        "description": "English-language guides on pet ownership in Germany: vet costs, insurance, emergencies, adoption, and bureaucracy.",
+                        "publisher": {
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "EnglishSpeakingVets",
+                        "url": "https://englishspeakinggermany.online",
+                        "logo": "https://englishspeakinggermany.online/logo.png",
+                        "description": "Community-verified directory of English-speaking veterinarians in Germany for expats and international residents."
+                    }
+                    })}
+                </script>
                 <meta property="og:title" content="Expat Dog & Cat Guides Germany | EnglishSpeakingVets" />
                 <meta property="og:description" content="Essential guides for pet owners in Germany. Dog tax, public transport rules, finding apartments, and EU pet passports explained for expats." />
                 <meta property="og:url" content="https://englishspeakinggermany.online/blog" />

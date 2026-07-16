@@ -105,6 +105,21 @@ export default function Contact() {
                 <title>Contact Us | The Pack</title>
                 <meta name="description" content="Get in touch with The Pack. Submit a vet recommendation, report an issue, or ask a question." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/contact" />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "ContactPage",
+                        "url": "https://englishspeakinggermany.online/contact",
+                        "mainEntity": {
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "EnglishSpeakingVets",
+                        "url": "https://englishspeakinggermany.online",
+                        "logo": "https://englishspeakinggermany.online/logo.png",
+                        "description": "Community-verified directory of English-speaking veterinarians in Germany for expats and international residents."
+                    }
+                    })}
+                </script>
                 <meta property="og:title" content="Contact Us | The Pack" />
                 <meta property="og:description" content="Get in touch with The Pack. Submit a vet recommendation, report an issue, or ask a question." />
                 <meta property="og:url" content="https://englishspeakinggermany.online/contact" />

@@ -195,18 +195,23 @@ async function prerender() {
                 { timeout: 10000 }
             );
 
-            // Step 2: Wait for react-helmet-async to apply the page-specific title.
-            // We poll document.title for up to 3s. If it never changes from the
-            // fallback, we proceed anyway (handles static pages and edge cases).
+            // Step 2: Wait for react-helmet-async to flush the page's head tags.
+            // Ready = title changed from the fallback OR a Helmet-managed canonical
+            // exists. The old pathname==='/' shortcut captured the homepage BEFORE
+            // Helmet flushed, shipping it without canonical/schema for weeks.
+            // Home's title equals the fallback by design, so the canonical is the
+            // reliable readiness signal there. Pages with neither (only /404) fall
+            // through after the deadline.
             const FALLBACK_TITLE = 'English-Speaking Vets in Germany | Verified Expat Directory';
             await page.evaluate((fallback, maxWaitMs) => {
                 return new Promise((resolve) => {
-                    if (document.title !== fallback || window.location.pathname === '/') {
-                        return resolve(true);
-                    }
+                    const ready = () =>
+                        document.title !== fallback ||
+                        !!document.querySelector('link[rel="canonical"][data-rh]');
+                    if (ready()) return resolve(true);
                     const deadline = Date.now() + maxWaitMs;
                     const iv = setInterval(() => {
-                        if (document.title !== fallback || Date.now() >= deadline) {
+                        if (ready() || Date.now() >= deadline) {
                             clearInterval(iv);
                             resolve(true);
                         }

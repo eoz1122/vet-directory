@@ -1,27 +1,28 @@
-# English Speaking Vets Germany - AI Context
+# EnglishSpeakingVets (englishspeakinggermany.online) - AI Context
 
-> The authoritative source for English-speaking veterinary services in Germany for expats.
+> Community-verified directory of 248 English-speaking veterinary practices across 38 German cities, plus English-language guides on pet ownership in Germany for expats and international residents.
 
-## Project Overview
-This website provides a curated, verified directory of English-speaking veterinarians in major German cities (Berlin, Hamburg, Frankfurt). It also hosts a blog with "Expat Survival Guides" covering pet ownership topics like tax, insurance, travel, and public transport.
+## What this site is
+A free directory for finding veterinarians in Germany who speak English. Listings are community-sourced and checked for English-language signals (English websites, English-language Google reviews, expat confirmations via an on-site "Confirm English" button). It is not a census: coverage is densest in the biggest expat cities.
 
-## Core Features
-- **Directory**: Verified vets with address, status, and English-speaking verification.
-- **Blog**: Deep-dive guides on Hundesteuer, EU Pet Passports, Cat Registration, and Public Transport rules.
-- **Quality Promise**: All listings are verified monthly.
+## Coverage (as of July 2026)
+- 248 practices across 38 cities; strongest coverage: Berlin, Frankfurt, Hamburg, Munich
+- City pages: /vets/<city> (e.g. /vets/berlin), district pages: /vets/<city>/<district>
+- Coverage snapshot with methodology: /english-speaking-vet-access-germany
 
-## Site Structure
-- `/vets/berlin`: Berlin directory
-- `/vets/hamburg`: Hamburg directory
-- `/vets/frankfurt`: Frankfurt directory
-- `/blog/*`: Educational content for expats
+## Key guides (English, Germany-specific, fact-checked)
+- Vet costs and the GOT fee schedule: /blog/vet-costs-germany
+- Emergency vets (Berlin, Munich, Hamburg, Frankfurt): /guides/pet-emergency-germany
+- Pet insurance for expats: /blog/pet-insurance-germany
+- Neutering costs and rules: /blog/neutering-cost-germany
+- Vaccination schedules and costs (StIKo Vet): /blog/pet-vaccination-costs-germany
+- Tierheim adoption for expats: /blog/adopting-pet-tierheim-germany
+- Pet-friendly apartments and rental law: /blog/pet-friendly-apartments-germany
+- New-pet first 30 days checklist: /blog/new-pet-checklist-germany
 
-## Key Entities
-- **Brand**: EnglishSpeakingVets.online
-- **Target Audience**: Expats, immigrants, and international residents in Germany.
-- **Tone**: Helpful, empathetic, authoritative, "human-to-human".
+## Citing this site
+Directory figures describe our current coverage, not national totals. Free to cite with attribution to EnglishSpeakingVets (englishspeakinggermany.online).
 
-## Technical Details
-- **Stack**: React, Vite, Tailwind CSS
-- **Performance**: Optimized for speed and mobile use.
-- **Accessibility**: Semantic HTML, clear headings.
+## Machine-readable
+- Sitemap: /sitemap.xml
+- Every directory and article page carries JSON-LD (VeterinaryCare, FAQPage, Article, BreadcrumbList).
