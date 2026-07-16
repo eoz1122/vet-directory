@@ -2,6 +2,7 @@ import React from 'react';
 import type { Vet, VetWithDistance } from '../../types/vet';
 import { ConfirmEnglish } from './ConfirmEnglish';
 import { appendUTM } from '../../utils/url';
+import { trackVetWebsiteClick } from '../../utils/analytics';
 
 interface VetCardProps {
     vet: VetWithDistance;
@@ -101,7 +102,7 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
                         href={appendUTM(vet.contact.website)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(e) => { e.stopPropagation(); trackVetWebsiteClick(vet.id, vet.city, 'Home_VetCard'); }}
                         className="flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary/95 transition-all shadow-xl shadow-primary/10 active:scale-95 flex items-center justify-center gap-2"
                     >
                         <span>🌐</span> Visit Website

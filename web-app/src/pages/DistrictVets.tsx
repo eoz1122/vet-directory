@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
 import { filterDisplayableVets } from '../utils/activeVets';
 import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
+import { trackVetWebsiteClick } from '../utils/analytics';
 import { generateDistrictContent } from '../utils/districtContent';
 import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
@@ -417,6 +418,7 @@ export default function DistrictVets() {
                                         {(vet.contact && vet.contact.website) ? (
                                             <a
                                                 href={appendUTM(vet.contact.website)}
+                                                onClick={() => trackVetWebsiteClick(vet.id, vet.city, 'DistrictVets_Page')}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary/95 transition-all shadow-xl shadow-primary/10 active:scale-95 flex items-center justify-center gap-2"
