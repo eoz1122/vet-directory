@@ -266,7 +266,7 @@ export default function DistrictVets() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>{`${content.title} | EnglishSpeakingVets`}</title>
+                <title>{content.title}</title>
                 <meta name="description" content={content.description} />
                 <link rel="canonical" href={`https://englishspeakinggermany.online/vets/${cityKey}/${districtSlug}`} />
                 {districtVets.length === 0 && <meta name="robots" content="noindex" />}

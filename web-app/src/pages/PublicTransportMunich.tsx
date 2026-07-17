@@ -7,6 +7,33 @@ import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Do dogs need a ticket on Munich public transport?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Your first dog travels free with your valid MVV ticket on U-Bahn, S-Bahn, trams, and buses. Each additional dog needs a children's ticket (roughly half the adult fare), and small pets in a carrier always ride free." }
+        },
+        {
+            "@type": "Question",
+            "name": "Do dogs need a muzzle on the MVV in Munich?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Munich applies a risk-based rule: a muzzle is required if the dog could pose a risk, and large breeds are generally expected to wear one. Always carry a muzzle and put it on if asked; a leash is mandatory for all dogs at all times." }
+        },
+        {
+            "@type": "Question",
+            "name": "Can large dogs ride the U-Bahn in Munich?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, leashed and generally muzzled. The exception is dogs classified as Kampfhunde (attack dogs), which are not allowed on Munich public transport at all." }
+        },
+        {
+            "@type": "Question",
+            "name": "Does the Deutschlandticket cover my dog in Munich?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Within the MVV network, yes: the Deutschlandticket lets you bring one dog for free. Rules can differ once you leave the MVV zone, for example on regional trains toward Nuremberg or Salzburg." }
+        }
+    ]
+};
+
 export default function PublicTransportMunich() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
@@ -27,6 +54,9 @@ export default function PublicTransportMunich() {
                         "https://englishspeakinggermany.online/blog/public-transport-with-dogs-munich",
                         "2025-01-01"
                     ))}
+                </script>
+                            <script type="application/ld+json">
+                    {JSON.stringify(faqSchema)}
                 </script>
             </Helmet>
 
@@ -245,6 +275,19 @@ export default function PublicTransportMunich() {
                                     <li><a href="https://www.muenchen.de" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">Muenchen.de - City Portal</a></li>
                                 </ul>
                             </section>
+                        </div>
+
+                        <h2 className="text-2xl font-bold text-primary mt-16 mb-6">Frequently Asked Questions</h2>
+                        <div className="space-y-4 my-8 not-prose">
+                            {faqSchema.mainEntity.map((q) => (
+                                <details key={q.name} className="bg-white rounded-xl border border-primary/5 shadow-sm p-5 group">
+                                    <summary className="font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4">
+                                        {q.name}
+                                        <span className="text-accent transition-transform group-open:rotate-45 shrink-0">+</span>
+                                    </summary>
+                                    <p className="text-primary/70 text-sm mt-3 leading-relaxed">{q.acceptedAnswer.text}</p>
+                                </details>
+                            ))}
                         </div>
 
                         <RelatedPosts currentPath="/blog/public-transport-with-dogs-munich" />

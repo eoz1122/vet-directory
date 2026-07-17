@@ -8,6 +8,33 @@ import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Is pet insurance mandatory in Germany?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Dog liability insurance (Hundehaftpflicht) is legally mandatory for all dogs in Berlin, Hamburg, Lower Saxony, Saxony-Anhalt, and Thuringia, and for listed breeds in most other states. Pet health insurance is always optional but protects against uncapped vet bills." }
+        },
+        {
+            "@type": "Question",
+            "name": "What does dog liability insurance cost in Germany?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Typically 40 to 150 EUR per year. It covers damage your dog causes to others; under German law (Paragraph 833 BGB) owners are fully liable with no upper limit, which is why the small premium is worth it everywhere, mandatory or not." }
+        },
+        {
+            "@type": "Question",
+            "name": "How much is pet health insurance per month in Germany?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Surgery-only cover (OP-Versicherung) runs about 10-25 EUR per month; full cover (Vollversicherung) is 30-80 EUR per month and adds consultations, medication, and preventive care. Premiums are lowest when the pet is young and healthy." }
+        },
+        {
+            "@type": "Question",
+            "name": "Is Hundehaftpflicht required in Berlin?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Berlin is one of the five states where dog liability insurance is mandatory for every dog, regardless of breed or size." }
+        }
+    ]
+};
+
 export default function PetInsuranceGermany() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
@@ -28,6 +55,9 @@ export default function PetInsuranceGermany() {
                         "https://englishspeakinggermany.online/blog/pet-insurance-germany",
                         "2025-01-01"
                     ))}
+                </script>
+                            <script type="application/ld+json">
+                    {JSON.stringify(faqSchema)}
                 </script>
             </Helmet>
 
@@ -343,6 +373,19 @@ export default function PetInsuranceGermany() {
                                     Browse English-Speaking Vets →
                                 </Link>
                             </div>
+                        </div>
+
+                        <h2 className="text-2xl font-bold text-primary mt-16 mb-6">Frequently Asked Questions</h2>
+                        <div className="space-y-4 my-8 not-prose">
+                            {faqSchema.mainEntity.map((q) => (
+                                <details key={q.name} className="bg-white rounded-xl border border-primary/5 shadow-sm p-5 group">
+                                    <summary className="font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4">
+                                        {q.name}
+                                        <span className="text-accent transition-transform group-open:rotate-45 shrink-0">+</span>
+                                    </summary>
+                                    <p className="text-primary/70 text-sm mt-3 leading-relaxed">{q.acceptedAnswer.text}</p>
+                                </details>
+                            ))}
                         </div>
 
                         <RelatedPosts currentPath="/blog/pet-insurance-germany" />

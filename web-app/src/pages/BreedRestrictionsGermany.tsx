@@ -20,6 +20,33 @@ const stateData = [
     { state: 'Rhineland-Palatinate', banned: 'Restricted', additional: 'Rottweiler, Doberman', wesenstest: 'Yes' },
 ];
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Which dog breeds are banned in Germany?",
+            "acceptedAnswer": { "@type": "Answer", "text": "There is no single national list. Four core breeds appear on virtually every state's restricted list: American Pit Bull Terrier, American Staffordshire Terrier, Staffordshire Bull Terrier, and Bull Terrier. Some states ban them outright, others restrict them with permits and conditions." }
+        },
+        {
+            "@type": "Question",
+            "name": "Are restricted dog breeds different in each German state?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, rules are set per state. The core four breeds are restricted but not banned in Berlin, banned in Hamburg and Bavaria, while Baden-Wuerttemberg has no breed list and instead uses a size threshold (over 40cm or 20kg requires registration and liability insurance)." }
+        },
+        {
+            "@type": "Question",
+            "name": "What is a Wesenstest?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A behavioral assessment where a state-approved assessor evaluates your dog in real-world scenarios (strangers, other dogs, noise, traffic). It typically costs 50-150 EUR, and a pass can lift or reduce restrictions such as muzzle requirements." }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I bring a restricted breed when moving to Germany?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Often yes, depending on the state: bans typically target new acquisitions, and registered dogs moving with their owners are frequently grandfathered in with permits. Register immediately with the Ordnungsamt, carry liability insurance with at least 1 million EUR coverage, and consider a Wesenstest." }
+        }
+    ]
+};
+
 export default function BreedRestrictionsGermany() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
@@ -40,6 +67,9 @@ export default function BreedRestrictionsGermany() {
                         "https://englishspeakinggermany.online/blog/breed-restrictions-germany",
                         "2026-04-28"
                     ))}
+                </script>
+                            <script type="application/ld+json">
+                    {JSON.stringify(faqSchema)}
                 </script>
             </Helmet>
 
@@ -232,6 +262,19 @@ export default function BreedRestrictionsGermany() {
                             <p className="text-sm italic opacity-70 not-prose mt-6">
                                 Breed legislation in Germany can change. Always verify current rules with your local Ordnungsamt or a legal professional before making decisions about relocating with a restricted breed.
                             </p>
+                        </div>
+
+                        <h2 className="text-2xl font-bold text-primary mt-16 mb-6">Frequently Asked Questions</h2>
+                        <div className="space-y-4 my-8 not-prose">
+                            {faqSchema.mainEntity.map((q) => (
+                                <details key={q.name} className="bg-white rounded-xl border border-primary/5 shadow-sm p-5 group">
+                                    <summary className="font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4">
+                                        {q.name}
+                                        <span className="text-accent transition-transform group-open:rotate-45 shrink-0">+</span>
+                                    </summary>
+                                    <p className="text-primary/70 text-sm mt-3 leading-relaxed">{q.acceptedAnswer.text}</p>
+                                </details>
+                            ))}
                         </div>
 
                         <RelatedPosts currentPath="/blog/breed-restrictions-germany" />

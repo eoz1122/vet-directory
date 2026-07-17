@@ -7,6 +7,33 @@ import RelatedPosts from '../components/RelatedPosts';
 import GuideDisclaimer from '../components/GuideDisclaimer';
 import { generateArticleSchema } from '../utils/schema';
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How much does an emergency vet visit cost in Berlin?",
+            "acceptedAnswer": { "@type": "Answer", "text": "All emergency visits follow the German GOT fee schedule: a mandatory 50 EUR out-of-hours fee plus treatment billed at 2x to 4x the base rates. The final total depends on the complexity of care your pet needs." }
+        },
+        {
+            "@type": "Question",
+            "name": "Is there a 24-hour vet in Berlin?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Berlin has several verified 24/7 emergency clinics, including Valera Veterinary Clinic in Zehlendorf, Tierarzt Baerenwiese in Wilmersdorf, and The Berlin Veterinary Center in Reinickendorf. Phone numbers and details are listed on this page." }
+        },
+        {
+            "@type": "Question",
+            "name": "Do Berlin emergency vets speak English?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The clinics in this guide are verified for English support: Valera is English-verified, Tierarzt Baerenwiese has English-speaking veterinarians, and The Berlin Veterinary Center has an international team." }
+        },
+        {
+            "@type": "Question",
+            "name": "What counts as a pet emergency?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Situations like seizures lasting more than two minutes, suspected poisoning, serious trauma, or breathing difficulty warrant an immediate emergency visit. Berlin's 24/7 clinics handle emergency surgery, intensive care, and advanced diagnostics like CT and X-ray." }
+        }
+    ]
+};
+
 export default function EmergencyVetsBerlin() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
@@ -27,6 +54,9 @@ export default function EmergencyVetsBerlin() {
                         "https://englishspeakinggermany.online/guides/emergency-vets-berlin",
                         "2025-01-01"
                     ))}
+                </script>
+                            <script type="application/ld+json">
+                    {JSON.stringify(faqSchema)}
                 </script>
             </Helmet>
 
@@ -162,6 +192,19 @@ export default function EmergencyVetsBerlin() {
                         </div>
 
                         <GuideDisclaimer />
+
+                        <h2 className="text-2xl font-bold text-primary mt-16 mb-6">Frequently Asked Questions</h2>
+                        <div className="space-y-4 my-8 not-prose">
+                            {faqSchema.mainEntity.map((q) => (
+                                <details key={q.name} className="bg-white rounded-xl border border-primary/5 shadow-sm p-5 group">
+                                    <summary className="font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4">
+                                        {q.name}
+                                        <span className="text-accent transition-transform group-open:rotate-45 shrink-0">+</span>
+                                    </summary>
+                                    <p className="text-primary/70 text-sm mt-3 leading-relaxed">{q.acceptedAnswer.text}</p>
+                                </details>
+                            ))}
+                        </div>
 
                         <RelatedPosts currentPath="/guides/emergency-vets-berlin" />
                     </article>

@@ -8,6 +8,33 @@ import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How much is dog tax in Germany?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Each city sets its own rate. Typical 2026 first-dog rates: Berlin 120 EUR, Hamburg 90 EUR, Munich 100 EUR, Frankfurt 90 EUR, Cologne 156 EUR per year. Second dogs cost more, and listed breeds are taxed far higher (up to 800-900 EUR in some cities)." }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I register for Hundesteuer?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Three steps: ensure your dog has an ISO 15-digit microchip, register in your state's dog register (one-time fee around 15-20 EUR), then the tax office sends a Steuerbescheid and most owners set up a SEPA direct debit. The deadline is usually 2-4 weeks after getting the dog or moving." }
+        },
+        {
+            "@type": "Question",
+            "name": "What happens if I do not pay dog tax in Germany?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Backdated bills and fines. Park inspectors do check dogs for the tax tag (Hundemarke), so late registration is usually discovered. Registering proactively is treated far more leniently than being caught." }
+        },
+        {
+            "@type": "Question",
+            "name": "Are any dogs exempt from Hundesteuer?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes: guide dogs and certified assistance dogs are exempt nationwide, and many cities including Berlin and Munich waive the first year for dogs adopted from a local Tierheim. Cats and other pets are never taxed." }
+        }
+    ]
+};
+
 export default function DogTaxGermany() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
@@ -28,6 +55,9 @@ export default function DogTaxGermany() {
                         "https://englishspeakinggermany.online/blog/hundesteuer-dog-tax-germany",
                         "2025-01-01"
                     ))}
+                </script>
+                            <script type="application/ld+json">
+                    {JSON.stringify(faqSchema)}
                 </script>
             </Helmet>
 
@@ -266,6 +296,19 @@ export default function DogTaxGermany() {
                                     <li><a href="https://www.muenchen.de/rathaus/Stadtverwaltung/Stadtkasse/Hundesteuer.html" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-accent underline decoration-dotted">Munich Dog Tax Information</a></li>
                                 </ul>
                             </section>
+                        </div>
+
+                        <h2 className="text-2xl font-bold text-primary mt-16 mb-6">Frequently Asked Questions</h2>
+                        <div className="space-y-4 my-8 not-prose">
+                            {faqSchema.mainEntity.map((q) => (
+                                <details key={q.name} className="bg-white rounded-xl border border-primary/5 shadow-sm p-5 group">
+                                    <summary className="font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4">
+                                        {q.name}
+                                        <span className="text-accent transition-transform group-open:rotate-45 shrink-0">+</span>
+                                    </summary>
+                                    <p className="text-primary/70 text-sm mt-3 leading-relaxed">{q.acceptedAnswer.text}</p>
+                                </details>
+                            ))}
                         </div>
 
                         <RelatedPosts currentPath="/blog/hundesteuer-dog-tax-germany" />
