@@ -6,6 +6,8 @@
   --color-primary: #1B4332;
   --color-secondary: #F5EBE0;
   --color-accent: #FB8500;
+  /* Darker accent for TEXT + button fills: #FB8500 on cream is 2.1:1 (WCAG fail) */
+  --color-accent-ink: #9A3412;
 
   --font-sans: "Work Sans", sans-serif;
   --font-heading: "Inter", sans-serif;

@@ -107,7 +107,7 @@ export default function NewPetChecklistGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">New Pet Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">New Pet Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             ✅ New Pet in Germany: <br />The First 30 Days
                         </h1>

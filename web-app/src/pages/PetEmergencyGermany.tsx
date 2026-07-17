@@ -39,7 +39,7 @@ export default function PetEmergencyGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl prose prose-lg prose-forest text-primary/80">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Emergency Survival Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Emergency Survival Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             🚨 What to Do in a Pet Emergency: <br />The Germany Survival Guide
                         </h1>

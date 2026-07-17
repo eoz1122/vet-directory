@@ -79,7 +79,7 @@ export default function PetGpsTrackerGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Safety Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Safety Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             📡 GPS Trackers for Pets in Germany
                         </h1>
@@ -100,7 +100,7 @@ export default function PetGpsTrackerGermany() {
 
                             <h2 id="why" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">Why Expat Pets Get Lost More</h2>
                             <p>
-                                Relocated pets lack the mental map local animals build over years. A startled cat in a new Kiez bolts without knowing how to return; a dog slips a leash in an unfamiliar park. Before any gadget, two non-negotiables: the <strong>microchip must be registered with TASSO</strong> (free, and what actually gets a found pet home; our <Link to="/blog/cat-registration-germany" className="text-accent font-bold hover:underline">registration guide</Link> explains it) and new arrivals should see our <Link to="/blog/new-pet-checklist-germany" className="text-accent font-bold hover:underline">first-30-days checklist</Link>. A tracker is the third layer, the only one that works <em>before</em> someone else finds your pet.
+                                Relocated pets lack the mental map local animals build over years. A startled cat in a new Kiez bolts without knowing how to return; a dog slips a leash in an unfamiliar park. Before any gadget, two non-negotiables: the <strong>microchip must be registered with TASSO</strong> (free, and what actually gets a found pet home; our <Link to="/blog/cat-registration-germany" className="text-accent-ink font-bold hover:underline">registration guide</Link> explains it) and new arrivals should see our <Link to="/blog/new-pet-checklist-germany" className="text-accent-ink font-bold hover:underline">first-30-days checklist</Link>. A tracker is the third layer, the only one that works <em>before</em> someone else finds your pet.
                             </p>
 
                             <h2 id="how-they-work" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">GPS vs AirTag: Know the Difference</h2>
@@ -153,7 +153,7 @@ export default function PetGpsTrackerGermany() {
 
                             <h2 id="cats" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">The Outdoor Cat Question</h2>
                             <p>
-                                Germany is an outdoor-cat country, and many municipalities pair that freedom with obligations: registration, microchipping, and <Link to="/blog/neutering-cost-germany" className="text-accent font-bold hover:underline">mandatory neutering rules</Link> for free-roaming cats. A tracker adds the missing piece: knowing your cat's actual territory. Most owners are surprised (a typical city cat roams far less than feared, but crosses more roads than hoped). For cats, weight decides everything: the <a href="https://tractive.com" target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:underline">Tractive Cat Mini</a> (~25g) and the <a href="https://www.kippy.eu" onClick={() => trackAffiliateClick('Kippy', 'GpsTracker_Page')} target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:underline">Kippy EVO</a> (~38g, for cats over 4kg) are the two practical choices.
+                                Germany is an outdoor-cat country, and many municipalities pair that freedom with obligations: registration, microchipping, and <Link to="/blog/neutering-cost-germany" className="text-accent-ink font-bold hover:underline">mandatory neutering rules</Link> for free-roaming cats. A tracker adds the missing piece: knowing your cat's actual territory. Most owners are surprised (a typical city cat roams far less than feared, but crosses more roads than hoped). For cats, weight decides everything: the <a href="https://tractive.com" target="_blank" rel="noopener noreferrer" className="text-accent-ink font-bold hover:underline">Tractive Cat Mini</a> (~25g) and the <a href="https://www.kippy.eu" onClick={() => trackAffiliateClick('Kippy', 'GpsTracker_Page')} target="_blank" rel="noopener noreferrer" className="text-accent-ink font-bold hover:underline">Kippy EVO</a> (~38g, for cats over 4kg) are the two practical choices.
                             </p>
 
                             <h2 id="safety" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">Safety Rules Nobody Mentions</h2>

@@ -71,7 +71,7 @@ export default function CatFoodGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Nutrition & Feeding Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Nutrition & Feeding Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             🐈 Best Cat Food in Germany: <br />A Buyer's Guide for Expats
                         </h1>
@@ -137,7 +137,7 @@ export default function CatFoodGermany() {
                             <ul className="space-y-3 my-6">
                                 <li><strong>Pet superstores:</strong> Fressnapf and Das Futterhaus carry budget to premium, with staff advice.</li>
                                 <li><strong>Supermarkets & drugstores:</strong> REWE, EDEKA, DM, and Rossmann stock mainstream wet and dry food.</li>
-                                <li><strong>Online:</strong> <a href="https://tidd.ly/3R2z5ax" onClick={() => trackAffiliateClick('Zooplus', 'CatFood_WhereToBuy')} target="_blank" rel="noopener noreferrer sponsored" className="text-accent font-bold hover:underline">zooplus</a>*, fressnapf.de, and Amazon have the widest premium wet-food range and the best bulk prices.</li>
+                                <li><strong>Online:</strong> <a href="https://tidd.ly/3R2z5ax" onClick={() => trackAffiliateClick('Zooplus', 'CatFood_WhereToBuy')} target="_blank" rel="noopener noreferrer sponsored" className="text-accent-ink font-bold hover:underline">zooplus</a>*, fressnapf.de, and Amazon have the widest premium wet-food range and the best bulk prices.</li>
                                 <li><strong>Your vet clinic:</strong> prescription urinary, kidney, and weight diets for medical needs. Discuss these with a vet first.</li>
                             </ul>
                             <p className="text-[10px] font-bold uppercase tracking-widest opacity-40 italic mt-2">*Affiliate link. We may earn a commission at no extra cost to you.</p>
@@ -150,7 +150,7 @@ export default function CatFoodGermany() {
                                 <li><strong>Always confirm Alleinfuttermittel with taurine</strong> for the main meal.</li>
                             </ul>
                             <p>
-                                Urinary problems are common in cats and can become emergencies fast, especially in males. If your cat strains to urinate or stops eating, treat it as urgent. For routine diet questions or a check-up, you can find a <Link to="/" className="text-accent font-bold hover:underline">verified English-speaking vet near you</Link>, with practices in <Link to="/vets/berlin" className="text-accent font-bold hover:underline">Berlin</Link>, <Link to="/vets/hamburg" className="text-accent font-bold hover:underline">Hamburg</Link>, and 30+ other cities. If you have just arrived, our guide to <Link to="/blog/first-vet-visit-germany" className="text-accent font-bold hover:underline">your first vet visit in Germany</Link> covers what to expect.
+                                Urinary problems are common in cats and can become emergencies fast, especially in males. If your cat strains to urinate or stops eating, treat it as urgent. For routine diet questions or a check-up, you can find a <Link to="/" className="text-accent-ink font-bold hover:underline">verified English-speaking vet near you</Link>, with practices in <Link to="/vets/berlin" className="text-accent-ink font-bold hover:underline">Berlin</Link>, <Link to="/vets/hamburg" className="text-accent-ink font-bold hover:underline">Hamburg</Link>, and 30+ other cities. If you have just arrived, our guide to <Link to="/blog/first-vet-visit-germany" className="text-accent-ink font-bold hover:underline">your first vet visit in Germany</Link> covers what to expect.
                             </p>
 
                             <h2 id="faq" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">Frequently Asked Questions</h2>

@@ -39,7 +39,7 @@ export default function PetMedicationGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Health & Medication Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Health & Medication Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             💊 How to Get Pet Medication in Germany: <br />Your Complete Guide
                         </h1>

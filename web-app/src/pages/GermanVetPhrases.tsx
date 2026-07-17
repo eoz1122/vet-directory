@@ -36,7 +36,7 @@ export default function GermanVetPhrases() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Survival Kits</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Expat Survival Kits</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6 leading-tight">
                             Our Story: Why I Learned <br />„Durchfall“ the Hard Way
                         </h1>

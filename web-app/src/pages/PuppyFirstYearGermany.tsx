@@ -79,7 +79,7 @@ export default function PuppyFirstYearGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">New Pet Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">New Pet Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             🐶 Your Puppy's First Year in Germany
                         </h1>
@@ -115,7 +115,7 @@ export default function PuppyFirstYearGermany() {
                                 ))}
                             </div>
                             <p>
-                                Deep dives: <Link to="/blog/hundesteuer-dog-tax-germany" className="text-accent font-bold hover:underline">Hundesteuer guide</Link>, <Link to="/blog/pet-insurance-germany" className="text-accent font-bold hover:underline">insurance guide</Link>, and <Link to="/blog/first-vet-visit-germany" className="text-accent font-bold hover:underline">what the first vet visit looks like</Link>.
+                                Deep dives: <Link to="/blog/hundesteuer-dog-tax-germany" className="text-accent-ink font-bold hover:underline">Hundesteuer guide</Link>, <Link to="/blog/pet-insurance-germany" className="text-accent-ink font-bold hover:underline">insurance guide</Link>, and <Link to="/blog/first-vet-visit-germany" className="text-accent-ink font-bold hover:underline">what the first vet visit looks like</Link>.
                             </p>
                             <div className="bg-white border-l-4 border-accent p-6 rounded-xl shadow-sm my-8 not-prose">
                                 <h3 className="text-lg font-bold text-primary mb-2">🛡️ Need Hundehaftpflicht?</h3>
@@ -125,7 +125,7 @@ export default function PuppyFirstYearGermany() {
                                     onClick={() => trackAffiliateClick('Helden', 'PuppyFirstYear_Week1')}
                                     target="_blank"
                                     rel="noopener noreferrer sponsored"
-                                    className="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
+                                    className="inline-block bg-accent-ink text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
                                 >
                                     Compare Dog Liability Cover at helden.de →
                                 </a>
@@ -153,11 +153,11 @@ export default function PuppyFirstYearGermany() {
                                 </table>
                             </div>
                             <p>
-                                The vaccination details (what is in each combo jab and why) are in our <Link to="/blog/pet-vaccination-costs-germany" className="text-accent font-bold hover:underline">vaccination schedule guide</Link>; neutering timing and prices in the <Link to="/blog/neutering-cost-germany" className="text-accent font-bold hover:underline">Kastration guide</Link>.
+                                The vaccination details (what is in each combo jab and why) are in our <Link to="/blog/pet-vaccination-costs-germany" className="text-accent-ink font-bold hover:underline">vaccination schedule guide</Link>; neutering timing and prices in the <Link to="/blog/neutering-cost-germany" className="text-accent-ink font-bold hover:underline">Kastration guide</Link>.
                             </p>
 
                             <h2 id="budget" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">The First-Year Budget</h2>
-                            <p>Realistic ranges, excluding the purchase price or <Link to="/blog/adopting-pet-tierheim-germany" className="text-accent font-bold hover:underline">adoption fee</Link>:</p>
+                            <p>Realistic ranges, excluding the purchase price or <Link to="/blog/adopting-pet-tierheim-germany" className="text-accent-ink font-bold hover:underline">adoption fee</Link>:</p>
 
                             <div className="overflow-x-auto rounded-2xl border border-primary/10 my-8 not-prose">
                                 <table className="w-full text-left border-collapse">
@@ -180,12 +180,12 @@ export default function PuppyFirstYearGermany() {
                                 </table>
                             </div>
                             <p>
-                                Choosing food is its own rabbit hole; our <Link to="/blog/best-dog-food-germany" className="text-accent font-bold hover:underline">dog food buyer's guide</Link> decodes German labels and where to buy.
+                                Choosing food is its own rabbit hole; our <Link to="/blog/best-dog-food-germany" className="text-accent-ink font-bold hover:underline">dog food buyer's guide</Link> decodes German labels and where to buy.
                             </p>
 
                             <h2 id="hundeschule" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">Dog School: The German Way</h2>
                             <p>
-                                Germany takes dog training seriously. A <strong>Welpenspielstunde</strong> (puppy social hour, from about 12 weeks) followed by basic obedience classes is the standard path, roughly 10-25 EUR per session. In <strong>Lower Saxony</strong>, first-time owners must pass a competence test (Sachkundenachweis); in Berlin, passing an exam can earn leash-freedom privileges. Beyond rules, a well-socialized dog simply has a better life in a country where dogs ride the U-Bahn and sit under restaurant tables; our <Link to="/blog/german-dog-etiquette-rules" className="text-accent font-bold hover:underline">dog etiquette guide</Link> explains the unwritten rules.
+                                Germany takes dog training seriously. A <strong>Welpenspielstunde</strong> (puppy social hour, from about 12 weeks) followed by basic obedience classes is the standard path, roughly 10-25 EUR per session. In <strong>Lower Saxony</strong>, first-time owners must pass a competence test (Sachkundenachweis); in Berlin, passing an exam can earn leash-freedom privileges. Beyond rules, a well-socialized dog simply has a better life in a country where dogs ride the U-Bahn and sit under restaurant tables; our <Link to="/blog/german-dog-etiquette-rules" className="text-accent-ink font-bold hover:underline">dog etiquette guide</Link> explains the unwritten rules.
                             </p>
 
                             <h2 id="faq" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">FAQ: Puppies in Germany</h2>

@@ -68,7 +68,7 @@ export default function PetInsuranceGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Bureaucracy Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Expat Bureaucracy Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             💰 Pet Insurance in Germany: <br />Do You Really Need It?
                         </h1>
@@ -176,7 +176,7 @@ export default function PetInsuranceGermany() {
                                     onClick={() => trackAffiliateClick('Helden', 'PetInsurance_LiabilitySection')}
                                     target="_blank"
                                     rel="noopener noreferrer sponsored"
-                                    className="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
+                                    className="inline-block bg-accent-ink text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
                                 >
                                     Compare Dog Liability Cover at helden.de →
                                 </a>

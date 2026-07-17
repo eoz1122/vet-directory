@@ -86,7 +86,7 @@ export default function TierheimAdoptionGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">New Pet Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">New Pet Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             🏠 Adopting from a German Tierheim: <br />The Expat Guide
                         </h1>
@@ -167,17 +167,17 @@ export default function TierheimAdoptionGermany() {
                             <h2 id="documents" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">Documents Expats Need</h2>
                             <ul className="space-y-3">
                                 <li><strong>Photo ID</strong> (passport or residence card) and proof you live in Germany: your <strong>Anmeldung / Meldebescheinigung</strong>.</li>
-                                <li><strong>Written landlord permission</strong> if you rent and want a dog (and for many cats too). German landlords cannot blanket-ban all pets, but dogs generally need explicit consent; see our <Link to="/blog/pet-friendly-apartments-germany" className="text-accent font-bold hover:underline">pet-friendly apartment guide</Link>.</li>
-                                <li><strong>For dogs:</strong> be ready to arrange <strong>liability insurance (Hundehaftpflicht)</strong> and <strong>dog tax (Hundesteuer)</strong> registration right after adoption; some shelters ask for proof. Details in our <Link to="/blog/hundesteuer-dog-tax-germany" className="text-accent font-bold hover:underline">dog tax guide</Link> and <Link to="/blog/pet-insurance-germany" className="text-accent font-bold hover:underline">insurance guide</Link>.</li>
+                                <li><strong>Written landlord permission</strong> if you rent and want a dog (and for many cats too). German landlords cannot blanket-ban all pets, but dogs generally need explicit consent; see our <Link to="/blog/pet-friendly-apartments-germany" className="text-accent-ink font-bold hover:underline">pet-friendly apartment guide</Link>.</li>
+                                <li><strong>For dogs:</strong> be ready to arrange <strong>liability insurance (Hundehaftpflicht)</strong> and <strong>dog tax (Hundesteuer)</strong> registration right after adoption; some shelters ask for proof. Details in our <Link to="/blog/hundesteuer-dog-tax-germany" className="text-accent-ink font-bold hover:underline">dog tax guide</Link> and <Link to="/blog/pet-insurance-germany" className="text-accent-ink font-bold hover:underline">insurance guide</Link>.</li>
                                 <li><strong>A rough pet-care plan</strong> for your working hours and travel. You will be asked.</li>
                             </ul>
 
                             <h2 id="after" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">After You Adopt</h2>
                             <p>Four things to do in the first two weeks:</p>
                             <ul className="space-y-3">
-                                <li><strong>Register the chip</strong> with TASSO (free): our <Link to="/blog/cat-registration-germany" className="text-accent font-bold hover:underline">registration guide</Link> explains how.</li>
+                                <li><strong>Register the chip</strong> with TASSO (free): our <Link to="/blog/cat-registration-germany" className="text-accent-ink font-bold hover:underline">registration guide</Link> explains how.</li>
                                 <li><strong>Dogs: register for Hundesteuer</strong> at your city within the deadline (often 2-4 weeks).</li>
-                                <li><strong>Book a get-to-know visit</strong> with a local vet, even though the shelter vet-checked the animal. Having a practice that knows your pet BEFORE an emergency is half the value; here is <Link to="/blog/first-vet-visit-germany" className="text-accent font-bold hover:underline">what a first German vet visit looks like</Link>.</li>
+                                <li><strong>Book a get-to-know visit</strong> with a local vet, even though the shelter vet-checked the animal. Having a practice that knows your pet BEFORE an emergency is half the value; here is <Link to="/blog/first-vet-visit-germany" className="text-accent-ink font-bold hover:underline">what a first German vet visit looks like</Link>.</li>
                                 <li><strong>Give it time.</strong> German shelters talk about the 3-3-3 rule: 3 days to decompress, 3 weeks to settle, 3 months to feel at home.</li>
                             </ul>
 

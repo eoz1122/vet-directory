@@ -9,35 +9,35 @@ const blogPosts = [
         url: "/guides/pet-emergency-germany",
         title: "🚨 Pet Emergency Guide",
         emoji: "🚑",
-        category: "EMERGENCY",
+        category: "Emergency",
         desc: "Complete survival guide for pet emergencies in Germany. Know where to go, what to expect, costs, and emergency numbers BEFORE you need them."
     },
     {
         url: "/guides/emergency-vets-berlin",
         title: "24/7 Emergency Vets: Berlin",
         emoji: "🏥",
-        category: "EMERGENCY",
+        category: "Emergency",
         desc: "5 verified 24/7 emergency clinics in Berlin with English-speaking staff. Phone numbers, addresses, and what to expect."
     },
     {
         url: "/guides/emergency-vets-munich",
         title: "24/7 Emergency Vets: Munich",
         emoji: "🏥",
-        category: "EMERGENCY",
+        category: "Emergency",
         desc: "24/7 emergency veterinary clinics in Munich with English-speaking staff. Phone numbers, addresses, and out-of-hours costs."
     },
     {
         url: "/guides/emergency-vets-hamburg",
         title: "24/7 Emergency Vets: Hamburg",
         emoji: "🏥",
-        category: "EMERGENCY",
+        category: "Emergency",
         desc: "24/7 emergency veterinary clinics in Hamburg with English-speaking staff. Phone numbers, addresses, and out-of-hours costs."
     },
     {
         url: "/guides/emergency-vets-frankfurt",
         title: "24/7 Emergency Vets: Frankfurt",
         emoji: "🏥",
-        category: "EMERGENCY",
+        category: "Emergency",
         desc: "24/7 emergency veterinary clinics in Frankfurt with English-speaking staff. Phone numbers, addresses, and out-of-hours costs."
     },
     {
@@ -135,21 +135,21 @@ const blogPosts = [
         url: "/blog/adopting-pet-tierheim-germany",
         title: "🏠 Adopting from a Tierheim",
         emoji: "🏠",
-        category: "NEW PET",
+        category: "New Pet",
         desc: "The Schutzgebühr, the interview and home check, documents expats need, and what happens after you adopt from a German shelter."
     },
     {
         url: "/blog/puppy-first-year-germany",
         title: "🐶 Puppy's First Year in Germany",
         emoji: "🐶",
-        category: "NEW PET",
+        category: "New Pet",
         desc: "Month-by-month timeline and a realistic 1,500-3,000 EUR budget: registrations, vaccinations, dog school, and the deadlines that matter."
     },
     {
         url: "/blog/new-pet-checklist-germany",
         title: "✅ New Pet: First 30 Days Checklist",
         emoji: "✅",
-        category: "NEW PET",
+        category: "New Pet",
         desc: "Everything to register, insure, and organize in the first month with a new dog or cat in Germany, in the right order."
     },
     {
@@ -163,14 +163,14 @@ const blogPosts = [
         url: "/blog/neutering-cost-germany",
         title: "✂️ Neutering & Spaying Costs",
         emoji: "✂️",
-        category: "HEALTH",
+        category: "Health",
         desc: "Realistic Kastration prices for cats and dogs, what quotes include, mandatory neutering rules for outdoor cats, and how to compare estimates."
     },
     {
         url: "/blog/pet-vaccination-costs-germany",
         title: "💉 Vaccination Schedule & Costs",
         emoji: "💉",
-        category: "HEALTH",
+        category: "Health",
         desc: "The StIKo Vet puppy and kitten schedules, why rabies is now a travel vaccine, and what every jab costs under the GOT."
     },
     {
@@ -191,84 +191,84 @@ const blogPosts = [
         url: "/blog/pet-medication-germany-guide",
         title: "💊 Pet Medication Guide",
         emoji: "💊",
-        category: "HEALTH",
+        category: "Health",
         desc: "Where to buy, how prescriptions work, and why you can't have antibiotics shipped. Comparing vet prices vs. online pharmacies like Medpets."
     },
     {
         url: "/blog/best-dog-food-germany",
         title: "🐕 Best Dog Food in Germany",
         emoji: "🐕",
-        category: "HEALTH",
+        category: "Health",
         desc: "Dry vs wet vs raw (BARF), decoding German food labels, where to buy, and how to choose the right food for your dog. A practical buyer's guide for expats."
     },
     {
         url: "/blog/best-cat-food-germany",
         title: "🐈 Best Cat Food in Germany",
         emoji: "🐈",
-        category: "HEALTH",
+        category: "Health",
         desc: "Wet vs dry, why cats need taurine and moisture, decoding German labels, and where to buy. A practical buyer's guide for expat cat owners."
     },
     {
         url: "/english-speaking-vet-access-germany",
         title: "📊 Mapping English-Speaking Vets in Germany",
         emoji: "📊",
-        category: "REPORT",
+        category: "Report",
         desc: "A coverage snapshot of our directory: 240+ practices mapped across 38 cities, where coverage is strongest, and the cities we are still expanding into."
     },
     {
         url: "/blog/first-vet-visit-germany",
         title: "🩺 Your First Vet Visit in Germany",
         emoji: "🩺",
-        category: "VET CARE",
+        category: "Vet Care",
         desc: "From booking the appointment to paying the bill. A step-by-step guide for English-speaking expats at their first German vet visit."
     },
     {
         url: "/blog/emergency-vet-berlin-english",
         title: "🚨 Emergency Vets in Berlin: 24h English Guide",
         emoji: "🚨",
-        category: "EMERGENCY",
+        category: "Emergency",
         desc: "Verified 24-hour clinics, what to say when you call, how to get there at 2am, and what emergency vet care will cost."
     },
     {
         url: "/blog/breed-restrictions-germany",
         title: "⚠️ Breed Restrictions in Germany",
         emoji: "⚠️",
-        category: "BUREAUCRACY",
+        category: "Bureaucracy",
         desc: "State-by-state breakdown of banned and restricted breeds in Germany. What's banned, what's restricted, and how the Wesenstest can change everything."
     },
     {
         url: "/blog/public-transport-with-dogs-cologne",
         title: "🚋 Dogs on the KVB in Cologne",
         emoji: "🚋",
-        category: "TRANSPORT",
+        category: "Transport",
         desc: "Tickets, muzzle rules, peak hour tips, the best dog-friendly routes, and where to go once you get off the tram."
     },
     {
         url: "/blog/best-dog-parks-berlin",
         title: 'Best Dog Parks in Berlin: Off-Leash Guide',
         emoji: "🌳",
-        category: 'CITY LIVING',
+        category: 'City Living',
         desc: 'The definitive guide to off-leash dog areas in Berlin. Hundeauslaufgebiete by neighbourhood, leash rules, and more.'
     },
     {
         url: "/blog/cat-microchipping-germany",
         title: 'Cat Microchipping in Germany 2026',
         emoji: "🐱",
-        category: 'BUREAUCRACY',
+        category: 'Bureaucracy',
         desc: 'Germany is tightening cat microchipping and registration rules. Here is what expat cat owners need to know, and what you must do before it affects you.'
     },
     {
         url: "/blog/tick-season-germany-pets",
         title: 'Tick Season in Germany: Pet Prevention Guide',
         emoji: "🦟",
-        category: 'HEALTH',
+        category: 'Health',
         desc: 'Germany has one of Europe\'s highest tick burdens. Here is when tick season peaks, which diseases to watch for, and how to protect your pet.'
     },
     {
         url: "/blog/emergency-vet-hamburg-english",
         title: 'Emergency Vets in Hamburg: 24/7 English-Speaking Clinics',
         emoji: "🏥",
-        category: 'EMERGENCY',
+        category: 'Emergency',
         desc: 'Pet emergency in Hamburg? Find 24-hour English-speaking vet services and learn the emergency system.'
     }
 ];
@@ -307,7 +307,7 @@ export default function Blog() {
 
             <main className="max-w-6xl mx-auto p-6 md:p-12 mb-12">
                 <section className="text-center mb-16 space-y-4">
-                    <span className="text-accent font-bold tracking-wider text-sm uppercase">The Expat Resource Center</span>
+                    <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">The Expat Resource Center</span>
                     <h1 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">
                         Life in Germany with Pets
                     </h1>

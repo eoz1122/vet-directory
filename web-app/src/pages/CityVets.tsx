@@ -7,10 +7,27 @@ import vetsData from '../data/vets.json';
 import { filterDisplayableVets } from '../utils/activeVets';
 import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
 import { trackVetWebsiteClick } from '../utils/analytics';
+import { formatVerifiedLabel } from '../utils/verifiedLabel';
+import { parseCityContent, type Block } from '../utils/cityMarkdown';
 import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
+
+
+function renderBlocks(blocks: Block[]) {
+    const seg = (s: { bold: boolean; text: string }, k: number) =>
+        s.bold ? <strong key={k}>{s.text}</strong> : <span key={k}>{s.text}</span>;
+    return blocks.map((b, i) =>
+        b.type === 'list' ? (
+            <ul key={i} className="list-disc pl-5 space-y-2">
+                {b.items!.map((item, j) => <li key={j}>{item.map(seg)}</li>)}
+            </ul>
+        ) : (
+            <p key={i}>{b.segments!.map(seg)}</p>
+        ),
+    );
+}
 
 const CITY_CONFIG: Record<string, { guideLink?: string }> = {
     'Berlin': { guideLink: '/blog/public-transport-with-dogs-berlin' },
@@ -24,14 +41,14 @@ const cityContent: Record<string, { title: string; description: string; content:
     berlin: {
         title: "English-Speaking Vets in Berlin",
         description: "Finding an English-speaking vet in Berlin doesn't have to be stressful. Our verified directory connects expats with veterinary practices across Mitte, Kreuzberg, Prenzlauer Berg, and beyond.",
-        content: `Living in Berlin with a dog is a dream—sprawling parks like Tempelhofer Feld, dog-friendly cafés on every corner, and a culture that genuinely loves pets. But when your furry friend needs medical attention, the language barrier can turn a routine checkup into a stressful ordeal.
+        content: `Living in Berlin with a dog is a dream - sprawling parks like Tempelhofer Feld, dog-friendly cafés on every corner, and a culture that genuinely loves pets. But when your furry friend needs medical attention, the language barrier can turn a routine checkup into a stressful ordeal.
 
 That's where we come in. Our directory features verified English-speaking veterinary practices across all Berlin districts, from the bustling heart of Mitte to the leafy streets of Zehlendorf. Each listing has been carefully vetted to ensure staff can communicate clearly in English, whether you're dealing with an emergency or just need advice on flea prevention.
 
 **Why Berlin Pet Owners Choose Us:**
 - **District-Specific Search**: Find vets near you in Kreuzberg, Friedrichshain, Charlottenburg, or any of Berlin's 12 boroughs
 - **Emergency-Ready**: Many practices offer 24/7 emergency services or Notdienst referrals
-- **Expat-Friendly**: These aren't just vets who "speak some English"—they're practices that actively serve the international community
+- **Expat-Friendly**: These aren't just vets who "speak some English" - they're practices that actively serve the international community
 
 Whether you've just moved to Berlin or you're a long-time resident looking for a new vet after a bad experience, our directory is here to help you find the right care for your pet.`
     },
@@ -40,7 +57,7 @@ Whether you've just moved to Berlin or you're a long-time resident looking for a
         description: "Discover trusted English-speaking veterinary practices in Hamburg. From Altona to Winterhude, find quality pet care that speaks your language.",
         content: `Hamburg's international community is thriving, and so is its network of English-speaking veterinary care. Whether you're in the trendy Sternschanze neighborhood or the family-friendly suburbs of Blankenese, finding a vet who can explain your pet's health in clear English is essential.
 
-Our Hamburg directory features practices that understand the unique needs of expat pet owners. These aren't just clinics with a bilingual receptionist—they're full-service veterinary hospitals where doctors and technicians communicate fluently in English.
+Our Hamburg directory features practices that understand the unique needs of expat pet owners. These aren't just clinics with a bilingual receptionist - they're full-service veterinary hospitals where doctors and technicians communicate fluently in English.
 
 **What Makes Hamburg Vets Special:**
 - **Port City Expertise**: Many Hamburg vets have experience with international pet relocations and can help with EU health certificates
@@ -90,7 +107,7 @@ Whether you're living near the Englischer Garten or in the outskirts of the city
     leipzig: {
         title: "English-Speaking Vets in Leipzig",
         description: "Find trusted English-speaking veterinary practices in Leipzig. Verified care for your pets in Plagwitz, Südvorstadt, and across the city.",
-        content: `Leipzig is widely known as "Hypezig" for a reason—its vibrant culture, green spaces like the Clara-Zetkin-Park, and growing international community make it a fantastic place to live. for pet owners, however, finding a veterinarian who speaks clear English can still be a challenge.
+        content: `Leipzig is widely known as "Hypezig" for a reason - its vibrant culture, green spaces like the Clara-Zetkin-Park, and growing international community make it a fantastic place to live. for pet owners, however, finding a veterinarian who speaks clear English can still be a challenge.
 
 Our Leipzig directory connects you with verified practices where language isn't a barrier. Whether you're living in the trendy Plagwitz area, the family-friendly Südvorstadt, or the historic Gohlis, we help you find the right care for your four-legged family members.
 
@@ -382,22 +399,10 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
                     </h1>
 
                     <div className="prose prose-lg max-w-none text-primary/80 space-y-4">
-                        {cityData.content.split('\n\n').map((paragraph, idx) => (
-                            <p key={idx} className={paragraph.startsWith('**') ? 'font-semibold' : ''}>
-                                {paragraph.replace(/\*\*/g, '')}
-                            </p>
-                        ))}
+                        {renderBlocks(parseCityContent(cityData.content).slice(0, 1))}
                     </div>
 
-                    {CITY_CONFIG[capitalizedCity]?.guideLink && (
-                        <div className="mt-8">
-                            <Link to={CITY_CONFIG[capitalizedCity].guideLink!} className="inline-flex items-center gap-2 px-6 py-3 bg-accent/10 hover:bg-accent/20 text-accent font-bold rounded-xl transition-colors">
-                                <span>🚆</span>
-                                <span>Public Transport with Dogs in {capitalizedCity}</span>
-                                <span>→</span>
-                            </Link>
-                        </div>
-                    )}
+
                 </section>
 
                 {/* District index: gives every district page a crawlable inbound link */}
@@ -479,7 +484,7 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
                                             <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-secondary border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
                                                 <p className="text-[11px] leading-relaxed font-medium text-secondary/90 normal-case tracking-normal">
                                                     <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">Community Verified</span>
-                                                    We analyze thousands of patient reviews to identify "English signals"—confirming that other international pet owners successfully communicated in English.
+                                                    We analyze thousands of patient reviews to identify "English signals" - confirming that other international pet owners successfully communicated in English.
                                                 </p>
                                                 <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-primary border-b border-r border-white/10 rotate-45"></div>
                                             </div>
@@ -554,7 +559,7 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
 
                                 <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
                                     <span className="text-[10px] text-gray-400">
-                                        Last Verified: {vet.verification?.last_scanned ? new Date(vet.verification.last_scanned).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '2025'}
+                                        Verified: {formatVerifiedLabel(vet.verification?.last_scanned)}
                                     </span>
                                     <Link
                                         to={`/contact?topic=report_issue&vetId=${vet.id}&vetName=${encodeURIComponent(vet.practice_name)}&reason=Data%20Incorrect`}
@@ -567,6 +572,22 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
                             </article>
                         ))}
                     </div>
+                </section>
+
+                                <section className="mt-16 max-w-3xl">
+                    <h2 className="text-2xl font-bold text-primary mb-4">More about vet care in {capitalizedCity}</h2>
+                    <div className="prose prose-lg max-w-none text-primary/80 space-y-4">
+                        {renderBlocks(parseCityContent(cityData.content).slice(1))}
+                    </div>
+                    {CITY_CONFIG[capitalizedCity]?.guideLink && (
+                        <div className="mt-8">
+                            <Link to={CITY_CONFIG[capitalizedCity].guideLink!} className="inline-flex items-center gap-2 px-6 py-3 bg-accent/10 hover:bg-accent/20 text-accent font-bold rounded-xl transition-colors">
+                                <span>🚆</span>
+                                <span>Public Transport with Dogs in {capitalizedCity}</span>
+                                <span>→</span>
+                            </Link>
+                        </div>
+                    )}
                 </section>
 
                 <section className="mt-16 bg-primary/5 p-8 rounded-2xl border border-primary/10">

@@ -37,7 +37,7 @@ export default function PublicTransportHamburg() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Survival Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Expat Survival Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
                             🚇 Public Transport with Dogs in Hamburg (HVV): The 2026 Expat Survival Guide
                         </h1>
@@ -182,7 +182,7 @@ export default function PublicTransportHamburg() {
                                 </p>
                                 <div className="mt-8 pt-6 border-t border-white/20">
                                     <p className="font-medium mb-2">Found a great new dog run in Altona or Eimsbüttel?</p>
-                                    <Link to="/contact?topic=tips" className="text-accent font-bold hover:underline">Let us know</Link> so we can share it with the rest of the expat pack!
+                                    <Link to="/contact?topic=tips" className="text-accent-ink font-bold hover:underline">Let us know</Link> so we can share it with the rest of the expat pack!
                                 </div>
                             </div>
 

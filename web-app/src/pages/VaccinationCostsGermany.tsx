@@ -86,7 +86,7 @@ export default function VaccinationCostsGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Health & Prevention Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Health & Prevention Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             💉 Vaccinations in Germany: <br />Schedule & Costs
                         </h1>
@@ -131,7 +131,7 @@ export default function VaccinationCostsGermany() {
                                 </table>
                             </div>
                             <p>
-                                Non-core options your vet may suggest depending on lifestyle: kennel cough (Zwingerhusten, sensible before boarding or dog school), Lyme borreliosis, and leishmaniasis for southern-Europe travel. See also our <Link to="/blog/tick-season-germany-pets" className="text-accent font-bold hover:underline">tick season guide</Link> for why parasite prevention matters as much as jabs here.
+                                Non-core options your vet may suggest depending on lifestyle: kennel cough (Zwingerhusten, sensible before boarding or dog school), Lyme borreliosis, and leishmaniasis for southern-Europe travel. See also our <Link to="/blog/tick-season-germany-pets" className="text-accent-ink font-bold hover:underline">tick season guide</Link> for why parasite prevention matters as much as jabs here.
                             </p>
 
                             <h2 id="cat-schedule" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">The Cat Schedule (Kitten to Adult)</h2>
@@ -155,13 +155,13 @@ export default function VaccinationCostsGermany() {
                                 </table>
                             </div>
                             <p>
-                                Indoor-only cat? It still needs the core set: panleukopenia virus is tough enough to arrive on your shoes. Your vet can stretch booster intervals based on risk, which is exactly the conversation that is easier with an <Link to="/" className="text-accent font-bold hover:underline">English-speaking vet</Link>.
+                                Indoor-only cat? It still needs the core set: panleukopenia virus is tough enough to arrive on your shoes. Your vet can stretch booster intervals based on risk, which is exactly the conversation that is easier with an <Link to="/" className="text-accent-ink font-bold hover:underline">English-speaking vet</Link>.
                             </p>
 
                             <h2 id="rabies" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">The Rabies Surprise</h2>
                             <div className="bg-white border border-primary/10 rounded-2xl p-6 my-8 not-prose">
                                 <p className="text-primary/80 text-sm leading-relaxed">
-                                    Germany has been officially free of terrestrial rabies since 2008, so the StIKo Vet <strong>no longer lists rabies as a core vaccine</strong> for pets that never leave the country. But the moment you cross any border with your pet, a valid rabies vaccination is legally required as part of the <Link to="/blog/eu-pet-passport-germany" className="text-accent font-bold hover:underline">EU pet passport</Link>. Since the first dose must be given at least 21 days before travel, most expats (who travel by definition) simply keep it current. One jab, roughly 50-70 EUR all-in, renewed per the vaccine's licensed interval.
+                                    Germany has been officially free of terrestrial rabies since 2008, so the StIKo Vet <strong>no longer lists rabies as a core vaccine</strong> for pets that never leave the country. But the moment you cross any border with your pet, a valid rabies vaccination is legally required as part of the <Link to="/blog/eu-pet-passport-germany" className="text-accent-ink font-bold hover:underline">EU pet passport</Link>. Since the first dose must be given at least 21 days before travel, most expats (who travel by definition) simply keep it current. One jab, roughly 50-70 EUR all-in, renewed per the vaccine's licensed interval.
                                 </p>
                             </div>
 
@@ -187,7 +187,7 @@ export default function VaccinationCostsGermany() {
                                 ))}
                             </div>
                             <p>
-                                How those numbers come about is covered in our <Link to="/blog/vet-costs-germany" className="text-accent font-bold hover:underline">GOT fee schedule guide</Link>. Note that most standard health insurance policies treat vaccinations as preventive care and exclude them; premium policies often contribute a yearly preventive budget instead (details in the <Link to="/blog/pet-insurance-germany" className="text-accent font-bold hover:underline">insurance guide</Link>).
+                                How those numbers come about is covered in our <Link to="/blog/vet-costs-germany" className="text-accent-ink font-bold hover:underline">GOT fee schedule guide</Link>. Note that most standard health insurance policies treat vaccinations as preventive care and exclude them; premium policies often contribute a yearly preventive budget instead (details in the <Link to="/blog/pet-insurance-germany" className="text-accent-ink font-bold hover:underline">insurance guide</Link>).
                             </p>
 
                             <h2 id="faq" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">FAQ: Pet Vaccinations in Germany</h2>

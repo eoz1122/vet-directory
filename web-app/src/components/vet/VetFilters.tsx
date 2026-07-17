@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PlaceAutocomplete from '../PlaceAutocomplete';
 import { MoreCitiesDropdown } from './MoreCitiesDropdown';
 import type { Vet } from '../../types/vet';
@@ -37,6 +37,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
     onResetPagination,
     mapApiError = false,
 }) => {
+    const [showRefine, setShowRefine] = useState(false);
     // Dynamic city list derived from data
     const allCities = Array.from(new Set(vets.map(v => v.city || 'Unknown'))).sort();
 
@@ -70,7 +71,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
 
                 {!userLocation && (
                     <div className="space-y-3">
-                        <div className="flex flex-wrap gap-2 pb-2 overflow-x-hidden">
+                        <div className="flex flex-nowrap md:flex-wrap gap-2 pb-2 overflow-x-auto md:overflow-x-hidden no-scrollbar">
                             {/* "All" Button */}
                             <button
                                 onClick={() => handleCityChange('All')}
@@ -147,8 +148,16 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
 
             <hr className="border-primary/5" />
 
-            {/* Refine Section */}
-            <div className="space-y-3">
+            {/* Refine Section: collapsed by default on mobile so listings surface sooner */}
+            <button
+                onClick={() => setShowRefine(!showRefine)}
+                className="md:hidden w-full flex items-center justify-between px-4 py-3 bg-white border border-primary/5 rounded-2xl text-xs font-bold text-primary/60 shadow-sm"
+                aria-expanded={showRefine}
+            >
+                <span>🔍 Refine results</span>
+                <span className={`transition-transform ${showRefine ? 'rotate-180' : ''}`}>▾</span>
+            </button>
+            <div className={`space-y-3 ${showRefine ? '' : 'hidden md:block'}`}>
                 <label className="text-[10px] font-bold text-primary/40 uppercase tracking-widest px-1">
                     Refine Results
                 </label>

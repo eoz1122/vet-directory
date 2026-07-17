@@ -70,7 +70,7 @@ export default function VetAccessReport() {
             <Header />
 
             <main className="max-w-4xl mx-auto p-6 md:p-12 mb-12">
-                <span className="text-accent font-bold tracking-wider text-sm uppercase">Coverage Snapshot</span>
+                <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Coverage Snapshot</span>
                 <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6 leading-tight">
                     Mapping English-Speaking Vets Across Germany
                 </h1>

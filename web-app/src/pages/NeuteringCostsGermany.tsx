@@ -86,7 +86,7 @@ export default function NeuteringCostsGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Money & Health Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Money & Health Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             ✂️ Neutering & Spaying Costs <br />in Germany
                         </h1>
@@ -107,7 +107,7 @@ export default function NeuteringCostsGermany() {
 
                             <h2 id="prices" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">The Price Table</h2>
                             <p>
-                                All German vets bill from the <Link to="/blog/vet-costs-germany" className="text-accent font-bold hover:underline">GOT fee schedule</Link>, so prices move within a regulated band rather than being freely set. Realistic all-in ranges (surgery, anesthesia, materials, VAT):
+                                All German vets bill from the <Link to="/blog/vet-costs-germany" className="text-accent-ink font-bold hover:underline">GOT fee schedule</Link>, so prices move within a regulated band rather than being freely set. Realistic all-in ranges (surgery, anesthesia, materials, VAT):
                             </p>
 
                             <div className="overflow-x-auto rounded-2xl border border-primary/10 my-8 not-prose">
@@ -167,7 +167,7 @@ export default function NeuteringCostsGermany() {
                                 There is no national neutering law, but <strong>hundreds of German municipalities require outdoor cats to be neutered and registered</strong> (a Kastrationspflicht, often combined with microchip and registration duties). Berlin, many NRW cities, and much of Lower Saxony have such rules. If your cat goes outside, check your city's regulations; fines apply.
                             </p>
                             <p>
-                                Adopting from a shelter? The Tierheim will almost always have neutered the animal already (it is baked into the <Link to="/blog/adopting-pet-tierheim-germany" className="text-accent font-bold hover:underline">Schutzgebühr adoption fee</Link>) or will contractually require you to do it, which makes adoption one of the cheapest routes to a neutered pet.
+                                Adopting from a shelter? The Tierheim will almost always have neutered the animal already (it is baked into the <Link to="/blog/adopting-pet-tierheim-germany" className="text-accent-ink font-bold hover:underline">Schutzgebühr adoption fee</Link>) or will contractually require you to do it, which makes adoption one of the cheapest routes to a neutered pet.
                             </p>
 
                             <h2 id="kastration-vs" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">Kastration vs Sterilisation: A Language Trap</h2>
@@ -181,7 +181,7 @@ export default function NeuteringCostsGermany() {
                             <ul className="space-y-3">
                                 <li><strong>Get two written estimates</strong> for a planned neutering; it is normal and no vet will be offended.</li>
                                 <li><strong>Do not chase the absolute cheapest quote.</strong> Below-1x billing is not legal, so an implausibly low number usually means items were left out of the estimate.</li>
-                                <li><strong>Insurance will not pay for it</strong> in most policies (elective procedure), so plan it as an out-of-pocket cost. Some premium policies contribute a preventive-care budget; see our <Link to="/blog/pet-insurance-germany" className="text-accent font-bold hover:underline">insurance guide</Link>.</li>
+                                <li><strong>Insurance will not pay for it</strong> in most policies (elective procedure), so plan it as an out-of-pocket cost. Some premium policies contribute a preventive-care budget; see our <Link to="/blog/pet-insurance-germany" className="text-accent-ink font-bold hover:underline">insurance guide</Link>.</li>
                                 <li><strong>Time it sensibly:</strong> it is a routine weekday procedure. Never book anything elective at emergency rates.</li>
                             </ul>
 

@@ -3,6 +3,7 @@ import type { Vet, VetWithDistance } from '../../types/vet';
 import { ConfirmEnglish } from './ConfirmEnglish';
 import { appendUTM } from '../../utils/url';
 import { trackVetWebsiteClick } from '../../utils/analytics';
+import { formatVerifiedLabel } from '../../utils/verifiedLabel';
 
 interface VetCardProps {
     vet: VetWithDistance;
@@ -136,7 +137,7 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
 
             <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
                 <span className="text-[10px] text-gray-400">
-                    Last Verified: {vet.verification?.last_scanned ? new Date(vet.verification.last_scanned).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '2025'}
+                    Verified: {formatVerifiedLabel(vet.verification?.last_scanned)}
                 </span>
                 <button
                     onClick={(e) => { e.stopPropagation(); onReportIssue(vet); }}

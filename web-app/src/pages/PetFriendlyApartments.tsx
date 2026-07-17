@@ -74,7 +74,7 @@ export default function PetFriendlyApartments() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Expat Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             🏠 Finding a Pet-Friendly Apartment in Berlin, Hamburg & Frankfurt (2026)
                         </h1>

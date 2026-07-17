@@ -37,7 +37,7 @@ export default function PublicTransportCologne() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Transport Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Transport Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
                             🚋 Public Transport with Dogs in Cologne: The KVB Guide
                         </h1>

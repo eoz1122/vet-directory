@@ -68,7 +68,7 @@ export default function DogTaxGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Expat Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Expat Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
                             🐕 The Expat Guide to Hundesteuer (Dog Tax) – 2026
                         </h1>
@@ -255,7 +255,7 @@ export default function DogTaxGermany() {
                                     onClick={() => trackAffiliateClick('Feather', 'DogTax_Page')}
                                     target="_blank"
                                     rel="noopener noreferrer sponsored"
-                                    className="inline-block bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
+                                    className="inline-block bg-accent-ink text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all text-sm shadow-md"
                                 >
                                     Get an English Quote →
                                 </a>

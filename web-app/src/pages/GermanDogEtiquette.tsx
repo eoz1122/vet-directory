@@ -37,7 +37,7 @@ export default function GermanDogEtiquette() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Living in Germany Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Living in Germany Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             🐕 German Dog Etiquette: <br />The Unwritten Rules
                         </h1>

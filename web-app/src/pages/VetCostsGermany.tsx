@@ -86,7 +86,7 @@ export default function VetCostsGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Money & Bureaucracy Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Money & Bureaucracy Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             💶 Vet Costs in Germany: <br />The GOT Explained
                         </h1>
@@ -185,7 +185,7 @@ export default function VetCostsGermany() {
                                 </table>
                             </div>
                             <p>
-                                For neutering specifics, see our <Link to="/blog/neutering-cost-germany" className="text-accent font-bold hover:underline">neutering cost guide</Link>; for the full jab-by-jab breakdown, the <Link to="/blog/pet-vaccination-costs-germany" className="text-accent font-bold hover:underline">vaccination schedule and costs guide</Link>.
+                                For neutering specifics, see our <Link to="/blog/neutering-cost-germany" className="text-accent-ink font-bold hover:underline">neutering cost guide</Link>; for the full jab-by-jab breakdown, the <Link to="/blog/pet-vaccination-costs-germany" className="text-accent-ink font-bold hover:underline">vaccination schedule and costs guide</Link>.
                             </p>
 
                             <h2 id="emergency" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">Why Emergencies Cost So Much</h2>
@@ -194,10 +194,10 @@ export default function VetCostsGermany() {
                             </p>
                             <p>
                                 If your pet has a genuine emergency, go. But for a "is this urgent?" situation at 10pm, a video-vet triage call first can save you the surcharge entirely. Know where your nearest 24/7 clinic is <em>before</em> you need it: we keep verified emergency guides for{' '}
-                                <Link to="/guides/emergency-vets-berlin" className="text-accent font-bold hover:underline">Berlin</Link>,{' '}
-                                <Link to="/guides/emergency-vets-munich" className="text-accent font-bold hover:underline">Munich</Link>,{' '}
-                                <Link to="/guides/emergency-vets-hamburg" className="text-accent font-bold hover:underline">Hamburg</Link> and{' '}
-                                <Link to="/guides/emergency-vets-frankfurt" className="text-accent font-bold hover:underline">Frankfurt</Link>.
+                                <Link to="/guides/emergency-vets-berlin" className="text-accent-ink font-bold hover:underline">Berlin</Link>,{' '}
+                                <Link to="/guides/emergency-vets-munich" className="text-accent-ink font-bold hover:underline">Munich</Link>,{' '}
+                                <Link to="/guides/emergency-vets-hamburg" className="text-accent-ink font-bold hover:underline">Hamburg</Link> and{' '}
+                                <Link to="/guides/emergency-vets-frankfurt" className="text-accent-ink font-bold hover:underline">Frankfurt</Link>.
                             </p>
 
                             <h2 id="no-haggling" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">Why You Cannot Negotiate (And What You Can Do Instead)</h2>
@@ -230,7 +230,7 @@ export default function VetCostsGermany() {
                                 ))}
                             </div>
                             <p>
-                                The single biggest lever is insurance: read our full <Link to="/blog/pet-insurance-germany" className="text-accent font-bold hover:underline">pet insurance guide for expats</Link> to understand OP-Versicherung vs full coverage and which providers offer English policies.
+                                The single biggest lever is insurance: read our full <Link to="/blog/pet-insurance-germany" className="text-accent-ink font-bold hover:underline">pet insurance guide for expats</Link> to understand OP-Versicherung vs full coverage and which providers offer English policies.
                             </p>
 
                             <h2 id="faq" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">FAQ: Vet Costs in Germany</h2>

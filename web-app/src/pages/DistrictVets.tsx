@@ -7,6 +7,7 @@ import vetsData from '../data/vets.json';
 import { filterDisplayableVets } from '../utils/activeVets';
 import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
 import { trackVetWebsiteClick } from '../utils/analytics';
+import { formatVerifiedLabel } from '../utils/verifiedLabel';
 import { generateDistrictContent } from '../utils/districtContent';
 import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
@@ -450,7 +451,7 @@ export default function DistrictVets() {
 
                                     <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
                                         <span className="text-[10px] text-gray-400">
-                                            Last Verified: {vet.verification?.last_scanned ? new Date(vet.verification.last_scanned).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '2025'}
+                                            Verified: {formatVerifiedLabel(vet.verification?.last_scanned)}
                                         </span>
                                         <Link
                                             to={`/contact?topic=report_issue&vetId=${vet.id}&vetName=${encodeURIComponent(vet.practice_name)}&reason=Data%20Incorrect`}
@@ -468,7 +469,7 @@ export default function DistrictVets() {
                             <div className="text-4xl mb-4">🔍</div>
                             <h3 className="text-xl font-bold text-primary mb-2">No vets found in {districtDisplay} yet</h3>
                             <p className="text-primary/60 mb-6">We are constantly adding new verified practices.</p>
-                            <Link to={`/vets/${cityKey}`} className="text-accent font-bold hover:underline">
+                            <Link to={`/vets/${cityKey}`} className="text-accent-ink font-bold hover:underline">
                                 View all vets in {cityDisplay} →
                             </Link>
                         </div>

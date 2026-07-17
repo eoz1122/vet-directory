@@ -182,7 +182,7 @@ const Home: React.FC = () => {
                         </Link>
 
                         <p className="text-sm md:text-base text-primary/80 font-medium leading-relaxed max-w-[95%]">
-                            Providing peace of mind for you and your companion. <span className="text-primary font-bold italic">"For the love of our little friends."</span>
+                            {vets.length} community-verified English-speaking vets across {new Set(vets.map(v => v.city)).size} German cities. <span className="text-primary font-bold italic">"For the love of our little friends."</span>
                         </p>
 
                         <nav className="flex gap-6 text-xs md:text-sm font-bold uppercase tracking-widest text-primary pt-2">
@@ -276,7 +276,7 @@ const Home: React.FC = () => {
                             {sortedVets.length === 0 && (
                                 <div className="text-center py-20 text-primary/40">
                                     <p className="text-sm font-medium">No results found.</p>
-                                    <button onClick={() => { setSearchTerm(''); setSelectedCity('All') }} className="mt-4 text-accent font-bold hover:underline text-xs uppercase tracking-widest">Reset filters</button>
+                                    <button onClick={() => { setSearchTerm(''); setSelectedCity('All') }} className="mt-4 text-accent-ink font-bold hover:underline text-xs uppercase tracking-widest">Reset filters</button>
                                 </div>
                             )}
                             <Footer />
@@ -316,14 +316,14 @@ const Home: React.FC = () => {
 
                 {/* Mobile Navigation */}
                 <nav className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-primary/95 backdrop-blur-xl border border-white/10 px-8 py-3 flex gap-8 rounded-full z-50 shadow-2xl safe-area-bottom text-secondary/60">
-                    <Link to="/" className="flex flex-col items-center hover:text-white transition-colors">
-                        <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <Link to="/" aria-label="Directory home" className="flex flex-col items-center hover:text-white transition-colors">
+                        <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg><span className="text-[9px] font-bold uppercase tracking-widest">Home</span>
                     </Link>
-                    <Link to="/blog" className="flex flex-col items-center hover:text-white transition-colors">
-                        <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    <Link to="/blog" aria-label="Guides" className="flex flex-col items-center hover:text-white transition-colors">
+                        <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg><span className="text-[9px] font-bold uppercase tracking-widest">Guides</span>
                     </Link>
-                    <Link to="/contact?topic=submit_vet" className="flex flex-col items-center hover:text-white transition-colors">
-                        <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    <Link to="/contact?topic=submit_vet" aria-label="Submit a vet" className="flex flex-col items-center hover:text-white transition-colors">
+                        <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg><span className="text-[9px] font-bold uppercase tracking-widest">Add Vet</span>
                     </Link>
                 </nav>
 

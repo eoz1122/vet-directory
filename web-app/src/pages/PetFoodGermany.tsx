@@ -73,7 +73,7 @@ export default function PetFoodGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent font-bold tracking-wider text-sm uppercase">Nutrition & Feeding Guide</span>
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Nutrition & Feeding Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             🍲 Best Dog Food in Germany: <br />A Buyer's Guide for Expats
                         </h1>
@@ -145,7 +145,7 @@ export default function PetFoodGermany() {
                             <ul className="space-y-3 my-6">
                                 <li><strong>Pet superstores:</strong> Fressnapf and Das Futterhaus carry everything from budget to premium, plus staff advice.</li>
                                 <li><strong>Supermarkets & drugstores:</strong> REWE, EDEKA, DM, and Rossmann stock mainstream brands. Convenient, but the premium range is limited.</li>
-                                <li><strong>Online:</strong> <a href="https://tidd.ly/4wdElaw" onClick={() => trackAffiliateClick('Zooplus', 'PetFood_WhereToBuy')} target="_blank" rel="noopener noreferrer sponsored" className="text-accent font-bold hover:underline">zooplus</a>*, fressnapf.de, and Amazon have the widest selection and the best prices on bulk, and they save you carrying a 12kg bag up four flights of Altbau stairs.</li>
+                                <li><strong>Online:</strong> <a href="https://tidd.ly/4wdElaw" onClick={() => trackAffiliateClick('Zooplus', 'PetFood_WhereToBuy')} target="_blank" rel="noopener noreferrer sponsored" className="text-accent-ink font-bold hover:underline">zooplus</a>*, fressnapf.de, and Amazon have the widest selection and the best prices on bulk, and they save you carrying a 12kg bag up four flights of Altbau stairs.</li>
                                 <li><strong>Your vet clinic:</strong> prescription and veterinary diets for medical needs (allergies, kidney, weight). For these, talk to a vet first.</li>
                                 <li><strong>Fresh delivery services:</strong> direct-to-door cooked menus (covered below).</li>
                             </ul>
@@ -159,7 +159,7 @@ export default function PetFoodGermany() {
                                 <li><strong>Always confirm it is an Alleinfuttermittel</strong> if it is the main meal.</li>
                             </ul>
                             <p>
-                                When something seems off with your dog's weight, coat, or digestion, food is often a factor but rarely the whole story. If you are unsure, it is worth a conversation with a vet who can explain things clearly. You can find a <Link to="/" className="text-accent font-bold hover:underline">verified English-speaking vet near you</Link> in our directory, or browse practices in <Link to="/vets/berlin" className="text-accent font-bold hover:underline">Berlin</Link>, <Link to="/vets/munich" className="text-accent font-bold hover:underline">Munich</Link>, and 30+ other cities.
+                                When something seems off with your dog's weight, coat, or digestion, food is often a factor but rarely the whole story. If you are unsure, it is worth a conversation with a vet who can explain things clearly. You can find a <Link to="/" className="text-accent-ink font-bold hover:underline">verified English-speaking vet near you</Link> in our directory, or browse practices in <Link to="/vets/berlin" className="text-accent-ink font-bold hover:underline">Berlin</Link>, <Link to="/vets/munich" className="text-accent-ink font-bold hover:underline">Munich</Link>, and 30+ other cities.
                             </p>
 
                             <h2 id="fresh-delivery" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">5. Our Pick for Fresh Delivery: Dinner for Dogs</h2>
