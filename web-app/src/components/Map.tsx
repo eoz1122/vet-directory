@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Map as GoogleMap, AdvancedMarker, InfoWindow, useMap } from '@vis.gl/react-google-maps';
+import { trackMapPinClick } from '../utils/analytics';
 import { appendUTM } from '../utils/url';
 import type { Vet } from '../types/vet';
 
@@ -83,6 +84,7 @@ export default function AppMap({ vets, selectedCity, selectedVet, onSelectVet }:
                         key={vet.id}
                         position={vet.coordinates}
                         onClick={() => {
+                            trackMapPinClick(vet.id, vet.city);
                             onSelectVet(vet);
                         }}
                     >

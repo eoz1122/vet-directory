@@ -29,3 +29,14 @@ export const trackVetWebsiteClick = (vetId: string, city: string, location: stri
         event_label: vetId,
     });
 };
+
+// Map engagement: answers "does anyone actually use the map?" for the
+// keep-vs-demote decision on the landing page.
+export const trackMapPinClick = (vetId: string, city: string) => {
+    sendGAEvent('map_pin_click', {
+        vet_id: vetId,
+        city: city,
+        event_category: 'map',
+        event_label: vetId,
+    });
+};

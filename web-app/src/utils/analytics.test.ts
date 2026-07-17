@@ -23,3 +23,21 @@ describe('trackVetWebsiteClick', () => {
         expect(() => trackVetWebsiteClick('x', 'y', 'z')).not.toThrow();
     });
 });
+
+describe('trackMapPinClick', () => {
+    beforeEach(() => {
+        (window as unknown as { gtag: unknown }).gtag = vi.fn();
+    });
+
+    it('sends a map_pin_click event with the vet id and city', async () => {
+        const { trackMapPinClick } = await import('./analytics');
+        trackMapPinClick('Berlin-5', 'Berlin');
+        const gtag = (window as unknown as { gtag: ReturnType<typeof vi.fn> }).gtag;
+        expect(gtag).toHaveBeenCalledWith('event', 'map_pin_click', {
+            vet_id: 'Berlin-5',
+            city: 'Berlin',
+            event_category: 'map',
+            event_label: 'Berlin-5',
+        });
+    });
+});
