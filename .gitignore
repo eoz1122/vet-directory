@@ -33,3 +33,4 @@ web-app/README.md.resolved.0
 *.log
 npm-debug.log*
 confirmations.jsonl
+outreach/
