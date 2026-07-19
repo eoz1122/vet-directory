@@ -9,6 +9,7 @@ import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
 import { trackVetWebsiteClick } from '../utils/analytics';
 import { formatVerifiedLabel } from '../utils/verifiedLabel';
 import { parseCityContent, type Block } from '../utils/cityMarkdown';
+import { generateCitySummary } from '../utils/citySummary';
 import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
 
@@ -253,24 +254,31 @@ export default function CityVets() {
     // Prefer the real city name from the data ("Bad Homburg"); fall back to a titled slug.
     const capitalizedCity = cityVets[0]?.city || titleCaseSlug(cityKey);
 
-    let cityData = cityContent[cityKey];
+    let cityData: { title: string; description: string; content: string; nearestHub?: { city: string; count: number; distanceKm: number } | null } = cityContent[cityKey];
+
+    // Data-driven summary for EVERY city: hand-written prose (where it exists)
+    // keeps the top slot; the generator appends the factual layer that stays
+    // current as vets.json changes. Cities without manual content get the
+    // generated version alone (replaced 29 near-duplicate boilerplate intros).
+    const summary = cityVets.length > 0 ? generateCitySummary(capitalizedCity, cityVets, vets) : null;
+
+    if (cityData && summary) {
+        cityData = {
+            ...cityData,
+            content: cityData.content + '\n\n' + summary.content,
+            nearestHub: summary.nearestHub,
+        };
+    }
 
     if (!cityData) {
-        if (cityVets.length > 0) {
-            // GENERIC CONTENT GENERATOR - ENRICHED FOR SEO
+        if (cityVets.length > 0 && summary) {
             const vetNames = cityVets.slice(0, 3).map(v => v.practice_name).join(', ');
 
             cityData = {
                 title: `${cityVets.length} English-Speaking ${cityVets.length === 1 ? 'Vet' : 'Vets'} in ${capitalizedCity}`,
-                description: `Find ${cityVets.length} verified English-speaking ${cityVets.length === 1 ? 'veterinarian' : 'veterinarians'} in ${capitalizedCity}, including ${vetNames}. Browse our directory of local practices trusted by the international community.`,
-                content: `Living in ${capitalizedCity} as an expat comes with many joys, but finding medical care for your pet shouldn't be a challenge. 
-
-Our directory lists verified veterinary practices in ${capitalizedCity} where you can communicate clearly in English, including top-rated spots like ${vetNames}. We understand that medical terminology is difficult enough in your native language, let alone in German.
-
-**Why ${capitalizedCity} Pet Owners Use Our Directory:**
-- **Local Verification**: We track practices known to support international clients.
-- **Convenience**: Find care close to home in ${capitalizedCity}.
-- **Peace of Mind**: Ensure your pet gets the best care without language barriers.`
+                description: `Find ${cityVets.length} English-speaking ${cityVets.length === 1 ? 'veterinarian' : 'veterinarians'} in ${capitalizedCity}, including ${vetNames}. Community-checked English signals, contact details, and emergency info.`,
+                content: summary.content,
+                nearestHub: summary.nearestHub,
             };
         } else {
             return (
@@ -401,6 +409,17 @@ Our directory lists verified veterinary practices in ${capitalizedCity} where yo
                     <div className="prose prose-lg max-w-none text-primary/80 space-y-4">
                         {renderBlocks(parseCityContent(cityData.content).slice(0, 1))}
                     </div>
+
+                    {cityData.nearestHub && (
+                        <Link
+                            to={`/vets/${slugify(cityData.nearestHub.city)}`}
+                            className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 bg-white border border-primary/10 rounded-2xl text-sm font-bold text-primary hover:border-accent/40 hover:text-accent-ink transition-all"
+                        >
+                            <span>🗺️</span>
+                            <span>{cityData.nearestHub.count} more practices in {cityData.nearestHub.city} ({cityData.nearestHub.distanceKm} km away)</span>
+                            <span>→</span>
+                        </Link>
+                    )}
 
 
                 </section>
