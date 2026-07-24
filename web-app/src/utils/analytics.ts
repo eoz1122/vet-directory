@@ -1,6 +1,6 @@
 export const sendGAEvent = (
     eventName: string,
-    eventParams?: Record<string, any>
+    eventParams?: Record<string, unknown>
 ) => {
     if (typeof window.gtag === 'function') {
         window.gtag('event', eventName, eventParams);

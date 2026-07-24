@@ -92,6 +92,8 @@ describe('generateDistrictContent', () => {
         const c = generateDistrictContent('Tinyplace', 'Smalltown', unverified, unverified);
         expect(c.faqs[0].a.startsWith('Yes')).toBe(false);
         expect(c.faqs[0].a.toLowerCase()).toContain('community-sourced');
+        expect(c.intro.toLowerCase()).toContain('community-sourced');
+        expect(c.intro).not.toContain('where you can discuss diagnoses');
     });
 
     it('handles a single-vet district with singular grammar', () => {

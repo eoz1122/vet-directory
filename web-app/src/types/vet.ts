@@ -20,6 +20,10 @@ export interface Vet {
         emergency_services?: string;
     };
     community_status?: "Verified" | "Community Sourced" | "Pending" | "Unverified";
+    pending_community_confirmations?: Array<{
+        date: string;
+        source: "site_button";
+    }>;
 }
 
 export interface VetWithDistance extends Vet {

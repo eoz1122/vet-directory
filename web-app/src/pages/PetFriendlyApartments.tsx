@@ -1,258 +1,383 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import TableOfContents from '../components/TableOfContents';
-import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import RelatedPosts from '../components/RelatedPosts';
+import TableOfContents from '../components/TableOfContents';
 import { generateArticleSchema } from '../utils/schema';
 
-const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+const TITLE = 'Pet-Friendly Apartments Berlin & Germany: 2026 Guide';
+const DESCRIPTION = 'Find pet-friendly apartments in Berlin and Germany. Learn rental rights, landlord rules, pet resume tips, and the best districts for dog and cat owners.';
+const URL = 'https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany';
+const DATE_PUBLISHED = '2025-01-01';
+const DATE_MODIFIED = '2026-07-24';
+
+const ARTICLE_SCHEMA = generateArticleSchema(
+    TITLE,
+    DESCRIPTION,
+    URL,
+    DATE_PUBLISHED,
+    DATE_MODIFIED,
+);
+
+const FAQ_SCHEMA = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
         {
-            "@type": "Question",
-            "name": "How do I find a pet-friendly apartment in Germany?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Filter for 'Haustiere erlaubt' on ImmoScout24 and similar portals, but do not stop there: most listings simply say nothing about pets. Apply normally, disclose the pet honestly, and attach a short pet resume (photo, breed/size, liability insurance proof, previous landlord reference). Blanket pet bans in standard leases are invalid under a 2013 Federal Court ruling, so 'no pets' listings are often negotiable." }
+            '@type': 'Question',
+            name: 'How do I find a pet-friendly apartment in Berlin?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Use several search channels, keep a complete application file ready, respond quickly, and ask about the specific animal instead of relying only on a pet-friendly filter. A short factual pet profile can help a landlord assess the request.',
+            },
         },
         {
-            "@type": "Question",
-            "name": "Can a landlord ban pets in Germany?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Not with a blanket clause. Germany's Federal Court of Justice ruled in 2013 that general bans on dogs and cats in rental contracts are invalid. Landlords must assess each case individually and can only refuse with an objective reason. Small pets like hamsters, fish, and budgies never need permission." }
+            '@type': 'Question',
+            name: 'Can a German landlord ban every dog and cat?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'The Federal Court of Justice held in VIII ZR 168/12 that a pre-formulated lease clause categorically banning dogs and cats was invalid. The judgment does not create an automatic right to keep any animal. The lease, the animal, the property, affected neighbours, and the interests of both parties still matter.',
+            },
         },
         {
-            "@type": "Question",
-            "name": "Are pet-friendly apartments hard to find in Berlin?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Berlin is one of Germany's most pet-tolerant rental markets: dogs are a normal sight in cafes and on the U-Bahn, and districts like Prenzlauer Berg, Neukölln, Kreuzberg, and Friedrichshain are known for accepting pet owners. The bottleneck is Berlin's general housing shortage rather than pet policy, so a strong application with a pet resume matters more than hiding the animal." }
+            '@type': 'Question',
+            name: 'Do I need landlord consent for a dog or cat?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Read the exact lease clause and any individually negotiated agreement. If the lease requires consent, request it for the specific animal and get the answer in writing before relying on it. A tenant-advice service or lawyer can assess a disputed clause.',
+            },
         },
         {
-            "@type": "Question",
-            "name": "What should a pet clause in a German lease say?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Ideally written permission naming the specific animal ('one cat' or the dog's breed and size). Watch for monthly 'pet rent' surcharges: courts have increasingly ruled them unenforceable, though a moderately higher deposit within legal limits is allowed. Get any verbal promise in writing before signing." }
+            '@type': 'Question',
+            name: 'What belongs in a pet resume for a rental application?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Keep it short and factual: species, age, size, number of animals, a clear photo, training or routine information, any relevant liability-insurance evidence, and a previous landlord reference if one is genuinely available.',
+            },
         },
         {
-            "@type": "Question",
-            "name": "Should I tell my landlord about my cat?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Cats and dogs formally require permission, and an undisclosed pet discovered later puts you in breach of contract, a far weaker position than asking upfront. Since refusal requires an objective reason, an ordinary indoor cat is hard to refuse. Honesty plus a pet resume wins in most cases." }
-        }
-    ]
+            '@type': 'Question',
+            name: 'Which Berlin districts are most pet-friendly?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'There is no official district ranking for landlord acceptance. Compare each listing and lease individually, and choose a location based on your budget, commute, the animal, nearby green space, veterinary access, and applicable local dog rules.',
+            },
+        },
+    ],
 };
+
+const TABLE_OF_CONTENTS = [
+    { id: 'quick-answer', label: 'Quick answer' },
+    { id: 'berlin-search', label: 'How to search in Berlin' },
+    { id: 'legal-rights', label: 'What the BGH ruling means' },
+    { id: 'consent', label: 'Lease and consent checklist' },
+    { id: 'pet-resume', label: 'Build a pet resume' },
+    { id: 'location', label: 'Choose a practical location' },
+    { id: 'sources', label: 'Official sources' },
+];
+
+const SEARCH_STEPS = [
+    {
+        title: 'Prepare the standard housing file',
+        text: 'Keep your identification, income evidence, tenant self-disclosure, SCHUFA document where applicable, and any rent-payment reference ready. Share sensitive documents only through a channel you trust.',
+    },
+    {
+        title: 'Use several channels at once',
+        text: 'Check state-owned housing companies, cooperatives, private portals, neighbourhood networks, and personal contacts. Set alerts and respond quickly, but verify the advertiser before sending money or identity documents.',
+    },
+    {
+        title: 'Ask about the exact animal',
+        text: 'A generic pet filter is not a legal decision. State the species, number, size, and relevant routine clearly, then ask whether the lease or landlord requires consent for that specific animal.',
+    },
+    {
+        title: 'Keep the answer with the lease',
+        text: 'If consent is needed, get the answer in writing. Keep the listing, application, consent, lease, and handover report together so later conversations start from the same record.',
+    },
+];
+
+const PET_RESUME_ITEMS = [
+    'Species, breed or type, age, size, and number of animals.',
+    'A recent photo and a short description of the animal\'s normal home routine.',
+    'Training information that is true and relevant, without promising that an animal can never make noise or cause damage.',
+    'Applicable liability-insurance evidence, with the policy scope checked rather than assumed.',
+    'A previous landlord reference only when the landlord actually provided one.',
+    'A contact method and an offer to discuss reasonable, written conditions.',
+];
+
+const OFFICIAL_SOURCES = [
+    {
+        name: 'Federal Court judgment VIII ZR 168/12',
+        href: 'https://juris.bundesgerichtshof.de/cgi-bin/bgh_notp/document.py?Art=en&Datum=2013-3-20&Gericht=bgh&Sort=3&anz=14&nr=28367&pos=6',
+        note: 'The official judgment on a categorical dog-and-cat ban in a pre-formulated residential lease.',
+    },
+    {
+        name: 'German Civil Code section 535',
+        href: 'https://www.gesetze-im-internet.de/bgb/__535.html',
+        note: 'The statutory starting point for contractual use of rented property.',
+    },
+    {
+        name: 'Official Berlin apartment-search guidance',
+        href: 'https://willkommenszentrum.berlin.de/wohnen/wohnungssuche',
+        note: 'Current Berlin guidance on search channels, preparation, application documents, and the difficult housing market.',
+    },
+    {
+        name: 'Official Berlin rental-contract guidance',
+        href: 'https://willkommenszentrum.berlin.de/en/housing/rental-contract',
+        note: 'English guidance on leases, deposits, contract types, and tenant counselling.',
+    },
+];
 
 export default function PetFriendlyApartments() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Pet-Friendly Apartments in Germany: Rights & Berlin Guide (2026)</title>
-                <meta name="description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026." />
-                <meta name="keywords" content="Finding a pet-friendly apartment in Germany, German rental law pets 2026, dog-friendly neighborhoods Berlin, pet resume for landlords Germany, cat ownership rental laws Germany" />
-                <meta property="og:title" content="Pet-Friendly Apartments in Germany: Rights & Berlin Guide (2026)" />
-                <meta property="og:description" content="Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026." />
+                <title>{TITLE}</title>
+                <meta name="description" content={DESCRIPTION} />
+                <meta
+                    name="keywords"
+                    content="pet-friendly apartments Berlin, pet friendly apartments Germany, renting with pets Germany, German lease pets, landlord consent dog cat, pet resume apartment"
+                />
+                <meta property="og:title" content={TITLE} />
+                <meta property="og:description" content={DESCRIPTION} />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany" />
-                <script type="application/ld+json">
-                    {JSON.stringify(generateArticleSchema(
-                        "Pet-Friendly Apartments in Germany: Rights & Berlin Guide (2026)",
-                        "Apartment hunting with a dog or cat in Berlin, Hamburg, or Frankfurt? Learn your legal rights, how to build a “Pet Resume,” and which districts are truly pet-friendly in 2026.",
-                        "https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany",
-                        "2025-01-01"
-                    ))}
-                </script>
-                <script type="application/ld+json">
-                    {JSON.stringify(faqSchema)}
-                </script>
+                <meta property="og:url" content={URL} />
+                <link rel="canonical" href={URL} />
+                <script type="application/ld+json">{JSON.stringify(ARTICLE_SCHEMA)}</script>
+                <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
             </Helmet>
 
-            {/* Header */}
-            {/* Header */}
             <Header />
 
             <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
                 <div className="flex flex-col lg:flex-row gap-12">
                     <BlogSidebar />
 
-                    <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Expat Guide</span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
-                            🏠 Finding a Pet-Friendly Apartment in Berlin, Hamburg & Frankfurt (2026)
+                    <article className="lg:flex-1 min-w-0 max-w-4xl">
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
+                            Housing guide
+                        </span>
+                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-5 leading-tight">
+                            Finding Pet-Friendly Apartments in Berlin and Germany (2026)
                         </h1>
+                        <p className="text-sm text-primary/55 mb-8">
+                            Published 1 January 2025 · Reviewed 24 July 2026
+                        </p>
 
-                        <TableOfContents items={[
-                            { id: 'legal-rights', label: 'Your Legal Rights: What Landlords Can Do' },
-                            { id: 'pet-resume', label: 'The "Pet Resume": Your Secret Weapon' },
-                            { id: 'best-districts', label: 'Best Pet-Friendly Districts (2026)' },
-                            { id: 'strategy', label: 'How to Apply: The Strategy' }
-                        ]} />
+                        <TableOfContents items={TABLE_OF_CONTENTS} />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
-                            <p className="border-l-4 border-accent pl-6 py-2 italic bg-accent/5 rounded-r-lg text-xl">
-                                Let’s be honest: finding an apartment in Germany right now is brutal. Add a dog or a cat to the mix, and it can feel like you’re trying to win the lottery while wearing a blindfold.
+                            <p className="border-l-4 border-accent pl-6 py-3 bg-accent/5 rounded-r-xl text-xl mb-8">
+                                Berlin&apos;s official welcome centre describes the housing search as difficult and often lengthy. A pet adds another question, but the practical answer is not to hunt for a supposedly pet-friendly district. Build a complete application, read the lease, describe the specific animal, and put any required consent in writing.
                             </p>
 
-                            <p>
-                                Landlords ghost you. Viewing appointments disappear. And your perfect flat slips away the moment you mention a pet in your first email.
-                            </p>
-
-                            <p>
-                                But here’s the hobbyist’s secret: <strong>German rental law is actually more pet-friendly than most people think.</strong> Landlords can’t simply blanket-ban pets anymore. With the right strategy (and a bit of expat charm) you can find a home for your whole pack.
-                            </p>
-
-                            <hr className="my-8 border-primary/10" />
-
-                            <h2 id="legal-rights" className="text-2xl font-bold text-primary mt-10 mb-4 scroll-mt-24">Your Legal Rights: What Landlords Can (and Can’t) Do</h2>
-                            <div className="bg-white p-6 rounded-xl border border-primary/5 shadow-sm my-6 not-prose">
-                                <p className="mb-4">
-                                    In 2013, Germany’s Federal Court of Justice (<em>Bundesgerichtshof – BGH</em>) made a landmark ruling: general blanket bans on dogs and cats in rental contracts are invalid.
+                            <aside className="bg-white border border-primary/10 rounded-2xl p-6 my-8 not-prose">
+                                <p className="font-bold text-primary mb-2">Important legal limit</p>
+                                <p className="text-sm leading-relaxed text-primary/70">
+                                    This guide explains general German and Berlin sources. It is not individualized legal advice. Lease wording and facts matter. Use a tenant-advice service or qualified lawyer before acting on a disputed clause, refusal, warning, surcharge, or termination notice.
                                 </p>
+                            </aside>
 
-                                <h3 className="text-xl font-bold text-primary mt-6 mb-2">🐹 Small Pets (No Permission Needed)</h3>
-                                <p className="mb-4">
-                                    Hamsters, fish, birds, guinea pigs, and similar small animals are considered part of “normal use” of an apartment. <strong>You do not need permission to keep them.</strong>
-                                </p>
-
-                                <h3 className="text-xl font-bold text-primary mt-6 mb-2">🐕 Cats & Dogs (Permission Required, But...)</h3>
-                                <p className="mb-2">
-                                    Yes, you need written permission for dogs and cats.
-                                    However, a landlord must assess each case individually and cannot refuse without an <strong>objective, reasonable justification</strong>.
-                                </p>
-                                <p className="text-sm font-bold text-primary/70 uppercase tracking-widest mt-4 mb-2">Valid Reasons for Refusal:</p>
-                                <ul className="list-disc pl-5 space-y-1 mb-6 text-sm">
-                                    <li>A very large dog in a very small apartment</li>
-                                    <li>An excessive number of animals</li>
-                                    <li>Proven past issues (noise, damage) in the building</li>
-                                </ul>
-                                <p className="text-sm italics opacity-70">What doesn’t count: vague fears, stereotypes, or “I just don’t like dogs.”</p>
-                            </div>
-
-                            <div className="bg-accent/10 p-6 rounded-xl border-l-4 border-accent my-8 not-prose">
-                                <h3 className="text-lg font-bold text-primary mb-2">💸 The “Pet Rent” Trap</h3>
-                                <p className="text-sm text-primary/80 mb-4">Be careful here.</p>
-                                <p className="text-sm text-primary/80">
-                                    In recent years, German courts have increasingly ruled that monthly “pet rent” surcharges (e.g. +€15–€30 per month) are often unenforceable, since normal pet ownership is already covered by the base rent.
-                                </p>
-                                <p className="text-sm text-primary/80 mt-2 font-bold">
-                                    Landlords MAY, however:
-                                </p>
-                                <ul className="list-disc pl-5 text-sm text-primary/80 mt-1">
-                                    <li>Ask for a higher security deposit (within legal limits)</li>
-                                    <li>Set clear conditions for keeping the pet</li>
-                                </ul>
-                            </div>
-
-                            <h2 id="pet-resume" className="text-2xl font-bold text-primary mt-10 mb-4 scroll-mt-24">The “Pet Resume”: Your Secret Weapon</h2>
-                            <p>
-                                In a market where 40–60 people apply for one apartment, you need to present yourself as the <strong>Responsible Expat™</strong>, not a risk.
-                            </p>
-                            <p>Create a simple one-page PDF and attach it once interest is shown.</p>
-
-                            <div className="bg-primary/5 p-8 rounded-xl my-8 not-prose">
-                                <h3 className="text-lg font-bold text-primary mt-0 mb-6 uppercase tracking-widest text-center">What to Include</h3>
-                                <ul className="space-y-6">
-                                    <li className="flex items-start gap-4">
-                                        <div className="bg-white p-3 rounded-full shadow-sm text-2xl">📸</div>
-                                        <div>
-                                            <strong className="block text-primary text-lg">A high-quality photo</strong>
-                                            <p className="text-sm text-primary/70">Your pet looking calm, clean, and non-chaotic. No muddy park photos.</p>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start gap-4">
-                                        <div className="bg-white p-3 rounded-full shadow-sm text-2xl">⭐</div>
-                                        <div>
-                                            <strong className="block text-primary text-lg">The gold standard: a landlord reference</strong>
-                                            <p className="text-sm text-primary/70">A short note like: <em>“Tenant lived here for 2 years with a dog. No damage. No noise complaints.”</em> This is often more convincing than income statements.</p>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start gap-4">
-                                        <div className="bg-white p-3 rounded-full shadow-sm text-2xl">🛡️</div>
-                                        <div>
-                                            <strong className="block text-primary text-lg">Insurance proof</strong>
-                                            <p className="text-sm text-primary/70">Attach your <em>Hundehaftpflichtversicherung</em> certificate. It reassures landlords that any damage is covered by insurance, not your wallet.</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <h2 id="best-districts" className="text-2xl font-bold text-primary mt-12 mb-6 scroll-mt-24">Best Pet-Friendly Districts (2025–2026)</h2>
-
-                            <div className="grid md:grid-cols-3 gap-4 mb-8 not-prose">
-                                <div className="bg-white border border-primary/10 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                                    <h3 className="font-bold text-accent mb-3 text-lg">Berlin 🐕</h3>
-                                    <ul className="text-sm space-y-3 text-primary/80">
-                                        <li><strong>Prenzlauer Berg:</strong> Stroller capital, dog-friendly cafés everywhere</li>
-                                        <li><strong>Neukölln:</strong> Direct access to Tempelhofer Feld’s fenced dog areas</li>
-                                        <li><strong>Grunewald:</strong> Ideal for nature-loving, off-leash dogs</li>
-                                    </ul>
-                                </div>
-                                <div className="bg-white border border-primary/10 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                                    <h3 className="font-bold text-accent mb-3 text-lg">Hamburg ⚓</h3>
-                                    <ul className="text-sm space-y-3 text-primary/80">
-                                        <li><strong>Altona:</strong> Close to Elbe beaches like Falkensteiner Ufer</li>
-                                        <li><strong>Eimsbüttel:</strong> Green, quiet, and park-heavy</li>
-                                    </ul>
-                                </div>
-                                <div className="bg-white border border-primary/10 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                                    <h3 className="font-bold text-accent mb-3 text-lg">Frankfurt 🏙️</h3>
-                                    <ul className="text-sm space-y-3 text-primary/80">
-                                        <li><strong>Nordend:</strong> Community-oriented, tree-lined streets</li>
-                                        <li><strong>Sachsenhausen:</strong> Long riverside walks along the Main</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <p className="text-xs text-center opacity-60 italic">(Pet-friendly doesn’t mean guaranteed, but these areas are known to be more accepting.)</p>
-
-                            <h2 id="strategy" className="text-2xl font-bold text-primary mt-10 mb-4 scroll-mt-24">The Hobbyist Strategy: How to Apply</h2>
-                            <ol className="list-decimal pl-5 space-y-2 mb-6 font-medium">
-                                <li>Don’t hide the pet. <span className="font-normal opacity-80">Sneaking one in can justify termination later.</span></li>
-                                <li>Lead with the resume, not the request.</li>
-                                <li>Offer reassurance, not arguments.</li>
-                            </ol>
-
-                            <p className="mb-4">If a landlord hesitates, try:</p>
-                            <blockquote className="border-l-4 border-accent pl-4 italic bg-white py-4 pr-4 rounded-r-lg shadow-sm text-primary/80">
-                                “I’m happy to bring my dog to the viewing so you can see how calm they are.”
-                            </blockquote>
-
-                            <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 my-8 not-prose">
-                                <h3 className="text-lg font-bold text-primary mb-2">🌳 Bonus Tip: Check Dog Zones Early</h3>
-                                <p className="text-sm text-primary/80 mb-2">Some parks have strict no-dogs or leash-only rules. Before committing to a flat, check:</p>
-                                <ul className="list-disc pl-5 text-sm text-primary/80">
-                                    <li>“Hundeauslaufzonen” (off-leash areas)</li>
-                                    <li>Local district rules</li>
-                                    <li>Apps like <em>Dog’s Places</em> or city park maps</li>
-                                </ul>
-                            </div>
-
-                            <div className="bg-primary text-secondary p-8 rounded-2xl my-16 relative overflow-hidden not-prose">
-                                <div className="relative z-10">
-                                    <h3 className="text-3xl font-bold text-accent mb-4 mt-0">🏠 A Note from the Sofa</h3>
-                                    <p className="text-lg leading-relaxed opacity-90 mb-6">
-                                        I know the search is exhausting. I’ve spent those same nights refreshing ImmoScout24 with a cat asleep on my feet, wondering if we’d ever find a place. But hang in there. Once you find that pet-friendly landlord, life in Germany becomes incredible for animals.
+                            <h2 id="quick-answer" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24">
+                                The quick answer
+                            </h2>
+                            <div className="grid md:grid-cols-3 gap-4 my-8 not-prose">
+                                <section className="bg-white p-6 rounded-2xl border border-primary/10">
+                                    <p className="text-xs font-black uppercase tracking-widest text-accent-ink mb-2">Search</p>
+                                    <h3 className="text-lg font-bold text-primary mb-3">Do not rely on one filter</h3>
+                                    <p className="text-sm leading-relaxed text-primary/70">
+                                        Search widely and ask about the exact animal. Listings that say nothing about pets still need a lease-level answer.
                                     </p>
+                                </section>
+                                <section className="bg-white p-6 rounded-2xl border border-primary/10">
+                                    <p className="text-xs font-black uppercase tracking-widest text-accent-ink mb-2">Law</p>
+                                    <h3 className="text-lg font-bold text-primary mb-3">No automatic yes or no</h3>
+                                    <p className="text-sm leading-relaxed text-primary/70">
+                                        The BGH rejected a categorical standard dog-and-cat ban. It did not approve every animal in every home.
+                                    </p>
+                                </section>
+                                <section className="bg-white p-6 rounded-2xl border border-primary/10">
+                                    <p className="text-xs font-black uppercase tracking-widest text-accent-ink mb-2">Record</p>
+                                    <h3 className="text-lg font-bold text-primary mb-3">Put consent in writing</h3>
+                                    <p className="text-sm leading-relaxed text-primary/70">
+                                        If the lease requires consent, identify the animal and keep the written answer with your contract.
+                                    </p>
+                                </section>
+                            </div>
 
-                                    <div className="bg-white/10 p-6 rounded-xl border border-white/10 flex flex-col md:flex-row items-center gap-6">
-                                        <div className="flex-1">
-                                            <h4 className="font-bold text-lg mb-1 text-white">Settled in and need a check-up?</h4>
-                                            <p className="text-sm opacity-80 text-white/80">Check our Directory of English-Speaking Vets to find a friendly face in your new neighborhood.</p>
-                                        </div>
-                                        <Link to="/" className="whitespace-nowrap px-6 py-3 bg-accent text-primary rounded-xl font-bold hover:bg-white transition-colors shadow-lg">
-                                            Find a Vet Near Me
-                                        </Link>
-                                    </div>
-                                </div>
+                            <h2 id="berlin-search" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                How to find a pet-friendly apartment in Berlin
+                            </h2>
+                            <p>
+                                The{' '}
+                                <a
+                                    href="https://willkommenszentrum.berlin.de/wohnen/wohnungssuche"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent-ink font-bold hover:underline"
+                                >
+                                    Official Berlin apartment-search guidance
+                                </a>{' '}
+                                recommends complete application documents, a short introduction, several search channels, alerts, quick responses, and realistic location criteria. It also says the search can take weeks or months because affordable supply is limited.
+                            </p>
+                            <div className="grid md:grid-cols-2 gap-5 my-8 not-prose">
+                                {SEARCH_STEPS.map((step, index) => (
+                                    <section key={step.title} className="bg-white border border-primary/10 rounded-2xl p-6">
+                                        <p className="text-xs font-black uppercase tracking-widest text-accent-ink mb-2">
+                                            Step {index + 1}
+                                        </p>
+                                        <h3 className="text-lg font-bold text-primary mb-3">{step.title}</h3>
+                                        <p className="text-sm leading-relaxed text-primary/70">{step.text}</p>
+                                    </section>
+                                ))}
+                            </div>
+
+                            <h2 id="legal-rights" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                What the German Federal Court ruling actually means
+                            </h2>
+                            <p>
+                                In{' '}
+                                <a
+                                    href="https://juris.bundesgerichtshof.de/cgi-bin/bgh_notp/document.py?Art=en&Datum=2013-3-20&Gericht=bgh&Sort=3&anz=14&nr=28367&pos=6"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent-ink font-bold hover:underline"
+                                >
+                                    Federal Court judgment VIII ZR 168/12
+                                </a>
+                                , the Bundesgerichtshof held that a pre-formulated residential lease clause categorically banning dogs and cats unfairly disadvantaged the tenant and was invalid.
+                            </p>
+                            <div className="bg-primary text-secondary rounded-2xl p-7 my-8 not-prose">
+                                <h3 className="text-xl font-bold text-accent mb-3">The limit matters</h3>
+                                <p className="text-sm leading-relaxed text-secondary/85 mb-4">
+                                    The ruling does not create an automatic right to keep any dog or cat. The court required an individual balancing of the relevant circumstances and interests.
+                                </p>
+                                <ul className="space-y-2 text-sm text-secondary/85">
+                                    <li>The exact lease wording and whether a clause is standard or individually negotiated.</li>
+                                    <li>The species, number, size, and behaviour of the animals.</li>
+                                    <li>The apartment, building, neighbours, and legitimate interests of both parties.</li>
+                                    <li>Any concrete disturbance, damage, safety issue, or special personal circumstance.</li>
+                                </ul>
+                            </div>
+                            <p>
+                                The statutory starting point is{' '}
+                                <a
+                                    href="https://www.gesetze-im-internet.de/bgb/__535.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent-ink font-bold hover:underline"
+                                >
+                                    German Civil Code section 535
+                                </a>
+                                , which concerns the contractually agreed use of the rented property. A short article cannot determine how that rule and the judgment apply to a particular lease.
+                            </p>
+
+                            <h2 id="consent" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Lease and landlord-consent checklist
+                            </h2>
+                            <ol>
+                                <li><strong>Read the exact lease clause.</strong> Do not rely on a portal label, agent comment, or summary.</li>
+                                <li><strong>Identify the specific animal.</strong> A request should state species, number, size, and any relevant facts.</li>
+                                <li><strong>Ask what document is required.</strong> The contract may distinguish consent, notification, ordinary small animals, and other animals.</li>
+                                <li><strong>Get the answer in writing.</strong> Keep it with the lease instead of relying on a verbal promise.</li>
+                                <li><strong>Do not accept extra terms blindly.</strong> Have an unclear pet surcharge, deposit, broad liability clause, or revocable consent reviewed before signing.</li>
+                                <li><strong>Get advice before a dispute escalates.</strong> A warning or termination notice needs case-specific help, not a generic web answer.</li>
+                            </ol>
+                            <p>
+                                Berlin&apos;s{' '}
+                                <a
+                                    href="https://willkommenszentrum.berlin.de/en/housing/rental-contract"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-accent-ink font-bold hover:underline"
+                                >
+                                    Official Berlin rental-contract guidance
+                                </a>{' '}
+                                recommends written contracts and explains that the normal residential security deposit cannot exceed three months&apos; rent excluding service charges. It also points readers to multilingual counselling.
+                            </p>
+
+                            <h2 id="pet-resume" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Build a factual pet resume
+                            </h2>
+                            <p>
+                                A pet resume is not a legal requirement and does not guarantee approval. Its purpose is narrower: help the landlord assess the actual request instead of imagining an unknown risk.
+                            </p>
+                            <div className="bg-white border border-primary/10 rounded-2xl p-7 my-8 not-prose">
+                                <h3 className="text-xl font-bold text-primary mb-4">Keep it to one page</h3>
+                                <ul className="space-y-3 text-sm leading-relaxed text-primary/70">
+                                    {PET_RESUME_ITEMS.map((item) => (
+                                        <li key={item} className="flex items-start gap-3">
+                                            <span aria-hidden="true" className="text-accent-ink font-bold">✓</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <p>
+                                Avoid absolute promises such as “never barks,” “cannot damage anything,” or “insurance covers everything.” Accurate, limited evidence is more credible and less likely to conflict with the lease or policy later.
+                            </p>
+
+                            <h2 id="location" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Choose a practical location, not a pet-friendly label
+                            </h2>
+                            <p>
+                                No official source ranks Berlin districts by landlord acceptance of pets. Treat claims that a neighbourhood is automatically pet-friendly as marketing, not permission.
+                            </p>
+                            <ul>
+                                <li>Set a realistic rent, commute, size, and search radius before adding pet needs.</li>
+                                <li>Check nearby walking space and the rules that apply to your dog, rather than assuming every green area is off-leash.</li>
+                                <li>Map routine veterinary care and an emergency option before signing.</li>
+                                <li>Assess stairs, lifts, flooring, noise transmission, balconies, and shared areas for the specific animal.</li>
+                                <li>Read the listing and lease individually even when another tenant in the building has a pet.</li>
+                            </ul>
+
+                            <div className="bg-primary text-secondary rounded-2xl p-8 my-12 not-prose">
+                                <h3 className="text-2xl font-bold text-accent mb-3">Planning veterinary access in Berlin?</h3>
+                                <p className="text-secondary/80 mb-6">
+                                    Compare community-listed practices by district and confirm English availability when booking.
+                                </p>
+                                <Link
+                                    to="/vets/berlin"
+                                    className="inline-flex min-h-12 items-center justify-center px-6 py-3 bg-accent text-primary rounded-xl font-bold hover:bg-white transition-colors"
+                                >
+                                    Browse English-speaking vets in Berlin
+                                </Link>
+                            </div>
+
+                            <h2 id="sources" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Official sources
+                            </h2>
+                            <div className="space-y-4 not-prose">
+                                {OFFICIAL_SOURCES.map((source) => (
+                                    <a
+                                        key={source.href}
+                                        href={source.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block bg-white border border-primary/10 rounded-2xl p-6 hover:border-accent/40 transition-colors"
+                                    >
+                                        <span className="font-bold text-accent-ink">{source.name}</span>
+                                        <span className="block text-sm text-primary/65 mt-2">{source.note}</span>
+                                    </a>
+                                ))}
                             </div>
                         </div>
 
-                        <h2 className="text-2xl font-bold text-primary mt-16 mb-6">FAQ: Pet-Friendly Renting in Germany</h2>
+                        <h2 className="text-2xl font-bold text-primary mt-16 mb-6">
+                            FAQ: Pet-friendly renting in Germany
+                        </h2>
                         <div className="space-y-4 my-8 not-prose">
-                            {faqSchema.mainEntity.map((q) => (
-                                <details key={q.name} className="bg-white rounded-xl border border-primary/5 shadow-sm p-5 group">
+                            {FAQ_SCHEMA.mainEntity.map((question) => (
+                                <details key={question.name} className="bg-white rounded-xl border border-primary/5 shadow-sm p-5 group">
                                     <summary className="font-bold text-primary cursor-pointer list-none flex justify-between items-center gap-4">
-                                        {q.name}
+                                        {question.name}
                                         <span className="text-accent transition-transform group-open:rotate-45 shrink-0">+</span>
                                     </summary>
-                                    <p className="text-primary/70 text-sm mt-3 leading-relaxed">{q.acceptedAnswer.text}</p>
+                                    <p className="text-primary/70 text-sm mt-3 leading-relaxed">
+                                        {question.acceptedAnswer.text}
+                                    </p>
                                 </details>
                             ))}
                         </div>
@@ -262,7 +387,6 @@ export default function PetFriendlyApartments() {
                 </div>
             </main>
 
-            {/* Footer */}
             <Footer />
         </div>
     );

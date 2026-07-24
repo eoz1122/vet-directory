@@ -38,7 +38,14 @@ export function generateListingSchema(vets: Vet[], title: string, description: s
     };
 }
 
-export function generateArticleSchema(title: string, description: string, url: string, datePublished: string, imageUrl: string = "https://englishspeakinggermany.online/logo.png") {
+export function generateArticleSchema(
+    title: string,
+    description: string,
+    url: string,
+    datePublished: string,
+    dateModified: string = datePublished,
+    imageUrl: string = "https://englishspeakinggermany.online/logo.png",
+) {
     return {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -59,7 +66,7 @@ export function generateArticleSchema(title: string, description: string, url: s
             }
         },
         "datePublished": datePublished,
-        "dateModified": new Date().toISOString().split('T')[0],
+        "dateModified": dateModified,
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": url

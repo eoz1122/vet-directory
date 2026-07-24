@@ -11,13 +11,60 @@ import { formatVerifiedLabel } from '../utils/verifiedLabel';
 import { generateDistrictContent } from '../utils/districtContent';
 import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
+import ReportIssueLink from '../components/vet/ReportIssueLink';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
+const isVetVerified = (vet: Vet): boolean =>
+    vet.community_status === 'Verified' || vet.verification?.status === 'Verified';
 
 interface DistrictContent {
     title: string;
     description: string;
     content: string;
+}
+
+const hasPhysicalAddress = (vet: Vet): boolean =>
+    Boolean(vet.address) &&
+    vet.address !== 'Unknown' &&
+    !vet.address.includes('Mobile Service') &&
+    !vet.address.includes('Home Visits');
+
+function generateDistrictCollectionSchema(
+    districtVets: Vet[],
+    name: string,
+    description: string,
+    url: string,
+) {
+    if (districtVets.length === 0) return null;
+
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name,
+        description,
+        url,
+        mainEntity: {
+            '@type': 'ItemList',
+            numberOfItems: districtVets.length,
+            itemListElement: districtVets.map((vet, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                item: {
+                    '@type': 'VeterinaryCare',
+                    name: vet.practice_name,
+                    ...(hasPhysicalAddress(vet) ? {
+                        address: {
+                            '@type': 'PostalAddress',
+                            streetAddress: vet.address,
+                            addressLocality: vet.city,
+                            addressCountry: 'DE',
+                        },
+                    } : {}),
+                    ...(vet.contact?.website ? { url: vet.contact.website } : {}),
+                },
+            })),
+        },
+    };
 }
 
 const DISTRICT_CONTENT: Record<string, DistrictContent> = {
@@ -206,7 +253,7 @@ export default function DistrictVets() {
         slugify(vet.district) === districtSlug &&
         ((vet.practice_name || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
             (vet.address || "").toLowerCase().includes(searchTerm.toLowerCase())) &&
-        (!showVerifiedOnly || vet.community_status === 'Verified') &&
+        (!showVerifiedOnly || isVetVerified(vet)) &&
         (!showMobileOnly || (vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown')))
     );
 
@@ -217,16 +264,29 @@ export default function DistrictVets() {
 
     const vetNames = districtVetsAll.slice(0, 3).map(v => v.practice_name).join(', ');
     const count = districtVetsAll.length;
+    const verifiedCount = districtVetsAll.filter(isVetVerified).length;
 
-    const content = DISTRICT_CONTENT[districtSpace] || {
+    const listingContent: DistrictContent = {
         title: count > 0
             ? `${count} English-Speaking ${count === 1 ? 'Vet' : 'Vets'} in ${districtDisplay}, ${cityDisplay}`
             : `English-Speaking Vets in ${districtDisplay}, ${cityDisplay}`,
         description: count > 0
-            ? `Find ${count} verified English-speaking ${count === 1 ? 'veterinarian' : 'veterinarians'} in ${districtDisplay}, ${cityDisplay}, including ${vetNames}. Browse reviews, check services, and book appointments.`
-            : `Find verified English-speaking veterinarians in ${districtDisplay}, ${cityDisplay}. Browse reviews, check services, and book appointments with trusted local practices.`,
+            ? verifiedCount === count
+                ? `Find ${count} verified English-speaking ${count === 1 ? 'veterinarian' : 'veterinarians'} in ${districtDisplay}, ${cityDisplay}, including ${vetNames}. Browse services and contact practices.`
+                : `Find ${count} community-listed ${count === 1 ? 'practice' : 'practices'} in ${districtDisplay}, ${cityDisplay}; ${verifiedCount} ${verifiedCount === 1 ? 'is' : 'are'} currently marked Verified. Confirm English availability when booking.`
+            : `No English-speaking veterinary practice is currently listed in ${districtDisplay}, ${cityDisplay}. Browse nearby districts and confirm English availability when booking.`,
         content: generated.intro,
     };
+    const content = count > 0
+        ? listingContent
+        : DISTRICT_CONTENT[districtSpace] || listingContent;
+    const canonicalUrl = `https://englishspeakinggermany.online/vets/${cityKey}/${districtSlug}`;
+    const collectionLd = generateDistrictCollectionSchema(
+        districtVetsAll,
+        content.title,
+        content.description,
+        canonicalUrl,
+    );
 
     // JSON-LD Structured Data
     const breadcrumbLd = {
@@ -249,7 +309,7 @@ export default function DistrictVets() {
                 "@type": "ListItem",
                 "position": 3,
                 "name": districtDisplay,
-                "item": `https://englishspeakinggermany.online/vets/${cityKey}/${districtSlug}`
+                "item": canonicalUrl
             }
         ]
     };
@@ -269,17 +329,20 @@ export default function DistrictVets() {
             <Helmet>
                 <title>{content.title}</title>
                 <meta name="description" content={content.description} />
-                <link rel="canonical" href={`https://englishspeakinggermany.online/vets/${cityKey}/${districtSlug}`} />
+                <link rel="canonical" href={canonicalUrl} />
                 {districtVets.length === 0 && <meta name="robots" content="noindex" />}
                 <meta property="og:title" content={`${content.title} | EnglishSpeakingVets`} />
                 <meta property="og:description" content={content.description} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content={`https://englishspeakinggermany.online/vets/${cityKey}/${districtSlug}`} />
+                <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`${content.title} | EnglishSpeakingVets`} />
                 <meta name="twitter:description" content={content.description} />
                 <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
+                {collectionLd && (
+                    <script type="application/ld+json">{JSON.stringify(collectionLd)}</script>
+                )}
                 <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
             </Helmet>
 
@@ -343,7 +406,7 @@ export default function DistrictVets() {
 
                 <section>
                     <h2 className="text-2xl font-bold text-primary mb-6">
-                        {districtVets.length} Verified Practices in {districtDisplay}
+                        {districtVets.length} {districtVets.length === 1 ? 'Practice' : 'Practices'} Listed in {districtDisplay}
                     </h2>
 
                     {districtVets.length > 0 ? (
@@ -371,14 +434,21 @@ export default function DistrictVets() {
                                         </div>
                                         <div className="flex flex-col items-end gap-2">
                                             <div className="relative group/tooltip z-20">
-                                                <div className="px-3 py-1 bg-accent/20 text-primary text-[10px] font-black uppercase tracking-tighter rounded-xl border border-accent/20 flex items-center gap-1.5 shadow-sm cursor-help">
-                                                    <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></div>
-                                                    Verified
+                                                <div className={`px-3 py-1 text-[10px] font-black uppercase tracking-tighter rounded-xl border flex items-center gap-1.5 shadow-sm cursor-help ${isVetVerified(vet)
+                                                    ? 'bg-accent/20 text-primary border-accent/20'
+                                                    : 'bg-secondary text-primary/70 border-primary/10'
+                                                    }`}>
+                                                    <div className={`w-1.5 h-1.5 rounded-full ${isVetVerified(vet) ? 'bg-accent' : 'bg-primary/30'}`}></div>
+                                                    {isVetVerified(vet) ? 'Verified' : 'Community Listed'}
                                                 </div>
                                                 <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-secondary border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
                                                     <p className="text-[11px] leading-relaxed font-medium text-secondary/90 normal-case tracking-normal">
-                                                        <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">Community Verified</span>
-                                                        We analyze thousands of patient reviews to identify "English signals"—confirming that other international pet owners successfully communicated in English.
+                                                        <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">
+                                                            {isVetVerified(vet) ? 'Community Verified' : 'Confirmation Needed'}
+                                                        </span>
+                                                        {isVetVerified(vet)
+                                                            ? 'Community members have confirmed English availability. Confirm again when booking because staff availability can change.'
+                                                            : 'This is a community-sourced listing. English availability has not yet been confirmed through our community process.'}
                                                     </p>
                                                     <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-primary border-b border-r border-white/10 rotate-45"></div>
                                                 </div>
@@ -451,15 +521,19 @@ export default function DistrictVets() {
 
                                     <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
                                         <span className="text-[10px] text-gray-400">
-                                            Verified: {formatVerifiedLabel(vet.verification?.last_scanned)}
+                                            {isVetVerified(vet)
+                                                ? `Verified: ${formatVerifiedLabel(vet.verification?.last_scanned)}`
+                                                : 'English availability: confirm when booking'}
                                         </span>
-                                        <Link
-                                            to={`/contact?topic=report_issue&vetId=${vet.id}&vetName=${encodeURIComponent(vet.practice_name)}&reason=Data%20Incorrect`}
+                                        <ReportIssueLink
+                                            vetId={vet.id}
+                                            vetName={vet.practice_name}
+                                            reason="Data Incorrect"
                                             className="text-gray-300 hover:text-red-400 transition-colors flex items-center gap-1 group/report"
                                         >
                                             <span className="text-[9px] opacity-0 group-hover/report:opacity-100 transition-opacity">Report Issue</span>
                                             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                                        </Link>
+                                        </ReportIssueLink>
                                     </div>
                                 </article>
                             ))}

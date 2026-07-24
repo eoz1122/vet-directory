@@ -1,8 +1,35 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
+
+const cspReportOnly = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'self'",
+  "form-action 'self'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://maps.googleapis.com https://maps.gstatic.com",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "img-src 'self' data: blob: https://maps.gstatic.com https://maps.googleapis.com https://*.googleapis.com https://*.googleusercontent.com https://www.google.com https://www.google-analytics.com",
+  "font-src 'self' data: https://fonts.gstatic.com",
+  "connect-src 'self' ws://localhost:* http://localhost:5000 https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://maps.googleapis.com https://*.googleapis.com",
+  "frame-src 'self' https://www.google.com",
+  "worker-src 'self' blob:",
+  "manifest-src 'self'",
+  "report-uri /api/csp-report",
+].join('; ')
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    headers: {
+      'Content-Security-Policy-Report-Only': cspReportOnly,
+    },
+    proxy: {
+      '/api': {
+        target: process.env.VITE_API_PROXY_TARGET || 'http://localhost:5000',
+      },
+    },
+  },
   build: {
     rollupOptions: {
       output: {
@@ -33,4 +60,4 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
   }
-} as any)
+})

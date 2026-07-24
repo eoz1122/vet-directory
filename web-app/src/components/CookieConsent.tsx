@@ -1,8 +1,11 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useId } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function CookieConsent() {
-    const [isVisible, setIsVisible] = useState(false);
+    const titleId = useId();
+    const [isVisible, setIsVisible] = useState(
+        () => localStorage.getItem('cookie-consent') === null
+    );
 
     const enableGA = useCallback(() => {
         if (typeof window.gtag === 'function') {
@@ -13,11 +16,8 @@ export default function CookieConsent() {
     }, []);
 
     useEffect(() => {
-        // Check if user has already made a choice
         const consent = localStorage.getItem('cookie-consent');
-        if (!consent) {
-            setIsVisible(true);
-        } else if (consent === 'accepted') {
+        if (consent === 'accepted') {
             enableGA();
         }
     }, [enableGA]);
@@ -41,11 +41,15 @@ export default function CookieConsent() {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6 animate-in fade-in slide-in-from-bottom-10 duration-500">
+        <div
+            role="region"
+            aria-labelledby={titleId}
+            className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6 animate-in fade-in slide-in-from-bottom-10 duration-500"
+        >
             <div className="max-w-4xl mx-auto bg-primary/95 backdrop-blur-md text-secondary p-6 md:p-8 rounded-2xl shadow-2xl border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex-1">
-                    <h3 className="text-xl font-bold text-accent mb-2 flex items-center gap-2">
-                        <span>🍪</span> Cookie Settings
+                    <h3 id={titleId} className="text-xl font-bold text-accent mb-2 flex items-center gap-2">
+                        <span aria-hidden="true">🍪</span> Cookie Settings
                     </h3>
                     <p className="text-sm opacity-90 leading-relaxed">
                         We use cookies to understand how you find our vets and to improve your experience.
@@ -63,7 +67,7 @@ export default function CookieConsent() {
                     </button>
                     <button
                         onClick={handleAccept}
-                        className="flex-1 md:flex-none px-8 py-3 text-sm font-bold rounded-xl bg-accent text-primary hover:bg-white transition-all shadow-lg hover:shadow-accent/20 active:scale-95"
+                        className="flex-1 md:flex-none px-8 py-3 text-sm font-bold rounded-xl bg-accent-ink text-white hover:bg-white hover:text-primary transition-all shadow-lg hover:shadow-accent/20 active:scale-95"
                     >
                         Accept All
                     </button>

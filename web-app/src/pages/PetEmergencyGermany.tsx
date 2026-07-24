@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { trackAffiliateClick } from '../utils/analytics';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -9,26 +8,65 @@ import BlogSidebar from '../components/BlogSidebar';
 import GuideDisclaimer from '../components/GuideDisclaimer';
 import { generateArticleSchema } from '../utils/schema';
 
+const ARTICLE_TITLE = 'Emergency Vet Germany: Night & Weekend Help (2026)';
+const ARTICLE_DESCRIPTION = 'Find an emergency vet in Germany at night or on weekends. Use verified city services, call before travel, check warning signs, and understand official GOT fees.';
+const ARTICLE_URL = 'https://englishspeakinggermany.online/guides/pet-emergency-germany';
+const DATE_PUBLISHED = '2025-01-01';
+const DATE_MODIFIED = '2026-07-24';
+
+const articleSchema = generateArticleSchema(
+    ARTICLE_TITLE,
+    ARTICLE_DESCRIPTION,
+    ARTICLE_URL,
+    DATE_PUBLISHED,
+    DATE_MODIFIED,
+);
+
+const emergencySigns = [
+    'Loss of consciousness or collapse',
+    'Difficulty breathing',
+    'Heavy or uncontrolled bleeding',
+    'Very pale mucous membranes',
+    'Seizures',
+    'Difficulty urinating',
+    'Persistent bloody diarrhoea or vomiting with increasing weakness',
+    'Sudden paralysis of the legs',
+    'Eye injuries',
+    'Swallowed foreign objects or toxins',
+    'Scalds, burns, heatstroke, or a serious traffic accident',
+];
+
+const preparationItems = [
+    'Save your regular vet phone number and ask which service covers nights and weekends.',
+    'Keep a secure carrier or lead where you can reach it quickly.',
+    'Save your pet insurance details, medication list, and important medical records.',
+    'Ask the receiving practice which payment methods it accepts.',
+];
+
+const tableOfContents = [
+    { id: 'find-help', label: 'Find night or weekend help' },
+    { id: 'warning-signs', label: 'Emergency warning signs' },
+    { id: 'call-first', label: 'Call before travel' },
+    { id: 'fees', label: 'Official GOT emergency fees' },
+    { id: 'same-day', label: 'Same-day appointments' },
+    { id: 'prepare', label: 'Prepare before an emergency' },
+];
+
 export default function PetEmergencyGermany() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Pet Emergency in Germany: 24/7 Vet Care Guide | EnglishSpeakingVets</title>
-                <meta name="description" content="Complete guide to pet emergencies in Germany: Find 24/7 emergency vets, understand costs, learn when to go, and get emergency numbers. Berlin, Hamburg, Munich, Frankfurt, Stuttgart." />
-                <meta name="keywords" content="emergency vet Germany, 24/7 veterinary care, pet emergency Berlin, Hamburg emergency vet, Munich emergency clinic, pet poison control Germany" />
-                <meta property="og:title" content="Pet Emergency in Germany: 24/7 Vet Care Guide" />
-                <meta property="og:description" content="Complete guide to pet emergencies in Germany: Find 24/7 emergency vets, understand costs, learn when to go, and get emergency numbers. Berlin, Hamburg, Munich, Frankfurt, Stuttgart." />
+                <title>{ARTICLE_TITLE}</title>
+                <meta name="description" content={ARTICLE_DESCRIPTION} />
+                <meta name="keywords" content="emergency vet Germany, night vet Germany, weekend vet Germany, veterinary duty service Germany, Tierarzt Notdienst" />
+                <meta property="og:title" content={ARTICLE_TITLE} />
+                <meta property="og:description" content={ARTICLE_DESCRIPTION} />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/guides/pet-emergency-germany" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/guides/pet-emergency-germany" />
+                <meta property="og:url" content={ARTICLE_URL} />
+                <link rel="canonical" href={ARTICLE_URL} />
                 <script type="application/ld+json">
-                    {JSON.stringify(generateArticleSchema(
-                        "Pet Emergency in Germany: 24/7 Vet Care Guide",
-                        "Complete guide to pet emergencies in Germany: Find 24/7 emergency vets, understand costs, learn when to go, and get emergency numbers. Berlin, Hamburg, Munich, Frankfurt, Stuttgart.",
-                        "https://englishspeakinggermany.online/guides/pet-emergency-germany",
-                        "2025-01-01"
-                    ))}
+                    {JSON.stringify(articleSchema)}
                 </script>
             </Helmet>
 
@@ -39,211 +77,202 @@ export default function PetEmergencyGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl prose prose-lg prose-forest text-primary/80">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Emergency Survival Guide</span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
-                            🚨 What to Do in a Pet Emergency: <br />The Germany Survival Guide
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
+                            Emergency Guide
+                        </span>
+                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6 leading-tight">
+                            Emergency Vet in Germany: Night and Weekend Help (2026)
                         </h1>
 
-                        <TableOfContents items={[
-                            { id: 'emergency-check', label: 'Is It REALLY an Emergency?' },
-                            { id: 'find-clinic', label: 'Find Your Nearest 24h Tierklinik' },
-                            { id: 'call-ahead', label: 'Call Before You Go' },
-                            { id: 'costs', label: 'The €50 Emergency Fee & Costs' },
-                            { id: 'resources', label: 'Emergency Numbers & Resources' },
-                            { id: 'checklist', label: 'Quick Emergency Checklist' }
-                        ]} />
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-sm text-primary/60 mb-8">
+                            <span>Last verified: July 2026</span>
+                            <span className="hidden sm:inline" aria-hidden="true">·</span>
+                            <span>Call the receiving practice before you travel.</span>
+                        </div>
+
+                        <TableOfContents items={tableOfContents} />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
-                            <p className="text-xl text-primary/70 mb-8 italic">
-                                It's 11pm on a Sunday. Your dog just ate something toxic. Or your cat is choking. Or your pet is bleeding, vomiting, or clearly in distress. You're panicking, your German is non-existent, and you have no idea where to go or who to call.
-                            </p>
-
-                            <p className="mb-8">
-                                This is the nightmare scenario every pet owner dreads. But in Germany, emergency veterinary care is available 24/7 in every major city—if you know where to look and what to expect.
-                            </p>
-
-                            <p className="mb-8">
-                                This is your third-grade-simple checklist for when things go wrong after hours. Save this guide. Screenshot the emergency numbers. Know where your nearest 24-hour Tierklinik is <em>before</em> you need it.
-                            </p>
-
-                            <h2 id="emergency-check" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Step 1: Is It REALLY an Emergency?</h2>
-
-                            <p className="mb-6">
-                                Before you rush to the emergency vet at 2am, ask yourself: does your pet need immediate life-saving care, or can this wait until morning?
-                            </p>
-
-                            <div className="grid md:grid-cols-2 gap-8 my-10 not-prose">
-                                <div className="bg-red-50/50 p-6 rounded-2xl border border-red-100">
-                                    <h4 className="font-black text-red-700 mb-4 uppercase tracking-tighter text-sm flex items-center gap-2">
-                                        🚨 GO NOW (Emergency)
-                                    </h4>
-                                    <ul className="space-y-3 text-sm font-bold text-red-800/70">
-                                        <li>❌ Difficulty breathing / Choking</li>
-                                        <li>❌ Severe uncontrolled bleeding</li>
-                                        <li>❌ Seizures lasting &gt;2 minutes</li>
-                                        <li>❌ Unconsciousness or collapse</li>
-                                        <li>❌ Suspected poisoning</li>
-                                        <li>❌ Trauma (Hit by car, dog fight)</li>
-                                        <li>❌ Bloat (hard/swollen abdomen)</li>
-                                    </ul>
-                                </div>
-                                <div className="bg-amber-50/50 p-6 rounded-2xl border border-amber-100">
-                                    <h4 className="font-black text-amber-700 mb-4 uppercase tracking-tighter text-sm flex items-center gap-2">
-                                        ⏰ CAN WAIT (Call in Morning)
-                                    </h4>
-                                    <ul className="space-y-3 text-sm font-bold text-amber-800/70">
-                                        <li>✅ Mild vomiting (still drinking)</li>
-                                        <li>✅ Limping but can walk</li>
-                                        <li>✅ Ear infections</li>
-                                        <li>✅ Hot spots or minor rashes</li>
-                                        <li>✅ Minor cough or sneezing</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="bg-accent/10 border-l-4 border-accent p-6 my-8">
-                                <p className="text-lg font-bold text-primary">
-                                    <strong>When in doubt, CALL the emergency vet first.</strong> They'll tell you if your pet needs to come in immediately or if it can wait.
+                            <div className="bg-red-50 border border-red-200 p-6 rounded-2xl my-8 not-prose">
+                                <p className="font-bold text-red-900 text-lg mb-2">
+                                    If your pet may be in danger, call a veterinary practice or local duty service now.
+                                </p>
+                                <p className="text-red-900/80 mb-0">
+                                    Do not use this page to decide that a symptom can safely wait. A veterinary professional
+                                    who can ask follow-up questions should make that assessment.
                                 </p>
                             </div>
 
-                            <h2 id="find-clinic" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Step 2: Find Your Nearest 24-Hour Tierklinik</h2>
-
-                            <p className="mb-6">
-                                Don't wait until there's an emergency to figure out where to go. Look up your nearest 24-hour veterinary clinic (Tierklinik) right now and save the address and phone number.
+                            <p className="text-xl text-primary/75 mb-8">
+                                Germany has no single nationwide veterinary emergency number. Night and weekend care is
+                                organised locally through veterinary clinics, practices, duty rosters, and state veterinary
+                                chambers. The correct contact can change by city, date, and time.
                             </p>
 
-                            <div className="grid md:grid-cols-2 gap-6 my-8 not-prose">
-                                <Link to="/guides/emergency-vets-berlin" className="block p-6 bg-white border border-primary/5 rounded-2xl hover:border-accent transition hover:shadow-lg">
-                                    <h3 className="text-xl font-bold text-primary mb-2 flex items-center gap-2">🏥 Berlin Emergency Vets</h3>
-                                    <p className="text-sm text-primary/60">5 verified 24/7 clinics with English support in the capital.</p>
-                                    <span className="text-accent text-[10px] font-black uppercase tracking-widest mt-4 block">View Berlin List →</span>
+                            <h2 id="find-help" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                How to find an emergency vet at night or on weekends
+                            </h2>
+
+                            <ol className="space-y-4">
+                                <li>
+                                    <strong>Call your regular vet.</strong> Its voicemail or website may name the current
+                                    out-of-hours service.
+                                </li>
+                                <li>
+                                    <strong>Use a verified local route.</strong> Berlin publishes a chamber list of
+                                    24-hour providers, while Hamburg uses a rotating veterinary duty service.
+                                </li>
+                                <li>
+                                    <strong>Check your state veterinary chamber.</strong> Emergency arrangements are
+                                    regional, so use the chamber for the place where you are physically located.
+                                </li>
+                                <li>
+                                    <strong>Call before you travel.</strong> Confirm that the service is open, can treat
+                                    your animal, and wants you to come to that location.
+                                </li>
+                            </ol>
+
+                            <div className="grid md:grid-cols-2 gap-5 my-8 not-prose">
+                                <Link
+                                    to="/guides/emergency-vets-berlin"
+                                    aria-label="Berlin emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Berlin emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">Verified chamber-listed 24-hour providers and phone numbers.</span>
                                 </Link>
-
-                                <div className="p-6 bg-white border border-primary/5 rounded-2xl shadow-sm">
-                                    <h3 className="text-xl font-bold text-primary mb-1">🏥 Find Vets in Major Cities</h3>
-                                    <p className="text-xs text-primary/60 mb-4 italic">
-                                        Select your city for emergency options or general directories.
-                                    </p>
-                                    <div className="space-y-3">
-                                        <Link to="/guides/emergency-vets-munich" className="block p-3 bg-red-50 border border-red-100 rounded-lg hover:bg-red-100 transition-colors flex justify-between items-center group">
-                                            <span className="font-bold text-red-800">🚨 Munich Emergency Guide</span>
-                                            <span className="text-red-600 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                                        </Link>
-                                        <Link to="/guides/emergency-vets-hamburg" className="block p-3 bg-red-50 border border-red-100 rounded-lg hover:bg-red-100 transition-colors flex justify-between items-center group">
-                                            <span className="font-bold text-red-800">🚨 Hamburg Emergency Guide</span>
-                                            <span className="text-red-600 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                                        </Link>
-                                        <Link to="/guides/emergency-vets-frankfurt" className="block p-3 bg-red-50 border border-red-100 rounded-lg hover:bg-red-100 transition-colors flex justify-between items-center group">
-                                            <span className="font-bold text-red-800">🚨 Frankfurt Emergency Guide</span>
-                                            <span className="text-red-600 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                                        </Link>
-                                    </div>
-                                </div>
+                                <Link
+                                    to="/blog/emergency-vet-hamburg-english"
+                                    aria-label="Hamburg emergency duty guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Hamburg emergency duty guide</span>
+                                    <span className="text-sm text-primary/70">Current duty-service workflow, hours, and central phone number.</span>
+                                </Link>
+                                <a
+                                    href="https://bundestieraerztekammer.de/btk/mitglieder/"
+                                    aria-label="German state veterinary chambers"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">German state veterinary chambers</span>
+                                    <span className="text-sm text-primary/70">Official list covering every German chamber region.</span>
+                                </a>
+                                <a
+                                    href="https://www.bundestieraerztekammer.de/presse/2019/08/notdienst-flyer.php"
+                                    aria-label="Official German veterinary emergency guide"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Official German veterinary emergency guide</span>
+                                    <span className="text-sm text-primary/70">Warning signs, safe transport, and how emergency services work.</span>
+                                </a>
                             </div>
 
-
-
-                            <h2 id="call-ahead" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Step 3: Call Before You Go</h2>
-
-                            <p className="mb-6">
-                                <strong>ALWAYS call the emergency vet before you arrive.</strong> This confirms they are open, allows them to prepare for your arrival, and lets them give you crucial transport safety instructions.
+                            <h2 id="warning-signs" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Warning signs in the official veterinary guide
+                            </h2>
+                            <p>
+                                The German Federal Chamber of Veterinarians lists the following examples as signs of an
+                                emergency. This is not a complete diagnostic checklist.
                             </p>
-
-                            <div className="bg-primary text-secondary p-8 rounded-2xl my-10 not-prose">
-                                <h3 className="text-xl font-bold text-accent mb-6 flex items-center gap-2">
-                                    <span className="text-2xl">🗣️</span> Emergency Phrases
-                                </h3>
-                                <div className="space-y-6">
-                                    <div className="border-l-2 border-accent pl-4 italic">
-                                        <p className="text-xs uppercase tracking-widest opacity-40 font-bold mb-1">English:</p>
-                                        <p className="text-lg">"Hello, I have an emergency. My dog/cat is [symptoms]. Can I bring them in now?"</p>
-                                    </div>
-                                    <div className="border-l-2 border-accent pl-4 italic">
-                                        <p className="text-xs uppercase tracking-widest opacity-40 font-bold mb-1">German:</p>
-                                        <p className="text-lg">"Hallo, ich habe einen Notfall. Mein Hund/meine Katze [symptoms]. Kann ich sofort vorbeikommen?"</p>
-                                        <p className="text-[10px] mt-2 opacity-50 font-normal not-italic uppercase tracking-widest">HAH-loh, ikh HAH-buh EYE-nen NOHT-fall...</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h2 id="costs" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Step 4: The €50 Emergency Fee & Costs</h2>
-
-                            <div className="bg-white border-2 border-red-100 p-8 rounded-2xl mb-12 not-prose">
-                                <h4 className="text-red-600 font-bold mb-3 uppercase tracking-widest text-xs">
-                                    ⚠️ MANDATORY EMERGENCY FEE
-                                </h4>
-                                <p className="text-lg font-bold text-primary mb-4">
-                                    Every emergency visit costs a minimum of €50 on top of treatment costs.
-                                </p>
-                                <p className="text-sm opacity-70 mb-4">
-                                    This fee is regulated by the <strong>GOT (Gebührenordnung für Tierärzte)</strong> and applies on weeknights (6pm-8am), weekends, and public holidays.
-                                </p>
-                                <div className="bg-primary/5 p-4 rounded-xl text-sm font-medium">
-                                    💡 <strong>Total Minimum:</strong> Between the €50 fee and the mandatory 2x-4x emergency multiplier, expect to pay <strong>€100–€150 just for the initial consultation</strong>.
-                                </div>
-                            </div>
-
-                            <p className="mb-6">
-                                Most emergency vets require <strong>immediate payment</strong> via EC-Card, Credit Card, or Cash. If you have pet insurance, you will usually pay upfront and get reimbursed later.
-                            </p>
-
-                            <div className="bg-white p-4 rounded-xl border-l-4 border-accent shadow-sm my-6 text-sm">
-                                <p className="font-bold text-primary mb-1">💡 Expats Recommend:</p>
-                                <p className="opacity-80">
-                                    <a href="https://feather-insurance.com/pet-health-insurance?utm_source=EnglishSpeakingVets"
-                                        onClick={() => trackAffiliateClick('Feather', 'PetEmergency_Sidebar')}
-                                        target="_blank" rel="noopener noreferrer sponsored" className="text-accent hover:underline font-bold">Feather Insurance</a> is popular among expats because they process claims via a simple English app, often reimbursing within days.
-                                    <span className="text-[10px] opacity-50 block mt-1">*Affiliate Link</span>
-                                </p>
-                            </div>
-
-                            <h2 id="resources" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Emergency Numbers & Resources</h2>
-
-                            <div className="grid gap-4 my-8 not-prose">
-                                <div className="bg-white p-6 rounded-2xl border border-primary/5 shadow-sm flex items-center justify-between">
-                                    <div>
-                                        <p className="text-xs uppercase tracking-widest opacity-40 font-bold mb-1">Poison Control (Göttingen)</p>
-                                        <p className="text-2xl font-bold text-red-600 tracking-tighter">0551 / 19 240</p>
-                                    </div>
-                                    <a href="tel:+4955119240" className="bg-red-600 text-white px-6 py-2 rounded-lg font-bold text-sm">CALL NOW</a>
-                                </div>
-                                <div className="bg-white p-6 rounded-2xl border border-primary/5 shadow-sm flex items-center justify-between">
-                                    <div>
-                                        <p className="text-xs uppercase tracking-widest opacity-40 font-bold mb-1">TASSO (Lost & Found Pet)</p>
-                                        <p className="text-2xl font-bold text-primary tracking-tighter">06190 / 93 73 00</p>
-                                    </div>
-                                    <a href="tel:+496190937300" className="bg-primary text-white px-6 py-2 rounded-lg font-bold text-sm">CALL NOW</a>
-                                </div>
-                            </div>
-
-                            <h2 id="checklist" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Quick Emergency Checklist</h2>
-                            <div className="bg-white p-8 rounded-2xl border border-primary/5 shadow-sm my-8 not-prose">
-                                <ul className="space-y-4 font-medium text-primary/70">
-                                    <li className="flex gap-4"><span>✅</span> <span>Find your nearest 24h clinic <strong>today</strong>.</span></li>
-                                    <li className="flex gap-4"><span>✅</span> <span>Save the emergency phone numbers in your phone now.</span></li>
-                                    <li className="flex gap-4"><span>✅</span> <span>Keep a secure carrier or leash by the door.</span></li>
-                                    <li className="flex gap-4"><span>✅</span> <span>Ensure you have at least €500 available on a card.</span></li>
-                                    <li className="flex gap-4"><span>✅</span> <span>Keep your pet insurance number/card in your wallet.</span></li>
+                            <div className="bg-white border border-primary/10 p-6 rounded-2xl my-8 not-prose">
+                                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-primary/80">
+                                    {emergencySigns.map((sign) => (
+                                        <li key={sign} className="flex gap-3">
+                                            <span className="text-red-600" aria-hidden="true">●</span>
+                                            <span>{sign}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
+                            <p>
+                                If poisoning or a swallowed object is suspected, tell the veterinary professional what
+                                substance or object may be involved and follow their instructions. This guide does not
+                                publish a national animal poison hotline because no verified nationwide veterinary number
+                                was identified.
+                            </p>
 
-                            <div className="bg-accent/10 p-8 rounded-2xl my-16 text-center shadow-lg border border-accent/20 not-prose">
-                                <h3 className="text-2xl font-bold text-primary mb-4">Is it a non-emergency?</h3>
-                                <p className="mb-8 text-primary/80 italic font-medium">
-                                    If your pet needs a checkup or has a minor issue, find a verified English-speaking vet for a regular appointment to avoid the €50 emergency fee.
+                            <h2 id="call-first" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Call before you travel
+                            </h2>
+                            <p>
+                                Telephone pre-registration lets the service assess urgency, confirm the correct location,
+                                prepare for arrival, and give transport instructions. Availability can change, even when
+                                an older directory entry or search result says a clinic is open.
+                            </p>
+
+                            <div className="bg-primary text-secondary p-6 md:p-8 rounded-2xl my-8 not-prose">
+                                <p className="text-xs uppercase tracking-widest text-accent font-bold mb-3">
+                                    Useful German phrase
                                 </p>
-                                <Link
-                                    to="/"
-                                    className="inline-block bg-accent hover:bg-primary text-primary hover:text-white font-black py-4 px-10 rounded-2xl transition-all transform hover:scale-105 shadow-[0_10px_30px_rgba(251,133,0,0.3)]"
-                                >
-                                    Find a Regular Vet →
-                                </Link>
+                                <p className="text-lg mb-2">
+                                    Hallo, ich habe einen tiermedizinischen Notfall. Mein Hund / meine Katze hat
+                                    [symptoms]. Kann ich jetzt kommen?
+                                </p>
+                                <p className="text-sm text-secondary/75 mb-0">
+                                    Hello, I have a veterinary emergency. My dog / cat has [symptoms]. Can I come now?
+                                </p>
+                            </div>
+
+                            <h2 id="fees" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Official GOT emergency-service fees
+                            </h2>
+                            <p>
+                                Under section 4 of the federal veterinary fee regulation, qualifying emergency-service
+                                work is billed at two to four times the GOT rate, plus a €50 net emergency-service fee.
+                                With 19 percent VAT, that fixed fee is €59.50 gross. Diagnostics, treatment, medicines,
+                                materials, and other invoice items are additional, so there is no reliable universal
+                                minimum total.
+                            </p>
+                            <p>
+                                These emergency rules apply only when care is provided as part of a veterinary emergency
+                                service during the defined night, weekend, or public-holiday periods. A regular scheduled
+                                consultation offered during those hours is not automatically emergency service.
+                            </p>
+                            <a
+                                href="https://www.gesetze-im-internet.de/got_2022/__4.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex min-h-11 items-center text-accent-ink font-bold underline underline-offset-4"
+                            >
+                                Federal GOT section 4
+                            </a>
+
+                            <h2 id="same-day" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Can you book a same-day vet appointment online?
+                            </h2>
+                            <p>
+                                Some practices offer online booking, but a same-day appointment is never guaranteed and
+                                an online calendar should not delay an emergency call. For a non-emergency same-day
+                                request, find a nearby practice and call to ask about current availability. For urgent
+                                symptoms, use the emergency route above instead.
+                            </p>
+                            <Link
+                                to="/"
+                                className="inline-flex min-h-11 items-center bg-accent-ink text-white font-bold px-6 py-3 rounded-xl no-underline hover:bg-primary transition-colors"
+                            >
+                                Find a regular English-speaking vet
+                            </Link>
+
+                            <h2 id="prepare" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Prepare before an emergency
+                            </h2>
+                            <div className="bg-white p-6 rounded-2xl border border-primary/10 my-8 not-prose">
+                                <ul className="space-y-4 text-primary/80">
+                                    {preparationItems.map((item) => (
+                                        <li key={item} className="flex gap-3">
+                                            <span className="text-green-700" aria-hidden="true">✓</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
 
                         <GuideDisclaimer />
-
                         <RelatedPosts currentPath="/guides/pet-emergency-germany" />
                     </article>
                 </div>

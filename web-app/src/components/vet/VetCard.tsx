@@ -9,7 +9,7 @@ interface VetCardProps {
     vet: VetWithDistance;
     isSelected: boolean;
     onSelect: (vet: Vet) => void;
-    onReportIssue: (vet: Vet) => void;
+    onReportIssue: (vet: Vet, trigger: HTMLButtonElement) => void;
 }
 
 export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onReportIssue }) => {
@@ -26,12 +26,12 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
                             {vet.city}
                         </span>
                         {vet.district && vet.district !== "Unknown" && (
-                            <span className="px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-black uppercase tracking-widest rounded-full">
+                            <span className="px-2 py-0.5 bg-accent/5 text-accent-ink text-[9px] font-black uppercase tracking-widest rounded-full">
                                 {vet.district}
                             </span>
                         )}
                     </div>
-                    <h2 className="text-lg font-black text-primary group-hover/card:text-accent transition-colors leading-tight">
+                    <h2 className="text-lg font-black text-primary group-hover/card:text-accent-ink transition-colors leading-tight">
                         {vet.practice_name}
                     </h2>
                 </div>
@@ -43,14 +43,14 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
                         </div>
                         <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-secondary border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
                             <p className="text-[11px] leading-relaxed font-medium text-secondary/90 normal-case tracking-normal">
-                                <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">Community Verified</span>
-                                We analyze thousands of patient reviews to identify "English signals"—confirming that other international pet owners successfully communicated in English.
+                                <span className="font-bold text-secondary block mb-1 uppercase tracking-widest text-[9px]">Community Verified</span>
+                                We analyze thousands of patient reviews to identify "English signals" - confirming that other international pet owners successfully communicated in English.
                             </p>
                             <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-primary border-b border-r border-white/10 rotate-45"></div>
                         </div>
                     </div>
                     {vet.distance !== undefined && vet.distance !== 9999 && (
-                        <span className="text-[10px] font-bold text-primary/40 bg-secondary/50 px-2 py-0.5 rounded-lg border border-primary/5">
+                        <span className="text-[10px] font-bold text-primary/80 bg-secondary/50 px-2 py-0.5 rounded-lg border border-primary/5">
                             📍 {vet.distance.toFixed(1)} km
                         </span>
                     )}
@@ -59,7 +59,7 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
 
             {/* Address Display - Mobile vs Fixed */}
             {vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown') ? (
-                <div className="text-[12px] text-primary/60 mb-5 font-bold leading-relaxed bg-accent/10 p-4 rounded-xl border border-accent/20 flex items-center gap-2">
+                <div className="text-[12px] text-primary/80 mb-5 font-bold leading-relaxed bg-accent/10 p-4 rounded-xl border border-accent/20 flex items-center gap-2">
                     <span>🚐</span> Mobile Service - {vet.city}
                 </div>
             ) : (
@@ -68,7 +68,7 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="block text-[12px] text-primary/60 mb-5 font-medium leading-relaxed bg-secondary/30 p-4 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors hover:text-accent hover:border-accent/30"
+                    className="block text-[12px] text-primary/80 mb-5 font-medium leading-relaxed bg-secondary/30 p-4 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors hover:text-accent-ink hover:border-accent/30"
                 >
                     {vet.address}
                 </a>
@@ -80,7 +80,7 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
                         <div className="mt-1 flex-shrink-0 w-4 h-4 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/20">
                             <svg className="w-2.5 h-2.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <p className="text-[11px] text-primary/60 italic leading-snug group-hover/signal:text-primary/80 transition-colors line-clamp-2">
+                        <p className="text-[11px] text-primary/80 italic leading-snug group-hover/signal:text-primary transition-colors line-clamp-2">
                             "{signal}"
                         </p>
                     </div>
@@ -103,6 +103,7 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
                         href={appendUTM(vet.contact.website)}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`Visit ${vet.practice_name} website`}
                         onClick={(e) => { e.stopPropagation(); trackVetWebsiteClick(vet.id, vet.city, 'Home_VetCard'); }}
                         className="flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary/95 transition-all shadow-xl shadow-primary/10 active:scale-95 flex items-center justify-center gap-2"
                     >
@@ -124,24 +125,38 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
                         href={vet.contact?.google_maps || `https://www.google.com/search?q=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`View ${vet.practice_name} on Google Maps`}
                         onClick={(e) => e.stopPropagation()}
-                        className="px-4 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-white border border-primary/10 text-primary rounded-xl hover:bg-gray-50 transition-all hover:border-primary/30 flex items-center justify-center"
-                        title="View on Maps"
+                        className="min-h-11 min-w-11 px-4 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-white border border-primary/10 text-primary rounded-xl hover:bg-gray-50 transition-all hover:border-primary/30 flex items-center justify-center"
                     >
                         📍
                     </a>
                 )}
+                <button
+                    type="button"
+                    aria-label={`Show ${vet.practice_name} on the directory map`}
+                    aria-pressed={isSelected}
+                    onClick={(event) => {
+                        event.stopPropagation();
+                        onSelect(vet);
+                    }}
+                    className="hidden md:inline-flex min-h-11 min-w-11 px-3 py-3 items-center justify-center rounded-xl border border-primary/10 bg-white text-primary hover:border-accent/40 hover:text-accent-ink transition-colors"
+                >
+                    ◎
+                </button>
             </div>
 
             <ConfirmEnglish vet={vet} />
 
             <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
-                <span className="text-[10px] text-gray-400">
+                <span className="text-[10px] text-gray-600">
                     Verified: {formatVerifiedLabel(vet.verification?.last_scanned)}
                 </span>
                 <button
-                    onClick={(e) => { e.stopPropagation(); onReportIssue(vet); }}
-                    className="text-gray-300 hover:text-red-400 transition-colors flex items-center gap-1 group/report"
+                    type="button"
+                    aria-label={`Report issue for ${vet.practice_name}`}
+                    onClick={(e) => { e.stopPropagation(); onReportIssue(vet, e.currentTarget); }}
+                    className="min-h-11 min-w-11 p-2 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-colors flex items-center justify-center gap-1 group/report"
                 >
                     <span className="text-[9px] opacity-0 group-hover/report:opacity-100 transition-opacity">Report Issue</span>
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>

@@ -12,9 +12,12 @@ import { parseCityContent, type Block } from '../utils/cityMarkdown';
 import { generateCitySummary } from '../utils/citySummary';
 import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
+import ReportIssueLink from '../components/vet/ReportIssueLink';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
 
+const isVetVerified = (vet: Vet): boolean =>
+    vet.community_status === 'Verified' || vet.verification?.status === 'Verified';
 
 function renderBlocks(blocks: Block[]) {
     const seg = (s: { bold: boolean; text: string }, k: number) =>
@@ -253,6 +256,15 @@ export default function CityVets() {
 
     // Prefer the real city name from the data ("Bad Homburg"); fall back to a titled slug.
     const capitalizedCity = cityVets[0]?.city || titleCaseSlug(cityKey);
+    const verifiedCount = cityVets.filter(isVetVerified).length;
+    const communityListedCount = cityVets.length - verifiedCount;
+    const emergencyVets = cityVets.filter(
+        vet => Boolean(vet.verification?.emergency_services?.trim()),
+    );
+    const listingTitle = `${cityVets.length} English-Speaking ${cityVets.length === 1 ? 'Vet' : 'Vets'} in ${capitalizedCity}`;
+    const listingDescription = verifiedCount === cityVets.length
+        ? `Browse ${cityVets.length} verified English-speaking veterinary ${cityVets.length === 1 ? 'practice' : 'practices'} in ${capitalizedCity}. Compare districts, contact details, and emergency information.`
+        : `Browse ${cityVets.length} English-speaking veterinary practices in ${capitalizedCity}; ${verifiedCount} are community-Verified. Compare districts and confirm English when booking.`;
 
     let cityData: { title: string; description: string; content: string; nearestHub?: { city: string; count: number; distanceKm: number } | null } = cityContent[cityKey];
 
@@ -265,18 +277,18 @@ export default function CityVets() {
     if (cityData && summary) {
         cityData = {
             ...cityData,
-            content: cityData.content + '\n\n' + summary.content,
+            title: listingTitle,
+            description: listingDescription,
+            content: summary.content,
             nearestHub: summary.nearestHub,
         };
     }
 
     if (!cityData) {
         if (cityVets.length > 0 && summary) {
-            const vetNames = cityVets.slice(0, 3).map(v => v.practice_name).join(', ');
-
             cityData = {
-                title: `${cityVets.length} English-Speaking ${cityVets.length === 1 ? 'Vet' : 'Vets'} in ${capitalizedCity}`,
-                description: `Find ${cityVets.length} English-speaking ${cityVets.length === 1 ? 'veterinarian' : 'veterinarians'} in ${capitalizedCity}, including ${vetNames}. Community-checked English signals, contact details, and emergency info.`,
+                title: listingTitle,
+                description: listingDescription,
                 content: summary.content,
                 nearestHub: summary.nearestHub,
             };
@@ -350,7 +362,9 @@ export default function CityVets() {
                 "name": `Do vets in ${capitalizedCity} speak English?`,
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `Yes - our directory lists ${cityVets.length} verified English-speaking veterinary practices in ${capitalizedCity}. Every practice has been confirmed by the international expat community to communicate clearly in English.`
+                    "text": verifiedCount === cityVets.length
+                        ? `We list ${cityVets.length} community-Verified English-speaking veterinary ${cityVets.length === 1 ? 'practice' : 'practices'} in ${capitalizedCity}. Confirm who will be available in English when booking because staff availability can change.`
+                        : `We list ${cityVets.length} veterinary practices in ${capitalizedCity} with English-language signals. ${verifiedCount} are community-Verified and ${communityListedCount} are community-listed, so confirm English availability when booking.`
                 }
             },
             {
@@ -358,17 +372,17 @@ export default function CityVets() {
                 "name": `How do I find a vet in ${capitalizedCity} as an expat?`,
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `EnglishSpeakingVets maintains a community-verified directory of English-speaking vets in ${capitalizedCity}. Browse by neighbourhood, filter for 24/7 emergency services, or search by practice name. Every listed vet has been confirmed by other expat pet owners.`
+                    "text": `Browse the ${capitalizedCity} directory by district, compare the English-language evidence shown on each listing, and confirm staff availability when booking. Practices marked Verified have been confirmed by expat pet owners in our community.`
                 }
             },
-            {
+            ...(emergencyVets.length ? [{
                 "@type": "Question",
                 "name": `Are there emergency English-speaking vets in ${capitalizedCity}?`,
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `Yes, several practices in ${capitalizedCity} offer 24/7 emergency services (Notdienst). Use the emergency filter on our ${capitalizedCity} vet directory to find clinics with round-the-clock English-speaking care.`
+                    "text": `${emergencyVets.slice(0, 3).map(vet => vet.practice_name).join(', ')} ${emergencyVets.length === 1 ? 'lists' : 'list'} emergency or out-of-hours services in ${capitalizedCity}. Confirm current hours and English availability before travelling.`
                 }
-            }
+            }] : [])
         ]
     };
 
@@ -459,7 +473,7 @@ export default function CityVets() {
 
                 <section>
                     <h2 className="text-2xl font-bold text-primary mb-6">
-                        {cityVets.length} Verified Practices in {capitalizedCity}
+                        {cityVets.length} {cityVets.length === 1 ? 'Practice' : 'Practices'} Listed in {capitalizedCity}
                     </h2>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -496,14 +510,21 @@ export default function CityVets() {
                                     </div>
                                     <div className="flex flex-col items-end gap-2">
                                         <div className="relative group/tooltip z-20">
-                                            <div className="px-3 py-1 bg-accent/20 text-primary text-[10px] font-black uppercase tracking-tighter rounded-xl border border-accent/20 flex items-center gap-1.5 shadow-sm cursor-help">
-                                                <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></div>
-                                                Verified
+                                            <div className={`px-3 py-1 text-[10px] font-black uppercase tracking-tighter rounded-xl border flex items-center gap-1.5 shadow-sm cursor-help ${isVetVerified(vet)
+                                                ? 'bg-accent/20 text-primary border-accent/20'
+                                                : 'bg-primary/5 text-primary/60 border-primary/10'
+                                            }`}>
+                                                <div className={`w-1.5 h-1.5 rounded-full ${isVetVerified(vet) ? 'bg-accent' : 'bg-primary/30'}`}></div>
+                                                {isVetVerified(vet) ? 'Verified' : 'Community Listed'}
                                             </div>
                                             <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-secondary border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
                                                 <p className="text-[11px] leading-relaxed font-medium text-secondary/90 normal-case tracking-normal">
-                                                    <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">Community Verified</span>
-                                                    We analyze thousands of patient reviews to identify "English signals" - confirming that other international pet owners successfully communicated in English.
+                                                    <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">
+                                                        {isVetVerified(vet) ? 'Community Verified' : 'Confirmation Needed'}
+                                                    </span>
+                                                    {isVetVerified(vet)
+                                                        ? 'Community members have confirmed English availability. Confirm again when booking because staff availability can change.'
+                                                        : 'This is a community-sourced listing. English availability has not yet been confirmed through our community process.'}
                                                 </p>
                                                 <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-primary border-b border-r border-white/10 rotate-45"></div>
                                             </div>
@@ -578,15 +599,19 @@ export default function CityVets() {
 
                                 <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
                                     <span className="text-[10px] text-gray-400">
-                                        Verified: {formatVerifiedLabel(vet.verification?.last_scanned)}
+                                        {isVetVerified(vet)
+                                            ? `Verified: ${formatVerifiedLabel(vet.verification?.last_scanned)}`
+                                            : 'English availability: confirm when booking'}
                                     </span>
-                                    <Link
-                                        to={`/contact?topic=report_issue&vetId=${vet.id}&vetName=${encodeURIComponent(vet.practice_name)}&reason=Data%20Incorrect`}
+                                    <ReportIssueLink
+                                        vetId={vet.id}
+                                        vetName={vet.practice_name}
+                                        reason="Data Incorrect"
                                         className="text-gray-300 hover:text-red-400 transition-colors flex items-center gap-1 group/report"
                                     >
                                         <span className="text-[9px] opacity-0 group-hover/report:opacity-100 transition-opacity">Report Issue</span>
                                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                                    </Link>
+                                    </ReportIssueLink>
                                 </div>
                             </article>
                         ))}

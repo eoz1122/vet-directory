@@ -7,26 +7,84 @@ import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
+const ARTICLE_TITLE = '24-Hour Emergency Vets in Berlin: English Help (2026)';
+const ARTICLE_DESCRIPTION = 'Find verified 24-hour emergency vets in Berlin, current phone numbers, urgent warning signs, official GOT fees, and English phrases for calling.';
+const ARTICLE_URL = 'https://englishspeakinggermany.online/guides/emergency-vets-berlin';
+const DATE_PUBLISHED = '2026-04-21';
+const DATE_MODIFIED = '2026-07-22';
+const BERLIN_EMERGENCY_LIST_URL = 'https://tieraerztekammer-berlin.de/notdienst/';
+const BERLIN_GOT_URL = 'https://tieraerztekammer-berlin.de/gebuehrenordnung-fuer-tieraerztinnen-und-tieraerzte-got/';
+const ARTICLE_SCHEMA = generateArticleSchema(
+    ARTICLE_TITLE,
+    ARTICLE_DESCRIPTION,
+    ARTICLE_URL,
+    DATE_PUBLISHED,
+    DATE_MODIFIED,
+);
+
+const EMERGENCY_CLINICS = [
+    {
+        name: 'AniCura Tierklinik Berlin-Biesdorf',
+        district: 'Biesdorf',
+        phone: '030 51 43 760',
+        phoneHref: 'tel:+49305143760',
+        sourceUrl: 'https://www.anicura.de/standorte/berlin-biesdorf/kontakt/',
+        sourceLabel: 'AniCura emergency information',
+        note: 'Small animals and exotics; use the main entrance bell after hours.',
+    },
+    {
+        name: 'Valera Tierklinik Berlin',
+        district: 'Tiergarten',
+        phone: '030 20 1805 750',
+        phoneHref: 'tel:+4930201805750',
+        sourceUrl: 'https://www.valeratierklinikberlin.com/notfall/',
+        sourceLabel: 'Valera emergency information',
+        note: '24-hour emergency service for dogs and cats.',
+    },
+    {
+        name: 'Tierarztpraxis Bärenwiese',
+        district: 'Wilmersdorf',
+        phone: '030 23 36 26 27',
+        phoneHref: 'tel:+493023362627',
+        sourceUrl: BERLIN_EMERGENCY_LIST_URL,
+        sourceLabel: 'Berlin Veterinary Chamber listing',
+        note: 'Listed by the Berlin Veterinary Chamber for 24-hour emergency service.',
+    },
+    {
+        name: 'Tierarztpraxis Rödiger',
+        district: 'Reinickendorf',
+        phone: '030 412 73 57',
+        phoneHref: 'tel:+49304127357',
+        sourceUrl: BERLIN_EMERGENCY_LIST_URL,
+        sourceLabel: 'Berlin Veterinary Chamber listing',
+        note: 'Listed by the Berlin Veterinary Chamber for 24-hour emergency service.',
+    },
+    {
+        name: 'VetZentrum Berlin (Olof Löwe)',
+        district: 'Marzahn',
+        phone: '030 93 22 093',
+        phoneHref: 'tel:+49309322093',
+        sourceUrl: BERLIN_EMERGENCY_LIST_URL,
+        sourceLabel: 'Berlin Veterinary Chamber listing',
+        note: 'Listed by the Berlin Veterinary Chamber for 24-hour emergency service.',
+    },
+];
+
 export default function EmergencyVetBerlinGuide() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Emergency Vets in Berlin: 24-Hour English-Speaking Clinics | EnglishSpeakingVets</title>
-                <meta name="description" content="Pet emergency in Berlin? Find 24-hour English-speaking vet clinics, learn what to say when you call, and know what it'll cost. For expat pet owners." />
+                <title>{ARTICLE_TITLE}</title>
+                <meta name="description" content={ARTICLE_DESCRIPTION} />
                 <meta name="keywords" content="emergency vet berlin english, 24 hour vet berlin, berlin emergency veterinary, notfalldienst berlin english, pet emergency berlin expat" />
-                <meta property="og:title" content="Emergency Vets in Berlin: 24-Hour English-Speaking Clinics" />
-                <meta property="og:description" content="Bookmark this before you need it. When your pet has an emergency at 11pm in Berlin, here's exactly what to do, who to call, and what it will cost." />
+                <meta property="og:title" content={ARTICLE_TITLE} />
+                <meta property="og:description" content={ARTICLE_DESCRIPTION} />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/emergency-vet-berlin-english" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/emergency-vet-berlin-english" />
+                <meta property="og:url" content={ARTICLE_URL} />
+                <link rel="canonical" href={ARTICLE_URL} />
                 <script type="application/ld+json">
-                    {JSON.stringify(generateArticleSchema(
-                        "Emergency Vets in Berlin: 24-Hour English-Speaking Clinics",
-                        "Pet emergency in Berlin? Find 24-hour English-speaking vet clinics, learn what to say when you call, and know what it'll cost.",
-                        "https://englishspeakinggermany.online/blog/emergency-vet-berlin-english",
-                        "2026-04-21"
-                    ))}
+                    {JSON.stringify(ARTICLE_SCHEMA)}
                 </script>
             </Helmet>
 
@@ -39,8 +97,9 @@ export default function EmergencyVetBerlinGuide() {
                     <article className="lg:flex-1 max-w-4xl">
                         <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Emergency Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            🚨 Emergency Vets in Berlin: 24-Hour English-Speaking Clinics
+                            {ARTICLE_TITLE}
                         </h1>
+                        <p className="mb-6 text-sm text-primary/60">Clinics, phone numbers, and fees checked against official sources on 22 July 2026.</p>
 
                         <TableOfContents items={[
                             { id: 'what-counts', label: '1. What Counts as a Pet Emergency?' },
@@ -62,64 +121,58 @@ export default function EmergencyVetBerlinGuide() {
                             <hr className="my-8 border-primary/10" />
 
                             <h2 id="what-counts" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🚨 1. What Counts as a Pet Emergency?</h2>
-                            <p>Not every worrying symptom needs a midnight dash across Berlin. But some absolutely do.</p>
+                            <p>Some symptoms require urgent professional assessment. Call a clinic while preparing to travel whenever it is safe to do so.</p>
 
                             <div className="grid md:grid-cols-2 gap-6 my-6 not-prose">
                                 <div className="bg-red-50 border border-red-200 p-6 rounded-xl">
                                     <h3 className="font-bold text-red-700 mb-3">🚨 Go now - do not wait</h3>
                                     <ul className="space-y-1.5 text-sm text-red-800">
                                         {[
-                                            'Difficulty breathing, choking, or blue/grey gums',
-                                            'Collapse or inability to stand',
+                                            'Difficulty breathing or blue/grey gums',
+                                            'Collapse, unconsciousness, or severe weakness',
                                             'Suspected poisoning',
                                             'Seizures',
-                                            'Suspected broken bone or severe injury',
-                                            'Eye injury or sudden loss of vision',
-                                            'Bloated, distended, or hard abdomen',
-                                            'Suspected urinary blockage (cats)',
-                                            'Uncontrolled bleeding',
-                                            'Loss of consciousness',
+                                            'Severe injury or a traffic accident',
+                                            'Sudden paralysis',
+                                            'Heavy or uncontrolled bleeding',
                                         ].map(s => <li key={s} className="flex items-start gap-1.5"><span className="text-red-500 mt-0.5">•</span>{s}</li>)}
                                     </ul>
                                 </div>
                                 <div className="bg-yellow-50 border border-yellow-200 p-6 rounded-xl">
-                                    <h3 className="font-bold text-yellow-700 mb-3">⏳ Can wait until morning (call first thing)</h3>
-                                    <ul className="space-y-1.5 text-sm text-yellow-800">
-                                        {[
-                                            'Limping that isn\'t severe and leg isn\'t visibly deformed',
-                                            'Vomiting once or twice with no blood',
-                                            'Mild diarrhea',
-                                            'A cut that has stopped bleeding',
-                                            'Ear scratching or head shaking',
-                                        ].map(s => <li key={s} className="flex items-start gap-1.5"><span className="text-yellow-500 mt-0.5">•</span>{s}</li>)}
-                                    </ul>
-                                    <p className="text-xs text-yellow-700 mt-3 italic">If you're unsure, call an emergency line and describe the symptoms.</p>
+                                    <h3 className="font-bold text-yellow-700 mb-3">📞 Call for professional triage</h3>
+                                    <p className="text-sm text-yellow-800">
+                                        Do not use this page to decide whether a symptom can safely wait. If you are unsure, call a clinic and describe the symptoms, duration, species, age, and medications.
+                                    </p>
+                                    <p className="text-xs text-yellow-700 mt-3 italic">Clinics prioritize patients by medical severity, so waiting times can change.</p>
                                 </div>
                             </div>
 
+                            <p className="text-sm">
+                                These warning signs follow{' '}
+                                <a href="https://www.anicura.de/leistungen/katze/notdienst-katze/" target="_blank" rel="noopener noreferrer">AniCura emergency guidance</a>. The Berlin Veterinary Chamber asks owners to reserve emergency clinics for serious or life-threatening conditions.
+                            </p>
+
                             <h2 id="24h-vets" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🏥 2. Verified 24-Hour Emergency Vets in Berlin</h2>
 
-                            <p>The following practices are confirmed 24/7 in our verified directory. Always call ahead to confirm - hours and on-call arrangements can change.</p>
+                            <p>
+                                The following practices appear on the Berlin Veterinary Chamber's current 24-hour small-animal emergency list. Call before travelling because capacity and arrangements can change. See the{' '}
+                                <a href={BERLIN_EMERGENCY_LIST_URL} target="_blank" rel="noopener noreferrer">Official Berlin 24-hour emergency list</a>.
+                            </p>
 
                             <div className="space-y-3 my-6 not-prose">
-                                {[
-                                    { name: 'Klinik für kleine Haustiere (FU Berlin Small Animal Clinic)', district: 'Zehlendorf / Düppel', phone: '030 83862356', note: 'University clinic. Full surgical and ICU capability.' },
-                                    { name: 'Valera Veterinary Clinic', district: 'Zehlendorf', phone: '030 201805750', note: 'English-speaking staff. Verified by expat community.' },
-                                    { name: 'AniCura Tierklinik Berlin-Biesdorf', district: 'Biesdorf (East Berlin)', phone: null, note: 'Large-scale 24h animal hospital. Check website for current number.' },
-                                    { name: 'The Berlin Veterinary Center (Dr. Rödiger)', district: 'Reinickendorf', phone: null, note: '24/7 confirmed. Check our directory for current contact.' },
-                                    { name: 'Veterinary Practice Bärenwiese', district: 'Wilmersdorf', phone: '0174 1601606', note: 'Mobile number - call to confirm availability before travelling.' },
-                                ].map(clinic => (
+                                {EMERGENCY_CLINICS.map(clinic => (
                                     <div key={clinic.name} className="bg-white p-5 rounded-xl border border-primary/10 flex items-start gap-4">
                                         <span className="text-2xl mt-0.5">🏥</span>
                                         <div className="flex-1">
                                             <h3 className="font-bold text-primary text-sm">{clinic.name}</h3>
                                             <p className="text-primary/60 text-xs mt-0.5">{clinic.district}</p>
-                                            {clinic.phone && (
-                                                <a href={`tel:${clinic.phone.replace(/\s/g,'')}`} className="inline-flex items-center gap-1.5 mt-2 text-accent font-bold text-sm hover:underline">
-                                                    📞 {clinic.phone}
-                                                </a>
-                                            )}
+                                            <a href={clinic.phoneHref} className="inline-flex min-h-11 items-center gap-1.5 text-accent font-bold text-sm hover:underline">
+                                                📞 {clinic.phone}
+                                            </a>
                                             <p className="text-primary/60 text-xs mt-1 italic">{clinic.note}</p>
+                                            <a href={clinic.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-xs font-bold text-primary/70 underline hover:text-accent">
+                                                {clinic.sourceLabel}
+                                            </a>
                                         </div>
                                         <span className="bg-green-100 text-green-800 text-xs font-bold px-2 py-0.5 rounded-full shrink-0">24/7</span>
                                     </div>
@@ -128,14 +181,14 @@ export default function EmergencyVetBerlinGuide() {
 
                             <div className="bg-accent/10 p-5 rounded-xl border border-accent/20 my-6 not-prose">
                                 <p className="text-sm font-bold text-primary mb-1">Berlin Veterinary Emergency Network</p>
-                                <p className="text-sm text-primary/70">Emergency duty (<em>tierarztlicher Bereitschaftsdienst</em>) rotates among registered practices by district. The current duty vet number is typically listed on your regular vet's answering machine. Always listen to the full voicemail.</p>
-                                <Link to="/vets/berlin" className="inline-flex items-center gap-2 mt-3 bg-accent text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-primary transition-colors">
-                                    See all verified emergency-capable Berlin vets →
+                                <p className="text-sm text-primary/70">Not every practice outside this list operates around the clock. Your regular vet may provide separate out-of-hours instructions, so listen to its full voicemail.</p>
+                                <Link to="/vets/berlin" aria-label="Browse English-speaking vets in Berlin" className="inline-flex min-h-11 items-center gap-2 mt-3 bg-accent text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-primary transition-colors">
+                                    Browse English-speaking vets in Berlin →
                                 </Link>
                             </div>
 
                             <h2 id="what-to-say" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">📞 3. What to Say When You Call</h2>
-                            <p>Even at an English-speaking practice, having this information ready will get your pet seen faster:</p>
+                            <p>Having this information ready will help the clinic triage your pet:</p>
                             <div className="bg-white p-6 rounded-xl border border-primary/10 my-6 not-prose space-y-3">
                                 {[
                                     ['Species and breed', '"I have a 4-year-old male golden retriever"'],
@@ -175,9 +228,9 @@ export default function EmergencyVetBerlinGuide() {
                             <h2 id="getting-there" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🚗 4. Getting There</h2>
                             <div className="grid md:grid-cols-3 gap-4 my-6 not-prose">
                                 {[
-                                    { icon: '🚗', mode: 'By car', desc: 'The fastest option if you have one. Berlin\'s 24-hour clinics are spread across the city, so find your nearest one before an emergency happens.' },
-                                    { icon: '🚕', mode: 'By taxi/Uber', desc: 'Works well. Let the driver know you have a pet emergency; most will accommodate a carrier or a dog on a leash. Have the address ready.' },
-                                    { icon: '🚇', mode: 'By U-Bahn/S-Bahn', desc: 'Dogs are allowed at any hour with a valid ticket. If your pet is seriously ill, take a taxi. You don\'t want to manage a sick animal on a crowded platform.' },
+                                    { icon: '🚗', mode: 'By car', desc: 'Choose the nearest clinic that confirms it can receive your pet. Secure the animal safely and have another person drive when possible.' },
+                                    { icon: '🚕', mode: 'By taxi or rideshare', desc: 'Tell the driver that you are travelling with an animal before pickup. Use a carrier or another safe restraint and keep the clinic address ready.' },
+                                    { icon: '🚇', mode: 'By public transport', desc: 'Check the operator\'s current animal and ticket rules before travelling. For a critical emergency, ask the clinic about the quickest safe option from your location.' },
                                 ].map(item => (
                                     <div key={item.mode} className="bg-white p-5 rounded-xl border border-primary/10">
                                         <p className="text-2xl mb-2">{item.icon}</p>
@@ -188,37 +241,19 @@ export default function EmergencyVetBerlinGuide() {
                             </div>
 
                             <h2 id="costs" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">💶 5. What Emergency Vet Care Costs in Berlin</h2>
-                            <p>Emergency vet care in Germany is regulated by the <em>Gebuhrenordnung fur Tierarzte</em> (GOT), but emergency surcharges apply outside of normal hours.</p>
-                            <div className="my-6 not-prose overflow-x-auto">
-                                <table className="w-full text-sm">
-                                    <thead>
-                                        <tr className="bg-primary text-secondary">
-                                            <th className="text-left p-3 rounded-tl-lg font-bold">Service</th>
-                                            <th className="text-right p-3 rounded-tr-lg font-bold">Approx. Cost</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="bg-white">
-                                        {[
-                                            ['Emergency consultation (out of hours)', '€80-150'],
-                                            ['Blood panel / basic diagnostics', '€80-200'],
-                                            ['X-ray', '€80-150'],
-                                            ['IV fluids and hospitalisation (per night)', '€150-300'],
-                                            ['Surgery (emergency, e.g. foreign body removal)', '€800-2,500+'],
-                                            ['Intensive care (per day)', '€200-500'],
-                                        ].map(([service, cost], i) => (
-                                            <tr key={service} className={i % 2 === 0 ? 'bg-white' : 'bg-secondary/50'}>
-                                                <td className="p-3 border-b border-primary/5">{service}</td>
-                                                <td className="p-3 border-b border-primary/5 text-right font-bold text-primary">{cost}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                            <p>German veterinary fees are regulated by the <em>Gebührenordnung für Tierärztinnen und Tierärzte</em> (GOT). Emergency treatment uses specific statutory fee rules rather than a fixed package price.</p>
+                            <div className="my-6 not-prose rounded-xl border border-primary/10 bg-white p-6">
+                                <ul className="space-y-3 text-sm text-primary/80">
+                                    <li>There is a €59.50 gross emergency-service fee (€50 net) during the GOT emergency-service period.</li>
+                                    <li>Emergency treatment is billed at two to four times the GOT rate.</li>
+                                    <li>Diagnostics, medication, materials, and hospital care are additional and depend on the treatment your pet needs.</li>
+                                </ul>
+                                <a href={BERLIN_GOT_URL} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center font-bold text-accent underline hover:text-primary">
+                                    Official Berlin GOT information
+                                </a>
                             </div>
                             <p>
-                                <strong>Important:</strong> Emergency clinics in Germany typically require payment at the end of the visit, in full. Credit cards are widely accepted at larger clinics. If you have pet insurance, keep your policy number handy and ask for a detailed itemised invoice; you'll submit the claim yourself.
-                            </p>
-                            <p>
-                                If cost is a concern, be upfront when you call. Veterinary social services and payment plans exist in Germany, though they vary by clinic.
+                                Ask the clinic which payment methods it accepts. Once your pet is medically stable, you can also ask for an estimate of the likely next steps. If you have pet insurance, request an itemised invoice and check the claim process with your insurer.
                             </p>
 
                             <div className="bg-primary text-secondary p-8 rounded-2xl my-12 not-prose">
@@ -231,7 +266,7 @@ export default function EmergencyVetBerlinGuide() {
                                     And if you haven't yet found a regular vet who speaks English, establishing that relationship is your next step. Your regular vet knows your pet's history, which matters enormously in an emergency. Even if you end up at a different clinic, being able to share records speeds up treatment.
                                 </p>
                                 <div className="mt-6 pt-6 border-t border-white/20">
-                                    <Link to="/vets/berlin" className="inline-flex items-center gap-2 bg-accent text-primary px-6 py-3 rounded-xl font-bold hover:bg-white transition-colors shadow-lg">
+                                    <Link to="/vets/berlin" className="inline-flex min-h-11 items-center gap-2 bg-accent text-primary px-6 py-3 rounded-xl font-bold hover:bg-white transition-colors shadow-lg">
                                         Find a verified English-speaking vet in Berlin →
                                     </Link>
                                 </div>
@@ -243,7 +278,7 @@ export default function EmergencyVetBerlinGuide() {
                             </p>
                         </div>
 
-                        <RelatedPosts currentPath="/blog/emergency-vet-berlin-english" />
+                        <RelatedPosts currentPath="/guides/emergency-vets-berlin" />
                     </article>
                 </div>
             </main>

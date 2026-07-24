@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { APIProvider } from '@vis.gl/react-google-maps';
 // import AppMap from '../components/Map'; // Removed direct import
 import Footer from '../components/Footer';
+import BrandLogo from '../components/BrandLogo';
 import type { Vet, VetWithDistance } from '../types/vet';
 import vetsData from '../data/vets.json';
 import { filterDisplayableVets } from '../utils/activeVets';
@@ -11,17 +11,42 @@ import { calculateDistance } from '../utils/distance';
 import { generateListingSchema } from '../utils/schema';
 import { VetCard } from '../components/vet/VetCard';
 import { VetFilters } from '../components/vet/VetFilters';
+import ReportIssueDialog from '../components/vet/ReportIssueDialog';
 import { Pagination } from '../components/ui/Pagination';
+import { useGoogleMapsActivation } from '../hooks/useGoogleMapsActivation';
 
 // Lazy load the Map component to reduce initial bundle size causing TBT
 const AppMap = lazy(() => import('../components/Map'));
+const GoogleMapsProvider = lazy(() => import('../components/GoogleMapsProvider'));
 
 // Cast the JSON data to our Vet type
 const vets = filterDisplayableVets(vetsData as Vet[]);
 const ITEMS_PER_PAGE = 10;
+const HOME_TITLE = 'English-Speaking Vets in Germany | Find Local Care';
+const HOME_DESCRIPTION = 'Find community-verified English-speaking vets in Germany. Browse local practices in Berlin, Hamburg, Munich, Frankfurt, Cologne and 30+ cities.';
+const verifiedVets = vets.filter((vet) => vet.community_status === 'Verified');
+const verifiedCityCount = new Set(verifiedVets.map((vet) => vet.city)).size;
+const popularCities = [
+    { name: 'Berlin', path: '/vets/berlin' },
+    { name: 'Hamburg', path: '/vets/hamburg' },
+    { name: 'Munich', path: '/vets/munich' },
+    { name: 'Frankfurt', path: '/vets/frankfurt' },
+    { name: 'Cologne', path: '/vets/cologne' },
+];
+const resourceLinks = [
+    { emoji: '🏠', title: 'Pet-Friendly Housing', link: '/blog/pet-friendly-apartments-germany' },
+    { emoji: '🐕', title: 'Moving to Germany Guide', link: '/blog/moving-to-germany-with-pet' },
+    { emoji: '🐱', title: 'Cat Registration', link: '/blog/cat-registration-germany' },
+    { emoji: '🛂', title: 'EU Pet Passports', link: '/blog/eu-pet-passport-germany' },
+    { emoji: '💊', title: 'Pet Medication Guide', link: '/blog/pet-medication-germany-guide' },
+    { emoji: '💶', title: 'Dog Tax (Hundesteuer)', link: '/blog/hundesteuer-dog-tax-germany' },
+    { emoji: '🧾', title: 'Vet Costs & GOT Fees', link: '/blog/vet-costs-germany' },
+    { emoji: '💰', title: 'Pet Insurance Guide', link: '/blog/pet-insurance-germany' },
+];
 
 const Home: React.FC = () => {
     const [mapApiError, setMapApiError] = useState(false);
+    const { mapsEnabled, desktopMapVisible, enableMaps } = useGoogleMapsActivation();
     // Parse query params for initial city filtering
     const [searchParams] = useSearchParams();
 
@@ -35,6 +60,7 @@ const Home: React.FC = () => {
     const [selectedVet, setSelectedVet] = useState<Vet | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [reportingVet, setReportingVet] = useState<Vet | null>(null);
+    const [reportDialogTrigger, setReportDialogTrigger] = useState<HTMLButtonElement | null>(null);
 
     const [searchRadius, setSearchRadius] = useState<number | null>(null);
 
@@ -107,18 +133,18 @@ const Home: React.FC = () => {
         }
     };
 
+    const handleReportIssue = (vet: Vet, trigger: HTMLButtonElement) => {
+        setReportDialogTrigger(trigger);
+        setReportingVet(vet);
+    };
+
     const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
 
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "The Pack: English-Speaking Vets",
-        "url": "https://englishspeakinggermany.online",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://englishspeakinggermany.online/?s={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
+        "url": "https://englishspeakinggermany.online"
     };
 
     const listingSchema = generateListingSchema(
@@ -147,42 +173,52 @@ const Home: React.FC = () => {
         };
     }, []);
 
-    return (
-        <APIProvider apiKey={apiKey} language="en" onError={() => setMapApiError(true)}>
+    const renderPage = (mapFeaturesEnabled: boolean) => (
+        <>
             <Helmet>
-                <title>English-Speaking Vets in Germany | Verified Expat Directory</title>
-                <meta name="description" content="The trusted directory for expat pet owners in Germany. Find verified English-speaking veterinarians in Berlin, Hamburg, Munich, Frankfurt and 30+ cities." />
+                <title>{HOME_TITLE}</title>
+                <meta name="description" content={HOME_DESCRIPTION} />
                 <link rel="canonical" href="https://englishspeakinggermany.online" />
-                <meta property="og:title" content="English-Speaking Vets in Germany | Verified Expat Directory" />
-                <meta property="og:description" content="The trusted directory for expat pet owners in Germany. Find verified English-speaking veterinarians in Berlin, Hamburg, Munich, Frankfurt and 30+ cities." />
+                <meta property="og:title" content={HOME_TITLE} />
+                <meta property="og:description" content={HOME_DESCRIPTION} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://englishspeakinggermany.online" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="English-Speaking Vets in Germany | Verified Expat Directory" />
-                <meta name="twitter:description" content="The trusted directory for expat pet owners in Germany. Find verified English-speaking veterinarians in Berlin, Hamburg, Munich, Frankfurt and 30+ cities." />
+                <meta name="twitter:title" content={HOME_TITLE} />
+                <meta name="twitter:description" content={HOME_DESCRIPTION} />
                 <script type="application/ld+json">
                     {JSON.stringify([jsonLd, listingSchema])}
                 </script>
             </Helmet>
 
             <div className="min-h-screen flex flex-col md:flex-row bg-secondary">
-                <div className="md:w-[42%] lg:w-[40%] flex flex-col h-screen overflow-hidden border-r border-primary/5">
-                <h1 className="sr-only">Find English-Speaking Vets in Germany</h1>
+                <main className="md:w-[42%] lg:w-[40%] flex flex-col h-screen overflow-hidden border-r border-primary/5">
                     <header className="sticky top-0 z-10 bg-secondary backdrop-blur-xl border-b border-primary/5 p-6 space-y-5">
                         <Link to="/" className="flex items-center gap-5 group">
                             <div className="relative">
-                                <img src="/logo.png" alt="Logo" width="232" height="80" className="h-16 md:h-20 w-auto drop-shadow-sm transition-transform group-hover:scale-105" />
+                                <BrandLogo
+                                    alt="EnglishSpeakingVets"
+                                    priority
+                                    className="h-16 md:h-20 w-auto drop-shadow-sm transition-transform group-hover:scale-105"
+                                />
                                 <div className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-accent rounded-full border-2 border-white animate-pulse"></div>
                             </div>
                             <div className="flex flex-col leading-tight">
                                 <span className="text-primary font-black text-xl md:text-2xl uppercase tracking-tight">English Speaking</span>
-                                <span className="text-accent font-black text-3xl md:text-4xl uppercase tracking-tighter">Vets</span>
+                                <span className="text-accent-ink font-black text-3xl md:text-4xl uppercase tracking-tighter">Vets</span>
                             </div>
                         </Link>
 
+                        <h1 className="text-xl md:text-2xl font-black text-primary leading-tight">
+                            Find an English-Speaking Vet in Germany
+                        </h1>
+
                         <p className="text-sm md:text-base text-primary/80 font-medium leading-relaxed max-w-[95%]">
-                            {vets.length} community-verified English-speaking vets across {new Set(vets.map(v => v.city)).size} German cities. <span className="text-primary font-bold italic">"For the love of our little friends."</span>
+                            Browse {verifiedVets.length} community-verified practices across {verifiedCityCount} German cities. Confirm English availability when booking.{' '}
+                            <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
+                                How we verify listings
+                            </Link>
                         </p>
 
                         <nav className="flex gap-6 text-xs md:text-sm font-bold uppercase tracking-widest text-primary pt-2">
@@ -213,16 +249,36 @@ const Home: React.FC = () => {
                             onPlaceSelect={handlePlaceSelect}
                             onResetPagination={() => setCurrentPage(1)}
                             mapApiError={mapApiError}
+                            mapsEnabled={mapFeaturesEnabled}
+                            onEnableMaps={enableMaps}
                         />
+
+                        <section aria-labelledby="popular-cities-heading" className="px-2">
+                            <h2 id="popular-cities-heading" className="text-xs font-black uppercase tracking-widest text-primary/80 mb-3">
+                                Browse vets by city
+                            </h2>
+                            <nav className="flex flex-wrap gap-2" aria-label="Popular city directories">
+                                {popularCities.map((city) => (
+                                    <Link
+                                        key={city.path}
+                                        to={city.path}
+                                        aria-label={`English-speaking vets in ${city.name}`}
+                                        className="min-h-11 inline-flex items-center rounded-full border border-primary/15 bg-white/60 px-4 text-xs font-bold text-primary hover:border-accent hover:text-accent-ink transition-colors"
+                                    >
+                                        {city.name}
+                                    </Link>
+                                ))}
+                            </nav>
+                        </section>
 
                         <div className="flex justify-between items-end px-2 pt-4">
                             <div className="flex flex-col">
                                 <span className="text-[24px] font-black text-primary leading-none">{sortedVets.length}</span>
-                                <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest">Practices available</span>
+                                <span className="text-[10px] font-bold text-primary/80 uppercase tracking-widest">Practices available</span>
                             </div>
                             <div className="flex flex-col items-end">
-                                <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest leading-none mb-1">Page</span>
-                                <span className="text-[14px] font-black text-primary/80">{currentPage} <span className="text-[10px] text-primary/40 font-bold uppercase mx-1">of</span> {totalPages}</span>
+                                <span className="text-[10px] font-bold text-primary/80 uppercase tracking-widest leading-none mb-1">Page</span>
+                                <span className="text-[14px] font-black text-primary/80">{currentPage} <span className="text-[10px] text-primary/70 font-bold uppercase mx-1">of</span> {totalPages}</span>
                             </div>
                         </div>
 
@@ -233,7 +289,7 @@ const Home: React.FC = () => {
                                     vet={vet}
                                     isSelected={selectedVet?.id === vet.id}
                                     onSelect={setSelectedVet}
-                                    onReportIssue={setReportingVet}
+                                    onReportIssue={handleReportIssue}
                                 />
                             ))}
 
@@ -246,27 +302,18 @@ const Home: React.FC = () => {
 
                             <div className="bg-secondary p-6 rounded-[2rem] border border-primary/10">
                                 <h2 className="text-lg font-bold text-primary mb-2">Resource Center</h2>
-                                <p className="text-xs text-primary/60 mb-4 leading-relaxed">
+                                <p className="text-xs text-primary/80 mb-4 leading-relaxed">
                                     Helping our companions settle in Germany.
                                 </p>
                                 <nav className="space-y-4">
-                                    {[
-                                        { emoji: '🏠', title: 'Pet-Friendly Housing', link: '/blog/pet-friendly-apartments-germany' },
-                                        { emoji: '🐕', title: 'Moving to Germany Guide', link: '/blog/moving-to-germany-with-pet' },
-                                        { emoji: '🐱', title: 'Cat Registration', link: '/blog/cat-registration-germany' },
-                                        { emoji: '🛂', title: 'EU Pet Passports', link: '/blog/eu-pet-passport-germany' },
-                                        { emoji: '💊', title: 'Pet Medication Guide', link: '/blog/pet-medication-germany-guide' },
-                                        { emoji: '💶', title: 'Dog Tax (Hundesteuer)', link: '/blog/hundesteuer-dog-tax-germany' },
-                                        { emoji: '💰', title: 'Pet Insurance Guide', link: '/blog/pet-insurance-germany' }
-                                    ].map(item => (
-
-                                        <Link key={item.link} to={item.link} className="flex items-center gap-3 text-primary group">
+                                    {resourceLinks.map(item => (
+                                        <Link key={item.link} to={item.link} className="min-h-11 flex items-center gap-3 text-primary group">
                                             <span className="text-lg grayscale group-hover:grayscale-0 transition-all">{item.emoji}</span>
                                             <p className="font-semibold text-xs group-hover:text-accent transition-colors">{item.title}</p>
                                         </Link>
                                     ))}
                                     <div className="pt-2">
-                                        <Link to="/contact?topic=submit_vet" className="block w-full text-center py-3 bg-accent text-white rounded-xl font-bold text-sm hover:translate-y-[-2px] hover:shadow-lg transition-all active:scale-95">
+                                        <Link to="/contact?topic=submit_vet" className="block w-full text-center py-3 bg-accent-ink text-white rounded-xl font-bold text-sm hover:translate-y-[-2px] hover:shadow-lg transition-all active:scale-95">
                                             ⊕ Add to the Directory
                                         </Link>
                                     </div>
@@ -274,7 +321,7 @@ const Home: React.FC = () => {
                             </div>
 
                             {sortedVets.length === 0 && (
-                                <div className="text-center py-20 text-primary/40">
+                                <div className="text-center py-20 text-primary/80">
                                     <p className="text-sm font-medium">No results found.</p>
                                     <button onClick={() => { setSearchTerm(''); setSelectedCity('All') }} className="mt-4 text-accent-ink font-bold hover:underline text-xs uppercase tracking-widest">Reset filters</button>
                                 </div>
@@ -282,10 +329,10 @@ const Home: React.FC = () => {
                             <Footer />
                         </div>
                     </div>
-                </div>
+                </main>
 
                 <div className="hidden md:block md:w-[58%] lg:w-[60%] h-screen relative bg-secondary/10">
-                    {mapApiError ? (
+                    {!desktopMapVisible ? null : mapApiError ? (
                         <div className="h-full w-full flex flex-col items-center justify-center gap-6 bg-secondary/30 p-12">
                             <div className="w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center">
                                 <svg className="w-10 h-10 text-primary/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -294,7 +341,7 @@ const Home: React.FC = () => {
                             </div>
                             <div className="text-center max-w-xs">
                                 <h3 className="font-black text-primary text-lg mb-2">Map unavailable</h3>
-                                <p className="text-sm text-primary/50 leading-relaxed">
+                                <p className="text-sm text-primary/80 leading-relaxed">
                                     The interactive map couldn't load. Use the list on the left to browse all {vets.length} verified vets - it has everything you need.
                                 </p>
                             </div>
@@ -302,74 +349,50 @@ const Home: React.FC = () => {
                                 href="https://www.google.com/maps/search/english+speaking+vet+germany"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="px-6 py-3 bg-accent text-white text-sm font-bold rounded-xl hover:bg-accent/90 transition-all shadow-sm hover:shadow-md"
+                                className="px-6 py-3 bg-accent-ink text-white text-sm font-bold rounded-xl hover:bg-accent-ink/90 transition-all shadow-sm hover:shadow-md"
                             >
                                 Open Google Maps instead
                             </a>
                         </div>
                     ) : (
-                        <Suspense fallback={<div className="h-full w-full flex items-center justify-center text-primary/40 font-bold uppercase tracking-widest text-sm">Loading Map...</div>}>
+                        <Suspense fallback={<div className="h-full w-full flex items-center justify-center text-primary/80 font-bold uppercase tracking-widest text-sm">Loading Map...</div>}>
                             <AppMap vets={sortedVets} selectedCity={selectedCity} selectedVet={selectedVet} onSelectVet={setSelectedVet} />
                         </Suspense>
                     )}
                 </div>
 
                 {/* Mobile Navigation */}
-                <nav className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-primary/95 backdrop-blur-xl border border-white/10 px-8 py-3 flex gap-8 rounded-full z-50 shadow-2xl safe-area-bottom text-secondary/60">
-                    <Link to="/" aria-label="Directory home" className="flex flex-col items-center hover:text-white transition-colors">
+                <nav className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-primary/95 backdrop-blur-xl border border-white/10 px-8 py-3 flex gap-8 rounded-full z-50 shadow-2xl safe-area-bottom text-secondary">
+                    <Link to="/" aria-label="Directory home" className="min-h-11 min-w-11 flex flex-col items-center justify-center hover:text-white transition-colors">
                         <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg><span className="text-[9px] font-bold uppercase tracking-widest">Home</span>
                     </Link>
-                    <Link to="/blog" aria-label="Guides" className="flex flex-col items-center hover:text-white transition-colors">
+                    <Link to="/blog" aria-label="Guides" className="min-h-11 min-w-11 flex flex-col items-center justify-center hover:text-white transition-colors">
                         <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg><span className="text-[9px] font-bold uppercase tracking-widest">Guides</span>
                     </Link>
-                    <Link to="/contact?topic=submit_vet" aria-label="Submit a vet" className="flex flex-col items-center hover:text-white transition-colors">
+                    <Link to="/contact?topic=submit_vet" aria-label="Submit a vet" className="min-h-11 min-w-11 flex flex-col items-center justify-center hover:text-white transition-colors">
                         <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg><span className="text-[9px] font-bold uppercase tracking-widest">Add Vet</span>
                     </Link>
                 </nav>
 
                 {reportingVet && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-300">
-                        <div className="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full overflow-hidden border border-red-50">
-                            <div className="bg-red-50/50 p-6 border-b border-red-100/50 flex justify-between items-start">
-                                <div>
-                                    <h3 className="text-red-800 font-black flex items-center gap-2">
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                                        Report Issue
-                                    </h3>
-                                    <p className="text-[10px] text-red-600 font-bold uppercase tracking-wider mt-1 opacity-60">Correction Request</p>
-                                </div>
-                                <button onClick={() => setReportingVet(null)} className="text-red-300 hover:text-red-700 transition-colors" title="Close">
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-                                </button>
-                            </div>
-                            <div className="p-6 space-y-4">
-                                <p className="text-sm text-primary/70 font-medium">
-                                    Reporting <span className="font-bold text-primary">{reportingVet.practice_name}</span>.
-                                </p>
-                                <div className="space-y-2">
-                                    {[
-                                        { label: '⚠ Permanently Closed', reason: 'Permanently Closed' },
-                                        { label: '✏ Data Incorrect', reason: 'Data Error' },
-                                        { label: '🛡 Request Removal (Owner)', reason: 'Owner Request Removal' }
-                                    ].map(item => (
-                                        <Link
-                                            key={item.label}
-                                            to={`/contact?topic=report_issue&vetId=${reportingVet.id}&vetName=${encodeURIComponent(reportingVet.practice_name)}&reason=${encodeURIComponent(item.reason)}`}
-                                            className="block w-full text-left px-5 py-4 rounded-2xl border border-gray-100 hover:bg-red-50/30 hover:border-red-100 text-sm font-bold text-primary transition-all"
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </div>
-                                <p className="text-[10px] text-gray-400 font-medium text-center">
-                                    Privacy protected as per German GDPR regulations.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <ReportIssueDialog
+                        vet={reportingVet}
+                        onClose={() => setReportingVet(null)}
+                        returnFocusTo={reportDialogTrigger}
+                    />
                 )}
             </div>
-        </APIProvider>
+        </>
+    );
+
+    if (!mapsEnabled) return renderPage(false);
+
+    return (
+        <Suspense fallback={renderPage(false)}>
+            <GoogleMapsProvider apiKey={apiKey} onError={() => setMapApiError(true)}>
+                {renderPage(true)}
+            </GoogleMapsProvider>
+        </Suspense>
     );
 };
 

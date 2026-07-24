@@ -1,13 +1,18 @@
-import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { sendGAEvent } from '../utils/analytics';
+import { isReportIssueNavigationState } from '../utils/reportIssue';
 
 export default function Contact() {
+    const location = useLocation();
     const [searchParams] = useSearchParams();
-    const initialTopic = searchParams.get('topic') || 'general';
+    const reportIssueState = isReportIssueNavigationState(location.state)
+        ? location.state
+        : null;
+    const initialTopic = reportIssueState?.topic || searchParams.get('topic') || 'general';
 
     const [formData, setFormData] = useState({
         name: '',
@@ -26,13 +31,18 @@ export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
+    const resultRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (submitted || submitError) resultRef.current?.focus();
+    }, [submitted, submitError]);
 
     // Pre-fill form if coming from a report link
     useEffect(() => {
-        const topic = searchParams.get('topic');
-        const vetId = searchParams.get('vetId');
-        const vetName = searchParams.get('vetName');
-        const reason = searchParams.get('reason');
+        const topic = reportIssueState?.topic || searchParams.get('topic');
+        const vetId = reportIssueState?.vetId || searchParams.get('vetId');
+        const vetName = reportIssueState?.vetName || searchParams.get('vetName');
+        const reason = reportIssueState?.reason || searchParams.get('reason');
 
         if (topic === 'report_issue' && vetName && reason) {
             setFormData(prev => ({
@@ -41,10 +51,11 @@ export default function Contact() {
                 message: `[REPORT] ${reason}\nPractice: ${vetName}\nID: ${vetId}\n\nDetails: `
             }));
         }
-    }, [searchParams]);
+    }, [reportIssueState, searchParams]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (isSubmitting) return;
         setIsSubmitting(true);
         setSubmitError(null);
 
@@ -73,7 +84,7 @@ export default function Contact() {
             }
 
             // Track successful submission in GA
-            sendGAEvent('form_submit', {
+            sendGAEvent('contact_form_success', {
                 form_name: 'contact_form',
                 form_topic: formData.topic,
                 event_category: 'engagement',
@@ -141,12 +152,23 @@ export default function Contact() {
 
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-primary/5">
                     {submitError && (
-                        <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm font-medium">
+                        <div
+                            ref={resultRef}
+                            role="alert"
+                            tabIndex={-1}
+                            className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm font-medium"
+                        >
                             {submitError}
                         </div>
                     )}
                     {submitted ? (
-                        <div className="text-center py-12 space-y-4">
+                        <div
+                            ref={resultRef}
+                            role="status"
+                            aria-live="polite"
+                            tabIndex={-1}
+                            className="text-center py-12 space-y-4"
+                        >
                             <span className="text-6xl">💌</span>
                             <h3 className="text-2xl font-bold text-primary">Message Sent!</h3>
                             <p className="text-primary/70">
@@ -160,7 +182,7 @@ export default function Contact() {
                             </button>
                         </div>
                     ) : (
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={handleSubmit} aria-busy={isSubmitting} className="space-y-6">
 
                             <div>
                                 <label htmlFor="topic" className="block text-sm font-bold text-primary mb-2">I want to...</label>
@@ -327,7 +349,7 @@ export default function Contact() {
 
                             <button
                                 type="submit"
-                                disabled={isSubmitting}
+                                aria-disabled={isSubmitting}
                                 className={`w-full py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-[1.01] ${isSubmitting ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-primary text-secondary hover:shadow-lg'}`}
                             >
                                 {isSubmitting ? 'Sending...' : 'Send Message'}

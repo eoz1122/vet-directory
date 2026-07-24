@@ -134,7 +134,7 @@ This project requires a Google Maps API key for the location search feature.
 │   └── dist/               # Production build
 ├── scripts/                # Python Utilities
 │   ├── ingestion/          # Scripts for adding new data (e.g., ingest_vets.py)
-│   ├── maintenance/        # Scripts for cleaning/fixing data (e.g., cleanup_vets.py)
+│   ├── maintenance/        # Reviewed operational maintenance workflows
 │   ├── analysis/           # Analysis tools
 │   └── legacy/             # Old scripts
 ├── data/
@@ -148,7 +148,8 @@ This project requires a Google Maps API key for the location search feature.
 ### Data Management
 
 - **Ingestion**: Place new CSV files in `data/input/`. Run `python scripts/ingestion/ingest_vets.py` to merge them into `web-app/src/data/vets.json`.
-- **Cleanup**: Run `python scripts/maintenance/cleanup_vets.py` to standardize the JSON data.
+- **Confirmations**: First run `python scripts/maintenance/sweep_confirmations.py --dry-run` and review the output. A successful write atomically replaces the dataset and preserves the prior version at `web-app/src/data/vets.json.bak`. If validation or remote-log trimming fails, treat the sweep as incomplete and resolve the reported records before retrying.
+- **Maintenance tests**: Run `api/venv/bin/python -m pytest -q scripts/maintenance` before using a maintenance workflow.
 
 ## 🛠️ Tech Stack
 

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import PlaceAutocomplete from '../PlaceAutocomplete';
+import React, { lazy, Suspense, useState } from 'react';
 import { MoreCitiesDropdown } from './MoreCitiesDropdown';
 import type { Vet } from '../../types/vet';
+
+const PlaceAutocomplete = lazy(() => import('../PlaceAutocomplete'));
 
 interface VetFiltersProps {
     vets: Vet[];
@@ -22,6 +23,8 @@ interface VetFiltersProps {
     onPlaceSelect: (location: { lat: number; lng: number } | null) => void;
     onResetPagination: () => void;
     mapApiError?: boolean;
+    mapsEnabled?: boolean;
+    onEnableMaps?: () => void;
 }
 
 export const VetFilters: React.FC<VetFiltersProps> = ({
@@ -36,6 +39,8 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
     onPlaceSelect,
     onResetPagination,
     mapApiError = false,
+    mapsEnabled = true,
+    onEnableMaps = () => {},
 }) => {
     const [showRefine, setShowRefine] = useState(false);
     // Dynamic city list derived from data
@@ -62,11 +67,28 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
         <div className="space-y-6">
             {/* Location Section */}
             <div className="space-y-3">
-                <label className="text-[10px] font-bold text-primary/40 uppercase tracking-widest px-1">
+                <label className="text-[10px] font-bold text-primary/80 uppercase tracking-widest px-1">
                     Where to look?
                 </label>
                 <div className="group/search relative z-50">
-                    <PlaceAutocomplete onPlaceSelect={(loc) => { onPlaceSelect(loc); onResetPagination(); }} apiError={mapApiError} />
+                    {mapsEnabled ? (
+                        <Suspense fallback={<div className="w-full rounded-xl bg-white border border-primary/10 px-4 py-3 text-sm font-medium text-primary/70">Loading location search...</div>}>
+                            <PlaceAutocomplete onPlaceSelect={(loc) => { onPlaceSelect(loc); onResetPagination(); }} apiError={mapApiError} />
+                        </Suspense>
+                    ) : (
+                        <button
+                            type="button"
+                            aria-label="Activate location search"
+                            onClick={onEnableMaps}
+                            className="relative w-full rounded-xl bg-white border border-primary/10 px-4 py-3 text-left text-sm font-medium text-primary/70 shadow-sm hover:border-primary/20 hover:shadow-md transition-all"
+                        >
+                            <span className="pl-7">Search by city, zip, or street...</span>
+                            <svg className="w-4 h-4 text-primary/70 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </button>
+                    )}
                 </div>
 
                 {!userLocation && (
@@ -77,7 +99,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                                 onClick={() => handleCityChange('All')}
                                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm inline-block text-center active:scale-90 ${selectedCity === 'All'
                                     ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
-                                    : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
+                                    : 'bg-white border-primary/5 text-primary/80 hover:border-primary/20 hover:text-primary hover:bg-white/80'
                                     }`}
                             >
                                 All
@@ -90,7 +112,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                                     onClick={() => handleCityChange(city)}
                                     className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm inline-block text-center active:scale-90 ${selectedCity === city
                                         ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
-                                        : 'bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80'
+                                        : 'bg-white border-primary/5 text-primary/80 hover:border-primary/20 hover:text-primary hover:bg-white/80'
                                         }`}
                                 >
                                     {city}
@@ -113,11 +135,11 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                                <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">
+                                <span className="text-[10px] font-black uppercase tracking-widest text-primary/80">
                                     {searchRadius ? `Within ${searchRadius}km` : 'Sorted by Proximity'}
                                 </span>
                             </div>
-                            <button onClick={() => { setUserLocation(null); onResetPagination(); }} className="text-[10px] font-black uppercase tracking-widest text-accent hover:opacity-70 transition-opacity">Change Location</button>
+                            <button onClick={() => { setUserLocation(null); onResetPagination(); }} className="text-[10px] font-black uppercase tracking-widest text-accent-ink hover:opacity-70 transition-opacity">Change Location</button>
                         </div>
                         <div className="flex gap-2 text-[10px] font-bold uppercase tracking-widest overflow-x-auto pb-1 no-scrollbar">
                             {[1, 3, 5, 10, 25, 50].map(km => (
@@ -126,7 +148,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                                     onClick={() => { setSearchRadius(km); onResetPagination(); }}
                                     className={`px-3 py-1.5 rounded-xl border transition-all whitespace-nowrap ${searchRadius === km
                                         ? 'bg-primary text-white border-primary'
-                                        : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
+                                        : 'bg-white border-primary/10 text-primary/80 hover:border-primary/30 hover:bg-white/80'
                                         }`}
                                 >
                                     {km} km
@@ -136,7 +158,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                                 onClick={() => { setSearchRadius(null); onResetPagination(); }}
                                 className={`px-3 py-1.5 rounded-xl border transition-all whitespace-nowrap ${searchRadius === null
                                     ? 'bg-primary text-white border-primary'
-                                    : 'bg-white border-primary/10 text-primary/60 hover:border-primary/30 hover:bg-white/80'
+                                    : 'bg-white border-primary/10 text-primary/80 hover:border-primary/30 hover:bg-white/80'
                                     }`}
                             >
                                 Any Distance
@@ -151,14 +173,14 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
             {/* Refine Section: collapsed by default on mobile so listings surface sooner */}
             <button
                 onClick={() => setShowRefine(!showRefine)}
-                className="md:hidden w-full flex items-center justify-between px-4 py-3 bg-white border border-primary/5 rounded-2xl text-xs font-bold text-primary/60 shadow-sm"
+                className="md:hidden w-full flex items-center justify-between px-4 py-3 bg-white border border-primary/5 rounded-2xl text-xs font-bold text-primary/80 shadow-sm"
                 aria-expanded={showRefine}
             >
                 <span>🔍 Refine results</span>
                 <span className={`transition-transform ${showRefine ? 'rotate-180' : ''}`}>▾</span>
             </button>
             <div className={`space-y-3 ${showRefine ? '' : 'hidden md:block'}`}>
-                <label className="text-[10px] font-bold text-primary/40 uppercase tracking-widest px-1">
+                <label className="text-[10px] font-bold text-primary/80 uppercase tracking-widest px-1">
                     Refine Results
                 </label>
                 <div className="relative w-full group/filter z-0">
@@ -176,7 +198,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                         onClick={() => { setShowVerifiedOnly(!showVerifiedOnly); onResetPagination(); }}
                         className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-200 border shadow-sm flex items-center justify-center gap-2 active:scale-95 ${showVerifiedOnly
                             ? 'bg-green-500 text-white border-green-500 shadow-green-500/20'
-                            : 'bg-white border-primary/5 text-primary/60 hover:border-green-500/30 hover:text-green-600 hover:bg-green-50/50'
+                            : 'bg-white border-primary/5 text-primary/80 hover:border-green-500/30 hover:text-green-600 hover:bg-green-50/50'
                             }`}
                     >
                         <span>✅</span> Verified
@@ -185,7 +207,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                         onClick={() => { setShowEmergencyOnly(!showEmergencyOnly); onResetPagination(); }}
                         className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-200 border shadow-sm flex items-center justify-center gap-2 active:scale-95 ${showEmergencyOnly
                             ? 'bg-red-500 text-white border-red-500 shadow-red-500/20'
-                            : 'bg-white border-primary/5 text-primary/60 hover:border-red-500/30 hover:text-red-600 hover:bg-red-50/50'
+                            : 'bg-white border-primary/5 text-primary/80 hover:border-red-500/30 hover:text-red-600 hover:bg-red-50/50'
                             }`}
                     >
                         <span>🚑</span> 24h Emergency
@@ -194,7 +216,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                         onClick={() => { setShowMobileOnly(!showMobileOnly); onResetPagination(); }}
                         className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-200 border shadow-sm flex items-center justify-center gap-2 active:scale-95 ${showMobileOnly
                             ? 'bg-amber-400 text-white border-amber-400 shadow-amber-400/20'
-                            : 'bg-white border-primary/5 text-primary/60 hover:border-amber-400/30 hover:text-amber-500 hover:bg-amber-50/50'
+                            : 'bg-white border-primary/5 text-primary/80 hover:border-amber-400/30 hover:text-amber-500 hover:bg-amber-50/50'
                             }`}
                     >
                         <span>🚐</span> Mobile

@@ -1,11 +1,8 @@
 # EnglishSpeakingGermany.online 🇪🇺🐶
 
-**Mission Status:** Build Initiated.
-**Version:** 0.1.0 (Alpha)
-
 ## 1. Project Overview
-A high-velocity, mobile-first directory for English-speaking veterinarians in Berlin, Frankfurt, and Hamburg.
-Powered by a unified JSON database and automated maintenance scripts.
+A mobile-first directory for English-speaking veterinarians across Germany.
+The public application reads its directory from a unified JSON dataset.
 
 ## 2. Quick Start
 ```bash
@@ -19,27 +16,14 @@ npm run dev
 ## 3. Architecture
 - **Frontend:** React (Vite) + TypeScript
 - **Styling:** Tailwind CSS (Custom Palette: Deep Forest, Soft Sand, Safety Orange)
-- **Data Source:** `src/data/vets.json` (90+ Verified Entries)
-- **Maps:** Placeholder for Mapbox GL JS integration.
+- **Data Source:** `src/data/vets.json`
+- **Maps:** Google Maps, loaded on demand on mobile
 
-## 4. Operational Protocols
-The system includes a maintenance script for monthly hygiene checks.
+## 4. Operational Safety
 
-**Run Monthly Scan:**
-```bash
-node scripts/maintenance.js
-```
-*Checks for:*
-- Broken links (Link Rot)
-- New candidates from mock OSM data
+The former simulated monthly-maintenance command has been retired. Do not run ad hoc scripts against `src/data/vets.json`. Dataset changes must use a reviewed repository-root maintenance workflow, preserve a recoverable original, and be verified with tests and `git diff` before they are accepted.
 
-## 5. Directory Stats
-- **Berlin:** ~45 Vets
-- **Frankfurt:** ~23 Vets
-- **Hamburg:** ~26 Vets
-- **Total:** 94 Verified English-Speaking Practices
-
-## 6. Legal & Compliance
+## 5. Legal & Compliance
 - **HWG/UWG:** Listings use neutral language. Disclaimer added to all cards.
 - **GDPR:** Transparency notes and removal links implemented on every card.
 

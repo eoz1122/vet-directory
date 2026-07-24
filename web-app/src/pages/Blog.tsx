@@ -7,38 +7,31 @@ import Footer from '../components/Footer';
 const blogPosts = [
     {
         url: "/guides/pet-emergency-germany",
-        title: "🚨 Pet Emergency Guide",
+        title: "Emergency Vet Germany: Night & Weekend Help",
         emoji: "🚑",
         category: "Emergency",
-        desc: "Complete survival guide for pet emergencies in Germany. Know where to go, what to expect, costs, and emergency numbers BEFORE you need them."
+        desc: "Find local night and weekend veterinary services, official warning signs, call-ahead steps, and the federal GOT emergency-fee rules."
     },
     {
         url: "/guides/emergency-vets-berlin",
-        title: "24/7 Emergency Vets: Berlin",
+        title: "24-Hour Emergency Vets in Berlin",
         emoji: "🏥",
         category: "Emergency",
-        desc: "5 verified 24/7 emergency clinics in Berlin with English-speaking staff. Phone numbers, addresses, and what to expect."
+        desc: "Five clinics from the current Berlin Veterinary Chamber list, verified phone numbers, warning signs, GOT fees, and English call phrases."
     },
     {
         url: "/guides/emergency-vets-munich",
-        title: "24/7 Emergency Vets: Munich",
+        title: "24-Hour Emergency Vet Munich: LMU Guide",
         emoji: "🏥",
         category: "Emergency",
-        desc: "24/7 emergency veterinary clinics in Munich with English-speaking staff. Phone numbers, addresses, and out-of-hours costs."
-    },
-    {
-        url: "/guides/emergency-vets-hamburg",
-        title: "24/7 Emergency Vets: Hamburg",
-        emoji: "🏥",
-        category: "Emergency",
-        desc: "24/7 emergency veterinary clinics in Hamburg with English-speaking staff. Phone numbers, addresses, and out-of-hours costs."
+        desc: "Official LMU dog-and-cat emergency access, current service limits, location, phone guidance and GOT fees."
     },
     {
         url: "/guides/emergency-vets-frankfurt",
-        title: "24/7 Emergency Vets: Frankfurt",
+        title: "Emergency Vet Frankfurt Guide",
         emoji: "🏥",
         category: "Emergency",
-        desc: "24/7 emergency veterinary clinics in Frankfurt with English-speaking staff. Phone numbers, addresses, and out-of-hours costs."
+        desc: "Emergency contacts, clinic details, call-ahead guidance, and what to expect from out-of-hours veterinary care in Frankfurt."
     },
     {
         url: "/blog/pet-sitting-germany",
@@ -49,17 +42,17 @@ const blogPosts = [
     },
     {
         url: "/blog/moving-to-germany-with-pet",
-        title: "Moving to Germany with a Pet",
+        title: "Moving to Germany With a Dog or Cat",
         emoji: "🐕",
         category: "Moving",
-        desc: "The complete 2026 survival checklist for bringing your dog or cat to Germany. Customs, vaccinations, and paperwork explained."
+        desc: "Choose the correct EU or non-EU route, then check microchip, rabies, certificate, owner-travel and breed requirements."
     },
     {
         url: "/blog/pet-friendly-apartments-germany",
-        title: "Finding a Pet-Friendly Apartment",
+        title: "Pet-Friendly Apartments in Berlin",
         emoji: "🏠",
         category: "Living",
-        desc: "How to convince a German landlord to say 'Ja'. Understanding your rights, legal phrases, and where to look."
+        desc: "Official Berlin search steps, the BGH dog-and-cat ruling, lease consent, application documents and a practical pet resume."
     },
     {
         url: "/blog/eu-pet-passport-germany",
@@ -84,10 +77,10 @@ const blogPosts = [
     },
     {
         url: "/blog/public-transport-with-dogs-munich",
-        title: "Public Transport with Dogs: Munich",
+        title: "Dogs on Munich Public Transport",
         emoji: "🥨",
         category: "Transport",
-        desc: "MVV Guide: Navigating the 'muzzle gray zone' and utilizing the free travel rules in Germany's financial hub."
+        desc: "Current MVV rules for dog tickets, leads, muzzles, Deutschlandticket travel and the MVV FLEX exception."
     },
     {
         url: "/blog/public-transport-with-dogs-stuttgart",
@@ -154,10 +147,10 @@ const blogPosts = [
     },
     {
         url: "/blog/vet-costs-germany",
-        title: "💶 Vet Costs in Germany (GOT)",
+        title: "💶 Vet Costs in Germany: GOT Fees Explained",
         emoji: "💶",
         category: "Bureaucracy",
-        desc: "How much a vet visit really costs: the GOT fee schedule, the 1x-4x multiplier system, emergency surcharges, and 6 legitimate ways to save."
+        desc: "Understand GOT base fees, ordinary 1x-3x rates, emergency 2x-4x billing, invoice items, VAT and estimates."
     },
     {
         url: "/blog/neutering-cost-germany",
@@ -175,17 +168,17 @@ const blogPosts = [
     },
     {
         url: "/blog/pet-insurance-germany",
-        title: "Pet Insurance in Germany (2026)",
+        title: "Pet Insurance in Germany: Dog & Cat Guide",
         emoji: "💰",
         category: "Bureaucracy",
-        desc: "Do you really need it? Understanding liability vs. health insurance, the GOT fees, and why emergencies are so expensive."
+        desc: "Compare dog liability, cat and dog health cover, surgery policies, exclusions, GOT reimbursement and policy limits."
     },
     {
         url: "/blog/german-dog-etiquette-rules",
-        title: "German Dog Etiquette: Unwritten Rules",
+        title: "German Dog Etiquette and Useful Phrases",
         emoji: "🐕",
         category: "Living",
-        desc: "Blending in like a local. From leash laws (Leinenpflicht) to restaurant etiquette and the social rules of the park."
+        desc: "How to greet dogs politely, read local leash signs, compare Berlin, Hamburg and Lower Saxony rules, and ask before entering venues."
     },
     {
         url: "/blog/pet-medication-germany-guide",
@@ -199,14 +192,14 @@ const blogPosts = [
         title: "🐕 Best Dog Food in Germany",
         emoji: "🐕",
         category: "Health",
-        desc: "Dry vs wet vs raw (BARF), decoding German food labels, where to buy, and how to choose the right food for your dog. A practical buyer's guide for expats."
+        desc: "How to compare complete foods, German label terms, dry and wet formats, raw-diet risks and manufacturer quality checks."
     },
     {
         url: "/blog/best-cat-food-germany",
         title: "🐈 Best Cat Food in Germany",
         emoji: "🐈",
         category: "Health",
-        desc: "Wet vs dry, why cats need taurine and moisture, decoding German labels, and where to buy. A practical buyer's guide for expat cat owners."
+        desc: "How to compare complete foods, wet and dry formats, taurine needs, kitten nutrition and manufacturer quality checks."
     },
     {
         url: "/english-speaking-vet-access-germany",
@@ -217,31 +210,24 @@ const blogPosts = [
     },
     {
         url: "/blog/first-vet-visit-germany",
-        title: "🩺 Your First Vet Visit in Germany",
+        title: "🩺 First Vet Visit in Germany",
         emoji: "🩺",
         category: "Vet Care",
-        desc: "From booking the appointment to paying the bill. A step-by-step guide for English-speaking expats at their first German vet visit."
-    },
-    {
-        url: "/blog/emergency-vet-berlin-english",
-        title: "🚨 Emergency Vets in Berlin: 24h English Guide",
-        emoji: "🚨",
-        category: "Emergency",
-        desc: "Verified 24-hour clinics, what to say when you call, how to get there at 2am, and what emergency vet care will cost."
+        desc: "What to bring, what to ask, how GOT billing and invoices work, and when pet-passport rules matter."
     },
     {
         url: "/blog/breed-restrictions-germany",
-        title: "⚠️ Breed Restrictions in Germany",
+        title: "Banned Dog Breeds in Germany: Federal and State Rules",
         emoji: "⚠️",
         category: "Bureaucracy",
-        desc: "State-by-state breakdown of banned and restricted breeds in Germany. What's banned, what's restricted, and how the Wesenstest can change everything."
+        desc: "Check the federal import ban, its limited exceptions, and verified Berlin, Hamburg and Bavaria keeping rules before travelling."
     },
     {
         url: "/blog/public-transport-with-dogs-cologne",
-        title: "🚋 Dogs on the KVB in Cologne",
+        title: "Dogs on Cologne Public Transport",
         emoji: "🚋",
         category: "Transport",
-        desc: "Tickets, muzzle rules, peak hour tips, the best dog-friendly routes, and where to go once you get off the tram."
+        desc: "Dogs travel free on KVB and VRS services. Check short-leash, muzzle, seat, carrier and assistance-dog rules."
     },
     {
         url: "/blog/best-dog-parks-berlin",
@@ -259,19 +245,168 @@ const blogPosts = [
     },
     {
         url: "/blog/tick-season-germany-pets",
-        title: 'Tick Season in Germany: Pet Prevention Guide',
+        title: 'Tick Season in Germany: Dog & Cat Safety',
         emoji: "🦟",
         category: 'Health',
-        desc: 'Germany has one of Europe\'s highest tick burdens. Here is when tick season peaks, which diseases to watch for, and how to protect your pet.'
+        desc: 'When ticks are active, how to check and remove them safely, species-specific prevention and urgent warning signs.'
     },
     {
         url: "/blog/emergency-vet-hamburg-english",
-        title: 'Emergency Vets in Hamburg: 24/7 English-Speaking Clinics',
+        title: '24-Hour Emergency Vet Hamburg: What to Call',
         emoji: "🏥",
         category: 'Emergency',
-        desc: 'Pet emergency in Hamburg? Find 24-hour English-speaking vet services and learn the emergency system.'
+        desc: 'Use Hamburg’s rotating veterinary duty service, current call number, published hours, warning signs, and GOT fee rules.'
     }
 ];
+
+type BlogPost = (typeof blogPosts)[number];
+
+const FEATURED_POST_URLS = [
+    '/guides/pet-emergency-germany',
+    '/blog/moving-to-germany-with-pet',
+    '/blog/pet-friendly-apartments-germany',
+];
+
+const TOPIC_LINKS = [
+    ['#start-here', 'Start here'],
+    ['#emergency-vet-care', 'Emergency and vet care'],
+    ['#moving-paperwork', 'Moving and paperwork'],
+    ['#health-safety', 'Health and safety'],
+    ['#everyday-life', 'Everyday life'],
+    ['#new-pet-essentials', 'New pet essentials'],
+];
+
+const GUIDE_SECTION_DEFINITIONS = [
+    {
+        id: 'emergency-vet-care',
+        title: 'Emergency and vet care',
+        description: 'Know who to call, what to bring, and how German emergency and routine vet care works.',
+        categories: ['Emergency', 'Vet Care'],
+    },
+    {
+        id: 'moving-paperwork',
+        title: 'Moving and paperwork',
+        description: 'Handle entry rules, registration, insurance, fees, and the paperwork that follows a move.',
+        categories: ['Bureaucracy', 'Report'],
+    },
+    {
+        id: 'health-safety',
+        title: 'Health and safety',
+        description: 'Make informed decisions about prevention, medication, nutrition, tracking, and urgent warning signs.',
+        categories: ['Health', 'Safety'],
+    },
+    {
+        id: 'everyday-life',
+        title: 'Everyday life',
+        description: 'Navigate transport, housing, pet sitting, city rules, parks, and everyday etiquette.',
+        categories: ['Living', 'City Living', 'Transport'],
+    },
+    {
+        id: 'new-pet-essentials',
+        title: 'New pet essentials',
+        description: 'Start with a practical checklist for adoption, puppy care, and the first month at home.',
+        categories: ['New Pet'],
+    },
+];
+
+const blogPostByUrl = new Map(blogPosts.map((post) => [post.url, post]));
+const FEATURED_POSTS = FEATURED_POST_URLS.map((url) => {
+    const post = blogPostByUrl.get(url);
+
+    if (!post) {
+        throw new Error(`Missing featured Blog guide: ${url}`);
+    }
+
+    return post;
+});
+const featuredPostUrls = new Set(FEATURED_POST_URLS);
+const GUIDE_SECTIONS = GUIDE_SECTION_DEFINITIONS.map((section) => ({
+    ...section,
+    posts: blogPosts.filter(
+        (post) => !featuredPostUrls.has(post.url) && section.categories.includes(post.category),
+    ),
+}));
+const ORDERED_BLOG_POSTS = [
+    ...FEATURED_POSTS,
+    ...GUIDE_SECTIONS.flatMap((section) => section.posts),
+];
+const orderedBlogPostUrls = new Set(ORDERED_BLOG_POSTS.map((post) => post.url));
+
+if (
+    ORDERED_BLOG_POSTS.length !== blogPosts.length
+    || orderedBlogPostUrls.size !== blogPosts.length
+) {
+    throw new Error('Every Blog guide must appear exactly once in the task-based hierarchy.');
+}
+
+const BLOG_URL = 'https://englishspeakinggermany.online/blog';
+const BLOG_SCHEMA = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    url: BLOG_URL,
+    name: 'Expat Pet Guides for Germany',
+    description: 'English-language guides on pet ownership in Germany: vet costs, insurance, emergencies, adoption, and bureaucracy.',
+    publisher: {
+        '@type': 'Organization',
+        name: 'EnglishSpeakingVets',
+        url: 'https://englishspeakinggermany.online',
+        logo: 'https://englishspeakinggermany.online/logo.png',
+        description: 'Community-verified directory of English-speaking veterinarians in Germany for expats and international residents.',
+    },
+    mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: ORDERED_BLOG_POSTS.length,
+        itemListElement: ORDERED_BLOG_POSTS.map((post, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            item: {
+                '@type': 'Article',
+                name: post.title,
+                description: post.desc,
+                url: `https://englishspeakinggermany.online${post.url}`,
+            },
+        })),
+    },
+};
+
+function GuideCard({ post, featured = false }: { post: BlogPost; featured?: boolean }) {
+    return (
+        <Link
+            to={post.url}
+            data-guide-url={post.url}
+            className={`group flex h-full gap-4 rounded-2xl border bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:p-6 ${
+                featured ? 'border-accent/20' : 'border-primary/5'
+            }`}
+        >
+            <span
+                aria-hidden="true"
+                className={`flex shrink-0 items-center justify-center rounded-xl bg-primary/5 ${
+                    featured ? 'h-14 w-14 text-3xl' : 'h-12 w-12 text-2xl'
+                }`}
+            >
+                {post.emoji}
+            </span>
+            <div className="flex min-w-0 flex-1 flex-col">
+                <span className="mb-2 text-[11px] font-bold uppercase tracking-wider text-primary/55">
+                    {post.category}
+                </span>
+                <h3
+                    className={`font-bold leading-tight text-primary transition-colors group-hover:text-accent ${
+                        featured ? 'text-xl' : 'text-lg'
+                    }`}
+                >
+                    {post.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-primary/70">
+                    {post.desc}
+                </p>
+                <span className="mt-4 text-sm font-bold text-accent">
+                    Read guide <span aria-hidden="true">→</span>
+                </span>
+            </div>
+        </Link>
+    );
+}
 
 export default function Blog() {
     return (
@@ -281,21 +416,7 @@ export default function Blog() {
                 <meta name="description" content="Essential guides for pet owners in Germany. Dog tax, public transport rules, finding apartments, and EU pet passports explained for expats." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/blog" />
                 <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Blog",
-                        "url": "https://englishspeakinggermany.online/blog",
-                        "name": "Expat Pet Guides for Germany",
-                        "description": "English-language guides on pet ownership in Germany: vet costs, insurance, emergencies, adoption, and bureaucracy.",
-                        "publisher": {
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "name": "EnglishSpeakingVets",
-                        "url": "https://englishspeakinggermany.online",
-                        "logo": "https://englishspeakinggermany.online/logo.png",
-                        "description": "Community-verified directory of English-speaking veterinarians in Germany for expats and international residents."
-                    }
-                    })}
+                    {JSON.stringify(BLOG_SCHEMA)}
                 </script>
                 <meta property="og:title" content="Expat Dog & Cat Guides Germany | EnglishSpeakingVets" />
                 <meta property="og:description" content="Essential guides for pet owners in Germany. Dog tax, public transport rules, finding apartments, and EU pet passports explained for expats." />
@@ -305,47 +426,81 @@ export default function Blog() {
 
             <Header />
 
-            <main className="max-w-6xl mx-auto p-6 md:p-12 mb-12">
-                <section className="text-center mb-16 space-y-4">
+            <main className="mx-auto mb-12 max-w-6xl px-5 py-8 sm:px-6 md:p-12">
+                <section className="mx-auto mb-8 max-w-3xl space-y-4 text-center md:mb-10">
                     <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">The Expat Resource Center</span>
                     <h1 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">
                         Life in Germany with Pets
                     </h1>
-                    <p className="text-xl text-primary/70 max-w-2xl mx-auto font-serif italic">
-                        "Navigating German bureaucracy is hard. Doing it with four paws is harder. We make it simple."
+                    <p className="mx-auto max-w-2xl text-lg leading-relaxed text-primary/70 md:text-xl">
+                        Practical guides for emergencies, moving, paperwork, health, and daily life with a dog or cat in Germany.
                     </p>
                 </section>
 
-                {/* Affiliate Banner - Figo */}
+                <nav
+                    aria-label="Guide topics"
+                    className="mb-12 flex flex-wrap justify-center gap-2 md:mb-16"
+                >
+                    {TOPIC_LINKS.map(([href, label]) => (
+                        <a
+                            key={href}
+                            href={href}
+                            className="inline-flex min-h-11 items-center rounded-full border border-primary/10 bg-white px-4 py-2 text-sm font-bold text-primary shadow-sm transition-colors hover:border-accent/30 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                        >
+                            {label}
+                        </a>
+                    ))}
+                </nav>
+
+                <section id="start-here" className="scroll-mt-24">
+                    <div className="mb-6">
+                        <span className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
+                            Start here
+                        </span>
+                        <h2 className="mt-2 text-3xl font-bold tracking-tight text-primary md:text-4xl">
+                            The three guides most pet owners need first
+                        </h2>
+                        <p className="mt-3 max-w-3xl text-base leading-relaxed text-primary/70 md:text-lg">
+                            Get urgent help, prepare for a move, or understand how to find a home that welcomes your pet.
+                        </p>
+                    </div>
+                    <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+                        {FEATURED_POSTS.map((post) => (
+                            <GuideCard key={post.url} post={post} featured />
+                        ))}
+                    </div>
+                </section>
+
                 <a
                     href="https://tidd.ly/45yENEP"
                     onClick={() => trackAffiliateClick('Figo', 'Blog_Banner')}
                     target="_blank"
                     rel="noopener noreferrer sponsored"
-                    className="block mb-16 relative overflow-hidden rounded-3xl bg-white border border-primary/5 shadow-sm hover:shadow-xl transition-all duration-300 group"
+                    data-testid="sponsored-partner"
+                    className="group relative my-12 block overflow-hidden rounded-3xl border border-primary/5 bg-white shadow-sm transition-all duration-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:my-16"
                 >
                     <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -ml-32 -mb-32"></div>
 
-                    <div className="relative p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                        <div className="flex-shrink-0 bg-primary/5 p-6 rounded-2xl border border-primary/5 text-6xl">
+                    <div className="relative flex flex-col items-center gap-5 p-6 sm:flex-row sm:text-left md:gap-8 md:p-8">
+                        <div className="flex-shrink-0 rounded-2xl border border-primary/5 bg-primary/5 p-4 text-4xl md:text-5xl">
                             🛡️
                         </div>
 
-                        <div className="flex-1 text-center md:text-left space-y-3">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 text-[10px] font-black uppercase tracking-widest bg-accent/10 text-accent rounded-full border border-accent/10">
-                                <span>Part of the Pack</span>
+                        <div className="flex-1 space-y-2 text-center sm:text-left">
+                            <div className="inline-flex items-center rounded-full border border-accent/10 bg-accent/10 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-accent">
+                                <span>Sponsored partner</span>
                             </div>
-                            <h2 className="text-2xl md:text-3xl font-bold text-primary">
+                            <h2 className="text-xl font-bold text-primary md:text-2xl">
                                 Save 30€ on Pet Health Insurance
                             </h2>
-                            <p className="text-primary/70 text-lg leading-relaxed max-w-xl">
+                            <p className="max-w-xl text-sm leading-relaxed text-primary/70 md:text-base">
                                 Vet bills in Germany can be a shock. We've partnered with <span className="font-bold text-primary">Figo</span> to offer comprehensive coverage that speaks your language.
                             </p>
                         </div>
 
                         <div className="flex-shrink-0">
-                            <span className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-secondary font-bold rounded-xl hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 group-hover:scale-105 transform duration-300">
+                            <span className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-6 py-3 font-bold text-secondary shadow-lg shadow-primary/20 transition-transform duration-300 group-hover:scale-105">
                                 Get Your Quote
                                 <span className="group-hover:translate-x-1 transition-transform">→</span>
                             </span>
@@ -353,31 +508,23 @@ export default function Blog() {
                     </div>
                 </a>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {blogPosts.map((post) => (
-                        <Link
-                            key={post.url}
-                            to={post.url}
-                            className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-primary/5 group flex flex-col"
-                        >
-                            <div className="p-8 flex items-start justify-between bg-primary/5 border-b border-primary/5">
-                                <span className="text-5xl">{post.emoji}</span>
-                                <span className="px-3 py-1 bg-white text-xs font-bold rounded-full uppercase tracking-wider text-primary/60 border border-primary/10">
-                                    {post.category}
-                                </span>
-                            </div>
-                            <div className="p-8 flex-1 flex flex-col">
-                                <h3 className="text-2xl font-bold text-primary mb-3 group-hover:text-accent transition-colors leading-tight">
-                                    {post.title}
-                                </h3>
-                                <p className="text-primary/70 leading-relaxed">
-                                    {post.desc}
+                <div className="space-y-14 md:space-y-20">
+                    {GUIDE_SECTIONS.map((section) => (
+                        <section key={section.id} id={section.id} className="scroll-mt-24">
+                            <div className="mb-6 max-w-3xl">
+                                <h2 className="text-2xl font-bold tracking-tight text-primary md:text-3xl">
+                                    {section.title}
+                                </h2>
+                                <p className="mt-2 leading-relaxed text-primary/70">
+                                    {section.description}
                                 </p>
-                                <div className="mt-auto pt-6 flex items-center text-accent font-bold text-sm uppercase tracking-wide">
-                                    Read Guide <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-                                </div>
                             </div>
-                        </Link>
+                            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
+                                {section.posts.map((post) => (
+                                    <GuideCard key={post.url} post={post} />
+                                ))}
+                            </div>
+                        </section>
                     ))}
                 </div>
             </main>

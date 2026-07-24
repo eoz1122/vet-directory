@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
+import BrandLogo from './BrandLogo';
 
 export default function Header() {
     return (
         <header className="sticky top-0 z-50 bg-secondary backdrop-blur-md border-b border-primary/10 p-5">
             <div className="max-w-6xl mx-auto flex justify-between items-center">
                 <Link to="/" className="text-2xl font-bold flex items-center gap-2 sm:gap-4 group shrink-0">
-                    <img src="/logo.png" alt="EnglishSpeakingVets - Find an English Speaking Vet in Germany" className="h-10 sm:h-16 md:h-18 w-auto transition-transform group-hover:scale-105" />
+                    <BrandLogo
+                        alt="EnglishSpeakingVets - Find an English Speaking Vet in Germany"
+                        priority
+                        className="h-10 sm:h-16 md:h-18 w-auto transition-transform group-hover:scale-105"
+                    />
                     <div className="flex flex-col leading-tight">
                         <span className="hidden sm:inline text-primary font-black text-lg md:text-xl uppercase tracking-tight">English Speaking</span>
                         <span className="hidden sm:inline text-accent font-black text-2xl md:text-3xl uppercase tracking-tighter">Vets</span>

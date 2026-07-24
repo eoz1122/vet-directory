@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import RelatedPosts from '../components/RelatedPosts';
+import BrandLogo from '../components/BrandLogo';
 
 export default function QualityPromise() {
     return (
@@ -52,7 +53,7 @@ export default function QualityPromise() {
                     </h2>
                     <p className="text-lg leading-relaxed text-primary/80">
                         <span className="inline-flex items-center gap-1.5 align-baseline">
-                            <img src="/logo.png" alt="" className="h-5 w-auto self-center" />
+                            <BrandLogo alt="" className="h-5 w-auto self-center" />
                             <span className="font-bold tracking-tight">
                                 <span className="text-primary">EnglishSpeaking</span>
                                 <span className="text-accent">Vets</span>

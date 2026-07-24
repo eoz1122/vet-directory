@@ -19,7 +19,7 @@ export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages,
                 ← Prev
             </button>
             <div className="flex items-center px-4 py-2 border border-primary/5 rounded-xl bg-white shadow-sm">
-                 <span className="text-[14px] font-black text-primary/80">{currentPage} <span className="text-[10px] text-primary/40 font-bold uppercase mx-1">of</span> {totalPages}</span>
+                 <span className="text-[14px] font-black text-primary/80">{currentPage} <span className="text-[10px] text-primary/70 font-bold uppercase mx-1">of</span> {totalPages}</span>
             </div>
             <button
                 onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}

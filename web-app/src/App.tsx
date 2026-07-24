@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { lazy, Suspense } from 'react';
 import ScrollToTop from './components/ScrollToTop';
@@ -40,9 +40,7 @@ const GermanVetPhrases = lazy(() => import('./pages/GermanVetPhrases'));
 const PetInsuranceGermany = lazy(() => import('./pages/PetInsuranceGermany'));
 const GermanDogEtiquette = lazy(() => import('./pages/GermanDogEtiquette'));
 const PetEmergencyGermany = lazy(() => import('./pages/PetEmergencyGermany'));
-const EmergencyVetsBerlin = lazy(() => import('./pages/EmergencyVetsBerlin'));
 const PetEmergencyMunich = lazy(() => import('./pages/PetEmergencyMunich'));
-const PetEmergencyHamburg = lazy(() => import('./pages/PetEmergencyHamburg'));
 const PetEmergencyFrankfurt = lazy(() => import('./pages/PetEmergencyFrankfurt'));
 const PetMedicationGermany = lazy(() => import('./pages/PetMedicationGermany'));
 const PetFoodGermany = lazy(() => import('./pages/PetFoodGermany'));
@@ -98,16 +96,16 @@ function App() {
             <Route path="/blog/pet-insurance-germany" element={<PetInsuranceGermany />} />
             <Route path="/blog/german-dog-etiquette-rules" element={<GermanDogEtiquette />} />
             <Route path="/guides/pet-emergency-germany" element={<PetEmergencyGermany />} />
-            <Route path="/guides/emergency-vets-berlin" element={<EmergencyVetsBerlin />} />
+            <Route path="/guides/emergency-vets-berlin" element={<EmergencyVetBerlinGuide />} />
             <Route path="/guides/emergency-vets-munich" element={<PetEmergencyMunich />} />
-            <Route path="/guides/emergency-vets-hamburg" element={<PetEmergencyHamburg />} />
+            <Route path="/guides/emergency-vets-hamburg" element={<Navigate replace to="/blog/emergency-vet-hamburg-english" />} />
             <Route path="/guides/emergency-vets-frankfurt" element={<PetEmergencyFrankfurt />} />
             <Route path="/blog/pet-medication-germany-guide" element={<PetMedicationGermany />} />
             <Route path="/blog/best-dog-food-germany" element={<PetFoodGermany />} />
             <Route path="/blog/best-cat-food-germany" element={<CatFoodGermany />} />
             <Route path="/english-speaking-vet-access-germany" element={<VetAccessReport />} />
             <Route path="/blog/first-vet-visit-germany" element={<FirstVetVisitGermany />} />
-            <Route path="/blog/emergency-vet-berlin-english" element={<EmergencyVetBerlinGuide />} />
+            <Route path="/blog/emergency-vet-berlin-english" element={<Navigate replace to="/guides/emergency-vets-berlin" />} />
             <Route path="/blog/breed-restrictions-germany" element={<BreedRestrictionsGermany />} />
             <Route path="/blog/public-transport-with-dogs-cologne" element={<PublicTransportCologne />} />
             <Route path="/blog/cat-microchipping-germany" element={<CatMicrochippingGermany />} />

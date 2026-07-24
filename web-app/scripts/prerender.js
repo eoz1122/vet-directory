@@ -11,9 +11,17 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import {
+    assertPrerenderComplete,
+    canonicalForRoute,
+    extractBlogRoutes,
+    PRERENDER_FALLBACK_SELECTOR,
+    resolvePrerenderDistDir,
+    shouldKeepModulePreload,
+} from './prerender-readiness.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIST_DIR = path.resolve(__dirname, '../dist');
+const DIST_DIR = resolvePrerenderDistDir(__dirname, process.env.PRERENDER_DIST_DIR);
 const VETS_DATA_PATH = path.resolve(__dirname, '../src/data/vets.json');
 const BLOG_FILE_PATH = path.resolve(__dirname, '../src/pages/Blog.tsx');
 
@@ -54,12 +62,7 @@ function getBlogRoutes() {
     try {
         if (!fs.existsSync(BLOG_FILE_PATH)) return [];
         const content = fs.readFileSync(BLOG_FILE_PATH, 'utf-8');
-        const regex = /url:\s*["']([^"']+)["']/g;
-        const routes = [];
-        let match;
-        while ((match = regex.exec(content)) !== null) {
-            routes.push(match[1]);
-        }
+        const routes = extractBlogRoutes(content);
         console.log(`  📝 Found ${routes.length} blog routes`);
         return routes;
     } catch (e) {
@@ -195,36 +198,42 @@ async function prerender() {
                 { timeout: 10000 }
             );
 
-            // Step 2: Wait for react-helmet-async to flush the page's head tags.
-            // Ready = title changed from the fallback OR a Helmet-managed canonical
-            // exists. The old pathname==='/' shortcut captured the homepage BEFORE
-            // Helmet flushed, shipping it without canonical/schema for weeks.
-            // Home's title equals the fallback by design, so the canonical is the
-            // reliable readiness signal there. Pages with neither (only /404) fall
-            // through after the deadline.
+            // Step 2: Wait for react-helmet-async to flush this route's head tags.
+            // The fallback index can already contain the homepage canonical, so any
+            // Helmet canonical is insufficient. Require the exact route canonical.
             const FALLBACK_TITLE = 'English-Speaking Vets in Germany | Verified Expat Directory';
-            await page.evaluate((fallback, maxWaitMs) => {
-                return new Promise((resolve) => {
-                    const ready = () =>
-                        document.title !== fallback ||
-                        !!document.querySelector('link[rel="canonical"][data-rh]');
-                    if (ready()) return resolve(true);
-                    const deadline = Date.now() + maxWaitMs;
-                    const iv = setInterval(() => {
-                        if (ready() || Date.now() >= deadline) {
-                            clearInterval(iv);
-                            resolve(true);
-                        }
-                    }, 50);
-                });
-            }, FALLBACK_TITLE, 3000);
+            const expectedCanonical = canonicalForRoute(route);
+            if (expectedCanonical) {
+                await page.waitForFunction(
+                    expected => {
+                        const canonical = document.querySelector('link[rel="canonical"][data-rh]');
+                        return canonical?.getAttribute('href') === expected;
+                    },
+                    { timeout: 10000 },
+                    expectedCanonical,
+                );
+            } else {
+                await page.waitForFunction(
+                    fallback => document.title !== fallback,
+                    { timeout: 10000 },
+                    FALLBACK_TITLE,
+                );
+            }
 
             // Extra breathing room for Helmet to flush all remaining head mutations
             // (og:title, og:description, canonical, JSON-LD scripts)
             await new Promise(r => setTimeout(r, 300));
 
+            const modulePreloads = await page.$$eval(
+                'link[rel="modulepreload"]',
+                links => links.map(link => link.getAttribute('href') || ''),
+            );
+            const preloadsToDrop = modulePreloads.filter(
+                href => !shouldKeepModulePreload(route, href),
+            );
+
             // Clean up dynamic elements that break React hydration
-            await page.evaluate(() => {
+            await page.evaluate((preloadsToDrop, fallbackMetadataSelector) => {
                 // 1. Clear Google Maps containers — the static snapshot breaks the live map
                 document.querySelectorAll('[data-testid="map"], .gm-style, [class*="map"]').forEach(el => {
                     if (el.closest('[data-testid="map"]') || el.getAttribute('data-testid') === 'map') {
@@ -255,18 +264,16 @@ async function prerender() {
                     }
                 });
 
-                // 5. Drop preload hints for directory-only chunks (vet dataset, map) on pages
-                //    that never use them, so blog/content landing pages don't background-fetch
-                //    ~40KB of JS they don't need. Directory pages (/ and /vets/*) keep them.
-                const pathname = window.location.pathname;
-                if (pathname !== '/' && !pathname.startsWith('/vets/')) {
-                    document.querySelectorAll('link[rel="modulepreload"]').forEach(l => {
-                        if (/\/(vets|Home|Map|maps-vendor|ConfirmEnglish)-/.test(l.getAttribute('href') || '')) {
-                            l.remove();
-                        }
-                    });
-                }
-            });
+                // 5. Keep route-critical preload hints, but let interactive map chunks load
+                //    only when the desktop map or mobile location search requests them.
+                document.querySelectorAll('link[rel="modulepreload"]').forEach(l => {
+                    if (preloadsToDrop.includes(l.getAttribute('href') || '')) l.remove();
+                });
+
+                // 6. Remove generic homepage metadata from the static route snapshot.
+                //    Helmet has already emitted the route-specific replacements.
+                document.querySelectorAll(fallbackMetadataSelector).forEach(meta => meta.remove());
+            }, preloadsToDrop, PRERENDER_FALLBACK_SELECTOR);
 
             const html = await page.content();
 
@@ -304,6 +311,8 @@ async function prerender() {
     console.log(`   ✅ ${rendered} pages rendered`);
     if (failed > 0) console.log(`   ❌ ${failed} pages failed`);
     console.log('');
+
+    assertPrerenderComplete({ rendered, failed, total: routes.length });
 }
 
 prerender().catch(err => {

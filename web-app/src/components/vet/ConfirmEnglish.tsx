@@ -1,4 +1,4 @@
-import { useState, type MouseEvent } from 'react';
+import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import type { Vet } from '../../types/vet';
 
 // Nginx routes /api/* to the Flask app in production; localhost in dev.
@@ -10,10 +10,15 @@ type State = 'idle' | 'sending' | 'done' | 'error';
 
 /**
  * One-click community confirmation that a practice speaks English.
- * Posts to the email-relay backend (no DB); the admin then refreshes the listing.
+ * Posts pending evidence to the backend for human review.
  */
 export function ConfirmEnglish({ vet }: { vet: Vet }) {
     const [state, setState] = useState<State>('idle');
+    const successRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (state === 'done') successRef.current?.focus();
+    }, [state]);
 
     const confirm = async (e: MouseEvent) => {
         e.preventDefault();
@@ -38,8 +43,14 @@ export function ConfirmEnglish({ vet }: { vet: Vet }) {
 
     if (state === 'done') {
         return (
-            <div className="mt-3 text-[11px] font-bold text-green-700 flex items-center justify-center gap-1.5 bg-green-50 border border-green-200 rounded-lg px-3 py-2">
-                <span>✓</span> Thanks! We'll refresh this listing.
+            <div
+                ref={successRef}
+                role="status"
+                aria-live="polite"
+                tabIndex={-1}
+                className="mt-3 min-h-11 text-[11px] font-bold text-green-700 flex items-center justify-center gap-1.5 bg-green-50 border border-green-200 rounded-lg px-3 py-2"
+            >
+                <span>✓</span> Thanks! We'll review your confirmation.
             </div>
         );
     }
@@ -48,15 +59,25 @@ export function ConfirmEnglish({ vet }: { vet: Vet }) {
         <button
             type="button"
             onClick={confirm}
-            disabled={state === 'sending'}
-            title="Confirm this practice speaks English"
-            className="mt-3 w-full text-[11px] font-bold text-primary/60 border border-primary/10 rounded-lg px-3 py-2 flex items-center justify-center gap-1.5 transition-colors hover:text-green-700 hover:border-green-300 hover:bg-green-50 disabled:opacity-50"
+            aria-label={state === 'error'
+                ? `Confirmation failed for ${vet.practice_name}. Try again`
+                : state === 'sending'
+                    ? `Confirming ${vet.practice_name} speaks English`
+                    : `Confirm ${vet.practice_name} speaks English`}
+            aria-disabled={state === 'sending'}
+            aria-busy={state === 'sending'}
+            className="mt-3 min-h-11 w-full text-[11px] font-bold text-primary/80 border border-primary/10 rounded-lg px-3 py-2 flex items-center justify-center gap-1.5 transition-colors hover:text-green-700 hover:border-green-300 hover:bg-green-50 aria-disabled:opacity-50"
         >
             {state === 'sending'
-                ? 'Sending…'
+                ? 'Sending...'
                 : state === 'error'
-                    ? 'Hmm, try again'
+                    ? 'Confirmation failed. Try again.'
                     : '🐾 Confirm they speak English'}
+            {state === 'error' && (
+                <span role="alert" className="sr-only">
+                    Confirmation failed. Try again.
+                </span>
+            )}
         </button>
     );
 }

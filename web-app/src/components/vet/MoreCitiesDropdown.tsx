@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, type MouseEvent } from 'react';
+import { useState, useRef, useEffect, useId, type KeyboardEvent, type MouseEvent } from 'react';
 import { createPortal } from 'react-dom';
 
 interface Props {
@@ -18,6 +18,7 @@ export function MoreCitiesDropdown({ cities, selectedCity, onSelect }: Props) {
     const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
     const btnRef = useRef<HTMLButtonElement>(null);
     const menuRef = useRef<HTMLDivElement>(null);
+    const listboxId = useId();
 
     const place = () => {
         const r = btnRef.current?.getBoundingClientRect();
@@ -28,6 +29,45 @@ export function MoreCitiesDropdown({ cities, selectedCity, onSelect }: Props) {
         e.stopPropagation();
         if (!open) place();
         setOpen((o) => !o);
+    };
+
+    const closeAndRestoreFocus = () => {
+        btnRef.current?.focus();
+        setOpen(false);
+    };
+
+    const openFromKeyboard = (event: KeyboardEvent<HTMLButtonElement>) => {
+        if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+        event.preventDefault();
+        if (!open) place();
+        setOpen(true);
+    };
+
+    const handleListboxKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+        const options = Array.from(
+            menuRef.current?.querySelectorAll<HTMLElement>('[role="option"]') ?? [],
+        );
+        if (options.length === 0) return;
+
+        const currentIndex = Math.max(0, options.indexOf(document.activeElement as HTMLElement));
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closeAndRestoreFocus();
+        } else if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            options[(currentIndex + 1) % options.length].focus();
+        } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            options[(currentIndex - 1 + options.length) % options.length].focus();
+        } else if (event.key === 'Home') {
+            event.preventDefault();
+            options[0].focus();
+        } else if (event.key === 'End') {
+            event.preventDefault();
+            options[options.length - 1].focus();
+        } else if (event.key === 'Tab') {
+            setOpen(false);
+        }
     };
 
     useEffect(() => {
@@ -49,13 +89,25 @@ export function MoreCitiesDropdown({ cities, selectedCity, onSelect }: Props) {
         };
     }, [open]);
 
+    useEffect(() => {
+        if (!open) return;
+        const frame = window.requestAnimationFrame(() => {
+            menuRef.current?.querySelector<HTMLElement>('[role="option"]')?.focus();
+        });
+        return () => window.cancelAnimationFrame(frame);
+    }, [open]);
+
     return (
         <div className="relative inline-block">
             <button
                 ref={btnRef}
                 type="button"
                 onClick={toggle}
-                className="appearance-none px-4 py-2 pr-8 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm cursor-pointer focus:outline-none bg-white border-primary/5 text-primary/60 hover:border-primary/20 hover:text-primary hover:bg-white/80 active:scale-90 flex items-center"
+                onKeyDown={openFromKeyboard}
+                aria-haspopup="listbox"
+                aria-expanded={open}
+                aria-controls={listboxId}
+                className="appearance-none min-h-11 px-4 py-2 pr-8 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm cursor-pointer bg-white border-primary/5 text-primary/80 hover:border-primary/20 hover:text-primary hover:bg-white/80 active:scale-90 flex items-center"
             >
                 More Cities...
                 <svg className={`w-3 h-3 ml-2 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path></svg>
@@ -64,16 +116,22 @@ export function MoreCitiesDropdown({ cities, selectedCity, onSelect }: Props) {
             {open && pos && createPortal(
                 <div
                     ref={menuRef}
+                    id={listboxId}
+                    role="listbox"
+                    aria-label="More cities"
                     style={{ position: 'fixed', top: pos.top, left: pos.left, width: 192 }}
                     onClick={(e) => e.stopPropagation()}
+                    onKeyDown={handleListboxKeyDown}
                     className="bg-white rounded-xl shadow-xl border border-primary/10 overflow-y-auto overscroll-contain max-h-64 z-[1000] custom-scrollbar"
                 >
                     {cities.map((city) => (
                         <button
                             key={city}
                             type="button"
-                            onClick={() => { onSelect(city); setOpen(false); }}
-                            className={`w-full block px-4 py-2 text-xs font-bold text-left transition-colors ${selectedCity === city
+                            role="option"
+                            aria-selected={selectedCity === city}
+                            onClick={() => { onSelect(city); closeAndRestoreFocus(); }}
+                            className={`w-full min-h-11 block px-4 py-2 text-xs font-bold text-left transition-colors ${selectedCity === city
                                 ? 'bg-primary/10 text-primary'
                                 : 'text-primary/70 hover:bg-primary/5 hover:text-primary'
                                 }`}

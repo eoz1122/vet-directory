@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BlogSidebar from '../components/BlogSidebar';
@@ -7,27 +8,31 @@ import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import { generateArticleSchema } from '../utils/schema';
 
-const CatMicrochippingGermany: React.FC = () => {
-    const publishDate = '2026-05-19';
-    
-    const schema = generateArticleSchema(
-        'Cat Microchipping in Germany: What Changed in 2026',
-        'Germany is tightening cat microchipping and registration rules. Here is what expat cat owners need to know, and what you must do before it affects you.',
-        'https://englishspeakinggermany.online/blog/cat-microchipping-germany',
-        publishDate
-    );
+const ARTICLE_TITLE = 'Cat Microchipping in Germany: Rules & Registration (2026)';
+const ARTICLE_DESCRIPTION = 'Does your cat need a microchip in Germany? Check Berlin and Hamburg rules for outdoor cats, registration options, and EU pet passport requirements.';
+const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/cat-microchipping-germany';
+const DATE_PUBLISHED = '2026-05-19';
+const DATE_MODIFIED = '2026-07-22';
+const articleSchema = generateArticleSchema(
+    ARTICLE_TITLE,
+    ARTICLE_DESCRIPTION,
+    ARTICLE_URL,
+    DATE_PUBLISHED,
+    DATE_MODIFIED
+);
 
+const CatMicrochippingGermany: React.FC = () => {
     return (
         <div className="min-h-screen flex flex-col font-sans bg-secondary/20">
             <Helmet>
-                <title>Cat Microchipping in Germany 2026 | English Speaking Vets</title>
-                <meta name="description" content="Germany is tightening cat microchipping and registration rules. Here is what expat cat owners need to know, and what you must do before it affects you." />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/cat-microchipping-germany" />
-                <meta property="og:title" content="Cat Microchipping in Germany 2026 | English Speaking Vets" />
-                <meta property="og:description" content="Germany is tightening cat microchipping and registration rules. Here is what expat cat owners need to know, and what you must do before it affects you." />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/cat-microchipping-germany" />
+                <title>{ARTICLE_TITLE}</title>
+                <meta name="description" content={ARTICLE_DESCRIPTION} />
+                <link rel="canonical" href={ARTICLE_URL} />
+                <meta property="og:title" content={ARTICLE_TITLE} />
+                <meta property="og:description" content={ARTICLE_DESCRIPTION} />
+                <meta property="og:url" content={ARTICLE_URL} />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <script type="application/ld+json">{JSON.stringify(schema)}</script>
+                <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
             </Helmet>
 
             <Header />
@@ -45,12 +50,12 @@ const CatMicrochippingGermany: React.FC = () => {
                             BUREAUCRACY GUIDE
                         </div>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight">
-                            Cat Microchipping in Germany: The Complete 2026 Guide
+                            Cat Microchipping in Germany: Rules and Registration (2026)
                         </h1>
 
                         <div className="flex items-center text-primary/60 text-sm mb-12 space-x-4">
                             <span className="flex items-center">
-                                📅 Published: May 2026
+                                📅 Last verified: July 2026
                             </span>
                         </div>
 
@@ -70,7 +75,7 @@ const CatMicrochippingGermany: React.FC = () => {
                                 If you have a cat in Germany, this one is for you. For years, cat registration here was a patchwork of voluntary schemes. Dogs got a compulsory chip, a tax, and a paper trail. Cats, meanwhile, largely slipped through the net.
                             </p>
                             <p>
-                                <strong>That is changing right now.</strong> Across Germany, rules around cat identification are tightening fast. Several states are moving to compulsory microchipping for outdoor cats. 
+                                <strong>Local rules are changing.</strong> Germany's federal animal-welfare law lets authorities create defined cat-protection areas with identification requirements for cats that roam outdoors.
                             </p>
                             <p>Here is exactly where things stand in 2026, and what you need to do if your cat is not chipped yet.</p>
 
@@ -90,18 +95,47 @@ const CatMicrochippingGermany: React.FC = () => {
                             </div>
 
                             <h2 id="current-law" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">⚖️ 2. The Current State of the Law (2026)</h2>
-                            <p>Germany does not yet have a single federal law mandating cat microchipping. But the picture varies significantly by state:</p>
+                            <p><strong>Germany has no nationwide cat microchipping rule.</strong> Section 13b of the federal Animal Welfare Act allows authorities to create rules for defined cat-protection areas, so requirements depend on the applicable local ordinance and generally target cats with uncontrolled outdoor access.</p>
                             
                             <ul className="list-disc pl-5 space-y-2 mt-4">
-                                <li><strong>North Rhine-Westphalia (NRW):</strong> Mandatory microchipping and TASSO registration required for outdoor cats under animal welfare provisions.</li>
-                                <li><strong>Lower Saxony:</strong> Mandatory chip and registration for outdoor/free-roaming cats.</li>
-                                <li><strong>Saarland:</strong> Mandatory chip and registration.</li>
-                                <li><strong>Berlin, Hamburg, Munich, Frankfurt:</strong> Strong official recommendation by local authorities. Penalties are possible for animal welfare violations if an unchipped cat causes problems.</li>
+                                <li><strong>Berlin:</strong> Across the city, cats allowed uncontrolled outdoor access must be neutered. Outdoor cats that are not capable of reproduction must also be microchipped and registered.</li>
+                                <li><strong>Hamburg:</strong> Since 1 January 2026, outdoor cats throughout Hamburg must be neutered, microchipped, and registered with TASSO or FINDEFIX.</li>
+                                <li><strong>Elsewhere:</strong> Rules can be specific to a municipality or district. Check your local Veterinaeramt or Ordnungsamt before allowing your cat uncontrolled outdoor access.</li>
                             </ul>
+
+                            <div className="bg-white p-5 rounded-xl border border-primary/10 my-6 not-prose">
+                                <p className="font-bold text-primary mb-3">Official rule sources</p>
+                                <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
+                                    <a
+                                        href="https://www.gesetze-im-internet.de/tierschg/__13b.html"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex min-h-11 items-center text-accent-ink font-bold underline underline-offset-4"
+                                    >
+                                        Federal cat-protection law
+                                    </a>
+                                    <a
+                                        href="https://www.berlin.de/sen/verbraucherschutz/aufgaben/tierschutz/katzenschutzverordnung/artikel.1206331.php"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex min-h-11 items-center text-accent-ink font-bold underline underline-offset-4"
+                                    >
+                                        Official Berlin cat rules
+                                    </a>
+                                    <a
+                                        href="https://www.hamburg.de/go/katzenschutzverordnung"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex min-h-11 items-center text-accent-ink font-bold underline underline-offset-4"
+                                    >
+                                        Official Hamburg cat rules
+                                    </a>
+                                </div>
+                            </div>
 
                             <div className="bg-blue-50 border border-blue-200 p-5 rounded-xl my-6 not-prose">
                                 <h3 className="font-bold text-blue-800 mb-2">What about indoor-only cats?</h3>
-                                <p className="text-sm text-blue-800">In most German states, indoor-only cats are not currently subject to mandatory microchipping requirements. However, if your cat ever gets out even briefly, you will be glad the chip was there. Lost cats without microchips are routinely handed to shelters and rehomed when unclaimed.</p>
+                                <p className="text-sm text-blue-800">Most local cat-protection ordinances target uncontrolled outdoor access, so indoor-only cats are generally outside their scope. A chip is still a reliable way to reconnect you with your cat if it escapes.</p>
                             </div>
 
                             <h2 id="what-it-involves" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">💉 3. What Microchipping Actually Involves</h2>
@@ -157,6 +191,15 @@ const CatMicrochippingGermany: React.FC = () => {
                                         <span><strong>Register with TASSO</strong> as soon as you get home. It takes two minutes online.</span>
                                     </li>
                                 </ul>
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 not-prose">
+                                <Link to="/vets/berlin" className="inline-flex min-h-11 items-center justify-center bg-accent text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-primary transition-colors">
+                                    English-speaking vets in Berlin
+                                </Link>
+                                <Link to="/vets/hamburg" className="inline-flex min-h-11 items-center justify-center bg-accent text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-primary transition-colors">
+                                    English-speaking vets in Hamburg
+                                </Link>
                             </div>
 
                         </div>

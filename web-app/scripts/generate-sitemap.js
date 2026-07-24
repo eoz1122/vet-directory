@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { extractBlogRoutes } from './prerender-readiness.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -48,17 +49,11 @@ function getBlogRoutes() {
             return [];
         }
         const content = fs.readFileSync(BLOG_FILE_PATH, 'utf-8');
-        // Look for url: "/blog/..." patterns in the blogPosts array
-        const regex = /url:\s*["']([^"']+)["']/g;
-        const routes = [];
-        let match;
-        while ((match = regex.exec(content)) !== null) {
-            routes.push({
-                url: match[1],
+        const routes = extractBlogRoutes(content).map((route) => ({
+                url: route,
                 changefreq: 'monthly',
                 priority: 0.8, // Blog posts - good priority
-            });
-        }
+            }));
         console.log(`Found ${routes.length} blog posts.`);
         return routes;
     } catch (e) {

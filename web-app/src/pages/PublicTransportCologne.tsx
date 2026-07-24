@@ -7,27 +7,113 @@ import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
+const TITLE = 'Dogs on Cologne Public Transport: KVB Rules (2026)';
+const DESCRIPTION = 'Taking a dog on Cologne public transport? Check 2026 KVB and VRS rules for free travel, short leashes, muzzles, seats, carriers and assistance dogs.';
+const URL = 'https://englishspeakinggermany.online/blog/public-transport-with-dogs-cologne';
+
+const SOURCE_URLS = {
+    kvbFaq: 'https://www.kvb.koeln/abos-und-tickets/faq.html',
+    nrwConditions: 'https://www.vrs.de/fileadmin/01_Tickets/Downloads_und_Informationen/NRW_Befoerderungsbedingungen_01072026.pdf',
+    vrsTariff: 'https://www.vrs.de/tickets/tarifbestimmungen-rheinlandtarif',
+    cologneDogRules: 'https://www.stadt-koeln.de/leben-in-koeln/umwelt-tiere/74472/index.html',
+} as const;
+
+const TABLE_OF_CONTENTS = [
+    { id: 'free-travel', label: 'Dogs Travel Free' },
+    { id: 'leash', label: 'Leash and Supervision' },
+    { id: 'muzzle', label: 'Muzzle Rules' },
+    { id: 'seats-carriers', label: 'Seats, Carriers and Assistance Dogs' },
+    { id: 'crowding', label: 'Crowding and Staff Instructions' },
+    { id: 'outside-nrw', label: 'Travel Outside NRW' },
+    { id: 'vet-trip', label: 'Travelling to a Vet' },
+    { id: 'sources', label: 'Official Sources' },
+    { id: 'faq', label: 'FAQ' },
+];
+
+const FAQS = [
+    {
+        q: 'Does a dog need a ticket on KVB in Cologne?',
+        a: 'No. KVB states that dogs travel free, and the current NRW transport conditions allow animals to be carried without charge when safety, order, and other passengers are not adversely affected.',
+    },
+    {
+        q: 'Does a dog have to be on a leash on Cologne public transport?',
+        a: 'Yes. A dog must be supervised by a suitable person and kept on a short leash. Follow any additional instruction given by transport staff.',
+    },
+    {
+        q: 'Does every dog need a muzzle on KVB?',
+        a: 'No. Under the NRW transport conditions, a dog that could endanger other passengers must wear a muzzle. Separate NRW and Cologne rules can require dangerous dogs and dogs of specified breeds to wear one unless an official exemption applies.',
+    },
+    {
+        q: 'Can my dog sit on a KVB seat?',
+        a: 'No. Dogs must not occupy seats. Other animals may travel only in suitable containers, and those containers must not block seats.',
+    },
+    {
+        q: 'Can KVB refuse to carry a dog?',
+        a: 'Yes. There is no automatic right to take an animal. Carriage depends on safety and order not being endangered and other passengers not being bothered. Transport staff make operational decisions and their instructions must be followed.',
+    },
+];
+
+const ARTICLE_SCHEMA = generateArticleSchema(
+    TITLE,
+    DESCRIPTION,
+    URL,
+    '2026-05-05',
+    '2026-07-23',
+);
+
+const FAQ_SCHEMA = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a,
+        },
+    })),
+};
+
+const OTHER_CITY_GUIDES = [
+    { city: 'Berlin', path: '/blog/public-transport-with-dogs-berlin' },
+    { city: 'Hamburg', path: '/blog/public-transport-with-dogs-hamburg' },
+    { city: 'Munich', path: '/blog/public-transport-with-dogs-munich' },
+    { city: 'Frankfurt', path: '/blog/public-transport-with-dogs-frankfurt' },
+    { city: 'Stuttgart', path: '/blog/public-transport-with-dogs-stuttgart' },
+];
+
+const ExternalSourceLink = ({
+    href,
+    children,
+}: {
+    href: string;
+    children: string;
+}) => (
+    <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-accent-ink font-bold hover:underline"
+    >
+        {children}
+    </a>
+);
+
 export default function PublicTransportCologne() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>Public Transport with Dogs in Cologne: The KVB Guide | EnglishSpeakingVets</title>
-                <meta name="description" content="Taking your dog on the U-Bahn, tram, or bus in Cologne? Here's the full KVB rules: tickets, muzzles, peak hours, and what the inspectors actually check." />
-                <meta name="keywords" content="public transport dogs cologne, kvb dogs cologne, hund ubahn koln, dogs cologne tram, pet transport cologne germany" />
-                <meta property="og:title" content="Public Transport with Dogs in Cologne: The KVB Guide" />
-                <meta property="og:description" content="Tickets, muzzle rules, peak hours, and the best dog-friendly routes in Cologne. Everything you need to take your dog on the KVB." />
+                <title>{TITLE}</title>
+                <meta name="description" content={DESCRIPTION} />
+                <meta name="keywords" content="dogs Cologne public transport, KVB dog rules, VRS dogs free, KVB leash muzzle, Hund KVB Köln, dog tram Cologne" />
+                <meta property="og:title" content={TITLE} />
+                <meta property="og:description" content={DESCRIPTION} />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/public-transport-with-dogs-cologne" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/public-transport-with-dogs-cologne" />
-                <script type="application/ld+json">
-                    {JSON.stringify(generateArticleSchema(
-                        "Public Transport with Dogs in Cologne: The KVB Guide",
-                        "Taking your dog on the U-Bahn, tram, or bus in Cologne? Here's the full KVB rules: tickets, muzzles, peak hours, and what the inspectors actually check.",
-                        "https://englishspeakinggermany.online/blog/public-transport-with-dogs-cologne",
-                        "2026-05-05"
-                    ))}
-                </script>
+                <meta property="og:url" content={URL} />
+                <link rel="canonical" href={URL} />
+                <script type="application/ld+json">{JSON.stringify(ARTICLE_SCHEMA)}</script>
+                <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
             </Helmet>
 
             <Header />
@@ -36,203 +122,195 @@ export default function PublicTransportCologne() {
                 <div className="flex flex-col lg:flex-row gap-12">
                     <BlogSidebar />
 
-                    <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Transport Guide</span>
-                        <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            🚋 Public Transport with Dogs in Cologne: The KVB Guide
+                    <article className="lg:flex-1 max-w-4xl min-w-0">
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
+                            Verified Cologne Transport Guide
+                        </span>
+                        <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4 leading-tight">
+                            {TITLE}
                         </h1>
+                        <p className="text-sm text-primary/60 mb-8">
+                            Published May 5, 2026 · Reviewed July 23, 2026
+                        </p>
 
-                        <TableOfContents items={[
-                            { id: 'at-a-glance', label: '1. KVB Dog Rules at a Glance' },
-                            { id: 'tickets', label: '2. Tickets' },
-                            { id: 'leash-muzzle', label: '3. Leash and Muzzle Rules' },
-                            { id: 'timing', label: '4. When and Where to Travel' },
-                            { id: 'small-dogs', label: '5. Small Dogs and Carriers' },
-                            { id: 'inspectors', label: '6. KVB Inspectors and Fines' },
-                            { id: 'destinations', label: '7. Dog-Friendly Destinations' },
-                            { id: 'vet-trips', label: '8. Getting to the Vet' },
-                        ]} />
+                        <TableOfContents items={TABLE_OF_CONTENTS} />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
-                            <p className="border-l-4 border-accent pl-6 py-2 italic bg-accent/5 rounded-r-lg text-xl">
-                                Cologne is genuinely one of the most dog-friendly cities in Germany. The Rhine promenade, the Stadtwald, the Grungurtel parks. But getting there? That means the KVB.
+                            <p className="border-l-4 border-accent pl-6 py-2 bg-accent/5 rounded-r-lg text-xl">
+                                Dogs travel free on KVB and throughout the VRS. You need a valid ticket for yourself, but there is no separate dog ticket for Cologne buses, trams, or Stadtbahn services.
                             </p>
+                            <p className="mt-6">
+                                Free travel does not mean unconditional travel. The NRW transport conditions require safe, considerate handling and allow operational decisions by transport staff. This guide separates those official conditions from optional comfort advice.
+                            </p>
+
+                            <h2 id="free-travel" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                1. Dogs Travel Free
+                            </h2>
                             <p>
-                                Here's everything you need to know to take your dog on Cologne's trams, Stadtbahn, and buses. No stress, no fines, no accidentally breaking rules you didn't know existed.
+                                KVB&apos;s current FAQ states that dogs are carried free of charge. The NRW conditions that apply in the VRS likewise allow animals to travel without charge when their carriage does not endanger safety or order and does not bother other passengers.
                             </p>
-
-                            <hr className="my-8 border-primary/10" />
-
-                            <h2 id="at-a-glance" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🐶 KVB Dog Rules at a Glance</h2>
-                            <div className="bg-white p-6 rounded-xl border border-primary/10 my-6 not-prose">
-                                <div className="grid grid-cols-2 gap-3">
-                                    {[
-                                        { icon: '✅', text: 'Dogs allowed on all KVB trams, Stadtbahn, and buses' },
-                                        { icon: '🎫', text: 'Dogs need a Kinderticket or Kurzstrecke ticket' },
-                                        { icon: '🦮', text: 'Dogs must be on a leash at all times' },
-                                        { icon: '😷', text: 'Muzzle required for large and restricted breeds' },
-                                        { icon: '🪑', text: 'Dogs cannot occupy seats - floor only' },
-                                        { icon: '🆓', text: 'Small dogs in enclosed carriers travel free' },
-                                    ].map(item => (
-                                        <div key={item.text} className="flex items-start gap-2 bg-secondary/50 p-3 rounded-lg">
-                                            <span className="text-lg">{item.icon}</span>
-                                            <span className="text-sm text-primary/80">{item.text}</span>
-                                        </div>
-                                    ))}
+                            <div className="grid sm:grid-cols-2 gap-4 my-8 not-prose">
+                                <div className="bg-white p-5 rounded-2xl border border-primary/10">
+                                    <p className="text-xs font-bold uppercase tracking-wider text-primary/50 mb-2">Passenger</p>
+                                    <p className="font-bold text-primary">Valid ticket required</p>
+                                </div>
+                                <div className="bg-accent/5 p-5 rounded-2xl border border-accent/20">
+                                    <p className="text-xs font-bold uppercase tracking-wider text-accent-ink mb-2">Dog</p>
+                                    <p className="font-bold text-primary">No separate dog ticket</p>
                                 </div>
                             </div>
-
-                            <h2 id="tickets" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🎟️ 2. Tickets: What Your Dog Needs</h2>
                             <p>
-                                <strong>The standard dog ticket is a <em>Kinderticket</em> (child's ticket) or a <em>Kurzstrecke</em> (short trip ticket).</strong> In practice, most KVB riders buy a short trip ticket for their dog for journeys within the inner zones.
-                            </p>
-                            <div className="my-6 not-prose overflow-x-auto">
-                                <table className="w-full text-sm">
-                                    <thead>
-                                        <tr className="bg-primary text-secondary">
-                                            <th className="text-left p-3 font-bold rounded-tl-lg">Ticket type</th>
-                                            <th className="text-left p-3 font-bold">Coverage</th>
-                                            <th className="text-right p-3 font-bold rounded-tr-lg">Price (approx.)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {[
-                                            ['Kurzstrecke (short trip)', 'Up to 4 stops on U-Bahn, or short bus/tram journey', '~€2.20'],
-                                            ['Kinderticket (single)', 'All zones for one journey', '~€2.10'],
-                                            ['Tageskarte (day ticket)', 'Companion dogs often covered - check current tariff', '~€8.40'],
-                                            ['Small dog in carrier', 'Free (counts as luggage)', 'Free'],
-                                        ].map(([type, coverage, price], i) => (
-                                            <tr key={type} className={i % 2 === 0 ? 'bg-white' : 'bg-secondary/50'}>
-                                                <td className="p-3 border-b border-primary/5 font-bold text-primary">{type}</td>
-                                                <td className="p-3 border-b border-primary/5 text-primary/70">{coverage}</td>
-                                                <td className="p-3 border-b border-primary/5 text-right font-bold text-accent">{price}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <h2 id="leash-muzzle" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">👏 3. Leash and Muzzle Rules</h2>
-                            <div className="space-y-4 not-prose">
-                                <div className="bg-white p-5 rounded-xl border border-primary/10">
-                                    <h3 className="font-bold text-primary mb-2">🦮 Leash</h3>
-                                    <p className="text-sm text-primary/80">Required at all times. Short leash, not a long retractable lead that your dog can use to explore the carriage.</p>
-                                </div>
-                                <div className="bg-white p-5 rounded-xl border border-primary/10">
-                                    <h3 className="font-bold text-primary mb-2">😷 Muzzle</h3>
-                                    <p className="text-sm text-primary/80">The KVB's own rules don't mandate muzzles for all dogs, but <strong>large dogs classified as "Grohunde"</strong> (generally over 50cm at the shoulder) may be required to wear one. In practice, inspectors rarely enforce this for well-behaved dogs. If your dog is large, reactive, or anxious around other passengers, carrying a muzzle is wise and avoids any confrontation.</p>
-                                    <p className="text-sm text-primary/80 mt-2">Dogs classified as <strong>restricted breeds</strong> are required to wear a muzzle in all public spaces in most German states, including public transport. See our <Link to="/blog/breed-restrictions-germany" className="text-accent underline hover:text-primary">breed restrictions guide</Link>.</p>
-                                </div>
-                            </div>
-
-                            <h2 id="timing" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">⏰ 4. When and Where to Travel</h2>
-                            <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-xl my-6 not-prose">
-                                <h3 className="font-bold text-yellow-800 mb-2">⏰ Rush hour: avoid 7-9am and 4-7pm</h3>
-                                <p className="text-sm text-yellow-800">KVB carriages get crowded during peak commuting times, and a dog in a packed U-Bahn is uncomfortable for everyone. The U-Bahn lines under the city centre (especially the Dom/Hauptbahnhof interchange) get particularly dense.</p>
-                            </div>
-                            <p><strong>Best KVB options for dogs:</strong></p>
-                            <div className="space-y-3 my-4 not-prose">
-                                {[
-                                    { route: 'Tram lines (Straenbahn)', tip: 'Generally roomier than the underground sections of the Stadtbahn and easier to board with a dog.' },
-                                    { route: 'Line 16/18 towards Bonn', tip: 'Runs largely overground after leaving the city centre: spacious and dog-friendly.' },
-                                    { route: 'Buses (middle or rear doors)', tip: 'Tend to have more floor space near the doors. Avoid the front door; the area near the driver is where inspectors tend to be fussier about dogs.' },
-                                ].map(item => (
-                                    <div key={item.route} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-primary/10">
-                                        <span className="text-accent font-bold text-lg mt-0.5">✓</span>
-                                        <div>
-                                            <p className="font-bold text-primary text-sm">{item.route}</p>
-                                            <p className="text-primary/70 text-sm">{item.tip}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <h2 id="small-dogs" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🐾 5. Small Dogs and Carriers</h2>
-                            <p>
-                                Small dogs that fit in a carrier travel for free and don't need their own ticket; they're treated the same as luggage. The carrier must be fully enclosed (no dog sticking their head out in a way that would alarm other passengers).
-                            </p>
-                            <p>
-                                <strong>No carrier?</strong> Small dogs on a leash are fine, but they still need a ticket like any other dog.
+                                This corrects a common misunderstanding: a child ticket is not the standard dog fare in Cologne. Do not buy an extra ticket solely because you are travelling with a dog on KVB or within the VRS.
                             </p>
 
-                            <h2 id="inspectors" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🚫 6. KVB Inspectors and Fines</h2>
-                            <div className="bg-red-50 border border-red-200 p-5 rounded-xl my-6 not-prose">
-                                <p className="text-sm text-red-800">
-                                    KVB inspectors (<em>Kontrolleure</em>) do check dog tickets, particularly on the busy inner-city lines. The fine for travelling without a valid dog ticket is the same as for a person: currently <strong>€60</strong>.
+                            <h2 id="leash" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                2. Use a Short Leash and Suitable Supervision
+                            </h2>
+                            <p>
+                                Under the NRW conditions, every dog must be supervised by a suitable person and kept on a short leash. The leash and the handler must keep the dog under control around doors, platforms, other passengers, mobility aids, and other animals.
+                            </p>
+                            <ul className="space-y-3 my-6">
+                                <li>Keep the dog close instead of allowing it to cross the aisle or doorway.</li>
+                                <li>Do not block doors, escape routes, wheelchair spaces, or priority areas.</li>
+                                <li>Follow instructions from KVB or other transport staff, including a request to move or leave if safe carriage is not possible.</li>
+                            </ul>
+                            <p>
+                                There is no automatic right to take an animal. Carriage can be refused when safety or operational order would be endangered or other passengers would be bothered.
+                            </p>
+
+                            <h2 id="muzzle" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                3. When a Muzzle Is Required
+                            </h2>
+                            <div className="bg-yellow-50 border border-yellow-200 p-6 rounded-2xl my-8 not-prose">
+                                <p className="font-bold text-yellow-900 mb-2">The transport rule is based on risk</p>
+                                <p className="text-sm text-yellow-900/80 leading-relaxed">
+                                    The NRW conditions require a muzzle when a dog could endanger other passengers. Size alone does not create a KVB muzzle requirement.
                                 </p>
-                                <p className="text-sm text-red-800 mt-2 font-bold">Don't chance it. A Kurzstrecke ticket is €2.20.</p>
                             </div>
-
-                            <h2 id="destinations" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">🌳 7. Dog-Friendly Destinations by KVB</h2>
-                            <div className="space-y-4 my-6 not-prose">
-                                {[
-                                    { icon: '🌳', name: 'Stadtwald', how: 'Tram towards Mungersdorf', desc: "Cologne's largest urban forest, with off-leash meadows and forest trails. Perfect for a weekend morning." },
-                                    { icon: '🌊', name: 'Rheinpark', how: 'U-Bahn to Deutz/Messe or Koln-Messe/Deutz, short walk to river', desc: 'Dogs are welcome on the grass areas along the Rhine promenade.' },
-                                    { icon: '🏡', name: 'Grungurtel', how: "Multiple tram stops around the city's green belt", desc: "Cologne's famous green belt circles the city. Multiple tram stops give access to different sections, all well-suited for dogs." },
-                                    { icon: '🐾', name: 'Fuhlinger See', how: 'Bus or tram plus a short walk', desc: 'Lake complex with areas where dogs can swim. Leash rules apply in some designated sections.' },
-                                ].map(item => (
-                                    <div key={item.name} className="bg-white p-5 rounded-xl border border-primary/10 flex items-start gap-4">
-                                        <span className="text-3xl">{item.icon}</span>
-                                        <div>
-                                            <h3 className="font-bold text-primary">{item.name}</h3>
-                                            <p className="text-xs text-accent font-bold mt-0.5">🚋 {item.how}</p>
-                                            <p className="text-sm text-primary/70 mt-1">{item.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <h2 id="vet-trips" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">👼 8. Getting to the Vet by Public Transport</h2>
                             <p>
-                                Getting to a vet appointment by public transport in Cologne is completely doable; most practices in our <Link to="/vets/cologne" className="text-accent underline hover:text-primary">Cologne vet directory</Link> are within easy reach of KVB lines.
+                                Separate state and city dog law also matters. Dangerous dogs and dogs of specified breeds generally have leash and muzzle duties in public unless an official exemption applies. Cologne advises handlers who have an exemption to carry the proof and show it on request.
                             </p>
-                            <div className="space-y-2 my-4 not-prose">
-                                {[
-                                    'Bring a carrier if your cat or small dog is stressed: enclosed carriers significantly reduce anxiety on public transport',
-                                    'For post-surgery or unwell animals, a taxi is kinder than the U-Bahn, even if the dog technically can travel',
-                                    'For larger dogs after surgery: support them on the floor; don\'t lift them onto seats',
-                                ].map(tip => (
-                                    <div key={tip} className="flex items-start gap-2 text-sm text-primary/80">
-                                        <span className="text-accent mt-0.5">→</span>
-                                        <span>{tip}</span>
-                                    </div>
-                                ))}
-                            </div>
-                            <Link to="/vets/cologne" className="inline-flex items-center gap-2 mt-2 bg-accent text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-primary transition-colors">
-                                Find a verified English-speaking vet in Cologne →
+                            <p>
+                                A &quot;large dog&quot; classification under NRW law is not the same as a dangerous-dog classification and does not automatically create a muzzle duty. If you are unsure how your dog is classified, verify it with Cologne&apos;s public-order office before travelling.
+                            </p>
+                            <Link
+                                to="/blog/breed-restrictions-germany"
+                                className="font-bold text-accent-ink hover:underline"
+                            >
+                                Read the Germany breed-restrictions guide
                             </Link>
 
-                            <div className="bg-primary text-secondary p-8 rounded-2xl my-12 not-prose">
-                                <h2 className="text-xl font-bold text-accent mb-3 mt-0">KVB Quick Reference</h2>
-                                <div className="grid grid-cols-2 gap-2 text-sm">
-                                    {[
-                                        ['Dogs allowed', 'Yes, all trams, Stadtbahn, buses'],
-                                        ['Ticket required', 'Yes, Kinderticket or Kurzstrecke'],
-                                        ['Free travel', 'Only in enclosed carrier (small animals)'],
-                                        ['Leash required', 'Always'],
-                                        ['Muzzle required', 'Large and restricted breeds'],
-                                        ['Seats', 'Dogs must stay on the floor'],
-                                        ['Peak hours', 'Avoid 7-9am and 4-7pm if possible'],
-                                        ['Fine for no ticket', '€60'],
-                                    ].map(([label, value]) => (
-                                        <div key={label} className="bg-white/10 p-3 rounded-lg">
-                                            <p className="text-white/60 text-xs uppercase tracking-wider">{label}</p>
-                                            <p className="font-bold text-white text-sm mt-0.5">{value}</p>
-                                        </div>
-                                    ))}
+                            <h2 id="seats-carriers" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                4. Seats, Other Animals and Assistance Dogs
+                            </h2>
+                            <div className="space-y-4 my-8 not-prose">
+                                <div className="bg-white p-6 rounded-2xl border border-primary/10">
+                                    <h3 className="font-bold text-primary mb-2">Dogs stay off seats</h3>
+                                    <p className="text-sm text-primary/70">
+                                        Dogs must not occupy seats. Position the dog safely on the floor without blocking the aisle or doors.
+                                    </p>
+                                </div>
+                                <div className="bg-white p-6 rounded-2xl border border-primary/10">
+                                    <h3 className="font-bold text-primary mb-2">Cats and other animals</h3>
+                                    <p className="text-sm text-primary/70">
+                                        Other animals may travel only in suitable containers, and the containers must not occupy seats.
+                                    </p>
+                                </div>
+                                <div className="bg-accent/5 p-6 rounded-2xl border border-accent/20">
+                                    <h3 className="font-bold text-primary mb-2">Assistance dogs</h3>
+                                    <p className="text-sm text-primary/70">
+                                        Assistance dogs accompanying a disabled person, including guide dogs, are always admitted under the NRW transport conditions.
+                                    </p>
                                 </div>
                             </div>
 
-                            <div className="flex flex-wrap gap-3 not-prose mt-8">
+                            <h2 id="crowding" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                5. Crowding and Staff Instructions
+                            </h2>
+                            <p>
+                                KVB does not publish a special peak-hour dog ban in the sources reviewed for this guide. Quieter travel can still be more comfortable, especially for a nervous, recovering, or easily overwhelmed dog, but it is a practical choice rather than a separate ticket or timetable rule.
+                            </p>
+                            <p>
+                                Capacity and conditions can change during disruptions or crowded service. Keep clear of priority space and follow staff instructions. If the dog is distressed or safe control is no longer possible, leave at the next safe stop and reassess the journey.
+                            </p>
+
+                            <h2 id="outside-nrw" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                6. Travel Outside NRW
+                            </h2>
+                            <p>
+                                A Deutschlandticket does not create one nationwide animal rule. Dogs travel free within NRW, including KVB and VRS services, but outside NRW local rules may differ. Check the transport operator for every region on a longer trip before boarding.
+                            </p>
+                            <p>
+                                This guide covers local and regional public transport under the NRW and VRS conditions. Long-distance IC, EC, and ICE services use separate Deutsche Bahn rules.
+                            </p>
+
+                            <h2 id="vet-trip" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                7. Travelling to a Vet
+                            </h2>
+                            <p>
+                                Plan the route and transfers before leaving, and confirm that your dog can board, stand, and travel without worsening an injury or illness. Use a suitable secure carrier for cats and other small animals. For an unstable animal or urgent symptoms, call the clinic before travelling and follow its transport advice.
+                            </p>
+                            <div className="bg-red-50 border border-red-200 p-6 rounded-2xl my-8 not-prose">
+                                <p className="font-bold text-red-900 mb-2">Public transport is not emergency transport</p>
+                                <p className="text-sm text-red-900/80 leading-relaxed">
+                                    Collapse, severe breathing difficulty, uncontrolled bleeding, seizures, or rapid deterioration require immediate veterinary triage. Tell the clinic your location and ask how to transport the animal safely.
+                                </p>
+                            </div>
+                            <Link
+                                to="/vets/cologne"
+                                className="not-prose inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-6 py-3 font-bold text-secondary transition-colors hover:bg-black"
+                            >
+                                English-speaking vets in Cologne
+                            </Link>
+
+                            <h2 id="sources" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Official Sources
+                            </h2>
+                            <ul className="space-y-4">
+                                <li>
+                                    <ExternalSourceLink href={SOURCE_URLS.kvbFaq}>
+                                        Official KVB dog-travel FAQ
+                                    </ExternalSourceLink>
+                                    {' '}for free dog travel on KVB and within NRW.
+                                </li>
+                                <li>
+                                    <ExternalSourceLink href={SOURCE_URLS.nrwConditions}>
+                                        Official NRW transport conditions effective July 2026
+                                    </ExternalSourceLink>
+                                    {' '}for animal carriage, short leashes, muzzles, seats, containers, and assistance dogs.
+                                </li>
+                                <li>
+                                    <ExternalSourceLink href={SOURCE_URLS.vrsTariff}>
+                                        Official VRS tariff information
+                                    </ExternalSourceLink>
+                                    {' '}for the current regional conditions and tariff documents.
+                                </li>
+                                <li>
+                                    <ExternalSourceLink href={SOURCE_URLS.cologneDogRules}>
+                                        Official Cologne dog and muzzle rules
+                                    </ExternalSourceLink>
+                                    {' '}for city guidance on dangerous dogs, specified breeds, leashes, muzzles, and exemptions.
+                                </li>
+                            </ul>
+
+                            <h2 id="faq" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Frequently Asked Questions
+                            </h2>
+                            <div className="space-y-5 not-prose">
+                                {FAQS.map((faq) => (
+                                    <section key={faq.q} className="bg-white p-6 rounded-2xl border border-primary/10">
+                                        <h3 className="font-bold text-primary mb-2">{faq.q}</h3>
+                                        <p className="text-sm text-primary/70 leading-relaxed">{faq.a}</p>
+                                    </section>
+                                ))}
+                            </div>
+
+                            <div className="flex flex-wrap gap-3 not-prose mt-12">
                                 <span className="text-sm text-primary/60">Other city transport guides:</span>
-                                {[
-                                    { city: 'Berlin', path: '/blog/public-transport-with-dogs-berlin' },
-                                    { city: 'Hamburg', path: '/blog/public-transport-dogs-hamburg' },
-                                    { city: 'Munich', path: '/blog/public-transport-dogs-munich-mvv' },
-                                    { city: 'Frankfurt', path: '/blog/public-transport-dogs-frankfurt-rmv' },
-                                    { city: 'Stuttgart', path: '/blog/public-transport-dogs-stuttgart' },
-                                ].map(({ city, path }) => (
-                                    <Link key={city} to={path} className="text-sm text-accent underline hover:text-primary">{city}</Link>
+                                {OTHER_CITY_GUIDES.map(({ city, path }) => (
+                                    <Link key={city} to={path} className="text-sm text-accent-ink underline hover:text-primary">
+                                        {city}
+                                    </Link>
                                 ))}
                             </div>
                         </div>

@@ -7,271 +7,337 @@ import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
+const ARTICLE_TITLE = 'German Dog Etiquette: Leash Rules & Phrases (2026)';
+const ARTICLE_DESCRIPTION = "Learn how to ask 'Can I pet your dog?' in German, plus current leash, off-leash, certificate, waste and venue rules for dog owners in Germany.";
+const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/german-dog-etiquette-rules';
+const DATE_PUBLISHED = '2025-01-01';
+const DATE_MODIFIED = '2026-07-24';
+
+const FEDERAL_WELFARE_URL = 'https://www.gesetze-im-internet.de/tierschhuv/__2.html';
+const BERLIN_DOG_LAW_URL = 'https://www.berlin.de/sen/verbraucherschutz/aufgaben/hundehaltung/artikel.1485419.php';
+const HAMBURG_LEASH_URL = 'https://www.hamburg.de/politik-und-verwaltung/behoerden/bjv/themen/verbraucherschutz/tiere/hundegesetz/anleinpflicht-89206';
+const LOWER_SAXONY_DOG_LAW_URL = 'https://www.ml.niedersachsen.de/startseite/themen/tiergesundheit_tierschutz/tierschutz_allgemein/informationen-zum-hundegesetz-93854.html';
+
+const ARTICLE_SCHEMA = generateArticleSchema(
+    ARTICLE_TITLE,
+    ARTICLE_DESCRIPTION,
+    ARTICLE_URL,
+    DATE_PUBLISHED,
+    DATE_MODIFIED,
+);
+
+const TABLE_OF_CONTENTS = [
+    { id: 'quick-phrase', label: '1. How to Ask Before Petting' },
+    { id: 'law-map', label: '2. Which Dog Rules Apply?' },
+    { id: 'local-examples', label: '3. Berlin, Hamburg and Lower Saxony' },
+    { id: 'outside', label: '4. Walks and Off-Leash Etiquette' },
+    { id: 'venues', label: '5. Shops, Cafes and Transport' },
+    { id: 'phrases', label: '6. Useful German Phrases' },
+    { id: 'welfare', label: '7. Federal Welfare Baseline' },
+    { id: 'checklist', label: '8. Before You Go Out' },
+];
+
+const LOCAL_RULE_EXAMPLES = [
+    {
+        place: 'Berlin',
+        summary: 'Berlin has a general citywide leash duty, with defined exceptions and a possible exemption based on recognized competence. Even an exempt dog must remain leashed in several places, including public transport, shops and offices, events, and protected green areas.',
+        sourceLabel: 'Official Berlin dog-law FAQ',
+        sourceUrl: BERLIN_DOG_LAW_URL,
+    },
+    {
+        place: 'Hamburg',
+        summary: 'Hamburg also has a general leash duty. Dogs may run without a leash in designated exercise zones, or under the conditions of an individual exemption. Separate restrictions apply in parks, busy places, markets, festivals and other signed areas.',
+        sourceLabel: 'Official Hamburg leash guidance',
+        sourceUrl: HAMBURG_LEASH_URL,
+    },
+    {
+        place: 'Lower Saxony',
+        summary: 'Lower Saxony uses a different model. First-time dog owners who are not otherwise exempt generally need a competence certificate, with the theory test before taking on the dog and the practical test during the first year.',
+        sourceLabel: 'Official Lower Saxony dog-law guidance',
+        sourceUrl: LOWER_SAXONY_DOG_LAW_URL,
+    },
+];
+
+const GERMAN_PHRASES = [
+    {
+        german: 'Darf ich Ihren Hund streicheln?',
+        english: 'May I pet your dog? Use this polite form with someone you do not know.',
+    },
+    {
+        german: 'Darf ich deinen Hund streicheln?',
+        english: 'May I pet your dog? Use this informal form when you are already on first-name terms.',
+    },
+    {
+        german: 'Dürfen die Hunde sich begrüßen?',
+        english: 'May the dogs greet each other?',
+    },
+    {
+        german: 'Bitte halten Sie Abstand.',
+        english: 'Please keep your distance.',
+    },
+    {
+        german: 'Mein Hund braucht Platz.',
+        english: 'My dog needs space.',
+    },
+    {
+        german: 'Ist hier Leinenpflicht?',
+        english: 'Is a leash required here?',
+    },
+    {
+        german: 'Dürfen Hunde hier rein?',
+        english: 'Are dogs allowed inside?',
+    },
+    {
+        german: 'Bitte nicht anfassen.',
+        english: 'Please do not touch.',
+    },
+];
+
+const BEFORE_YOU_GO = [
+    'Check the current rule for the exact place, not only the federal state.',
+    'Read signs at park entrances, forests, beaches, playgrounds and public buildings.',
+    'Check the transport operator before travelling. Ticket, leash, muzzle and carrier rules differ.',
+    'Carry waste bags and remove your dog’s waste. Local enforcement and penalties vary.',
+    'Keep liability, registration and competence documents available where your local rules require them.',
+    'Check federal import restrictions and the destination state’s keeping rules for your dog’s breed.',
+];
+
 export default function GermanDogEtiquette() {
     return (
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
-                <title>German Dog Etiquette: The Unwritten Rules | EnglishSpeakingVets</title>
-                <meta name="description" content="A complete guide to German dog etiquette. Learn about leash laws (Leinenpflicht), off-leash areas, Hundeführerschein requirements, and the social rules of owning a dog in Germany." />
-                <meta name="keywords" content="dog etiquette Germany, German leash laws, Leinenpflicht, dog rules Germany, off-leash areas Germany, Hundeauslaufgebiet, dog tax Germany, expat dog owner Germany" />
-                <meta property="og:title" content="German Dog Etiquette: The Unwritten Rules" />
-                <meta property="og:description" content="A complete guide to German dog etiquette. Learn about leash laws (Leinenpflicht), off-leash areas, Hundeführerschein requirements, and the social rules of owning a dog in Germany." />
+                <title>{ARTICLE_TITLE}</title>
+                <meta name="description" content={ARTICLE_DESCRIPTION} />
+                <meta property="og:title" content={ARTICLE_TITLE} />
+                <meta property="og:description" content={ARTICLE_DESCRIPTION} />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
-                <meta property="og:url" content="https://englishspeakinggermany.online/blog/german-dog-etiquette-rules" />
-                <link rel="canonical" href="https://englishspeakinggermany.online/blog/german-dog-etiquette-rules" />
-                <script type="application/ld+json">
-                    {JSON.stringify(generateArticleSchema(
-                        "German Dog Etiquette: The Unwritten Rules",
-                        "A complete guide to German dog etiquette. Learn about leash laws (Leinenpflicht), off-leash areas, Hundeführerschein requirements, and the social rules of owning a dog in Germany.",
-                        "https://englishspeakinggermany.online/blog/german-dog-etiquette-rules",
-                        "2025-01-01"
-                    ))}
-                </script>
+                <meta property="og:url" content={ARTICLE_URL} />
+                <link rel="canonical" href={ARTICLE_URL} />
+                <script type="application/ld+json">{JSON.stringify(ARTICLE_SCHEMA)}</script>
             </Helmet>
 
             <Header />
 
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
+            <main className="max-w-7xl mx-auto px-6 py-10 md:p-12 mt-16 mb-12">
                 <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
+                    <div className="hidden lg:block lg:w-1/4">
+                        <div className="sticky top-24">
+                            <BlogSidebar />
+                        </div>
+                    </div>
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Living in Germany Guide</span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
-                            🐕 German Dog Etiquette: <br />The Unwritten Rules
+                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
+                            Living in Germany Guide
+                        </span>
+                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6 leading-tight">
+                            German Dog Etiquette: Leash Rules and Useful Phrases
                         </h1>
+                        <p className="text-sm text-primary/60 mb-10">Last verified: 24 July 2026</p>
 
-                        <TableOfContents items={[
-                            { id: 'introduction', label: 'The Social Contract' },
-                            { id: 'leash-laws', label: 'Leinenpflicht (Leash Laws)' },
-                            { id: 'fines', label: 'Fines: How Expensive Can It Get?' },
-                            { id: 'off-leash', label: 'Where to Run Free' },
-                            { id: 'hundefuehrerschein', label: 'The Dog Handler’s Certificate' },
-                            { id: 'poop-patrol', label: 'Poop Patrol & Social Norms' },
-                            { id: 'hundeverbot', label: 'The "Hundeverbot" Signs' },
-                            { id: 'restaurant-etiquette', label: 'Dining With Your Dog' },
-                            { id: 'social-rules', label: 'Unspoken Social Rules' }
-                        ]} />
+                        <div className="bg-white/70 p-6 rounded-2xl mb-10 hidden md:block border border-primary/10">
+                            <TableOfContents items={TABLE_OF_CONTENTS} />
+                        </div>
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
-                            <h2 id="introduction" className="text-3xl font-bold text-primary mt-12 mb-6 scroll-mt-24 text-center italic border-b border-primary/5 pb-6">
-                                "In Germany, your dog is expected to be a productive, silent, and law-abiding member of society."
+                            <p className="border-l-4 border-accent pl-6 py-2 bg-accent/5 rounded-r-lg text-xl">
+                                Dog etiquette becomes much easier when you separate courtesy from law.
+                                Germany does not have one nationwide public-space leash rule. State law,
+                                municipal rules, park signs, transport conditions and venue policies can
+                                all change the answer.
+                            </p>
+
+                            <h2 id="quick-phrase" className="text-3xl font-bold text-primary mt-14 mb-5 scroll-mt-24">
+                                1. How to Ask “Can I Pet Your Dog?” in German
                             </h2>
-
-                            <p className="mb-6">
-                                Germany is one of the most dog-friendly countries in the world. Dogs sit calmly under café tables, ride the U-Bahn without batting an eye, and join their owners on shopping trips. But here's the thing: German dogs are really well-behaved. And German dog owners? They follow rules you didn't even know existed.
-                            </p>
-
-                            <p className="mb-8">
-                                As an expat, you might feel like everyone's staring at you when your dog pulls on the leash, barks at another dog, or sniffs a stranger's leg. That's because in Germany, there are unwritten social rules—and plenty of written ones—that every dog owner is expected to follow.
-                            </p>
-
-                            <h2 id="leash-laws" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">The Golden Rule: Leinenpflicht (Leash Laws)</h2>
+                            <div className="not-prose bg-white p-6 rounded-2xl border border-primary/10 shadow-sm">
+                                <p className="text-2xl font-bold text-primary">Darf ich Ihren Hund streicheln?</p>
+                                <p className="mt-2 text-primary/75">
+                                    This is the polite form to use with someone you do not know. Ask the owner,
+                                    wait for a clear yes, and let the dog choose whether to approach. A dog that
+                                    turns away, freezes, hides or moves behind its owner is not asking to be touched.
+                                </p>
+                            </div>
                             <p>
-                                Germany doesn't have a single, nationwide leash law. Instead, each of the 16 federal states sets its own rules, and sometimes individual cities add their own regulations on top.
+                                Asking first is useful everywhere, not uniquely German. It protects children,
+                                dogs in training, assistance dogs, nervous dogs, injured dogs and owners who simply
+                                do not want an interaction.
                             </p>
 
-                            <div className="bg-white p-8 rounded-2xl border border-primary/5 shadow-sm my-8 not-prose">
-                                <h3 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                                    <span className="text-2xl">🏙️</span> Where Leashes Are Generally Required
-                                </h3>
-                                <ul className="space-y-3 font-medium text-primary/70">
-                                    <li className="flex gap-3 items-center">
-                                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                                        Public streets, sidewalks, and pedestrian zones
-                                    </li>
-                                    <li className="flex gap-3 items-center">
-                                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                                        Public transport (U-Bahn, S-Bahn, trams, buses)
-                                    </li>
-                                    <li className="flex gap-3 items-center">
-                                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                                        Inside shops, restaurants, and cafés
-                                    </li>
-                                    <li className="flex gap-3 items-center">
-                                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                                        Government buildings and post offices
-                                    </li>
-                                    <li className="flex gap-3 items-center text-red-500">
-                                        <div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div>
-                                        Children’s playgrounds (dogs are often banned entirely)
-                                    </li>
-                                    <li className="flex gap-3 items-center">
-                                        <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                                        Cemeteries
-                                    </li>
-                                </ul>
+                            <h2 id="law-map" className="text-3xl font-bold text-primary mt-14 mb-5 scroll-mt-24">
+                                2. Which Dog Rules Apply?
+                            </h2>
+                            <p>
+                                Start with the federal welfare baseline, then check the law of the federal state,
+                                the municipality or district, and the rule for the specific place. A forest,
+                                city park, train platform, beach and restaurant can each have a different answer.
+                            </p>
+                            <div className="not-prose grid sm:grid-cols-2 gap-4 my-6">
+                                {[
+                                    ['Federal', 'Welfare and husbandry requirements'],
+                                    ['State', 'Leash, competence, registration and dangerous-dog rules'],
+                                    ['Municipality', 'Parks, seasonal protection, waste and local restrictions'],
+                                    ['Place or operator', 'Signs, transport conditions and venue policy'],
+                                ].map(([level, scope]) => (
+                                    <div key={level} className="bg-white p-5 rounded-xl border border-primary/10">
+                                        <p className="font-bold text-primary">{level}</p>
+                                        <p className="mt-1 text-sm text-primary/70">{scope}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <p>
+                                There is no reliable nationwide fine table. The offence, location, circumstances
+                                and responsible authority matter, so a generic amount can mislead.
+                            </p>
+
+                            <h2 id="local-examples" className="text-3xl font-bold text-primary mt-14 mb-5 scroll-mt-24">
+                                3. Three Different Local Systems
+                            </h2>
+                            <div className="not-prose space-y-5">
+                                {LOCAL_RULE_EXAMPLES.map((example) => (
+                                    <section key={example.place} className="bg-white p-6 rounded-2xl border border-primary/10">
+                                        <h3 className="text-xl font-bold text-primary">{example.place}</h3>
+                                        <p className="mt-2 text-primary/75">{example.summary}</p>
+                                        <a
+                                            href={example.sourceUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex min-h-11 items-center mt-3 text-accent-ink font-bold underline underline-offset-4"
+                                        >
+                                            {example.sourceLabel}
+                                        </a>
+                                    </section>
+                                ))}
+                            </div>
+                            <p>
+                                These are examples, not a substitute for checking your own location. Rules can
+                                also differ for dogs officially classed as dangerous.
+                            </p>
+
+                            <h2 id="outside" className="text-3xl font-bold text-primary mt-14 mb-5 scroll-mt-24">
+                                4. Walks and Off-Leash Etiquette
+                            </h2>
+                            <ul>
+                                <li>Use off-leash areas only where the signs or official map allow it.</li>
+                                <li>Do not let your dog approach another dog or person without consent.</li>
+                                <li>Recall and leash your dog when you see an on-leash dog, wildlife, livestock or a narrow path.</li>
+                                <li>Do not block gates, paths, entrances or cycle lanes while dogs greet.</li>
+                                <li>Carry waste bags and remove waste even when no bin is immediately available.</li>
+                            </ul>
+                            <div className="not-prose bg-amber-50 border border-amber-200 p-5 rounded-xl my-6">
+                                <p className="font-bold text-amber-900">Seasonal wildlife rules are local</p>
+                                <p className="mt-1 text-sm text-amber-900">
+                                    Germany does not have one nationwide 1 April to 15 July leash season.
+                                    Check the current forestry, nature-protection or municipal rule for the exact area.
+                                </p>
                             </div>
 
-                            <h3 className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">Breeding / Nesting Season (Brut- und Setzzeit)</h3>
-                            <p className="bg-accent/5 p-6 rounded-xl border border-accent/20 mb-8 font-bold text-primary">
-                                ⚠️ Crucial Date: April 1 to July 15.
+                            <h2 id="venues" className="text-3xl font-bold text-primary mt-14 mb-5 scroll-mt-24">
+                                5. Shops, Cafes, Restaurants and Transport
+                            </h2>
+                            <p>
+                                Unless an applicable rule already prohibits entry, the venue decides whether pet
+                                dogs may enter. No sign is not the same as permission. Ask before walking in, keep
+                                your dog out of aisles and service routes, and leave if staff asks.
                             </p>
                             <p>
-                                During this time, regardless of the state, leashes are typically <strong>mandatory</strong> in forests, fields, and near wildlife to protect ground-nesting birds and newborns.
+                                Public-transport rules are operator-specific. Check tickets, carriers, leads,
+                                muzzles and assistance-dog exceptions before the journey. The current Munich and
+                                Cologne rules, for example, are not identical.
                             </p>
-
-                            <div className="grid md:grid-cols-2 gap-6 my-12 not-prose">
-                                <div className="bg-primary p-6 rounded-2xl text-secondary">
-                                    <h4 className="font-bold text-accent mb-4 uppercase tracking-widest text-sm text-center">Strict Forest Leash Rules</h4>
-                                    <ul className="space-y-2 text-sm font-bold opacity-90 text-center">
-                                        <li>Berlin</li>
-                                        <li>Hamburg</li>
-                                        <li>Thuringia</li>
-                                    </ul>
-                                    <p className="mt-4 text-xs opacity-60 text-center italic">Dogs must stay leashed in these city-states unless in a marked zone.</p>
-                                </div>
-                                <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
-                                    <h4 className="font-bold text-primary mb-4 uppercase tracking-widest text-sm text-center">Seasonal / Context Rules</h4>
-                                    <ul className="space-y-2 text-sm font-bold opacity-70 text-center">
-                                        <li>Bavaria</li>
-                                        <li>Baden-Württemberg</li>
-                                        <li>Saxony</li>
-                                        <li>Hesse</li>
-                                    </ul>
-                                    <p className="mt-4 text-xs opacity-40 text-center italic">Rules depend more on the specific municipality or wildlife season.</p>
-                                </div>
+                            <div className="not-prose flex flex-col sm:flex-row sm:flex-wrap gap-3 my-6">
+                                <Link
+                                    to="/blog/public-transport-with-dogs-munich"
+                                    className="inline-flex min-h-11 items-center justify-center rounded-lg border border-primary/15 bg-white px-4 py-2 text-sm font-bold text-primary hover:border-accent"
+                                >
+                                    Munich dog-transport guide
+                                </Link>
+                                <Link
+                                    to="/blog/public-transport-with-dogs-cologne"
+                                    className="inline-flex min-h-11 items-center justify-center rounded-lg border border-primary/15 bg-white px-4 py-2 text-sm font-bold text-primary hover:border-accent"
+                                >
+                                    Cologne dog-transport guide
+                                </Link>
                             </div>
 
-                            <h3 className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24 text-center">Special Berlin Rule (Important for Expats)</h3>
-                            <p className="mb-8">
-                                Since January 2019, Berlin has one of the strictest urban leash policies in Germany. <strong>Dogs must be leashed in all public spaces</strong> unless you are in an officially designated off-leash park.
-                            </p>
-
-                            <h2 id="fines" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Fines: How Expensive Can It Get?</h2>
-                            <div className="overflow-x-auto rounded-2xl border border-primary/10 my-8 not-prose">
-                                <table className="w-full text-left border-collapse">
-                                    <thead className="bg-primary text-secondary text-center">
+                            <h2 id="phrases" className="text-3xl font-bold text-primary mt-14 mb-5 scroll-mt-24">
+                                6. Useful German Dog Phrases
+                            </h2>
+                            <div className="not-prose overflow-x-auto rounded-2xl border border-primary/10 my-6">
+                                <table className="w-full min-w-[620px] border-collapse bg-white">
+                                    <thead className="bg-primary text-secondary">
                                         <tr>
-                                            <th className="p-4 font-bold text-sm uppercase tracking-widest">Type of Violation</th>
-                                            <th className="p-4 font-bold text-sm uppercase tracking-widest">Expected Fine</th>
+                                            <th className="p-4 text-left text-sm">German</th>
+                                            <th className="p-4 text-left text-sm">Meaning and use</th>
                                         </tr>
                                     </thead>
-                                    <tbody className="bg-white divide-y divide-primary/5">
-                                        <tr>
-                                            <td className="p-4 font-bold text-primary">Off-leash in restricted urban area</td>
-                                            <td className="p-4 text-accent font-black text-center">€50 – €200</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="p-4 font-bold text-primary">Repeat offenses / ignoring warnings</td>
-                                            <td className="p-4 text-accent font-black text-center">€500 – €1,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="p-4 font-bold text-primary">Injuring a person or chasing wildlife</td>
-                                            <td className="p-4 text-red-600 font-black text-center">Up to €5,000</td>
-                                        </tr>
+                                    <tbody className="divide-y divide-primary/10">
+                                        {GERMAN_PHRASES.map((phrase) => (
+                                            <tr key={phrase.german}>
+                                                <td className="p-4 font-bold text-primary">{phrase.german}</td>
+                                                <td className="p-4 text-primary/75">{phrase.english}</td>
+                                            </tr>
+                                        ))}
                                     </tbody>
                                 </table>
                             </div>
 
-                            <h2 id="off-leash" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Off-Leash Areas: Where Your Dog Can Actually Run Free</h2>
-                            <p className="text-center font-bold text-lg mb-8">
-                                Look for signs saying: <span className="text-accent underline">“Hundeauslaufgebiet”</span> or <span className="text-accent underline">“Freilaufzone”</span>.
-                            </p>
-
-                            <div className="grid md:grid-cols-2 gap-8 my-10 not-prose">
-                                <div className="bg-white p-6 rounded-2xl border-l-4 border-accent shadow-sm">
-                                    <h4 className="font-bold text-primary mb-2 flex items-center gap-2"><span className="text-xl">🐻</span> Berlin Highlights</h4>
-                                    <p className="text-sm opacity-70 mb-3 font-semibold">Grunewald Forest:</p>
-                                    <p className="text-xs opacity-60">Massive forest areas with a dedicated dog swimming beach (Hundestrand).</p>
-                                    <p className="text-sm opacity-70 mt-3 font-semibold">Tempelhofer Feld:</p>
-                                    <p className="text-xs opacity-60">Huge fenced areas with plenty of space for sprinting.</p>
-                                </div>
-                                <div className="bg-white p-6 rounded-2xl border-l-4 border-primary shadow-sm">
-                                    <h4 className="font-bold text-primary mb-2 flex items-center gap-2"><span className="text-xl">🚢</span> Hamburg Highlights</h4>
-                                    <p className="text-sm opacity-70 mb-3 font-semibold">Stadtpark:</p>
-                                    <p className="text-xs opacity-60">Multiple designated sections for social play.</p>
-                                    <p className="text-sm opacity-70 mt-3 font-semibold">Elbstrand:</p>
-                                    <p className="text-xs opacity-60">The beach is dog heaven, but check the signs for specific zones.</p>
-                                </div>
-                            </div>
-
-                            <h2 id="hundefuehrerschein" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">The Hundeführerschein (Dog Handler’s Certificate)</h2>
-                            <p className="bg-primary/5 p-6 rounded-xl border border-primary/10 text-sm mb-12">
-                                💡 <strong>Pro Tip:</strong> This is NOT required everywhere. In <strong>Berlin</strong>, it is voluntary. However, in <strong>Lower Saxony (Niedersachsen)</strong>, it is mandatory for almost all dog owners over a certain age.
-                            </p>
-
-                            <h2 id="poop-patrol" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Poop Patrol: The Social Imperative</h2>
+                            <h2 id="welfare" className="text-3xl font-bold text-primary mt-14 mb-5 scroll-mt-24">
+                                7. The Federal Welfare Baseline
+                            </h2>
                             <p>
-                                Germans take dog waste very seriously. Not picking up after your dog is one of the fastest ways to earn the ire of your neighbors and fellow dog owners.
+                                The federal Dog Welfare Ordinance requires sufficient outdoor exercise, contact
+                                with a caregiver several times daily for an adequate duration, and regular contact
+                                with other dogs unless health or incompatibility makes that unsafe. Exercise and
+                                social contact must be adapted to the dog’s breed, age and health. The law does not
+                                set one universal daily walk duration for every dog.
                             </p>
-                            <div className="bg-primary text-secondary p-8 rounded-2xl my-10 not-prose flex flex-col items-center text-center">
-                                <span className="text-4xl mb-4">💩</span>
-                                <h3 className="text-xl font-bold text-accent mb-2 uppercase tracking-wide">The Unspoken Mandatory Rule</h3>
-                                <p className="opacity-80 italic">"On sidewalks, in parks, in high-grass meadows, and even deep in the forest—you MUST pick it up and carry it to a bin. No exceptions."</p>
-                                <p className="mt-4 font-black text-xs uppercase bg-white/10 px-4 py-2 rounded-full">Fine for ignoring: €20 – €150</p>
+                            <a
+                                href={FEDERAL_WELFARE_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="not-prose inline-flex min-h-11 items-center text-accent-ink font-bold underline underline-offset-4"
+                            >
+                                Federal dog-welfare requirements
+                            </a>
+
+                            <h2 id="checklist" className="text-3xl font-bold text-primary mt-14 mb-5 scroll-mt-24">
+                                8. Before You Go Out
+                            </h2>
+                            <div className="not-prose bg-white p-6 rounded-2xl border border-primary/10">
+                                <ol className="space-y-4">
+                                    {BEFORE_YOU_GO.map((item, index) => (
+                                        <li key={item} className="flex gap-3">
+                                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-white font-bold">
+                                                {index + 1}
+                                            </span>
+                                            <span className="pt-1 text-primary/80">{item}</span>
+                                        </li>
+                                    ))}
+                                </ol>
                             </div>
 
-                            <h2 id="hundeverbot" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center text-red-600">The "Hundeverbot" Signs</h2>
-                            <div className="grid md:grid-cols-3 gap-4 my-10 not-prose text-center">
-                                <div className="bg-white p-5 rounded-xl border border-primary/5">
-                                    <span className="text-3xl block mb-2">🍞</span>
-                                    <p className="font-bold text-xs uppercase tracking-widest text-primary/40 mb-2 leading-none">Grocery & Bakeries</p>
-                                    <p className="font-black text-red-600 uppercase text-lg">NEVER</p>
-                                </div>
-                                <div className="bg-white p-5 rounded-xl border border-primary/5">
-                                    <span className="text-3xl block mb-2">🧒</span>
-                                    <p className="font-bold text-xs uppercase tracking-widest text-primary/40 mb-2 leading-none">Playgrounds</p>
-                                    <p className="font-black text-red-600 uppercase text-lg">NEVER</p>
-                                </div>
-                                <div className="bg-white p-5 rounded-xl border border-primary/5">
-                                    <span className="text-3xl block mb-2">🍺</span>
-                                    <p className="font-bold text-xs uppercase tracking-widest text-primary/40 mb-2 leading-none">Beer Gardens</p>
-                                    <p className="font-black text-green-600 uppercase text-lg">ALWAYS</p>
-                                </div>
-                            </div>
-
-                            <h2 id="restaurant-etiquette" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Dining With Your Dog</h2>
-                            <p>
-                                Germans bring their dogs to restaurants all the time. If there is no "Hunde verboten" sign, they are likely welcome.
-                            </p>
-                            <div className="bg-white border border-primary/10 rounded-2xl overflow-hidden my-8 not-prose">
-                                <div className="p-6 space-y-4">
-                                    <div className="flex gap-4">
-                                        <span className="text-2xl mt-1">🛌</span>
-                                        <div>
-                                            <p className="font-bold text-primary italic leading-tight text-lg underline">The Blanket Rule</p>
-                                            <p className="text-sm opacity-70">Many German owners bring a small travel mat or blanket. It signals to the staff that your dog knows how to "park" and stay in one spot.</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4 border-t border-primary/5 pt-4">
-                                        <span className="text-2xl mt-1">💧</span>
-                                        <div>
-                                            <p className="font-bold text-primary text-lg italic">Water Culture</p>
-                                            <p className="text-sm opacity-70">Expect a bowl of water to arrive before your drink does. It's standard service in dog-friendly spots.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h2 id="social-rules" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24 text-center">Unspoken Social Rules</h2>
-                            <div className="space-y-6 mb-12">
-                                <div className="p-6 bg-white rounded-2xl border-l-4 border-accent shadow-sm">
-                                    <h4 className="text-xl font-bold text-primary mb-2">1. The "Invisible" Dog</h4>
-                                    <p className="opacity-70 leading-relaxed italic">"German dogs rarely bark in public. Excessive barking or jumping on strangers is considered a failure of training and will earn you intense judgmental stares."</p>
-                                </div>
-                                <div className="p-6 bg-white rounded-2xl border-l-4 border-accent shadow-sm">
-                                    <h4 className="text-xl font-bold text-primary mb-2">2. Ask Before Petting</h4>
-                                    <p className="opacity-70 leading-relaxed italic uppercase font-bold text-sm tracking-tighter">"Darf ich Ihren Hund streicheln?"</p>
-                                    <p className="opacity-70 leading-relaxed italic mt-1">Always ask before approaching another dog. Personal space is highly valued.</p>
-                                </div>
-                                <div className="p-6 bg-white rounded-2xl border-l-4 border-accent shadow-sm">
-                                    <h4 className="text-xl font-bold text-primary mb-2">3. The Responsibility Act</h4>
-                                    <p className="opacity-70 leading-relaxed italic">"Keeping a dog in a single room or crate all day is illegal. Daily exercise and mental stimulation are legal requirements under German animal welfare laws."</p>
-                                </div>
-                            </div>
-
-                            <div className="bg-accent/10 p-8 rounded-2xl my-16 text-center shadow-lg border border-accent/20 not-prose">
-                                <h3 className="text-2xl font-bold text-primary mb-4">Did your dog have an "oopsie"?</h3>
-                                <p className="mb-8 text-primary/80 italic font-medium">
-                                    Whether it's a minor check-up or a social anxiety question, our network of English-speaking vets is here to help you navigate dog ownership in Germany.
+                            <div className="not-prose bg-accent/10 p-6 rounded-2xl border border-accent/20 mt-10">
+                                <p className="font-bold text-primary">Breed rules are a separate check</p>
+                                <p className="mt-1 text-primary/75">
+                                    Federal import restrictions and state keeping rules are not answered by
+                                    everyday etiquette or an ordinary leash exemption.
                                 </p>
                                 <Link
-                                    to="/"
-                                    className="inline-block bg-accent hover:bg-primary text-primary hover:text-white font-black py-4 px-10 rounded-2xl transition-all transform hover:scale-105 shadow-[0_10px_30px_rgba(251,133,0,0.3)]"
+                                    to="/blog/breed-restrictions-germany"
+                                    className="inline-flex min-h-11 items-center mt-3 text-accent-ink font-bold underline underline-offset-4"
                                 >
-                                    Browse English-Speaking Vets →
+                                    Check German breed restrictions
+                                </Link>
+                            </div>
+
+                            <div className="not-prose mt-8">
+                                <Link
+                                    to="/"
+                                    className="inline-flex min-h-12 items-center justify-center rounded-xl bg-accent px-6 py-3 font-bold text-white hover:bg-primary"
+                                >
+                                    Find an English-speaking vet
                                 </Link>
                             </div>
                         </div>

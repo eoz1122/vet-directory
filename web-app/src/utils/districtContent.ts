@@ -66,9 +66,11 @@ export function generateDistrictContent(
 
     // 1) Coverage: how many, which ones, how many verified.
     if (count === 1) {
-        paragraphs.push(
-            `${names[0]} is the English-speaking veterinary practice we currently list in ${district}, ${city}. ` +
-            `For expat pet owners nearby, that means a clinic where you can discuss diagnoses, treatment, and costs in English instead of translating medical German under pressure.`,
+        paragraphs.push(verifiedNames.length
+            ? `${names[0]} is the community-Verified veterinary practice we currently list in ${district}, ${city}. ` +
+                `Community members have confirmed English availability, but it is still worth confirming who will be available when you book.`
+            : `${names[0]} is the community-sourced veterinary practice we currently list in ${district}, ${city}. ` +
+                `Its listing contains an English-language signal, but English availability has not yet been confirmed through our community process. Review the evidence shown and confirm when booking.`,
         );
     } else {
         const shown = names.slice(0, 4);
@@ -79,8 +81,8 @@ export function generateDistrictContent(
             ? ` ${verifiedNames.length} of them ${verifiedNames.length === 1 ? 'is' : 'are'} marked Verified by expat pet owners in our community.`
             : '';
         paragraphs.push(
-            `We list ${count} English-speaking veterinary practices in ${district}, ${city}: ${lead}.${verifiedNote} ` +
-            `Each one is somewhere you can talk through your pet's care in English rather than navigating it in German.`,
+            `We list ${count} community-sourced veterinary practices in ${district}, ${city}: ${lead}.${verifiedNote} ` +
+            `Review each listing's English-language evidence and confirm staff availability when booking.`,
         );
     }
 
@@ -91,8 +93,8 @@ export function generateDistrictContent(
             ...(hasReviewSignal ? ['English confirmed directly in their Google reviews'] : []),
         ];
         paragraphs.push(
-            `${count === 1 ? 'This practice reaches' : 'These practices reach'} our directory through concrete English-language signals, such as ${prose(reasons)}. ` +
-            `We track these signals per clinic so the list reflects real language access, not guesswork.`,
+            `${count === 1 ? 'This listing includes' : 'These listings include'} English-language signals such as ${prose(reasons)}. ` +
+            `We show those signals so you can assess the evidence, but they do not guarantee that an English-speaking staff member will be available for every appointment.`,
         );
     }
 
