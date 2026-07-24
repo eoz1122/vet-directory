@@ -79,6 +79,23 @@ describe('VetCard accessibility', () => {
         expect(screen.getByText('Verified: Jul 2026').className).toContain('text-gray-600');
     });
 
+    it('clearly labels a specialist-only practice focus', () => {
+        render(
+            <VetCard
+                vet={{
+                    ...vet,
+                    practice_focus: 'Exotic pets, zoo animals and wildlife',
+                }}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        expect(screen.getByText('Specialist practice')).toBeTruthy();
+        expect(screen.getByText('Exotic pets, zoo animals and wildlife')).toBeTruthy();
+    });
+
     it('provides named keyboard controls for map selection and issue reporting', () => {
         const onSelect = vi.fn();
         const onReportIssue = vi.fn();

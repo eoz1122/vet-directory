@@ -52,6 +52,13 @@ describe('CityVets search and trust contract', () => {
         ).toContain('63 verified English-speaking veterinary practices in Berlin');
     });
 
+    it('labels the Bremen exotics listing as a specialist practice', () => {
+        renderCity('/vets/bremen');
+
+        expect(screen.getByText('Specialist practice')).toBeTruthy();
+        expect(screen.getByText('Exotic pets, zoo animals and wildlife')).toBeTruthy();
+    });
+
     it('does not label every Hamburg listing as verified', async () => {
         renderCity('/vets/hamburg');
 
@@ -70,7 +77,8 @@ describe('CityVets search and trust contract', () => {
                 .map((entry: { acceptedAnswer: { text: string } }) => entry.acceptedAnswer.text)
                 .join(' ');
 
-            expect(answers).toContain('31 are community-confirmed');
+            expect(answers).toContain('1 have official website confirmation');
+            expect(answers).toContain('30 are community-confirmed');
             expect(answers).not.toContain('community-Verified');
             expect(answers).not.toContain('Every listed vet has been confirmed');
         });

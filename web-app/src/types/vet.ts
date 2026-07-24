@@ -4,6 +4,7 @@ export interface Vet {
     city: string;
     district: string;
     address: string;
+    practice_focus?: string;
     coordinates: {
         lat: number;
         lng: number;

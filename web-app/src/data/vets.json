@@ -2897,15 +2897,19 @@
       "lng": 9.9648394
     },
     "contact": {
-      "phone": "",
+      "phone": "+49 40 434001",
       "website": "https://www.tierarztpraxis-am-millerntor.de/",
       "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+am+Millerntor+Voelkel/data=!4m7!3m6!1s0x47b18f6c3e43e9eb:0x2c0757b67b64e246!8m2!3d53.5537481!4d9.96479!16s%2Fg%2F11dxbmp1v0!19sChIJ6-lDPmyPsUcRRuJke7ZXByw?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-26",
+      "last_scanned": "2026-07-25",
       "english_signals": [
-        "Verified English Support; Community Verified"
+        "The official team page lists English among the languages spoken by veterinary and support staff"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarztpraxis-am-millerntor.de/en/team/"
       ],
       "emergency_services": ""
     },
@@ -3649,10 +3653,10 @@
   },
   {
     "id": "Munich-131",
-    "practice_name": "Tierarztpraxis Dr. Cornelia Maul and Dr. Sabine Herget",
+    "practice_name": "Tierarztpraxis Dr. Cornelia Maul und Dr. Sabine Herget",
     "city": "Munich",
-    "district": "Unknown",
-    "address": "Schwarzstraße 3 80802 München",
+    "district": "Au-Haidhausen",
+    "address": "Schwarzstraße 3, 81669 München",
     "coordinates": {
       "lat": 48.1292349,
       "lng": 11.5861193
@@ -3660,13 +3664,17 @@
     "contact": {
       "phone": "089 99952010",
       "website": "https://www.tierarzt-muenchen.de/",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Cornelia+Maul+and+Dr.+Sabine+Herget/data=!4m7!3m6!1s0x479ddf7ca52d5fc3:0x21a35afb38181d4f!8m2!3d48.1292349!4d11.5861193!16s%2Fg%2F1vgw7mj2!19sChIJw18tpXzfnUcRTx0YOPtaoyE?authuser=0&hl=en&rclk=1"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Dr.%20Cornelia%20Maul%20und%20Dr.%20Sabine%20Herget%20Schwarzstra%C3%9Fe%203%2C%2081669%20M%C3%BCnchen"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-27",
+      "last_scanned": "2026-07-25",
       "english_signals": [
-        "Verified English Support"
+        "The practice's official English page states that all staff speak English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://tierarzt-muenchen.de/english/"
       ],
       "emergency_services": ""
     },
@@ -6118,7 +6126,7 @@
   },
   {
     "id": "Duesseldorf-Niessen",
-    "practice_name": "Tierarztpraxis Ferdinand Nießen",
+    "practice_name": "Kleintierzentrum Oberkassel",
     "city": "Düsseldorf",
     "district": "Oberkassel",
     "address": "Arnulfstraße 22, 40545 Düsseldorf",
@@ -6128,14 +6136,18 @@
     },
     "contact": {
       "phone": "+49 211 578611",
-      "website": "https://tierarztinduesseldorf.de",
+      "website": "https://www.tierdoc.org/de",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Ferdinand%20Nie%C3%9Fen%20Arnulfstra%C3%9Fe%2022%2C%2040545%20D%C3%BCsseldorf"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2026-06-24",
+      "last_scanned": "2026-07-25",
       "english_signals": [
-        "Recommended on lifeinduesseldorf.com's curated list of English-speaking vets in Düsseldorf (expat community source)"
+        "The official practice website offers multilingual consultations in English and five other languages when requested during booking"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierdoc.org/de"
       ],
       "emergency_services": ""
     },
@@ -6334,9 +6346,13 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2026-06-24",
+      "last_scanned": "2026-07-25",
       "english_signals": [
         "Practice website lists English among the team's spoken languages"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.medivetgroup.com/de-de/tierarzt/bremen/"
       ],
       "emergency_services": ""
     },
@@ -6428,6 +6444,211 @@
         "https://hund-katze-maus.net/"
       ],
       "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "hannover-medivet",
+    "practice_name": "Medivet Hannover",
+    "city": "Hannover",
+    "district": "Hainholz",
+    "address": "Schulenburger Landstraße 120, 30165 Hannover",
+    "coordinates": {
+      "lat": 52.405808,
+      "lng": 9.713147
+    },
+    "contact": {
+      "phone": "+49 511 35384958",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/hannover/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet%20Hannover%20Schulenburger%20Landstra%C3%9Fe%20120%2C%2030165%20Hannover"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice page lists English among the languages spoken by the team"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.medivetgroup.com/de-de/tierarzt/hannover/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "nuremberg-tierstadt",
+    "practice_name": "TierStadt GmbH",
+    "city": "Nuremberg",
+    "district": "Gartenstadt",
+    "address": "Valentin-Dretzel-Straße 13, 90469 Nürnberg",
+    "coordinates": {
+      "lat": 49.4060591,
+      "lng": 11.08652
+    },
+    "contact": {
+      "phone": "+49 911 38423601",
+      "website": "https://tierstadt.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=TierStadt%20GmbH%20Valentin-Dretzel-Stra%C3%9Fe%2013%2C%2090469%20N%C3%BCrnberg"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice website explicitly lists English among the languages spoken by the team"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://tierstadt.de/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "gelsenkirchen-medivet",
+    "practice_name": "Medivet Gelsenkirchen",
+    "city": "Gelsenkirchen",
+    "district": "Schalke",
+    "address": "Lockhofstraße 9, 45881 Gelsenkirchen",
+    "coordinates": {
+      "lat": 51.5219044,
+      "lng": 7.0772809
+    },
+    "contact": {
+      "phone": "+49 209 1550042",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/gelsenkirchen/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet%20Gelsenkirchen%20Lockhofstra%C3%9Fe%209%2C%2045881%20Gelsenkirchen"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice page lists English among the languages spoken by team members"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.medivetgroup.com/de-de/tierarzt/gelsenkirchen/"
+      ],
+      "emergency_services": "Extended emergency hours; call before visiting"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "bonn-tierarztpraxis-antonia-klaus",
+    "practice_name": "Tierarztpraxis Dr. Antonia Klaus",
+    "city": "Bonn",
+    "district": "Bad Godesberg",
+    "address": "Rheinallee 15c, 53173 Bonn",
+    "coordinates": {
+      "lat": 50.6870991,
+      "lng": 7.1614924
+    },
+    "contact": {
+      "phone": "+49 228 357566",
+      "website": "https://tierarztbonn.de/english-clients/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Dr.%20Antonia%20Klaus%20Rheinallee%2015c%2C%2053173%20Bonn"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The practice's official English page describes the team as fluent English speakers"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://tierarztbonn.de/english-clients/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "karlsruhe-kleintierzentrum-arndt",
+    "practice_name": "Kleintierzentrum Arndt",
+    "city": "Karlsruhe",
+    "district": "Durlach",
+    "address": "Bergwaldstraße 30, 76227 Karlsruhe",
+    "coordinates": {
+      "lat": 48.9927198,
+      "lng": 8.4784918
+    },
+    "contact": {
+      "phone": "+49 721 75088610",
+      "website": "https://tierarzt-karlsruhe-durlach.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierzentrum%20Arndt%20Bergwaldstra%C3%9Fe%2030%2C%2076227%20Karlsruhe"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice website states that all veterinarians speak English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://tierarzt-karlsruhe-durlach.de/tierarzt-karlsruhe-kleintierzentrum-arndt-jetzt-mit-sieben/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "sindelfingen-kleintierpraxis",
+    "practice_name": "Kleintierpraxis Sindelfingen",
+    "city": "Sindelfingen",
+    "district": "Mitte",
+    "address": "Wolboldstraße 5, 71063 Sindelfingen",
+    "coordinates": {
+      "lat": 48.7107862,
+      "lng": 9.0026454
+    },
+    "contact": {
+      "phone": "+49 7031 814361",
+      "website": "https://www.kleintierpraxissindelfingen.de/?lang=en",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20Sindelfingen%20Wolboldstra%C3%9Fe%205%2C%2071063%20Sindelfingen"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice website states that consultations and treatments are provided fluently in English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.kleintierpraxissindelfingen.de/?lang=en"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "bremen-exotenpraxis-doernath",
+    "practice_name": "Tierarztpraxis Klein Mexiko",
+    "city": "Bremen",
+    "district": "Hulsberg",
+    "address": "Bennigsenstraße 1b, 28205 Bremen",
+    "practice_focus": "Exotic pets, zoo animals and wildlife",
+    "coordinates": {
+      "lat": 53.0709186,
+      "lng": 8.855964
+    },
+    "contact": {
+      "phone": "+49 421 4915000",
+      "website": "https://exotenpraxis-bremen.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Klein%20Mexiko%20Bennigsenstra%C3%9Fe%201b%2C%2028205%20Bremen"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice website explicitly offers service in English for its exotic-animal and wildlife work"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://exotenpraxis-bremen.de/",
+        "https://exotenpraxis-bremen.de/impressum/"
+      ],
+      "emergency_services": "Appointments by arrangement"
     },
     "community_status": "Verified"
   }

@@ -18,6 +18,7 @@ import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
 import ReportIssueLink from '../components/vet/ReportIssueLink';
 import { VerificationBadge } from '../components/vet/VerificationBadge';
+import { PracticeFocus } from '../components/vet/PracticeFocus';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
 
@@ -532,6 +533,8 @@ export default function CityVets() {
                                         {vet.address}
                                     </a>
                                 )}
+
+                                <PracticeFocus practiceFocus={vet.practice_focus} />
 
                                 <div className="space-y-2 mb-6">
                                     {vet.verification?.english_signals && vet.verification.english_signals.slice(0, 1).map((signal, idx) => (

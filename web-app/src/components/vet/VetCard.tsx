@@ -5,6 +5,7 @@ import { appendUTM } from '../../utils/url';
 import { trackVetWebsiteClick } from '../../utils/analytics';
 import { formatVerifiedLabel } from '../../utils/verifiedLabel';
 import { VerificationBadge } from './VerificationBadge';
+import { PracticeFocus } from './PracticeFocus';
 
 interface VetCardProps {
     vet: VetWithDistance;
@@ -62,6 +63,8 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
                     {vet.address}
                 </a>
             )}
+
+            <PracticeFocus practiceFocus={vet.practice_focus} />
 
             <div className="space-y-2 mb-6">
                 {vet.verification.english_signals && vet.verification.english_signals.slice(0, 1).map((signal, idx) => (
