@@ -961,3 +961,13 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** The release passes 138 frontend tests across 33 files, 45 API tests, 25 maintenance tests, TypeScript, project-wide ESLint, shell syntax checks and whitespace validation. `npm audit --omit=dev` reports zero vulnerabilities. `pip-audit` reports no known vulnerabilities in either runtime or development requirements, and `pip check` reports no broken requirements. An isolated production build found all 36 Blog routes, generated the 229-URL sitemap and prerendered all 230 routes. Secret-pattern review found no new credential-bearing release files. The ignored internal CSV and processing database remain present locally and are not part of the release.
 
 **Rollback:** The application predecessor is commit `1419a71`. If live verification fails, revert the release commit on `main` and let the VPS timer redeploy the predecessor state. Restore the timestamped Nginx backup, run `nginx -t`, and reload Nginx. Confirm the homepage, API health, canonical routes and critical redirects after either rollback action.
+
+## 2026-07-24T15:11:30+02:00 - Give exact retired routes precedence over trailing-slash canonicalization
+
+**Context:** The post-release live SEO smoke test showed that every retired URL without a trailing slash redirected directly to its replacement, while every slash variant first redirected to the same retired URL without the slash. Nginx executes a server-level rewrite before exact location selection, so the generic trailing-slash rewrite created an unnecessary two-hop redirect chain even though exact rules existed for both variants.
+
+**Decision:** Express the generic trailing-slash rule as a regex location instead of a server-level rewrite. Exact retired-route locations now take precedence and redirect both URL variants directly to the replacement. All other slashed content routes still canonicalize to their no-slash form.
+
+**Verification:** The initial live smoke test supplied the failing RED case. After the configuration-only correction, `nginx -t` passed, Nginx reloaded successfully, and the complete live SEO smoke suite passed. The suite verifies 12 canonical routes, both variants of 21 retired routes, two literal search-placeholder redirects and two real search-query passthroughs.
+
+**Rollback:** Restore `/etc/nginx/sites-available/englishspeakinggermany.online.bak-2f8bd50-before-direct-redirect-fix`, run `nginx -t`, and reload Nginx. This restores the deployed `2f8bd50` site configuration but also restores the two-hop retired-route behavior.
