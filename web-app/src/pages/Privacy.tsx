@@ -18,7 +18,7 @@ export default function Privacy() {
             {/* Header */}
             <Header />
 
-            <main className="max-w-3xl mx-auto p-6 md:p-12">
+            <main className="max-w-3xl mx-auto break-words p-6 md:p-12">
                 <h1 className="text-4xl font-bold text-primary mb-8">Datenschutzerklärung / Privacy Policy</h1>
 
                 <div className="prose prose-stone max-w-none text-primary/90 space-y-8">
@@ -210,26 +210,43 @@ export default function Privacy() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-bold text-primary mb-4">9. Affiliate-Programme (Admitad)</h2>
+                        <h2 className="text-2xl font-bold text-primary mb-4">9. Affiliate-Programme (Awin)</h2>
                         <p className="text-sm mb-4">
-                            Diese Website nimmt an Affiliate-Programmen teil, insbesondere am Netzwerk von Admitad.
-                            Affiliate-Links sind Verweise auf externe Online-Shops oder Dienstleister. Wenn Sie auf einen dieser
-                            Links klicken und anschließend ein Produkt kaufen oder eine Dienstleistung buchen, erhält der
-                            Betreiber dieser Website ggf. eine Provision.
+                            Diese Website nimmt am Affiliate-Netzwerk der AWIN AG teil. Einzelne externe Links sind als Werbung
+                            oder Affiliate-Link gekennzeichnet. Wenn Sie einen solchen Link anklicken und beim verlinkten Anbieter
+                            eine Bestellung oder eine andere vergütete Aktion ausführen, können wir eine Provision erhalten.
+                            Für Sie entstehen dadurch keine zusätzlichen Kosten.
                         </p>
                         <p className="text-sm mb-4">
-                            Um die Zuordnung von Verkäufen zu ermöglichen, setzt unser Partner Admitad Cookies auf Ihrem Endgerät.
-                            Diese Cookies dienen ausschließlich dem Zweck einer korrekten Zuordnung des Verkaufserfolgs eines Affiliate-Links zum Kooperationspartner.
-                            Personenbezogene Daten werden hierbei in der Regel nicht erhoben, außer anonymisierte Identifikatoren,
-                            die keine Rückschlüsse auf Ihre Person zulassen.
+                            Beim Anklicken eines Awin-Affiliate-Links wird Ihr Browser über eine Awin-Tracking-Domain zum jeweiligen
+                            Anbieter weitergeleitet. Awin und der Anbieter können Tracking-Cookies und weitere Zuordnungsverfahren,
+                            einschließlich Geräteerkennung, einsetzen, um den Verweis und eine spätere Transaktion einander zuzuordnen.
+                            Nach Angaben von Awin werden dabei überwiegend pseudonyme Klick- und Transaktionsdaten verarbeitet. Dazu
+                            können die Werbekampagne, der Publisher, Klick oder Ansicht, Land, verwendetes Gerät, Bestellwert,
+                            Gutscheinnutzung, Produkttyp und Vertriebskanal gehören. Eine direkte Identifizierung anhand von Name,
+                            E-Mail-Adresse oder Zahlungsdaten ist für diese Zuordnung grundsätzlich nicht erforderlich.
+                        </p>
+                        <p className="text-sm mb-4">
+                            Die Verarbeitung dient der Zuordnung von Verkäufen und anderen vergüteten Aktionen, der Provisionsabrechnung,
+                            der Berichterstellung und der Betrugsprävention. Wir erhalten von Awin in der Regel aggregierte oder pseudonyme
+                            Leistungs- und Transaktionsdaten. Die weitere Verarbeitung nach dem Verlassen unserer Website richtet sich
+                            nach den Datenschutzhinweisen von Awin und des jeweiligen Anbieters.
+                        </p>
+                        <p className="text-sm mb-4">
+                            Unser Einsatz der gekennzeichneten Affiliate-Links dient der wirtschaftlichen Finanzierung unseres
+                            unentgeltlichen Angebots (Art. 6 Abs. 1 lit. f DSGVO). Soweit für das Speichern oder Auslesen von
+                            Informationen auf Ihrem Endgerät eine Einwilligung erforderlich ist, ist die jeweils verarbeitende
+                            Stelle für deren Einholung und die Angabe der einschlägigen Rechtsgrundlage verantwortlich.
                         </p>
                         <p className="text-sm">
-                            Die Nutzung erfolgt auf Grundlage unseres berechtigten Interesses an der wirtschaftlichen Finanzierung
-                            unseres Webangebots (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen zur Datennutzung durch Admitad
-                            finden Sie in der Datenschutzerklärung des Anbieters:
-                            <a href="https://www.admitad.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
-                                https://www.admitad.com/privacy-policy/
+                            Weitere Informationen finden Sie in der
+                            <a href="https://www.awin.com/gb/privacy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline mx-1">
+                                Awin-Datenschutzerklärung
                             </a>
+                            und auf der Seite zum
+                            <a href="https://www.awin.com/gb/legal/optout" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline ml-1">
+                                Awin Tracking-Opt-out
+                            </a>.
                         </p>
                     </section>
 

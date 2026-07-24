@@ -971,3 +971,27 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** The initial live smoke test supplied the failing RED case. After the configuration-only correction, `nginx -t` passed, Nginx reloaded successfully, and the complete live SEO smoke suite passed. The suite verifies 12 canonical routes, both variants of 21 retired routes, two literal search-placeholder redirects and two real search-query passthroughs.
 
 **Rollback:** Restore `/etc/nginx/sites-available/englishspeakinggermany.online.bak-2f8bd50-before-direct-redirect-fix`, run `nginx -t`, and reload Nginx. This restores the deployed `2f8bd50` site configuration but also restores the two-hop retired-route behavior.
+
+## 2026-07-24T17:30:00+02:00 - Align the affiliate privacy disclosure with Awin
+
+**Context:** The site uses live Awin affiliate links and the publisher account is active, but the privacy policy still identified Admitad as the affiliate network. That stale disclosure linked to the wrong provider and reduced transparency about the tracking that can occur after a visitor follows an affiliate link.
+
+**Decision:** Replace the Admitad section with an Awin-specific disclosure based on Awin's current official privacy and tracking materials. Explain the commission relationship, the redirect through an Awin tracking domain, the possible use of tracking cookies and other attribution methods, the principal categories of pseudonymous click and transaction data, and the purposes of attribution, reporting, commission calculation and fraud prevention. Link directly to Awin's official privacy policy and tracking opt-out page. Avoid claiming that this site receives a visitor's name, email address or payment information through ordinary affiliate reporting, and distinguish this site's legitimate interest in financing its free content from the legal responsibilities of Awin and each advertiser for their subsequent device access and processing.
+
+**Trade-offs:** This is a transparency correction, not individualized legal advice or a complete consent-management review. Awin and advertiser tracking implementations can differ and can change, so the policy links to their current notices rather than promising one fixed technology or legal basis. The React page remains static and adds no script, request, cookie or client-side state.
+
+**Verification:** TDD RED confirmed that the page still named Admitad and lacked Awin's official privacy and opt-out destinations. A second RED exposed missing mobile word wrapping for long legal terms and policy URLs. GREEN passes 140 frontend tests across 34 files, including the focused disclosure and mobile-wrap contracts. All 45 API tests, 25 maintenance tests, TypeScript and project-wide ESLint pass. The production build completed and prerendered all 230 routes. Headless Chromium at 390 pixels confirmed the Awin heading and official links, no remaining Admitad text, no page-level horizontal overflow, and no console or page errors.
+
+**Rollback:** Restore the previous section in `web-app/src/pages/Privacy.tsx` and remove `web-app/src/pages/Privacy.test.tsx`. That rollback would knowingly restore an inaccurate provider disclosure and is not recommended.
+
+## 2026-07-24T17:57:00+02:00 - Remove the unconnected Admitad site verifier
+
+**Context:** The repository and live HTML contained an Admitad site-verification meta tag added in December 2025. Git history showed that an Admitad disclosure and affiliate labels were introduced around the same period, but no Admitad tracking URL, script or programme-specific placement was ever committed. Current tracked affiliate links use Awin domains, while the remaining direct brand URLs contain no Admitad attribution mechanism.
+
+**Decision:** Remove only the `verify-admitad` meta tag and its token from `web-app/index.html`. Preserve the unrelated Impact site-verification tag, the active Awin links, and historical references in this decision log. Add a source-level regression test so future builds cannot silently reintroduce the obsolete Admitad verifier or token.
+
+**Trade-offs:** Removing the tag ends public proof of domain control for any forgotten Admitad account, but it does not delete an account, programme membership, transaction history or balance. The tag can be restored if an active account is later recovered. Historical Git commits still contain the old verifier and disclosure, which is appropriate audit history rather than a live integration.
+
+**Verification:** TDD RED confirmed that `index.html` still published both the verifier name and token. GREEN passes 141 frontend tests across 34 files, 45 API tests, 25 maintenance tests, TypeScript and project-wide ESLint. The production build completed and prerendered all 230 routes. Generated-output scanning found no Admitad verifier, token, disclosure or tracking reference, while the separate Impact verifier and active Awin links remained present.
+
+**Rollback:** Restore the single Admitad meta tag to `web-app/index.html`. Do so only after confirming an active Admitad account that still requires domain verification.

@@ -19,4 +19,11 @@ describe('performance assets', () => {
         expect(preconnectPosition).toBeGreaterThan(-1);
         expect(stylesheetPosition).toBeGreaterThan(preconnectPosition);
     });
+
+    it('does not publish an obsolete Admitad verification token', () => {
+        const indexHtml = readFileSync(resolve(process.cwd(), 'index.html'), 'utf8');
+
+        expect(indexHtml).not.toContain('verify-admitad');
+        expect(indexHtml).not.toContain('327a169085');
+    });
 });
