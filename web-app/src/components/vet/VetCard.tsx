@@ -4,6 +4,7 @@ import { ConfirmEnglish } from './ConfirmEnglish';
 import { appendUTM } from '../../utils/url';
 import { trackVetWebsiteClick } from '../../utils/analytics';
 import { formatVerifiedLabel } from '../../utils/verifiedLabel';
+import { VerificationBadge } from './VerificationBadge';
 
 interface VetCardProps {
     vet: VetWithDistance;
@@ -36,19 +37,7 @@ export const VetCard: React.FC<VetCardProps> = ({ vet, isSelected, onSelect, onR
                     </h2>
                 </div>
                 <div className="flex flex-col items-end gap-2">
-                    <div className="relative group/tooltip z-20">
-                        <div className="px-3 py-1 bg-accent/20 text-primary text-[10px] font-black uppercase tracking-tighter rounded-xl border border-accent/20 flex items-center gap-1.5 shadow-sm cursor-help">
-                            <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></div>
-                            Verified
-                        </div>
-                        <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-secondary border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
-                            <p className="text-[11px] leading-relaxed font-medium text-secondary/90 normal-case tracking-normal">
-                                <span className="font-bold text-secondary block mb-1 uppercase tracking-widest text-[9px]">Community Verified</span>
-                                We analyze thousands of patient reviews to identify "English signals" - confirming that other international pet owners successfully communicated in English.
-                            </p>
-                            <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-primary border-b border-r border-white/10 rotate-45"></div>
-                        </div>
-                    </div>
+                    <VerificationBadge vet={vet} />
                     {vet.distance !== undefined && vet.distance !== 9999 && (
                         <span className="text-[10px] font-bold text-primary/80 bg-secondary/50 px-2 py-0.5 rounded-lg border border-primary/5">
                             📍 {vet.distance.toFixed(1)} km

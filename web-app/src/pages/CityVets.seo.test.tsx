@@ -23,6 +23,14 @@ function renderCity(path: string) {
 }
 
 describe('CityVets search and trust contract', () => {
+    it('distinguishes official website evidence on the Leipzig page', () => {
+        renderCity('/vets/leipzig');
+
+        expect(screen.getAllByText('Official Website')).toHaveLength(3);
+        expect(screen.getAllByText('Official Website Confirmed')).toHaveLength(3);
+        expect(screen.getByText(/3 are confirmed by their official websites/i)).toBeTruthy();
+    });
+
     it('uses a live listing count and leads with evidence-derived Berlin copy', async () => {
         renderCity('/vets/berlin');
 
@@ -62,7 +70,8 @@ describe('CityVets search and trust contract', () => {
                 .map((entry: { acceptedAnswer: { text: string } }) => entry.acceptedAnswer.text)
                 .join(' ');
 
-            expect(answers).toContain('31 are community-Verified');
+            expect(answers).toContain('31 are community-confirmed');
+            expect(answers).not.toContain('community-Verified');
             expect(answers).not.toContain('Every listed vet has been confirmed');
         });
     });

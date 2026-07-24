@@ -27,6 +27,29 @@ const vet: VetWithDistance = {
 };
 
 describe('VetCard accessibility', () => {
+    it('shows first-party website evidence without describing it as community confirmation', () => {
+        const officialVet = {
+            ...vet,
+            verification: {
+                ...vet.verification,
+                evidence_type: 'official_website',
+            },
+        } as VetWithDistance;
+
+        render(
+            <VetCard
+                vet={officialVet}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        expect(screen.getByText('Official Website')).toBeTruthy();
+        expect(screen.getByText('Official Website Confirmed')).toBeTruthy();
+        expect(screen.queryByText('Community Verified')).toBeNull();
+    });
+
     it('gives each practice website link a unique accessible purpose', () => {
         render(
             <VetCard

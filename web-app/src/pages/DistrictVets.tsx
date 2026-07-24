@@ -7,15 +7,14 @@ import vetsData from '../data/vets.json';
 import { filterDisplayableVets } from '../utils/activeVets';
 import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
 import { trackVetWebsiteClick } from '../utils/analytics';
-import { formatVerifiedLabel } from '../utils/verifiedLabel';
+import { formatVerifiedLabel, isVetVerified } from '../utils/verifiedLabel';
 import { generateDistrictContent } from '../utils/districtContent';
 import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
 import ReportIssueLink from '../components/vet/ReportIssueLink';
+import { VerificationBadge } from '../components/vet/VerificationBadge';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
-const isVetVerified = (vet: Vet): boolean =>
-    vet.community_status === 'Verified' || vet.verification?.status === 'Verified';
 
 interface DistrictContent {
     title: string;
@@ -433,26 +432,7 @@ export default function DistrictVets() {
                                             </h3>
                                         </div>
                                         <div className="flex flex-col items-end gap-2">
-                                            <div className="relative group/tooltip z-20">
-                                                <div className={`px-3 py-1 text-[10px] font-black uppercase tracking-tighter rounded-xl border flex items-center gap-1.5 shadow-sm cursor-help ${isVetVerified(vet)
-                                                    ? 'bg-accent/20 text-primary border-accent/20'
-                                                    : 'bg-secondary text-primary/70 border-primary/10'
-                                                    }`}>
-                                                    <div className={`w-1.5 h-1.5 rounded-full ${isVetVerified(vet) ? 'bg-accent' : 'bg-primary/30'}`}></div>
-                                                    {isVetVerified(vet) ? 'Verified' : 'Community Listed'}
-                                                </div>
-                                                <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-secondary border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
-                                                    <p className="text-[11px] leading-relaxed font-medium text-secondary/90 normal-case tracking-normal">
-                                                        <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">
-                                                            {isVetVerified(vet) ? 'Community Verified' : 'Confirmation Needed'}
-                                                        </span>
-                                                        {isVetVerified(vet)
-                                                            ? 'Community members have confirmed English availability. Confirm again when booking because staff availability can change.'
-                                                            : 'This is a community-sourced listing. English availability has not yet been confirmed through our community process.'}
-                                                    </p>
-                                                    <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-primary border-b border-r border-white/10 rotate-45"></div>
-                                                </div>
-                                            </div>
+                                            <VerificationBadge vet={vet} />
                                         </div>
                                     </div>
 

@@ -1,5 +1,6 @@
 import type { Vet } from '../types/vet';
 import { calculateDistance } from './distance';
+import { isOfficialWebsiteConfirmed, isVetVerified } from './verifiedLabel';
 
 /**
  * Data-driven intro content for city pages WITHOUT hand-written cityContent.
@@ -24,8 +25,11 @@ function centroid(vets: Vet[]): { lat: number; lng: number } {
 export function generateCitySummary(city: string, cityVets: Vet[], allVets: Vet[]): CitySummary {
     const count = cityVets.length;
     const names = cityVets.map((v) => v.practice_name);
-    const verified = cityVets.filter((v) => v.community_status === 'Verified');
-    const communitySourced = count - verified.length;
+    const officialWebsiteConfirmed = cityVets.filter(isOfficialWebsiteConfirmed);
+    const communityConfirmed = cityVets.filter(
+        (vet) => isVetVerified(vet) && !isOfficialWebsiteConfirmed(vet),
+    );
+    const communitySourced = count - officialWebsiteConfirmed.length - communityConfirmed.length;
     const withSite = cityVets.filter((v) => v.contact?.website).length;
     const emergency = cityVets.filter((v) => {
         const e = (v.verification as { emergency_services?: string }).emergency_services;
@@ -37,13 +41,28 @@ export function generateCitySummary(city: string, cityVets: Vet[], allVets: Vet[
     const paragraphs: string[] = [];
 
     // 1. What we actually list here
+    const evidenceSummary: string[] = [];
+    if (officialWebsiteConfirmed.length) {
+        evidenceSummary.push(
+            officialWebsiteConfirmed.length === 1
+                ? '1 is confirmed by its official website'
+                : `${officialWebsiteConfirmed.length} are confirmed by their official websites`,
+        );
+    }
+    if (communityConfirmed.length) {
+        evidenceSummary.push(
+            `${communityConfirmed.length} ${communityConfirmed.length === 1 ? 'is' : 'are'} community-confirmed by pet owners`,
+        );
+    }
+    if (communitySourced) {
+        evidenceSummary.push(
+            `${communitySourced} ${communitySourced === 1 ? 'is' : 'are'} community-listed and awaiting confirmation`,
+        );
+    }
+
     paragraphs.push(
         `We currently list ${count} English-speaking veterinary ${count === 1 ? 'practice' : 'practices'} in ${city}: ${prose(names.slice(0, 3))}${count > 3 ? `, among others` : ''}. ` +
-        (verified.length === count
-            ? `${count === 1 ? 'It is' : 'All of them are'} community-Verified, meaning expat pet owners have confirmed being seen there in English.`
-            : verified.length > 0
-                ? `${verified.length} ${verified.length === 1 ? 'is' : 'are'} community-Verified by expat pet owners; ${communitySourced} ${communitySourced === 1 ? 'is' : 'are'} community-sourced and still awaiting an in-person confirmation, so mention English when booking.`
-                : `These listings are community-sourced from expat recommendations rather than independently Verified yet, so it is worth confirming English when you book.`),
+        `${evidenceSummary.join('; ')}. Confirm which English-speaking clinician will be available when booking.`,
     );
 
     // 2. Geography / practical detail, only where the data has it

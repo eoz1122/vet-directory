@@ -1,4 +1,5 @@
 import type { Vet } from '../types/vet';
+import { isOfficialWebsiteConfirmed, isVetVerified } from './verifiedLabel';
 
 export interface DistrictFaq {
     q: string;
@@ -20,9 +21,6 @@ const prose = (items: string[]): string => {
     return `${xs.slice(0, -1).join(', ')}, and ${xs[xs.length - 1]}`;
 };
 
-const isVerified = (v: Vet): boolean =>
-    v.community_status === 'Verified' || v.verification?.status === 'Verified';
-
 /**
  * Builds genuinely unique, factual page copy for a district from its own listings.
  * No invented facts: every sentence is grounded in practice names, English-language
@@ -36,7 +34,11 @@ export function generateDistrictContent(
 ): GeneratedDistrictContent {
     const count = vets.length;
     const names = vets.map(v => v.practice_name).filter(Boolean);
-    const verifiedNames = vets.filter(isVerified).map(v => v.practice_name);
+    const officialNames = vets.filter(isOfficialWebsiteConfirmed).map(v => v.practice_name);
+    const communityConfirmedNames = vets
+        .filter(v => isVetVerified(v) && !isOfficialWebsiteConfirmed(v))
+        .map(v => v.practice_name);
+    const verifiedNames = [...officialNames, ...communityConfirmedNames];
     const emergencyNames = vets
         .filter(v => v.verification?.emergency_services)
         .map(v => v.practice_name);
@@ -66,20 +68,29 @@ export function generateDistrictContent(
 
     // 1) Coverage: how many, which ones, how many verified.
     if (count === 1) {
-        paragraphs.push(verifiedNames.length
-            ? `${names[0]} is the community-Verified veterinary practice we currently list in ${district}, ${city}. ` +
+        paragraphs.push(officialNames.length
+            ? `${names[0]} is confirmed by its official website as offering English-language service in ${district}, ${city}. ` +
+                `Confirm which English-speaking clinician will be available when you book.`
+            : communityConfirmedNames.length
+                ? `${names[0]} is the community-confirmed veterinary practice we currently list in ${district}, ${city}. ` +
                 `Community members have confirmed English availability, but it is still worth confirming who will be available when you book.`
-            : `${names[0]} is the community-sourced veterinary practice we currently list in ${district}, ${city}. ` +
-                `Its listing contains an English-language signal, but English availability has not yet been confirmed through our community process. Review the evidence shown and confirm when booking.`,
+                : `${names[0]} is the community-sourced veterinary practice we currently list in ${district}, ${city}. ` +
+                    `Its listing contains an English-language signal, but English availability has not yet been confirmed through our community process. Review the evidence shown and confirm when booking.`,
         );
     } else {
         const shown = names.slice(0, 4);
         const lead = shown.length < count
             ? `including ${prose(shown)}`
             : prose(shown);
-        const verifiedNote = verifiedNames.length
-            ? ` ${verifiedNames.length} of them ${verifiedNames.length === 1 ? 'is' : 'are'} marked Verified by expat pet owners in our community.`
-            : '';
+        const evidenceNotes = [
+            officialNames.length
+                ? `${officialNames.length} ${officialNames.length === 1 ? 'is' : 'are'} confirmed by ${officialNames.length === 1 ? 'its official website' : 'their official websites'}`
+                : '',
+            communityConfirmedNames.length
+                ? `${communityConfirmedNames.length} ${communityConfirmedNames.length === 1 ? 'is' : 'are'} community-confirmed`
+                : '',
+        ].filter(Boolean);
+        const verifiedNote = evidenceNotes.length ? ` ${evidenceNotes.join('; ')}.` : '';
         paragraphs.push(
             `We list ${count} community-sourced veterinary practices in ${district}, ${city}: ${lead}.${verifiedNote} ` +
             `Review each listing's English-language evidence and confirm staff availability when booking.`,
@@ -121,7 +132,7 @@ export function generateDistrictContent(
         a: count === 0
             ? `We do not yet list a confirmed English-speaking vet directly in ${district}. Check nearby districts in ${city} for the closest English-friendly practice.`
             : verifiedNames.length
-                ? `Yes. We list ${count} English-speaking veterinary ${count === 1 ? 'practice' : 'practices'} in ${district}, ${verifiedNames.length} community-Verified, including ${prose(names.slice(0, 3))}${count > 3 ? ', among others' : ''}.`
+                ? `Yes. We list ${count} English-speaking veterinary ${count === 1 ? 'practice' : 'practices'} in ${district}. ${officialNames.length ? `${officialNames.length} ${officialNames.length === 1 ? 'is' : 'are'} confirmed by ${officialNames.length === 1 ? 'its official website' : 'their official websites'}. ` : ''}${communityConfirmedNames.length ? `${communityConfirmedNames.length} ${communityConfirmedNames.length === 1 ? 'is' : 'are'} community-confirmed. ` : ''}The listings include ${prose(names.slice(0, 3))}${count > 3 ? ', among others' : ''}.`
                 : `We list ${count} ${count === 1 ? 'practice' : 'practices'} in ${district} that our community has flagged as English-speaking${count <= 3 ? ` (${prose(names)})` : ''}. These are community-sourced rather than independently Verified, so it is worth confirming when you book.`,
     };
 
@@ -139,21 +150,21 @@ export function generateDistrictContent(
 
     const verifyFaq: DistrictFaq = {
         q: `How do you verify English-speaking vets in ${district}?`,
-        a: `Every ${district} listing is community-sourced and cross-checked for English-language signals` +
+        a: `${officialNames.length ? `${officialNames.length} ${officialNames.length === 1 ? 'listing uses' : 'listings use'} an explicit statement from the practice's official website. ` : ''}Other ${district} listings are community-sourced and cross-checked for English-language signals` +
             `${signals.length ? ` such as ${prose(signals.slice(0, 2))}` : ''}` +
             `${hasReviewSignal ? ', including English confirmed in Google reviews' : ''}. ` +
-            `Practices marked Verified have been confirmed by expat pet owners who have been seen there.`,
+            `Community Confirmed means pet owners have reported successful English communication.`,
     };
 
     // Matches the conversational phrasing real searchers use (GSC, July 2026):
     // "is there an english-speaking vet in <district> you can recommend?".
     // Only included when there is at least one practice to point to, and the
-    // answer sticks to what the data supports: community confirmations.
+    // answer sticks to the evidence source stored for each listing.
     const recommendFaq: DistrictFaq | null = count > 0
         ? {
             q: `Is there an English-speaking vet in ${district} you can recommend?`,
             a: verifiedNames.length
-                ? `${prose(verifiedNames.slice(0, 3))} ${verifiedNames.length === 1 ? 'is' : 'are'} the community-Verified ${verifiedNames.length === 1 ? 'choice' : 'choices'} in ${district}: expat pet owners have confirmed being seen there in English. Each listing shows the practice's contact details and the evidence behind the verification.`
+                ? `${prose(verifiedNames.slice(0, 3))} ${verifiedNames.length === 1 ? 'has' : 'have'} confirmation evidence in ${district}. ${officialNames.length ? `${officialNames.length} ${officialNames.length === 1 ? 'is' : 'are'} confirmed by ${officialNames.length === 1 ? 'its official website' : 'their official websites'}. ` : ''}${communityConfirmedNames.length ? `${communityConfirmedNames.length} ${communityConfirmedNames.length === 1 ? 'is' : 'are'} community-confirmed by pet owners. ` : ''}Each listing shows the practice's contact details and the evidence source.`
                 : `Our ${district} ${count === 1 ? 'listing is' : 'listings are'} community-sourced${count <= 3 ? ` (${prose(names)})` : ''} rather than independently Verified yet, so we would not call ${count === 1 ? 'it' : 'any of them'} a firm recommendation. Check the English signals on each listing and confirm when booking.`,
         }
         : null;

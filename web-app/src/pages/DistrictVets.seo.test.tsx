@@ -31,6 +31,14 @@ function getStructuredData(type: string) {
 }
 
 describe('DistrictVets search and trust contract', () => {
+    it('uses the first-party evidence label for the Leutzsch practice', () => {
+        renderDistrict('/vets/leipzig/leutzsch');
+
+        expect(screen.getByText('Official Website')).toBeTruthy();
+        expect(screen.getByText('Official Website Confirmed')).toBeTruthy();
+        expect(screen.queryByText('Community Verified')).toBeNull();
+    });
+
     it('uses count, district, and city in the title with listing-derived copy', async () => {
         renderDistrict('/vets/berlin/prenzlauer-berg');
 
@@ -44,8 +52,8 @@ describe('DistrictVets search and trust contract', () => {
             level: 1,
             name: '3 English-Speaking Vets in Prenzlauer Berg, Berlin',
         })).toBeTruthy();
-        expect(screen.getByText(/3 of them are marked Verified by expat pet owners/i))
-            .toBeTruthy();
+        expect(screen.getAllByText(/3 are community-confirmed/i).length).toBeGreaterThan(0);
+        expect(screen.queryByText(/community-Verified/i)).toBeNull();
         expect(screen.queryByText(/without any language barriers/i)).toBeNull();
         expect(
             document.head.querySelector('meta[name="description"]')?.getAttribute('content'),

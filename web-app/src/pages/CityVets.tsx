@@ -7,17 +7,19 @@ import vetsData from '../data/vets.json';
 import { filterDisplayableVets } from '../utils/activeVets';
 import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
 import { trackVetWebsiteClick } from '../utils/analytics';
-import { formatVerifiedLabel } from '../utils/verifiedLabel';
+import {
+    formatVerifiedLabel,
+    isOfficialWebsiteConfirmed,
+    isVetVerified,
+} from '../utils/verifiedLabel';
 import { parseCityContent, type Block } from '../utils/cityMarkdown';
 import { generateCitySummary } from '../utils/citySummary';
 import type { Vet } from '../types/vet';
 import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
 import ReportIssueLink from '../components/vet/ReportIssueLink';
+import { VerificationBadge } from '../components/vet/VerificationBadge';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
-
-const isVetVerified = (vet: Vet): boolean =>
-    vet.community_status === 'Verified' || vet.verification?.status === 'Verified';
 
 function renderBlocks(blocks: Block[]) {
     const seg = (s: { bold: boolean; text: string }, k: number) =>
@@ -257,14 +259,16 @@ export default function CityVets() {
     // Prefer the real city name from the data ("Bad Homburg"); fall back to a titled slug.
     const capitalizedCity = cityVets[0]?.city || titleCaseSlug(cityKey);
     const verifiedCount = cityVets.filter(isVetVerified).length;
+    const officialWebsiteCount = cityVets.filter(isOfficialWebsiteConfirmed).length;
+    const communityConfirmedCount = verifiedCount - officialWebsiteCount;
     const communityListedCount = cityVets.length - verifiedCount;
     const emergencyVets = cityVets.filter(
         vet => Boolean(vet.verification?.emergency_services?.trim()),
     );
     const listingTitle = `${cityVets.length} English-Speaking ${cityVets.length === 1 ? 'Vet' : 'Vets'} in ${capitalizedCity}`;
     const listingDescription = verifiedCount === cityVets.length
-        ? `Browse ${cityVets.length} verified English-speaking veterinary ${cityVets.length === 1 ? 'practice' : 'practices'} in ${capitalizedCity}. Compare districts, contact details, and emergency information.`
-        : `Browse ${cityVets.length} English-speaking veterinary practices in ${capitalizedCity}; ${verifiedCount} are community-Verified. Compare districts and confirm English when booking.`;
+        ? `Browse ${cityVets.length} verified English-speaking veterinary ${cityVets.length === 1 ? 'practice' : 'practices'} in ${capitalizedCity}. Compare official website and community evidence, contact details, and emergency information.`
+        : `Browse ${cityVets.length} English-speaking veterinary practices in ${capitalizedCity}; ${officialWebsiteCount} have official website confirmation and ${communityConfirmedCount} are community-confirmed. Compare districts and confirm English when booking.`;
 
     let cityData: { title: string; description: string; content: string; nearestHub?: { city: string; count: number; distanceKm: number } | null } = cityContent[cityKey];
 
@@ -363,8 +367,8 @@ export default function CityVets() {
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": verifiedCount === cityVets.length
-                        ? `We list ${cityVets.length} community-Verified English-speaking veterinary ${cityVets.length === 1 ? 'practice' : 'practices'} in ${capitalizedCity}. Confirm who will be available in English when booking because staff availability can change.`
-                        : `We list ${cityVets.length} veterinary practices in ${capitalizedCity} with English-language signals. ${verifiedCount} are community-Verified and ${communityListedCount} are community-listed, so confirm English availability when booking.`
+                        ? `We list ${cityVets.length} English-speaking veterinary ${cityVets.length === 1 ? 'practice' : 'practices'} in ${capitalizedCity}. ${officialWebsiteCount ? `${officialWebsiteCount} ${officialWebsiteCount === 1 ? 'is' : 'are'} confirmed by ${officialWebsiteCount === 1 ? 'its official website' : 'their official websites'}, and ` : ''}${communityConfirmedCount} ${communityConfirmedCount === 1 ? 'is' : 'are'} community-confirmed. Confirm who will be available in English when booking because staff availability can change.`
+                        : `We list ${cityVets.length} veterinary practices in ${capitalizedCity} with English-language signals. ${officialWebsiteCount} have official website confirmation, ${communityConfirmedCount} are community-confirmed and ${communityListedCount} are community-listed, so confirm English availability when booking.`
                 }
             },
             {
@@ -372,7 +376,7 @@ export default function CityVets() {
                 "name": `How do I find a vet in ${capitalizedCity} as an expat?`,
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `Browse the ${capitalizedCity} directory by district, compare the English-language evidence shown on each listing, and confirm staff availability when booking. Practices marked Verified have been confirmed by expat pet owners in our community.`
+                    "text": `Browse the ${capitalizedCity} directory by district and compare the evidence shown on each listing. Official Website means the practice advertises English service itself; Community Confirmed means pet owners have reported successful English communication. Confirm staff availability when booking.`
                 }
             },
             ...(emergencyVets.length ? [{
@@ -509,26 +513,7 @@ export default function CityVets() {
                                         </h3>
                                     </div>
                                     <div className="flex flex-col items-end gap-2">
-                                        <div className="relative group/tooltip z-20">
-                                            <div className={`px-3 py-1 text-[10px] font-black uppercase tracking-tighter rounded-xl border flex items-center gap-1.5 shadow-sm cursor-help ${isVetVerified(vet)
-                                                ? 'bg-accent/20 text-primary border-accent/20'
-                                                : 'bg-primary/5 text-primary/60 border-primary/10'
-                                            }`}>
-                                                <div className={`w-1.5 h-1.5 rounded-full ${isVetVerified(vet) ? 'bg-accent' : 'bg-primary/30'}`}></div>
-                                                {isVetVerified(vet) ? 'Verified' : 'Community Listed'}
-                                            </div>
-                                            <div className="absolute bottom-full right-0 mb-2 w-64 p-4 bg-primary text-secondary border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all duration-300 z-50 transform translate-y-1 group-hover/tooltip:translate-y-0 pointer-events-none">
-                                                <p className="text-[11px] leading-relaxed font-medium text-secondary/90 normal-case tracking-normal">
-                                                    <span className="font-bold text-accent block mb-1 uppercase tracking-widest text-[9px]">
-                                                        {isVetVerified(vet) ? 'Community Verified' : 'Confirmation Needed'}
-                                                    </span>
-                                                    {isVetVerified(vet)
-                                                        ? 'Community members have confirmed English availability. Confirm again when booking because staff availability can change.'
-                                                        : 'This is a community-sourced listing. English availability has not yet been confirmed through our community process.'}
-                                                </p>
-                                                <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-primary border-b border-r border-white/10 rotate-45"></div>
-                                            </div>
-                                        </div>
+                                        <VerificationBadge vet={vet} />
                                     </div>
                                 </div>
 

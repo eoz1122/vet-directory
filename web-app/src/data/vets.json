@@ -6363,6 +6363,7 @@
       "english_signals": [
         "The practice team page explicitly states that veterinarians Bernhard Regensburger and Daniela Haupt speak English, and that Julie Minner Viegas speaks fluent English"
       ],
+      "evidence_type": "official_website",
       "source_urls": [
         "https://tierarztpraxis-leutzsch.de/pages/team.php",
         "https://tierarztpraxis-leutzsch.de/pages/kontakt.php"
@@ -6392,6 +6393,7 @@
       "english_signals": [
         "The practice appointment page explicitly invites clients to request an appointment in English when booking"
       ],
+      "evidence_type": "official_website",
       "source_urls": [
         "https://tierarztpraxis-am-kirschberg.de/sprechzeiten/",
         "https://tierarztpraxis-am-kirschberg.de/impressum/"
@@ -6421,6 +6423,7 @@
       "english_signals": [
         "The practice website states that Dr. Silke Schroth is fluent in general and medical English and can conduct the full consultation in English"
       ],
+      "evidence_type": "official_website",
       "source_urls": [
         "https://hund-katze-maus.net/"
       ],
