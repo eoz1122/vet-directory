@@ -180,6 +180,16 @@ export default function PetInsuranceGermany() {
                                 Dog-owner liability is commonly called <strong>Hundehalterhaftpflicht</strong>, <strong>Hundehaftpflicht</strong>, or <strong>Tierhalterhaftpflicht</strong>. It covers eligible third-party bodily injury, property damage, and financial loss under the contract. It does not pay your own dog&apos;s veterinary bill.
                             </p>
                             <p>
+                                Use the dedicated{' '}
+                                <Link
+                                    to="/blog/dog-liability-insurance-germany"
+                                    className="text-accent-ink font-bold hover:underline"
+                                >
+                                    Dog liability insurance guide
+                                </Link>{' '}
+                                for the current state-by-state requirements and a focused policy checklist.
+                            </p>
+                            <p>
                                 <a
                                     href="https://www.gesetze-im-internet.de/bgb/__833.html"
                                     target="_blank"

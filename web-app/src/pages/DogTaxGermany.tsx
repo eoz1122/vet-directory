@@ -234,7 +234,16 @@ export default function DogTaxGermany() {
                                 While not a tax, <strong>dog liability insurance</strong> (<em>Hundehaftpflichtversicherung</em>) is legally mandatory in Berlin, Hamburg, and several other federal states.
                             </p>
                             <p>
-                                Even where it's optional, skipping it is risky. Under German law, dog owners are <strong>strictly liable</strong> for any damage their dog causes — even accidents.
+                                Check the current state rules and policy terms in our{' '}
+                                <Link
+                                    to="/blog/dog-liability-insurance-germany"
+                                    className="text-accent hover:text-primary font-semibold"
+                                >
+                                    Dog liability insurance guide
+                                </Link>.
+                            </p>
+                            <p>
+                                Even where it's optional, skipping it is risky. Under German law, dog owners can be <strong>liable</strong> for damage their dog causes, including accidental damage.
                             </p>
                             <div className="bg-white p-6 rounded-xl shadow-sm my-6 not-prose border border-primary/5">
                                 <ul className="list-none pl-0 space-y-2 mb-0">

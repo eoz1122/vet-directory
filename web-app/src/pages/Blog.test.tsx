@@ -60,15 +60,15 @@ describe('Blog guide discovery', () => {
         const sectionCounts = {
             'start-here': 3,
             'emergency-vet-care': 5,
-            'moving-paperwork': 7,
+            'moving-paperwork': 8,
             'health-safety': 9,
             'everyday-life': 9,
             'new-pet-essentials': 3,
         };
         const allGuideUrls = guideUrlsIn(document);
 
-        expect(allGuideUrls).toHaveLength(36);
-        expect(new Set(allGuideUrls).size).toBe(36);
+        expect(allGuideUrls).toHaveLength(37);
+        expect(new Set(allGuideUrls).size).toBe(37);
 
         Object.entries(sectionCounts).forEach(([sectionId, count]) => {
             const section = document.getElementById(sectionId);

@@ -16,6 +16,7 @@ import {
     canonicalForRoute,
     extractBlogRoutes,
     PRERENDER_FALLBACK_SELECTOR,
+    resolveGuideCatalogPath,
     resolvePrerenderDistDir,
     shouldKeepModulePreload,
 } from './prerender-readiness.js';
@@ -23,7 +24,7 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST_DIR = resolvePrerenderDistDir(__dirname, process.env.PRERENDER_DIST_DIR);
 const VETS_DATA_PATH = path.resolve(__dirname, '../src/data/vets.json');
-const BLOG_FILE_PATH = path.resolve(__dirname, '../src/pages/Blog.tsx');
+const BLOG_FILE_PATH = resolveGuideCatalogPath(__dirname);
 
 // Port for the local preview server
 const PREVIEW_PORT = 4174;

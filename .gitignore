@@ -44,3 +44,6 @@ npm-debug.log*
 confirmations.jsonl
 web-app/src/data/vets.json.bak
 outreach/
+
+# Private finance and reporting workbooks generated for local review
+outputs/

@@ -1,91 +1,27 @@
 import { Link, useLocation } from 'react-router-dom';
-const blogPosts = [
-    {
-        url: "/blog/moving-to-germany-with-pet",
-        title: "Moving to Germany Guide",
-        emoji: "📦"
-    },
-    {
-        url: "/guides/pet-emergency-germany",
-        title: "Pet Emergency Guide",
-        emoji: "🚑"
-    },
-    {
-        url: "/guides/emergency-vets-berlin",
-        title: "Emergency Vets Berlin",
-        emoji: "🏥"
-    },
-    {
-        url: "/blog/pet-medication-germany-guide",
-        title: "Pet Medication Guide",
-        emoji: "💊"
-    },
-    {
-        url: "/blog/eu-pet-passport-germany",
-        title: "EU Pet Passport",
-        emoji: "🛂"
-    },
-    {
-        url: "/blog/pet-friendly-apartments-germany",
-        title: "Finding Apartments",
-        emoji: "🏠"
-    },
-    {
-        url: "/blog/hundesteuer-dog-tax-germany",
-        title: "Dog Tax (Hundesteuer)",
-        emoji: "💶"
-    },
-    {
-        url: "/blog/cat-registration-germany",
-        title: "Cat Registration",
-        emoji: "🐱"
-    },
-    {
-        url: "/blog/pet-sitting-germany",
-        title: "Pet Sitting & Boarding",
-        emoji: "🏡"
-    },
-    {
-        url: "/blog/german-vet-survival-kit-phrases",
-        title: "German Vet Phrases",
-        emoji: "🇩🇪"
-    },
-    {
-        url: "/blog/pet-insurance-germany",
-        title: "Pet Insurance Guide",
-        emoji: "💰"
-    },
-    {
-        url: "/blog/german-dog-etiquette-rules",
-        title: "Dog Etiquette & Rules",
-        emoji: "🐕"
-    },
-    {
-        url: "/blog/public-transport-with-dogs-berlin",
-        title: "Transport: Berlin",
-        emoji: "🐻"
-    },
-    {
-        url: "/blog/public-transport-with-dogs-hamburg",
-        title: "Transport: Hamburg",
-        emoji: "⚓"
-    },
-    {
-        url: "/blog/public-transport-with-dogs-munich",
-        title: "Transport: Munich",
-        emoji: "🥨"
-    },
-    {
-        url: "/blog/public-transport-with-dogs-frankfurt",
-        title: "Transport: Frankfurt",
-        emoji: "🏙️"
-    },
-    {
-        url: "/blog/public-transport-with-dogs-stuttgart",
-        title: "Transport: Stuttgart",
-        emoji: "🚗"
-    }
+import { GUIDE_CATALOG, type GuideCatalogEntry } from '../content/guideCatalog';
+
+const SIDEBAR_GUIDE_URLS = [
+    '/blog/moving-to-germany-with-pet',
+    '/guides/pet-emergency-germany',
+    '/guides/emergency-vets-berlin',
+    '/blog/first-vet-visit-germany',
+    '/blog/pet-insurance-germany',
+    '/blog/dog-liability-insurance-germany',
+    '/blog/vet-costs-germany',
+    '/blog/hundesteuer-dog-tax-germany',
+    '/blog/new-pet-checklist-germany',
+    '/blog/eu-pet-passport-germany',
+    '/blog/pet-friendly-apartments-germany',
+    '/blog/pet-medication-germany-guide',
+    '/blog/german-vet-survival-kit-phrases',
+    '/blog/breed-restrictions-germany',
 ];
+
+const guideByUrl = new Map(GUIDE_CATALOG.map((guide) => [guide.url, guide]));
+const sidebarGuides = SIDEBAR_GUIDE_URLS
+    .map((url) => guideByUrl.get(url))
+    .filter((guide): guide is GuideCatalogEntry => Boolean(guide));
 
 export default function BlogSidebar() {
     const location = useLocation();
@@ -94,15 +30,11 @@ export default function BlogSidebar() {
         <aside className="hidden lg:block w-64 shrink-0 space-y-8">
             <div className="sticky top-32">
                 <div className="bg-white rounded-xl shadow-sm border border-primary/5 overflow-hidden">
-                    <div className="flex items-center justify-between p-4 border-b border-primary/5">
+                    <div className="p-4 border-b border-primary/5">
                         <h2 className="text-sm font-bold text-primary uppercase tracking-wider">All Guides</h2>
-                        <div className="flex items-center gap-1.5 px-2 py-1 bg-green-50 rounded-full border border-green-100">
-                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                            <span className="text-[10px] font-black text-green-700 uppercase tracking-widest">Live Sync</span>
-                        </div>
                     </div>
                     <nav className="p-2 space-y-1">
-                        {blogPosts.map((post) => {
+                        {sidebarGuides.map((post) => {
                             const isActive = location.pathname === post.url;
                             return (
                                 <Link

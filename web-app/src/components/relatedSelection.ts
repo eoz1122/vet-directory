@@ -1,18 +1,54 @@
+interface LinkablePost {
+    url: string;
+    topics?: string[];
+}
+
+function stablePathHash(value: string): number {
+    let hash = 5381;
+    for (let i = 0; i < value.length; i++) {
+        hash = ((hash << 5) + hash + value.charCodeAt(i)) >>> 0;
+    }
+    return hash;
+}
+
 /**
- * Deterministic related-post picker. Seeded by the current path (NOT random)
- * so prerendered HTML is stable across builds, while different pages surface
- * different related posts, spreading internal links across the whole blog.
+ * Topic-first, deterministic related-post picker. Shared topics create useful
+ * content clusters, while the stable path hash spreads equally relevant
+ * fallback links without making prerendered HTML vary between builds.
  */
-export function pickRelated<T extends { url: string }>(posts: T[], currentPath: string, count: number): T[] {
+export function pickRelated<T extends LinkablePost>(
+    posts: T[],
+    currentPath: string,
+    count: number,
+): T[] {
     const pool = posts.filter((p) => p.url !== currentPath);
     if (pool.length <= count) return pool;
 
-    // Tiny stable string hash (djb2)
-    let hash = 5381;
-    for (let i = 0; i < currentPath.length; i++) {
-        hash = ((hash << 5) + hash + currentPath.charCodeAt(i)) >>> 0;
+    const currentTopics = new Set(
+        posts.find((post) => post.url === currentPath)?.topics ?? [],
+    );
+
+    if (currentTopics.size === 0) {
+        const start = stablePathHash(currentPath) % pool.length;
+        return Array.from(
+            { length: count },
+            (_, index) => pool[(start + index) % pool.length],
+        );
     }
 
-    const start = hash % pool.length;
-    return Array.from({ length: count }, (_, i) => pool[(start + i) % pool.length]);
+    return pool
+        .map((post) => ({
+            post,
+            score: (post.topics ?? []).reduce(
+                (total, topic) => total + (currentTopics.has(topic) ? 1 : 0),
+                0,
+            ),
+            tieBreaker: stablePathHash(`${currentPath}:${post.url}`),
+        }))
+        .sort((left, right) => (
+            right.score - left.score
+            || left.tieBreaker - right.tieBreaker
+        ))
+        .slice(0, count)
+        .map(({ post }) => post);
 }

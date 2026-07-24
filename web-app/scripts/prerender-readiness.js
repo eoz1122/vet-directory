@@ -7,6 +7,10 @@ export function resolvePrerenderDistDir(scriptDirectory, overrideDirectory) {
     return path.resolve(overrideDirectory || path.join(scriptDirectory, '../dist'));
 }
 
+export function resolveGuideCatalogPath(scriptDirectory) {
+    return path.resolve(scriptDirectory, '../src/content/guideCatalog.ts');
+}
+
 export function extractBlogRoutes(source) {
     const internalRoutePattern = /url:\s*["'](\/(?!\/)[^"']+)["']/g;
     return Array.from(source.matchAll(internalRoutePattern), (match) => match[1]);

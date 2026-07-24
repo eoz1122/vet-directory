@@ -56,7 +56,7 @@ const CHECKLIST = [
         items: [
             ['📡', 'Register the microchip with TASSO', 'Free, online, 5 minutes. The single highest-value item on this list.', '/blog/cat-registration-germany'],
             ['🏛️', 'Dogs: start the Hundesteuer registration', 'City deadlines are typically 2-4 weeks. Cats pay no tax.', '/blog/hundesteuer-dog-tax-germany'],
-            ['🛡️', 'Dogs: arrange liability insurance', 'Mandatory in Berlin, Hamburg, Lower Saxony, Thuringia, Saxony-Anhalt; smart everywhere.', '/blog/pet-insurance-germany'],
+            ['🛡️', 'Dogs: arrange liability insurance', 'Check the state rule and the policy terms before choosing cover.', '/blog/dog-liability-insurance-germany'],
             ['🩺', 'Book the first vet visit', 'Within 1-2 weeks, even for a healthy pet. Establish the record before you need it.', '/blog/first-vet-visit-germany'],
         ],
     },
@@ -131,7 +131,14 @@ export default function NewPetChecklistGermany() {
                                     <h3 className="text-lg font-black text-accent uppercase tracking-widest mb-4">{block.phase}</h3>
                                     <div className="space-y-3">
                                         {block.items.map(([emoji, title, desc, link]) => (
-                                            <Link key={title} to={link} className="p-5 bg-white rounded-xl border border-primary/5 shadow-sm flex items-start gap-4 hover:border-accent/40 transition-all group block">
+                                            <Link
+                                                key={title}
+                                                to={link}
+                                                aria-label={link === '/blog/dog-liability-insurance-germany'
+                                                    ? 'Dog liability insurance guide'
+                                                    : undefined}
+                                                className="p-5 bg-white rounded-xl border border-primary/5 shadow-sm flex items-start gap-4 hover:border-accent/40 transition-all group block"
+                                            >
                                                 <span className="text-2xl shrink-0">{emoji}</span>
                                                 <div className="flex-1">
                                                     <p className="font-bold text-primary leading-tight group-hover:text-accent transition-colors">{title}</p>

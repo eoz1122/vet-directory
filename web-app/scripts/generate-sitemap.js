@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { extractBlogRoutes } from './prerender-readiness.js';
+import { extractBlogRoutes, resolveGuideCatalogPath } from './prerender-readiness.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -9,7 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BASE_URL = 'https://englishspeakinggermany.online';
 const OUTPUT_FILE = path.resolve(__dirname, '../public/sitemap.xml');
 const VETS_DATA_PATH = path.resolve(__dirname, '../src/data/vets.json');
-const BLOG_FILE_PATH = path.resolve(__dirname, '../src/pages/Blog.tsx');
+const BLOG_FILE_PATH = resolveGuideCatalogPath(__dirname);
 
 // Helper to sanitize slugs.
 // MIRRORS slugify() in src/utils/url.ts — keep identical (see src/utils/url.test.ts).

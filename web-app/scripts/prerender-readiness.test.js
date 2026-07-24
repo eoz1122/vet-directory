@@ -5,6 +5,7 @@ import {
     extractBlogRoutes,
     removePrerenderFallbackMetadata,
     resolvePrerenderDistDir,
+    resolveGuideCatalogPath,
     shouldKeepModulePreload,
 } from './prerender-readiness.js';
 
@@ -34,6 +35,12 @@ describe('prerender readiness', () => {
         expect(resolvePrerenderDistDir('/project/scripts')).toBe('/project/dist');
         expect(resolvePrerenderDistDir('/project/scripts', '/tmp/vet-prerender')).toBe(
             '/tmp/vet-prerender',
+        );
+    });
+
+    it('uses the shared guide catalogue as the build route source', () => {
+        expect(resolveGuideCatalogPath('/project/scripts')).toBe(
+            '/project/src/content/guideCatalog.ts',
         );
     });
 

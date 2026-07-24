@@ -382,7 +382,9 @@ def test_hamburg_emergency_content_has_one_canonical_url():
     site_config = (web_app / "nginx_site.conf").read_text(encoding="utf-8")
     sitemap = (web_app / "public" / "sitemap.xml").read_text(encoding="utf-8")
     app_source = (web_app / "src" / "App.tsx").read_text(encoding="utf-8")
-    blog_source = (web_app / "src" / "pages" / "Blog.tsx").read_text(encoding="utf-8")
+    guide_catalog_source = (
+        web_app / "src" / "content" / "guideCatalog.ts"
+    ).read_text(encoding="utf-8")
     emergency_source = (web_app / "src" / "pages" / "PetEmergencyGermany.tsx").read_text(encoding="utf-8")
     base_url = "https://englishspeakinggermany.online"
     retired_path = "/guides/emergency-vets-hamburg"
@@ -397,8 +399,8 @@ def test_hamburg_emergency_content_has_one_canonical_url():
 
     assert sitemap.count(f"<loc>{base_url}{canonical_path}</loc>") == 1
     assert f"<loc>{base_url}{retired_path}</loc>" not in sitemap
-    assert retired_path not in blog_source
-    assert canonical_path in blog_source
+    assert retired_path not in guide_catalog_source
+    assert canonical_path in guide_catalog_source
     assert canonical_path in emergency_source
     assert "PetEmergencyHamburg" not in app_source
     assert f'<Navigate replace to="{canonical_path}" />' in app_source
@@ -411,7 +413,9 @@ def test_berlin_emergency_content_has_one_canonical_url():
     site_config = (web_app / "nginx_site.conf").read_text(encoding="utf-8")
     sitemap = (web_app / "public" / "sitemap.xml").read_text(encoding="utf-8")
     app_source = (web_app / "src" / "App.tsx").read_text(encoding="utf-8")
-    blog_source = (web_app / "src" / "pages" / "Blog.tsx").read_text(encoding="utf-8")
+    guide_catalog_source = (
+        web_app / "src" / "content" / "guideCatalog.ts"
+    ).read_text(encoding="utf-8")
     sidebar_source = (web_app / "src" / "components" / "BlogSidebar.tsx").read_text(encoding="utf-8")
     article_source = (web_app / "src" / "pages" / "EmergencyVetBerlinGuide.tsx").read_text(encoding="utf-8")
     base_url = "https://englishspeakinggermany.online"
@@ -427,8 +431,8 @@ def test_berlin_emergency_content_has_one_canonical_url():
 
     assert sitemap.count(f"<loc>{base_url}{canonical_path}</loc>") == 1
     assert f"<loc>{base_url}{retired_path}</loc>" not in sitemap
-    assert retired_path not in blog_source
-    assert canonical_path in blog_source
+    assert retired_path not in guide_catalog_source
+    assert canonical_path in guide_catalog_source
     assert canonical_path in sidebar_source
     assert retired_path not in article_source
     assert f"const ARTICLE_URL = '{base_url}{canonical_path}';" in article_source
