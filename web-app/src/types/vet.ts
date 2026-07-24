@@ -17,6 +17,7 @@ export interface Vet {
         status: string;
         last_scanned: string;
         english_signals: string[];
+        source_urls?: string[];
         emergency_services?: string;
     };
     community_status?: "Verified" | "Community Sourced" | "Pending" | "Unverified";

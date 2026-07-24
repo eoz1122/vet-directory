@@ -6341,5 +6341,91 @@
       "emergency_services": ""
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "leipzig-tierarztpraxis-leutzsch",
+    "practice_name": "Tierarztpraxis Leutzsch",
+    "city": "Leipzig",
+    "district": "Leutzsch",
+    "address": "Prießnitzstraße 35, 04179 Leipzig",
+    "coordinates": {
+      "lat": 51.3438959,
+      "lng": 12.3200611
+    },
+    "contact": {
+      "phone": "+49 341 4414991",
+      "website": "https://tierarztpraxis-leutzsch.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Leutzsch%20Prie%C3%9Fnitzstra%C3%9Fe%2035%2C%2004179%20Leipzig"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The practice team page explicitly states that veterinarians Bernhard Regensburger and Daniela Haupt speak English, and that Julie Minner Viegas speaks fluent English"
+      ],
+      "source_urls": [
+        "https://tierarztpraxis-leutzsch.de/pages/team.php",
+        "https://tierarztpraxis-leutzsch.de/pages/kontakt.php"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "leipzig-tierarztpraxis-am-kirschberg",
+    "practice_name": "Tierarztpraxis am Kirschberg",
+    "city": "Leipzig",
+    "district": "Grünau-Mitte",
+    "address": "Karlsruher Straße 29, 04209 Leipzig",
+    "coordinates": {
+      "lat": 51.315963,
+      "lng": 12.2807111
+    },
+    "contact": {
+      "phone": "+49 341 4205777",
+      "website": "https://tierarztpraxis-am-kirschberg.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20am%20Kirschberg%20Karlsruher%20Stra%C3%9Fe%2029%2C%2004209%20Leipzig"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The practice appointment page explicitly invites clients to request an appointment in English when booking"
+      ],
+      "source_urls": [
+        "https://tierarztpraxis-am-kirschberg.de/sprechzeiten/",
+        "https://tierarztpraxis-am-kirschberg.de/impressum/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "leipzig-tierarztpraxis-goepner-schroth",
+    "practice_name": "Tierärztliche Gemeinschaftspraxis Dr. Göpner & Dr. Schroth",
+    "city": "Leipzig",
+    "district": "Reudnitz-Thonberg",
+    "address": "Kröbelstraße 11, 04317 Leipzig",
+    "coordinates": {
+      "lat": 51.3290828,
+      "lng": 12.4037542
+    },
+    "contact": {
+      "phone": "+49 341 2254153",
+      "website": "https://hund-katze-maus.net/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliche%20Gemeinschaftspraxis%20Dr.%20G%C3%B6pner%20%26%20Dr.%20Schroth%20Kr%C3%B6belstra%C3%9Fe%2011%2C%2004317%20Leipzig"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The practice website states that Dr. Silke Schroth is fluent in general and medical English and can conduct the full consultation in English"
+      ],
+      "source_urls": [
+        "https://hund-katze-maus.net/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
   }
 ]
