@@ -43,6 +43,11 @@ describe('guide catalogue', () => {
             category: 'Emergency',
             topics: expect.arrayContaining(['emergency', 'bremen', 'vet-care']),
         }));
+        expect(GUIDE_CATALOG).toContainEqual(expect.objectContaining({
+            url: '/guides/emergency-vets-leipzig',
+            category: 'Emergency',
+            topics: expect.arrayContaining(['emergency', 'leipzig', 'vet-care', 'exotic-pets']),
+        }));
     });
 
     it('prioritizes topical links before deterministic fallback links', () => {

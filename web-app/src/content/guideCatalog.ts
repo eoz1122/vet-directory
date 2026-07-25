@@ -89,6 +89,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'bremen', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-leipzig',
+        title: "Emergency Vet Leipzig: Night & Weekend Help",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "Current night and weekend care, Leipzig University's critical-patient service, the local duty ring, bird and reptile access, warning signs and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'leipzig', 'exotic-pets', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',

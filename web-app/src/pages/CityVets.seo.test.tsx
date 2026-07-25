@@ -174,4 +174,12 @@ describe('CityVets search and trust contract', () => {
             name: 'Emergency vet help in Bremen',
         }).getAttribute('href')).toBe('/guides/emergency-vets-bremen');
     });
+
+    it('links Leipzig readers to the local emergency guide', () => {
+        renderCity('/vets/leipzig');
+
+        expect(screen.getByRole('link', {
+            name: 'Emergency vet help in Leipzig',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-leipzig');
+    });
 });

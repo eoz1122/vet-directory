@@ -91,4 +91,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Bremen: Official Duty Number & Hours (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Leipzig emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-leipzig');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Leipzig: Night & Weekend Help (2026)',
+        })).toBeTruthy();
+    });
 });
