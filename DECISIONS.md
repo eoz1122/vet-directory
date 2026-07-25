@@ -1045,3 +1045,63 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** TDD RED produced 13 failures for the missing records, evidence metadata, specialty label and Munich correction. Browser testing then exposed that city pages used a separate card renderer, so a second RED test captured the missing Bremen specialty warning before the label was moved into one reusable component shared by both renderers. GREEN passes 176 frontend tests across 40 files, 45 API tests, 25 maintenance tests, project-wide ESLint and whitespace validation. The API allowlist is synchronized with all 260 active, unique practice IDs, including three Leipzig IDs that the previous release had omitted. OpenStreetMap address results supplied the new coordinates and district assignments. The production build generated a 245-URL sitemap and prerendered all 246 application routes. Chromium at 390 pixels returned HTTP 200 for all seven new city routes, found each new practice and its Official Website badge, found the Bremen specialist label and scope, reported no horizontal overflow, console errors, page errors or failed resources. The inspected screenshot and temporary QA directories were deleted, the preview server stopped and port 4174 closed.
 
 **Rollback:** Revert the release commit to restore production commit `b3222f8`. This removes the seven listings and specialty label, restores the previous evidence classifications and returns the Munich record to its prior address.
+
+## 2026-07-25T01:29:00+02:00 - Add a community-confirmed English-speaking Dortmund practice
+
+**Context:** Dortmund had no directory record after a Ruhr research pass. The current website for Tierarztpraxis Dr. Friederike Lawrence-Mayfeld confirms the practice identity, address, telephone number and appointment model, but it does not advertise English service. A Dortmund community recommendation explicitly identifies Dr. Lawrence-Mayfeld as English-speaking and able to issue EU pet passports.
+
+**Decision:** Add the practice as a verified community confirmation with `verification.evidence_type` set to `community`. Store both the official practice page and the community evidence URL, and phrase the English signal as a community report that users should reconfirm while booking. Do not display the stronger `Official Website` badge because the practice has not published a first-party English-service claim.
+
+**Trade-offs:** A specific community recommendation is weaker and more time-sensitive than an explicit statement from the practice. The listing therefore identifies the named veterinarian and the interface advises users to reconfirm staff availability. This approach improves Dortmund coverage without misrepresenting the evidence source.
+
+**Verification:** TDD RED confirmed the Dortmund record was absent. A second RED from the API suite identified the required confirmation and reporting allowlist update. GREEN passes 177 frontend tests across 40 files, 45 API tests, 25 maintenance tests, TypeScript, project-wide ESLint and whitespace validation. The production build exported 261 unique records, generated a 247-URL sitemap and prerendered all 248 application routes. The generated Dortmund page contains one practice, labels it `Community Confirmed`, distinguishes it from official website evidence in the page copy and structured data, and links to a dedicated Wellinghofen district route.
+
+**Rollback:** Remove the `dortmund-lawrence-mayfeld` object from `web-app/src/data/vets.json`, remove its focused expectation from `web-app/src/data/vets.test.ts` and remove this decision entry. This returns the directory to 260 practices.
+
+## 2026-07-25T01:51:31+02:00 - Upgrade Dr. Fricke to first-party English evidence
+
+**Context:** The existing Dr. Cornelia Fricke record in Leipzig was marked verified and claimed that the website listed German and English, but it did not store the supporting URL or identify the evidence as first party. The practice currently publishes a complete official English-language team page.
+
+**Decision:** Classify the existing `Leipzig-2` record as `official_website`, store the official English team page as its evidence source, replace the vague language signal with a precise first-party statement and refresh the scan date. Do not add a duplicate practice or imply that a particular clinician is always available.
+
+**Trade-offs:** An English website is strong evidence that the practice communicates with English-speaking clients, but it does not guarantee English availability for every appointment. The directory continues to advise users to confirm availability when booking.
+
+**Verification:** TDD RED failed because the existing record lacked `evidence_type` and `source_urls`. GREEN passes 178 frontend tests across 40 files, all 45 API tests, all 25 maintenance tests and project-wide ESLint. The production build exported 261 records, generated a 247-URL sitemap and prerendered all 248 application routes.
+
+**Rollback:** Remove `evidence_type` and `source_urls` from `Leipzig-2`, restore its previous language signal and scan date, and remove the matching test expectation. This would return the record to an unauditable generic verification state.
+
+## 2026-07-25T02:08:13+02:00 - Add first-party English-vet coverage in four unserved cities
+
+**Context:** The directory had no records in Münster, Mannheim, Aachen or Kiel. A first-party evidence search found four current practices whose own websites provide explicit English-language evidence: Medivet Münster lists English among the team languages, Kleintierpraxis Wendel lists English among its consultation languages, Koch + Kollegen names an English-speaking veterinarian, and AniCura Kiel provides both a location-specific English clinic page and an English registration form.
+
+**Decision:** Add one `official_website` record in each city with the precise evidence URL, current practice contact details and OpenStreetMap-derived coordinates. Phrase each signal narrowly around what the source proves. Do not claim that a particular clinician is always available, and do not add the weaker Bochum, Wuppertal or Freiburg candidates whose English evidence remains third party.
+
+**Trade-offs:** Team languages and English onboarding material are strong first-party evidence, but staffing can change and an English page does not guarantee English availability at every appointment. Users should still confirm English availability when booking. The AniCura Kiel evidence confirms English client support through the clinic's own English materials without naming a specific English-speaking clinician.
+
+**Verification:** TDD RED produced four missing-record failures. The API allowlist RED then failed on the four new IDs and was synchronized explicitly. GREEN passes 182 frontend tests across 40 files, all 45 API tests, all 25 maintenance tests and project-wide ESLint. The production build exported 265 unique records, generated a 255-URL sitemap and prerendered all 256 application routes. The four new city pages each render the correct practice with an `Official Website` evidence badge, and the temporary preview port closed cleanly.
+
+**Rollback:** Remove the four records from `web-app/src/data/vets.json`, remove their expectations from `web-app/src/data/vets.test.ts`, remove their IDs from `api/valid_vet_ids.json` and remove this decision entry. Regenerate the sitemap and exported database afterward.
+
+## 2026-07-25T02:25:05+02:00 - Add seven directly verifiable English-speaking practices
+
+**Context:** The next directory expansion was limited to practices whose own current websites explicitly state that English service is available. This avoids publishing additional community-only candidates while replies from the outreach batch are pending. A nationwide first-party search found seven practices that met the evidence threshold and covered previously unserved cities or nearby regional gaps.
+
+**Decision:** Add Kleintierpraxis im Dichterviertel in Erfurt, Tierarztpraxis Kerstin Gemmer in Meerbusch, Tierarztpraxis Dr. Pfaffernoschke in Gauting, Kleintierpraxis Dr. Winkler & Dr. Messemer in Seeheim-Jugenheim, Kleintierpraxis Dr. Michael Wenz in Neu-Isenburg, Tierarztpraxis Schmitten im Taunus and Kleintierpraxis Gangelt. Classify each record as `official_website`, store the exact first-party English-language evidence URL and use the current practice-published contact details. Use OpenStreetMap address results for map coordinates. Keep the language claim narrow and continue advising users to confirm English availability when booking.
+
+**Trade-offs:** A current first-party statement is strong evidence that English service is offered, but it does not guarantee that an English-speaking clinician is available for every appointment. Small practices can change staffing or opening arrangements without notice, so every record retains the scan date and source URL. The Meerbusch coordinate resolves to the shared building at the published address rather than a practice-specific map object.
+
+**Verification:** TDD RED produced seven missing-record failures before data was added. The API allowlist test then failed on the same seven IDs and was synchronized explicitly. GREEN passes 189 frontend tests across 40 files, all 45 API tests, all 25 maintenance tests and project-wide ESLint. The production build exported 272 records, generated a 269-URL sitemap and prerendered all 270 application routes. Each of the seven new city pages exists in the build and renders an `Official Website` badge. The temporary preview server stopped and port 4174 closed.
+
+**Rollback:** Remove the seven records from `web-app/src/data/vets.json`, remove their expectations from `web-app/src/data/vets.test.ts`, remove their IDs from `api/valid_vet_ids.json` and remove this decision entry. Regenerate the sitemap and exported database afterward.
+
+## 2026-07-25T02:32:50+02:00 - Add six more current first-party English-service records
+
+**Context:** A second first-party-only research pass found current explicit English-service statements for practices in five previously unserved cities and one additional specialist practice in Meerbusch. The same pass identified a seemingly suitable Oldenburg practice, but its official website states that treatment currently occurs only at two other locations, so it was excluded.
+
+**Decision:** Add Tierarztpraxis Dr. Luke Kerkman in Gevelsberg, Tierarztpraxis am Vogelsfeldchen in Leverkusen, Kleintierklinik Frankenthal, Kleintierpraxis Dr. Trixi Hollwich in Bad Tölz, AniCura Kleintierzentrum Weingarten and Kleintierspezialisten Meerbusch. Classify each record as `official_website`, store the exact first-party evidence page and phrase the English signal according to what the practice publishes. Keep the Weingarten street-level OpenStreetMap coordinate together with the exact official address and a practice-specific Google Maps query because the geocoder does not expose a named building result.
+
+**Trade-offs:** The Bad Tölz page addresses English-speaking clients directly but does not identify a particular clinician, and the Frankenthal clinic offers a multilingual colleague as an interpreter rather than promising that every treating veterinarian speaks English. The records state only the supported level of service and users should still confirm arrangements when booking. Adding a second Meerbusch practice improves choice but does not expand the city count.
+
+**Verification:** TDD RED produced six missing-record failures, followed by the expected API allowlist mismatch. GREEN passes 195 frontend tests across 40 files, all 45 API tests, all 25 maintenance tests and project-wide ESLint. The production build exported 278 records, generated a 280-URL sitemap and prerendered all 281 application routes. Each affected city page exists and contains the official-evidence presentation. The preview server stopped and port 4174 closed.
+
+**Rollback:** Remove the six records from `web-app/src/data/vets.json`, remove their expectations from `web-app/src/data/vets.test.ts`, remove their IDs from `api/valid_vet_ids.json` and remove this decision entry. Regenerate the sitemap and exported database afterward.

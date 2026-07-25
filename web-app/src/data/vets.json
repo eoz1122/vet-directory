@@ -3590,9 +3590,13 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-27",
+      "last_scanned": "2026-07-25",
+      "evidence_type": "official_website",
       "english_signals": [
-        "Website explicitly lists DE - EN languages"
+        "The practice publishes an official English-language team page"
+      ],
+      "source_urls": [
+        "https://www.tierarzt-auensee.de/en/vet-leipzig-team"
       ],
       "emergency_services": ""
     },
@@ -6649,6 +6653,531 @@
         "https://exotenpraxis-bremen.de/impressum/"
       ],
       "emergency_services": "Appointments by arrangement"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "dortmund-lawrence-mayfeld",
+    "practice_name": "Tierarztpraxis Dr. Friederike Lawrence-Mayfeld",
+    "city": "Dortmund",
+    "district": "Wellinghofen",
+    "address": "Preinstraße 53, 44265 Dortmund",
+    "coordinates": {
+      "lat": 51.4710391,
+      "lng": 7.490652
+    },
+    "contact": {
+      "phone": "+49 231 7246867",
+      "website": "https://www.mayfeld.com/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Dr.%20Friederike%20Lawrence-Mayfeld%20Preinstra%C3%9Fe%2053%2C%2044265%20Dortmund"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "A Dortmund community recommendation explicitly identifies Dr. Friederike Lawrence-Mayfeld as English-speaking and able to issue EU pet passports; confirm English availability when booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.mayfeld.com/",
+        "https://www.reddit.com/r/Dortmund/comments/xmk5mr/english_speaking_veterinarian/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "muenster-medivet",
+    "practice_name": "Medivet Münster",
+    "city": "Münster",
+    "district": "Berg Fidel",
+    "address": "Robert-Bosch-Straße 2-4, 48153 Münster",
+    "coordinates": {
+      "lat": 51.9336426,
+      "lng": 7.6319359
+    },
+    "contact": {
+      "phone": "+49 251 2372495",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/muenster/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet%20M%C3%BCnster%20Robert-Bosch-Stra%C3%9Fe%202-4%2C%2048153%20M%C3%BCnster"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice page lists English among the languages spoken by the team"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.medivetgroup.com/de-de/tierarzt/muenster/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "mannheim-kleintierpraxis-wendel",
+    "practice_name": "Kleintierpraxis Wendel",
+    "city": "Mannheim",
+    "district": "Oststadt",
+    "address": "Seckenheimer Straße 22, 68165 Mannheim",
+    "coordinates": {
+      "lat": 49.4809825,
+      "lng": 8.4765706
+    },
+    "contact": {
+      "phone": "+49 621 409650",
+      "website": "https://kleintierpraxis-wendel.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20Wendel%20Seckenheimer%20Stra%C3%9Fe%2022%2C%2068165%20Mannheim"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice contact page explicitly lists English among the languages spoken"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://kleintierpraxis-wendel.de/kontakt/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "aachen-koch-kollegen",
+    "practice_name": "Koch + Kollegen Zentrum für Tiermedizin",
+    "city": "Aachen",
+    "district": "Brand",
+    "address": "Gewerbepark Brand 59, 52078 Aachen",
+    "coordinates": {
+      "lat": 50.7592951,
+      "lng": 6.1636929
+    },
+    "contact": {
+      "phone": "+49 241 99009904",
+      "website": "https://vet-ac.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Koch%20%2B%20Kollegen%20Zentrum%20f%C3%BCr%20Tiermedizin%20Gewerbepark%20Brand%2059%2C%2052078%20Aachen"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official team profile lists veterinarian Matthias Beaujean as speaking English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://vet-ac.de/?page_id=856"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "kiel-anicura",
+    "practice_name": "AniCura Kiel",
+    "city": "Kiel",
+    "district": "Südfriedhof",
+    "address": "Kirchhofallee 70, 24114 Kiel",
+    "coordinates": {
+      "lat": 54.315627,
+      "lng": 10.1190589
+    },
+    "contact": {
+      "phone": "+49 431 62521",
+      "website": "https://www.anicura.de/standorte/tierarztpraxis-kiel/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=AniCura%20Kiel%20Kirchhofallee%2070%2C%2024114%20Kiel"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official clinic website provides a location-specific English page and English registration form for clients"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.anicura.de/en/our-clinics/tierarztpraxis-kiel/",
+        "https://www.anicura.de/globalassets/de-DE/pdfs/kiel/registration-form_kiel_bohm_240502.pdf"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "erfurt-kleintierpraxis-dichterviertel",
+    "practice_name": "Kleintierpraxis im Dichterviertel",
+    "city": "Erfurt",
+    "district": "Löbervorstadt",
+    "address": "Schillerstraße 43, 99096 Erfurt",
+    "coordinates": {
+      "lat": 50.9663004,
+      "lng": 11.024862
+    },
+    "contact": {
+      "phone": "+49 361 3453362",
+      "website": "https://tierarzt-erfurt.net/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20im%20Dichterviertel%20Schillerstra%C3%9Fe%2043%2C%2099096%20Erfurt"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice homepage explicitly states that the team speaks German and English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://tierarzt-erfurt.net/"
+      ],
+      "emergency_services": "Call before visiting in an emergency"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "meerbusch-tierarztpraxis-gemmer",
+    "practice_name": "Tierarztpraxis Kerstin Gemmer",
+    "city": "Meerbusch",
+    "district": "Büderich",
+    "address": "Moerser Straße 125, 40667 Meerbusch",
+    "coordinates": {
+      "lat": 51.261068,
+      "lng": 6.678435
+    },
+    "contact": {
+      "phone": "+49 2132 911915",
+      "website": "https://www.tierarztpraxis-gemmer.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Kerstin%20Gemmer%20Moerser%20Stra%C3%9Fe%20125%2C%2040667%20Meerbusch"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice homepage explicitly welcomes visitors in English and states that the team speaks English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarztpraxis-gemmer.de/"
+      ],
+      "emergency_services": "Emergency clinic numbers are available from the practice answering machine"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "gauting-tierarztpraxis-pfaffernoschke",
+    "practice_name": "Tierarztpraxis Dr. Pfaffernoschke",
+    "city": "Gauting",
+    "district": "Königswiesen",
+    "address": "Bergstraße 11, 82131 Gauting",
+    "coordinates": {
+      "lat": 48.0700168,
+      "lng": 11.3788994
+    },
+    "contact": {
+      "phone": "+49 89 84005900",
+      "website": "https://www.gesundestier.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Dr.%20Pfaffernoschke%20Bergstra%C3%9Fe%2011%2C%2082131%20Gauting"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official contact page explicitly states that the practice speaks English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.gesundestier.de/kontakt/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "seeheim-kleintierpraxis-winkler-messemer",
+    "practice_name": "Kleintierpraxis Dr. Winkler & Dr. Messemer",
+    "city": "Seeheim-Jugenheim",
+    "district": "Seeheim",
+    "address": "Darmstädter Straße 11, 64342 Seeheim-Jugenheim",
+    "coordinates": {
+      "lat": 49.7658865,
+      "lng": 8.6488487
+    },
+    "contact": {
+      "phone": "+49 6257 82291",
+      "website": "https://www.tierarzt-seeheim.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20Dr.%20Winkler%20%26%20Dr.%20Messemer%20Darmst%C3%A4dter%20Stra%C3%9Fe%2011%2C%2064342%20Seeheim-Jugenheim"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice homepage explicitly states that the team speaks English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarzt-seeheim.de/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "neu-isenburg-tierarztpraxis-wenz",
+    "practice_name": "Kleintierpraxis Dr. Michael Wenz",
+    "city": "Neu-Isenburg",
+    "district": "Kernstadt",
+    "address": "Brunnenstraße 75, 63263 Neu-Isenburg",
+    "coordinates": {
+      "lat": 50.0524096,
+      "lng": 8.6771437
+    },
+    "contact": {
+      "phone": "+49 6102 21888",
+      "website": "https://drwenz.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20Dr.%20Michael%20Wenz%20Brunnenstra%C3%9Fe%2075%2C%2063263%20Neu-Isenburg"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official services page explicitly states that the practice speaks English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://drwenz.de/Leistungen/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "schmitten-tierarztpraxis-knof",
+    "practice_name": "Tierarztpraxis Schmitten im Taunus",
+    "city": "Schmitten im Taunus",
+    "district": "Dorfweil",
+    "address": "Struthweg 19, 61389 Schmitten im Taunus",
+    "coordinates": {
+      "lat": 50.2772361,
+      "lng": 8.4565133
+    },
+    "contact": {
+      "phone": "+49 6084 900768",
+      "website": "https://www.tierarzt-schmitten.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Schmitten%20im%20Taunus%20Struthweg%2019%2C%2061389%20Schmitten%20im%20Taunus"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice homepage explicitly states that the practice speaks English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarzt-schmitten.de/"
+      ],
+      "emergency_services": "The official site lists referral clinics for emergencies"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "gangelt-kleintierpraxis",
+    "practice_name": "Kleintierpraxis Gangelt",
+    "city": "Gangelt",
+    "district": "Kreuzrath",
+    "address": "Pastor-Fischenich-Straße 4, 52538 Gangelt",
+    "coordinates": {
+      "lat": 50.9972861,
+      "lng": 6.00297
+    },
+    "contact": {
+      "phone": "+49 2454 2282",
+      "website": "https://www.kleintierpraxis-gangelt.de/welcome.html",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20Gangelt%20Pastor-Fischenich-Stra%C3%9Fe%204%2C%2052538%20Gangelt"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The practice provides an official English-language website and explicitly states that the team speaks English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.kleintierpraxis-gangelt.de/welcome.html"
+      ],
+      "emergency_services": "The practice states that it is reachable by phone for emergencies outside opening hours"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "gevelsberg-tierarztpraxis-kerkman",
+    "practice_name": "Tierarztpraxis Dr. Luke Kerkman",
+    "city": "Gevelsberg",
+    "district": "Schnellmark",
+    "address": "Schulstraße 6, 58285 Gevelsberg",
+    "coordinates": {
+      "lat": 51.319662,
+      "lng": 7.3443276
+    },
+    "contact": {
+      "phone": "+49 2332 3340",
+      "website": "https://www.tierarzt-kerkman.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Dr.%20Luke%20Kerkman%20Schulstra%C3%9Fe%206%2C%2058285%20Gevelsberg"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice contact page explicitly states that the practice speaks English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarzt-kerkman.de/kontakt.htm"
+      ],
+      "emergency_services": "Call the practice during opening hours for emergency routing"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "leverkusen-tierarztpraxis-vogelsfeldchen",
+    "practice_name": "Tierarztpraxis am Vogelsfeldchen",
+    "city": "Leverkusen",
+    "district": "Wiesdorf",
+    "address": "Am Vogelsfeldchen 11, 51373 Leverkusen",
+    "coordinates": {
+      "lat": 51.0323382,
+      "lng": 7.0056575
+    },
+    "contact": {
+      "phone": "+49 214 46882",
+      "website": "https://tierarztpraxisamvogelsfeldchen.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20am%20Vogelsfeldchen%20Am%20Vogelsfeldchen%2011%2C%2051373%20Leverkusen"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice homepage lists English among the languages offered"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://tierarztpraxisamvogelsfeldchen.de/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "frankenthal-kleintierklinik",
+    "practice_name": "Kleintierklinik Frankenthal",
+    "city": "Frankenthal",
+    "district": "Hessheimer Viertel",
+    "address": "Beindersheimer Straße 77, 67227 Frankenthal",
+    "coordinates": {
+      "lat": 49.5478468,
+      "lng": 8.3411858
+    },
+    "contact": {
+      "phone": "+49 6233 770820",
+      "website": "https://www.tierarzt-frankenthal.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierklinik%20Frankenthal%20Beindersheimer%20Stra%C3%9Fe%2077%2C%2067227%20Frankenthal"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official clinic website lists English among the languages spoken by its team"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarzt-frankenthal.de/"
+      ],
+      "emergency_services": "The clinic provides emergency care; call before visiting"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "bad-toelz-kleintierpraxis-hollwich",
+    "practice_name": "Kleintierpraxis Dr. Trixi Hollwich",
+    "city": "Bad Tölz",
+    "district": "Eichmühle",
+    "address": "Prof.-Max-Lange-Platz 12, 83646 Bad Tölz",
+    "coordinates": {
+      "lat": 47.758413,
+      "lng": 11.5830717
+    },
+    "contact": {
+      "phone": "+49 8041 7994690",
+      "website": "https://www.tierarztpraxis-toelz.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20Dr.%20Trixi%20Hollwich%20Prof.-Max-Lange-Platz%2012%2C%2083646%20Bad%20T%C3%B6lz"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official services page includes a direct commitment to support English-speaking clients"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarztpraxis-toelz.de/leistungen"
+      ],
+      "emergency_services": "Call before visiting; the official site lists referral clinics for out-of-hours emergencies"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "weingarten-anicura-kleintierzentrum",
+    "practice_name": "AniCura Kleintierzentrum Weingarten",
+    "city": "Weingarten",
+    "district": "Waldbrücke",
+    "address": "Am Eisweiher 11, 76356 Weingarten",
+    "coordinates": {
+      "lat": 49.0575421,
+      "lng": 8.5167532
+    },
+    "contact": {
+      "phone": "+49 7244 77040",
+      "website": "https://www.anicura.de/standorte/weingarten/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=AniCura%20Kleintierzentrum%20Weingarten%20Am%20Eisweiher%2011%2C%2076356%20Weingarten"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official location contact page explicitly lists English among the available treatment languages"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.anicura.de/standorte/weingarten/kontakt/"
+      ],
+      "emergency_services": "Emergency service is available; call before visiting"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "meerbusch-kleintierspezialisten",
+    "practice_name": "Kleintierspezialisten Meerbusch",
+    "city": "Meerbusch",
+    "district": "Lank-Latum",
+    "address": "Robert-Bosch-Straße 2, 40668 Meerbusch",
+    "coordinates": {
+      "lat": 51.3148377,
+      "lng": 6.6797169
+    },
+    "contact": {
+      "phone": "+49 2150 705732",
+      "website": "https://www.tierarzt-meerbusch.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierspezialisten%20Meerbusch%20Robert-Bosch-Stra%C3%9Fe%202%2C%2040668%20Meerbusch"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice website explicitly lists English service and provides English-language client pages"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarzt-meerbusch.de/",
+        "https://www.tierarzt-meerbusch.de/english/contact/"
+      ],
+      "emergency_services": "The official site directs out-of-hours cases to nearby emergency clinics"
     },
     "community_status": "Verified"
   }

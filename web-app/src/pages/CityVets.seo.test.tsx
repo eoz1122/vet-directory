@@ -26,9 +26,9 @@ describe('CityVets search and trust contract', () => {
     it('distinguishes official website evidence on the Leipzig page', () => {
         renderCity('/vets/leipzig');
 
-        expect(screen.getAllByText('Official Website')).toHaveLength(3);
-        expect(screen.getAllByText('Official Website Confirmed')).toHaveLength(3);
-        expect(screen.getByText(/3 are confirmed by their official websites/i)).toBeTruthy();
+        expect(screen.getAllByText('Official Website')).toHaveLength(4);
+        expect(screen.getAllByText('Official Website Confirmed')).toHaveLength(4);
+        expect(screen.getByText(/4 are confirmed by their official websites/i)).toBeTruthy();
     });
 
     it('uses a live listing count and leads with evidence-derived Berlin copy', async () => {
