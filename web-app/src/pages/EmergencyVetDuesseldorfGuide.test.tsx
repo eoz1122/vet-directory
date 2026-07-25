@@ -3,7 +3,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 
-import EmergencyVetRuhrGuide from './EmergencyVetRuhrGuide';
+import EmergencyVetDuesseldorfGuide from './EmergencyVetDuesseldorfGuide';
 
 vi.mock('../components/Header', () => ({ default: () => <header /> }));
 vi.mock('../components/Footer', () => ({ default: () => <footer /> }));
@@ -14,7 +14,7 @@ vi.mock('../components/RelatedPosts', () => ({ default: () => null }));
 const renderGuide = () => render(
     <HelmetProvider>
         <MemoryRouter>
-            <EmergencyVetRuhrGuide />
+            <EmergencyVetDuesseldorfGuide />
         </MemoryRouter>
     </HelmetProvider>,
 );
@@ -25,68 +25,61 @@ const getArticleSchema = () => Array.from(
     .map((script) => JSON.parse(script.textContent || 'null'))
     .find((schema) => schema?.['@type'] === 'Article');
 
-describe('EmergencyVetRuhrGuide', () => {
-    it('publishes official Essen and Dortmund emergency routes with safe language', async () => {
+describe('EmergencyVetDuesseldorfGuide', () => {
+    it('publishes the current 24-hour clinic and the chamber hotline limitation', async () => {
         renderGuide();
 
         await waitFor(() => {
             expect(document.title).toBe(
-                'Emergency Vet Essen & Ruhr Area: 24/7 Help (2026)',
+                'Emergency Vet Düsseldorf: 24/7 Clinic Help (2026)',
             );
         });
 
         expect(
             document.head.querySelector('meta[name="description"]')?.getAttribute('content'),
         ).toBe(
-            'Need an emergency vet in Essen or Dortmund? Call the official local duty service, check a verified 24h Essen clinic, GOT fees, warning signs, and English phrases.',
+            "Need an emergency vet in Düsseldorf? Call a current 24/7 clinic, see the chamber's hotline status, GOT fees, warning signs, and English phrases.",
         );
         expect(
             document.head.querySelector('link[rel="canonical"]')?.getAttribute('href'),
-        ).toBe('https://englishspeakinggermany.online/guides/emergency-vets-ruhr');
+        ).toBe(
+            'https://englishspeakinggermany.online/guides/emergency-vets-duesseldorf',
+        );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: 'Emergency Vet Essen & Ruhr Area: 24/7 Help (2026)',
+            name: 'Emergency Vet Düsseldorf: 24/7 Clinic Help (2026)',
         })).toBeTruthy();
 
         expect(screen.getByRole('link', {
-            name: 'Call Essen veterinary duty service',
-        }).getAttribute('href')).toBe('tel:+491806451300');
+            name: 'Call Düsseldorf 24-hour clinic',
+        }).getAttribute('href')).toBe('tel:+49211626868');
         expect(screen.getByRole('link', {
-            name: 'Call Essen 24-hour clinic',
-        }).getAttribute('href')).toBe('tel:+49201342604');
+            name: 'Official Düsseldorf clinic emergency information',
+        }).getAttribute('href')).toBe(
+            'https://www.anicura.de/standorte/tierklinik-duesseldorf/kontakt/',
+        );
+        expect(screen.getByRole('link', {
+            name: 'Official English clinic page',
+        }).getAttribute('href')).toBe(
+            'https://www.anicura.de/en/our-clinics/tierklinik-duesseldorf/',
+        );
         expect(screen.getByRole('link', {
             name: 'Official Nordrhein emergency service information',
         }).getAttribute('href')).toBe(
             'https://www.tieraerztekammer-nordrhein.de/informationen-zum-tieraerztlichen-notdienst/',
         );
         expect(screen.getByRole('link', {
-            name: 'Official Essen clinic emergency information',
-        }).getAttribute('href')).toBe(
-            'https://tieraerztliche-klinik.de/kontakt/',
-        );
+            name: 'Browse English-speaking vets in Düsseldorf',
+        }).getAttribute('href')).toBe('/vets/düsseldorf');
         expect(screen.getByRole('link', {
-            name: 'Official Dortmund duty schedule',
-        }).getAttribute('href')).toBe('https://www.tiernotdienst-dortmund.de/');
-        expect(screen.getByRole('link', {
-            name: 'Westfalen-Lippe veterinary duty finder',
-        }).getAttribute('href')).toBe(
-            'https://www.tieraerztekammer-wl.de/fuer-tierhalter/notdienst-finder/',
-        );
-        expect(screen.getByRole('link', {
-            name: 'Browse English-speaking vets in Essen',
-        }).getAttribute('href')).toBe('/vets/essen');
-        expect(screen.getByRole('link', {
-            name: 'Browse English-speaking vets in Dortmund',
-        }).getAttribute('href')).toBe('/vets/dortmund');
-        expect(screen.getByRole('link', {
-            name: 'Emergency vet help in Düsseldorf',
-        }).getAttribute('href')).toBe('/guides/emergency-vets-duesseldorf');
+            name: 'Emergency help in Essen and the Ruhr area',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-ruhr');
 
         const articleText = document.body.textContent || '';
         expect(articleText).toMatch(/checked against official sources on 25 July 2026/i);
+        expect(articleText).toMatch(/does not currently publish a central Düsseldorf emergency phone number/i);
+        expect(articleText).toMatch(/every day, 00:00 to 24:00/i);
         expect(articleText).toMatch(/English availability is not guaranteed/i);
-        expect(articleText).toMatch(/Monday to Friday: 18:00 to 22:00/i);
-        expect(articleText).toMatch(/Weekends and public holidays: 10:00 to 18:00/i);
         expect(articleText).toMatch(/€59\.50 gross emergency-service fee/i);
         expect(articleText).toMatch(/two to four times the GOT rate/i);
         expect(articleText).toMatch(/call before (you )?travel/i);
@@ -95,7 +88,7 @@ describe('EmergencyVetRuhrGuide', () => {
 
         const schema = getArticleSchema();
         expect(schema.url).toBe(
-            'https://englishspeakinggermany.online/guides/emergency-vets-ruhr',
+            'https://englishspeakinggermany.online/guides/emergency-vets-duesseldorf',
         );
         expect(schema.datePublished).toBe('2026-07-25');
         expect(schema.dateModified).toBe('2026-07-25');

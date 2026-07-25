@@ -69,6 +69,9 @@ const CITY_CONFIG: Record<string, {
     'Dortmund': {
         guides: [{ href: '/guides/emergency-vets-ruhr', label: 'Emergency vet help in Dortmund and the Ruhr area', icon: '🏥' }],
     },
+    'Düsseldorf': {
+        guides: [{ href: '/guides/emergency-vets-duesseldorf', label: 'Emergency vet help in Düsseldorf', icon: '🏥' }],
+    },
 };
 
 const cityContent: Record<string, { title: string; description: string; content: string }> = {

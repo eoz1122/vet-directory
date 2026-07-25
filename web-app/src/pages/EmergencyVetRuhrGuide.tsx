@@ -349,10 +349,11 @@ export default function EmergencyVetRuhrGuide() {
                                     English-speaking vets in Dortmund
                                 </Link>
                                 <Link
-                                    to="/vets/düsseldorf"
+                                    to="/guides/emergency-vets-duesseldorf"
+                                    aria-label="Emergency vet help in Düsseldorf"
                                     className="inline-flex min-h-11 items-center justify-center rounded-xl border border-primary/15 px-5 py-3 text-center text-sm font-bold text-primary transition-colors hover:border-accent hover:text-accent"
                                 >
-                                    English-speaking vets in Düsseldorf
+                                    Emergency vet help in Düsseldorf
                                 </Link>
                                 <Link
                                     to="/guides/pet-emergency-germany"

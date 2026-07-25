@@ -139,4 +139,12 @@ describe('CityVets search and trust contract', () => {
             name: 'Emergency vet help in Dortmund and the Ruhr area',
         }).getAttribute('href')).toBe('/guides/emergency-vets-ruhr');
     });
+
+    it('links Düsseldorf readers to the Düsseldorf emergency guide', () => {
+        renderCity('/vets/düsseldorf');
+
+        expect(screen.getByRole('link', {
+            name: 'Emergency vet help in Düsseldorf',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-duesseldorf');
+    });
 });

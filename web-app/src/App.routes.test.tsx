@@ -47,4 +47,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Essen & Ruhr Area: 24/7 Help (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Düsseldorf emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-duesseldorf');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Düsseldorf: 24/7 Clinic Help (2026)',
+        })).toBeTruthy();
+    });
 });
