@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
@@ -82,5 +82,25 @@ describe('CityVets search and trust contract', () => {
             expect(answers).not.toContain('community-Verified');
             expect(answers).not.toContain('Every listed vet has been confirmed');
         });
+    });
+
+    it('links Berlin to its four nearest verified city directories', () => {
+        renderCity('/vets/berlin');
+
+        const nearbyNav = screen.getByRole('navigation', {
+            name: 'Nearby English-speaking vets',
+        });
+        const links = within(nearbyNav).getAllByRole('link');
+
+        expect(links).toHaveLength(4);
+        expect(links.map((link) => link.getAttribute('href'))).toEqual([
+            '/vets/potsdam',
+            '/vets/leipzig',
+            '/vets/dresden',
+            '/vets/rostock',
+        ]);
+        expect(within(nearbyNav).getByRole('link', {
+            name: 'English-speaking vets in Potsdam, about 26 km away',
+        })).toBeTruthy();
     });
 });

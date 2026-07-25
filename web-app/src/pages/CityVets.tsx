@@ -19,8 +19,11 @@ import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
 import ReportIssueLink from '../components/vet/ReportIssueLink';
 import { VerificationBadge } from '../components/vet/VerificationBadge';
 import { PracticeFocus } from '../components/vet/PracticeFocus';
+import { NearbyCityLinks } from '../components/vet/NearbyCityLinks';
+import { buildNearbyCityMap } from '../utils/nearbyCities';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
+const nearbyCitiesByCity = buildNearbyCityMap(vets);
 
 function renderBlocks(blocks: Block[]) {
     const seg = (s: { bold: boolean; text: string }, k: number) =>
@@ -259,6 +262,7 @@ export default function CityVets() {
 
     // Prefer the real city name from the data ("Bad Homburg"); fall back to a titled slug.
     const capitalizedCity = cityVets[0]?.city || titleCaseSlug(cityKey);
+    const nearbyCities = nearbyCitiesByCity.get(capitalizedCity) ?? [];
     const verifiedCount = cityVets.filter(isVetVerified).length;
     const officialWebsiteCount = cityVets.filter(isOfficialWebsiteConfirmed).length;
     const communityConfirmedCount = verifiedCount - officialWebsiteCount;
@@ -429,18 +433,6 @@ export default function CityVets() {
                         {renderBlocks(parseCityContent(cityData.content).slice(0, 1))}
                     </div>
 
-                    {cityData.nearestHub && (
-                        <Link
-                            to={`/vets/${slugify(cityData.nearestHub.city)}`}
-                            className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 bg-white border border-primary/10 rounded-2xl text-sm font-bold text-primary hover:border-accent/40 hover:text-accent-ink transition-all"
-                        >
-                            <span>🗺️</span>
-                            <span>{cityData.nearestHub.count} more practices in {cityData.nearestHub.city} ({cityData.nearestHub.distanceKm} km away)</span>
-                            <span>→</span>
-                        </Link>
-                    )}
-
-
                 </section>
 
                 {/* District index: gives every district page a crawlable inbound link */}
@@ -475,6 +467,11 @@ export default function CityVets() {
                         </section>
                     );
                 })()}
+
+                <NearbyCityLinks
+                    currentCity={capitalizedCity}
+                    cities={nearbyCities}
+                />
 
                 <section>
                     <h2 className="text-2xl font-bold text-primary mb-6">
