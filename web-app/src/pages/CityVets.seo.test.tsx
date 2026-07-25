@@ -158,4 +158,12 @@ describe('CityVets search and trust contract', () => {
             name: 'Public transport with dogs in Stuttgart',
         }).getAttribute('href')).toBe('/blog/public-transport-with-dogs-stuttgart');
     });
+
+    it('links Hannover readers to the local emergency guide', () => {
+        renderCity('/vets/hannover');
+
+        expect(screen.getByRole('link', {
+            name: 'Emergency vet help in Hannover',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-hannover');
+    });
 });

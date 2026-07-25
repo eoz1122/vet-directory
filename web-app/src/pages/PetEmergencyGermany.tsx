@@ -187,6 +187,16 @@ export default function PetEmergencyGermany() {
                                         Official city duty line and a current 24-hour clinic.
                                     </span>
                                 </Link>
+                                <Link
+                                    to="/guides/emergency-vets-hannover"
+                                    aria-label="Hannover emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Hannover emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">
+                                        TiHo&apos;s current 24-hour dog-and-cat service and separate exotic-pet emergency access.
+                                    </span>
+                                </Link>
                                 <a
                                     href="https://bundestieraerztekammer.de/btk/mitglieder/"
                                     aria-label="German state veterinary chambers"

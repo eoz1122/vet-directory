@@ -73,6 +73,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'stuttgart', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-hannover',
+        title: "Emergency Vet Hannover: TiHo 24-Hour Help",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "TiHo's current 24-hour dog-and-cat service, separate exotic-pet emergency access, triage guidance, warning signs and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'hannover', 'exotic-pets', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',

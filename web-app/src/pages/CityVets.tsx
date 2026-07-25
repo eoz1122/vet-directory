@@ -60,6 +60,9 @@ const CITY_CONFIG: Record<string, {
             { href: '/blog/public-transport-with-dogs-stuttgart', label: 'Public transport with dogs in Stuttgart', icon: '🚆' },
         ],
     },
+    'Hannover': {
+        guides: [{ href: '/guides/emergency-vets-hannover', label: 'Emergency vet help in Hannover', icon: '🏥' }],
+    },
     'Cologne': {
         guides: [
             { href: '/guides/emergency-vets-cologne', label: 'Emergency vet help in Cologne', icon: '🏥' },
