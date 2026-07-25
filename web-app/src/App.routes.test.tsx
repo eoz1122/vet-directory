@@ -36,4 +36,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Cologne: Official Numbers and 24/7 Help (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Ruhr emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-ruhr');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Essen & Ruhr Area: 24/7 Help (2026)',
+        })).toBeTruthy();
+    });
 });

@@ -157,6 +157,16 @@ export default function PetEmergencyGermany() {
                                     <span className="font-bold text-primary block mb-1">Cologne emergency vet guide</span>
                                     <span className="text-sm text-primary/70">Official duty line, two current 24/7 clinics, and GOT fees.</span>
                                 </Link>
+                                <Link
+                                    to="/guides/emergency-vets-ruhr"
+                                    aria-label="Ruhr emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Ruhr emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">
+                                        Official Essen duty line, a current 24-hour clinic, and Dortmund&apos;s rotating duty schedule.
+                                    </span>
+                                </Link>
                                 <a
                                     href="https://bundestieraerztekammer.de/btk/mitglieder/"
                                     aria-label="German state veterinary chambers"

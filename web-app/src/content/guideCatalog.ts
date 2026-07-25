@@ -49,6 +49,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'cologne', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-ruhr',
+        title: "Emergency Vet Essen & Ruhr Area: 24/7 Help",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "Official Essen duty line, a verified 24-hour clinic, Dortmund's current duty schedule, warning signs, English phrases and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'essen', 'dortmund', 'ruhr', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',

@@ -63,6 +63,12 @@ const CITY_CONFIG: Record<string, {
             { href: '/blog/public-transport-with-dogs-cologne', label: 'Public transport with dogs in Cologne', icon: '🚆' },
         ],
     },
+    'Essen': {
+        guides: [{ href: '/guides/emergency-vets-ruhr', label: 'Emergency vet help in Essen and the Ruhr area', icon: '🏥' }],
+    },
+    'Dortmund': {
+        guides: [{ href: '/guides/emergency-vets-ruhr', label: 'Emergency vet help in Dortmund and the Ruhr area', icon: '🏥' }],
+    },
 };
 
 const cityContent: Record<string, { title: string; description: string; content: string }> = {

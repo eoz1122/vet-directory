@@ -123,4 +123,20 @@ describe('CityVets search and trust contract', () => {
             name: 'Public transport with dogs in Cologne',
         }).getAttribute('href')).toBe('/blog/public-transport-with-dogs-cologne');
     });
+
+    it('links Essen readers to the Ruhr emergency guide', () => {
+        renderCity('/vets/essen');
+
+        expect(screen.getByRole('link', {
+            name: 'Emergency vet help in Essen and the Ruhr area',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-ruhr');
+    });
+
+    it('links Dortmund readers to the Ruhr emergency guide', () => {
+        renderCity('/vets/dortmund');
+
+        expect(screen.getByRole('link', {
+            name: 'Emergency vet help in Dortmund and the Ruhr area',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-ruhr');
+    });
 });
