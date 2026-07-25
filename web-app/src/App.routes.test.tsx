@@ -124,4 +124,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Nuremberg: 24/7 Critical Care (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Karlsruhe emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-karlsruhe');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Karlsruhe: Official 24-Hour Duty Line (2026)',
+        })).toBeTruthy();
+    });
 });
