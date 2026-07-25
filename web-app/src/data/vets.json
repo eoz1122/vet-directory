@@ -7470,5 +7470,34 @@
       "emergency_services": ""
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "moenchengladbach-anicura-boekelberg",
+    "practice_name": "AniCura Bökelberg",
+    "city": "Mönchengladbach",
+    "district": "Neuwerk",
+    "address": "Krefelder Straße 461, 41066 Mönchengladbach",
+    "coordinates": {
+      "lat": 51.2185562,
+      "lng": 6.4768134
+    },
+    "contact": {
+      "phone": "+49 2161 926020",
+      "website": "https://www.anicura.de/en/our-clinics/tierarztliche-klinik-vom-bokelberg/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=AniCura%20B%C3%B6kelberg%20Krefelder%20Stra%C3%9Fe%20461%2C%2041066%20M%C3%B6nchengladbach"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official clinic page provides an English-language route with contact, booking and emergency information; confirm English availability when booking"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.anicura.de/en/our-clinics/tierarztliche-klinik-vom-bokelberg/"
+      ],
+      "emergency_services": "24-hour emergency service, 365 days a year; call before travelling"
+    },
+    "community_status": "Verified"
   }
 ]

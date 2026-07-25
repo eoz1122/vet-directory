@@ -230,6 +230,13 @@ const expectedNationwidePractices = [
         address: 'Halberstädter Straße 47, 39112 Magdeburg',
         sourceUrl: 'https://www.tierarztpraxis-schneidersgarten.de/en',
     },
+    {
+        id: 'moenchengladbach-anicura-boekelberg',
+        city: 'Mönchengladbach',
+        address: 'Krefelder Straße 461, 41066 Mönchengladbach',
+        sourceUrl: 'https://www.anicura.de/en/our-clinics/tierarztliche-klinik-vom-bokelberg/',
+        emergencyServices: '24-hour emergency service, 365 days a year; call before travelling',
+    },
 ] as const;
 
 const expectedCommunityConfirmedPractices = [
@@ -296,6 +303,12 @@ describe('first-party-verified nationwide English-speaking practices', () => {
 
             if ('practiceFocus' in expected) {
                 expect(practice?.practice_focus).toBe(expected.practiceFocus);
+            }
+
+            if ('emergencyServices' in expected) {
+                expect(practice?.verification.emergency_services).toBe(
+                    expected.emergencyServices,
+                );
             }
         },
     );
