@@ -7499,5 +7499,65 @@
       "emergency_services": "24/7"
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "dortmund-tierarztpraxis-am-dorney",
+    "practice_name": "Tierarztpraxis am Dorney",
+    "city": "Dortmund",
+    "district": "Kley",
+    "address": "Dorneystraße 65, 44149 Dortmund",
+    "coordinates": {
+      "lat": 51.4837463,
+      "lng": 7.3684746
+    },
+    "contact": {
+      "phone": "+49 231 96787910",
+      "website": "https://www.praxis-am-dorney.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20am%20Dorney%20Dorneystra%C3%9Fe%2065%2C%2044149%20Dortmund"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The practice publishes an official English patient registration and data-protection form; confirm which clinician is available in English when booking"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.praxis-am-dorney.de/",
+        "https://www.praxis-am-dorney.de/files/tierarztpraxis-am-dorney/dokumente/tierarztpraxis_am_dorney_registration_form.pdf"
+      ],
+      "emergency_services": "Daytime emergency phone and limited Sunday/holiday service; call before visiting"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "essen-tierklinik-apelt",
+    "practice_name": "Tierärztliche Klinik für Kleintiere Dr. Jan Apelt",
+    "city": "Essen",
+    "district": "Altenessen-Süd",
+    "address": "Stankeitstraße 11, 45326 Essen",
+    "coordinates": {
+      "lat": 51.4907147,
+      "lng": 7.0109356
+    },
+    "contact": {
+      "phone": "+49 201 342604",
+      "website": "https://www.tieraerztliche-klinik.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliche%20Klinik%20Dr.%20Jan%20Apelt%20Stankeitstra%C3%9Fe%2011%2C%2045326%20Essen"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The clinic publishes an official English treatment contract for pet owners; confirm which clinician is available in English before travelling"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tieraerztliche-klinik.de/kontakt/",
+        "https://www.tieraerztliche-klinik.de/wp-content/uploads/2025/01/NBV-Behandlungsvertrag01.01.25-Englisch.pdf"
+      ],
+      "emergency_services": "24/7"
+    },
+    "community_status": "Verified"
   }
 ]

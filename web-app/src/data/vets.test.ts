@@ -237,6 +237,19 @@ const expectedNationwidePractices = [
         sourceUrl: 'https://www.anicura.de/en/our-clinics/tierarztliche-klinik-vom-bokelberg/',
         emergencyServices: '24/7',
     },
+    {
+        id: 'dortmund-tierarztpraxis-am-dorney',
+        city: 'Dortmund',
+        address: 'Dorneystraße 65, 44149 Dortmund',
+        sourceUrl: 'https://www.praxis-am-dorney.de/files/tierarztpraxis-am-dorney/dokumente/tierarztpraxis_am_dorney_registration_form.pdf',
+    },
+    {
+        id: 'essen-tierklinik-apelt',
+        city: 'Essen',
+        address: 'Stankeitstraße 11, 45326 Essen',
+        sourceUrl: 'https://www.tieraerztliche-klinik.de/wp-content/uploads/2025/01/NBV-Behandlungsvertrag01.01.25-Englisch.pdf',
+        emergencyServices: '24/7',
+    },
 ] as const;
 
 const expectedCommunityConfirmedPractices = [
