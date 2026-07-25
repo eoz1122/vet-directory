@@ -217,6 +217,16 @@ export default function PetEmergencyGermany() {
                                         Current night and weekend care, University critical-patient access, and bird and reptile help.
                                     </span>
                                 </Link>
+                                <Link
+                                    to="/guides/emergency-vets-dresden"
+                                    aria-label="Dresden emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Dresden emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">
+                                        Official Saxony duty number, live receiving-practice lookup, and current night and weekend coverage.
+                                    </span>
+                                </Link>
                                 <a
                                     href="https://bundestieraerztekammer.de/btk/mitglieder/"
                                     aria-label="German state veterinary chambers"

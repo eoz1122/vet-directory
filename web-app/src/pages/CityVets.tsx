@@ -69,6 +69,9 @@ const CITY_CONFIG: Record<string, {
     'Leipzig': {
         guides: [{ href: '/guides/emergency-vets-leipzig', label: 'Emergency vet help in Leipzig', icon: '🏥' }],
     },
+    'Dresden': {
+        guides: [{ href: '/guides/emergency-vets-dresden', label: 'Emergency vet help in Dresden', icon: '🏥' }],
+    },
     'Cologne': {
         guides: [
             { href: '/guides/emergency-vets-cologne', label: 'Emergency vet help in Cologne', icon: '🏥' },

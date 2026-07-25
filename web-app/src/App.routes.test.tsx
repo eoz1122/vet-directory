@@ -102,4 +102,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Leipzig: Night & Weekend Help (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Dresden emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-dresden');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Dresden: Official Duty Service (2026)',
+        })).toBeTruthy();
+    });
 });

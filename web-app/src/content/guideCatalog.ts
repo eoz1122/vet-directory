@@ -97,6 +97,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'leipzig', 'exotic-pets', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-dresden',
+        title: "Emergency Vet Dresden: Official Duty Service",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "Saxony's official duty number, live practice lookup, current night and weekend coverage, warning signs and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'dresden', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',
