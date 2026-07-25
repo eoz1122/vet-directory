@@ -64,7 +64,7 @@ describe('CityVets search and trust contract', () => {
 
         expect(screen.getByRole('heading', {
             level: 2,
-            name: '33 Practices Listed in Hamburg',
+            name: '34 Practices Listed in Hamburg',
         })).toBeTruthy();
         expect(screen.getAllByText('Community Listed')).toHaveLength(2);
         expect(screen.getAllByText('English availability: confirm when booking')).toHaveLength(2);
@@ -77,7 +77,7 @@ describe('CityVets search and trust contract', () => {
                 .map((entry: { acceptedAnswer: { text: string } }) => entry.acceptedAnswer.text)
                 .join(' ');
 
-            expect(answers).toContain('1 have official website confirmation');
+            expect(answers).toContain('2 have official website confirmation');
             expect(answers).toContain('30 are community-confirmed');
             expect(answers).not.toContain('community-Verified');
             expect(answers).not.toContain('Every listed vet has been confirmed');
@@ -94,11 +94,14 @@ describe('CityVets search and trust contract', () => {
 
         expect(links).toHaveLength(4);
         expect(links.map((link) => link.getAttribute('href'))).toEqual([
+            '/vets/hoppegarten',
             '/vets/potsdam',
             '/vets/leipzig',
             '/vets/dresden',
-            '/vets/rostock',
         ]);
+        expect(within(nearbyNav).getByRole('link', {
+            name: 'English-speaking vets in Hoppegarten, about 19 km away',
+        })).toBeTruthy();
         expect(within(nearbyNav).getByRole('link', {
             name: 'English-speaking vets in Potsdam, about 26 km away',
         })).toBeTruthy();

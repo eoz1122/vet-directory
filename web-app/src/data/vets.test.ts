@@ -170,6 +170,54 @@ const expectedNationwidePractices = [
         address: 'Robert-Bosch-Straße 2, 40668 Meerbusch',
         sourceUrl: 'https://www.tierarzt-meerbusch.de/',
     },
+    {
+        id: 'hoppegarten-medivet',
+        city: 'Hoppegarten',
+        address: 'Bollensdorfer Weg 2-4, 15366 Hoppegarten',
+        sourceUrl: 'https://www.medivetgroup.com/de-de/tierarzt/hoppegarten/',
+    },
+    {
+        id: 'elmshorn-medivet',
+        city: 'Elmshorn',
+        address: 'Westerstraße 30, 25336 Elmshorn',
+        sourceUrl: 'https://www.medivetgroup.com/de-de/tierarzt/elmshorn/',
+    },
+    {
+        id: 'unterhaching-medivet',
+        city: 'Unterhaching',
+        address: 'Parkacker Straße 2, 82008 Unterhaching',
+        sourceUrl: 'https://www.medivetgroup.com/de-de/tierarzt/unterhaching/',
+    },
+    {
+        id: 'hamburg-medivet-bergedorf',
+        city: 'Hamburg',
+        address: 'Stuhlrohrstraße 10, 21029 Hamburg-Bergedorf',
+        sourceUrl: 'https://www.medivetgroup.com/de-de/tierarzt/bergedorf/',
+    },
+    {
+        id: 'munich-medivet-westkreuz',
+        city: 'Munich',
+        address: 'Stockacher Straße 5, 81243 München-Westkreuz',
+        sourceUrl: 'https://www.medivetgroup.com/de-de/tierarzt/muenchen-westkreuz/',
+    },
+    {
+        id: 'hofheim-tierarztpraxis-vegner',
+        city: 'Hofheim',
+        address: 'Marbodstraße 25, 65719 Hofheim am Taunus',
+        sourceUrl: 'https://www.tierarztpraxis-hofheim.de/',
+    },
+    {
+        id: 'loerrach-anicura-kleintierzentrum',
+        city: 'Lörrach',
+        address: 'Bahnhofstraße 11, 79539 Lörrach',
+        sourceUrl: 'https://www.anicura.de/standorte/loerrach/unser-team/',
+    },
+    {
+        id: 'karlsruhe-anicura',
+        city: 'Karlsruhe',
+        address: 'Hoffstraße 6, 76133 Karlsruhe',
+        sourceUrl: 'https://www.anicura.de/standorte/karlsruhe/unser-team/tierarztetierarztinnen/marie-gilles/',
+    },
 ] as const;
 
 const expectedCommunityConfirmedPractices = [

@@ -71,7 +71,7 @@ describe('getNearbyCities', () => {
             filterDisplayableVets(vetsData as Vet[]),
         );
 
-        expect(nearbyByCity.size).toBe(59);
+        expect(nearbyByCity.size).toBe(63);
         for (const [city, nearby] of nearbyByCity) {
             expect(nearby).toHaveLength(4);
             expect(nearby.some((destination) => destination.city === city)).toBe(false);

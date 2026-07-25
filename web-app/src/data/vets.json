@@ -7180,5 +7180,237 @@
       "emergency_services": "The official site directs out-of-hours cases to nearby emergency clinics"
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "hoppegarten-medivet",
+    "practice_name": "Medivet Hoppegarten",
+    "city": "Hoppegarten",
+    "district": "Dahlwitz-Hoppegarten",
+    "address": "Bollensdorfer Weg 2-4, 15366 Hoppegarten",
+    "coordinates": {
+      "lat": 52.5016211,
+      "lng": 13.6642333
+    },
+    "contact": {
+      "phone": "+49 3342 3089311",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/hoppegarten/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet%20Hoppegarten%20Bollensdorfer%20Weg%202-4%2C%2015366%20Hoppegarten"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice page lists English among the languages spoken by the team"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.medivetgroup.com/de-de/tierarzt/hoppegarten/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "elmshorn-medivet",
+    "practice_name": "Medivet Elmshorn",
+    "city": "Elmshorn",
+    "district": "Mitte",
+    "address": "Westerstraße 30, 25336 Elmshorn",
+    "coordinates": {
+      "lat": 53.7494464,
+      "lng": 9.6512562
+    },
+    "contact": {
+      "phone": "+49 4121 8302980",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/elmshorn/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet%20Elmshorn%20Westerstra%C3%9Fe%2030%2C%2025336%20Elmshorn"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice page lists English among the languages spoken by the team"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.medivetgroup.com/de-de/tierarzt/elmshorn/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "unterhaching-medivet",
+    "practice_name": "Medivet Unterhaching",
+    "city": "Unterhaching",
+    "district": "Grünwalder Weg",
+    "address": "Parkacker Straße 2, 82008 Unterhaching",
+    "coordinates": {
+      "lat": 48.0552886,
+      "lng": 11.5984302
+    },
+    "contact": {
+      "phone": "+49 89 48058908",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/unterhaching/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet%20Unterhaching%20Parkacker%20Stra%C3%9Fe%202%2C%2082008%20Unterhaching"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice page lists English among the languages spoken by the team"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.medivetgroup.com/de-de/tierarzt/unterhaching/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "hamburg-medivet-bergedorf",
+    "practice_name": "Medivet Bergedorf",
+    "city": "Hamburg",
+    "district": "Bergedorf",
+    "address": "Stuhlrohrstraße 10, 21029 Hamburg-Bergedorf",
+    "coordinates": {
+      "lat": 53.4865042,
+      "lng": 10.2063491
+    },
+    "contact": {
+      "phone": "+49 40 72542258",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/bergedorf/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet%20Bergedorf%20Stuhlrohrstra%C3%9Fe%2010%2C%2021029%20Hamburg-Bergedorf"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice page lists English among the languages spoken by the team"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.medivetgroup.com/de-de/tierarzt/bergedorf/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "munich-medivet-westkreuz",
+    "practice_name": "Medivet München Westkreuz",
+    "city": "Munich",
+    "district": "Westkreuz",
+    "address": "Stockacher Straße 5, 81243 München-Westkreuz",
+    "coordinates": {
+      "lat": 48.1499443,
+      "lng": 11.4423326
+    },
+    "contact": {
+      "phone": "+49 89 88952832",
+      "website": "https://www.medivetgroup.com/de-de/tierarzt/muenchen-westkreuz/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Medivet%20M%C3%BCnchen%20Westkreuz%20Stockacher%20Stra%C3%9Fe%205%2C%2081243%20M%C3%BCnchen"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice page lists English among the languages spoken by the team"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.medivetgroup.com/de-de/tierarzt/muenchen-westkreuz/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "hofheim-tierarztpraxis-vegner",
+    "practice_name": "Tierarztpraxis Hofheim - Dagmar Vegner",
+    "city": "Hofheim",
+    "district": "Marxheim",
+    "address": "Marbodstraße 25, 65719 Hofheim am Taunus",
+    "coordinates": {
+      "lat": 50.0725368,
+      "lng": 8.4365837
+    },
+    "contact": {
+      "phone": "+49 6192 6304",
+      "website": "https://www.tierarztpraxis-hofheim.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Hofheim%20Dagmar%20Vegner%20Marbodstra%C3%9Fe%2025%2C%2065719%20Hofheim%20am%20Taunus"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice homepage explicitly offers its veterinary service to English-speaking clients"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarztpraxis-hofheim.de/"
+      ],
+      "emergency_services": "Call before visiting for urgent-care routing"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "loerrach-anicura-kleintierzentrum",
+    "practice_name": "AniCura Kleintierzentrum Lörrach",
+    "city": "Lörrach",
+    "district": "Stetten",
+    "address": "Bahnhofstraße 11, 79539 Lörrach",
+    "coordinates": {
+      "lat": 47.6091985,
+      "lng": 7.6616609
+    },
+    "contact": {
+      "phone": "+49 7621 919320",
+      "website": "https://www.anicura.de/standorte/loerrach/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=AniCura%20Kleintierzentrum%20L%C3%B6rrach%20Bahnhofstra%C3%9Fe%2011%2C%2079539%20L%C3%B6rrach"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official team page identifies current veterinarians who speak English; request an English-speaking veterinarian when booking"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.anicura.de/standorte/loerrach/unser-team/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "karlsruhe-anicura",
+    "practice_name": "AniCura Karlsruhe",
+    "city": "Karlsruhe",
+    "district": "Weststadt",
+    "address": "Hoffstraße 6, 76133 Karlsruhe",
+    "coordinates": {
+      "lat": 49.0127715,
+      "lng": 8.3865685
+    },
+    "contact": {
+      "phone": "+49 721 848485",
+      "website": "https://www.anicura.de/standorte/karlsruhe/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=AniCura%20Karlsruhe%20Hoffstra%C3%9Fe%206%2C%2076133%20Karlsruhe"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official veterinarian profile states that Dr. Marie Gilles offers treatment in English; request her or another English-speaking veterinarian when booking"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.anicura.de/standorte/karlsruhe/unser-team/tierarztetierarztinnen/marie-gilles/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
   }
 ]
