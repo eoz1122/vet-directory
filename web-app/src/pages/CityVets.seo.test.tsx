@@ -59,6 +59,12 @@ describe('CityVets search and trust contract', () => {
         expect(screen.getByText('Exotic pets, zoo animals and wildlife')).toBeTruthy();
     });
 
+    it('shows verified 24-hour emergency service on the Mönchengladbach listing', () => {
+        renderCity('/vets/mönchengladbach');
+
+        expect(screen.getByText('24h Emergency Service')).toBeTruthy();
+    });
+
     it('does not label every Hamburg listing as verified', async () => {
         renderCity('/vets/hamburg');
 

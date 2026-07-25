@@ -562,6 +562,16 @@ export default function CityVets() {
                                             </p>
                                         </div>
                                     ))}
+                                    {vet.verification?.emergency_services === '24/7' ? (
+                                        <div className="flex gap-3 items-start">
+                                            <div className="mt-1 flex-shrink-0 w-4 h-4 bg-red-100 rounded-full flex items-center justify-center">
+                                                <span className="text-[10px]" aria-hidden="true">🚑</span>
+                                            </div>
+                                            <p className="text-[11px] text-red-600 font-bold leading-snug">
+                                                24h Emergency Service
+                                            </p>
+                                        </div>
+                                    ) : null}
                                 </div>
 
                                 <div className="flex gap-3">

@@ -235,7 +235,7 @@ const expectedNationwidePractices = [
         city: 'Mönchengladbach',
         address: 'Krefelder Straße 461, 41066 Mönchengladbach',
         sourceUrl: 'https://www.anicura.de/en/our-clinics/tierarztliche-klinik-vom-bokelberg/',
-        emergencyServices: '24-hour emergency service, 365 days a year; call before travelling',
+        emergencyServices: '24/7',
     },
 ] as const;
 
