@@ -321,6 +321,8 @@ describe('traffic-focused search metadata', () => {
             .toBe('/guides/emergency-vets-leipzig');
         expect(screen.getByRole('link', { name: 'Dresden emergency vet guide' }).getAttribute('href'))
             .toBe('/guides/emergency-vets-dresden');
+        expect(screen.getByRole('link', { name: 'Nuremberg emergency vet guide' }).getAttribute('href'))
+            .toBe('/guides/emergency-vets-nuremberg');
         expect(screen.getByRole('link', { name: 'Find a regular English-speaking vet' }).getAttribute('href'))
             .toBe('/');
 

@@ -113,4 +113,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Dresden: Official Duty Service (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Nuremberg emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-nuremberg');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Nuremberg: 24/7 Critical Care (2026)',
+        })).toBeTruthy();
+    });
 });

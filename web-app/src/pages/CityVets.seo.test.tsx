@@ -190,4 +190,12 @@ describe('CityVets search and trust contract', () => {
             name: 'Emergency vet help in Dresden',
         }).getAttribute('href')).toBe('/guides/emergency-vets-dresden');
     });
+
+    it('links Nuremberg readers to the local emergency guide', () => {
+        renderCity('/vets/nuremberg');
+
+        expect(screen.getByRole('link', {
+            name: 'Emergency vet help in Nuremberg',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-nuremberg');
+    });
 });

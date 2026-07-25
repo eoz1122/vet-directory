@@ -105,6 +105,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'dresden', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-nuremberg',
+        title: "Emergency Vet Nuremberg: 24/7 Critical Care",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "Tierklinik Nürnberg Hafen's 24/7 pathway for life-threatening cases, address, call limits, warning signs and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'nuremberg', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',

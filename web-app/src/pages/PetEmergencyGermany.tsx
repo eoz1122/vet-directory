@@ -227,6 +227,16 @@ export default function PetEmergencyGermany() {
                                         Official Saxony duty number, live receiving-practice lookup, and current night and weekend coverage.
                                     </span>
                                 </Link>
+                                <Link
+                                    to="/guides/emergency-vets-nuremberg"
+                                    aria-label="Nuremberg emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Nuremberg emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">
+                                        Hafen clinic access for life-threatening cases, address, after-hours call limits, and GOT fees.
+                                    </span>
+                                </Link>
                                 <a
                                     href="https://bundestieraerztekammer.de/btk/mitglieder/"
                                     aria-label="German state veterinary chambers"
