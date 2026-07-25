@@ -41,6 +41,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'frankfurt', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-cologne',
+        title: "Emergency Vet Cologne: Official Numbers and 24/7 Help",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "Official Cologne duty line, two current 24/7 clinics, call-ahead steps, warning signs, English phrases and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'cologne', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',

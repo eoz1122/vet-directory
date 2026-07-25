@@ -149,6 +149,14 @@ export default function PetEmergencyGermany() {
                                     <span className="font-bold text-primary block mb-1">Hamburg emergency duty guide</span>
                                     <span className="text-sm text-primary/70">Current duty-service workflow, hours, and central phone number.</span>
                                 </Link>
+                                <Link
+                                    to="/guides/emergency-vets-cologne"
+                                    aria-label="Cologne emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Cologne emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">Official duty line, two current 24/7 clinics, and GOT fees.</span>
+                                </Link>
                                 <a
                                     href="https://bundestieraerztekammer.de/btk/mitglieder/"
                                     aria-label="German state veterinary chambers"

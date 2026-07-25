@@ -103,4 +103,15 @@ describe('CityVets search and trust contract', () => {
             name: 'English-speaking vets in Potsdam, about 26 km away',
         })).toBeTruthy();
     });
+
+    it('links Cologne readers to both local practical guides', () => {
+        renderCity('/vets/cologne');
+
+        expect(screen.getByRole('link', {
+            name: 'Emergency vet help in Cologne',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-cologne');
+        expect(screen.getByRole('link', {
+            name: 'Public transport with dogs in Cologne',
+        }).getAttribute('href')).toBe('/blog/public-transport-with-dogs-cologne');
+    });
 });

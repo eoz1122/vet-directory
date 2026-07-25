@@ -29,6 +29,7 @@ PATHS=(
   "/blog/best-cat-food-germany"
   "/about"
   "/guides/emergency-vets-berlin"
+  "/guides/emergency-vets-cologne"
 )
 
 # Retired URLs that MUST 301 directly to their replacement.

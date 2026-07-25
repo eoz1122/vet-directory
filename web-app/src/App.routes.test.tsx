@@ -25,4 +25,15 @@ describe('guide routes', () => {
             name: 'Dog Liability Insurance in Germany: Rules and Checklist (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Cologne emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-cologne');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Cologne: Official Numbers and 24/7 Help (2026)',
+        })).toBeTruthy();
+    });
 });

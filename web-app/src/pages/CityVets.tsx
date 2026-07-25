@@ -39,12 +39,30 @@ function renderBlocks(blocks: Block[]) {
     );
 }
 
-const CITY_CONFIG: Record<string, { guideLink?: string }> = {
-    'Berlin': { guideLink: '/blog/public-transport-with-dogs-berlin' },
-    'Hamburg': { guideLink: '/blog/public-transport-with-dogs-hamburg' },
-    'Frankfurt': { guideLink: '/blog/public-transport-with-dogs-frankfurt' },
-    'Munich': { guideLink: '/blog/public-transport-with-dogs-munich' },
-    'Stuttgart': { guideLink: '/blog/public-transport-with-dogs-stuttgart' }
+const CITY_CONFIG: Record<string, {
+    guides: Array<{ href: string; label: string; icon: string }>;
+}> = {
+    'Berlin': {
+        guides: [{ href: '/blog/public-transport-with-dogs-berlin', label: 'Public transport with dogs in Berlin', icon: '🚆' }],
+    },
+    'Hamburg': {
+        guides: [{ href: '/blog/public-transport-with-dogs-hamburg', label: 'Public transport with dogs in Hamburg', icon: '🚆' }],
+    },
+    'Frankfurt': {
+        guides: [{ href: '/blog/public-transport-with-dogs-frankfurt', label: 'Public transport with dogs in Frankfurt', icon: '🚆' }],
+    },
+    'Munich': {
+        guides: [{ href: '/blog/public-transport-with-dogs-munich', label: 'Public transport with dogs in Munich', icon: '🚆' }],
+    },
+    'Stuttgart': {
+        guides: [{ href: '/blog/public-transport-with-dogs-stuttgart', label: 'Public transport with dogs in Stuttgart', icon: '🚆' }],
+    },
+    'Cologne': {
+        guides: [
+            { href: '/guides/emergency-vets-cologne', label: 'Emergency vet help in Cologne', icon: '🏥' },
+            { href: '/blog/public-transport-with-dogs-cologne', label: 'Public transport with dogs in Cologne', icon: '🚆' },
+        ],
+    },
 };
 
 const cityContent: Record<string, { title: string; description: string; content: string }> = {
@@ -608,13 +626,19 @@ export default function CityVets() {
                     <div className="prose prose-lg max-w-none text-primary/80 space-y-4">
                         {renderBlocks(parseCityContent(cityData.content).slice(1))}
                     </div>
-                    {CITY_CONFIG[capitalizedCity]?.guideLink && (
-                        <div className="mt-8">
-                            <Link to={CITY_CONFIG[capitalizedCity].guideLink!} className="inline-flex items-center gap-2 px-6 py-3 bg-accent/10 hover:bg-accent/20 text-accent font-bold rounded-xl transition-colors">
-                                <span>🚆</span>
-                                <span>Public Transport with Dogs in {capitalizedCity}</span>
-                                <span>→</span>
-                            </Link>
+                    {CITY_CONFIG[capitalizedCity]?.guides.length > 0 && (
+                        <div className="mt-8 flex flex-wrap gap-3">
+                            {CITY_CONFIG[capitalizedCity].guides.map((guide) => (
+                                <Link
+                                    key={guide.href}
+                                    to={guide.href}
+                                    className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-accent/10 px-6 py-3 font-bold text-accent transition-colors hover:bg-accent/20"
+                                >
+                                    <span aria-hidden="true">{guide.icon}</span>
+                                    <span>{guide.label}</span>
+                                    <span aria-hidden="true">→</span>
+                                </Link>
+                            ))}
                         </div>
                     )}
                 </section>

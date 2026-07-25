@@ -59,7 +59,7 @@ describe('Blog guide discovery', () => {
 
         const sectionCounts = {
             'start-here': 3,
-            'emergency-vet-care': 5,
+            'emergency-vet-care': 6,
             'moving-paperwork': 8,
             'health-safety': 9,
             'everyday-life': 9,
@@ -67,8 +67,8 @@ describe('Blog guide discovery', () => {
         };
         const allGuideUrls = guideUrlsIn(document);
 
-        expect(allGuideUrls).toHaveLength(37);
-        expect(new Set(allGuideUrls).size).toBe(37);
+        expect(allGuideUrls).toHaveLength(38);
+        expect(new Set(allGuideUrls).size).toBe(38);
 
         Object.entries(sectionCounts).forEach(([sectionId, count]) => {
             const section = document.getElementById(sectionId);
@@ -103,6 +103,10 @@ describe('Blog guide discovery', () => {
         expect(screen.getByText('24-Hour Emergency Vet Hamburg: What to Call')).toBeTruthy();
         expect(screen.getByText(
             'Use Hamburg’s rotating veterinary duty service, current call number, published hours, warning signs, and GOT fee rules.',
+        )).toBeTruthy();
+        expect(screen.getByText('Emergency Vet Cologne: Official Numbers and 24/7 Help')).toBeTruthy();
+        expect(screen.getByText(
+            'Official Cologne duty line, two current 24/7 clinics, call-ahead steps, warning signs, English phrases and GOT fees.',
         )).toBeTruthy();
         expect(document.body.textContent).not.toMatch(/24-hour English-speaking vet services/i);
         expect(document.body.textContent).not.toMatch(/English-speaking staff\. Phone numbers/i);

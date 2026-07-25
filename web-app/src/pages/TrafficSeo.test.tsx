@@ -9,6 +9,7 @@ import Blog from './Blog';
 import CatFoodGermany from './CatFoodGermany';
 import CatMicrochippingGermany from './CatMicrochippingGermany';
 import EmergencyVetBerlinGuide from './EmergencyVetBerlinGuide';
+import EmergencyVetCologneGuide from './EmergencyVetCologneGuide';
 import EmergencyVetHamburgGuide from './EmergencyVetHamburgGuide';
 import FirstVetVisitGermany from './FirstVetVisitGermany';
 import GermanDogEtiquette from './GermanDogEtiquette';
@@ -223,6 +224,61 @@ describe('traffic-focused search metadata', () => {
         expect(schema.dateModified).toBe('2026-07-22');
     });
 
+    it('publishes official Cologne emergency routes without promising English-speaking staff', async () => {
+        renderPage(<EmergencyVetCologneGuide />);
+
+        await waitFor(() => {
+            expect(document.title).toBe(
+                'Emergency Vet Cologne: Official Numbers and 24/7 Help (2026)',
+            );
+        });
+
+        expect(getMetaContent('description')).toBe(
+            'Need an emergency vet in Cologne? Call the official duty line, compare two 24/7 clinics, check current hours, GOT fees, warning signs and English call phrases.',
+        );
+        expect(
+            document.head.querySelector('link[rel="canonical"]')?.getAttribute('href'),
+        ).toBe('https://englishspeakinggermany.online/guides/emergency-vets-cologne');
+        expect(screen.getByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Cologne: Official Numbers and 24/7 Help (2026)',
+        })).toBeTruthy();
+        expect(screen.getByRole('link', { name: 'Call Cologne veterinary duty service' }).getAttribute('href'))
+            .toBe('tel:+492203962339');
+        expect(screen.getByRole('link', { name: /Call Vet Zentrum Köln/i }).getAttribute('href'))
+            .toBe('tel:+49221545764');
+        expect(screen.getByRole('link', { name: /Call Tierklinik Köln-Süd emergency line/i }).getAttribute('href'))
+            .toBe('tel:+49221474543911');
+        expect(screen.getByRole('link', { name: 'Official Cologne veterinary duty service' }).getAttribute('href'))
+            .toBe('https://koelner-tieraerztenotdienst.de/');
+        expect(screen.getByRole('link', { name: 'Official Nordrhein emergency and fee information' }).getAttribute('href'))
+            .toBe('https://www.tieraerztekammer-nordrhein.de/informationen-zum-tieraerztlichen-notdienst/');
+        expect(screen.getByRole('link', { name: 'Official Vet Zentrum Köln emergency information' }).getAttribute('href'))
+            .toBe('https://www.vetzentrum-koeln.de/');
+        expect(screen.getByRole('link', { name: 'Official Tierklinik Köln-Süd emergency information' }).getAttribute('href'))
+            .toBe('https://koelner-tierklinik.de/leistungen/notfallmedizin');
+        expect(screen.getByRole('link', { name: 'Browse English-speaking vets in Cologne' }).getAttribute('href'))
+            .toBe('/vets/cologne');
+        expect(screen.getByText(/checked against official sources on 25 July 2026/i)).toBeTruthy();
+        expect(screen.getByText(/English availability is not guaranteed/i)).toBeTruthy();
+        expect(screen.getByText(/€59\.50 gross emergency-service fee/i)).toBeTruthy();
+        expect(screen.getByText(/two to four times the GOT rate/i)).toBeTruthy();
+
+        const articleText = document.body.textContent || '';
+        expect(articleText).toMatch(/Monday to Friday: 18:00 to 22:00/i);
+        expect(articleText).toMatch(/Weekends and public holidays: 08:00 to 22:00/i);
+        expect(articleText).toMatch(/call before (you )?travel/i);
+        expect(articleText).not.toMatch(/English-speaking staff/i);
+        expect(articleText).not.toMatch(/can wait.*morning/i);
+
+        const schema = getArticleSchema();
+        expect(schema.url).toBe(
+            'https://englishspeakinggermany.online/guides/emergency-vets-cologne',
+        );
+        expect(schema.datePublished).toBe('2026-07-25');
+        expect(schema.dateModified).toBe('2026-07-25');
+    });
+
     it('answers national night and weekend emergency intent without unsafe triage or hotline claims', async () => {
         renderPage(<PetEmergencyGermany />);
 
@@ -249,6 +305,8 @@ describe('traffic-focused search metadata', () => {
             .toBe('/guides/emergency-vets-berlin');
         expect(screen.getByRole('link', { name: 'Hamburg emergency duty guide' }).getAttribute('href'))
             .toBe('/blog/emergency-vet-hamburg-english');
+        expect(screen.getByRole('link', { name: 'Cologne emergency vet guide' }).getAttribute('href'))
+            .toBe('/guides/emergency-vets-cologne');
         expect(screen.getByRole('link', { name: 'Find a regular English-speaking vet' }).getAttribute('href'))
             .toBe('/');
 
