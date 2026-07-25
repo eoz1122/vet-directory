@@ -65,6 +65,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'düsseldorf', 'duesseldorf', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-stuttgart',
+        title: "Emergency Vet Stuttgart: Official Numbers & 24/7 Help",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "The official Stuttgart duty line, a current 24-hour clinic, warning signs, English phrases and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'stuttgart', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',

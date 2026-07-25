@@ -174,12 +174,20 @@ export default function PetEmergencyMunich() {
                                 For appointments, vaccinations, follow-up care, or another Munich practice, use the
                                 directory and confirm English availability when booking.
                             </p>
-                            <Link
-                                to="/vets/munich"
-                                className="inline-flex min-h-11 items-center justify-center bg-accent-ink text-white font-bold py-3 px-6 rounded-xl"
-                            >
-                                Browse English-speaking vets in Munich
-                            </Link>
+                            <div className="flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+                                <Link
+                                    to="/vets/munich"
+                                    className="inline-flex min-h-11 items-center justify-center bg-accent-ink text-white font-bold py-3 px-6 rounded-xl"
+                                >
+                                    Browse English-speaking vets in Munich
+                                </Link>
+                                <Link
+                                    to="/guides/emergency-vets-stuttgart"
+                                    className="inline-flex min-h-11 items-center justify-center border border-primary/15 text-primary font-bold py-3 px-6 rounded-xl"
+                                >
+                                    Emergency vet help in Stuttgart
+                                </Link>
+                            </div>
                         </div>
 
                         <GuideDisclaimer />

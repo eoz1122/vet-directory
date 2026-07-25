@@ -177,6 +177,16 @@ export default function PetEmergencyGermany() {
                                         Current 24-hour clinic details and the chamber&apos;s central-hotline status.
                                     </span>
                                 </Link>
+                                <Link
+                                    to="/guides/emergency-vets-stuttgart"
+                                    aria-label="Stuttgart emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Stuttgart emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">
+                                        Official city duty line and a current 24-hour clinic.
+                                    </span>
+                                </Link>
                                 <a
                                     href="https://bundestieraerztekammer.de/btk/mitglieder/"
                                     aria-label="German state veterinary chambers"

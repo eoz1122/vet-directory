@@ -55,7 +55,10 @@ const CITY_CONFIG: Record<string, {
         guides: [{ href: '/blog/public-transport-with-dogs-munich', label: 'Public transport with dogs in Munich', icon: '🚆' }],
     },
     'Stuttgart': {
-        guides: [{ href: '/blog/public-transport-with-dogs-stuttgart', label: 'Public transport with dogs in Stuttgart', icon: '🚆' }],
+        guides: [
+            { href: '/guides/emergency-vets-stuttgart', label: 'Emergency vet help in Stuttgart', icon: '🏥' },
+            { href: '/blog/public-transport-with-dogs-stuttgart', label: 'Public transport with dogs in Stuttgart', icon: '🚆' },
+        ],
     },
     'Cologne': {
         guides: [

@@ -58,4 +58,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Düsseldorf: 24/7 Clinic Help (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Stuttgart emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-stuttgart');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Stuttgart: Official Numbers & 24/7 Help (2026)',
+        })).toBeTruthy();
+    });
 });

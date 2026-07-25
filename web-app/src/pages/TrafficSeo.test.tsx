@@ -311,6 +311,8 @@ describe('traffic-focused search metadata', () => {
             .toBe('/guides/emergency-vets-ruhr');
         expect(screen.getByRole('link', { name: 'Düsseldorf emergency vet guide' }).getAttribute('href'))
             .toBe('/guides/emergency-vets-duesseldorf');
+        expect(screen.getByRole('link', { name: 'Stuttgart emergency vet guide' }).getAttribute('href'))
+            .toBe('/guides/emergency-vets-stuttgart');
         expect(screen.getByRole('link', { name: 'Find a regular English-speaking vet' }).getAttribute('href'))
             .toBe('/');
 
@@ -369,6 +371,8 @@ describe('traffic-focused search metadata', () => {
             .toBe('tel:+498921802650');
         expect(screen.getByRole('link', { name: 'Browse English-speaking vets in Munich' }).getAttribute('href'))
             .toBe('/vets/munich');
+        expect(screen.getByRole('link', { name: 'Emergency vet help in Stuttgart' }).getAttribute('href'))
+            .toBe('/guides/emergency-vets-stuttgart');
 
         const articleText = document.body.textContent || '';
         expect(articleText).toMatch(/dogs and cats only/i);

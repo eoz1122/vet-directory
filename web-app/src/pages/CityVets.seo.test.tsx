@@ -147,4 +147,15 @@ describe('CityVets search and trust contract', () => {
             name: 'Emergency vet help in Düsseldorf',
         }).getAttribute('href')).toBe('/guides/emergency-vets-duesseldorf');
     });
+
+    it('links Stuttgart readers to emergency and public transport guides', () => {
+        renderCity('/vets/stuttgart');
+
+        expect(screen.getByRole('link', {
+            name: 'Emergency vet help in Stuttgart',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-stuttgart');
+        expect(screen.getByRole('link', {
+            name: 'Public transport with dogs in Stuttgart',
+        }).getAttribute('href')).toBe('/blog/public-transport-with-dogs-stuttgart');
+    });
 });
