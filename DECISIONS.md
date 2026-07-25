@@ -1105,3 +1105,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** TDD RED produced six missing-record failures, followed by the expected API allowlist mismatch. GREEN passes 195 frontend tests across 40 files, all 45 API tests, all 25 maintenance tests and project-wide ESLint. The production build exported 278 records, generated a 280-URL sitemap and prerendered all 281 application routes. Each affected city page exists and contains the official-evidence presentation. The preview server stopped and port 4174 closed.
 
 **Rollback:** Remove the six records from `web-app/src/data/vets.json`, remove their expectations from `web-app/src/data/vets.test.ts`, remove their IDs from `api/valid_vet_ids.json` and remove this decision entry. Regenerate the sitemap and exported database afterward.
+
+## 2026-07-25T03:02:22+02:00 - Link every verified city from the homepage
+
+**Context:** Search Console showed that recently added city pages were discoverable through the sitemap but lacked direct crawlable homepage links. The homepage linked only five popular city pages, while the broader city filter used buttons rather than links. This left 54 verified city directories without a direct internal-link path from the homepage.
+
+**Decision:** Add a reusable, compact city-directory component beneath the popular city shortcuts. Derive its alphabetized city list from active verified records at module load time and use the canonical `slugify` utility for every route. Render all city destinations as real React Router links inside a native disclosure so crawlers receive the full link graph in prerendered HTML while the mobile interface stays compact.
+
+**Trade-offs:** The five popular cities appear in both the shortcut row and the complete list. This small amount of duplication preserves fast access to high-demand cities while keeping the complete list semantically honest. The expanded list is long, but it remains collapsed by default and uses a two-column layout at 390 pixels.
+
+**Verification:** TDD RED failed because no `All city directories` navigation existed. GREEN passes all 196 frontend tests across 40 files, all 45 API tests, all 25 maintenance tests and project-wide ESLint. The production build exported 278 records, generated a 280-URL sitemap and prerendered all 281 application routes. The generated homepage contains all 59 alphabetized city links, including Erfurt, Leverkusen, Frankenthal, Gevelsberg and Weingarten. Chromium at 390 pixels confirmed no horizontal overflow, a 44-pixel disclosure control and 44-pixel minimum link targets. The expanded layout was visually inspected.
+
+**Rollback:** Remove `CityDirectoryLinks.tsx`, its import and invocation from `Home.tsx`, the all-city coverage test and this decision entry. This restores the previous popular-city-only homepage without changing city routes or data.

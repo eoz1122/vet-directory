@@ -1,9 +1,13 @@
 import type { ReactNode } from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import vetsData from '../data/vets.json';
+import type { Vet } from '../types/vet';
+import { filterDisplayableVets } from '../utils/activeVets';
+import { slugify } from '../utils/url';
 import Home from './Home';
 
 vi.mock('@vis.gl/react-google-maps', () => ({
@@ -100,8 +104,41 @@ describe('Home WebSite structured data', () => {
             ['English-speaking vets in Frankfurt', '/vets/frankfurt'],
             ['English-speaking vets in Cologne', '/vets/cologne'],
         ];
+        const popularCitiesNav = screen.getByRole('navigation', {
+            name: 'Popular city directories',
+        });
         for (const [name, href] of cityPaths) {
-            expect(screen.getByRole('link', { name }).getAttribute('href')).toBe(href);
+            expect(within(popularCitiesNav).getByRole('link', { name }).getAttribute('href'))
+                .toBe(href);
+        }
+    });
+
+    it('exposes every verified city as a crawlable, alphabetized directory link', () => {
+        render(
+            <HelmetProvider>
+                <MemoryRouter initialEntries={['/']}>
+                    <Home />
+                </MemoryRouter>
+            </HelmetProvider>,
+        );
+
+        const expectedCities = Array.from(new Set(
+            filterDisplayableVets(vetsData as Vet[])
+                .filter((vet) => vet.community_status === 'Verified')
+                .map((vet) => vet.city),
+        )).sort((left, right) => left.localeCompare(right, 'en'));
+        const allCitiesNav = screen.getByRole('navigation', {
+            name: 'All city directories',
+        });
+        const cityLinks = within(allCitiesNav).getAllByRole('link');
+
+        expect(cityLinks).toHaveLength(expectedCities.length);
+        expect(cityLinks.map((link) => link.textContent)).toEqual(expectedCities);
+
+        for (const city of expectedCities) {
+            expect(within(allCitiesNav).getByRole('link', {
+                name: `English-speaking vets in ${city}`,
+            }).getAttribute('href')).toBe(`/vets/${slugify(city)}`);
         }
     });
 

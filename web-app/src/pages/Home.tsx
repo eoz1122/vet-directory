@@ -11,6 +11,7 @@ import { calculateDistance } from '../utils/distance';
 import { generateListingSchema } from '../utils/schema';
 import { VetCard } from '../components/vet/VetCard';
 import { VetFilters } from '../components/vet/VetFilters';
+import { CityDirectoryLinks } from '../components/vet/CityDirectoryLinks';
 import ReportIssueDialog from '../components/vet/ReportIssueDialog';
 import { Pagination } from '../components/ui/Pagination';
 import { useGoogleMapsActivation } from '../hooks/useGoogleMapsActivation';
@@ -26,6 +27,8 @@ const HOME_TITLE = 'English-Speaking Vets in Germany | Find Local Care';
 const HOME_DESCRIPTION = 'Find community-verified English-speaking vets in Germany. Browse local practices in Berlin, Hamburg, Munich, Frankfurt, Cologne and 30+ cities.';
 const verifiedVets = vets.filter((vet) => vet.community_status === 'Verified');
 const verifiedCityCount = new Set(verifiedVets.map((vet) => vet.city)).size;
+const cityDirectoryNames = Array.from(new Set(verifiedVets.map((vet) => vet.city)))
+    .sort((left, right) => left.localeCompare(right, 'en'));
 const popularCities = [
     { name: 'Berlin', path: '/vets/berlin' },
     { name: 'Hamburg', path: '/vets/hamburg' },
@@ -270,6 +273,8 @@ const Home: React.FC = () => {
                                 ))}
                             </nav>
                         </section>
+
+                        <CityDirectoryLinks cities={cityDirectoryNames} />
 
                         <div className="flex justify-between items-end px-2 pt-4">
                             <div className="flex flex-col">
