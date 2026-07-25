@@ -81,6 +81,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'hannover', 'exotic-pets', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-bremen',
+        title: "Emergency Vet Bremen: Official Duty Number & Hours",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "Bremen's official duty number and hours, mandatory call-ahead process, chamber-listed fallback clinics, warning signs and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'bremen', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',

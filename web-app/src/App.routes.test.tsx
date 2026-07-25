@@ -80,4 +80,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Hannover: TiHo 24-Hour Help (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Bremen emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-bremen');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Bremen: Official Duty Number & Hours (2026)',
+        })).toBeTruthy();
+    });
 });
