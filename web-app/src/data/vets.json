@@ -7412,5 +7412,63 @@
       "emergency_services": ""
     },
     "community_status": "Verified"
+  },
+  {
+    "id": "braunschweig-anicura",
+    "practice_name": "AniCura Braunschweig",
+    "city": "Braunschweig",
+    "district": "Ölper",
+    "address": "Bockshornweg 71, 38114 Braunschweig",
+    "coordinates": {
+      "lat": 52.2878748,
+      "lng": 10.4922147
+    },
+    "contact": {
+      "phone": "+49 531 3029194",
+      "website": "https://www.anicura.de/en/our-clinics/tierarzt-braunschweig/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=AniCura%20Braunschweig%20Bockshornweg%2071%2C%2038114%20Braunschweig"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official practice page provides an English-language route with contact and booking information; confirm English availability when booking"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.anicura.de/en/our-clinics/tierarzt-braunschweig/kontakt/"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "magdeburg-tierarztpraxis-schneidersgarten",
+    "practice_name": "Tierarztpraxis Schneidersgarten",
+    "city": "Magdeburg",
+    "district": "Sudenburg",
+    "address": "Halberstädter Straße 47, 39112 Magdeburg",
+    "coordinates": {
+      "lat": 52.1145938,
+      "lng": 11.6113432
+    },
+    "contact": {
+      "phone": "+49 391 66259960",
+      "website": "https://www.tierarztpraxis-schneidersgarten.de/en",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Schneidersgarten%20Halberst%C3%A4dter%20Stra%C3%9Fe%2047%2C%2039112%20Magdeburg"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-25",
+      "english_signals": [
+        "The official English-language site welcomes clients and explains the practice and its services; confirm English availability when booking"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarztpraxis-schneidersgarten.de/en"
+      ],
+      "emergency_services": ""
+    },
+    "community_status": "Verified"
   }
 ]

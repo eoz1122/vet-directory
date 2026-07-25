@@ -218,6 +218,18 @@ const expectedNationwidePractices = [
         address: 'Hoffstraße 6, 76133 Karlsruhe',
         sourceUrl: 'https://www.anicura.de/standorte/karlsruhe/unser-team/tierarztetierarztinnen/marie-gilles/',
     },
+    {
+        id: 'braunschweig-anicura',
+        city: 'Braunschweig',
+        address: 'Bockshornweg 71, 38114 Braunschweig',
+        sourceUrl: 'https://www.anicura.de/en/our-clinics/tierarzt-braunschweig/kontakt/',
+    },
+    {
+        id: 'magdeburg-tierarztpraxis-schneidersgarten',
+        city: 'Magdeburg',
+        address: 'Halberstädter Straße 47, 39112 Magdeburg',
+        sourceUrl: 'https://www.tierarztpraxis-schneidersgarten.de/en',
+    },
 ] as const;
 
 const expectedCommunityConfirmedPractices = [

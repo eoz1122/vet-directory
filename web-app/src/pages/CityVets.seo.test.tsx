@@ -96,8 +96,8 @@ describe('CityVets search and trust contract', () => {
         expect(links.map((link) => link.getAttribute('href'))).toEqual([
             '/vets/hoppegarten',
             '/vets/potsdam',
+            '/vets/magdeburg',
             '/vets/leipzig',
-            '/vets/dresden',
         ]);
         expect(within(nearbyNav).getByRole('link', {
             name: 'English-speaking vets in Hoppegarten, about 19 km away',
