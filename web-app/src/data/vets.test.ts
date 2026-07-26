@@ -818,3 +818,44 @@ describe('new filu locations with first-party English evidence', () => {
         },
     );
 });
+
+describe('Frankfurt directory data quality', () => {
+    it.each([
+        ['Frankfurt-55', 'Sachsenhausen-Nord'],
+        ['Frankfurt-58', 'Sachsenhausen-Nord'],
+        ['Frankfurt-60', 'Kalbach-Riedberg'],
+    ])('uses a geographic district for %s', (id, district) => {
+        expect(vetsData.find((vet) => vet.id === id)?.district).toBe(district);
+    });
+
+    it('uses Tierklinik Kalbach current clinic-owned contact details', () => {
+        const practice = vetsData.find((vet) => vet.id === 'Frankfurt-60');
+
+        expect(practice?.address).toBe('Max-Holder-Straße 37, 60437 Frankfurt am Main');
+        expect(practice?.contact.phone).toBe('+49 69 300651550');
+        expect(practice?.verification.source_urls).toContain(
+            'https://www.tierklinik-kalbach.de/kontakt',
+        );
+        expect(practice?.verification.last_scanned).toBe('2026-07-26');
+    });
+
+    it('preserves the Bockenheim community evidence under one canonical public clinic', () => {
+        const canonical = vetsData.find((vet) => vet.id === 'Frankfurt-51');
+        const alias = vetsData.find((vet) => vet.id === 'Frankfurt-56');
+
+        expect(canonical?.practice_name).toBe(
+            'AniCura Frankfurt (formerly Tierklinik Frankfurt Bockenheim)',
+        );
+        expect(canonical?.contact.website).toBe(
+            'https://www.anicura.de/standorte/tierklinik-frankfurt/',
+        );
+        expect(canonical?.contact.phone).toBe('+49 69 97074955');
+        expect(canonical?.verification.source_urls).toEqual(expect.arrayContaining([
+            'https://www.anicura.de/en/our-clinics/tierklinik-frankfurt/kontakt/',
+            'https://www.tierklinik-bockenheim.de/',
+            'https://www.reddit.com/r/frankfurt/comments/yk1vzs/',
+        ]));
+        expect(alias?.verification.status).toBe('Verified');
+        expect(alias).toHaveProperty('canonical_listing_id', 'Frankfurt-51');
+    });
+});

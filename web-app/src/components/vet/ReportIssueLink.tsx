@@ -14,6 +14,7 @@ export default function ReportIssueLink({
     vetName,
     reason,
     children,
+    className = '',
     ...linkProps
 }: ReportIssueLinkProps) {
     const state: ReportIssueNavigationState = {
@@ -24,7 +25,12 @@ export default function ReportIssueLink({
     };
 
     return (
-        <Link {...linkProps} to="/contact" state={state}>
+        <Link
+            {...linkProps}
+            className={`min-h-11 min-w-11 inline-flex items-center justify-center ${className}`}
+            to="/contact"
+            state={state}
+        >
             {children}
         </Link>
     );

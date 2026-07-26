@@ -1,5 +1,6 @@
 export interface Vet {
     id: string;
+    canonical_listing_id?: string;
     practice_name: string;
     city: string;
     district: string;

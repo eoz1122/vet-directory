@@ -42,5 +42,12 @@ describe('Privacy affiliate disclosure', () => {
         renderPrivacy();
 
         expect(screen.getByRole('main').classList.contains('break-words')).toBe(true);
+        const heading = screen.getByRole('heading', {
+            level: 1,
+            name: 'Datenschutzerklärung / Privacy Policy',
+        });
+        expect(heading.className).toContain('text-3xl');
+        expect(heading.className).toContain('sm:text-4xl');
+        expect(screen.getByText('Datenschutzerklärung').getAttribute('lang')).toBe('de');
     });
 });

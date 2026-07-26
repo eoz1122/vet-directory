@@ -1,13 +1,20 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import PlaceAutocomplete from './PlaceAutocomplete';
 
+const mapsLibraryMock = vi.hoisted(() => vi.fn());
+
 vi.mock('@vis.gl/react-google-maps', () => ({
-    useMapsLibrary: () => null,
+    useMapsLibrary: mapsLibraryMock,
 }));
 
 describe('PlaceAutocomplete accessibility', () => {
+    beforeEach(() => {
+        mapsLibraryMock.mockReset();
+        mapsLibraryMock.mockReturnValue(null);
+    });
+
     it('labels both active and unavailable location fields', () => {
         const { rerender } = render(<PlaceAutocomplete onPlaceSelect={vi.fn()} />);
         expect(screen.getByRole('textbox', { name: 'Search by location' })).toBeTruthy();
@@ -33,5 +40,32 @@ describe('PlaceAutocomplete accessibility', () => {
             'Location is not supported by this browser.',
         );
         expect(alertSpy).not.toHaveBeenCalled();
+    });
+
+    it('uses the new accessible Places widget restricted to Germany', async () => {
+        const widget = document.createElement('div') as HTMLDivElement & {
+            description?: string;
+            includedRegionCodes?: string[];
+            placeholder?: string;
+            value?: string;
+        };
+        const PlaceAutocompleteElement = vi.fn(function placeAutocompleteElement() {
+            return widget;
+        });
+        mapsLibraryMock.mockImplementation((name: string) => (
+            name === 'places' ? { PlaceAutocompleteElement } : null
+        ));
+
+        render(<PlaceAutocomplete onPlaceSelect={vi.fn()} />);
+
+        await waitFor(() => {
+            expect(PlaceAutocompleteElement).toHaveBeenCalledTimes(1);
+        });
+        expect(PlaceAutocompleteElement).toHaveBeenCalledWith({
+            includedRegionCodes: ['de'],
+        });
+        expect(widget.description).toBe('Search by location');
+        expect(widget.placeholder).toBe('Search by city, zip, or street...');
+        expect(widget.getAttribute('aria-label')).toBe('Search by location');
     });
 });

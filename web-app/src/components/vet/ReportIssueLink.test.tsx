@@ -33,6 +33,8 @@ describe('ReportIssueLink', () => {
 
         const link = screen.getByRole('link', { name: 'Report Issue' });
         expect(link.getAttribute('href')).toBe('/contact');
+        expect(link.className).toContain('min-h-11');
+        expect(link.className).toContain('min-w-11');
 
         fireEvent.click(link);
 

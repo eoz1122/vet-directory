@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useMapsLibrary } from '@vis.gl/react-google-maps';
 
 interface Props {
@@ -6,7 +6,31 @@ interface Props {
     apiError?: boolean;
 }
 
-// Pure static fallback - NO SDK hooks, prevents Google Maps from injecting error bubbles
+interface PlaceAutocompleteWidget extends HTMLElement {
+    description: string;
+    placeholder: string;
+    value: string;
+}
+
+interface PlacesLibraryWithAutocompleteWidget {
+    PlaceAutocompleteElement: new (options: {
+        includedRegionCodes: string[];
+    }) => PlaceAutocompleteWidget;
+}
+
+interface PlaceSelectionEvent extends Event {
+    placePrediction: {
+        toPlace: () => {
+            formattedAddress?: string;
+            location?: {
+                lat: () => number;
+                lng: () => number;
+            };
+            fetchFields: (options: { fields: string[] }) => Promise<void>;
+        };
+    };
+}
+
 function PlaceAutocompleteFallback() {
     return (
         <div className="relative w-full rounded-xl">
@@ -17,63 +41,115 @@ function PlaceAutocompleteFallback() {
                 placeholder="Location search unavailable"
                 className="w-full pl-11 pr-4 py-3 bg-primary/5 border border-primary/5 rounded-xl text-sm font-medium text-primary/30 placeholder:text-primary/30 cursor-not-allowed"
             />
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/20">
-                <svg aria-hidden="true" className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-            </div>
-            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-bold uppercase tracking-widest text-primary/20">Use city filters below</span>
+            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-bold uppercase tracking-widest text-primary/40">
+                Use city filters below
+            </span>
         </div>
     );
 }
 
-// Full SDK-connected component - only mounted when API is healthy
-function PlaceAutocompleteSDK({ onPlaceSelect }: Pick<Props, 'onPlaceSelect'>) {
-    const [inputValue, setInputValue] = useState('');
-    const inputRef = useRef<HTMLInputElement>(null);
-    const places = useMapsLibrary('places');
-    const [autocomplete, setAutocomplete] = useState<google.maps.places.Autocomplete | null>(null);
+function SearchIcon() {
+    return (
+        <svg aria-hidden="true" className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+    );
+}
 
+function PlaceAutocompleteSDK({ onPlaceSelect }: Pick<Props, 'onPlaceSelect'>) {
+    const places = useMapsLibrary('places');
     const geocodingLib = useMapsLibrary('geocoding');
+    const widgetHostRef = useRef<HTMLDivElement>(null);
+    const loadingInputRef = useRef<HTMLInputElement>(null);
+    const widgetRef = useRef<PlaceAutocompleteWidget | null>(null);
+    const [inputValue, setInputValue] = useState('');
     const [isLoadingLocation, setIsLoadingLocation] = useState(false);
     const [locationError, setLocationError] = useState<string | null>(null);
 
     useEffect(() => {
-        if (!places || !inputRef.current) return;
+        if (!places || !widgetHostRef.current) return;
 
-        const options = {
-            fields: ['geometry', 'name', 'formatted_address'],
-            componentRestrictions: { country: 'de' },
+        let widget: PlaceAutocompleteWidget;
+        try {
+            const widgetLibrary = places as PlacesLibraryWithAutocompleteWidget;
+            widget = new widgetLibrary.PlaceAutocompleteElement({
+                includedRegionCodes: ['de'],
+            });
+        } catch (error) {
+            console.error('Unable to initialise location search:', error);
+            const message = document.createElement('p');
+            message.setAttribute('role', 'alert');
+            message.className = 'p-3 text-xs font-bold text-red-700';
+            message.textContent = 'Location suggestions are temporarily unavailable.';
+            widgetHostRef.current.replaceChildren(message);
+            return;
+        }
+
+        widget.description = 'Search by location';
+        widget.placeholder = 'Search by city, zip, or street...';
+        widget.setAttribute('aria-label', 'Search by location');
+        widget.className = 'w-full';
+        widgetHostRef.current.replaceChildren(widget);
+        widgetRef.current = widget;
+
+        const handleInput = () => {
+            const nextValue = widget.value ?? '';
+            setInputValue(nextValue);
+            if (!nextValue) onPlaceSelect(null, '');
+        };
+        const handleSelection = async (event: Event) => {
+            setLocationError(null);
+            try {
+                const selectionEvent = event as PlaceSelectionEvent;
+                const place = selectionEvent.placePrediction.toPlace();
+                await place.fetchFields({
+                    fields: ['formattedAddress', 'location'],
+                });
+
+                if (!place.location) {
+                    setLocationError('That location has no map coordinates. Try another result.');
+                    return;
+                }
+
+                const address = place.formattedAddress || widget.value || '';
+                widget.value = address;
+                setInputValue(address);
+                onPlaceSelect(
+                    { lat: place.location.lat(), lng: place.location.lng() },
+                    address,
+                );
+            } catch (error) {
+                console.error('Unable to load the selected place:', error);
+                setLocationError('Unable to load that location. Please try another result.');
+            }
         };
 
-        setAutocomplete(new places.Autocomplete(inputRef.current, options));
-    }, [places]);
-
-    useEffect(() => {
-        if (!autocomplete) return;
-
-        const listener = autocomplete.addListener('place_changed', () => {
-            const place = autocomplete.getPlace();
-            const position = place.geometry?.location;
-
-            if (position) {
-                onPlaceSelect(
-                    { lat: position.lat(), lng: position.lng() },
-                    inputRef.current?.value || ''
-                );
-            }
-        });
+        widget.addEventListener('input', handleInput);
+        widget.addEventListener('gmp-select', handleSelection);
 
         return () => {
-            google.maps.event.removeListener(listener);
+            widget.removeEventListener('input', handleInput);
+            widget.removeEventListener('gmp-select', handleSelection);
+            widget.remove();
+            widgetRef.current = null;
         };
-    }, [autocomplete, onPlaceSelect]);
+    }, [onPlaceSelect, places]);
 
     const handleClear = () => {
         setInputValue('');
         onPlaceSelect(null, '');
-        if (inputRef.current) inputRef.current.focus();
+        if (widgetRef.current) {
+            widgetRef.current.value = '';
+            widgetRef.current.focus();
+        } else {
+            loadingInputRef.current?.focus();
+        }
+    };
+
+    const setSearchValue = (value: string) => {
+        setInputValue(value);
+        if (widgetRef.current) widgetRef.current.value = value;
     };
 
     const handleCurrentLocation = () => {
@@ -85,120 +161,95 @@ function PlaceAutocompleteSDK({ onPlaceSelect }: Pick<Props, 'onPlaceSelect'>) {
         }
 
         setIsLoadingLocation(true);
-
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const lat = position.coords.latitude;
                 const lng = position.coords.longitude;
-
-                if (geocodingLib) {
-                    const geocoder = new geocodingLib.Geocoder();
-                    geocoder.geocode(
-                        { location: { lat, lng } },
-                        (results: Array<{ formatted_address: string }> | null, status: string) => {
-                            if (status === 'OK' && results && results[0]) {
-                                const address = results[0].formatted_address;
-                                setInputValue(address);
-                                onPlaceSelect({ lat, lng }, address);
-                            } else {
-                                const fallbackText = `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
-                                setInputValue(fallbackText);
-                                onPlaceSelect({ lat, lng }, fallbackText);
-                            }
-                            setIsLoadingLocation(false);
-                        }
-                    );
-                } else {
-                    const fallbackText = `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
-                    setInputValue(fallbackText);
-                    onPlaceSelect({ lat, lng }, fallbackText);
+                const applyCurrentLocation = (address: string) => {
+                    setSearchValue(address);
+                    onPlaceSelect({ lat, lng }, address);
                     setIsLoadingLocation(false);
+                };
+
+                if (!geocodingLib) {
+                    applyCurrentLocation(`${lat.toFixed(4)}, ${lng.toFixed(4)}`);
+                    return;
                 }
+
+                const geocoder = new geocodingLib.Geocoder();
+                geocoder.geocode(
+                    { location: { lat, lng } },
+                    (results: Array<{ formatted_address: string }> | null, status: string) => {
+                        const address = status === 'OK' && results?.[0]
+                            ? results[0].formatted_address
+                            : `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
+                        applyCurrentLocation(address);
+                    },
+                );
             },
             (error) => {
                 console.error('Error getting location:', error);
                 setLocationError('Unable to retrieve your location. Check your browser permissions and try again.');
                 setIsLoadingLocation(false);
-            }
+            },
         );
     };
 
     return (
         <div className="w-full">
-        <div className="relative w-full shadow-sm hover:shadow-md transition-shadow duration-300 rounded-xl">
-            <input
-                ref={inputRef}
-                type="text"
-                aria-label="Search by location"
-                placeholder="Search by city, zip, or street..."
-                className="w-full pl-11 pr-24 py-3 bg-white border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/5 focus:border-primary/20 text-sm font-medium text-primary placeholder:text-primary/30 transition-all"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-            />
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/30">
-                <svg aria-hidden="true" className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-            </div>
+            <div className="flex w-full items-center gap-2">
+                <div className="relative min-h-12 min-w-0 flex-1 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                    {!places ? (
+                        <>
+                            <input
+                                ref={loadingInputRef}
+                                type="text"
+                                aria-label="Search by location"
+                                placeholder="Search by city, zip, or street..."
+                                className="w-full pl-11 pr-12 py-3 bg-white border border-primary/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/5 focus:border-primary/20 text-sm font-medium text-primary placeholder:text-primary/30 transition-all"
+                                value={inputValue}
+                                onChange={(event) => setInputValue(event.target.value)}
+                            />
+                            <div className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-primary/30">
+                                <SearchIcon />
+                            </div>
+                        </>
+                    ) : (
+                        <div ref={widgetHostRef} className="w-full min-h-12" />
+                    )}
 
-            <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 bg-white/50 backdrop-blur-sm p-1 rounded-lg">
-                {inputValue && (
-                    <button
-                        type="button"
-                        onClick={handleClear}
-                        aria-label="Clear location search"
-                        className="min-h-11 min-w-11 p-1.5 inline-flex items-center justify-center text-primary/70 hover:text-red-700 hover:bg-red-50 rounded-lg transition-all"
-                        title="Clear search"
-                    >
-                        <svg aria-hidden="true" className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-                    </button>
-                )}
-
-                {inputValue && <div className="w-px h-3 bg-primary/10 mx-0.5"></div>}
-
+                    {inputValue && (
+                        <button
+                            type="button"
+                            onClick={handleClear}
+                            aria-label="Clear location search"
+                            className="absolute right-1 top-1/2 min-h-11 min-w-11 -translate-y-1/2 items-center justify-center text-primary/70 hover:text-red-700 hover:bg-red-50 rounded-lg transition-all"
+                            style={{ display: places ? 'none' : 'inline-flex' }}
+                        >
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    )}
+                </div>
                 <button
                     type="button"
                     onClick={handleCurrentLocation}
                     aria-label="Use my current location"
                     aria-disabled={isLoadingLocation}
                     aria-busy={isLoadingLocation}
-                    className={`group min-h-11 min-w-11 flex items-center justify-center gap-2 px-2 py-1.5 rounded-lg transition-all text-[10px] font-black uppercase tracking-wider ${isLoadingLocation
-                            ? 'bg-primary/5 text-primary'
-                            : 'hover:bg-accent-ink hover:text-white text-primary/80'
-                        }`}
-                    title="Use my current location"
+                    className="min-h-11 min-w-11 shrink-0 inline-flex items-center justify-center rounded-xl bg-white text-primary/80 shadow-sm hover:bg-accent-ink hover:text-white transition-all"
                 >
-                    {isLoadingLocation ? (
-                        <>
-                            <svg aria-hidden="true" className="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24">
-                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            <span>Locating...</span>
-                        </>
-                    ) : (
-                        <>
-                            <svg aria-hidden="true" className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            <span className="hidden group-hover:inline">Use GPS</span>
-                        </>
-                    )}
+                    <span aria-hidden="true">{isLoadingLocation ? '…' : '◎'}</span>
                 </button>
             </div>
-        </div>
-        {locationError && (
-            <p role="alert" className="mt-2 text-xs font-bold text-red-700">
-                {locationError}
-            </p>
-        )}
+            {locationError && (
+                <p role="alert" className="mt-2 text-xs font-bold text-red-700">
+                    {locationError}
+                </p>
+            )}
         </div>
     );
 }
 
-// Wrapper: mounts SDK-free fallback OR full SDK component based on API health
 export default function PlaceAutocomplete({ onPlaceSelect, apiError = false }: Props) {
     if (apiError) return <PlaceAutocompleteFallback />;
     return <PlaceAutocompleteSDK onPlaceSelect={onPlaceSelect} />;

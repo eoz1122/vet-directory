@@ -33,6 +33,17 @@ describe('filterDisplayableVets', () => {
         expect(filterDisplayableVets(vets)).toHaveLength(2);
     });
 
+    it('keeps canonical aliases in the audit data but removes them from public results', () => {
+        const canonical = makeVet('a', 'Verified');
+        const alias = {
+            ...makeVet('b', 'Verified'),
+            canonical_listing_id: canonical.id,
+        };
+
+        expect(filterDisplayableVets([canonical, alias]).map((vet) => vet.id)).toEqual(['a']);
+        expect(alias.verification.status).toBe('Verified');
+    });
+
     it('returns an empty array for an empty input', () => {
         expect(filterDisplayableVets([])).toEqual([]);
     });

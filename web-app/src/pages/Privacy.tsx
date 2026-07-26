@@ -19,7 +19,9 @@ export default function Privacy() {
             <Header />
 
             <main className="max-w-3xl mx-auto break-words p-6 md:p-12">
-                <h1 className="text-4xl font-bold text-primary mb-8">Datenschutzerklärung / Privacy Policy</h1>
+                <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-8 leading-tight">
+                    <span lang="de">Datenschutzerklärung</span> / Privacy Policy
+                </h1>
 
                 <div className="prose prose-stone max-w-none text-primary/90 space-y-8">
 

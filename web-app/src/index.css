@@ -35,6 +35,13 @@
 }
 
 @layer utilities {
+  :where(main, header) a.text-accent {
+    color: var(--color-accent-ink);
+  }
+
+  :where(main, header) a.hover\:text-accent:hover {
+    color: var(--color-accent-ink);
+  }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

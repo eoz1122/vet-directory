@@ -7,8 +7,10 @@ import { filterDisplayableVets } from '../utils/activeVets';
 import { slugify } from '../utils/url';
 import { generateArticleSchema } from '../utils/schema';
 import type { Vet } from '../types/vet';
+import { getVetDirectoryCounts } from '../utils/vetDirectoryStats';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
+const directoryCounts = getVetDirectoryCounts(vetsData as Vet[]);
 
 const TITLE = "Mapping English-Speaking Vets Across Germany (2026)";
 const DESCRIPTION = "A snapshot of our community directory's coverage of English-speaking veterinary practices in Germany: how many we have mapped, where coverage is strongest, and which cities we are still expanding into.";
@@ -80,16 +82,16 @@ export default function VetAccessReport() {
                 </div>
 
                 <p className="text-lg text-primary/70 mb-10 leading-relaxed">
-                    For Germany's millions of internationals, a language barrier at the vet can turn a stressful moment into a frightening one. We have been mapping the practices our community confirms as English-speaking. Here is where that map stands today, and where we are still filling it in.
+                    The directory currently contains {directoryCounts.mapped} mapped practices, including {directoryCounts.communityVerified} community-verified listings. Mapped means a public listing is available; community verified means its English-language evidence has also been confirmed by our community.
                 </p>
 
                 {/* Headline stats */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-10 not-prose">
                     {[
-                        { n: s.total, l: 'Practices mapped' },
+                        { n: directoryCounts.mapped, l: 'Practices mapped' },
+                        { n: directoryCounts.communityVerified, l: 'Community verified' },
                         { n: s.cityCount, l: 'Cities so far' },
                         { n: s.districtCount, l: 'Districts mapped' },
-                        { n: `${s.withSitePct}%`, l: 'With a website' },
                     ].map((x) => (
                         <div key={x.l} className="bg-white p-6 rounded-2xl border border-primary/5 shadow-sm text-center">
                             <div className="text-3xl md:text-4xl font-black text-accent">{x.n}</div>

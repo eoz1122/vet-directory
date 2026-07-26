@@ -19,6 +19,7 @@ describe('BlogSidebar', () => {
             '/blog/dog-liability-insurance-germany',
         );
         expect(currentGuide.className).toMatch(/bg-accent/);
+        expect(currentGuide.className).toContain('min-h-11');
         expect(screen.queryByText('Live Sync')).toBeNull();
     });
 });

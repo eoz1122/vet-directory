@@ -40,8 +40,8 @@ export default function BlogSidebar() {
                                 <Link
                                     key={post.url}
                                     to={post.url}
-                                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${isActive
-                                        ? 'bg-accent/10 text-accent'
+                                    className={`min-h-11 flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${isActive
+                                        ? 'bg-accent/10 text-accent-ink'
                                         : 'text-primary/70 hover:bg-secondary hover:text-primary'
                                         }`}
                                 >

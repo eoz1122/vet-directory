@@ -60,6 +60,16 @@ describe('DistrictVets search and trust contract', () => {
         ).toContain('Prenzlauer Berg, Berlin');
     });
 
+    it('keeps the evidence-rich district detail in a collapsed mobile disclosure', () => {
+        renderDistrict('/vets/frankfurt/bockenheim');
+
+        const disclosure = screen.getByText('More about vet care in Bockenheim')
+            .closest('details');
+        expect(disclosure).toBeTruthy();
+        expect(disclosure?.hasAttribute('open')).toBe(false);
+        expect(disclosure?.className).toContain('md:hidden');
+    });
+
     it('does not describe every listed practice as verified', () => {
         renderDistrict('/vets/hamburg/bramfeld');
 

@@ -15,6 +15,8 @@ import { CityDirectoryLinks } from '../components/vet/CityDirectoryLinks';
 import ReportIssueDialog from '../components/vet/ReportIssueDialog';
 import { Pagination } from '../components/ui/Pagination';
 import { useGoogleMapsActivation } from '../hooks/useGoogleMapsActivation';
+import MapLoadingState from '../components/MapLoadingState';
+import { getVetDirectoryCounts } from '../utils/vetDirectoryStats';
 
 // Lazy load the Map component to reduce initial bundle size causing TBT
 const AppMap = lazy(() => import('../components/Map'));
@@ -22,11 +24,11 @@ const GoogleMapsProvider = lazy(() => import('../components/GoogleMapsProvider')
 
 // Cast the JSON data to our Vet type
 const vets = filterDisplayableVets(vetsData as Vet[]);
+const directoryCounts = getVetDirectoryCounts(vetsData as Vet[]);
 const ITEMS_PER_PAGE = 10;
 const HOME_TITLE = 'English-Speaking Vets in Germany | Find Local Care';
 const HOME_DESCRIPTION = 'Find community-verified English-speaking vets in Germany. Browse local practices in Berlin, Hamburg, Munich, Frankfurt, Cologne and 30+ cities.';
 const verifiedVets = vets.filter((vet) => vet.community_status === 'Verified');
-const verifiedCityCount = new Set(verifiedVets.map((vet) => vet.city)).size;
 const cityDirectoryNames = Array.from(new Set(verifiedVets.map((vet) => vet.city)))
     .sort((left, right) => left.localeCompare(right, 'en'));
 const popularCities = [
@@ -218,7 +220,7 @@ const Home: React.FC = () => {
                         </h1>
 
                         <p className="text-sm md:text-base text-primary/80 font-medium leading-relaxed max-w-[95%]">
-                            Browse {verifiedVets.length} community-verified practices across {verifiedCityCount} German cities. Confirm English availability when booking.{' '}
+                            Browse {directoryCounts.communityVerified} community-verified practices across {directoryCounts.cities} German cities. Confirm English availability when booking.{' '}
                             <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
                                 How we verify listings
                             </Link>
@@ -337,7 +339,9 @@ const Home: React.FC = () => {
                 </main>
 
                 <div className="hidden md:block md:w-[58%] lg:w-[60%] h-screen relative bg-secondary/10">
-                    {!desktopMapVisible ? null : mapApiError ? (
+                    {!desktopMapVisible ? null : !mapFeaturesEnabled ? (
+                        <MapLoadingState />
+                    ) : mapApiError ? (
                         <div className="h-full w-full flex flex-col items-center justify-center gap-6 bg-secondary/30 p-12">
                             <div className="w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center">
                                 <svg className="w-10 h-10 text-primary/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -347,7 +351,7 @@ const Home: React.FC = () => {
                             <div className="text-center max-w-xs">
                                 <h3 className="font-black text-primary text-lg mb-2">Map unavailable</h3>
                                 <p className="text-sm text-primary/80 leading-relaxed">
-                                    The interactive map couldn't load. Use the list on the left to browse all {vets.length} verified vets - it has everything you need.
+                                    The interactive map couldn't load. Use the list on the left to browse all {vets.length} mapped practices.
                                 </p>
                             </div>
                             <a
@@ -360,7 +364,7 @@ const Home: React.FC = () => {
                             </a>
                         </div>
                     ) : (
-                        <Suspense fallback={<div className="h-full w-full flex items-center justify-center text-primary/80 font-bold uppercase tracking-widest text-sm">Loading Map...</div>}>
+                        <Suspense fallback={<MapLoadingState />}>
                             <AppMap vets={sortedVets} selectedCity={selectedCity} selectedVet={selectedVet} onSelectVet={setSelectedVet} />
                         </Suspense>
                     )}

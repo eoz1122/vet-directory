@@ -2,9 +2,12 @@ import type { Vet } from '../types/vet';
 
 /**
  * Single source of truth for which vets are shown to users.
- * Practices marked "Permanently Closed" stay in vets.json as an audit trail
- * (community reports mark them closed) but must never render in the directory.
+ * Closed practices and canonical aliases stay in vets.json as an audit trail,
+ * but must never render as separate public listings.
  */
 export function filterDisplayableVets(vets: Vet[]): Vet[] {
-    return vets.filter((v) => v.verification?.status !== 'Permanently Closed');
+    return vets.filter(
+        (vet) => vet.verification?.status !== 'Permanently Closed'
+            && !vet.canonical_listing_id,
+    );
 }

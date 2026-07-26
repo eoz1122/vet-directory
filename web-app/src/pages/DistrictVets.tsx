@@ -279,6 +279,7 @@ export default function DistrictVets() {
     const content = count > 0
         ? listingContent
         : DISTRICT_CONTENT[districtSpace] || listingContent;
+    const [introParagraph, ...detailParagraphs] = content.content.split(/\n\s*\n/);
     const canonicalUrl = `https://englishspeakinggermany.online/vets/${cityKey}/${districtSlug}`;
     const collectionLd = generateDistrictCollectionSchema(
         districtVetsAll,
@@ -361,8 +362,27 @@ export default function DistrictVets() {
                         {content.title}
                     </h1>
 
-                    <div className="prose prose-lg max-w-none text-primary/80 space-y-4 whitespace-pre-wrap">
-                        {content.content}
+                    <div className="prose prose-lg max-w-none text-primary/80">
+                        <p>{introParagraph}</p>
+                        {detailParagraphs.length > 0 && (
+                            <>
+                                <details className="group mt-4 md:hidden">
+                                    <summary className="min-h-11 cursor-pointer font-bold text-accent-ink inline-flex items-center">
+                                        More about vet care in {districtDisplay}
+                                    </summary>
+                                    <div className="space-y-4 pt-3">
+                                        {detailParagraphs.map((paragraph) => (
+                                            <p key={paragraph}>{paragraph}</p>
+                                        ))}
+                                    </div>
+                                </details>
+                                <div className="hidden md:block space-y-4 mt-4">
+                                    {detailParagraphs.map((paragraph) => (
+                                        <p key={paragraph}>{paragraph}</p>
+                                    ))}
+                                </div>
+                            </>
+                        )}
                     </div>
 
                     <div className="mt-8 flex flex-col md:flex-row gap-4">

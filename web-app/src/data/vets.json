@@ -1921,7 +1921,7 @@
   },
   {
     "id": "Frankfurt-51",
-    "practice_name": "AniCura Kleintierzentrum (Juliusstraße)",
+    "practice_name": "AniCura Frankfurt (formerly Tierklinik Frankfurt Bockenheim)",
     "city": "Frankfurt",
     "district": "Bockenheim",
     "address": "Juliusstraße 12, 60487 Frankfurt",
@@ -1930,15 +1930,21 @@
       "lng": 8.6448043
     },
     "contact": {
-      "phone": "",
-      "website": "https://www.anicura.de/standorte/frankfurt/",
+      "phone": "+49 69 97074955",
+      "website": "https://www.anicura.de/standorte/tierklinik-frankfurt/",
       "google_maps": null
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-26",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Community Verified"
+        "A Frankfurt community recommendation says everyone at Tierklinik Frankfurt Bockenheim speaks English; confirm current English availability when booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.anicura.de/en/our-clinics/tierklinik-frankfurt/kontakt/",
+        "https://www.tierklinik-bockenheim.de/",
+        "https://www.reddit.com/r/frankfurt/comments/yk1vzs/"
       ],
       "emergency_services": ""
     },
@@ -2023,7 +2029,7 @@
     "id": "Frankfurt-55",
     "practice_name": "Tierarztpraxis Sachsenhausen (Dr. Jan Kullen / Dr. Elena Panova)",
     "city": "Frankfurt",
-    "district": "Dr. Jan Kullen / Dr. Elena Panova",
+    "district": "Sachsenhausen-Nord",
     "address": "Textorstraße 93, 60596 Frankfurt am Main",
     "coordinates": {
       "lat": 50.0995779,
@@ -2046,6 +2052,7 @@
   },
   {
     "id": "Frankfurt-56",
+    "canonical_listing_id": "Frankfurt-51",
     "practice_name": "Kleintierklinik Frankfurt Bockenheim",
     "city": "Frankfurt",
     "district": "Bockenheim",
@@ -2103,8 +2110,8 @@
     "id": "Frankfurt-58",
     "practice_name": "Tierarztpraxis Bornheim (Dr. Katrin Witt)",
     "city": "Frankfurt",
-    "district": "Dr. Katrin Witt",
-    "address": "Heisterstraße 1, 60385 Frankfurt am Main",
+    "district": "Sachsenhausen-Nord",
+    "address": "Heisterstraße 1, 60594 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1036973,
       "lng": 8.696417
@@ -2153,22 +2160,25 @@
     "id": "Frankfurt-60",
     "practice_name": "Tierklinik Kalbach (Kleintierklinik am Nordpark)",
     "city": "Frankfurt",
-    "district": "Am Nordpark 10), 60437 Frankfurt am Main",
-    "address": "Max-Holder-Straße 4 (Am Nordpark 10), 60437 Frankfurt am Main",
+    "district": "Kalbach-Riedberg",
+    "address": "Max-Holder-Straße 37, 60437 Frankfurt am Main",
     "coordinates": {
       "lat": 50.18973,
       "lng": 8.6509635
     },
     "contact": {
-      "phone": "",
+      "phone": "+49 69 300651550",
       "website": "https://tierklinik-kalbach.de/",
       "google_maps": null
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
         "Verified English Support"
+      ],
+      "source_urls": [
+        "https://www.tierklinik-kalbach.de/kontakt"
       ],
       "emergency_services": "24/7"
     },
