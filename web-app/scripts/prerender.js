@@ -16,6 +16,7 @@ import {
     canonicalForRoute,
     extractBlogRoutes,
     PRERENDER_FALLBACK_SELECTOR,
+    renderPrerenderRoutes,
     resolveGuideCatalogPath,
     resolvePrerenderDistDir,
     shouldKeepModulePreload,
@@ -179,11 +180,7 @@ async function prerender() {
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
     });
 
-    let rendered = 0;
-    let failed = 0;
-
-    // Process routes in batches
-    async function renderRoute(route) {
+    async function renderRouteAttempt(route) {
         const page = await browser.newPage();
         try {
             const url = `http://localhost:${PREVIEW_PORT}${route}`;
@@ -287,23 +284,36 @@ async function prerender() {
             fs.mkdirSync(outputDir, { recursive: true });
             fs.writeFileSync(outputPath, html);
 
-            rendered++;
-            if (rendered % 20 === 0 || rendered === routes.length) {
-                console.log(`  ✅ Progress: ${rendered}/${routes.length} rendered`);
-            }
-        } catch (err) {
-            failed++;
-            console.error(`  ❌ Failed: ${route} — ${err.message}`);
         } finally {
             await page.close();
         }
     }
 
-    // Process in batches of CONCURRENCY
-    for (let i = 0; i < routes.length; i += CONCURRENCY) {
-        const batch = routes.slice(i, i + CONCURRENCY);
-        await Promise.all(batch.map(renderRoute));
-    }
+    const { rendered, failed } = await renderPrerenderRoutes(
+        routes,
+        renderRouteAttempt,
+        {
+            concurrency: CONCURRENCY,
+            onAttemptFailure: ({ error, route, willRetry }) => {
+                const message = error instanceof Error ? error.message : String(error);
+                if (willRetry) {
+                    console.warn(`  ⚠️ Queued retry: ${route} - ${message}`);
+                    return;
+                }
+                console.error(`  ❌ Failed after retry: ${route} - ${message}`);
+            },
+            onRetryQueue: ({ routes: failedRoutes }) => {
+                console.warn(
+                    `\n  ⚠️ Retrying ${failedRoutes.length} failed route(s) sequentially...\n`,
+                );
+            },
+            onSuccess: ({ rendered: renderedCount }) => {
+                if (renderedCount % 20 === 0 || renderedCount === routes.length) {
+                    console.log(`  ✅ Progress: ${renderedCount}/${routes.length} rendered`);
+                }
+            },
+        },
+    );
 
     await browser.close();
     server.close();

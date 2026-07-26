@@ -77,6 +77,10 @@ fi
 echo "🔔 Submitting URLs to IndexNow..."
 node web-app/scripts/indexnow-submit.js || echo "IndexNow submit skipped (non-fatal)"
 
+# 9. Record success only after the build, copy and live health check complete.
+echo "📝 Recording successful deployment..."
+bash deploy/record-deploy-success.sh
+
 echo ""
 echo "🎉 Deployment complete!"
 echo "   Next: check Google Search Console and request indexing for key pages."

@@ -4,6 +4,7 @@ import {
     canonicalForRoute,
     extractBlogRoutes,
     removePrerenderFallbackMetadata,
+    renderPrerenderRoutes,
     resolvePrerenderDistDir,
     resolveGuideCatalogPath,
     shouldKeepModulePreload,
@@ -29,6 +30,55 @@ describe('prerender readiness', () => {
         expect(() => assertPrerenderComplete({ rendered: 1, failed: 0, total: 2 })).toThrow(
             'Pre-render incomplete: 1/2 rendered, 0 failed',
         );
+    });
+
+    it('queues failed routes until the initial pass completes, then retries them sequentially', async () => {
+        const events = [];
+        const renderRoute = vi.fn(async (route, { attempt }) => {
+            events.push(`${route}:${attempt}`);
+            if (attempt === 1 && route !== '/healthy') {
+                throw new Error(`${route} readiness timeout`);
+            }
+        });
+
+        const result = await renderPrerenderRoutes(
+            ['/first-failure', '/second-failure', '/healthy'],
+            renderRoute,
+            { concurrency: 2 },
+        );
+
+        expect(events).toEqual([
+            '/first-failure:1',
+            '/second-failure:1',
+            '/healthy:1',
+            '/first-failure:2',
+            '/second-failure:2',
+        ]);
+        expect(result).toEqual({ failed: 0, failedRoutes: [], rendered: 3 });
+    });
+
+    it('reports a route that still fails during the sequential retry', async () => {
+        const renderRoute = vi.fn(async (route) => {
+            if (route === '/persistent-failure') {
+                throw new Error('route readiness timeout');
+            }
+        });
+
+        const result = await renderPrerenderRoutes(
+            ['/healthy', '/persistent-failure'],
+            renderRoute,
+            { concurrency: 2 },
+        );
+
+        expect(result.rendered).toBe(1);
+        expect(result.failed).toBe(1);
+        expect(result.failedRoutes).toEqual([
+            {
+                error: expect.objectContaining({ message: 'route readiness timeout' }),
+                route: '/persistent-failure',
+            },
+        ]);
+        expect(renderRoute).toHaveBeenCalledTimes(3);
     });
 
     it('supports an isolated output directory for verification', () => {
