@@ -105,8 +105,8 @@ describe('CityVets search and trust contract', () => {
                 .map((entry: { acceptedAnswer: { text: string } }) => entry.acceptedAnswer.text)
                 .join(' ');
 
-            expect(answers).toContain('2 have official website confirmation');
-            expect(answers).toContain('30 are community-confirmed');
+            expect(answers).toContain('3 have official website confirmation');
+            expect(answers).toContain('29 are community-confirmed');
             expect(answers).not.toContain('community-Verified');
             expect(answers).not.toContain('Every listed vet has been confirmed');
         });

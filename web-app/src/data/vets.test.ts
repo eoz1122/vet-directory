@@ -361,6 +361,69 @@ const expectedReverifiedMajorCityPractices = [
     },
 ] as const;
 
+const expectedReverifiedFiluPractices = [
+    {
+        id: 'Frankfurt-46',
+        city: 'Frankfurt',
+        district: 'Nordend',
+        address: 'Weberstraße 59, 60318 Frankfurt am Main',
+        phone: '+49 69 34879730',
+        website: 'https://www.filu.vet/en/standorte/frankfurt',
+        sourceUrl: 'https://www.filu.vet/en/standorte/frankfurt',
+        emergencyServices: '',
+    },
+    {
+        id: 'Hamburg-69',
+        city: 'Hamburg',
+        district: 'Winterhude',
+        address: 'Winterhuder Weg 116, 22085 Hamburg',
+        phone: '+49 40 80805999',
+        website: 'https://www.filu.vet/en/standorte/hamburg',
+        sourceUrl: 'https://www.filu.vet/en/standorte/hamburg',
+        emergencyServices: 'Saturday emergency consultation hours 10:00-18:00',
+    },
+    {
+        id: 'Munich-141',
+        city: 'Munich',
+        district: 'Schwabing',
+        address: 'Schleißheimer Straße 141, 80797 München',
+        phone: '+49 89 38038398',
+        website: 'https://www.filu.vet/en/standorte/schwabing',
+        sourceUrl: 'https://www.filu.vet/en/standorte/schwabing',
+        emergencyServices: 'Saturday emergency consultation hours 12:00-18:00',
+    },
+    {
+        id: 'Munich-Filu-Theresienwiese',
+        city: 'Munich',
+        district: 'Ludwigsvorstadt',
+        address: 'Paul-Heyse-Straße 28, 80336 München',
+        phone: '+49 89 12086780',
+        website: 'https://www.filu.vet/en/standorte/theresienwiese',
+        sourceUrl: 'https://www.filu.vet/en/standorte/theresienwiese',
+        emergencyServices: 'Saturday emergency consultation hours 12:00-18:00',
+    },
+    {
+        id: 'Duesseldorf-Filu',
+        city: 'Düsseldorf',
+        district: 'Pempelfort',
+        address: 'Duisburger Straße 32, 40477 Düsseldorf',
+        phone: '+49 211 41873373',
+        website: 'https://www.filu.vet/en/standorte/dusseldorf',
+        sourceUrl: 'https://www.filu.vet/en/standorte/dusseldorf',
+        emergencyServices: 'Saturday emergency consultation hours 10:00-18:00',
+    },
+    {
+        id: 'Cologne-Filu',
+        city: 'Cologne',
+        district: 'Neustadt-Süd',
+        address: 'Pilgrimstraße 6, 50674 Köln',
+        phone: '+49 221 58609808',
+        website: 'https://www.filu.vet/en/standorte/koeln',
+        sourceUrl: 'https://www.filu.vet/en/standorte/koeln',
+        emergencyServices: 'Saturday emergency consultation hours 10:00-18:00',
+    },
+] as const;
+
 describe('verified Leipzig English-speaking practices', () => {
     it.each(expectedLeipzigPractices)(
         'keeps $id backed by first-party language evidence',
@@ -497,6 +560,36 @@ describe('reverified existing practice records', () => {
             expect(practice?.verification.evidence_type).toBe('official_website');
             expect(practice?.verification.english_signals.length).toBeGreaterThan(0);
             expect(practice?.verification.source_urls).toContain(sourceUrl);
+            expect(practice?.verification.last_scanned).toBe('2026-07-26');
+        },
+    );
+
+    it.each(expectedReverifiedFiluPractices)(
+        'uses current filu language evidence and location details for $id',
+        ({
+            id,
+            city,
+            district,
+            address,
+            phone,
+            website,
+            sourceUrl,
+            emergencyServices,
+        }) => {
+            const practice = vetsData.find((vet) => vet.id === id);
+
+            expect(practice).toBeDefined();
+            expect(practice?.city).toBe(city);
+            expect(practice?.district).toBe(district);
+            expect(practice?.address).toBe(address);
+            expect(practice?.contact.phone).toBe(phone);
+            expect(practice?.contact.website).toBe(website);
+            expect(practice?.community_status).toBe('Verified');
+            expect(practice?.verification.status).toBe('Verified');
+            expect(practice?.verification.evidence_type).toBe('official_website');
+            expect(practice?.verification.english_signals.length).toBeGreaterThan(0);
+            expect(practice?.verification.source_urls).toContain(sourceUrl);
+            expect(practice?.verification.emergency_services).toBe(emergencyServices);
             expect(practice?.verification.last_scanned).toBe('2026-07-26');
         },
     );

@@ -1774,7 +1774,7 @@
   },
   {
     "id": "Frankfurt-46",
-    "practice_name": "Filu Vet Nordend",
+    "practice_name": "filu Veterinary Frankfurt Nordend",
     "city": "Frankfurt",
     "district": "Nordend",
     "address": "Weberstraße 59, 60318 Frankfurt am Main",
@@ -1783,15 +1783,19 @@
       "lng": 8.6865236
     },
     "contact": {
-      "phone": "",
-      "website": "https://www.filu.vet",
-      "google_maps": null
+      "phone": "+49 69 34879730",
+      "website": "https://www.filu.vet/en/standorte/frankfurt",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20Frankfurt%20Nordend%20Weberstra%C3%9Fe%2059%2C%2060318%20Frankfurt%20am%20Main"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support"
+        "The current filu Frankfurt Nordend location FAQ explicitly states that the team speaks German and English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.filu.vet/en/standorte/frankfurt"
       ],
       "emergency_services": ""
     },
@@ -2847,26 +2851,30 @@
   },
   {
     "id": "Hamburg-69",
-    "practice_name": "filu Tierarztpraxis Winterhude",
+    "practice_name": "filu Veterinary Hamburg Winterhuder Weg",
     "city": "Hamburg",
     "district": "Winterhude",
-    "address": "Mühlenkamp 21A, 22303 Hamburg",
+    "address": "Winterhuder Weg 116, 22085 Hamburg",
     "coordinates": {
-      "lat": 53.5808087,
-      "lng": 10.0112803
+      "lat": 53.5769749,
+      "lng": 10.0196376
     },
     "contact": {
-      "phone": "",
-      "website": "https://filu.vet/hamburg/winterhude",
-      "google_maps": null
+      "phone": "+49 40 80805999",
+      "website": "https://www.filu.vet/en/standorte/hamburg",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20Hamburg%20Winterhuder%20Weg%20116%2C%2022085%20Hamburg"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support"
+        "The current filu Hamburg Winterhuder Weg location FAQ explicitly states that the team speaks German and English"
       ],
-      "emergency_services": ""
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.filu.vet/en/standorte/hamburg"
+      ],
+      "emergency_services": "Saturday emergency consultation hours 10:00-18:00"
     },
     "community_status": "Verified"
   },
@@ -3877,26 +3885,30 @@
   },
   {
     "id": "Munich-141",
-    "practice_name": "filu Tierarztpraxis Schwabing - Allgemein- und Notfallmedizin",
+    "practice_name": "filu Veterinary Munich Schwabing",
     "city": "Munich",
-    "district": "Munich",
-    "address": "Schleißheimer Str. 141 80797 München",
+    "district": "Schwabing",
+    "address": "Schleißheimer Straße 141, 80797 München",
     "coordinates": {
       "lat": 48.1642872,
       "lng": 11.5640235
     },
     "contact": {
-      "phone": "089 38038398",
-      "website": "https://www.filu.vet/standorte/schwabing?utm_source=google&utm_medium=gmb",
+      "phone": "+49 89 38038398",
+      "website": "https://www.filu.vet/en/standorte/schwabing",
       "google_maps": "https://www.google.com/maps/place/filu+Tierarztpraxis+Schwabing+-+Allgemein-+und+Notfallmedizin/data=!4m7!3m6!1s0x479e7501c09e3a33:0xfebf02047afa012!8m2!3d48.1642872!4d11.5640235!16s%2Fg%2F11vrdl2wsm!19sChIJMzqewAF1nkcREqCvRyDw6w8?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-27",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Source Snippet: '...they all speak english and are very welcoming....'"
+        "The current filu Munich Schwabing location FAQ explicitly states that the team speaks German and English"
       ],
-      "emergency_services": ""
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.filu.vet/en/standorte/schwabing"
+      ],
+      "emergency_services": "Saturday emergency consultation hours 12:00-18:00"
     },
     "community_status": "Verified"
   },
@@ -6074,26 +6086,30 @@
   },
   {
     "id": "Munich-Filu-Theresienwiese",
-    "practice_name": "Filu Tierarztpraxis Theresienwiese (Ludwigsvorstadt)",
+    "practice_name": "filu Veterinary Munich Theresienwiese",
     "city": "Munich",
     "district": "Ludwigsvorstadt",
-    "address": "Lindwurmstraße 88, 80337 München",
+    "address": "Paul-Heyse-Straße 28, 80336 München",
     "coordinates": {
-      "lat": 48.1265,
-      "lng": 11.5517
+      "lat": 48.135641,
+      "lng": 11.5556037
     },
     "contact": {
-      "phone": "",
-      "website": "https://filu.vet",
-      "google_maps": "https://www.google.com/maps/search/?api=1&query=Filu+Tierarztpraxis+Theresienwiese"
+      "phone": "+49 89 12086780",
+      "website": "https://www.filu.vet/en/standorte/theresienwiese",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20Munich%20Theresienwiese%20Paul-Heyse-Stra%C3%9Fe%2028%2C%2080336%20M%C3%BCnchen"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2026-01-01",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Chain with verified English speaking staff"
+        "The current filu Munich Theresienwiese location FAQ explicitly states that the team speaks German and English"
       ],
-      "emergency_services": ""
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.filu.vet/en/standorte/theresienwiese"
+      ],
+      "emergency_services": "Saturday emergency consultation hours 12:00-18:00"
     },
     "community_status": "Verified"
   },
@@ -6330,7 +6346,7 @@
   },
   {
     "id": "Duesseldorf-Filu",
-    "practice_name": "filu Veterinary Düsseldorf",
+    "practice_name": "filu Veterinary Düsseldorf Pempelfort",
     "city": "Düsseldorf",
     "district": "Pempelfort",
     "address": "Duisburger Straße 32, 40477 Düsseldorf",
@@ -6340,16 +6356,20 @@
     },
     "contact": {
       "phone": "+49 211 41873373",
-      "website": "https://filu.vet",
+      "website": "https://www.filu.vet/en/standorte/dusseldorf",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20D%C3%BCsseldorf%20Duisburger%20Stra%C3%9Fe%2032%2C%2040477%20D%C3%BCsseldorf"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2026-06-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Practice website (English) confirms the team speaks German, English, Bulgarian and Chinese"
+        "The current filu Düsseldorf Pempelfort location FAQ explicitly states that the team speaks German, English, Bulgarian and Chinese"
       ],
-      "emergency_services": ""
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.filu.vet/en/standorte/dusseldorf"
+      ],
+      "emergency_services": "Saturday emergency consultation hours 10:00-18:00"
     },
     "community_status": "Verified"
   },
@@ -6365,16 +6385,20 @@
     },
     "contact": {
       "phone": "+49 221 58609808",
-      "website": "https://filu.vet",
+      "website": "https://www.filu.vet/en/standorte/koeln",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20Cologne%20Rudolfplatz%20Pilgrimstra%C3%9Fe%206%2C%2050674%20K%C3%B6ln"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2026-06-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Practice website (English) confirms the team at Rudolfplatz speaks German and English"
+        "The current filu Cologne Rudolfplatz location FAQ explicitly states that the team speaks German and English"
       ],
-      "emergency_services": ""
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.filu.vet/en/standorte/koeln"
+      ],
+      "emergency_services": "Saturday emergency consultation hours 10:00-18:00"
     },
     "community_status": "Verified"
   },
