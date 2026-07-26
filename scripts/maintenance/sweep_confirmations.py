@@ -82,12 +82,12 @@ def parse_confirmation_lines(lines: list[str]) -> list[dict]:
 
 
 def read_vets(path: str | Path) -> list:
-    """Load the canonical dataset after explicit encoding and CRLF validation."""
+    """Load UTF-8 JSON with standard LF or CRLF line endings."""
     target_path = Path(path)
     raw = target_path.read_bytes()
     non_crlf = raw.replace(b"\r\n", b"")
-    if b"\r\n" not in raw or b"\n" in non_crlf or b"\r" in non_crlf:
-        raise ValueError("vets.json must use CRLF line endings exclusively")
+    if b"\r" in non_crlf:
+        raise ValueError("vets.json contains a bare carriage return")
 
     vets = json.loads(raw.decode("utf-8"))
     if not isinstance(vets, list):

@@ -124,4 +124,38 @@ describe('generateDistrictContent', () => {
         expect(blob).not.toContain('community-confirmed');
         expect(blob).not.toContain('official website');
     });
+
+    it('does not label a mixed-evidence district as entirely community-sourced', () => {
+        const officialVet = mk({
+            practice_name: 'Official English Vet',
+            verification: {
+                status: 'Verified',
+                last_scanned: '2026-07-26',
+                english_signals: ['The practice states that its team speaks English'],
+                evidence_type: 'official_website',
+            },
+        });
+        const communityVet = mk({
+            id: 'y',
+            practice_name: 'Community English Vet',
+            verification: {
+                status: 'Verified',
+                last_scanned: '2026-07-26',
+                english_signals: ['Verified English Support'],
+            },
+        });
+
+        const c = generateDistrictContent(
+            'Tegel',
+            'Berlin',
+            [officialVet, communityVet],
+        );
+
+        expect(c.intro).toContain(
+            'We list 2 English-speaking veterinary practices in Tegel, Berlin',
+        );
+        expect(c.intro).not.toContain(
+            'We list 2 community-sourced veterinary practices',
+        );
+    });
 });

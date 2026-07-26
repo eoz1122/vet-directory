@@ -104,8 +104,11 @@ export function generateDistrictContent(
                 : '',
         ].filter(Boolean);
         const verifiedNote = evidenceNotes.length ? ` ${evidenceNotes.join('; ')}.` : '';
+        const coverageLabel = verifiedNames.length
+            ? 'English-speaking'
+            : 'community-sourced';
         paragraphs.push(
-            `We list ${count} community-sourced veterinary practices in ${district}, ${city}: ${lead}.${verifiedNote} ` +
+            `We list ${count} ${coverageLabel} veterinary practices in ${district}, ${city}: ${lead}.${verifiedNote} ` +
             `Review each listing's English-language evidence and confirm staff availability when booking.`,
         );
     }

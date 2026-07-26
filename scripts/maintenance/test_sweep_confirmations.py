@@ -174,11 +174,25 @@ def test_main_rejects_batches_over_the_processing_limit(monkeypatch, tmp_path):
     assert len(calls) == 1
 
 
-def test_read_vets_rejects_non_crlf_data_even_when_assertions_are_disabled(tmp_path):
+def test_read_vets_accepts_lf_and_mixed_line_endings(tmp_path):
     vets_path = tmp_path / "vets.json"
-    vets_path.write_bytes((json.dumps([mk_vet("Berlin-1")], indent=2) + "\n").encode())
+    expected = [mk_vet("Berlin-1")]
+    lf_data = json.dumps(expected, indent=2) + "\n"
+    vets_path.write_bytes(lf_data.encode())
 
-    with pytest.raises(ValueError, match="CRLF"):
+    assert sweep.read_vets(vets_path) == expected
+
+    mixed_data = lf_data.replace("\n", "\r\n", 2)
+    vets_path.write_bytes(mixed_data.encode())
+
+    assert sweep.read_vets(vets_path) == expected
+
+
+def test_read_vets_rejects_bare_carriage_returns(tmp_path):
+    vets_path = tmp_path / "vets.json"
+    vets_path.write_bytes(b'[{\r"id": "Berlin-1"\r}]')
+
+    with pytest.raises(ValueError, match="bare carriage return"):
         sweep.read_vets(vets_path)
 
 

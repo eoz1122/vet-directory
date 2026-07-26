@@ -252,24 +252,28 @@
   },
   {
     "id": "Berlin-11",
-    "practice_name": "Tierarztpraxis Peters",
+    "practice_name": "Tierarztpraxis Dr. Anja Peters",
     "city": "Berlin",
     "district": "Weißensee",
-    "address": "Lehderstraße 42, 13086 Berlin (Weißensee)",
+    "address": "Bizetstraße 48, 13088 Berlin",
     "coordinates": {
-      "lat": 52.5514741,
-      "lng": 13.437026
+      "lat": 52.5476902,
+      "lng": 13.4541602
     },
     "contact": {
-      "phone": "",
-      "website": "https://www.tierarztpraxis-peters-weissensee.de/",
-      "google_maps": "https://www.google.com/maps/place/Tierarztpraxis/data=!4m7!3m6!1s0x47a8503835ce73f9:0x45ad73e1b6d175a1!8m2!3d52.4921195!4d13.3651271!16s%2Fg%2F11mgn05v41!19sChIJ-XPONThQqEcRoXXRtuFzrUU?authuser=0&hl=en&rclk=1"
+      "phone": "+49 30 9273441",
+      "website": "https://www.tierarztpraxis-peters-weissensee.de/en/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Dr.%20Anja%20Peters%20Bizetstra%C3%9Fe%2048%2C%2013088%20Berlin"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support"
+        "The practice's current English page explicitly states that its team speaks German, English and Polish"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarztpraxis-peters-weissensee.de/en/"
       ],
       "emergency_services": ""
     },
@@ -286,17 +290,21 @@
       "lng": 13.3162955
     },
     "contact": {
-      "phone": "",
-      "website": "https://filu.vet/berlin/charlottenburg",
-      "google_maps": "https://www.google.com/maps/place/Dr.+Ulusal+veterinarian/data=!4m7!3m6!1s0x416521a502f61045:0xf80f1d3a889bfb9e!8m2!3d52.5554661!4d13.3836295!16s%2Fg%2F12lvkr1tc!19sChIJRRD2AqUhZUERnvubiDodD_g?authuser=0&hl=en&rclk=1"
+      "phone": "+49 30 75435727",
+      "website": "https://www.filu.vet/en/standorte/berlin",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20Olivaer%20Platz%2015%2C%2010707%20Berlin"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-26",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support"
+        "The practice's current location FAQ explicitly states that the Berlin Charlottenburg team speaks German and English"
       ],
-      "emergency_services": ""
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.filu.vet/en/standorte/berlin"
+      ],
+      "emergency_services": "Saturday emergency consultation hours 10:00-18:00"
     },
     "community_status": "Verified"
   },
@@ -1119,9 +1127,13 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-26",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support; Community Verified"
+        "The practice's current homepage explicitly states \"We speak English\""
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarztpraxis-sonnenallee.de/"
       ],
       "emergency_services": ""
     },
@@ -1294,12 +1306,15 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2026-07-03",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support",
-        "Community confirmation via site button (2026-07-03)"
+        "The mobile veterinarian's current English consultation page invites inquiries for examinations and treatments in English"
       ],
-      "emergency_services": ""
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://tierarzt-mobil-berlin.de/consultations-in-english/"
+      ],
+      "emergency_services": "Emergency home visits during published consultation availability; call immediately"
     },
     "community_status": "Verified"
   },
@@ -1530,7 +1545,7 @@
   },
   {
     "id": "Berlin-96",
-    "practice_name": "Veterinary practice Galina Schirow GmbH (Hansavet)",
+    "practice_name": "Tierärzteteam Hansavet",
     "city": "Berlin",
     "district": "Hansaviertel",
     "address": "Bartningallee 5, 10557 Berlin",
@@ -1539,16 +1554,19 @@
       "lng": 13.3427188
     },
     "contact": {
-      "phone": "030 39886966",
-      "website": "http://www.vetpraxis-schirow.de/",
-      "google_maps": "https://www.google.com/maps/place/Veterinary+practice+Galina+Schirow+GmbH/data=!4m7!3m6!1s0x47a851081855956d:0x502d097849852630!8m2!3d52.5190267!4d13.3427188!16s%2Fg%2F1q4knllr2!19sChIJbZVVGAhRqEcRMCaFSXgJLVA?authuser=0&hl=en&rclk=1"
+      "phone": "+49 30 39886966",
+      "website": "https://www.team-hansavet.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rzteteam%20Hansavet%20Bartningallee%205%2C%2010557%20Berlin"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-25",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Multilingual team (English, German, Russian); Review: 'A highly competent and caring team of veterinarians - perfect for internationals!'",
-        "Verified English Support"
+        "The practice's current website lists English among its service languages and offers appointment booking in English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.team-hansavet.de/"
       ],
       "emergency_services": ""
     },
@@ -7565,6 +7583,36 @@
         "https://www.tieraerztliche-klinik.de/wp-content/uploads/2025/01/NBV-Behandlungsvertrag01.01.25-Englisch.pdf"
       ],
       "emergency_services": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "berlin-tierarztpraxis-kiezfidel",
+    "practice_name": "Tierarztpraxis Kiezfidel",
+    "city": "Berlin",
+    "district": "Tegel",
+    "address": "Brunowstraße 39, 13507 Berlin",
+    "coordinates": {
+      "lat": 52.5870846,
+      "lng": 13.2811455
+    },
+    "contact": {
+      "phone": "+49 30 4343116",
+      "website": "https://www.tierarztpraxis-kiezfidel.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Kiezfidel%20Brunowstra%C3%9Fe%2039%2C%2013507%20Berlin"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-26",
+      "english_signals": [
+        "The practice's current website explicitly states that it speaks English and German"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarztpraxis-kiezfidel.de/",
+        "https://www.tierarztpraxis-kiezfidel.de/impressum"
+      ],
+      "emergency_services": "24/7 telephone availability and emergency house calls; practice visits by appointment"
     },
     "community_status": "Verified"
   },

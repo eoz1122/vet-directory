@@ -36,20 +36,21 @@ describe('CityVets search and trust contract', () => {
 
         await waitFor(() => {
             expect(document.title).toBe(
-                '63 English-Speaking Vets in Berlin | EnglishSpeakingVets',
+                '64 English-Speaking Vets in Berlin | EnglishSpeakingVets',
             );
         });
 
         expect(screen.getByRole('heading', {
             level: 1,
-            name: '63 English-Speaking Vets in Berlin',
+            name: '64 English-Speaking Vets in Berlin',
         })).toBeTruthy();
-        expect(screen.getByText(/We currently list 63 English-speaking veterinary practices in Berlin/i))
+        expect(screen.getByText(/We currently list 64 English-speaking veterinary practices in Berlin/i))
             .toBeTruthy();
+        expect(screen.getByText(/6 are confirmed by their official websites/i)).toBeTruthy();
         expect(screen.queryByText(/Each listing has been carefully vetted/i)).toBeNull();
         expect(
             document.head.querySelector('meta[name="description"]')?.getAttribute('content'),
-        ).toContain('63 verified English-speaking veterinary practices in Berlin');
+        ).toContain('64 verified English-speaking veterinary practices in Berlin');
     });
 
     it('labels the Bremen exotics listing as a specialist practice', () => {

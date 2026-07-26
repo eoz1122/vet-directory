@@ -285,6 +285,39 @@ const expectedGovernmentListedPractices = [
     },
 ] as const;
 
+const expectedBerlinOfficialPractices = [
+    {
+        id: 'Berlin-11',
+        address: 'Bizetstraße 48, 13088 Berlin',
+        sourceUrl: 'https://www.tierarztpraxis-peters-weissensee.de/en/',
+    },
+    {
+        id: 'Berlin-110',
+        address: 'Olivaer Platz 15, 10707 Berlin',
+        sourceUrl: 'https://www.filu.vet/en/standorte/berlin',
+    },
+    {
+        id: 'Berlin-33',
+        address: 'Sonnenallee 204, 12059 Berlin',
+        sourceUrl: 'https://www.tierarztpraxis-sonnenallee.de/',
+    },
+    {
+        id: 'Berlin-43',
+        address: 'Gutzkowstraße 4, 10827 Berlin (Mobile Service)',
+        sourceUrl: 'https://tierarzt-mobil-berlin.de/consultations-in-english/',
+    },
+    {
+        id: 'Berlin-96',
+        address: 'Bartningallee 5, 10557 Berlin',
+        sourceUrl: 'https://www.team-hansavet.de/',
+    },
+    {
+        id: 'berlin-tierarztpraxis-kiezfidel',
+        address: 'Brunowstraße 39, 13507 Berlin',
+        sourceUrl: 'https://www.tierarztpraxis-kiezfidel.de/',
+    },
+] as const;
+
 describe('verified Leipzig English-speaking practices', () => {
     it.each(expectedLeipzigPractices)(
         'keeps $id backed by first-party language evidence',
@@ -374,6 +407,35 @@ describe('government-listed English-speaking practices', () => {
             expect(practice?.verification.last_scanned).toBe('2026-07-26');
         },
     );
+});
+
+describe('first-party-verified Berlin English-speaking practices', () => {
+    it.each(expectedBerlinOfficialPractices)(
+        'keeps $id backed by an explicit current language statement',
+        ({ id, address, sourceUrl }) => {
+            const practice = vetsData.find((vet) => vet.id === id);
+
+            expect(practice).toBeDefined();
+            expect(practice?.city).toBe('Berlin');
+            expect(practice?.address).toBe(address);
+            expect(practice?.community_status).toBe('Verified');
+            expect(practice?.verification.status).toBe('Verified');
+            expect(practice?.verification.evidence_type).toBe('official_website');
+            expect(practice?.verification.english_signals.length).toBeGreaterThan(0);
+            expect(practice?.verification.source_urls).toContain(sourceUrl);
+            expect(practice?.verification.last_scanned).toBe('2026-07-26');
+        },
+    );
+
+    it('does not present Kiezfidel phone availability as an always-open clinic', () => {
+        const practice = vetsData.find(
+            (vet) => vet.id === 'berlin-tierarztpraxis-kiezfidel',
+        );
+
+        expect(practice?.verification.emergency_services).toBe(
+            '24/7 telephone availability and emergency house calls; practice visits by appointment',
+        );
+    });
 });
 
 describe('reverified existing practice records', () => {
