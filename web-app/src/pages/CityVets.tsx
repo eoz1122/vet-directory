@@ -15,7 +15,7 @@ import { parseCityContent, type Block } from '../utils/cityMarkdown';
 import { generateCitySummary } from '../utils/citySummary';
 import type { Vet } from '../types/vet';
 import { NearbyCityLinks } from '../components/vet/NearbyCityLinks';
-import { VetCard } from '../components/vet/VetCard';
+import { CityVetFinder } from '../components/vet/CityVetFinder';
 import { buildNearbyCityMap } from '../utils/nearbyCities';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
@@ -545,17 +545,7 @@ export default function CityVets() {
                         {cityVets.length} {cityVets.length === 1 ? 'Practice' : 'Practices'} Listed in {capitalizedCity}
                     </h2>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {cityVets.map((vet: Vet) => (
-                            <VetCard
-                                key={vet.id}
-                                vet={vet}
-                                analyticsLocation="CityVets_Page"
-                                headingLevel={3}
-                                linkDistrict
-                            />
-                        ))}
-                    </div>
+                    <CityVetFinder city={capitalizedCity} vets={cityVets} />
                 </section>
 
                                 <section className="mt-16 max-w-3xl">
