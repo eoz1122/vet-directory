@@ -318,6 +318,49 @@ const expectedBerlinOfficialPractices = [
     },
 ] as const;
 
+const expectedReverifiedMajorCityPractices = [
+    {
+        id: 'Frankfurt-48',
+        city: 'Frankfurt',
+        address: 'Westerbachstraße 226, 65936 Frankfurt am Main (Sossenheim)',
+        phone: '069 341951',
+        website: 'https://www.tierarzt-kraemer.de/en/',
+        sourceUrl: 'https://www.tierarzt-kraemer.de/en/',
+    },
+    {
+        id: 'Frankfurt-49',
+        city: 'Frankfurt',
+        address: 'Eckenheimer Landstraße 340, 60435 Frankfurt am Main',
+        phone: '+49 69 90548010',
+        website: 'https://www.dr-hoech.de/en/about-us',
+        sourceUrl: 'https://www.dr-hoech.de/en/about-us',
+    },
+    {
+        id: 'Stuttgart-New-2',
+        city: 'Stuttgart',
+        address: 'Smaragdweg 1, 70174 Stuttgart',
+        phone: '+49 711 2536757',
+        website: 'https://kleintierpraxis-stuttgart.de/en',
+        sourceUrl: 'https://kleintierpraxis-stuttgart.de/en',
+    },
+    {
+        id: 'Stuttgart-137',
+        city: 'Stuttgart',
+        address: 'Birkenwaldstraße 214, 70191 Stuttgart',
+        phone: '+49 711 2566409',
+        website: 'https://www.kleintierpraxis-ernst.de/en/home/',
+        sourceUrl: 'https://www.kleintierpraxis-ernst.de/en/home/',
+    },
+    {
+        id: 'dresden-vetpraxis-loebtau',
+        city: 'Dresden',
+        address: 'Tharandter Str. 45 B, 01159 Dresden',
+        phone: '+49 351 42420505',
+        website: 'https://www.vetpraxis-dresden.de/',
+        sourceUrl: 'https://www.vetpraxis-dresden.de/',
+    },
+] as const;
+
 describe('verified Leipzig English-speaking practices', () => {
     it.each(expectedLeipzigPractices)(
         'keeps $id backed by first-party language evidence',
@@ -439,6 +482,25 @@ describe('first-party-verified Berlin English-speaking practices', () => {
 });
 
 describe('reverified existing practice records', () => {
+    it.each(expectedReverifiedMajorCityPractices)(
+        'uses current clinic-owned English evidence and contact details for $id',
+        ({ id, city, address, phone, website, sourceUrl }) => {
+            const practice = vetsData.find((vet) => vet.id === id);
+
+            expect(practice).toBeDefined();
+            expect(practice?.city).toBe(city);
+            expect(practice?.address).toBe(address);
+            expect(practice?.contact.phone).toBe(phone);
+            expect(practice?.contact.website).toBe(website);
+            expect(practice?.community_status).toBe('Verified');
+            expect(practice?.verification.status).toBe('Verified');
+            expect(practice?.verification.evidence_type).toBe('official_website');
+            expect(practice?.verification.english_signals.length).toBeGreaterThan(0);
+            expect(practice?.verification.source_urls).toContain(sourceUrl);
+            expect(practice?.verification.last_scanned).toBe('2026-07-26');
+        },
+    );
+
     it.each([
         {
             id: 'Hamburg-72',

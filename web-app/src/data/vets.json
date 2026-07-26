@@ -1833,15 +1833,19 @@
       "lng": 8.5766749
     },
     "contact": {
-      "phone": "",
+      "phone": "069 341951",
       "website": "https://www.tierarzt-kraemer.de/en/",
       "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Sonja+Kr%C3%A4mer/data=!4m7!3m6!1s0x47bd09facf58c0ef:0xe353ca2c235d346f!8m2!3d50.1238303!4d8.5768004!16s%2Fg%2F1v7tkh2r!19sChIJ78BYz_oJvUcRbzRdIyzKU-M?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support"
+        "The clinic's current English homepage explicitly states that both veterinarians speak English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarzt-kraemer.de/en/"
       ],
       "emergency_services": ""
     },
@@ -1852,21 +1856,25 @@
     "practice_name": "Tierarztpraxis Dr. Maike Höch",
     "city": "Frankfurt",
     "district": "Eckenheim",
-    "address": "Eckenheimer Landstraße 340, 60435 Frankfurt (Eckenheim)",
+    "address": "Eckenheimer Landstraße 340, 60435 Frankfurt am Main",
     "coordinates": {
       "lat": 50.1488729,
       "lng": 8.6813374
     },
     "contact": {
-      "phone": "",
-      "website": "https://www.dr-hoech.de/en/",
+      "phone": "+49 69 90548010",
+      "website": "https://www.dr-hoech.de/en/about-us",
       "google_maps": null
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support"
+        "The clinic maintains a current English practice, team, services and appointment information section"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.dr-hoech.de/en/about-us"
       ],
       "emergency_services": ""
     },
@@ -4097,22 +4105,26 @@
     "id": "Stuttgart-137",
     "practice_name": "Kleintierpraxis Dr. Ernst",
     "city": "Stuttgart",
-    "district": "Unknown",
-    "address": "Birkenwaldstraße 214",
+    "district": "Killesberg",
+    "address": "Birkenwaldstraße 214, 70191 Stuttgart",
     "coordinates": {
       "lat": 48.7984113,
       "lng": 9.175696799999999
     },
     "contact": {
-      "phone": null,
-      "website": "http://www.kleintierpraxis-ernst.de/",
+      "phone": "+49 711 2566409",
+      "website": "https://www.kleintierpraxis-ernst.de/en/home/",
       "google_maps": "https://www.google.com/maps/place/Kleintierpraxis+Dr.+Ernst/data=!4m7!3m6!1s0x4799dad816650777:0x5eaf75115e7ef513!8m2!3d48.7984113!4d9.1756968!16s%2Fg%2F1v_s4w1t!19sChIJdwdlFtjamUcRE_V-XhF1r14?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-25",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Confirmed via Google Review: \"english skill\""
+        "The clinic publishes current English treatment, appointment and contact information"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.kleintierpraxis-ernst.de/en/home/"
       ],
       "emergency_services": ""
     },
@@ -4323,22 +4335,26 @@
     "id": "Stuttgart-New-2",
     "practice_name": "Kleintierpraxis Klaus Senger",
     "city": "Stuttgart",
-    "district": "West",
-    "address": "Schloßstraße 100",
+    "district": "Nord",
+    "address": "Smaragdweg 1, 70174 Stuttgart",
     "coordinates": {
-      "lat": 48.7758,
-      "lng": 9.1575
+      "lat": 48.7857191,
+      "lng": 9.1680151
     },
     "contact": {
-      "phone": "0711 617172",
-      "website": "https://www.kleintierpraxis-stuttgart.de/",
-      "google_maps": null
+      "phone": "+49 711 2536757",
+      "website": "https://kleintierpraxis-stuttgart.de/en",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Smaragdweg%201%2C%2070174%20Stuttgart"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-26",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "English speaking team"
+        "The clinic publishes current English treatment, appointment and contact information"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://kleintierpraxis-stuttgart.de/en"
       ],
       "emergency_services": "No"
     },
@@ -5134,10 +5150,13 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-28",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Website explicitly mentions English support",
-        "Recommended by local expat community"
+        "The clinic's current homepage explicitly lists English among the languages spoken"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.vetpraxis-dresden.de/"
       ],
       "emergency_services": ""
     },
