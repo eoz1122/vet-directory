@@ -137,6 +137,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'münster', 'muenster', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-mainz',
+        title: "Emergency Vet Mainz: Live Daily Rota and 24/7 Fallback",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "Mainz's city-linked daily rota, call-ahead workflow, Tierklinik Hofheim fallback instructions, live capacity, warning signs and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'mainz', 'hofheim', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',

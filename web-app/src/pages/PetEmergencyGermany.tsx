@@ -267,6 +267,16 @@ export default function PetEmergencyGermany() {
                                         Official 2026 calendar, participating-practice lookup, 08:00 handover, and transport rules.
                                     </span>
                                 </Link>
+                                <Link
+                                    to="/guides/emergency-vets-mainz"
+                                    aria-label="Mainz emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Mainz emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">
+                                        City-linked daily rota, call-ahead workflow, and Hofheim 24-hour fallback instructions.
+                                    </span>
+                                </Link>
                                 <a
                                     href="https://bundestieraerztekammer.de/btk/mitglieder/"
                                     aria-label="German state veterinary chambers"

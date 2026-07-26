@@ -157,4 +157,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Münster: Official 2026 Duty Rota',
         })).toBeTruthy();
     });
+
+    it('routes the Mainz emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-mainz');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Mainz: Live Daily Rota and 24/7 Fallback',
+        })).toBeTruthy();
+    });
 });

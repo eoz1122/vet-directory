@@ -84,6 +84,9 @@ const CITY_CONFIG: Record<string, {
     'Münster': {
         guides: [{ href: '/guides/emergency-vets-muenster', label: 'Emergency vet help in Münster', icon: '🏥' }],
     },
+    'Mainz': {
+        guides: [{ href: '/guides/emergency-vets-mainz', label: 'Emergency vet help in Mainz', icon: '🏥' }],
+    },
     'Cologne': {
         guides: [
             { href: '/guides/emergency-vets-cologne', label: 'Emergency vet help in Cologne', icon: '🏥' },
