@@ -135,4 +135,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Karlsruhe: Official 24-Hour Duty Line (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Bonn emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-bonn');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Bonn: Official Duty Rota and Hours (2026)',
+        })).toBeTruthy();
+    });
 });

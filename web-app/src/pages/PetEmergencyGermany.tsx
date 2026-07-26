@@ -247,6 +247,16 @@ export default function PetEmergencyGermany() {
                                         Official 24-hour duty number, rotating-practice instructions, and Durlach centre hours.
                                     </span>
                                 </Link>
+                                <Link
+                                    to="/guides/emergency-vets-bonn"
+                                    aria-label="Bonn emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Bonn emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">
+                                        Current member-practice rota, exact duty hours, eligibility limits, and Cologne fallback.
+                                    </span>
+                                </Link>
                                 <a
                                     href="https://bundestieraerztekammer.de/btk/mitglieder/"
                                     aria-label="German state veterinary chambers"

@@ -206,4 +206,12 @@ describe('CityVets search and trust contract', () => {
             name: 'Emergency vet help in Karlsruhe',
         }).getAttribute('href')).toBe('/guides/emergency-vets-karlsruhe');
     });
+
+    it('links Bonn readers to the local emergency guide', () => {
+        renderCity('/vets/bonn');
+
+        expect(screen.getByRole('link', {
+            name: 'Emergency vet help in Bonn',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-bonn');
+    });
 });

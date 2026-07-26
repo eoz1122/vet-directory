@@ -78,6 +78,9 @@ const CITY_CONFIG: Record<string, {
     'Karlsruhe': {
         guides: [{ href: '/guides/emergency-vets-karlsruhe', label: 'Emergency vet help in Karlsruhe', icon: '🏥' }],
     },
+    'Bonn': {
+        guides: [{ href: '/guides/emergency-vets-bonn', label: 'Emergency vet help in Bonn', icon: '🏥' }],
+    },
     'Cologne': {
         guides: [
             { href: '/guides/emergency-vets-cologne', label: 'Emergency vet help in Cologne', icon: '🏥' },

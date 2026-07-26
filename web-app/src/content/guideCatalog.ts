@@ -121,6 +121,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'karlsruhe', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-bonn',
+        title: "Emergency Vet Bonn: Official Duty Rota and Hours",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "Bonn's current member-practice rota, exact duty hours, eligibility limits, Cologne 24-hour fallback, warning signs and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'bonn', 'cologne', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',
