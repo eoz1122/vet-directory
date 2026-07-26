@@ -315,9 +315,9 @@ def test_nginx_redirects_legacy_district_urls_to_canonical_slugs():
     redirects = {
         "/vets/berlin/düppel/zehlendorf": "/vets/berlin/düppel-zehlendorf",
         "/vets/berlin/friedrichshain-/-others": "/vets/berlin/friedrichshain-others",
-        "/vets/frankfurt/dr.-jan-kullen-/-dr.-elena-panova": "/vets/frankfurt/dr-jan-kullen-dr-elena-panova",
+        "/vets/frankfurt/dr.-jan-kullen-/-dr.-elena-panova": "/vets/frankfurt/sachsenhausen-nord",
         "/vets/frankfurt/gallus/city-west": "/vets/frankfurt/gallus-city-west",
-        "/vets/frankfurt/am-nordpark-10,-60437-frankfurt-am-main": "/vets/frankfurt/am-nordpark-10-60437-frankfurt-am-main",
+        "/vets/frankfurt/am-nordpark-10,-60437-frankfurt-am-main": "/vets/frankfurt/kalbach-riedberg",
         "/vets/hamburg/bahrenfeld/altona": "/vets/hamburg/bahrenfeld-altona",
         "/vets/wiesloch/near-heidelberg/karlsruhe": "/vets/wiesloch/near-heidelberg-karlsruhe",
     }
@@ -335,7 +335,7 @@ def test_nginx_redirects_legacy_district_urls_to_canonical_slugs():
 
     assert (
         '"/vets/frankfurt/am-nordpark-10,-60437-frankfurt-am-main|'
-        '/vets/frankfurt/am-nordpark-10-60437-frankfurt-am-main"'
+        '/vets/frankfurt/kalbach-riedberg"'
     ) in smoke_test
 
 

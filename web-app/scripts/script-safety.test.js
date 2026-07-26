@@ -42,4 +42,13 @@ describe('maintenance script safety', () => {
 
         expect(violations).toEqual([]);
     });
+
+    it.each(['generate-sitemap.js', 'prerender.js'])(
+        '%s excludes canonical aliases from public routes',
+        (name) => {
+            const source = fs.readFileSync(path.join(scriptsRoot, name), 'utf8');
+
+            expect(source).toContain("&& !v.canonical_listing_id");
+        },
+    );
 });

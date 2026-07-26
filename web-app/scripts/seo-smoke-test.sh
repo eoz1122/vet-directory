@@ -54,7 +54,7 @@ REDIRECTS=(
   "/guides/emergency-vets-hamburg|/blog/emergency-vet-hamburg-english"
   "/blog/emergency-vet-berlin-english|/guides/emergency-vets-berlin"
   "/vets/nuremberg/schweinau|/vets/nuremberg"
-  "/vets/frankfurt/am-nordpark-10,-60437-frankfurt-am-main|/vets/frankfurt/am-nordpark-10-60437-frankfurt-am-main"
+  "/vets/frankfurt/am-nordpark-10,-60437-frankfurt-am-main|/vets/frankfurt/kalbach-riedberg"
 )
 
 # Literal placeholders discovered from the retired SearchAction schema.

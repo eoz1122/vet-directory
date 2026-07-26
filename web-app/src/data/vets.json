@@ -11,7 +11,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://berlin-english-vets.de",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -697,7 +697,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "http://www.4pfoten-berlin.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -772,7 +772,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tierarztpraxis-am-mauerpark.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+am+Mauerpark/data=!4m7!3m6!1s0x47a852030f2840a1:0xe998cf9fcb19f10b!8m2!3d52.5471166!4d13.4082182!16s%2Fg%2F1tf9rvwn!19sChIJoUAoDwNSqEcRC_EZy5_PmOk?authuser=0&hl=en&rclk=1"
     },
     "verification": {
@@ -797,7 +797,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tierarzt-westend.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -812,6 +812,7 @@
   },
   {
     "id": "Berlin-2",
+    "canonical_listing_id": "Berlin-105",
     "practice_name": "The Berlin Veterinary Center (Zentrum für Tiermedizin / Dr. Rödiger)",
     "city": "Berlin",
     "district": "Reinickendorf",
@@ -847,7 +848,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tieraerzte-im-kiez.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -872,7 +873,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "http://www.tierarztpraxis-robl.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/place/Tierarztpraxis/data=!4m7!3m6!1s0x47a8503835ce73f9:0x45ad73e1b6d175a1!8m2!3d52.4921195!4d13.3651271!16s%2Fg%2F11mgn05v41!19sChIJ-XPONThQqEcRoXXRtuFzrUU?authuser=0&hl=en&rclk=1"
     },
     "verification": {
@@ -947,7 +948,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tierarzt-dralle-berlin.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -1022,7 +1023,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tierverhaltenstherapie-adams.de",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -1097,7 +1098,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.anicura.de/standorte/tierklinik-berlin-biesdorf/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -1355,7 +1356,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.medivetgroup.com/de/tierarztpraxis-suche/berlin/medivet-berlin-pankow/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/place/Medivet+Berlin-Pankow/data=!4m7!3m6!1s0x47a852869aaf3f49:0xad7dbeaab4648b23!8m2!3d52.5884304!4d13.429723!16s%2Fg%2F1vv2r8dy!19sChIJST-vmoZSqEcRI4tktKq-fa0?authuser=0&hl=en&rclk=1"
     },
     "verification": {
@@ -1430,7 +1431,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "http://www.tierarztpraxis-gamalski.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/place/Tierarztpraxis/data=!4m7!3m6!1s0x47a8503835ce73f9:0x45ad73e1b6d175a1!8m2!3d52.4921195!4d13.3651271!16s%2Fg%2F11mgn05v41!19sChIJ-XPONThQqEcRoXXRtuFzrUU?authuser=0&hl=en&rclk=1"
     },
     "verification": {
@@ -2012,7 +2013,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tierarztpraxis-frankfurt.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Maja+Firl%C3%A9/data=!4m7!3m6!1s0x47bd095d1c6b57b5:0x161891416ad46e11!8m2!3d50.1149422!4d8.649158!16s%2Fg%2F1tdq9pww!19sChIJtVdrHF0JvUcREW7UakGRGBY?authuser=0&hl=en&rclk=1"
     },
     "verification": {
@@ -2093,7 +2094,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tierarzt-bockenheim.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -2118,7 +2119,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tierarztpraxis-bornheim.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -2143,7 +2144,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tierarzt-frankfurt-sachsenhausen.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -2301,7 +2302,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tierarzt-moormann.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -2819,7 +2820,7 @@
     },
     "contact": {
       "phone": "040 854040",
-      "website": "https://www.anicura.de/standorte/hamburg-altona/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -2869,7 +2870,7 @@
     },
     "contact": {
       "phone": "040 5700568",
-      "website": "http://www.tierklinik-im-muehlenfeld.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -3083,7 +3084,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.medivetgroup.com/de/tierarztpraxis-suche/hamburg/medivet-hamburg-stellingen/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/place/Medivet+Tierarztpraxis+Hamburg-Stellingen/data=!4m7!3m6!1s0x47b185faf8a8ee2d:0xecf43e4f270a4c6f!8m2!3d53.5871493!4d9.9325501!16s%2Fg%2F1tx462gw!19sChIJLe6o-PqFsUcRb0wKJ08-9Ow?authuser=0&hl=en&rclk=1"
     },
     "verification": {
@@ -3108,7 +3109,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "http://www.tierarzt-manteuffel.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/place/Dr.+med.+vet.+Fabian+von+Manteuffel/data=!4m7!3m6!1s0x47b1895d9e0164a3:0x31017aefc542e55d!8m2!3d53.5950214!4d10.0651161!16s%2Fg%2F1v_z3d0t!19sChIJo2QBnl2JsUcRXeVCxe96ATE?authuser=0&hl=en&rclk=1"
     },
     "verification": {
@@ -3134,7 +3135,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "http://www.tierarzt-gervers.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -3210,7 +3211,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.anicura.de/hamburg",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -3310,7 +3311,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.tierarzt-blankenese.de",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -3561,7 +3562,7 @@
     },
     "contact": {
       "phone": "0511 98634848",
-      "website": "https://www.anicura.de/kleintierklinik-hannover/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -3586,7 +3587,7 @@
     },
     "contact": {
       "phone": "0511 9536200",
-      "website": "https://www.tiho-hannover.de/kliniken-institute/kliniken/kleintierklinik",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierklinik+Hannover+%28TiHo%29+B%C3%BCnteweg+9%2C+30559+Hannover"
     },
     "verification": {
@@ -3934,7 +3935,7 @@
     },
     "contact": {
       "phone": "089 88909690",
-      "website": "https://www.anicura.de/tierarztliches-zentrum-munchen/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -4115,7 +4116,7 @@
     },
     "contact": {
       "phone": "0911 643110",
-      "website": "https://www.tierklinik-nuernberg.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+N%C3%BCrnberg+Hafen+Wertachstra%C3%9Fe+1%2C+90451+N%C3%BCrnberg"
     },
     "verification": {
@@ -4364,14 +4365,14 @@
     "practice_name": "Tierklinik Nussdorf",
     "city": "Überlingen",
     "district": "Nussdorf (Überlingen)",
-    "address": "DieselstraÃŸe 7, 88662 Ãœberlingen",
+    "address": "Dieselstraße 7, 88662 Überlingen",
     "coordinates": {
       "lat": 47.7818,
       "lng": 9.1982
     },
     "contact": {
       "phone": "07551 9494949",
-      "website": "https://www.tierklinik-nussdorf.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -4396,7 +4397,7 @@
     },
     "contact": {
       "phone": "07121 334050",
-      "website": "https://www.anicura.de/tierklinik-reutlingen",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -4475,7 +4476,7 @@
     },
     "contact": {
       "phone": "0711 7657276",
-      "website": "https://www.tierarzt-stuttgart.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -4525,7 +4526,7 @@
     },
     "contact": {
       "phone": "",
-      "website": "https://www.mobile-tierarztpraxis-leipzig.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -4656,7 +4657,7 @@
     },
     "contact": {
       "phone": "+49 89 4480873",
-      "website": "https://www.tierarztpraxis-haidhausen.de",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -4682,7 +4683,7 @@
     },
     "contact": {
       "phone": "+49 34298 3930",
-      "website": "https://www.anicura.de/standorte/leipzig/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -4739,7 +4740,7 @@
     },
     "contact": {
       "phone": "+49 341 3915850",
-      "website": "https://www.tierarztzentrum-leipzig.de",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -4766,7 +4767,7 @@
     },
     "contact": {
       "phone": "+49 341 4929955",
-      "website": "https://www.tierarztpraxis-plagwitz.de",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -4792,7 +4793,7 @@
     },
     "contact": {
       "phone": "+49 341 5613530",
-      "website": "https://www.tierarztpraxis-gohlis.de",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -4847,7 +4848,7 @@
     },
     "contact": {
       "phone": "+49 711 712434",
-      "website": "http://www.tierarztpraxis-spaeth.de/",
+      "website": null,
       "google_maps": "https://maps.app.goo.gl/E5t3c"
     },
     "verification": {
@@ -4980,7 +4981,7 @@
     },
     "contact": {
       "phone": "+49 911 366513",
-      "website": "https://www.tierklinik-am-nordring.de/",
+      "website": null,
       "google_maps": "https://maps.app.goo.gl/6D6tK"
     },
     "verification": {
@@ -5059,7 +5060,7 @@
     },
     "contact": {
       "phone": "+49 711 6404060",
-      "website": "https://www.tierarztzentrum-stuttgart.de",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -5086,7 +5087,7 @@
     },
     "contact": {
       "phone": "+49 711 245774",
-      "website": "https://www.tierarztpraxis-stuttgart-mitte.de",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -5208,6 +5209,7 @@
   },
   {
     "id": "hofheim-tierklinik-24h",
+    "canonical_listing_id": "Frankfurt-50",
     "practice_name": "Tierklinik Hofheim (Regional Emergency Center)",
     "city": "Hofheim am Taunus",
     "district": "Rhein-Main Region",
@@ -5507,7 +5509,7 @@
     },
     "contact": {
       "phone": "0351 4222360",
-      "website": "http://www.kleintierpraxis-dd-loebtau.de/",
+      "website": null,
       "google_maps": null
     },
     "verification": {
@@ -5523,6 +5525,7 @@
   },
   {
     "id": "nuremberg-probst",
+    "canonical_listing_id": "nuremberg-langwasser-probst",
     "practice_name": "Tierarztpraxis Dr. Julia Probst",
     "city": "Nuremberg",
     "district": "Langwasser",
@@ -5686,7 +5689,7 @@
     },
     "contact": {
       "phone": "040 43214445",
-      "website": "https://www.tierarzt-eimsbuettel.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis+Dr.+S%C3%B6rensen+Weidenallee+61%2C+20357+Hamburg"
     },
     "verification": {
@@ -5701,6 +5704,7 @@
   },
   {
     "id": "Internal-Frankfurt-1",
+    "canonical_listing_id": "Frankfurt-60",
     "practice_name": "Tierklinik Kalbach",
     "city": "Frankfurt",
     "district": "Kalbach-Riedberg",
@@ -5736,7 +5740,7 @@
     },
     "contact": {
       "phone": "0221 4744430",
-      "website": "https://www.tierklinik-kellerwessel.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Kellerwessel+Rennbahnstra%C3%9Fe+20%2C+50935+K%C3%B6ln"
     },
     "verification": {
@@ -5761,7 +5765,7 @@
     },
     "contact": {
       "phone": "0221 254460",
-      "website": "https://www.tierarzt-wichert.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis+Dr.+B.+und+A.+Wichert+Br%C3%BCsseler+Str.+28%2C+50674+K%C3%B6ln"
     },
     "verification": {
@@ -5776,6 +5780,7 @@
   },
   {
     "id": "Internal-Dusseldorf-1",
+    "canonical_listing_id": "Duesseldorf-TKD",
     "practice_name": "Tierklinik Düsseldorf",
     "city": "Düsseldorf",
     "district": "Mörsenbroich",
@@ -5811,7 +5816,7 @@
     },
     "contact": {
       "phone": "0641 9938535",
-      "website": "https://www.uni-giessen.de/de/fbz/fb10/institute_klinikum/klinikum/kleintierchirurgie",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Klinik+f%C3%BCr+Kleintiere+%28Chirurgie%29+-+JLU+Gie%C3%9Fen+Frankfurter+Str.+108%2C+35392+Gie%C3%9Fen"
     },
     "verification": {
@@ -5837,7 +5842,7 @@
     },
     "contact": {
       "phone": "06221 820700",
-      "website": "https://www.tierklinik-heidelberg.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliche+Klinik+Dr.+Maurer+Edinger+Riedweg+55%2C+69123+Heidelberg"
     },
     "verification": {
@@ -5979,7 +5984,7 @@
     "id": "Internal-Rostock-1",
     "practice_name": "Tierklinik Rostock",
     "city": "Rostock",
-    "district": "Thierfelderstraße",
+    "district": "Hansaviertel",
     "address": "Thierfelderstraße 19, 18059 Rostock",
     "coordinates": {
       "lat": 54.0783,
@@ -5987,7 +5992,7 @@
     },
     "contact": {
       "phone": "0381 252770",
-      "website": "https://www.tierklinik-rostock.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Rostock+Thierfelderstra%C3%9Fe+19%2C+18059+Rostock"
     },
     "verification": {
@@ -6086,7 +6091,7 @@
     },
     "contact": {
       "phone": "0941 4629690",
-      "website": "https://www.anicura.de/tierklinik-haslbach/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=AniCura+Tierklinik+Haslbach+Im+Gewerbepark+C+35%2C+93059+Regensburg"
     },
     "verification": {
@@ -6111,7 +6116,7 @@
     },
     "contact": {
       "phone": "02382 766700",
-      "website": "https://www.tierklinik-ahlen.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliche+Klinik+f%C3%BCr+Kleintiere+Ahlen+Bunsenstra%C3%9Fe+20%2C+59229+Ahlen"
     },
     "verification": {
@@ -6296,7 +6301,7 @@
     },
     "contact": {
       "phone": "+49 211 3033343",
-      "website": "https://kleintierpraxis-beyer.de",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierpraxis%20Dr.%20med.%20vet.%20Katja%20Beyer%20Lorettostra%C3%9Fe%2033%2C%2040219%20D%C3%BCsseldorf"
     },
     "verification": {
@@ -6376,7 +6381,7 @@
     },
     "contact": {
       "phone": "+49 211 4543560",
-      "website": "https://kleintierpraxis-morys.de",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Morys%20Kleintierpraxis%20Niederrheinstr.%20124%2C%2040474%20D%C3%BCsseldorf"
     },
     "verification": {
@@ -6426,7 +6431,7 @@
     },
     "contact": {
       "phone": "+49 211 3227770",
-      "website": "https://tierklinik-duesseldorf-zentrum.de",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik%20D%C3%BCsseldorf%20Zentrum%20Adlerstra%C3%9Fe%2063%2C%2040211%20D%C3%BCsseldorf"
     },
     "verification": {
@@ -7033,7 +7038,7 @@
     },
     "contact": {
       "phone": "+49 2132 911915",
-      "website": "https://www.tierarztpraxis-gemmer.de/",
+      "website": null,
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierarztpraxis%20Kerstin%20Gemmer%20Moerser%20Stra%C3%9Fe%20125%2C%2040667%20Meerbusch"
     },
     "verification": {

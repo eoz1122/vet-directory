@@ -363,7 +363,7 @@ const expectedFrankfurtCommunityUpgrades = [
         id: 'Frankfurt-65',
         address: 'Frankfurter Str. 11, 61462 Königstein im Taunus',
         phone: '',
-        website: 'https://www.tierarzt-moormann.de/',
+        website: null,
         sourceUrls: [
             'https://www.reddit.com/r/frankfurt/comments/yk1vzs/',
         ],
@@ -857,5 +857,94 @@ describe('Frankfurt directory data quality', () => {
         ]));
         expect(alias?.verification.status).toBe('Verified');
         expect(alias).toHaveProperty('canonical_listing_id', 'Frankfurt-51');
+    });
+});
+
+describe('public directory entry quality', () => {
+    it.each([
+        ['Berlin-2', 'Berlin-105'],
+        ['hofheim-tierklinik-24h', 'Frankfurt-50'],
+        ['Internal-Dusseldorf-1', 'Duesseldorf-TKD'],
+        ['nuremberg-probst', 'nuremberg-langwasser-probst'],
+        ['Internal-Frankfurt-1', 'Frankfurt-60'],
+    ])('keeps duplicate %s as an audit alias of %s', (aliasId, canonicalId) => {
+        const alias = vetsData.find((vet) => vet.id === aliasId);
+
+        expect(alias).toBeDefined();
+        expect(alias).toHaveProperty('canonical_listing_id', canonicalId);
+        expect(alias?.verification.english_signals.length).toBeGreaterThan(0);
+    });
+
+    it('uses a geographic district for Tierklinik Rostock', () => {
+        expect(
+            vetsData.find((vet) => vet.id === 'Internal-Rostock-1')?.district,
+        ).toBe('Hansaviertel');
+    });
+
+    it('uses correctly encoded German characters in the Nussdorf address', () => {
+        expect(
+            vetsData.find((vet) => vet.id === 'Stuttgart-143')?.address,
+        ).toBe('Dieselstraße 7, 88662 Überlingen');
+    });
+
+    it.each([
+        'Berlin-1',
+        'Berlin-15',
+        'Berlin-18',
+        'Berlin-20',
+        'Berlin-19',
+        'Berlin-22',
+        'Berlin-25',
+        'Berlin-28',
+        'Berlin-32',
+        'Berlin-45',
+        'Berlin-7',
+        'Duesseldorf-TierklinikZentrum',
+        'Duesseldorf-Beyer',
+        'Duesseldorf-Morys',
+        'Frankfurt-57',
+        'Frankfurt-58',
+        'Frankfurt-59',
+        'Frankfurt-65',
+        'Frankfurt-54',
+        'Hamburg-104',
+        'Hamburg-106',
+        'Hamburg-75',
+        'Hamburg-76',
+        'Hamburg-77',
+        'Hamburg-80',
+        'Hamburg-84',
+        'Hannover-New-1',
+        'Internal-6',
+        'Internal-Cologne-1',
+        'Internal-Cologne-2',
+        'Internal-Giessen-1',
+        'Internal-Ahlen-1',
+        'Internal-Heidelberg-1',
+        'Internal-Hamburg-2',
+        'Internal-Nuremberg-1',
+        'Internal-Regensburg-1',
+        'Internal-Rostock-1',
+        'Leipzig-Plenge',
+        'Munich-136',
+        'Stuttgart-143',
+        'Stuttgart-144',
+        'Stuttgart-New-3',
+        'dresden-hoehne-loebtau',
+        'leipzig-anicura-tierklinik',
+        'leipzig-tierarztpraxis-gohlis',
+        'leipzig-tierarztpraxis-plagwitz',
+        'leipzig-tierarztzentrum-sued',
+        'meerbusch-tierarztpraxis-gemmer',
+        'munich-tierarztpraxis-haidhausen',
+        'nuremberg-nordring-klinik',
+        'stuttgart-spaeth-moehringen',
+        'stuttgart-tierarztpraxis-mitte',
+        'stuttgart-tierarztzentrum-west',
+    ])('does not expose the confirmed broken website for %s', (id) => {
+        const practice = vetsData.find((vet) => vet.id === id);
+
+        expect(practice).toBeDefined();
+        expect(practice?.contact.website).toBeNull();
     });
 });

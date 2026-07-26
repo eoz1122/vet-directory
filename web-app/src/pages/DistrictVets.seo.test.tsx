@@ -108,7 +108,6 @@ describe('DistrictVets search and trust contract', () => {
                         addressLocality: 'Leipzig',
                         addressCountry: 'DE',
                     },
-                    url: 'https://www.tierarztpraxis-plagwitz.de',
                 },
             },
         ]);

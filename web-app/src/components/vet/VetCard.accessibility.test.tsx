@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 
 import type { VetWithDistance } from '../../types/vet';
@@ -63,6 +64,24 @@ describe('VetCard accessibility', () => {
         expect(screen.getByRole('link', { name: 'Visit Test Veterinary Clinic website' })).toBeTruthy();
     });
 
+    it('gives a linked district chip a full touch target', () => {
+        render(
+            <MemoryRouter>
+                <VetCard
+                    vet={vet}
+                    isSelected={false}
+                    onSelect={vi.fn()}
+                    onReportIssue={vi.fn()}
+                    linkDistrict
+                />
+            </MemoryRouter>,
+        );
+
+        const districtLink = screen.getByRole('link', { name: 'Mitte' });
+        expect(districtLink.className).toContain('min-h-11');
+        expect(districtLink.className).toContain('min-w-11');
+    });
+
     it('uses readable text colors for small card metadata', () => {
         render(
             <VetCard
@@ -75,8 +94,145 @@ describe('VetCard accessibility', () => {
 
         expect(screen.getByText('Mitte').className).toContain('text-accent-ink');
         expect(screen.getByText('Example Street 1, Berlin').className).toContain('text-primary/80');
-        expect(screen.getByText('"English-speaking staff"').className).toContain('text-primary/80');
+        const evidence = screen.getByText('English-speaking staff');
+        expect(evidence.className).toContain('text-primary/80');
+        expect(evidence.className).not.toContain('line-clamp');
         expect(screen.getByText('Verified: Jul 2026').className).toContain('text-gray-600');
+    });
+
+    it('does not add a second pair of quotation marks around review evidence', () => {
+        render(
+            <VetCard
+                vet={{
+                    ...vet,
+                    verification: {
+                        ...vet.verification,
+                        english_signals: ['Confirmed via Google Review: "speaks English"'],
+                    },
+                }}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        expect(screen.getByText('Confirmed via Google Review: "speaks English"')).toBeTruthy();
+        expect(screen.queryByText('"Confirmed via Google Review: "speaks English""')).toBeNull();
+    });
+
+    it('prefers the complete English evidence when a legacy signal contains fragments', () => {
+        render(
+            <VetCard
+                vet={{
+                    ...vet,
+                    verification: {
+                        ...vet.verification,
+                        english_signals: [
+                            'Confirmed via Google Review: "and nurses."; Confirmed via Google Review: "English speaking vets and nurses."',
+                        ],
+                    },
+                }}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        expect(
+            screen.getByText('Confirmed via Google Review: "English speaking vets and nurses."'),
+        ).toBeTruthy();
+        expect(screen.queryByText(/"and nurses\."/)).toBeNull();
+    });
+
+    it('chooses the strongest English evidence across every stored signal', () => {
+        render(
+            <VetCard
+                vet={{
+                    ...vet,
+                    verification: {
+                        ...vet.verification,
+                        english_signals: [
+                            'Confirmed via Google Review: "and nurses."',
+                            'Confirmed via Google Review: "English speaking vets and nurses."',
+                        ],
+                    },
+                }}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        expect(
+            screen.getByText('Confirmed via Google Review: "English speaking vets and nurses."'),
+        ).toBeTruthy();
+        expect(screen.queryByText(/"and nurses\."/)).toBeNull();
+    });
+
+    it('replaces a review fragment that does not substantiate English support', () => {
+        render(
+            <VetCard
+                vet={{
+                    ...vet,
+                    verification: {
+                        ...vet.verification,
+                        english_signals: ['Confirmed via Google Review: "was super kind and spoke"'],
+                    },
+                }}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        expect(
+            screen.getByText('Community confirmation recorded; confirm English availability when booking.'),
+        ).toBeTruthy();
+        expect(screen.queryByText(/was super kind and spoke/)).toBeNull();
+    });
+
+    it('cleans a truncated trailing hyphen from review evidence', () => {
+        render(
+            <VetCard
+                vet={{
+                    ...vet,
+                    verification: {
+                        ...vet.verification,
+                        english_signals: ['Confirmed via Google Review: "English and German-"'],
+                    },
+                }}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        expect(screen.getByText('Confirmed via Google Review: "English and German."')).toBeTruthy();
+        expect(screen.queryByText(/German-/)).toBeNull();
+    });
+
+    it('shows a clear map action and contact explanation when no direct contact is listed', () => {
+        render(
+            <VetCard
+                vet={{
+                    ...vet,
+                    contact: {
+                        website: null,
+                        phone: null,
+                        google_maps: null,
+                    },
+                }}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        expect(screen.getByText('No direct website or phone listed')).toBeTruthy();
+        expect(
+            screen.getByRole('link', { name: 'Search for Test Veterinary Clinic on Google Maps' })
+                .textContent,
+        ).toContain('Search on Google Maps');
     });
 
     it('clearly labels a specialist-only practice focus', () => {

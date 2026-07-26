@@ -53,4 +53,22 @@ describe('filterDisplayableVets', () => {
         filterDisplayableVets(vets);
         expect(vets).toHaveLength(1);
     });
+
+    it('normalizes legacy public evidence to the community evidence type', () => {
+        const legacy = makeVet('legacy', 'Verified');
+
+        const [normalized] = filterDisplayableVets([legacy]);
+
+        expect(normalized.verification.evidence_type).toBe('community');
+        expect(legacy.verification.evidence_type).toBeUndefined();
+    });
+
+    it('preserves an explicit structured evidence type', () => {
+        const official = makeVet('official', 'Verified');
+        official.verification.evidence_type = 'official_website';
+
+        const [normalized] = filterDisplayableVets([official]);
+
+        expect(normalized.verification.evidence_type).toBe('official_website');
+    });
 });

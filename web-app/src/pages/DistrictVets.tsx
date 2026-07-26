@@ -5,14 +5,11 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import vetsData from '../data/vets.json';
 import { filterDisplayableVets } from '../utils/activeVets';
-import { appendUTM, slugify, titleCaseSlug } from '../utils/url';
-import { trackVetWebsiteClick } from '../utils/analytics';
-import { formatVerifiedLabel, isVetVerified } from '../utils/verifiedLabel';
+import { slugify, titleCaseSlug } from '../utils/url';
+import { isVetVerified } from '../utils/verifiedLabel';
 import { generateDistrictContent } from '../utils/districtContent';
 import type { Vet } from '../types/vet';
-import { ConfirmEnglish } from '../components/vet/ConfirmEnglish';
-import ReportIssueLink from '../components/vet/ReportIssueLink';
-import { VerificationBadge } from '../components/vet/VerificationBadge';
+import { VetCard } from '../components/vet/VetCard';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
 
@@ -431,111 +428,12 @@ export default function DistrictVets() {
                     {districtVets.length > 0 ? (
                         <div className="grid md:grid-cols-2 gap-6">
                             {districtVets.map((vet: Vet) => (
-                                <article
+                                <VetCard
                                     key={vet.id}
-                                    className="group/card relative bg-white p-6 rounded-[2rem] border border-primary/5 transition-all duration-500 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:border-accent/20"
-                                >
-                                    <div className="flex justify-between items-start mb-4">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-2 mb-1">
-                                                <span className="px-2 py-0.5 bg-primary/5 text-primary text-[9px] font-black uppercase tracking-widest rounded-full">
-                                                    {vet.city}
-                                                </span>
-                                                {vet.district && vet.district !== "Unknown" && (
-                                                    <span className="px-2 py-0.5 bg-accent/5 text-accent text-[9px] font-black uppercase tracking-widest rounded-full">
-                                                        {vet.district}
-                                                    </span>
-                                                )}
-                                            </div>
-                                            <h3 className="text-lg font-black text-primary group-hover/card:text-accent transition-colors leading-tight">
-                                                {vet.practice_name}
-                                            </h3>
-                                        </div>
-                                        <div className="flex flex-col items-end gap-2">
-                                            <VerificationBadge vet={vet} />
-                                        </div>
-                                    </div>
-
-                                    {/* Address Display */}
-                                    {vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown') ? (
-                                        <div className="text-[12px] text-primary/60 mb-5 font-bold leading-relaxed bg-accent/10 p-4 rounded-xl border border-accent/20 flex items-center gap-2">
-                                            <span>🚐</span> Mobile Service - {vet.city}
-                                        </div>
-                                    ) : (
-                                        <a
-                                            href={`https://www.google.com/search?q=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="block text-[12px] text-primary/60 mb-5 font-medium leading-relaxed bg-secondary/30 p-4 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors hover:text-accent hover:border-accent/30"
-                                        >
-                                            {vet.address}
-                                        </a>
-                                    )}
-
-                                    <div className="space-y-2 mb-6">
-                                        {vet.verification?.english_signals && vet.verification.english_signals.slice(0, 1).map((signal, idx) => (
-                                            <div key={idx} className="flex gap-3 items-start group/signal">
-                                                <div className="mt-1 flex-shrink-0 w-4 h-4 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/20">
-                                                    <svg className="w-2.5 h-2.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7"></path></svg>
-                                                </div>
-                                                <p className="text-[11px] text-primary/60 italic leading-snug group-hover/signal:text-primary/80 transition-colors line-clamp-2">
-                                                    "{signal}"
-                                                </p>
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    <div className="flex gap-3">
-                                        {(vet.contact && vet.contact.website) ? (
-                                            <a
-                                                href={appendUTM(vet.contact.website)}
-                                                onClick={() => trackVetWebsiteClick(vet.id, vet.city, 'DistrictVets_Page')}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary/95 transition-all shadow-xl shadow-primary/10 active:scale-95 flex items-center justify-center gap-2"
-                                            >
-                                                <span>🌐</span> Visit Website
-                                            </a>
-                                        ) : (
-                                            <a
-                                                href={vet.contact?.phone ? `tel:${vet.contact.phone}` : '#'}
-                                                className={`flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest rounded-xl transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 ${vet.contact?.phone ? 'bg-primary text-secondary hover:bg-primary/95 shadow-primary/10' : 'bg-gray-100 text-gray-400 cursor-not-allowed hidden'}`}
-                                            >
-                                                <span>📞</span> Call Practice
-                                            </a>
-                                        )}
-                                        {!(vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown')) && (
-                                            <a
-                                                href={`https://www.google.com/search?q=${encodeURIComponent(vet.practice_name + " " + (vet.address || ""))}`}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="px-4 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-white border border-primary/10 text-primary rounded-xl hover:bg-gray-50 transition-all hover:border-primary/30 flex items-center justify-center"
-                                                title="View on Maps"
-                                            >
-                                                📍
-                                            </a>
-                                        )}
-                                    </div>
-
-                                    <ConfirmEnglish vet={vet} />
-
-                                    <div className="mt-3 flex justify-between items-center pt-2 border-t border-gray-50/50">
-                                        <span className="text-[10px] text-gray-400">
-                                            {isVetVerified(vet)
-                                                ? `Verified: ${formatVerifiedLabel(vet.verification?.last_scanned)}`
-                                                : 'English availability: confirm when booking'}
-                                        </span>
-                                        <ReportIssueLink
-                                            vetId={vet.id}
-                                            vetName={vet.practice_name}
-                                            reason="Data Incorrect"
-                                            className="text-gray-300 hover:text-red-400 transition-colors flex items-center gap-1 group/report"
-                                        >
-                                            <span className="text-[9px] opacity-0 group-hover/report:opacity-100 transition-opacity">Report Issue</span>
-                                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                                        </ReportIssueLink>
-                                    </div>
-                                </article>
+                                    vet={vet}
+                                    analyticsLocation="DistrictVets_Page"
+                                    headingLevel={3}
+                                />
                             ))}
                         </div>
                     ) : (
