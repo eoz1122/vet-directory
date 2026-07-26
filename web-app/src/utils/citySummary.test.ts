@@ -34,6 +34,22 @@ describe('generateCitySummary', () => {
         expect(s.content).not.toMatch(/top-rated/i); // no unearned superlatives
     });
 
+    it('describes government veterinary evidence without calling it community-confirmed', () => {
+        const governmentVet = mk({
+            verification: {
+                status: 'Verified',
+                last_scanned: '2026-07-26',
+                english_signals: ['Government directory confirms English'],
+                evidence_type: 'government_source' as Vet['verification']['evidence_type'],
+            },
+        });
+        const s = generateCitySummary('Hofheim', [governmentVet], [governmentVet]);
+
+        expect(s.content).toContain('government veterinary source');
+        expect(s.content).not.toContain('community-confirmed by pet owners');
+        expect(s.content).not.toContain('confirmed by its official website');
+    });
+
     it('differs meaningfully between two cities (no shared boilerplate)', () => {
         const a = generateCitySummary('Hofheim', hofheim, [...hofheim, ...frankfurt]).content;
         const b = generateCitySummary('Frankfurt', frankfurt, [...hofheim, ...frankfurt]).content;

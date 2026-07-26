@@ -11,6 +11,19 @@ export function resolveGuideCatalogPath(scriptDirectory) {
     return path.resolve(scriptDirectory, '../src/content/guideCatalog.ts');
 }
 
+export function resolvePrerenderConcurrency(value) {
+    if (value === undefined || value === '') return 5;
+
+    const concurrency = Number(value);
+    if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 10) {
+        throw new RangeError(
+            'PRERENDER_CONCURRENCY must be an integer from 1 to 10',
+        );
+    }
+
+    return concurrency;
+}
+
 export function extractBlogRoutes(source) {
     const internalRoutePattern = /url:\s*["'](\/(?!\/)[^"']+)["']/g;
     return Array.from(source.matchAll(internalRoutePattern), (match) => match[1]);

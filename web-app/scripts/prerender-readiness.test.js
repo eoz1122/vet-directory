@@ -5,6 +5,7 @@ import {
     extractBlogRoutes,
     removePrerenderFallbackMetadata,
     renderPrerenderRoutes,
+    resolvePrerenderConcurrency,
     resolvePrerenderDistDir,
     resolveGuideCatalogPath,
     shouldKeepModulePreload,
@@ -85,6 +86,22 @@ describe('prerender readiness', () => {
         expect(resolvePrerenderDistDir('/project/scripts')).toBe('/project/dist');
         expect(resolvePrerenderDistDir('/project/scripts', '/tmp/vet-prerender')).toBe(
             '/tmp/vet-prerender',
+        );
+    });
+
+    it('keeps five workers by default and accepts a bounded concurrency override', () => {
+        expect(resolvePrerenderConcurrency()).toBe(5);
+        expect(resolvePrerenderConcurrency('')).toBe(5);
+        expect(resolvePrerenderConcurrency('1')).toBe(1);
+        expect(resolvePrerenderConcurrency('10')).toBe(10);
+        expect(() => resolvePrerenderConcurrency('0')).toThrow(
+            'PRERENDER_CONCURRENCY must be an integer from 1 to 10',
+        );
+        expect(() => resolvePrerenderConcurrency('2.5')).toThrow(
+            'PRERENDER_CONCURRENCY must be an integer from 1 to 10',
+        );
+        expect(() => resolvePrerenderConcurrency('not-a-number')).toThrow(
+            'PRERENDER_CONCURRENCY must be an integer from 1 to 10',
         );
     });
 

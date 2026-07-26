@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://englishspeakinggermany.online/vets/hofheim</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://englishspeakinggermany.online/vets/wiesbaden</loc>
-    <lastmod>2025-12-27</lastmod>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -637,12 +637,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://englishspeakinggermany.online/vets/hofheim/specialist-center</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://englishspeakinggermany.online/vets/frankfurt/bockenheim</loc>
     <lastmod>2025-12-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -705,6 +699,12 @@
   <url>
     <loc>https://englishspeakinggermany.online/vets/kelkheim/taunus</loc>
     <lastmod>2025-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://englishspeakinggermany.online/vets/wiesbaden/schierstein</loc>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1575,6 +1575,18 @@
   <url>
     <loc>https://englishspeakinggermany.online/vets/essen/altenessen-süd</loc>
     <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://englishspeakinggermany.online/vets/wiesbaden/bierstadt</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://englishspeakinggermany.online/vets/wiesbaden/nordenstadt</loc>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

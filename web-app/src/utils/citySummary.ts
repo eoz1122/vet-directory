@@ -1,6 +1,10 @@
 import type { Vet } from '../types/vet';
 import { calculateDistance } from './distance';
-import { isOfficialWebsiteConfirmed, isVetVerified } from './verifiedLabel';
+import {
+    isGovernmentSourceConfirmed,
+    isOfficialWebsiteConfirmed,
+    isVetVerified,
+} from './verifiedLabel';
 
 /**
  * Data-driven intro content for city pages WITHOUT hand-written cityContent.
@@ -26,10 +30,16 @@ export function generateCitySummary(city: string, cityVets: Vet[], allVets: Vet[
     const count = cityVets.length;
     const names = cityVets.map((v) => v.practice_name);
     const officialWebsiteConfirmed = cityVets.filter(isOfficialWebsiteConfirmed);
+    const governmentConfirmed = cityVets.filter(isGovernmentSourceConfirmed);
     const communityConfirmed = cityVets.filter(
-        (vet) => isVetVerified(vet) && !isOfficialWebsiteConfirmed(vet),
+        (vet) => isVetVerified(vet) &&
+            !isOfficialWebsiteConfirmed(vet) &&
+            !isGovernmentSourceConfirmed(vet),
     );
-    const communitySourced = count - officialWebsiteConfirmed.length - communityConfirmed.length;
+    const communitySourced = count -
+        officialWebsiteConfirmed.length -
+        governmentConfirmed.length -
+        communityConfirmed.length;
     const withSite = cityVets.filter((v) => v.contact?.website).length;
     const emergency = cityVets.filter((v) => {
         const e = (v.verification as { emergency_services?: string }).emergency_services;
@@ -47,6 +57,11 @@ export function generateCitySummary(city: string, cityVets: Vet[], allVets: Vet[
             officialWebsiteConfirmed.length === 1
                 ? '1 is confirmed by its official website'
                 : `${officialWebsiteConfirmed.length} are confirmed by their official websites`,
+        );
+    }
+    if (governmentConfirmed.length) {
+        evidenceSummary.push(
+            `${governmentConfirmed.length} ${governmentConfirmed.length === 1 ? 'is' : 'are'} confirmed by a government veterinary source`,
         );
     }
     if (communityConfirmed.length) {

@@ -1856,24 +1856,29 @@
   },
   {
     "id": "Frankfurt-50",
-    "practice_name": "Tierklinik Hofheim (Specialist Center)",
+    "practice_name": "Tierklinik Hofheim",
     "city": "Hofheim",
-    "district": "Specialist Center",
-    "address": "Im Ried 12, 65719 Hofheim am Taunus",
+    "district": "Hofheim",
+    "address": "Katharina-Kemmler-Straße 7, 65719 Hofheim am Taunus",
     "coordinates": {
-      "lat": 50.0896786,
-      "lng": 8.4623423
+      "lat": 50.0896998,
+      "lng": 8.4623975
     },
     "contact": {
-      "phone": "",
-      "website": "https://www.tierklinik-hofheim.de",
-      "google_maps": null
+      "phone": "+49 6192 290290",
+      "website": "https://www.tierklinik-hofheim.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik%20Hofheim%20Katharina-Kemmler-Stra%C3%9Fe%207%2C%2065719%20Hofheim"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support"
+        "The clinic's current English page says \"Contact us for help (English spoken)\" and publishes its English contact number"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierklinik-hofheim.de/dialog/englisch.html",
+        "https://www.tierklinik-hofheim.de/die-klinik/notfallambulanz.html"
       ],
       "emergency_services": "24/7"
     },
@@ -2433,25 +2438,28 @@
   },
   {
     "id": "Frankfurt-82",
-    "practice_name": "Tierarztpraxis Dr. Kindler AniCura Wiesbaden Schierstein GmbH",
+    "practice_name": "AniCura Wiesbaden Schierstein",
     "city": "Wiesbaden",
-    "district": "Unknown",
-    "address": "Saarbrücker Allee 7",
+    "district": "Schierstein",
+    "address": "Saarbrücker Allee 7, 65201 Wiesbaden",
     "coordinates": {
       "lat": 50.0459109,
       "lng": 8.2048268
     },
     "contact": {
       "phone": "0611 1885815",
-      "website": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Kindler+AniCura+Wiesbaden+Schierstein+GmbH/data=!4m7!3m6!1s0x47bd95edb7da87f3:0x3c68002a0ade2fb6!8m2!3d50.0459109!4d8.2048268!16s%2Fg%2F1tdj3b78!19sChIJ84fat-2VvUcRti_eCioAaDw?authuser=0&hl=en&rclk=1",
+      "website": "https://www.anicura.de/standorte/wiesbaden-schierstein/",
       "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Kindler+AniCura+Wiesbaden+Schierstein+GmbH/data=!4m7!3m6!1s0x47bd95edb7da87f3:0x3c68002a0ade2fb6!8m2!3d50.0459109!4d8.2048268!16s%2Fg%2F1tdj3b78!19sChIJ84fat-2VvUcRti_eCioAaDw?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-27",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Confirmed via Google Review: \"as well :)\"; Confirmed via Google Review: \"English as well :)\"",
-        "Confirmed via Google Review: \"English as well :)\""
+        "Community-confirmed via a Google review that explicitly mentions English; confirm the current English-speaking clinician when booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.google.com/maps/place/Tierarztpraxis+Dr.+Kindler+AniCura+Wiesbaden+Schierstein+GmbH/data=!4m7!3m6!1s0x47bd95edb7da87f3:0x3c68002a0ade2fb6!8m2!3d50.0459109!4d8.2048268!16s%2Fg%2F1tdj3b78!19sChIJ84fat-2VvUcRti_eCioAaDw?authuser=0&hl=en&rclk=1"
       ],
       "emergency_services": ""
     },
@@ -7557,6 +7565,67 @@
         "https://www.tieraerztliche-klinik.de/wp-content/uploads/2025/01/NBV-Behandlungsvertrag01.01.25-Englisch.pdf"
       ],
       "emergency_services": "24/7"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "wiesbaden-tiergesundheitszentrum-bierstadt",
+    "practice_name": "Tiergesundheitszentrum Wiesbaden-Bierstadt",
+    "city": "Wiesbaden",
+    "district": "Bierstadt",
+    "address": "Kloppenheimer Straße 3, 65191 Wiesbaden",
+    "coordinates": {
+      "lat": 50.0825308,
+      "lng": 8.2876715
+    },
+    "contact": {
+      "phone": "+49 611 502014",
+      "website": "https://www.tiergesundheitszentrum-wiesbaden.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tiergesundheitszentrum%20Wiesbaden-Bierstadt%20Kloppenheimer%20Stra%C3%9Fe%203%2C%2065191%20Wiesbaden"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-26",
+      "english_signals": [
+        "The practice's current contact page explicitly states that its team speaks English and publishes English-language contact and opening information"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tiergesundheitszentrum-wiesbaden.de/en-gb/kontakt",
+        "https://www.tiergesundheitszentrum-wiesbaden.de/kontakt"
+      ],
+      "emergency_services": "Sunday and public-holiday emergency standby 10:00-12:00; call first"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "wiesbaden-tierdermatologie-wildermuth",
+    "practice_name": "Tierdermatologie Dr. Wildermuth",
+    "city": "Wiesbaden",
+    "district": "Nordenstadt",
+    "address": "Borsigstraße 7a, 65205 Wiesbaden",
+    "practice_focus": "Veterinary dermatology, allergies and ear disease",
+    "coordinates": {
+      "lat": 50.056512,
+      "lng": 8.3354821
+    },
+    "contact": {
+      "phone": "+49 6122 707280",
+      "website": "https://www.tierdermatologie-wildermuth.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierdermatologie%20Dr.%20Wildermuth%20Borsigstra%C3%9Fe%207a%2C%2065205%20Wiesbaden"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-26",
+      "english_signals": [
+        "The U.S. military Veterinary Medical Center Europe directory states that all listed veterinarians speak English and lists this practice; its current website confirms the specialist clinic and address"
+      ],
+      "evidence_type": "government_source",
+      "source_urls": [
+        "https://mrc-europe.army.mil/Portals/106/VMCE%20Welcome%20Packet%202023__Fillable_1.pdf",
+        "https://www.tierdermatologie-wildermuth.de/"
+      ],
+      "emergency_services": ""
     },
     "community_status": "Verified"
   }

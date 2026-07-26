@@ -14,8 +14,8 @@ export function formatVerifiedLabel(lastScanned: string | undefined, now: Date =
 }
 
 export interface VerificationPresentation {
-    badge: 'Official Website' | 'Community Confirmed' | 'Community Listed';
-    title: 'Official Website Confirmed' | 'Community Confirmed' | 'Confirmation Needed';
+    badge: 'Official Website' | 'Government Listed' | 'Community Confirmed' | 'Community Listed';
+    title: 'Official Website Confirmed' | 'Government Source Confirmed' | 'Community Confirmed' | 'Confirmation Needed';
     description: string;
     verified: boolean;
 }
@@ -24,8 +24,13 @@ export function isOfficialWebsiteConfirmed(vet: Vet): boolean {
     return vet.verification?.evidence_type === 'official_website';
 }
 
+export function isGovernmentSourceConfirmed(vet: Vet): boolean {
+    return vet.verification?.evidence_type === 'government_source';
+}
+
 export function isVetVerified(vet: Vet): boolean {
     return isOfficialWebsiteConfirmed(vet) ||
+        isGovernmentSourceConfirmed(vet) ||
         vet.community_status === 'Verified' ||
         vet.verification?.status === 'Verified';
 }
@@ -36,6 +41,15 @@ export function getVerificationPresentation(vet: Vet): VerificationPresentation 
             badge: 'Official Website',
             title: 'Official Website Confirmed',
             description: 'The practice explicitly advertises English-language service on its own website. Confirm which English-speaking clinician will be available when booking.',
+            verified: true,
+        };
+    }
+
+    if (isGovernmentSourceConfirmed(vet)) {
+        return {
+            badge: 'Government Listed',
+            title: 'Government Source Confirmed',
+            description: 'A government veterinary resource identifies this practice as English-speaking. Confirm staff availability when booking because personnel and source details can change.',
             verified: true,
         };
     }

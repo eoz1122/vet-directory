@@ -1,5 +1,9 @@
 import type { Vet } from '../types/vet';
-import { isOfficialWebsiteConfirmed, isVetVerified } from './verifiedLabel';
+import {
+    isGovernmentSourceConfirmed,
+    isOfficialWebsiteConfirmed,
+    isVetVerified,
+} from './verifiedLabel';
 
 export interface DistrictFaq {
     q: string;
@@ -35,10 +39,13 @@ export function generateDistrictContent(
     const count = vets.length;
     const names = vets.map(v => v.practice_name).filter(Boolean);
     const officialNames = vets.filter(isOfficialWebsiteConfirmed).map(v => v.practice_name);
+    const governmentNames = vets.filter(isGovernmentSourceConfirmed).map(v => v.practice_name);
     const communityConfirmedNames = vets
-        .filter(v => isVetVerified(v) && !isOfficialWebsiteConfirmed(v))
+        .filter(v => isVetVerified(v) &&
+            !isOfficialWebsiteConfirmed(v) &&
+            !isGovernmentSourceConfirmed(v))
         .map(v => v.practice_name);
-    const verifiedNames = [...officialNames, ...communityConfirmedNames];
+    const verifiedNames = [...officialNames, ...governmentNames, ...communityConfirmedNames];
     const emergencyNames = vets
         .filter(v => v.verification?.emergency_services)
         .map(v => v.practice_name);
@@ -71,11 +78,14 @@ export function generateDistrictContent(
         paragraphs.push(officialNames.length
             ? `${names[0]} is confirmed by its official website as offering English-language service in ${district}, ${city}. ` +
                 `Confirm which English-speaking clinician will be available when you book.`
-            : communityConfirmedNames.length
-                ? `${names[0]} is the community-confirmed veterinary practice we currently list in ${district}, ${city}. ` +
-                `Community members have confirmed English availability, but it is still worth confirming who will be available when you book.`
-                : `${names[0]} is the community-sourced veterinary practice we currently list in ${district}, ${city}. ` +
-                    `Its listing contains an English-language signal, but English availability has not yet been confirmed through our community process. Review the evidence shown and confirm when booking.`,
+            : governmentNames.length
+                ? `${names[0]} is identified as English-speaking by a government veterinary source for ${district}, ${city}. ` +
+                    `Confirm which English-speaking clinician will be available when you book because personnel can change.`
+                : communityConfirmedNames.length
+                    ? `${names[0]} is the community-confirmed veterinary practice we currently list in ${district}, ${city}. ` +
+                        `Community members have confirmed English availability, but it is still worth confirming who will be available when you book.`
+                    : `${names[0]} is the community-sourced veterinary practice we currently list in ${district}, ${city}. ` +
+                        `Its listing contains an English-language signal, but English availability has not yet been confirmed through our community process. Review the evidence shown and confirm when booking.`,
         );
     } else {
         const shown = names.slice(0, 4);
@@ -85,6 +95,9 @@ export function generateDistrictContent(
         const evidenceNotes = [
             officialNames.length
                 ? `${officialNames.length} ${officialNames.length === 1 ? 'is' : 'are'} confirmed by ${officialNames.length === 1 ? 'its official website' : 'their official websites'}`
+                : '',
+            governmentNames.length
+                ? `${governmentNames.length} ${governmentNames.length === 1 ? 'is' : 'are'} confirmed by a government veterinary source`
                 : '',
             communityConfirmedNames.length
                 ? `${communityConfirmedNames.length} ${communityConfirmedNames.length === 1 ? 'is' : 'are'} community-confirmed`
@@ -132,7 +145,7 @@ export function generateDistrictContent(
         a: count === 0
             ? `We do not yet list a confirmed English-speaking vet directly in ${district}. Check nearby districts in ${city} for the closest English-friendly practice.`
             : verifiedNames.length
-                ? `Yes. We list ${count} English-speaking veterinary ${count === 1 ? 'practice' : 'practices'} in ${district}. ${officialNames.length ? `${officialNames.length} ${officialNames.length === 1 ? 'is' : 'are'} confirmed by ${officialNames.length === 1 ? 'its official website' : 'their official websites'}. ` : ''}${communityConfirmedNames.length ? `${communityConfirmedNames.length} ${communityConfirmedNames.length === 1 ? 'is' : 'are'} community-confirmed. ` : ''}The listings include ${prose(names.slice(0, 3))}${count > 3 ? ', among others' : ''}.`
+                ? `Yes. We list ${count} English-speaking veterinary ${count === 1 ? 'practice' : 'practices'} in ${district}. ${officialNames.length ? `${officialNames.length} ${officialNames.length === 1 ? 'is' : 'are'} confirmed by ${officialNames.length === 1 ? 'its official website' : 'their official websites'}. ` : ''}${governmentNames.length ? `${governmentNames.length} ${governmentNames.length === 1 ? 'is' : 'are'} confirmed by a government veterinary source. ` : ''}${communityConfirmedNames.length ? `${communityConfirmedNames.length} ${communityConfirmedNames.length === 1 ? 'is' : 'are'} community-confirmed. ` : ''}The listings include ${prose(names.slice(0, 3))}${count > 3 ? ', among others' : ''}.`
                 : `We list ${count} ${count === 1 ? 'practice' : 'practices'} in ${district} that our community has flagged as English-speaking${count <= 3 ? ` (${prose(names)})` : ''}. These are community-sourced rather than independently Verified, so it is worth confirming when you book.`,
     };
 
@@ -150,10 +163,7 @@ export function generateDistrictContent(
 
     const verifyFaq: DistrictFaq = {
         q: `How do you verify English-speaking vets in ${district}?`,
-        a: `${officialNames.length ? `${officialNames.length} ${officialNames.length === 1 ? 'listing uses' : 'listings use'} an explicit statement from the practice's official website. ` : ''}Other ${district} listings are community-sourced and cross-checked for English-language signals` +
-            `${signals.length ? ` such as ${prose(signals.slice(0, 2))}` : ''}` +
-            `${hasReviewSignal ? ', including English confirmed in Google reviews' : ''}. ` +
-            `Community Confirmed means pet owners have reported successful English communication.`,
+        a: `${officialNames.length ? `${officialNames.length} ${officialNames.length === 1 ? 'listing uses' : 'listings use'} an explicit statement from the practice's official website. ` : ''}${governmentNames.length ? `${governmentNames.length} ${governmentNames.length === 1 ? 'listing uses' : 'listings use'} a government veterinary source. ` : ''}${communityConfirmedNames.length || count > verifiedNames.length ? `Other ${district} listings are community-sourced and cross-checked for English-language signals${signals.length ? ` such as ${prose(signals.slice(0, 2))}` : ''}${hasReviewSignal ? ', including English confirmed in Google reviews' : ''}. ` : ''}${communityConfirmedNames.length ? `Community Confirmed means pet owners have reported successful English communication.` : ''}`,
     };
 
     // Matches the conversational phrasing real searchers use (GSC, July 2026):
@@ -164,7 +174,7 @@ export function generateDistrictContent(
         ? {
             q: `Is there an English-speaking vet in ${district} you can recommend?`,
             a: verifiedNames.length
-                ? `${prose(verifiedNames.slice(0, 3))} ${verifiedNames.length === 1 ? 'has' : 'have'} confirmation evidence in ${district}. ${officialNames.length ? `${officialNames.length} ${officialNames.length === 1 ? 'is' : 'are'} confirmed by ${officialNames.length === 1 ? 'its official website' : 'their official websites'}. ` : ''}${communityConfirmedNames.length ? `${communityConfirmedNames.length} ${communityConfirmedNames.length === 1 ? 'is' : 'are'} community-confirmed by pet owners. ` : ''}Each listing shows the practice's contact details and the evidence source.`
+                ? `${prose(verifiedNames.slice(0, 3))} ${verifiedNames.length === 1 ? 'has' : 'have'} confirmation evidence in ${district}. ${officialNames.length ? `${officialNames.length} ${officialNames.length === 1 ? 'is' : 'are'} confirmed by ${officialNames.length === 1 ? 'its official website' : 'their official websites'}. ` : ''}${governmentNames.length ? `${governmentNames.length} ${governmentNames.length === 1 ? 'is' : 'are'} confirmed by a government veterinary source. ` : ''}${communityConfirmedNames.length ? `${communityConfirmedNames.length} ${communityConfirmedNames.length === 1 ? 'is' : 'are'} community-confirmed by pet owners. ` : ''}Each listing shows the practice's contact details and the evidence source.`
                 : `Our ${district} ${count === 1 ? 'listing is' : 'listings are'} community-sourced${count <= 3 ? ` (${prose(names)})` : ''} rather than independently Verified yet, so we would not call ${count === 1 ? 'it' : 'any of them'} a firm recommendation. Check the English signals on each listing and confirm when booking.`,
         }
         : null;

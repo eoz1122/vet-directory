@@ -250,6 +250,12 @@ const expectedNationwidePractices = [
         sourceUrl: 'https://www.tieraerztliche-klinik.de/wp-content/uploads/2025/01/NBV-Behandlungsvertrag01.01.25-Englisch.pdf',
         emergencyServices: '24/7',
     },
+    {
+        id: 'wiesbaden-tiergesundheitszentrum-bierstadt',
+        city: 'Wiesbaden',
+        address: 'Kloppenheimer Straße 3, 65191 Wiesbaden',
+        sourceUrl: 'https://www.tiergesundheitszentrum-wiesbaden.de/en-gb/kontakt',
+    },
 ] as const;
 
 const expectedCommunityConfirmedPractices = [
@@ -259,6 +265,23 @@ const expectedCommunityConfirmedPractices = [
         address: 'Preinstraße 53, 44265 Dortmund',
         website: 'https://www.mayfeld.com/',
         communitySourceUrl: 'https://www.reddit.com/r/Dortmund/comments/xmk5mr/english_speaking_veterinarian/',
+    },
+    {
+        id: 'Frankfurt-82',
+        city: 'Wiesbaden',
+        address: 'Saarbrücker Allee 7, 65201 Wiesbaden',
+        website: 'https://www.anicura.de/standorte/wiesbaden-schierstein/',
+        communitySourceUrl: 'https://www.google.com/maps/place/Tierarztpraxis+Dr.+Kindler+AniCura+Wiesbaden+Schierstein+GmbH/data=!4m7!3m6!1s0x47bd95edb7da87f3:0x3c68002a0ade2fb6!8m2!3d50.0459109!4d8.2048268!16s%2Fg%2F1tdj3b78!19sChIJ84fat-2VvUcRti_eCioAaDw?authuser=0&hl=en&rclk=1',
+    },
+] as const;
+
+const expectedGovernmentListedPractices = [
+    {
+        id: 'wiesbaden-tierdermatologie-wildermuth',
+        city: 'Wiesbaden',
+        address: 'Borsigstraße 7a, 65205 Wiesbaden',
+        website: 'https://www.tierdermatologie-wildermuth.de/',
+        governmentSourceUrl: 'https://mrc-europe.army.mil/Portals/106/VMCE%20Welcome%20Packet%202023__Fillable_1.pdf',
     },
 ] as const;
 
@@ -333,6 +356,26 @@ describe('first-party-verified nationwide English-speaking practices', () => {
     });
 });
 
+describe('government-listed English-speaking practices', () => {
+    it.each(expectedGovernmentListedPractices)(
+        'keeps $id distinct from first-party and community verification',
+        ({ id, city, address, website, governmentSourceUrl }) => {
+            const practice = vetsData.find((vet) => vet.id === id);
+
+            expect(practice).toBeDefined();
+            expect(practice?.city).toBe(city);
+            expect(practice?.address).toBe(address);
+            expect(practice?.contact.website).toBe(website);
+            expect(practice?.community_status).toBe('Verified');
+            expect(practice?.verification.status).toBe('Verified');
+            expect(practice?.verification.evidence_type).toBe('government_source');
+            expect(practice?.verification.english_signals.length).toBeGreaterThan(0);
+            expect(practice?.verification.source_urls).toContain(governmentSourceUrl);
+            expect(practice?.verification.last_scanned).toBe('2026-07-26');
+        },
+    );
+});
+
 describe('reverified existing practice records', () => {
     it.each([
         {
@@ -363,5 +406,21 @@ describe('reverified existing practice records', () => {
         const practice = vetsData.find((vet) => vet.id === 'Munich-131');
 
         expect(practice?.address).toBe('Schwarzstraße 3, 81669 München');
+    });
+
+    it('uses Tierklinik Hofheim current address and explicit English page', () => {
+        const practice = vetsData.find((vet) => vet.id === 'Frankfurt-50');
+
+        expect(practice?.practice_name).toBe('Tierklinik Hofheim');
+        expect(practice?.address).toBe(
+            'Katharina-Kemmler-Straße 7, 65719 Hofheim am Taunus',
+        );
+        expect(practice?.district).toBe('Hofheim');
+        expect(practice?.contact.phone).toBe('+49 6192 290290');
+        expect(practice?.verification.evidence_type).toBe('official_website');
+        expect(practice?.verification.source_urls).toContain(
+            'https://www.tierklinik-hofheim.de/dialog/englisch.html',
+        );
+        expect(practice?.verification.last_scanned).toBe('2026-07-26');
     });
 });

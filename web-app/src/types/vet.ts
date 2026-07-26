@@ -19,7 +19,7 @@ export interface Vet {
         last_scanned: string;
         english_signals: string[];
         source_urls?: string[];
-        evidence_type?: "official_website" | "community";
+        evidence_type?: "official_website" | "government_source" | "community";
         emergency_services?: string;
     };
     community_status?: "Verified" | "Community Sourced" | "Pending" | "Unverified";

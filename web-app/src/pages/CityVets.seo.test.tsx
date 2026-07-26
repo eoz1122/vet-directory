@@ -59,6 +59,27 @@ describe('CityVets search and trust contract', () => {
         expect(screen.getByText('Exotic pets, zoo animals and wildlife')).toBeTruthy();
     });
 
+    it('keeps Wiesbaden government evidence visibly distinct', async () => {
+        renderCity('/vets/wiesbaden');
+
+        expect(screen.getByText('Government Listed')).toBeTruthy();
+        expect(screen.getByText('Government Source Confirmed')).toBeTruthy();
+
+        await waitFor(() => {
+            const faqSchema = [...document.head.querySelectorAll('script[type="application/ld+json"]')]
+                .map((script) => JSON.parse(script.textContent || '{}'))
+                .find((schema) => schema['@type'] === 'FAQPage');
+            const answers = faqSchema?.mainEntity
+                .map((entry: { acceptedAnswer: { text: string } }) => entry.acceptedAnswer.text)
+                .join(' ');
+
+            expect(answers).toContain('1 is confirmed by a government veterinary source');
+            expect(answers).toContain(
+                'Government Listed means a government veterinary source identifies the practice as English-speaking',
+            );
+        });
+    });
+
     it('shows verified 24-hour emergency service on the Mönchengladbach listing', () => {
         renderCity('/vets/mönchengladbach');
 

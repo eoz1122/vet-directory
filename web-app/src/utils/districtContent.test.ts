@@ -101,4 +101,27 @@ describe('generateDistrictContent', () => {
         expect(c.intro).not.toMatch(/—|undefined/);
         expect(c.intro.toLowerCase()).toContain('sülz');
     });
+
+    it('describes a government-listed practice without converting it to community evidence', () => {
+        const governmentVet = mk({
+            practice_name: 'Government Directory Vet',
+            verification: {
+                status: 'Verified',
+                last_scanned: '2026-07-26',
+                english_signals: ['Government directory confirms English'],
+                evidence_type: 'government_source' as Vet['verification']['evidence_type'],
+            },
+        });
+        const c = generateDistrictContent(
+            'Nordenstadt',
+            'Wiesbaden',
+            [governmentVet],
+            [governmentVet],
+        );
+        const blob = `${c.intro} ${JSON.stringify(c.faqs)}`;
+
+        expect(blob).toContain('government veterinary source');
+        expect(blob).not.toContain('community-confirmed');
+        expect(blob).not.toContain('official website');
+    });
 });

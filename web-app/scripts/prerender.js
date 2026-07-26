@@ -18,6 +18,7 @@ import {
     PRERENDER_FALLBACK_SELECTOR,
     renderPrerenderRoutes,
     resolveGuideCatalogPath,
+    resolvePrerenderConcurrency,
     resolvePrerenderDistDir,
     shouldKeepModulePreload,
 } from './prerender-readiness.js';
@@ -31,7 +32,9 @@ const BLOG_FILE_PATH = resolveGuideCatalogPath(__dirname);
 const PREVIEW_PORT = 4174;
 
 // Concurrency limit (pages rendered simultaneously)
-const CONCURRENCY = 5;
+const CONCURRENCY = resolvePrerenderConcurrency(
+    process.env.PRERENDER_CONCURRENCY,
+);
 
 // ─── Slug Helper (mirrors generate-sitemap.js) ───
 

@@ -8,7 +8,7 @@ import {
 
 const makeVet = (
     communityStatus: Vet['community_status'],
-    evidenceType?: 'official_website' | 'community',
+    evidenceType?: string,
 ): Vet => ({
     id: 'test-vet',
     practice_name: 'Test Vet',
@@ -21,7 +21,7 @@ const makeVet = (
         status: communityStatus === 'Verified' ? 'Verified' : 'Community Sourced',
         last_scanned: '2026-07-25',
         english_signals: ['English evidence'],
-        evidence_type: evidenceType,
+        evidence_type: evidenceType as Vet['verification']['evidence_type'],
     },
     community_status: communityStatus,
 });
@@ -65,6 +65,19 @@ describe('getVerificationPresentation', () => {
         expect(presentation.title).toBe('Community Confirmed');
         expect(presentation.description).toContain('Community members');
         expect(presentation.description).not.toContain('practice explicitly');
+    });
+
+    it('keeps government veterinary evidence distinct from practice and community claims', () => {
+        const presentation = getVerificationPresentation(
+            makeVet('Verified', 'government_source'),
+        );
+
+        expect(isVetVerified(makeVet('Verified', 'government_source'))).toBe(true);
+        expect(presentation.badge).toBe('Government Listed');
+        expect(presentation.title).toBe('Government Source Confirmed');
+        expect(presentation.description).toContain('government veterinary resource');
+        expect(presentation.description).not.toContain('practice explicitly');
+        expect(presentation.description).not.toContain('Community members');
     });
 
     it('does not upgrade a community-sourced lead', () => {
