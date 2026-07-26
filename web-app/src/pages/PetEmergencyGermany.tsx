@@ -257,6 +257,16 @@ export default function PetEmergencyGermany() {
                                         Current member-practice rota, exact duty hours, eligibility limits, and Cologne fallback.
                                     </span>
                                 </Link>
+                                <Link
+                                    to="/guides/emergency-vets-muenster"
+                                    aria-label="Münster emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Münster emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">
+                                        Official 2026 calendar, participating-practice lookup, 08:00 handover, and transport rules.
+                                    </span>
+                                </Link>
                                 <a
                                     href="https://bundestieraerztekammer.de/btk/mitglieder/"
                                     aria-label="German state veterinary chambers"

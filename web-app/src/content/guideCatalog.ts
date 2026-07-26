@@ -129,6 +129,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['emergency', 'vet-care', 'costs', 'bonn', 'cologne', 'dog', 'cat'],
     },
     {
+        url: '/guides/emergency-vets-muenster',
+        title: "Emergency Vet Münster: Official 2026 Duty Rota",
+        emoji: '🏥',
+        category: 'Emergency',
+        desc: "The chamber's current 2026 calendar, participating-practice lookup, 08:00 handover, call-ahead steps, transport rules and GOT fees.",
+        topics: ['emergency', 'vet-care', 'costs', 'münster', 'muenster', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-sitting-germany',
         title: "Pet Sitting in Germany (2026)",
         emoji: '🏡',

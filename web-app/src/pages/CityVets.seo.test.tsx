@@ -214,4 +214,12 @@ describe('CityVets search and trust contract', () => {
             name: 'Emergency vet help in Bonn',
         }).getAttribute('href')).toBe('/guides/emergency-vets-bonn');
     });
+
+    it('links Münster readers to the local emergency guide', () => {
+        renderCity('/vets/münster');
+
+        expect(screen.getByRole('link', {
+            name: 'Emergency vet help in Münster',
+        }).getAttribute('href')).toBe('/guides/emergency-vets-muenster');
+    });
 });

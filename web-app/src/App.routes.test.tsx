@@ -146,4 +146,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Bonn: Official Duty Rota and Hours (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the Münster emergency guide', async () => {
+        window.history.pushState({}, '', '/guides/emergency-vets-muenster');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Emergency Vet Münster: Official 2026 Duty Rota',
+        })).toBeTruthy();
+    });
 });
