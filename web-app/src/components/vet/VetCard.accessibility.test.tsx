@@ -62,6 +62,84 @@ describe('VetCard accessibility', () => {
         );
 
         expect(screen.getByRole('link', { name: 'Visit Test Veterinary Clinic website' })).toBeTruthy();
+        expect(screen.getByRole('link', { name: 'Call Test Veterinary Clinic' })).toBeTruthy();
+    });
+
+    it('tracks the practice identity when a visitor starts a phone call', () => {
+        const gtag = vi.fn();
+        (window as unknown as { gtag: unknown }).gtag = gtag;
+
+        render(
+            <VetCard
+                vet={vet}
+                analyticsLocation="CityVets_Page"
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        const callLink = screen.getByRole('link', { name: 'Call Test Veterinary Clinic' });
+        expect(callLink.getAttribute('href')).toBe('tel:+49 30 123456');
+        callLink.addEventListener('click', (event) => event.preventDefault());
+        fireEvent.click(callLink);
+
+        expect(gtag).toHaveBeenCalledWith('event', 'vet_phone_click', {
+            vet_id: 'test-vet',
+            city: 'Berlin',
+            location: 'CityVets_Page',
+            event_category: 'contact',
+            event_label: 'test-vet',
+        });
+    });
+
+    it('places a 24-hour emergency call before the website and makes it prominent', () => {
+        render(
+            <VetCard
+                vet={{
+                    ...vet,
+                    verification: {
+                        ...vet.verification,
+                        emergency_services: '24/7',
+                    },
+                }}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        const callLink = screen.getByRole('link', { name: 'Call Test Veterinary Clinic' });
+        const websiteLink = screen.getByRole('link', {
+            name: 'Visit Test Veterinary Clinic website',
+        });
+        const links = [...callLink.parentElement!.querySelectorAll('a')];
+
+        expect(links.indexOf(callLink)).toBeLessThan(links.indexOf(websiteLink));
+        expect(callLink.className).toContain('bg-red-600');
+        expect(callLink.className).toContain('w-full');
+    });
+
+    it('keeps the direct call action when a practice has no website', () => {
+        render(
+            <VetCard
+                vet={{
+                    ...vet,
+                    contact: {
+                        ...vet.contact,
+                        website: null,
+                    },
+                }}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        expect(screen.getByRole('link', { name: 'Call Test Veterinary Clinic' })).toBeTruthy();
+        expect(screen.queryByRole('link', {
+            name: 'Visit Test Veterinary Clinic website',
+        })).toBeNull();
     });
 
     it('gives a linked district chip a full touch target', () => {

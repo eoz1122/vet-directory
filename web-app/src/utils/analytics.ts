@@ -30,6 +30,18 @@ export const trackVetWebsiteClick = (vetId: string, city: string, location: stri
     });
 };
 
+// Direct call intent is a core directory conversion. Do not include the phone
+// number in analytics because the listing ID is sufficient for attribution.
+export const trackVetPhoneClick = (vetId: string, city: string, location: string) => {
+    sendGAEvent('vet_phone_click', {
+        vet_id: vetId,
+        city: city,
+        location: location,
+        event_category: 'contact',
+        event_label: vetId,
+    });
+};
+
 // Map engagement: answers "does anyone actually use the map?" for the
 // keep-vs-demote decision on the landing page.
 export const trackMapPinClick = (vetId: string, city: string) => {

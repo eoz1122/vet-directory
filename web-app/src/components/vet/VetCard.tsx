@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import type { Vet, VetWithDistance } from '../../types/vet';
-import { trackVetWebsiteClick } from '../../utils/analytics';
+import { trackVetPhoneClick, trackVetWebsiteClick } from '../../utils/analytics';
 import { appendUTM, slugify } from '../../utils/url';
 import { formatVerifiedLabel, isVetVerified } from '../../utils/verifiedLabel';
 import { ConfirmEnglish } from './ConfirmEnglish';
@@ -70,6 +70,7 @@ export const VetCard: React.FC<VetCardProps> = ({
     const hasWebsite = Boolean(vet.contact?.website);
     const hasPhone = Boolean(vet.contact?.phone);
     const hasDirectContact = hasWebsite || hasPhone;
+    const isEmergency24h = vet.verification?.emergency_services === '24/7';
     const mapUrl = vet.contact?.google_maps ||
         `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
             `${vet.practice_name} ${mobileAddress ? vet.city : vet.address || vet.city}`,
@@ -177,7 +178,25 @@ export const VetCard: React.FC<VetCardProps> = ({
             )}
 
             <div className="flex flex-wrap gap-3">
-                {hasWebsite ? (
+                {hasPhone && (
+                    <a
+                        href={`tel:${vet.contact.phone}`}
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            trackVetPhoneClick(vet.id, vet.city, analyticsLocation);
+                        }}
+                        aria-label={`Call ${vet.practice_name}`}
+                        className={`min-h-11 py-3 text-center text-[11px] font-black uppercase tracking-widest rounded-xl transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 ${
+                            isEmergency24h
+                                ? 'w-full bg-red-600 text-white hover:bg-red-700 shadow-red-600/15'
+                                : 'flex-1 bg-primary text-secondary hover:bg-primary/95 shadow-primary/10'
+                        }`}
+                    >
+                        <span aria-hidden="true">📞</span> Call Practice
+                    </a>
+                )}
+
+                {hasWebsite && (
                     <a
                         href={appendUTM(vet.contact.website!)}
                         target="_blank"
@@ -187,20 +206,15 @@ export const VetCard: React.FC<VetCardProps> = ({
                             event.stopPropagation();
                             trackVetWebsiteClick(vet.id, vet.city, analyticsLocation);
                         }}
-                        className="min-h-11 flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary/95 transition-all shadow-xl shadow-primary/10 active:scale-95 flex items-center justify-center gap-2"
+                        className={`min-h-11 flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest rounded-xl transition-all active:scale-95 flex items-center justify-center gap-2 ${
+                            hasPhone
+                                ? 'bg-white border border-primary/15 text-primary hover:border-primary/40 hover:bg-gray-50'
+                                : 'bg-primary text-secondary hover:bg-primary/95 shadow-xl shadow-primary/10'
+                        }`}
                     >
                         <span aria-hidden="true">🌐</span> Visit Website
                     </a>
-                ) : hasPhone ? (
-                    <a
-                        href={`tel:${vet.contact.phone}`}
-                        onClick={(event) => event.stopPropagation()}
-                        aria-label={`Call ${vet.practice_name}`}
-                        className="min-h-11 flex-1 py-3 text-center text-[11px] font-black uppercase tracking-widest rounded-xl transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 bg-primary text-secondary hover:bg-primary/95 shadow-primary/10"
-                    >
-                        <span aria-hidden="true">📞</span> Call Practice
-                    </a>
-                ) : null}
+                )}
 
                 <a
                     href={mapUrl}

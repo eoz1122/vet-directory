@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { trackVetWebsiteClick } from './analytics';
+import { trackVetPhoneClick, trackVetWebsiteClick } from './analytics';
 
 describe('trackVetWebsiteClick', () => {
     beforeEach(() => {
@@ -39,5 +39,29 @@ describe('trackMapPinClick', () => {
             event_category: 'map',
             event_label: 'Berlin-5',
         });
+    });
+});
+
+describe('trackVetPhoneClick', () => {
+    beforeEach(() => {
+        (window as unknown as { gtag: unknown }).gtag = vi.fn();
+    });
+
+    it('sends a vet_phone_click event without exposing the telephone number', () => {
+        trackVetPhoneClick('Berlin-5', 'Berlin', 'CityVets_Page');
+        const gtag = (window as unknown as { gtag: ReturnType<typeof vi.fn> }).gtag;
+
+        expect(gtag).toHaveBeenCalledWith('event', 'vet_phone_click', {
+            vet_id: 'Berlin-5',
+            city: 'Berlin',
+            location: 'CityVets_Page',
+            event_category: 'contact',
+            event_label: 'Berlin-5',
+        });
+    });
+
+    it('does not throw when gtag is missing', () => {
+        (window as unknown as { gtag: unknown }).gtag = undefined;
+        expect(() => trackVetPhoneClick('x', 'y', 'z')).not.toThrow();
     });
 });
