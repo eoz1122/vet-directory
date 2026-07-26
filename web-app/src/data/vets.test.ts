@@ -318,6 +318,58 @@ const expectedBerlinOfficialPractices = [
     },
 ] as const;
 
+const expectedFrankfurtOfficialUpgrades = [
+    {
+        id: 'Frankfurt-47',
+        address: 'Wittelsbacherallee 26, 60316 Frankfurt am Main',
+        phone: '+49 69 96757004',
+        website: 'https://www.rex.app/clinics/frankfurt-ostend',
+        sourceUrls: [
+            'https://www.rex.app/clinics/frankfurt-ostend',
+            'https://www.rex.app/en-team/ksenia-zamora',
+        ],
+    },
+    {
+        id: 'Frankfurt-87',
+        address: 'Wilhelmstraße 22, 61118 Bad Vilbel',
+        phone: '06101 47619',
+        website: 'https://www.tierarztpraxis-badvilbel.de/',
+        sourceUrls: ['https://www.tierarztpraxis-badvilbel.de/'],
+    },
+] as const;
+
+const expectedFrankfurtCommunityUpgrades = [
+    {
+        id: 'Frankfurt-56',
+        address: 'Juliusstraße 12, 60487 Frankfurt am Main',
+        phone: '+49 69 97074955',
+        website: 'https://www.tierklinik-bockenheim.de/',
+        sourceUrls: [
+            'https://www.tierklinik-bockenheim.de/',
+            'https://www.reddit.com/r/frankfurt/comments/yk1vzs/',
+        ],
+    },
+    {
+        id: 'Frankfurt-61',
+        address: 'Darmstädter Landstraße 48, 60594 Frankfurt (Sachsenhausen)',
+        phone: '',
+        website: 'https://tierarztpraxis-berger.com/',
+        sourceUrls: [
+            'https://tierarztpraxis-berger.com/',
+            'https://www.reddit.com/r/frankfurt/comments/ussr53/vets_who_can_provide_the_eu_pet_passport/',
+        ],
+    },
+    {
+        id: 'Frankfurt-65',
+        address: 'Frankfurter Str. 11, 61462 Königstein im Taunus',
+        phone: '',
+        website: 'https://www.tierarzt-moormann.de/',
+        sourceUrls: [
+            'https://www.reddit.com/r/frankfurt/comments/yk1vzs/',
+        ],
+    },
+] as const;
+
 const expectedReverifiedMajorCityPractices = [
     {
         id: 'Frankfurt-48',
@@ -498,6 +550,56 @@ describe('community-confirmed English-speaking practices', () => {
             expect(practice?.verification.source_urls).toContain(communitySourceUrl);
         },
     );
+});
+
+describe('upgrade-only Frankfurt evidence audit', () => {
+    it.each(expectedFrankfurtOfficialUpgrades)(
+        'uses current first-party English evidence for $id',
+        ({ id, address, phone, website, sourceUrls }) => {
+            const practice = vetsData.find((vet) => vet.id === id);
+
+            expect(practice).toBeDefined();
+            expect(practice?.address).toBe(address);
+            expect(practice?.contact.phone).toBe(phone);
+            expect(practice?.contact.website).toBe(website);
+            expect(practice?.community_status).toBe('Verified');
+            expect(practice?.verification.status).toBe('Verified');
+            expect(practice?.verification.evidence_type).toBe('official_website');
+            expect(practice?.verification.english_signals.length).toBeGreaterThan(0);
+            expect(practice?.verification.source_urls).toEqual(
+                expect.arrayContaining(sourceUrls),
+            );
+            expect(practice?.verification.last_scanned).toBe('2026-07-26');
+        },
+    );
+
+    it.each(expectedFrankfurtCommunityUpgrades)(
+        'keeps community evidence distinct from first-party proof for $id',
+        ({ id, address, phone, website, sourceUrls }) => {
+            const practice = vetsData.find((vet) => vet.id === id);
+
+            expect(practice).toBeDefined();
+            expect(practice?.address).toBe(address);
+            expect(practice?.contact.phone).toBe(phone);
+            expect(practice?.contact.website).toBe(website);
+            expect(practice?.community_status).toBe('Verified');
+            expect(practice?.verification.status).toBe('Verified');
+            expect(practice?.verification.evidence_type).toBe('community');
+            expect(practice?.verification.english_signals.length).toBeGreaterThan(0);
+            expect(practice?.verification.source_urls).toEqual(
+                expect.arrayContaining(sourceUrls),
+            );
+            expect(practice?.verification.last_scanned).toBe('2026-07-26');
+        },
+    );
+
+    it('does not cite the unresolved Moormann website as evidence', () => {
+        const practice = vetsData.find((vet) => vet.id === 'Frankfurt-65');
+
+        expect(practice?.verification.source_urls).not.toContain(
+            'https://www.tierarzt-moormann.de/',
+        );
+    });
 });
 
 describe('first-party-verified nationwide English-speaking practices', () => {

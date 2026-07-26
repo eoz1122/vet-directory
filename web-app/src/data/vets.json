@@ -1812,15 +1812,20 @@
       "lng": 8.7031839
     },
     "contact": {
-      "phone": "",
+      "phone": "+49 69 96757004",
       "website": "https://www.rex.app/clinics/frankfurt-ostend",
       "google_maps": "https://www.google.com/maps/place/Rex+Tierarztpraxis+Frankfurt-Ostend/data=!4m7!3m6!1s0x47bd0fec262dfc03:0x6d7a7874999d0916!8m2!3d50.1191912!4d8.7031829!16s%2Fg%2F11xrkwcz61!19sChIJA_wtJuwPvUcRFgmdmXR4em0?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support"
+        "The current Rex Frankfurt Ostend team profile for veterinarian Ksenia Zamora explicitly lists English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.rex.app/clinics/frankfurt-ostend",
+        "https://www.rex.app/en-team/ksenia-zamora"
       ],
       "emergency_services": ""
     },
@@ -2044,21 +2049,26 @@
     "practice_name": "Kleintierklinik Frankfurt Bockenheim",
     "city": "Frankfurt",
     "district": "Bockenheim",
-    "address": "Ginnheimer Landstraße 11, 60487 Frankfurt am Main",
+    "address": "Juliusstraße 12, 60487 Frankfurt am Main",
     "coordinates": {
-      "lat": 50.1288579,
-      "lng": 8.6423265
+      "lat": 50.1234958,
+      "lng": 8.6448043
     },
     "contact": {
-      "phone": "",
-      "website": "https://www.tierklinik-frankfurt.de/",
-      "google_maps": null
+      "phone": "+49 69 97074955",
+      "website": "https://www.tierklinik-bockenheim.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierklinik%20Frankfurt%20Bockenheim%20Juliusstra%C3%9Fe%2012%2C%2060487%20Frankfurt%20am%20Main"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support"
+        "A Frankfurt community recommendation says everyone at Tierklinik Frankfurt Bockenheim speaks English; confirm current English availability when booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.tierklinik-bockenheim.de/",
+        "https://www.reddit.com/r/frankfurt/comments/yk1vzs/"
       ],
       "emergency_services": ""
     },
@@ -2181,9 +2191,14 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support; Community Verified"
+        "A Frankfurt community member who used Tierarztpraxis Berger confirmed in March 2025 that the practice spoke English; confirm current English availability when booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://tierarztpraxis-berger.com/",
+        "https://www.reddit.com/r/frankfurt/comments/ussr53/vets_who_can_provide_the_eu_pet_passport/"
       ],
       "emergency_services": ""
     },
@@ -2281,9 +2296,13 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-24",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Verified English Support; Community Verified"
+        "A Frankfurt community recommendation explicitly says Dr. Moormann in Königstein speaks English and understands UK pet passport requirements; confirm current English availability when booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.reddit.com/r/frankfurt/comments/yk1vzs/"
       ],
       "emergency_services": ""
     },
@@ -2525,21 +2544,25 @@
     "practice_name": "Tierarztpraxis Susann Gaudlitz - Bad Vilbel",
     "city": "Frankfurt",
     "district": "Unknown",
-    "address": "Wilhelmstraße 22",
+    "address": "Wilhelmstraße 22, 61118 Bad Vilbel",
     "coordinates": {
       "lat": 50.186915,
       "lng": 8.740145499999999
     },
     "contact": {
       "phone": "06101 47619",
-      "website": "https://www.google.com/maps/place/Tierarztpraxis+Susann+Gaudlitz+-+Bad+Vilbel/data=!4m7!3m6!1s0x47bd0580e4a30683:0x922d48dd7ba516e6!8m2!3d50.186915!4d8.7401454!16s%2Fg%2F1tf1myqh!19sChIJgwaj5IAFvUcR5hale91ILZI?authuser=0&hl=en&rclk=1",
+      "website": "https://www.tierarztpraxis-badvilbel.de/",
       "google_maps": "https://www.google.com/maps/place/Tierarztpraxis+Susann+Gaudlitz+-+Bad+Vilbel/data=!4m7!3m6!1s0x47bd0580e4a30683:0x922d48dd7ba516e6!8m2!3d50.186915!4d8.7401454!16s%2Fg%2F1tf1myqh!19sChIJgwaj5IAFvUcR5hale91ILZI?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-27",
+      "last_scanned": "2026-07-26",
       "english_signals": [
-        "Confirmed via Google Review: \"English\""
+        "Veterinarian Susann Vivien Gaudlitz states on the practice website that she speaks fluent English and offers treatment in English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.tierarztpraxis-badvilbel.de/"
       ],
       "emergency_services": ""
     },
