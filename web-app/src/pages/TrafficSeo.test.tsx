@@ -92,16 +92,28 @@ describe('traffic-focused search metadata', () => {
         renderPage(<PetFriendlyApartments />);
 
         await waitFor(() => {
-            expect(document.title).toBe('Pet-Friendly Apartments Berlin & Germany: 2026 Guide');
+            expect(document.title).toBe('Pet-Friendly Apartments in Berlin: 2026 Rental Guide');
         });
 
         expect(getMetaContent('description')).toBe(
-            'Find pet-friendly apartments in Berlin and Germany. Learn rental rights, landlord rules, pet resume tips, and the best districts for dog and cat owners.',
+            'Looking for a pet-friendly apartment in Berlin? Find official listings, understand landlord consent, prepare a pet resume, and check German lease rules.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: 'Finding Pet-Friendly Apartments in Berlin and Germany (2026)',
+            name: 'Pet-Friendly Apartments in Berlin: 2026 Rental Guide',
         })).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: 'Where to search for apartments in Berlin',
+        })).toBeTruthy();
+        expect(screen.getByRole('link', {
+            name: 'Search Berlin state-owned apartment listings',
+        }).getAttribute('href')).toBe('https://www.inberlinwohnen.de/');
+        expect(screen.getByRole('link', {
+            name: 'Check Berlin WBS eligibility',
+        }).getAttribute('href')).toBe(
+            'https://www.berlin.de/sen/wohnen/service/wohnberechtigungsschein/',
+        );
         expect(screen.getByRole('link', { name: 'Browse English-speaking vets in Berlin' }).getAttribute('href'))
             .toBe('/vets/berlin');
         expect(screen.getByRole('link', { name: 'Federal Court judgment VIII ZR 168/12' }).getAttribute('href'))
@@ -124,7 +136,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-07-24');
+        expect(schema.dateModified).toBe('2026-07-26');
     });
 
     it('keeps the housing discovery card aligned with the verified guide', () => {
@@ -133,7 +145,7 @@ describe('traffic-focused search metadata', () => {
         const guideLink = screen.getByRole('link', { name: /Pet-Friendly Apartments in Berlin/i });
         expect(guideLink.getAttribute('href')).toBe('/blog/pet-friendly-apartments-germany');
         expect(screen.getByText(
-            'Official Berlin search steps, the BGH dog-and-cat ruling, lease consent, application documents and a practical pet resume.',
+            'Official Berlin listings, WBS guidance, search steps, landlord consent, lease checks and a practical pet resume.',
         )).toBeTruthy();
         expect(guideLink.textContent).not.toMatch(/convince a German landlord/i);
     });
@@ -516,6 +528,9 @@ describe('traffic-focused search metadata', () => {
             .toBe('https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html');
         expect(screen.getByRole('link', { name: 'Germany breed-restriction guide' }).getAttribute('href'))
             .toBe('/blog/breed-restrictions-germany');
+        expect(screen.getByRole('link', {
+            name: 'Pet-friendly apartments in Berlin guide',
+        }).getAttribute('href')).toBe('/blog/pet-friendly-apartments-germany');
 
         const articleText = document.body.textContent ?? '';
         expect(articleText).toMatch(/Germany does not accept a young dog, cat or ferret that is not yet fully protected against rabies/i);
@@ -528,7 +543,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-07-24');
+        expect(schema.dateModified).toBe('2026-07-26');
     });
 
     it('aligns the moving-pet discovery card with the current entry guide', () => {

@@ -11,7 +11,7 @@ const ARTICLE_TITLE = 'Moving to Germany With a Dog or Cat: 2026 Entry Rules';
 const ARTICLE_DESCRIPTION = 'Bringing a dog or cat to Germany? Check microchip and rabies timing, EU passport or health certificate, blood-test rules, owner travel and breed restrictions.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/moving-to-germany-with-pet';
 const DATE_PUBLISHED = '2025-01-01';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-07-26';
 
 const EU_TRAVEL_RULES_URL = 'https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm';
 const NON_EU_ENTRY_URL = 'https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en';
@@ -177,7 +177,7 @@ export default function MovingWithPetChecklist() {
                         </h1>
 
                         <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm text-primary/60 mb-8">
-                            <span>Last verified: 24 July 2026</span>
+                            <span>Last verified: 26 July 2026</span>
                             <span className="hidden sm:inline" aria-hidden="true">·</span>
                             <span className="italic">Rules below cover non-commercial movement of dogs, cats and ferrets.</span>
                         </div>
@@ -395,6 +395,19 @@ export default function MovingWithPetChecklist() {
                                 <p className="text-sm text-primary/70">
                                     This guide is general information, not an entry clearance. Origin, transit, ownership transfer, animal count, vaccination history and species can change the applicable route. Confirm the final checklist with the competent authority and official veterinarian before travel.
                                 </p>
+                            </div>
+
+                            <div className="bg-accent/10 border border-accent/25 p-6 rounded-xl my-8 not-prose">
+                                <h3 className="font-bold text-primary mb-2">Moving into rented housing?</h3>
+                                <p className="text-sm text-primary/75 mb-3">
+                                    Pet entry documents do not replace a landlord or lease decision. Prepare for the housing search separately and get any required consent for the specific animal in writing.
+                                </p>
+                                <Link
+                                    to="/blog/pet-friendly-apartments-germany"
+                                    className="inline-flex min-h-11 items-center font-bold text-accent-ink underline underline-offset-4"
+                                >
+                                    Pet-friendly apartments in Berlin guide
+                                </Link>
                             </div>
 
                             <div className="not-prose">

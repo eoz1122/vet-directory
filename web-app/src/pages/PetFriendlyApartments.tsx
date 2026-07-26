@@ -7,11 +7,13 @@ import RelatedPosts from '../components/RelatedPosts';
 import TableOfContents from '../components/TableOfContents';
 import { generateArticleSchema } from '../utils/schema';
 
-const TITLE = 'Pet-Friendly Apartments Berlin & Germany: 2026 Guide';
-const DESCRIPTION = 'Find pet-friendly apartments in Berlin and Germany. Learn rental rights, landlord rules, pet resume tips, and the best districts for dog and cat owners.';
+const TITLE = 'Pet-Friendly Apartments in Berlin: 2026 Rental Guide';
+const DESCRIPTION = 'Looking for a pet-friendly apartment in Berlin? Find official listings, understand landlord consent, prepare a pet resume, and check German lease rules.';
 const URL = 'https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany';
 const DATE_PUBLISHED = '2025-01-01';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-07-26';
+const BERLIN_STATE_LISTINGS_URL = 'https://www.inberlinwohnen.de/';
+const BERLIN_WBS_URL = 'https://www.berlin.de/sen/wohnen/service/wohnberechtigungsschein/';
 
 const ARTICLE_SCHEMA = generateArticleSchema(
     TITLE,
@@ -71,6 +73,7 @@ const FAQ_SCHEMA = {
 const TABLE_OF_CONTENTS = [
     { id: 'quick-answer', label: 'Quick answer' },
     { id: 'berlin-search', label: 'How to search in Berlin' },
+    { id: 'search-channels', label: 'Where to search' },
     { id: 'legal-rights', label: 'What the BGH ruling means' },
     { id: 'consent', label: 'Lease and consent checklist' },
     { id: 'pet-resume', label: 'Build a pet resume' },
@@ -127,6 +130,16 @@ const OFFICIAL_SOURCES = [
         href: 'https://willkommenszentrum.berlin.de/en/housing/rental-contract',
         note: 'English guidance on leases, deposits, contract types, and tenant counselling.',
     },
+    {
+        name: 'Berlin state-owned apartment listings',
+        href: BERLIN_STATE_LISTINGS_URL,
+        note: 'The shared listing portal referenced by Berlin’s Welcome Centre for state-owned housing providers.',
+    },
+    {
+        name: 'Official Berlin WBS guidance',
+        href: BERLIN_WBS_URL,
+        note: 'Eligibility information and the current application route for subsidised housing.',
+    },
 ];
 
 export default function PetFriendlyApartments() {
@@ -160,10 +173,10 @@ export default function PetFriendlyApartments() {
                             Housing guide
                         </span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-5 leading-tight">
-                            Finding Pet-Friendly Apartments in Berlin and Germany (2026)
+                            Pet-Friendly Apartments in Berlin: 2026 Rental Guide
                         </h1>
                         <p className="text-sm text-primary/55 mb-8">
-                            Published 1 January 2025 · Reviewed 24 July 2026
+                            Published 1 January 2025 · Reviewed 26 July 2026
                         </p>
 
                         <TableOfContents items={TABLE_OF_CONTENTS} />
@@ -233,6 +246,70 @@ export default function PetFriendlyApartments() {
                                     </section>
                                 ))}
                             </div>
+
+                            <h2 id="search-channels" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Where to search for apartments in Berlin
+                            </h2>
+                            <p>
+                                Berlin&apos;s Welcome Centre recommends searching through several channels at the same time. It specifically points to state-owned providers, private platforms, social networks, housing cooperatives, local property managers, neighbourhood notices, and personal contacts. Set alerts where available and keep the same complete application file ready for each suitable listing.
+                            </p>
+                            <div className="grid md:grid-cols-3 gap-5 my-8 not-prose">
+                                <section className="bg-white border border-primary/10 rounded-2xl p-6">
+                                    <p className="text-xs font-black uppercase tracking-widest text-accent-ink mb-2">
+                                        Official listings
+                                    </p>
+                                    <h3 className="text-lg font-bold text-primary mb-3">
+                                        State-owned housing providers
+                                    </h3>
+                                    <p className="text-sm leading-relaxed text-primary/70 mb-4">
+                                        Berlin&apos;s official guidance directs applicants to the shared portal used by major state-owned housing companies.
+                                    </p>
+                                    <a
+                                        href={BERLIN_STATE_LISTINGS_URL}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex min-h-11 items-center font-bold text-accent-ink underline underline-offset-4"
+                                    >
+                                        Search Berlin state-owned apartment listings
+                                    </a>
+                                </section>
+                                <section className="bg-white border border-primary/10 rounded-2xl p-6">
+                                    <p className="text-xs font-black uppercase tracking-widest text-accent-ink mb-2">
+                                        Wider search
+                                    </p>
+                                    <h3 className="text-lg font-bold text-primary mb-3">
+                                        Portals, cooperatives and contacts
+                                    </h3>
+                                    <p className="text-sm leading-relaxed text-primary/70">
+                                        Use private portals, housing cooperatives, local property managers, neighbourhood groups and personal contacts in parallel. A missing pet filter is not an approval or a refusal, so ask about the specific animal.
+                                    </p>
+                                </section>
+                                <section className="bg-white border border-primary/10 rounded-2xl p-6">
+                                    <p className="text-xs font-black uppercase tracking-widest text-accent-ink mb-2">
+                                        Subsidised housing
+                                    </p>
+                                    <h3 className="text-lg font-bold text-primary mb-3">
+                                        Check whether a WBS applies
+                                    </h3>
+                                    <p className="text-sm leading-relaxed text-primary/70 mb-4">
+                                        A Wohnberechtigungsschein can open access to eligible subsidised listings. Check the current income rules and application route first.
+                                    </p>
+                                    <a
+                                        href={BERLIN_WBS_URL}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex min-h-11 items-center font-bold text-accent-ink underline underline-offset-4"
+                                    >
+                                        Check Berlin WBS eligibility
+                                    </a>
+                                </section>
+                            </div>
+                            <aside className="bg-accent/10 border border-accent/25 rounded-2xl p-6 my-8 not-prose">
+                                <p className="font-bold text-primary mb-2">Pet-friendly is a lease question</p>
+                                <p className="text-sm leading-relaxed text-primary/75">
+                                    A portal, provider or neighbourhood cannot guarantee permission for a dog or cat. Check the individual listing, read the proposed lease, identify the animal accurately, and obtain any required consent in writing before relying on it.
+                                </p>
+                            </aside>
 
                             <h2 id="legal-rights" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 What the German Federal Court ruling actually means

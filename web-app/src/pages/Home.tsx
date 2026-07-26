@@ -39,7 +39,7 @@ const popularCities = [
     { name: 'Cologne', path: '/vets/cologne' },
 ];
 const resourceLinks = [
-    { emoji: '🏠', title: 'Pet-Friendly Housing', link: '/blog/pet-friendly-apartments-germany' },
+    { emoji: '🏠', title: 'Pet-Friendly Apartments Berlin', link: '/blog/pet-friendly-apartments-germany' },
     { emoji: '🐕', title: 'Moving to Germany Guide', link: '/blog/moving-to-germany-with-pet' },
     { emoji: '🐱', title: 'Cat Registration', link: '/blog/cat-registration-germany' },
     { emoji: '🛂', title: 'EU Pet Passports', link: '/blog/eu-pet-passport-germany' },
@@ -315,7 +315,7 @@ const Home: React.FC = () => {
                                 <nav className="space-y-4">
                                     {resourceLinks.map(item => (
                                         <Link key={item.link} to={item.link} className="min-h-11 flex items-center gap-3 text-primary group">
-                                            <span className="text-lg grayscale group-hover:grayscale-0 transition-all">{item.emoji}</span>
+                                            <span aria-hidden="true" className="text-lg grayscale group-hover:grayscale-0 transition-all">{item.emoji}</span>
                                             <p className="font-semibold text-xs group-hover:text-accent transition-colors">{item.title}</p>
                                         </Link>
                                     ))}

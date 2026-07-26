@@ -113,6 +113,20 @@ describe('Home WebSite structured data', () => {
         }
     });
 
+    it('uses a descriptive Berlin housing anchor for the apartments guide', () => {
+        render(
+            <HelmetProvider>
+                <MemoryRouter initialEntries={['/']}>
+                    <Home />
+                </MemoryRouter>
+            </HelmetProvider>,
+        );
+
+        expect(screen.getByRole('link', {
+            name: 'Pet-Friendly Apartments Berlin',
+        }).getAttribute('href')).toBe('/blog/pet-friendly-apartments-germany');
+    });
+
     it('exposes every verified city as a crawlable, alphabetized directory link', () => {
         render(
             <HelmetProvider>

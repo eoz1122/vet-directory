@@ -165,7 +165,7 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         title: "Pet-Friendly Apartments in Berlin",
         emoji: '🏠',
         category: 'Living',
-        desc: "Official Berlin search steps, the BGH dog-and-cat ruling, lease consent, application documents and a practical pet resume.",
+        desc: "Official Berlin listings, WBS guidance, search steps, landlord consent, lease checks and a practical pet resume.",
         topics: ['living', 'housing', 'legal', 'berlin', 'dog', 'cat'],
     },
     {
