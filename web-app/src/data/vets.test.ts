@@ -424,6 +424,45 @@ const expectedReverifiedFiluPractices = [
     },
 ] as const;
 
+const expectedNewFiluPractices = [
+    {
+        id: 'hamburg-filu-hoheluft',
+        practiceName: 'filu Veterinary Hamburg Hoheluft',
+        city: 'Hamburg',
+        district: 'Hoheluft',
+        address: 'Hoheluftchaussee 76, 20253 Hamburg',
+        coordinates: { lat: 53.5828362, lng: 9.9713694 },
+        phone: '+49 40 57308931',
+        website: 'https://www.filu.vet/en/standorte/hamburg-hoheluft',
+        sourceUrl: 'https://www.filu.vet/en/standorte/hamburg-hoheluft',
+        emergencyServices: 'Saturday emergency consultation hours 10:00-18:00',
+    },
+    {
+        id: 'hannover-filu-list',
+        practiceName: 'filu Veterinary Hannover List',
+        city: 'Hannover',
+        district: 'List',
+        address: 'Podbielskistraße 96, 30177 Hannover',
+        coordinates: { lat: 52.3950874, lng: 9.7634131 },
+        phone: '+49 511 95733896',
+        website: 'https://www.filu.vet/en/standorte/hannover-list',
+        sourceUrl: 'https://www.filu.vet/en/standorte/hannover-list',
+        emergencyServices: 'Saturday emergency consultation hours 10:00-18:00',
+    },
+    {
+        id: 'munich-filu-wiener-platz',
+        practiceName: 'filu Veterinary Munich Wiener Platz',
+        city: 'Munich',
+        district: 'Haidhausen',
+        address: 'Steinstraße 11, 81667 München',
+        coordinates: { lat: 48.1334884, lng: 11.5963405 },
+        phone: '+49 89 21556707',
+        website: 'https://www.filu.vet/en/standorte/wiener-platz',
+        sourceUrl: 'https://www.filu.vet/en/standorte/wiener-platz',
+        emergencyServices: 'Emergencies during opening hours',
+    },
+] as const;
+
 describe('verified Leipzig English-speaking practices', () => {
     it.each(expectedLeipzigPractices)(
         'keeps $id backed by first-party language evidence',
@@ -640,4 +679,40 @@ describe('reverified existing practice records', () => {
         );
         expect(practice?.verification.last_scanned).toBe('2026-07-26');
     });
+});
+
+describe('new filu locations with first-party English evidence', () => {
+    it.each(expectedNewFiluPractices)(
+        'includes $id with current location-owned evidence and contact details',
+        ({
+            id,
+            practiceName,
+            city,
+            district,
+            address,
+            coordinates,
+            phone,
+            website,
+            sourceUrl,
+            emergencyServices,
+        }) => {
+            const practice = vetsData.find((vet) => vet.id === id);
+
+            expect(practice).toBeDefined();
+            expect(practice?.practice_name).toBe(practiceName);
+            expect(practice?.city).toBe(city);
+            expect(practice?.district).toBe(district);
+            expect(practice?.address).toBe(address);
+            expect(practice?.coordinates).toEqual(coordinates);
+            expect(practice?.contact.phone).toBe(phone);
+            expect(practice?.contact.website).toBe(website);
+            expect(practice?.community_status).toBe('Verified');
+            expect(practice?.verification.status).toBe('Verified');
+            expect(practice?.verification.evidence_type).toBe('official_website');
+            expect(practice?.verification.english_signals.length).toBeGreaterThan(0);
+            expect(practice?.verification.source_urls).toContain(sourceUrl);
+            expect(practice?.verification.emergency_services).toBe(emergencyServices);
+            expect(practice?.verification.last_scanned).toBe('2026-07-26');
+        },
+    );
 });

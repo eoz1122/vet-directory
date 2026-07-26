@@ -2879,6 +2879,35 @@
     "community_status": "Verified"
   },
   {
+    "id": "hamburg-filu-hoheluft",
+    "practice_name": "filu Veterinary Hamburg Hoheluft",
+    "city": "Hamburg",
+    "district": "Hoheluft",
+    "address": "Hoheluftchaussee 76, 20253 Hamburg",
+    "coordinates": {
+      "lat": 53.5828362,
+      "lng": 9.9713694
+    },
+    "contact": {
+      "phone": "+49 40 57308931",
+      "website": "https://www.filu.vet/en/standorte/hamburg-hoheluft",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20Hamburg%20Hoheluft%20Hoheluftchaussee%2076%2C%2020253%20Hamburg"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-26",
+      "english_signals": [
+        "The current filu Hamburg Hoheluft location FAQ explicitly states that the team speaks German, English and Spanish"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.filu.vet/en/standorte/hamburg-hoheluft"
+      ],
+      "emergency_services": "Saturday emergency consultation hours 10:00-18:00"
+    },
+    "community_status": "Verified"
+  },
+  {
     "id": "Hamburg-70",
     "practice_name": "Rex Tierarztpraxis (Winterhude & Ottensen)",
     "city": "Hamburg",
@@ -3587,6 +3616,35 @@
         "Highly recommended; Community favorite"
       ],
       "emergency_services": "No"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "hannover-filu-list",
+    "practice_name": "filu Veterinary Hannover List",
+    "city": "Hannover",
+    "district": "List",
+    "address": "Podbielskistraße 96, 30177 Hannover",
+    "coordinates": {
+      "lat": 52.3950874,
+      "lng": 9.7634131
+    },
+    "contact": {
+      "phone": "+49 511 95733896",
+      "website": "https://www.filu.vet/en/standorte/hannover-list",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20Hannover%20List%20Podbielskistra%C3%9Fe%2096%2C%2030177%20Hannover"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-26",
+      "english_signals": [
+        "The current filu Hannover List location FAQ explicitly states that the team speaks German, English, Spanish and Bulgarian"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.filu.vet/en/standorte/hannover-list"
+      ],
+      "emergency_services": "Saturday emergency consultation hours 10:00-18:00"
     },
     "community_status": "Verified"
   },
@@ -6110,6 +6168,35 @@
         "https://www.filu.vet/en/standorte/theresienwiese"
       ],
       "emergency_services": "Saturday emergency consultation hours 12:00-18:00"
+    },
+    "community_status": "Verified"
+  },
+  {
+    "id": "munich-filu-wiener-platz",
+    "practice_name": "filu Veterinary Munich Wiener Platz",
+    "city": "Munich",
+    "district": "Haidhausen",
+    "address": "Steinstraße 11, 81667 München",
+    "coordinates": {
+      "lat": 48.1334884,
+      "lng": 11.5963405
+    },
+    "contact": {
+      "phone": "+49 89 21556707",
+      "website": "https://www.filu.vet/en/standorte/wiener-platz",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=filu%20Veterinary%20Munich%20Wiener%20Platz%20Steinstra%C3%9Fe%2011%2C%2081667%20M%C3%BCnchen"
+    },
+    "verification": {
+      "status": "Verified",
+      "last_scanned": "2026-07-26",
+      "english_signals": [
+        "The current filu Munich Wiener Platz location FAQ explicitly states that the team speaks German and English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.filu.vet/en/standorte/wiener-platz"
+      ],
+      "emergency_services": "Emergencies during opening hours"
     },
     "community_status": "Verified"
   },
