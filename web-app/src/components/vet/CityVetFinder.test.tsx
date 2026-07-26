@@ -86,9 +86,14 @@ describe('CityVetFinder', () => {
     it('shows every city listing initially and exposes an accessible result count', () => {
         render(<CityVetFinder city="Berlin" vets={berlinVets} />);
 
-        expect(within(getResults()).getAllByRole('article')).toHaveLength(3);
+        const articles = within(getResults()).getAllByRole('article');
+        expect(articles).toHaveLength(3);
         expect(screen.getByText('3 practices shown')).toBeTruthy();
         expect(screen.getByRole('searchbox', { name: 'Search Berlin vets' })).toBeTruthy();
+
+        const firstCardContainer = articles[0].parentElement;
+        expect(firstCardContainer?.style.containIntrinsicBlockSize).toBe('auto 440px');
+        expect(firstCardContainer?.style.containIntrinsicSize).toBe('');
     });
 
     it('searches practice names, addresses and districts without case sensitivity', () => {

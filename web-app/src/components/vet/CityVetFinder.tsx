@@ -190,7 +190,7 @@ export function CityVetFinder({ city, vets }: CityVetFinderProps) {
                         key={vet.id}
                         style={{
                             contentVisibility: 'auto',
-                            containIntrinsicSize: 'auto 440px',
+                            containIntrinsicBlockSize: 'auto 440px',
                         }}
                     >
                         <VetCard
