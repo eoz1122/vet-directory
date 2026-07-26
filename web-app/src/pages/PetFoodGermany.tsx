@@ -22,8 +22,10 @@ const SOURCE_URLS = {
 } as const;
 
 const TABLE_OF_CONTENTS = [
+    { id: 'how-to-choose', label: '60-Second Checklist' },
     { id: 'label', label: 'Read the German Label' },
     { id: 'formats', label: 'Compare Food Formats' },
+    { id: 'daily-cost', label: 'Compare Daily Cost' },
     { id: 'manufacturer', label: 'Check the Manufacturer' },
     { id: 'raw-homemade', label: 'Raw and Homemade Diets' },
     { id: 'medical-diets', label: 'Medical Diets and Symptoms' },
@@ -32,6 +34,29 @@ const TABLE_OF_CONTENTS = [
     { id: 'sources', label: 'Sources' },
     { id: 'faq', label: 'FAQ' },
 ];
+
+const QUICK_CHECKS = [
+    {
+        label: 'Confirm it is complete food.',
+        detail: 'For a main diet, look for Alleinfuttermittel rather than Ergänzungsfuttermittel.',
+    },
+    {
+        label: 'Match the life stage.',
+        detail: 'Choose a food labelled for the dog and its current life stage, such as puppy, adult or senior.',
+    },
+    {
+        label: 'Check calories and feeding instructions.',
+        detail: 'Use the label as a starting point, then monitor weight and body condition.',
+    },
+    {
+        label: 'Check the company behind the food.',
+        detail: 'Look for qualified nutrition expertise, quality controls, finished-product analysis and a useful contact channel.',
+    },
+    {
+        label: 'Compare suitability and daily cost.',
+        detail: 'Do not treat pack price, format or marketing language as proof of nutritional quality.',
+    },
+] as const;
 
 const FAQS = [
     {
@@ -61,7 +86,7 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DESCRIPTION,
     URL,
     '2025-01-01',
-    '2026-07-23',
+    '2026-07-27',
 );
 
 const FAQ_SCHEMA = {
@@ -125,7 +150,11 @@ export default function PetFoodGermany() {
                             Best Dog Food in Germany: How to Choose (2026)
                         </h1>
                         <p className="text-sm text-primary/60 mb-8">
-                            Reviewed July 23, 2026
+                            Reviewed July 27, 2026
+                            <span aria-hidden="true"> • </span>
+                            <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
+                                How we review guides
+                            </Link>
                         </p>
 
                         <TableOfContents items={TABLE_OF_CONTENTS} />
@@ -139,6 +168,30 @@ export default function PetFoodGermany() {
                                 This guide uses the EU feed-labelling regulation, the 2025 FEDIAF nutritional guidelines and WSAVA&apos;s veterinary nutrition tools. It does not rank brands or replace individual veterinary advice.
                             </p>
 
+                            <h2 id="how-to-choose" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
+                                Choose Dog Food in 60 Seconds
+                            </h2>
+                            <ol className="grid gap-4 my-8 not-prose">
+                                {QUICK_CHECKS.map((check, index) => (
+                                    <li
+                                        key={check.label}
+                                        className="flex gap-4 rounded-2xl border border-primary/10 bg-white p-5 shadow-sm"
+                                    >
+                                        <span
+                                            aria-hidden="true"
+                                            className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent/15 font-bold text-accent-ink"
+                                        >
+                                            {index + 1}
+                                        </span>
+                                        <div>
+                                            <p className="font-bold text-primary">{check.label}</p>
+                                            <p className="mt-1 text-sm leading-relaxed text-primary/70">{check.detail}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ol>
+
+                            <span id="labels" aria-hidden="true" className="block scroll-mt-24" />
                             <h2 id="label" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 1. Start With the German Label
                             </h2>
@@ -160,6 +213,7 @@ export default function PetFoodGermany() {
                                 </p>
                             </div>
 
+                            <span id="types" aria-hidden="true" className="block scroll-mt-24" />
                             <h2 id="formats" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 2. Compare Formats, Not Just Packaging
                             </h2>
@@ -192,6 +246,16 @@ export default function PetFoodGermany() {
                                     </p>
                                 </div>
                             </div>
+
+                            <h3 id="daily-cost" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
+                                Value check: compare daily feeding cost
+                            </h3>
+                            <p>
+                                A larger or more expensive pack can still cost less per day if the appropriate daily portion is smaller. As a starting estimate, divide the <strong>pack price by the number of days the pack lasts</strong> for your dog. Use the feeding amount for the same body weight and life stage, and compare calorie information when the manufacturer provides it.
+                            </p>
+                            <p>
+                                Price per kilogram alone can be misleading because foods differ in calorie density and recommended portions. Recalculate with the amount your dog actually needs after monitoring weight and body condition. Ask a veterinarian before adjusting a medical diet or feeding a dog with poor growth, unintended weight change or another health concern.
+                            </p>
 
                             <h2 id="manufacturer" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 3. Ask Who Formulates and Tests the Food
@@ -256,23 +320,23 @@ export default function PetFoodGermany() {
                                 <div className="flex flex-col sm:flex-row gap-4 mt-6">
                                     <a
                                         href={ZOOPLUS_URL}
-                                        aria-label="Zooplus affiliate link"
+                                        aria-label="Compare complete dog food at Zooplus (affiliate link)"
                                         onClick={() => trackAffiliateClick('Zooplus', 'PetFood_WhereToBuy')}
                                         target="_blank"
                                         rel="noopener noreferrer sponsored"
                                         className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-6 py-3 font-bold text-secondary transition-colors hover:bg-black"
                                     >
-                                        Browse Zooplus
+                                        Compare complete dog food at Zooplus
                                     </a>
                                     <a
                                         href={DINNER_FOR_DOGS_URL}
-                                        aria-label="Dinner for Dogs affiliate link"
+                                        aria-label="Check Dinner for Dogs details (affiliate link)"
                                         onClick={() => trackAffiliateClick('DinnerForDogs', 'PetFood_Page')}
                                         target="_blank"
                                         rel="noopener noreferrer sponsored"
                                         className="inline-flex min-h-11 items-center justify-center rounded-xl border border-primary/20 px-6 py-3 font-bold text-primary transition-colors hover:bg-primary/5"
                                     >
-                                        Visit Dinner for Dogs
+                                        Check Dinner for Dogs details
                                     </a>
                                 </div>
                             </div>

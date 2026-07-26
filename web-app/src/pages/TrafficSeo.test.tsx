@@ -719,6 +719,15 @@ describe('traffic-focused search metadata', () => {
             level: 1,
             name: 'Best Dog Food in Germany: How to Choose (2026)',
         })).toBeTruthy();
+        expect(screen.getByText('Reviewed July 27, 2026', { exact: false })).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: 'Choose Dog Food in 60 Seconds',
+        })).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 3,
+            name: 'Value check: compare daily feeding cost',
+        })).toBeTruthy();
 
         const articleText = document.body.textContent || '';
         expect(articleText).toMatch(/Alleinfuttermittel.*complete food/i);
@@ -727,6 +736,13 @@ describe('traffic-focused search metadata', () => {
         expect(articleText).toMatch(/no single best format/i);
         expect(articleText).toMatch(/no evidence of health benefits/i);
         expect(articleText).toMatch(/not independently laboratory-tested/i);
+        expect(articleText).toMatch(/pack price.*number of days the pack lasts/i);
+
+        expect(document.getElementById('labels')).toBeTruthy();
+        expect(document.getElementById('types')).toBeTruthy();
+        expect(document.getElementById('how-to-choose')).toBeTruthy();
+        expect(screen.getByRole('link', { name: 'How we review guides' }).getAttribute('href'))
+            .toBe('/quality-promise');
 
         expect(screen.getByRole('link', { name: 'EU pet-food labelling regulation' }).getAttribute('href'))
             .toBe('https://eur-lex.europa.eu/eli/reg/2009/767/oj/eng');
@@ -739,10 +755,14 @@ describe('traffic-focused search metadata', () => {
         expect(screen.getByRole('link', { name: 'English-speaking vets in Germany' }).getAttribute('href'))
             .toBe('/');
 
-        const dinnerForDogs = screen.getByRole('link', { name: 'Dinner for Dogs affiliate link' });
+        const dinnerForDogs = screen.getByRole('link', {
+            name: 'Check Dinner for Dogs details (affiliate link)',
+        });
         expect(dinnerForDogs.getAttribute('href')).toBe('https://tidd.ly/4au55tO');
         expect(dinnerForDogs.getAttribute('rel')).toContain('sponsored');
-        const zooplus = screen.getByRole('link', { name: 'Zooplus affiliate link' });
+        const zooplus = screen.getByRole('link', {
+            name: 'Compare complete dog food at Zooplus (affiliate link)',
+        });
         expect(zooplus.getAttribute('href')).toBe('https://tidd.ly/4wdElaw');
         expect(zooplus.getAttribute('rel')).toContain('sponsored');
 
@@ -754,7 +774,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-07-23');
+        expect(schema.dateModified).toBe('2026-07-27');
     });
 
     it('keeps the dog-food discovery card aligned with the refreshed guide', () => {
