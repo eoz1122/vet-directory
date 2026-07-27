@@ -85,4 +85,15 @@ describe('generateCitySummary', () => {
             expect(s.content).not.toMatch(/—|undefined|NaN/);
         }
     });
+
+    it('avoids unsupported registration, appointment and fee promises', () => {
+        for (const cityVets of [hofheim, frankfurt]) {
+            const s = generateCitySummary(cityVets[0].city, cityVets, [...hofheim, ...frankfurt]);
+
+            expect(s.content).not.toMatch(/free, five minutes/i);
+            expect(s.content).not.toMatch(/existing patient makes urgent appointments far easier/i);
+            expect(s.content).not.toMatch(/legal minimum surcharge/i);
+            expect(s.content).toMatch(/confirm English availability/i);
+        }
+    });
 });

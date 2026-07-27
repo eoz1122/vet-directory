@@ -23,12 +23,56 @@ function renderCity(path: string) {
 }
 
 describe('CityVets search and trust contract', () => {
+    it.each([
+        ['berlin', 'Berlin', 6, 57, 0],
+        ['hamburg', 'Hamburg', 4, 29, 2],
+        ['munich', 'Munich', 5, 21, 0],
+        ['cologne', 'Cologne', 1, 5, 0],
+        ['frankfurt', 'Frankfurt', 5, 24, 0],
+    ])(
+        'shows a scannable evidence and booking guide for %s',
+        (slug, city, officialCount, communityCount, pendingCount) => {
+            renderCity(`/vets/${slug}`);
+
+            const evidence = screen.getByRole('region', {
+                name: `How we verify ${city} listings`,
+            });
+            expect(within(evidence).getByText('Official website')).toBeTruthy();
+            expect(within(evidence).getByText(`${officialCount} ${officialCount === 1 ? 'listing' : 'listings'}`))
+                .toBeTruthy();
+            expect(within(evidence).getByText('Community confirmed')).toBeTruthy();
+            expect(within(evidence).getByText(`${communityCount} listings`)).toBeTruthy();
+
+            if (pendingCount) {
+                expect(within(evidence).getByText('Confirmation needed')).toBeTruthy();
+                expect(within(evidence).getByText(`${pendingCount} listings`)).toBeTruthy();
+            } else {
+                expect(within(evidence).queryByText('Confirmation needed')).toBeNull();
+            }
+
+            expect(within(evidence).getByRole('link', {
+                name: 'Read our Quality Promise',
+            }).getAttribute('href')).toBe('/quality-promise');
+
+            const booking = screen.getByRole('region', {
+                name: `Before booking a vet in ${city}`,
+            });
+            expect(within(booking).getByText('Check the evidence source')).toBeTruthy();
+            expect(within(booking).getByText('Confirm English for your appointment')).toBeTruthy();
+            expect(within(booking).getByText('Confirm services, hours and likely fees')).toBeTruthy();
+            expect(booking.textContent).not.toMatch(/accepting new patients/i);
+        },
+    );
+
     it('distinguishes official website evidence on the Leipzig page', () => {
         renderCity('/vets/leipzig');
 
         expect(screen.getAllByText('Official Website')).toHaveLength(4);
         expect(screen.getAllByText('Official Website Confirmed')).toHaveLength(4);
         expect(screen.getByText(/4 are confirmed by their official websites/i)).toBeTruthy();
+        expect(screen.queryByRole('region', {
+            name: 'How we verify Leipzig listings',
+        })).toBeNull();
     });
 
     it('uses a live listing count and leads with evidence-derived Berlin copy', async () => {
@@ -51,6 +95,17 @@ describe('CityVets search and trust contract', () => {
         expect(
             document.head.querySelector('meta[name="description"]')?.getAttribute('content'),
         ).toContain('63 verified English-speaking veterinary practices in Berlin');
+
+        await waitFor(() => {
+            const collectionSchema = [...document.head.querySelectorAll('script[type="application/ld+json"]')]
+                .map((script) => JSON.parse(script.textContent || '{}'))
+                .find((schema) => schema['@type'] === 'CollectionPage');
+
+            expect(collectionSchema?.inLanguage).toBe('en');
+            expect(collectionSchema?.mainEntity.numberOfItems).toBe(63);
+            expect(collectionSchema?.mainEntity.itemListOrder)
+                .toBe('https://schema.org/ItemListUnordered');
+        });
     });
 
     it('labels the Bremen exotics listing as a specialist practice', () => {

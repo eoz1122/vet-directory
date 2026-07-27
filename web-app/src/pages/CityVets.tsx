@@ -16,6 +16,7 @@ import { generateCitySummary } from '../utils/citySummary';
 import type { Vet } from '../types/vet';
 import { NearbyCityLinks } from '../components/vet/NearbyCityLinks';
 import { CityVetFinder } from '../components/vet/CityVetFinder';
+import { CityEvidenceOverview } from '../components/vet/CityEvidenceOverview';
 import { buildNearbyCityMap } from '../utils/nearbyCities';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
@@ -100,209 +101,13 @@ const CITY_CONFIG: Record<string, {
     },
 };
 
-const cityContent: Record<string, { title: string; description: string; content: string }> = {
-    berlin: {
-        title: "English-Speaking Vets in Berlin",
-        description: "Finding an English-speaking vet in Berlin doesn't have to be stressful. Our verified directory connects expats with veterinary practices across Mitte, Kreuzberg, Prenzlauer Berg, and beyond.",
-        content: `Living in Berlin with a dog is a dream - sprawling parks like Tempelhofer Feld, dog-friendly cafés on every corner, and a culture that genuinely loves pets. But when your furry friend needs medical attention, the language barrier can turn a routine checkup into a stressful ordeal.
-
-That's where we come in. Our directory features verified English-speaking veterinary practices across all Berlin districts, from the bustling heart of Mitte to the leafy streets of Zehlendorf. Each listing has been carefully vetted to ensure staff can communicate clearly in English, whether you're dealing with an emergency or just need advice on flea prevention.
-
-**Why Berlin Pet Owners Choose Us:**
-- **District-Specific Search**: Find vets near you in Kreuzberg, Friedrichshain, Charlottenburg, or any of Berlin's 12 boroughs
-- **Emergency-Ready**: Many practices offer 24/7 emergency services or Notdienst referrals
-- **Expat-Friendly**: These aren't just vets who "speak some English" - they're practices that actively serve the international community
-
-Whether you've just moved to Berlin or you're a long-time resident looking for a new vet after a bad experience, our directory is here to help you find the right care for your pet.`
-    },
-    hamburg: {
-        title: "English-Speaking Vets in Hamburg",
-        description: "Discover trusted English-speaking veterinary practices in Hamburg. From Altona to Winterhude, find quality pet care that speaks your language.",
-        content: `Hamburg's international community is thriving, and so is its network of English-speaking veterinary care. Whether you're in the trendy Sternschanze neighborhood or the family-friendly suburbs of Blankenese, finding a vet who can explain your pet's health in clear English is essential.
-
-Our Hamburg directory features practices that understand the unique needs of expat pet owners. These aren't just clinics with a bilingual receptionist - they're full-service veterinary hospitals where doctors and technicians communicate fluently in English.
-
-**What Makes Hamburg Vets Special:**
-- **Port City Expertise**: Many Hamburg vets have experience with international pet relocations and can help with EU health certificates
-- **Comprehensive Care**: From routine vaccinations to specialized surgery, these practices offer the full spectrum of veterinary medicine
-- **Accessible Locations**: Practices located near major U-Bahn and S-Bahn stations for easy access
-
-Hamburg's pet culture is warm and welcoming, and with the right vet by your side, you and your furry companion can enjoy everything this beautiful Hanseatic city has to offer.`
-    },
-    frankfurt: {
-        title: "English-Speaking Vets in Frankfurt",
-        description: "Frankfurt's international hub deserves international-quality pet care. Find English-speaking vets in Sachsenhausen, Nordend, and across the Rhine-Main area.",
-        content: `As Germany's financial capital and one of Europe's most international cities, Frankfurt has a robust network of English-speaking veterinary services. Whether you're in the banking district, the vibrant Nordend, or the cozy Sachsenhausen neighborhood, quality pet care in English is within reach.
-
-Frankfurt's expat community is one of the largest in Germany, and local vets have adapted to serve this diverse population. Many practices here have staff who've trained internationally or regularly attend English-language veterinary conferences, ensuring they're up-to-date with global best practices.
-
-**Why Frankfurt Pet Owners Trust Our Directory:**
-- **Airport Proximity**: Several practices specialize in pre-flight health checks and international pet travel documentation
-- **Multilingual Staff**: Beyond English and German, many Frankfurt vets also speak French, Spanish, or Italian
-- **Modern Facilities**: Frankfurt's vets often feature state-of-the-art diagnostic equipment and surgical suites
-
-From the Palmengarten to the Main riverbanks, Frankfurt is a wonderful city to explore with your pet. Let us help you find the veterinary partner who'll keep them healthy and happy.`
-    },
-    stuttgart: {
-        title: "English-Speaking Vets in Stuttgart",
-        description: "Find trusted English-speaking veterinarians in Stuttgart and the surrounding Baden-Württemberg region. Quality care for the international community.",
-        content: `Stuttgart's significant international population, including many expats and US military families, has led to a high standard of English-speaking veterinary care. Finding a vet who understands your concerns in your native language is key to your pet's well-being.
-
-Our Stuttgart directory connects you with practices that are experienced in serving international clients, offering everything from routine checkups to specialized treatments.
-
-**Why Stuttgart Pet Owners Use Our Directory:**
-- **Expat Communities**: Vets familiar with the needs of the international and military communities.
-- **Baden-Württemberg Coverage**: Find practices in the city center and surrounding districts.
-- **High Standards**: Access to modern clinics with English-speaking proficiency.`
-    },
-    munich: {
-        title: "English-Speaking Vets in Munich",
-        description: "Discover verified English-speaking veterinary clinics in Munich. Trusted pet care in the heart of Bavaria for the international community.",
-        content: `Munich is a world-class city, and its pet care services reflect that. With a large international community, Munich offers numerous veterinary practices where English is spoken fluently by both doctors and staff.
-
-Whether you're living near the Englischer Garten or in the outskirts of the city, our directory helps you find the right medical partner for your pet.
-
-**Benefits of Munich's English-Speaking Vets:**
-- **Central & Suburban**: Options across Munich's diverse neighborhoods.
-- **Advanced Medicine**: Access to some of Germany's leading veterinary specialists.
-- **Community Trusted**: Practices with a proven track record of serving expat families.`
-    },
-    leipzig: {
-        title: "English-Speaking Vets in Leipzig",
-        description: "Find trusted English-speaking veterinary practices in Leipzig. Verified care for your pets in Plagwitz, Südvorstadt, and across the city.",
-        content: `Leipzig is widely known as "Hypezig" for a reason - its vibrant culture, green spaces like the Clara-Zetkin-Park, and growing international community make it a fantastic place to live. for pet owners, however, finding a veterinarian who speaks clear English can still be a challenge.
-
-Our Leipzig directory connects you with verified practices where language isn't a barrier. Whether you're living in the trendy Plagwitz area, the family-friendly Südvorstadt, or the historic Gohlis, we help you find the right care for your four-legged family members.
-
-**Why Leipzig Pet Owners Use Our Directory:**
-- **Local Verification**: We've analyzed thousands of reviews to identify practices with a history of supporting English speakers.
-- **District Coverage**: options across major neighborhoods to save you travel time.
-- **Peace of Mind**: Ensure you fully understand your pet's diagnosis and treatment plan.`
-    },
-    cologne: {
-        title: "English-Speaking Vets in Cologne (Köln)",
-        description: "Find trusted English-speaking veterinarians in Cologne. Verified practices in Ehrenfeld, Nippes, and the city center for your pet's care.",
-        content: `Cologne's cheerful Rhineland spirit extends to its pet culture, with plenty of dog-friendly parks like the Poller Wiesen and Stadtwald. But when it comes to medical care, you want communication to be as clear as the view from the Dom.
-
-Our Cologne directory features veterinary practices that welcome international clients. From the bustling streets of Ehrenfeld to the quiet corners of Lindenthal, we've identified vets who can explain complex medical issues in English.
-
-**Why Cologne Pet Owners Information:**
-- **Community Recommended**: Listings based on real expat experiences and recommendations.
-- **Rhineland Coverage**: Finding care on both sides of the Rhine.
-- **Clear Communication**: Ensuring you and your vet are on the same page about your pet's health.`
-    },
-    hannover: {
-        title: "English-Speaking Vets in Hannover",
-        description: "Find trusted English-speaking veterinary practices in Hannover. Verified care including the TiHo University Clinic and local experts.",
-        content: `Hannover is known for its green Eilenriede forest and expo grounds, but finding international-friendly services can sometimes be tricky. Luckily, as a university city home to the prestigious TiHo (University of Veterinary Medicine), the standard of veterinary care here is exceptional.
-
-Our Hannover directory connects you with practices that bridge the language gap. From the university clinics in Bünteweg to private practices in List and Südstadt, we help you find the right care.
-
-**Why Hannover Pet Owners Use Our Directory:**
-- **University Excellence**: Access to one of Europe's leading veterinary schools (TiHo).
-- **Verified Communication**: Practices where English is spoken and understood.
-- **Emergency Options**: Clear info on 24/7 clinics for peace of mind.`
-    },
-    wiesbaden: {
-        title: "English-Speaking Vets in Wiesbaden",
-        description: "Find trusted English-speaking veterinarians in Wiesbaden. Quality pet care for the international and military community in Hessen's capital.",
-        content: `Wiesbaden, the elegant capital of Hessen, is home to a large international population, including a significant US military presence. This has created a high demand for English-speaking services, particularly in veterinary care.
-
-Our Wiesbaden directory features practices that are well-versed in serving English-speaking clients, ensuring your pet receives top-tier medical attention with clear communication.
-
-**Why Wiesbaden Pet Owners Choose Us:**
-- **Military Friendly**: Vets familiar with the needs of the US community and international relocations.
-- **Hessen Capital Reach**: Coverage across Wiesbaden's beautiful historic districts and outskirts.
-- **Expert Care**: From routine wellness to complex treatments, find vets who speak your language.`
-    },
-    'bad homburg': {
-        title: "English-Speaking Vets in Bad Homburg",
-        description: "Premium English-speaking veterinary services in Bad Homburg vor der Höhe. Verified care for the international community in the Taunus region.",
-        content: `Bad Homburg is known for its high quality of life and international flair, situated just at the foot of the Taunus mountains. For pet owners in this sophisticated spa town, finding a vet who speaks fluent English is key to maintaining a healthy lifestyle for their pets.
-
-We connect you with verified practices in Bad Homburg that cater to the town's global residents. Expect professional, compassionate care where English is the standard.`
-    },
-    hofheim: {
-        title: "English-Speaking Vets in Hofheim & MTK",
-        description: "Discover top English-speaking veterinarians in Hofheim and the Main-Taunus-Kreis. Home to major specialist clinics and local experts.",
-        content: `Hofheim and the Main-Taunus-Kreis are hubs for world-class veterinary medicine, featuring some of Germany's most advanced specialist clinics. For the many international residents living in this region, communication in English is vital during specialized procedures or emergencies.
-
-Our directory features both local practices and major referral hospitals in the Hofheim area where English is spoken fluently.`
-    },
-    oberursel: {
-        title: "English-Speaking Vets in Oberursel",
-        description: "Find reliable English-speaking veterinarians in Oberursel. Trusted pet care for the international community near the Frankfurt International School.",
-        content: `Oberursel is a favorite among expats, partly due to the presence of the Frankfurt International School. For families with pets, having an English-speaking vet nearby is a top priority.
-
-We list verified practices in and around Oberursel that provide a welcoming environment for English speakers. Ensure you and your pet feel confident during every visit.`
-    },
-    kelkheim: {
-        title: "English-Speaking Vets in Kelkheim (Taunus)",
-        description: "Find verified English-speaking veterinarians in Kelkheim. Quality pet care in the heart of the Main-Taunus-Kreis for expats and locals.",
-        content: `Kelkheim offers a high quality of life with its proximity to the Frankfurt metropolis and the nature of the Taunus. For the international community living here, access to English-speaking veterinary care is an important part of settling in.
-
-Our directory features trusted vets in Kelkheim who can help with everything from routine care to more complex medical needs, all in English.`
-    },
-    'königstein': {
-        title: "English-Speaking Vets in Königstein im Taunus",
-        description: "Premium English-speaking veterinary services in Königstein. Discover top-rated care for your pets in the Taunus region.",
-        content: `Königstein is one of the most prestigious locations in the Taunus, attracting many international residents. Finding a veterinarian who matches the high standards of the area and speaks fluent English is essential.
-
-Explore our list of verified veterinary practices in Königstein that offer expert medical services and clear communication for the global community.`
-    },
-    langenhagen: {
-        title: "English-Speaking Vets in Langenhagen",
-        description: "Find trusted English-speaking veterinarians in Langenhagen. Quality pet care near Hannover Airport and the northern suburbs.",
-        content: `Langenhagen, located just north of Hannover, is a key hub for many international travelers and residents. For those living in the area with pets, finding a local vet who speaks English provides great peace of mind.
-
-We've identified practices in Langenhagen that are experienced in assisting English-speaking clients, ensuring your pet's health is always a priority.`
-    },
-    leinburg: {
-        title: "English-Speaking Vets in Leinburg",
-        description: "Locate English-speaking veterinarians in Leinburg. Trusted pet care in the Nuremberg region for international families.",
-        content: `Leinburg offers a peaceful, green environment for pet owners near Nuremberg. For expats and international residents in the area, having a local vet who can communicate clearly in English is a significant advantage.
-
-Our directory includes verified practices in Leinburg that welcome English-speaking clients and provide high-quality medical care.`
-    },
-    'neustadt (near hamburg)': {
-        title: "English-Speaking Vets in Neustadt (Hambug Region)",
-        description: "Find English-speaking veterinarians in the Neustadt area near Hamburg. Verified pet care for the local international community.",
-        content: `Neustadt, located in the greater Hamburg area, is home to a growing number of international residents. Finding a veterinarian who can provide medical care in English is essential for clear understanding and the best possible outcomes for your pet.
-
-We list verified practices in the Neustadt region that offer professional services in English.`
-    },
-    'überlingen': {
-        title: "English-Speaking Vets in Überlingen (Lake Constance)",
-        description: "Find trusted English-speaking veterinarians in Überlingen. Quality pet care on the shores of Lake Constance for the international community.",
-        content: `Überlingen is one of the most beautiful towns on Lake Constance, attracting residents and visitors from all over the world. For pet owners in the area, finding a vet who speaks fluent English is key to enjoying life on the lake with their furry companions.
-
-Our directory features verified practices in Überlingen that offer expert care and clear communication in English.`
-    },
-    dresden: {
-        title: "English-Speaking Vets in Dresden",
-        description: "Find verified English-speaking veterinarians in Dresden. Trusted pet care in Neustadt, Altstadt, and Blasewitz for the international community.",
-        content: `Dresden, with its stunning Baroque architecture and growing international tech scene, is a beautiful place to call home. For the increasing number of expats moving to the "Florence on the Elbe," finding a veterinarian who can communicate clearly in English is a top priority.
-
-Our Dresden directory connects you with verified veterinary practices across the city. Whether you're in the alternative hip neighborhood of Neustadt, the historic Altstadt, or the leafy Blasewitz, we help you find the right medical care for your pets.
-
-**Why Dresden Pet Owners Use Our Directory:**
-- **Local Verification**: We've identified practices with a proven track record of supporting English speakers.
-- **Neighborhood Coverage**: Options in key districts to ensure care is never too far away.
-- **Peace of Mind**: Ensure you fully understand your pet's diagnosis and treatment plan.`
-    },
-    'nuremberg': {
-        title: "English-Speaking Vets in Nuremberg (Nürnberg)",
-        description: "Find trusted English-speaking veterinarians in Nuremberg. Verified practices near the Altstadt, Langwasser, and Südstadt.",
-        content: `Nuremberg's medieval charm and modern quality of life make it a great place for pets, from walks along the Pegnitz to the Reichswald. But navigating veterinary care in a new language can be daunting.
-
-Our Nuremberg directory highlights practices where you can communicate comfortably in English. Whether you need a specialist at the harbor clinic or a family vet in the suburbs, we've got you covered.
-
-**Why Nuremberg Pet Owners Use Our Directory:**
-- **Local Expertise**: Vets who understand the needs of the international community.
-- **Specialized Care**: Access to major clinics like the Tierklinik am Stadtpark/Hafen.
-- **Convenience**: Finding the right help, whether you're in the city center or the outskirts.`
-    }
-};
+const EVIDENCE_FIRST_CITIES = new Set([
+    'Berlin',
+    'Hamburg',
+    'Munich',
+    'Cologne',
+    'Frankfurt',
+]);
 
 export default function CityVets() {
     const { city } = useParams<{ city: string }>();
@@ -342,48 +147,31 @@ export default function CityVets() {
         ? `Browse ${cityVets.length} verified English-speaking veterinary ${cityVets.length === 1 ? 'practice' : 'practices'} in ${capitalizedCity}. Compare official website, government and community evidence, contact details, and emergency information.`
         : `Browse ${cityVets.length} English-speaking veterinary practices in ${capitalizedCity}; ${officialWebsiteCount} have official website confirmation, ${governmentSourceCount} have government-source confirmation and ${communityConfirmedCount} are community-confirmed. Compare districts and confirm English when booking.`;
 
-    let cityData: { title: string; description: string; content: string; nearestHub?: { city: string; count: number; distanceKm: number } | null } = cityContent[cityKey];
-
-    // Data-driven summary for EVERY city: hand-written prose (where it exists)
-    // keeps the top slot; the generator appends the factual layer that stays
-    // current as vets.json changes. Cities without manual content get the
-    // generated version alone (replaced 29 near-duplicate boilerplate intros).
     const summary = cityVets.length > 0 ? generateCitySummary(capitalizedCity, cityVets, vets) : null;
 
-    if (cityData && summary) {
-        cityData = {
-            ...cityData,
-            title: listingTitle,
-            description: listingDescription,
-            content: summary.content,
-            nearestHub: summary.nearestHub,
-        };
+    if (!summary) {
+        return (
+            <div className="min-h-screen bg-secondary flex items-center justify-center">
+                <Helmet>
+                    <title>City Not Found | The Pack</title>
+                    <meta name="robots" content="noindex" />
+                </Helmet>
+                <div className="text-center">
+                    <h1 className="text-4xl font-bold text-primary mb-4">City Not Found</h1>
+                    <p className="text-primary/60 mb-6">We currently don't have any verified vets listed for {capitalizedCity}.</p>
+                    <Link to="/" className="text-accent hover:underline">← Back to Directory</Link>
+                </div>
+            </div>
+        );
     }
 
-    if (!cityData) {
-        if (cityVets.length > 0 && summary) {
-            cityData = {
-                title: listingTitle,
-                description: listingDescription,
-                content: summary.content,
-                nearestHub: summary.nearestHub,
-            };
-        } else {
-            return (
-                <div className="min-h-screen bg-secondary flex items-center justify-center">
-                    <Helmet>
-                        <title>City Not Found | The Pack</title>
-                        <meta name="robots" content="noindex" />
-                    </Helmet>
-                    <div className="text-center">
-                        <h1 className="text-4xl font-bold text-primary mb-4">City Not Found</h1>
-                        <p className="text-primary/60 mb-6">We currently don't have any verified vets listed for {capitalizedCity}.</p>
-                        <Link to="/" className="text-accent hover:underline">← Back to Directory</Link>
-                    </div>
-                </div>
-            );
-        }
-    }
+    const cityData = {
+        title: listingTitle,
+        description: listingDescription,
+        content: summary.content,
+        nearestHub: summary.nearestHub,
+    };
+
     // JSON-LD Structured Data
     const breadcrumbLd = {
         "@context": "https://schema.org",
@@ -410,8 +198,11 @@ export default function CityVets() {
         "name": cityData.title,
         "description": cityData.description,
         "url": `https://englishspeakinggermany.online/vets/${cityKey}`,
+        "inLanguage": "en",
         "mainEntity": {
             "@type": "ItemList",
+            "numberOfItems": cityVets.length,
+            "itemListOrder": "https://schema.org/ItemListUnordered",
             "itemListElement": cityVets.map((vet: Vet, index: number) => ({
                 "@type": "ListItem",
                 "position": index + 1,
@@ -501,6 +292,18 @@ export default function CityVets() {
                     </div>
 
                 </section>
+
+                {EVIDENCE_FIRST_CITIES.has(capitalizedCity) && (
+                    <CityEvidenceOverview
+                        city={capitalizedCity}
+                        counts={{
+                            officialWebsite: officialWebsiteCount,
+                            governmentSource: governmentSourceCount,
+                            communityConfirmed: communityConfirmedCount,
+                            communityListed: communityListedCount,
+                        }}
+                    />
+                )}
 
                 {/* District index: gives every district page a crawlable inbound link */}
                 {(() => {

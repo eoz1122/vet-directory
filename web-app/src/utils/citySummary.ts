@@ -7,9 +7,9 @@ import {
 } from './verifiedLabel';
 
 /**
- * Data-driven intro content for city pages WITHOUT hand-written cityContent.
- * Replaces the old shared boilerplate (29 near-duplicate pages) with prose
- * derived from each city's actual data, so every page is honestly unique.
+ * Data-driven intro content for city pages.
+ * Uses each city's current directory data so every summary stays specific
+ * without relying on promotional or manually maintained location claims.
  * Same philosophy as districtContent: only say what the data supports.
  */
 export interface CitySummary {
@@ -93,7 +93,7 @@ export function generateCitySummary(city: string, cityVets: Vet[], allVets: Vet[
     // 3. Emergency picture, honest in both directions
     if (emergency.length) {
         paragraphs.push(
-            `For urgent care, ${prose(emergency.map((e) => e.practice_name).slice(0, 2))} ${emergency.length === 1 ? 'lists' : 'list'} emergency or out-of-hours services. Save the number before you need it; German out-of-hours care carries a legal minimum surcharge, so knowing where to go is half the battle.`,
+            `For urgent care, ${prose(emergency.map((e) => e.practice_name).slice(0, 2))} ${emergency.length === 1 ? 'lists' : 'list'} emergency or out-of-hours information. Check the listing details, current hours and telephone instructions before travelling whenever the situation safely allows.`,
         );
     } else {
         paragraphs.push(
@@ -127,9 +127,9 @@ export function generateCitySummary(city: string, cityVets: Vet[], allVets: Vet[
         }
     }
 
-    // 5. Newcomer close, anchored to the city
+    // 5. Practical close, anchored to the city
     paragraphs.push(
-        `New to ${city} with a pet? Register the microchip with TASSO first (free, five minutes), then book a get-to-know visit with one of the practices above before you actually need one: being an existing patient makes urgent appointments far easier to get. Every listing shows the English-language evidence behind it, and the Confirm English button lets you strengthen it for the next owner after your visit.`,
+        `New to ${city} with a pet? Compare the evidence shown on each listing and confirm English availability, the service you need, current hours and likely fees directly with the practice. Save a suitable routine-care option and the local out-of-hours instructions before you need them.`,
     );
 
     return { content: paragraphs.join('\n\n'), nearestHub };
