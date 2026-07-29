@@ -539,7 +539,7 @@
     "id": "Berlin-122",
     "practice_name": "Rex Tierarztpraxis Berlin-Friedrichshain",
     "city": "Berlin",
-    "district": "Berlin",
+    "district": "Friedrichshain",
     "address": "Revaler Str. 17, 10245 Berlin",
     "coordinates": {
       "lat": 52.5072059,
@@ -547,18 +547,30 @@
     },
     "contact": {
       "phone": "030 91734338",
-      "website": "https://www.rex.app/praxen/rex-berlin-friedrichshain",
+      "website": "https://www.rex.app/clinics/rex-berlin-friedrichshain",
       "google_maps": "https://www.google.com/maps/place/Rex+Tierarztpraxis+Berlin-Friedrichshain/data=!4m7!3m6!1s0x47a84f9be0f199a1:0x1bc2f105df77e470!8m2!3d52.5072059!4d13.4575494!16s%2Fg%2F11vhg12w0x!19sChIJoZnx4JtPqEcRcOR33wXxwhs?authuser=0&hl=en&rclk=1"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-12-25",
+      "last_scanned": "2026-07-29",
       "english_signals": [
-        "Verified by Community"
+        "Current official team profiles list Dr. Anne Rees and Dr. Julia Hupfeld as speaking German and English"
+      ],
+      "evidence_type": "official_website",
+      "source_urls": [
+        "https://www.rex.app/clinics/rex-berlin-friedrichshain",
+        "https://www.rex.app/en-team/anne-rees",
+        "https://www.rex.app/en-team/dr-julia-hupfeld"
       ],
       "emergency_services": ""
     },
-    "community_status": "Verified"
+    "community_status": "Verified",
+    "pending_community_confirmations": [
+      {
+        "date": "2026-07-29",
+        "source": "site_button"
+      }
+    ]
   },
   {
     "id": "Berlin-123",
@@ -1060,31 +1072,6 @@
       "emergency_services": ""
     },
     "community_status": "Unverified"
-  },
-  {
-    "id": "Berlin-3",
-    "practice_name": "Rex Tierarztpraxis (Multiple Locations)",
-    "city": "Berlin",
-    "district": "Friedrichshain / Others",
-    "address": "Friedenstraße 94, 10249 Berlin",
-    "coordinates": {
-      "lat": 52.5222543,
-      "lng": 13.4352901
-    },
-    "contact": {
-      "phone": "",
-      "website": "https://www.rex.app/en",
-      "google_maps": null
-    },
-    "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-12-24",
-      "english_signals": [
-        "Verified English Support"
-      ],
-      "emergency_services": ""
-    },
-    "community_status": "Verified"
   },
   {
     "id": "Berlin-32",

@@ -24,7 +24,7 @@ function renderCity(path: string) {
 
 describe('CityVets search and trust contract', () => {
     it.each([
-        ['berlin', 'Berlin', 6, 57, 0],
+        ['berlin', 'Berlin', 7, 55, 0],
         ['hamburg', 'Hamburg', 4, 29, 2],
         ['munich', 'Munich', 5, 21, 0],
         ['cologne', 'Cologne', 1, 5, 0],
@@ -80,21 +80,21 @@ describe('CityVets search and trust contract', () => {
 
         await waitFor(() => {
             expect(document.title).toBe(
-                '63 English-Speaking Vets in Berlin | EnglishSpeakingVets',
+                '62 English-Speaking Vets in Berlin | EnglishSpeakingVets',
             );
         });
 
         expect(screen.getByRole('heading', {
             level: 1,
-            name: '63 English-Speaking Vets in Berlin',
+            name: '62 English-Speaking Vets in Berlin',
         })).toBeTruthy();
-        expect(screen.getByText(/We currently list 63 English-speaking veterinary practices in Berlin/i))
+        expect(screen.getByText(/We currently list 62 English-speaking veterinary practices in Berlin/i))
             .toBeTruthy();
-        expect(screen.getByText(/6 are confirmed by their official websites/i)).toBeTruthy();
+        expect(screen.getByText(/7 are confirmed by their official websites/i)).toBeTruthy();
         expect(screen.queryByText(/Each listing has been carefully vetted/i)).toBeNull();
         expect(
             document.head.querySelector('meta[name="description"]')?.getAttribute('content'),
-        ).toContain('63 verified English-speaking veterinary practices in Berlin');
+        ).toContain('62 verified English-speaking veterinary practices in Berlin');
 
         await waitFor(() => {
             const collectionSchema = [...document.head.querySelectorAll('script[type="application/ld+json"]')]
@@ -102,7 +102,7 @@ describe('CityVets search and trust contract', () => {
                 .find((schema) => schema['@type'] === 'CollectionPage');
 
             expect(collectionSchema?.inLanguage).toBe('en');
-            expect(collectionSchema?.mainEntity.numberOfItems).toBe(63);
+            expect(collectionSchema?.mainEntity.numberOfItems).toBe(62);
             expect(collectionSchema?.mainEntity.itemListOrder)
                 .toBe('https://schema.org/ItemListUnordered');
         });

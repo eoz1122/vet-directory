@@ -314,7 +314,8 @@ def test_nginx_redirects_legacy_district_urls_to_canonical_slugs():
     base_url = "https://englishspeakinggermany.online"
     redirects = {
         "/vets/berlin/düppel/zehlendorf": "/vets/berlin/düppel-zehlendorf",
-        "/vets/berlin/friedrichshain-/-others": "/vets/berlin/friedrichshain-others",
+        "/vets/berlin/friedrichshain-/-others": "/vets/berlin/friedrichshain",
+        "/vets/berlin/friedrichshain-others": "/vets/berlin/friedrichshain",
         "/vets/frankfurt/dr.-jan-kullen-/-dr.-elena-panova": "/vets/frankfurt/sachsenhausen-nord",
         "/vets/frankfurt/gallus/city-west": "/vets/frankfurt/gallus-city-west",
         "/vets/frankfurt/am-nordpark-10,-60437-frankfurt-am-main": "/vets/frankfurt/kalbach-riedberg",
@@ -336,6 +337,10 @@ def test_nginx_redirects_legacy_district_urls_to_canonical_slugs():
     assert (
         '"/vets/frankfurt/am-nordpark-10,-60437-frankfurt-am-main|'
         '/vets/frankfurt/kalbach-riedberg"'
+    ) in smoke_test
+    assert (
+        '"/vets/berlin/friedrichshain-others|'
+        '/vets/berlin/friedrichshain"'
     ) in smoke_test
 
 

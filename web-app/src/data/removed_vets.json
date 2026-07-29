@@ -58,5 +58,17 @@
             "lng": 13.4368022
         },
         "reason": "Added website per user request"
+    },
+    {
+        "id": "Berlin-3",
+        "practice_name": "Rex Tierarztpraxis (Multiple Locations)",
+        "city": "Berlin",
+        "district": "Friedrichshain / Others",
+        "address": "Friedenstraße 94, 10249 Berlin",
+        "coordinates": {
+            "lat": 52.5222543,
+            "lng": 13.4352901
+        },
+        "reason": "Retired as an incorrect duplicate of Berlin-122. The submitted 2026-07-29 site confirmation was preserved as pending evidence on the active Rex Friedrichshain listing."
     }
 ]

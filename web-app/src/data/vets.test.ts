@@ -861,6 +861,34 @@ describe('Frankfurt directory data quality', () => {
 });
 
 describe('public directory entry quality', () => {
+    it('retires the stale Rex duplicate and preserves its site confirmation on the active Friedrichshain listing', () => {
+        const staleDuplicate = vetsData.find((vet) => vet.id === 'Berlin-3');
+        const activeListing = vetsData.find((vet) => vet.id === 'Berlin-122');
+
+        expect(staleDuplicate).toBeUndefined();
+        expect(activeListing).toBeDefined();
+        expect(activeListing?.practice_name).toBe(
+            'Rex Tierarztpraxis Berlin-Friedrichshain',
+        );
+        expect(activeListing?.address).toBe('Revaler Str. 17, 10245 Berlin');
+        expect(activeListing?.contact.phone).toBe('030 91734338');
+        expect(activeListing?.contact.website).toBe(
+            'https://www.rex.app/clinics/rex-berlin-friedrichshain',
+        );
+        expect(activeListing?.verification.evidence_type).toBe('official_website');
+        expect(activeListing?.verification.source_urls).toEqual(
+            expect.arrayContaining([
+                'https://www.rex.app/clinics/rex-berlin-friedrichshain',
+                'https://www.rex.app/en-team/anne-rees',
+                'https://www.rex.app/en-team/dr-julia-hupfeld',
+            ]),
+        );
+        expect(activeListing?.pending_community_confirmations).toContainEqual({
+            date: '2026-07-29',
+            source: 'site_button',
+        });
+    });
+
     it.each([
         ['Berlin-2', 'Berlin-105'],
         ['hofheim-tierklinik-24h', 'Frankfurt-50'],
