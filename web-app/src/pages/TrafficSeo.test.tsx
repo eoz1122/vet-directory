@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
@@ -51,6 +51,20 @@ const getStructuredData = (type: string) => Array.from(
 )
     .map((script) => JSON.parse(script.textContent || 'null'))
     .find((schema) => schema?.['@type'] === type);
+
+const expectAwinPlacement = (
+    link: HTMLElement,
+    merchantId: string,
+    clickref: string,
+) => {
+    const url = new URL(link.getAttribute('href') || '');
+
+    expect(url.hostname).toBe('www.awin1.com');
+    expect(url.searchParams.get('awinmid')).toBe(merchantId);
+    expect(url.searchParams.get('awinaffid')).toBe('2707844');
+    expect(url.searchParams.get('clickref')).toBe(clickref);
+    expect(link.getAttribute('rel')).toContain('sponsored');
+};
 
 describe('traffic-focused search metadata', () => {
     beforeEach(() => {
@@ -719,7 +733,7 @@ describe('traffic-focused search metadata', () => {
             level: 1,
             name: 'Best Dog Food in Germany: How to Choose (2026)',
         })).toBeTruthy();
-        expect(screen.getByText('Reviewed July 27, 2026', { exact: false })).toBeTruthy();
+        expect(screen.getByText('Reviewed August 1, 2026', { exact: false })).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
             name: 'Choose Dog Food in 60 Seconds',
@@ -763,8 +777,21 @@ describe('traffic-focused search metadata', () => {
         const zooplus = screen.getByRole('link', {
             name: 'Compare complete dog food at Zooplus (affiliate link)',
         });
-        expect(zooplus.getAttribute('href')).toBe('https://tidd.ly/4wdElaw');
-        expect(zooplus.getAttribute('rel')).toContain('sponsored');
+        expectAwinPlacement(zooplus, '11330', 'dog_food_where_to_buy');
+
+        const midArticleCallout = screen.getByRole('region', {
+            name: 'Sponsored dog-food option',
+        });
+        expect(within(midArticleCallout).getByText(/advertising link/i)).toBeTruthy();
+        const midArticleZooplus = within(midArticleCallout).getByRole('link', {
+            name: 'Review Zooplus dog-food options',
+        });
+        expectAwinPlacement(midArticleZooplus, '11330', 'dog_food_mid_article');
+        expect(
+            (midArticleCallout.compareDocumentPosition(
+                screen.getByRole('heading', { level: 2, name: '3. Ask Who Formulates and Tests the Food' }),
+            )) & Node.DOCUMENT_POSITION_FOLLOWING,
+        ).toBeTruthy();
 
         expect(articleText).not.toMatch(/good for the teeth/i);
         expect(articleText).not.toMatch(/Germany is a European leader in BARF/i);
@@ -774,7 +801,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-07-27');
+        expect(schema.dateModified).toBe('2026-08-01');
     });
 
     it('keeps the dog-food discovery card aligned with the refreshed guide', () => {
@@ -801,6 +828,7 @@ describe('traffic-focused search metadata', () => {
             level: 1,
             name: 'Best Cat Food in Germany: How to Choose (2026)',
         })).toBeTruthy();
+        expect(screen.getByText('Reviewed August 1, 2026', { exact: false })).toBeTruthy();
 
         const articleText = document.body.textContent || '';
         expect(articleText).toMatch(/Alleinfuttermittel.*complete food/i);
@@ -825,8 +853,21 @@ describe('traffic-focused search metadata', () => {
             .toBe('/');
 
         const zooplus = screen.getByRole('link', { name: 'Zooplus cat-food affiliate link' });
-        expect(zooplus.getAttribute('href')).toBe('https://tidd.ly/3R2z5ax');
-        expect(zooplus.getAttribute('rel')).toContain('sponsored');
+        expectAwinPlacement(zooplus, '11330', 'cat_food_where_to_buy');
+
+        const midArticleCallout = screen.getByRole('region', {
+            name: 'Sponsored cat-food option',
+        });
+        expect(within(midArticleCallout).getByText(/advertising link/i)).toBeTruthy();
+        const midArticleZooplus = within(midArticleCallout).getByRole('link', {
+            name: 'Review Zooplus cat-food options',
+        });
+        expectAwinPlacement(midArticleZooplus, '11330', 'cat_food_mid_article');
+        expect(
+            (midArticleCallout.compareDocumentPosition(
+                screen.getByRole('heading', { level: 2, name: '4. Choose the Correct Life Stage' }),
+            )) & Node.DOCUMENT_POSITION_FOLLOWING,
+        ).toBeTruthy();
 
         expect(articleText).not.toMatch(/wet food is generally better/i);
         expect(articleText).not.toMatch(/recommended staple for most cats/i);
@@ -836,7 +877,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2026-06-23');
-        expect(schema.dateModified).toBe('2026-07-23');
+        expect(schema.dateModified).toBe('2026-08-01');
     });
 
     it('keeps the cat-food discovery card aligned with the refreshed guide', () => {
@@ -996,6 +1037,7 @@ describe('traffic-focused search metadata', () => {
             level: 1,
             name: 'Pet Insurance in Germany: Dog & Cat Guide (2026)',
         })).toBeTruthy();
+        expect(screen.getByText(/Reviewed 1 August 2026/i)).toBeTruthy();
 
         const articleText = document.body.textContent || '';
         expect(articleText).toMatch(/dog liability insurance.*separate.*pet health insurance/i);
@@ -1028,6 +1070,27 @@ describe('traffic-focused search metadata', () => {
         expect(screen.getByRole('link', { name: 'English-speaking vets in Germany' }).getAttribute('href'))
             .toBe('/');
 
+        const midArticleCallout = screen.getByRole('region', {
+            name: 'Sponsored pet-insurance option',
+        });
+        expect(within(midArticleCallout).getByText(/advertising link/i)).toBeTruthy();
+        const midArticleFigo = within(midArticleCallout).getByRole('link', {
+            name: 'Review the current Figo campaign',
+        });
+        expectAwinPlacement(midArticleFigo, '13775', 'pet_insurance_mid_article');
+        expect(
+            (midArticleCallout.compareDocumentPosition(
+                screen.getByRole('heading', { level: 2, name: 'GOT reimbursement: the number that matters' }),
+            )) & Node.DOCUMENT_POSITION_FOLLOWING,
+        ).toBeTruthy();
+
+        const bottomFigo = screen.getByRole('link', {
+            name: 'Figo commercial pet health link',
+        });
+        expectAwinPlacement(bottomFigo, '13775', 'pet_insurance_commercial_links');
+        expect(new URL(midArticleFigo.getAttribute('href') || '').searchParams.get('clickref'))
+            .not.toBe(new URL(bottomFigo.getAttribute('href') || '').searchParams.get('clickref'));
+
         expect(articleText).not.toMatch(/Yes, you need pet insurance/i);
         expect(articleText).not.toMatch(/100% liable/i);
         expect(articleText).not.toMatch(/mandatory for ALL dogs in/i);
@@ -1043,7 +1106,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-07-23');
+        expect(schema.dateModified).toBe('2026-08-01');
     });
 
     it('keeps the pet-insurance discovery card aligned with the comparison guide', () => {

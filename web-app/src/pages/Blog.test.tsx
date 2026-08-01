@@ -95,6 +95,14 @@ describe('Blog guide discovery', () => {
             & Node.DOCUMENT_POSITION_FOLLOWING,
         ).toBeTruthy();
         expect(within(sponsoredOffer).getByText('Sponsored partner')).toBeTruthy();
+        expect(sponsoredOffer.textContent).toMatch(/current €30 affiliate campaign/i);
+        expect(sponsoredOffer.textContent).not.toMatch(/speaks your language/i);
+
+        const sponsoredUrl = new URL(sponsoredOffer.getAttribute('href') || '');
+        expect(sponsoredUrl.hostname).toBe('www.awin1.com');
+        expect(sponsoredUrl.searchParams.get('awinmid')).toBe('13775');
+        expect(sponsoredUrl.searchParams.get('awinaffid')).toBe('2707844');
+        expect(sponsoredUrl.searchParams.get('clickref')).toBe('blog_hub_banner');
 
         expect(screen.getByText('24-Hour Emergency Vets in Berlin')).toBeTruthy();
         expect(screen.getByText(

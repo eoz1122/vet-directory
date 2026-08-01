@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { trackAffiliateClick } from '../utils/analytics';
+import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -220,7 +221,7 @@ export default function Blog() {
                 </section>
 
                 <a
-                    href="https://tidd.ly/45yENEP"
+                    href={AFFILIATE_LINKS.figo.blogHubBanner}
                     onClick={() => trackAffiliateClick('Figo', 'Blog_Banner')}
                     target="_blank"
                     rel="noopener noreferrer sponsored"
@@ -243,7 +244,7 @@ export default function Blog() {
                                 Save 30€ on Pet Health Insurance
                             </h2>
                             <p className="max-w-xl text-sm leading-relaxed text-primary/70 md:text-base">
-                                Vet bills in Germany can be a shock. We've partnered with <span className="font-bold text-primary">Figo</span> to offer comprehensive coverage that speaks your language.
+                                Explore Figo&apos;s current €30 affiliate campaign for pet health insurance, then check the policy terms, exclusions, and price before choosing.
                             </p>
                         </div>
 

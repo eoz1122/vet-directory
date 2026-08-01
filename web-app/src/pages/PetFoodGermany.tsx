@@ -5,14 +5,15 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import AffiliateCallout from '../components/AffiliateCallout';
 import { trackAffiliateClick } from '../utils/analytics';
+import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
 const TITLE = 'Best Dog Food in Germany: How to Choose (2026)';
 const DESCRIPTION = 'Compare dog food in Germany using EU label terms, FEDIAF guidance and WSAVA checks. Understand complete food, formats, raw-diet risks and vet diets.';
 const URL = 'https://englishspeakinggermany.online/blog/best-dog-food-germany';
 const DINNER_FOR_DOGS_URL = 'https://tidd.ly/4au55tO';
-const ZOOPLUS_URL = 'https://tidd.ly/4wdElaw';
 
 const SOURCE_URLS = {
     euLabelling: 'https://eur-lex.europa.eu/eli/reg/2009/767/oj/eng',
@@ -86,7 +87,7 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DESCRIPTION,
     URL,
     '2025-01-01',
-    '2026-07-27',
+    '2026-08-01',
 );
 
 const FAQ_SCHEMA = {
@@ -150,7 +151,7 @@ export default function PetFoodGermany() {
                             Best Dog Food in Germany: How to Choose (2026)
                         </h1>
                         <p className="text-sm text-primary/60 mb-8">
-                            Reviewed July 27, 2026
+                            Reviewed August 1, 2026
                             <span aria-hidden="true"> • </span>
                             <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
                                 How we review guides
@@ -257,6 +258,16 @@ export default function PetFoodGermany() {
                                 Price per kilogram alone can be misleading because foods differ in calorie density and recommended portions. Recalculate with the amount your dog actually needs after monitoring weight and body condition. Ask a veterinarian before adjusting a medical diet or feeding a dog with poor growth, unintended weight change or another health concern.
                             </p>
 
+                            <AffiliateCallout
+                                ariaLabel="Sponsored dog-food option"
+                                description="Zooplus lists many dog foods, but the retailer is not a quality rating. Compare the exact complete-food statement, life stage, calories, feeding amount, and manufacturer before ordering."
+                                href={AFFILIATE_LINKS.zooplus.dogFoodMidArticle}
+                                linkLabel="Review Zooplus dog-food options"
+                                provider="Zooplus"
+                                title="Ready to compare suitable foods?"
+                                trackingLocation="DogFood_MidArticle"
+                            />
+
                             <h2 id="manufacturer" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 3. Ask Who Formulates and Tests the Food
                             </h2>
@@ -319,7 +330,7 @@ export default function PetFoodGermany() {
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 mt-6">
                                     <a
-                                        href={ZOOPLUS_URL}
+                                        href={AFFILIATE_LINKS.zooplus.dogFoodWhereToBuy}
                                         aria-label="Compare complete dog food at Zooplus (affiliate link)"
                                         onClick={() => trackAffiliateClick('Zooplus', 'PetFood_WhereToBuy')}
                                         target="_blank"

@@ -6,12 +6,13 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import AffiliateCallout from '../components/AffiliateCallout';
+import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
 const TITLE = 'Best Cat Food in Germany: How to Choose (2026)';
 const DESCRIPTION = 'Compare cat food in Germany using EU label terms, wet and dry formats, kitten needs, taurine guidance and manufacturer quality checks.';
 const URL = 'https://englishspeakinggermany.online/blog/best-cat-food-germany';
-const ZOOPLUS_URL = 'https://tidd.ly/3R2z5ax';
 
 const SOURCE_URLS = {
     euLabelling: 'https://eur-lex.europa.eu/eli/reg/2009/767/oj/eng',
@@ -61,7 +62,7 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DESCRIPTION,
     URL,
     '2026-06-23',
-    '2026-07-23',
+    '2026-08-01',
 );
 
 const FAQ_SCHEMA = {
@@ -125,7 +126,7 @@ export default function CatFoodGermany() {
                             Best Cat Food in Germany: How to Choose (2026)
                         </h1>
                         <p className="text-sm text-primary/60 mb-8">
-                            Reviewed July 23, 2026
+                            Reviewed August 1, 2026
                         </p>
 
                         <TableOfContents items={TABLE_OF_CONTENTS} />
@@ -192,6 +193,16 @@ export default function CatFoodGermany() {
                                 Some cats eat one format and others eat a combination. Consider the cat&apos;s willingness to eat, total calorie intake, water intake, dental or medical needs, storage, and your veterinarian&apos;s advice rather than applying one rule to every cat.
                             </p>
 
+                            <AffiliateCallout
+                                ariaLabel="Sponsored cat-food option"
+                                description="Zooplus lists wet and dry cat foods, but the retailer is not a quality rating. Check that the exact product is complete for cats, appropriate for the life stage, and suitable for your cat before ordering."
+                                href={AFFILIATE_LINKS.zooplus.catFoodMidArticle}
+                                linkLabel="Review Zooplus cat-food options"
+                                provider="Zooplus"
+                                title="Ready to compare suitable foods?"
+                                trackingLocation="CatFood_MidArticle"
+                            />
+
                             <h2 id="kitten" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 4. Choose the Correct Life Stage
                             </h2>
@@ -250,7 +261,7 @@ export default function CatFoodGermany() {
                                     The link below is an affiliate link. We may earn a commission at no extra cost to you. We have not independently laboratory-tested or ranked the products sold there, and inclusion is not a nutritional endorsement. Confirm complete-food status, life stage, calories, and suitability before buying.
                                 </p>
                                 <a
-                                    href={ZOOPLUS_URL}
+                                    href={AFFILIATE_LINKS.zooplus.catFoodWhereToBuy}
                                     aria-label="Zooplus cat-food affiliate link"
                                     onClick={() => trackAffiliateClick('Zooplus', 'CatFood_WhereToBuy')}
                                     target="_blank"

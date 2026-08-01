@@ -5,7 +5,9 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import AffiliateCallout from '../components/AffiliateCallout';
 import { trackAffiliateClick } from '../utils/analytics';
+import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
 const TITLE = 'Pet Insurance in Germany: Dog & Cat Guide (2026)';
@@ -17,7 +19,7 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DESCRIPTION,
     URL,
     '2025-01-01',
-    '2026-07-23',
+    '2026-08-01',
 );
 
 const FAQ_ITEMS = [
@@ -128,7 +130,7 @@ export default function PetInsuranceGermany() {
                             Pet Insurance in Germany: Dog &amp; Cat Guide (2026)
                         </h1>
                         <p className="text-sm text-primary/55 mb-8">
-                            Published 1 January 2025 · Reviewed 23 July 2026
+                            Published 1 January 2025 · Reviewed 1 August 2026
                         </p>
 
                         <TableOfContents items={TABLE_OF_CONTENTS} />
@@ -284,6 +286,16 @@ export default function PetInsuranceGermany() {
                                 warns that exclusions and limits vary substantially. It highlights pre-existing conditions, waiting periods, age limits, reimbursement percentages, deductibles, annual caps, free choice of vet, and the insurer&apos;s cancellation rights as important comparison points.
                             </p>
 
+                            <AffiliateCallout
+                                ariaLabel="Sponsored pet-insurance option"
+                                description="Figo currently advertises a €30 campaign through Awin. Compare the full policy wording, waiting periods, exclusions, reimbursement limits, and price against other options before buying."
+                                href={AFFILIATE_LINKS.figo.insuranceMidArticle}
+                                linkLabel="Review the current Figo campaign"
+                                provider="Figo"
+                                title="Ready to compare one current option?"
+                                trackingLocation="PetInsurance_MidArticle"
+                            />
+
                             <h2 id="got" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 GOT reimbursement: the number that matters
                             </h2>
@@ -430,7 +442,7 @@ export default function PetInsuranceGermany() {
                                         Feather health link
                                     </a>
                                     <a
-                                        href="https://tidd.ly/45yENEP"
+                                        href={AFFILIATE_LINKS.figo.insuranceCommercialLinks}
                                         onClick={() => trackAffiliateClick('Figo', 'PetInsurance_CommercialLinks')}
                                         target="_blank"
                                         rel="noopener noreferrer sponsored"
