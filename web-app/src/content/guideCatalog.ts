@@ -297,6 +297,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['health', 'vet-care', 'costs', 'travel', 'dog', 'cat'],
     },
     {
+        url: '/blog/pet-dental-care-germany',
+        title: "🦷 Dog & Cat Dental Care Costs",
+        emoji: '🦷',
+        category: 'Health',
+        desc: "Verified GOT fees for scaling, extractions and anaesthesia, two worked invoice examples, FORL in cats, and the insurance clauses to check.",
+        topics: ['health', 'vet-care', 'costs', 'insurance', 'dog', 'cat'],
+    },
+    {
         url: '/blog/pet-insurance-germany',
         title: "Pet Insurance in Germany: Dog & Cat Guide",
         emoji: '💰',

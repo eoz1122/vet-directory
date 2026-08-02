@@ -42,6 +42,7 @@ const GermanDogEtiquette = lazy(() => import('./pages/GermanDogEtiquette'));
 const PetEmergencyGermany = lazy(() => import('./pages/PetEmergencyGermany'));
 const PetEmergencyMunich = lazy(() => import('./pages/PetEmergencyMunich'));
 const PetEmergencyFrankfurt = lazy(() => import('./pages/PetEmergencyFrankfurt'));
+const PetDentalCareGermany = lazy(() => import('./pages/PetDentalCareGermany'));
 const PetMedicationGermany = lazy(() => import('./pages/PetMedicationGermany'));
 const PetFoodGermany = lazy(() => import('./pages/PetFoodGermany'));
 const CatFoodGermany = lazy(() => import('./pages/CatFoodGermany'));
@@ -128,6 +129,7 @@ function App() {
             <Route path="/guides/emergency-vets-munich" element={<PetEmergencyMunich />} />
             <Route path="/guides/emergency-vets-hamburg" element={<Navigate replace to="/blog/emergency-vet-hamburg-english" />} />
             <Route path="/guides/emergency-vets-frankfurt" element={<PetEmergencyFrankfurt />} />
+            <Route path="/blog/pet-dental-care-germany" element={<PetDentalCareGermany />} />
             <Route path="/blog/pet-medication-germany-guide" element={<PetMedicationGermany />} />
             <Route path="/blog/best-dog-food-germany" element={<PetFoodGermany />} />
             <Route path="/blog/best-cat-food-germany" element={<CatFoodGermany />} />
