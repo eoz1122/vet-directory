@@ -1471,3 +1471,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Prerender note:** Parallel prerendering timed out on this workstation under load, and three interrupted runs left a stale prerendered `index.html` acting as the SPA fallback, which made every route appear broken. A direct browser check confirmed the page itself mounts with the correct title, canonical and heading. A clean sequential run was used for the release gate. Ports 4174 and 4175 were released after each check.
 
 **Rollback:** Revert the new page, its test, the route in `App.tsx`, the catalogue entry, the two Blog test counts and the sitemap, or return to commit `78b3001`. Nothing else on the site depends on this route.
+
+## 2026-08-17T23:51:50+02:00 - Strengthen contextual discovery of the dental-care guide
+
+**Context:** Search Console shows that `/blog/pet-dental-care-germany` was crawled successfully on 5 August 2026, is allowed to be indexed and has matching user-selected and Google-selected canonicals, but remains in the `Crawled - currently not indexed` state. The URL is present in the successful 314-URL sitemap, and another indexing request would not increase queue priority. Existing discovery from some related guides depended on the generic related-post selector rather than stable, in-body context.
+
+**Decision:** Preserve the active titles, descriptions, headings, canonicals, routes and sitemap behavior. Add one descriptive in-body link to the dental guide from each of the vet-costs, first-vet-visit and pet-insurance guides. Place every link beside directly relevant discussion of GOT billing, appointment preparation or insurance exclusions, and use a distinct accessible anchor that describes what the reader will find.
+
+**Trade-offs:** Three extra internal links slightly increase article length, but they create a stable topic relationship for readers and crawlers without restarting current snippet experiments. The change does not guarantee indexing because Google controls crawl and index selection. No repeat indexing request was made.
+
+**Verification:** TDD RED produced three intended missing-link failures. GREEN passes all 12 focused dental and adjacent internal-link tests. The complete frontend suite passes all 411 tests across 65 files after one unrelated Contact focus-timing test passed in isolation and on the clean rerun. ESLint, TypeScript and the production build pass. The build generates a 314-URL sitemap and prerenders all 315 routes. Generated HTML contains the intended destination and descriptive anchor on all three source pages. Headless production checks at 390 by 844 pixels report document widths of exactly 390 pixels, all three anchors within the viewport and no console errors. Port 4174 was free before the check and the preview server was stopped afterward.
+
+**Rollback:** Revert the three article edits and `web-app/src/pages/PetDentalInternalLinks.test.tsx`, or return those files to commit `dd60fe0`. Remove this decision entry at the same time. This restores the previous article bodies without affecting the dental guide, sitemap or indexing state.

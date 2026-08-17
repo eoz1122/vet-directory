@@ -329,6 +329,14 @@ export default function VetCostsGermany() {
                             </div>
 
                             <p>
+                                For a worked example of how examination, anaesthesia, radiography, scaling, and extraction fees can combine, use our{' '}
+                                <Link to="/blog/pet-dental-care-germany" className="text-accent-ink font-bold hover:underline">
+                                    Dental cost and GOT fee guide
+                                </Link>
+                                .
+                            </p>
+
+                            <p>
                                 If you are comparing health cover with self-funding, use our{' '}
                                 <Link to="/blog/pet-insurance-germany" className="text-accent-ink font-bold hover:underline">
                                     Pet insurance comparison guide

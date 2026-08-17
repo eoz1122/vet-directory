@@ -274,6 +274,14 @@ export default function PetInsuranceGermany() {
                             </div>
 
                             <p>
+                                Dental benefits may use separate limits, waiting periods, or exclusions. Review our{' '}
+                                <Link to="/blog/pet-dental-care-germany" className="text-accent-ink font-bold hover:underline">
+                                    Dental costs and insurance exclusions guide
+                                </Link>{' '}
+                                before comparing how a policy treats scaling, extractions, anaesthesia, imaging, and preventive care.
+                            </p>
+
+                            <p>
                                 The{' '}
                                 <a
                                     href="https://www.verbraucherzentrale.de/wissen/geld-versicherungen/weitere-versicherungen/krankenversicherungen-fuer-haustiere-sinnvoll-oder-ueberfluessig-10781"

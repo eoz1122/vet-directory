@@ -242,6 +242,14 @@ export default function FirstVetVisitGermany() {
                                 </Link>{' '}
                                 for the ordinary and emergency fee rules.
                             </p>
+                            <p>
+                                Before a planned dental procedure, our{' '}
+                                <Link to="/blog/pet-dental-care-germany" className={externalLinkClass}>
+                                    Dental care costs and appointment guide
+                                </Link>{' '}
+                                explains which GOT items can appear and which questions to ask about anaesthesia,
+                                imaging, extractions and follow-up.
+                            </p>
                             <div className="bg-white p-6 rounded-xl border border-primary/10 my-6 not-prose">
                                 <h3 className="font-bold text-primary mb-3">What a GOT invoice must show</h3>
                                 <p className="text-primary/75 leading-relaxed">
