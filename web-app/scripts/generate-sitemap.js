@@ -2,14 +2,19 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { extractBlogRoutes, resolveGuideCatalogPath } from './prerender-readiness.js';
+import {
+    extractPageLastModified,
+    renderSitemap,
+    resolveSitemapOutputPaths,
+} from './sitemap.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Configuration
-const BASE_URL = 'https://englishspeakinggermany.online';
-const OUTPUT_FILE = path.resolve(__dirname, '../public/sitemap.xml');
+const OUTPUT_FILES = resolveSitemapOutputPaths(__dirname);
 const VETS_DATA_PATH = path.resolve(__dirname, '../src/data/vets.json');
 const BLOG_FILE_PATH = resolveGuideCatalogPath(__dirname);
+const DIST_DIRECTORY = path.resolve(__dirname, '../dist');
 
 // Helper to sanitize slugs.
 // MIRRORS slugify() in src/utils/url.ts — keep identical (see src/utils/url.test.ts).
@@ -23,23 +28,15 @@ function sanitizeSlug(text) {
         .replace(/^-+|-+$/g, '');     // trim leading/trailing hyphens
 }
 
-// Helper to URL encode path parts specifically (leaving slashes alone)
-function encodePath(urlPath) {
-    return urlPath.split('/').map(part => encodeURIComponent(part)).join('/');
-}
-
-// Current build date for lastmod
-const BUILD_DATE = new Date().toISOString().split('T')[0];
-
 // 1. Static Routes (with proper priority tiering)
 const staticRoutes = [
-    { url: '/', changefreq: 'weekly', priority: 1.0, lastmod: BUILD_DATE },
-    { url: '/about', changefreq: 'monthly', priority: 0.6, lastmod: BUILD_DATE },
-    { url: '/quality-promise', changefreq: 'monthly', priority: 0.5, lastmod: BUILD_DATE },
-    { url: '/contact', changefreq: 'monthly', priority: 0.5, lastmod: BUILD_DATE },
-    { url: '/blog', changefreq: 'weekly', priority: 0.8, lastmod: BUILD_DATE },
-    { url: '/impressum', changefreq: 'yearly', priority: 0.3, lastmod: BUILD_DATE },
-    { url: '/privacy', changefreq: 'yearly', priority: 0.3, lastmod: BUILD_DATE },
+    { url: '/', changefreq: 'weekly', priority: 1.0 },
+    { url: '/about', changefreq: 'monthly', priority: 0.6 },
+    { url: '/quality-promise', changefreq: 'monthly', priority: 0.5 },
+    { url: '/contact', changefreq: 'monthly', priority: 0.5 },
+    { url: '/blog', changefreq: 'weekly', priority: 0.8 },
+    { url: '/impressum', changefreq: 'yearly', priority: 0.3 },
+    { url: '/privacy', changefreq: 'yearly', priority: 0.3 },
 ];
 
 function getBlogRoutes() {
@@ -49,16 +46,29 @@ function getBlogRoutes() {
             return [];
         }
         const content = fs.readFileSync(BLOG_FILE_PATH, 'utf-8');
-        const routes = extractBlogRoutes(content).map((route) => ({
+        const routes = extractBlogRoutes(content).map((route) => {
+            const prerenderedPath = path.join(DIST_DIRECTORY, route, 'index.html');
+            if (!fs.existsSync(prerenderedPath)) {
+                throw new Error(`Prerendered guide is missing: ${prerenderedPath}`);
+            }
+
+            const html = fs.readFileSync(prerenderedPath, 'utf8');
+            const lastmod = extractPageLastModified(html);
+            if (!lastmod) {
+                throw new Error(`Guide has no dateModified value: ${route}`);
+            }
+
+            return {
                 url: route,
                 changefreq: 'monthly',
                 priority: 0.8, // Blog posts - good priority
-            }));
+                lastmod,
+            };
+        });
         console.log(`Found ${routes.length} blog posts.`);
         return routes;
-    } catch (e) {
-        console.error("Error parsing blog posts:", e);
-        return [];
+    } catch (error) {
+        throw new Error('Unable to build guide sitemap routes', { cause: error });
     }
 }
 
@@ -131,10 +141,14 @@ function getVetRoutes() {
         console.log(`Found ${cities.length} cities and ${districtRoutes.length} districts.`);
         return [...cityRoutes, ...districtRoutes];
 
-    } catch (e) {
-        console.error("Error parsing vet data:", e);
-        return [];
+    } catch (error) {
+        throw new Error('Unable to build directory sitemap routes', { cause: error });
     }
+}
+
+function latestLastModified(routes) {
+    const dates = routes.map((route) => route.lastmod).filter(Boolean).sort();
+    return dates.at(-1);
 }
 
 function generateSitemap() {
@@ -143,46 +157,24 @@ function generateSitemap() {
     const blogRoutes = getBlogRoutes();
     const vetRoutes = getVetRoutes();
 
+    const dynamicStaticRoutes = staticRoutes.map((route) => {
+        if (route.url === '/') return { ...route, lastmod: latestLastModified(vetRoutes) };
+        if (route.url === '/blog') return { ...route, lastmod: latestLastModified(blogRoutes) };
+        return route;
+    });
+
     const allRoutes = [
-        ...staticRoutes,
+        ...dynamicStaticRoutes,
         ...vetRoutes,
         ...blogRoutes
     ];
+    const sitemapContent = renderSitemap(allRoutes);
 
-    const escapeXml = (unsafe) => {
-        return unsafe.replace(/[<>&'"]/g, (c) => {
-            switch (c) {
-                case '<': return '&lt;';
-                case '>': return '&gt;';
-                case '&': return '&amp;';
-                case '\'': return '&apos;';
-                case '"': return '&quot;';
-            }
-        });
-    };
-
-    const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allRoutes.map(route => {
-        // Slugs are pre-sanitized (no spaces/special chars; unicode letters kept).
-        // Emit raw UTF-8 so the sitemap <loc> matches the page <link rel="canonical">
-        // exactly (avoids the %-encoded-vs-raw "Alternative page with proper canonical" issue).
-        const formattedUrl = route.url.startsWith('/') ? route.url : `/${route.url}`;
-        const fullUrl = `${BASE_URL}${formattedUrl}`;
-
-        const lastmod = route.lastmod || new Date().toISOString().split('T')[0];
-
-        return `  <url>
-    <loc>${escapeXml(fullUrl)}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>${route.changefreq}</changefreq>
-    <priority>${route.priority.toFixed(1)}</priority>
-  </url>`;
-    }).join('\n')}
-</urlset>`;
-
-    fs.writeFileSync(OUTPUT_FILE, sitemapContent);
-    console.log(`Sitemap generated with ${allRoutes.length} URLs at ${OUTPUT_FILE}`);
+    for (const outputFile of OUTPUT_FILES) {
+        fs.mkdirSync(path.dirname(outputFile), { recursive: true });
+        fs.writeFileSync(outputFile, sitemapContent);
+        console.log(`Sitemap generated with ${allRoutes.length} URLs at ${outputFile}`);
+    }
 }
 
 generateSitemap();

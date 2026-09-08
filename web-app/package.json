@@ -11,7 +11,7 @@
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "export-db": "node scripts/export-db.js",
     "prerender": "node scripts/prerender.js",
-    "postbuild": "npm run generate-sitemap && npm run export-db && npm run prerender"
+    "postbuild": "npm run export-db && npm run prerender && npm run generate-sitemap"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.18",

@@ -68,14 +68,14 @@ export default function QualityPromise() {
                         How We Care For This Service
                     </h2>
                     <p className="text-primary/80">
-                        A directory is only as good as its last update. To ensure you never call a disconnected number or walk into a clinic that no longer offers English support, we perform a Monthly Freshness Check:
+                        A directory is only as good as its last update. We use periodic freshness checks to review contact details, location information, and evidence of English-language support.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-6 mt-4">
                         <div className="bg-white/50 p-6 rounded-xl border border-primary/10">
                             <h3 className="font-bold text-lg mb-2">Staying Current</h3>
                             <p className="text-sm text-primary/70">
-                                Every 30 days, we check in on our listings. If a practice moves, changes its hours, or updates its team, we make sure those changes are reflected here immediately.
+                                We review listings periodically and record the latest verification evidence we find. If something looks outdated between reviews, community reports help us investigate it sooner.
                             </p>
                         </div>
 
