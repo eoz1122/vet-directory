@@ -17,6 +17,11 @@ import { Pagination } from '../components/ui/Pagination';
 import { useGoogleMapsActivation } from '../hooks/useGoogleMapsActivation';
 import MapLoadingState from '../components/MapLoadingState';
 import { getVetDirectoryCounts } from '../utils/vetDirectoryStats';
+import {
+    trackDirectoryFilterChange,
+    trackDirectoryNoResults,
+    trackGuideDiscoveryClick,
+} from '../utils/analytics';
 
 // Lazy load the Map component to reduce initial bundle size causing TBT
 const AppMap = lazy(() => import('../components/Map'));
@@ -38,15 +43,19 @@ const popularCities = [
     { name: 'Frankfurt', path: '/vets/frankfurt' },
     { name: 'Cologne', path: '/vets/cologne' },
 ];
-const resourceLinks = [
+const essentialGuideLinks = [
     { emoji: '🏠', title: 'Pet-Friendly Apartments Berlin', link: '/blog/pet-friendly-apartments-germany' },
-    { emoji: '🐕', title: 'Moving to Germany Guide', link: '/blog/moving-to-germany-with-pet' },
-    { emoji: '🐱', title: 'Cat Registration', link: '/blog/cat-registration-germany' },
-    { emoji: '🛂', title: 'EU Pet Passports', link: '/blog/eu-pet-passport-germany' },
-    { emoji: '💊', title: 'Pet Medication Guide', link: '/blog/pet-medication-germany-guide' },
-    { emoji: '💶', title: 'Dog Tax (Hundesteuer)', link: '/blog/hundesteuer-dog-tax-germany' },
     { emoji: '🧾', title: 'Vet Costs & GOT Fees', link: '/blog/vet-costs-germany' },
-    { emoji: '💰', title: 'Pet Insurance Guide', link: '/blog/pet-insurance-germany' },
+    { emoji: '🚑', title: 'Emergency Vets in Munich', link: '/guides/emergency-vets-munich' },
+    { emoji: '💉', title: 'Pet Vaccination Costs', link: '/blog/pet-vaccination-costs-germany' },
+    { emoji: '🏥', title: 'Neutering Costs', link: '/blog/neutering-cost-germany' },
+    { emoji: '💶', title: 'Dog Tax (Hundesteuer)', link: '/blog/hundesteuer-dog-tax-germany' },
+    { emoji: '🛂', title: 'EU Pet Passports', link: '/blog/eu-pet-passport-germany' },
+    { emoji: '🏠', title: 'Adopting from a Tierheim', link: '/blog/adopting-pet-tierheim-germany' },
+    { emoji: '🚌', title: 'Dogs on Hamburg Transport', link: '/blog/public-transport-with-dogs-hamburg' },
+    { emoji: '🚆', title: 'Dogs on Frankfurt Transport', link: '/blog/public-transport-with-dogs-frankfurt' },
+    { emoji: '💊', title: 'Pet Medication Guide', link: '/blog/pet-medication-germany-guide' },
+    { emoji: '🐶', title: 'Your Puppy\'s First Year', link: '/blog/puppy-first-year-germany' },
 ];
 
 const Home: React.FC = () => {
@@ -66,6 +75,7 @@ const Home: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [reportingVet, setReportingVet] = useState<Vet | null>(null);
     const [reportDialogTrigger, setReportDialogTrigger] = useState<HTMLButtonElement | null>(null);
+    const lastNoResultsSignatureRef = useRef<string | null>(null);
 
     const [searchRadius, setSearchRadius] = useState<number | null>(null);
 
@@ -238,19 +248,35 @@ const Home: React.FC = () => {
                         <VetFilters
                             vets={vets}
                             selectedCity={selectedCity}
-                            setSelectedCity={(city) => { setSelectedCity(city); setSelectedVet(null); }}
+                            setSelectedCity={(city) => {
+                                trackDirectoryFilterChange('city', city);
+                                setSelectedCity(city);
+                                setSelectedVet(null);
+                            }}
                             searchTerm={searchTerm}
                             setSearchTerm={setSearchTerm}
                             showVerifiedOnly={showVerifiedOnly}
-                            setShowVerifiedOnly={setShowVerifiedOnly}
+                            setShowVerifiedOnly={(show) => {
+                                trackDirectoryFilterChange('verified', show);
+                                setShowVerifiedOnly(show);
+                            }}
                             showMobileOnly={showMobileOnly}
-                            setShowMobileOnly={setShowMobileOnly}
+                            setShowMobileOnly={(show) => {
+                                trackDirectoryFilterChange('mobile', show);
+                                setShowMobileOnly(show);
+                            }}
                             showEmergencyOnly={showEmergencyOnly}
-                            setShowEmergencyOnly={setShowEmergencyOnly}
+                            setShowEmergencyOnly={(show) => {
+                                trackDirectoryFilterChange('emergency', show);
+                                setShowEmergencyOnly(show);
+                            }}
                             userLocation={userLocation}
                             setUserLocation={setUserLocation}
                             searchRadius={searchRadius}
-                            setSearchRadius={setSearchRadius}
+                            setSearchRadius={(radius) => {
+                                trackDirectoryFilterChange('radius', radius ?? 'any');
+                                setSearchRadius(radius);
+                            }}
                             onPlaceSelect={handlePlaceSelect}
                             onResetPagination={() => setCurrentPage(1)}
                             mapApiError={mapApiError}
@@ -307,25 +333,33 @@ const Home: React.FC = () => {
                             />
 
 
-                            <div className="bg-secondary p-6 rounded-[2rem] border border-primary/10">
-                                <h2 className="text-lg font-bold text-primary mb-2">Resource Center</h2>
+                            <section
+                                aria-labelledby="essential-guides-heading"
+                                className="bg-secondary p-6 rounded-[2rem] border border-primary/10"
+                            >
+                                <h2 id="essential-guides-heading" className="text-lg font-bold text-primary mb-2">Essential pet guides</h2>
                                 <p className="text-xs text-primary/80 mb-4 leading-relaxed">
-                                    Helping our companions settle in Germany.
+                                    Practical next steps for urgent care, costs, paperwork, and everyday life with a pet in Germany.
                                 </p>
-                                <nav className="space-y-4">
-                                    {resourceLinks.map(item => (
-                                        <Link key={item.link} to={item.link} className="min-h-11 flex items-center gap-3 text-primary group">
+                                <nav className="space-y-2" aria-label="Essential pet guides">
+                                    {essentialGuideLinks.map(item => (
+                                        <Link
+                                            key={item.link}
+                                            to={item.link}
+                                            onClick={() => trackGuideDiscoveryClick(item.link, 'Homepage_Essential_Guides')}
+                                            className="min-h-11 flex items-center gap-3 text-primary group"
+                                        >
                                             <span aria-hidden="true" className="text-lg grayscale group-hover:grayscale-0 transition-all">{item.emoji}</span>
                                             <p className="font-semibold text-xs group-hover:text-accent transition-colors">{item.title}</p>
                                         </Link>
                                     ))}
-                                    <div className="pt-2">
-                                        <Link to="/contact?topic=submit_vet" className="block w-full text-center py-3 bg-accent-ink text-white rounded-xl font-bold text-sm hover:translate-y-[-2px] hover:shadow-lg transition-all active:scale-95">
-                                            ⊕ Add to the Directory
-                                        </Link>
-                                    </div>
                                 </nav>
-                            </div>
+                                <div className="pt-2">
+                                    <Link to="/contact?topic=submit_vet" className="block w-full text-center py-3 bg-accent-ink text-white rounded-xl font-bold text-sm hover:translate-y-[-2px] hover:shadow-lg transition-all active:scale-95">
+                                        ⊕ Add to the Directory
+                                    </Link>
+                                </div>
+                            </section>
 
                             {sortedVets.length === 0 && (
                                 <div className="text-center py-20 text-primary/80">
@@ -393,6 +427,42 @@ const Home: React.FC = () => {
             </div>
         </>
     );
+
+    useEffect(() => {
+        if (sortedVets.length > 0) {
+            lastNoResultsSignatureRef.current = null;
+            return;
+        }
+
+        const signature = [
+            selectedCity,
+            searchTerm.length,
+            showVerifiedOnly,
+            showEmergencyOnly,
+            showMobileOnly,
+            searchRadius ?? 'any',
+        ].join('|');
+
+        if (lastNoResultsSignatureRef.current === signature) return;
+
+        lastNoResultsSignatureRef.current = signature;
+        trackDirectoryNoResults({
+            city: selectedCity,
+            searchLength: searchTerm.length,
+            verifiedOnly: showVerifiedOnly,
+            emergencyOnly: showEmergencyOnly,
+            mobileOnly: showMobileOnly,
+            radius: searchRadius,
+        });
+    }, [
+        searchRadius,
+        searchTerm.length,
+        selectedCity,
+        showEmergencyOnly,
+        showMobileOnly,
+        showVerifiedOnly,
+        sortedVets.length,
+    ]);
 
     if (!mapsEnabled) return renderPage(false);
 

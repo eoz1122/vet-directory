@@ -52,3 +52,52 @@ export const trackMapPinClick = (vetId: string, city: string) => {
         event_label: vetId,
     });
 };
+
+export type DirectoryFilterName = 'city' | 'verified' | 'emergency' | 'mobile' | 'radius';
+
+export const trackDirectoryFilterChange = (
+    filterName: DirectoryFilterName,
+    filterValue: string | number | boolean,
+) => {
+    sendGAEvent('directory_filter_change', {
+        filter_name: filterName,
+        filter_value: filterValue,
+        event_category: 'directory',
+    });
+};
+
+interface DirectoryNoResultsContext {
+    city: string;
+    searchLength: number;
+    verifiedOnly: boolean;
+    emergencyOnly: boolean;
+    mobileOnly: boolean;
+    radius: number | null;
+}
+
+function searchLengthBucket(length: number) {
+    if (length === 0) return 'none';
+    if (length <= 3) return '1_to_3';
+    if (length <= 7) return '4_to_7';
+    return '8_plus';
+}
+
+export const trackDirectoryNoResults = (context: DirectoryNoResultsContext) => {
+    sendGAEvent('directory_no_results', {
+        city: context.city,
+        search_length_bucket: searchLengthBucket(context.searchLength),
+        verified_only: context.verifiedOnly,
+        emergency_only: context.emergencyOnly,
+        mobile_only: context.mobileOnly,
+        radius_km: context.radius ?? 'any',
+        event_category: 'directory',
+    });
+};
+
+export const trackGuideDiscoveryClick = (guidePath: string, location: string) => {
+    sendGAEvent('guide_discovery_click', {
+        guide_path: guidePath,
+        location,
+        event_category: 'content',
+    });
+};

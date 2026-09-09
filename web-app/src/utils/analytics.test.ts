@@ -1,5 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { trackVetPhoneClick, trackVetWebsiteClick } from './analytics';
+import {
+    trackDirectoryFilterChange,
+    trackDirectoryNoResults,
+    trackGuideDiscoveryClick,
+    trackVetPhoneClick,
+    trackVetWebsiteClick,
+} from './analytics';
 
 describe('trackVetWebsiteClick', () => {
     beforeEach(() => {
@@ -63,5 +69,52 @@ describe('trackVetPhoneClick', () => {
     it('does not throw when gtag is missing', () => {
         (window as unknown as { gtag: unknown }).gtag = undefined;
         expect(() => trackVetPhoneClick('x', 'y', 'z')).not.toThrow();
+    });
+});
+
+describe('directory discovery analytics', () => {
+    beforeEach(() => {
+        (window as unknown as { gtag: unknown }).gtag = vi.fn();
+    });
+
+    it('tracks filters without accepting free-form search text', () => {
+        trackDirectoryFilterChange('city', 'Berlin');
+
+        expect(window.gtag).toHaveBeenCalledWith('event', 'directory_filter_change', {
+            filter_name: 'city',
+            filter_value: 'Berlin',
+            event_category: 'directory',
+        });
+    });
+
+    it('reports no results with a search-length bucket instead of the query', () => {
+        trackDirectoryNoResults({
+            city: 'Berlin',
+            searchLength: 12,
+            verifiedOnly: true,
+            emergencyOnly: false,
+            mobileOnly: false,
+            radius: null,
+        });
+
+        expect(window.gtag).toHaveBeenCalledWith('event', 'directory_no_results', {
+            city: 'Berlin',
+            search_length_bucket: '8_plus',
+            verified_only: true,
+            emergency_only: false,
+            mobile_only: false,
+            radius_km: 'any',
+            event_category: 'directory',
+        });
+    });
+
+    it('tracks which essential guide receives a homepage click', () => {
+        trackGuideDiscoveryClick('/blog/puppy-first-year-germany', 'Homepage_Essential_Guides');
+
+        expect(window.gtag).toHaveBeenCalledWith('event', 'guide_discovery_click', {
+            guide_path: '/blog/puppy-first-year-germany',
+            location: 'Homepage_Essential_Guides',
+            event_category: 'content',
+        });
     });
 });

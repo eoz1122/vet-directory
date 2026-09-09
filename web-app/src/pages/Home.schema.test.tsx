@@ -170,4 +170,37 @@ describe('Home WebSite structured data', () => {
         expect(vetCostLink.getAttribute('href')).toBe('/blog/vet-costs-germany');
         expect(vetCostLink.className).toContain('min-h-11');
     });
+
+    it('surfaces the high-intent guides that need stronger discovery', () => {
+        render(
+            <HelmetProvider>
+                <MemoryRouter initialEntries={['/']}>
+                    <Home />
+                </MemoryRouter>
+            </HelmetProvider>,
+        );
+
+        const section = screen.getByRole('region', { name: 'Essential pet guides' });
+        const expectedPaths = [
+            '/blog/pet-friendly-apartments-germany',
+            '/blog/vet-costs-germany',
+            '/guides/emergency-vets-munich',
+            '/blog/pet-vaccination-costs-germany',
+            '/blog/neutering-cost-germany',
+            '/blog/hundesteuer-dog-tax-germany',
+            '/blog/eu-pet-passport-germany',
+            '/blog/adopting-pet-tierheim-germany',
+            '/blog/public-transport-with-dogs-hamburg',
+            '/blog/public-transport-with-dogs-frankfurt',
+            '/blog/pet-medication-germany-guide',
+            '/blog/puppy-first-year-germany',
+        ];
+
+        const guideNavigation = within(section).getByRole('navigation', {
+            name: 'Essential pet guides',
+        });
+        expect(within(guideNavigation).getAllByRole('link').map(
+            (link) => link.getAttribute('href'),
+        )).toEqual(expectedPaths);
+    });
 });

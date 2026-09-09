@@ -97,6 +97,11 @@ export default function Contact() {
                 vetName: '', vetCity: '', otherCity: '', vetAddress: '', vetWebsite: ''
             });
         } catch (err) {
+            sendGAEvent('contact_form_error', {
+                form_name: 'contact_form',
+                form_topic: formData.topic,
+                event_category: 'engagement',
+            });
             setSubmitError(err instanceof Error ? err.message : 'Something went wrong.');
         } finally {
             setIsSubmitting(false);

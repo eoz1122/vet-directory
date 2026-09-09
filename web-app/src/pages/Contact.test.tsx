@@ -58,7 +58,7 @@ describe('Contact analytics', () => {
         });
     });
 
-    it('does not record a conversion when the API rejects the submission', async () => {
+    it('records a privacy-safe failure event when the API rejects the submission', async () => {
         vi.mocked(fetch).mockResolvedValue({
             ok: false,
             json: async () => ({ error: 'Please try again.' }),
@@ -71,7 +71,12 @@ describe('Contact analytics', () => {
         const errorAlert = await screen.findByRole('alert');
         expect(errorAlert.textContent).toContain('Please try again.');
         expect(document.activeElement).toBe(errorAlert);
-        expect(window.gtag).not.toHaveBeenCalled();
+        expect(window.gtag).toHaveBeenCalledTimes(1);
+        expect(window.gtag).toHaveBeenCalledWith('event', 'contact_form_error', {
+            form_name: 'contact_form',
+            form_topic: 'general',
+            event_category: 'engagement',
+        });
     });
 
     it('prefills a report from navigation state without requiring query parameters', async () => {
