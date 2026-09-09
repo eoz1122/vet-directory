@@ -42,4 +42,25 @@ describe('CookieConsent accessibility', () => {
             analytics_storage: 'denied',
         });
     });
+
+    it('only announces a new analytics opt-in when consent changes to accepted', () => {
+        const consentGrantedListener = vi.fn();
+        window.addEventListener('analytics-consent-granted', consentGrantedListener);
+
+        const { unmount } = render(
+            <MemoryRouter>
+                <CookieConsent />
+            </MemoryRouter>,
+        );
+
+        fireEvent.click(screen.getByRole('button', { name: 'Accept analytics' }));
+        expect(consentGrantedListener).toHaveBeenCalledTimes(1);
+
+        act(() => window.dispatchEvent(new Event('open-cookie-settings')));
+        fireEvent.click(screen.getByRole('button', { name: 'Accept analytics' }));
+        expect(consentGrantedListener).toHaveBeenCalledTimes(1);
+
+        unmount();
+        window.removeEventListener('analytics-consent-granted', consentGrantedListener);
+    });
 });

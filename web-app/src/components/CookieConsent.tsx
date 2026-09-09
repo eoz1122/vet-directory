@@ -29,9 +29,12 @@ export default function CookieConsent() {
     }, []);
 
     const handleAccept = () => {
+        const wasAlreadyAccepted = localStorage.getItem('cookie-consent') === 'accepted';
         localStorage.setItem('cookie-consent', 'accepted');
         enableGA();
-        window.dispatchEvent(new Event('analytics-consent-granted'));
+        if (!wasAlreadyAccepted) {
+            window.dispatchEvent(new Event('analytics-consent-granted'));
+        }
         setIsVisible(false);
     };
 
