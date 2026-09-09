@@ -97,7 +97,7 @@ describe('CityVets search and trust contract', () => {
         ).toContain('62 verified English-speaking veterinary practices in Berlin');
 
         await waitFor(() => {
-            const collectionSchema = [...document.head.querySelectorAll('script[type="application/ld+json"]')]
+            const collectionSchema = [...document.querySelectorAll('script[type="application/ld+json"]')]
                 .map((script) => JSON.parse(script.textContent || '{}'))
                 .find((schema) => schema['@type'] === 'CollectionPage');
 
@@ -122,7 +122,7 @@ describe('CityVets search and trust contract', () => {
         expect(screen.getByText('Government Source Confirmed')).toBeTruthy();
 
         await waitFor(() => {
-            const faqSchema = [...document.head.querySelectorAll('script[type="application/ld+json"]')]
+            const faqSchema = [...document.querySelectorAll('script[type="application/ld+json"]')]
                 .map((script) => JSON.parse(script.textContent || '{}'))
                 .find((schema) => schema['@type'] === 'FAQPage');
             const answers = faqSchema?.mainEntity
@@ -153,7 +153,7 @@ describe('CityVets search and trust contract', () => {
         expect(screen.getAllByText('English availability: confirm when booking')).toHaveLength(2);
 
         await waitFor(() => {
-            const faqSchema = [...document.head.querySelectorAll('script[type="application/ld+json"]')]
+            const faqSchema = [...document.querySelectorAll('script[type="application/ld+json"]')]
                 .map((script) => JSON.parse(script.textContent || '{}'))
                 .find((schema) => schema['@type'] === 'FAQPage');
             const answers = faqSchema?.mainEntity

@@ -34,11 +34,11 @@ describe('Home WebSite structured data', () => {
         );
 
         await waitFor(() => {
-            expect(document.head.querySelector('script[type="application/ld+json"]')).toBeTruthy();
+            expect(document.querySelector('script[type="application/ld+json"]')).toBeTruthy();
         });
 
         const schemas = Array.from(
-            document.head.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]'),
+            document.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]'),
         ).flatMap((script) => {
             const parsed = JSON.parse(script.textContent || 'null');
             return Array.isArray(parsed) ? parsed : [parsed];

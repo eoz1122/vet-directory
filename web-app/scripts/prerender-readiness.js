@@ -11,6 +11,27 @@ export function resolveGuideCatalogPath(scriptDirectory) {
     return path.resolve(scriptDirectory, '../src/content/guideCatalog.ts');
 }
 
+export function resolveStaticRequestPath(distDirectory, requestUrl, exists) {
+    let requestPath;
+    try {
+        requestPath = decodeURIComponent(requestUrl.split('?')[0]);
+    } catch {
+        return null;
+    }
+
+    const distRoot = path.resolve(distDirectory);
+    const relativePath = requestPath.replace(/^\/+/, '') || 'index.html';
+    const directPath = path.resolve(distRoot, relativePath);
+    if (!directPath.startsWith(`${distRoot}${path.sep}`)) return null;
+
+    if (exists(directPath)) return directPath;
+
+    const directoryIndexPath = path.join(directPath, 'index.html');
+    if (exists(directoryIndexPath)) return directoryIndexPath;
+
+    return null;
+}
+
 export function resolvePrerenderConcurrency(value) {
     if (value === undefined || value === '') return 5;
 
@@ -35,6 +56,19 @@ export function canonicalForRoute(route) {
 
     const normalizedRoute = `/${route.replace(/^\/+|\/+$/g, '')}`;
     return `${SITE_ORIGIN}${normalizedRoute}`;
+}
+
+export function isRouteMetadataReady(
+    expectedCanonical,
+    fallbackTitle,
+    requireTitleChange = false,
+) {
+    const titleChanged = document.title !== fallbackTitle;
+    if (expectedCanonical === null) return titleChanged;
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const canonicalMatches = canonical?.getAttribute('href') === expectedCanonical;
+    return canonicalMatches && (!requireTitleChange || titleChanged);
 }
 
 export async function renderPrerenderRoutes(

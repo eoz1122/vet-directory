@@ -15,11 +15,13 @@ import {
     assertPrerenderComplete,
     canonicalForRoute,
     extractBlogRoutes,
+    isRouteMetadataReady,
     PRERENDER_FALLBACK_SELECTOR,
     renderPrerenderRoutes,
     resolveGuideCatalogPath,
     resolvePrerenderConcurrency,
     resolvePrerenderDistDir,
+    resolveStaticRequestPath,
     shouldKeepModulePreload,
 } from './prerender-readiness.js';
 
@@ -151,23 +153,14 @@ async function prerender() {
         '.ttf': 'font/ttf',
     };
 
-    const server = createServer((req, res) => {
-        let filePath = path.join(DIST_DIR, req.url === '/' ? '/index.html' : req.url);
+    const spaShell = readFileSync(path.join(DIST_DIR, 'index.html'));
 
-        // SPA fallback: if file doesn't exist, serve index.html
-        if (!existsSync(filePath)) {
-            // Try adding index.html for directory paths
-            const withIndex = path.join(filePath, 'index.html');
-            if (existsSync(withIndex)) {
-                filePath = withIndex;
-            } else {
-                filePath = path.join(DIST_DIR, 'index.html');
-            }
-        }
+    const server = createServer((req, res) => {
+        const filePath = resolveStaticRequestPath(DIST_DIR, req.url || '/', existsSync);
 
         try {
-            const content = readFileSync(filePath);
-            const ext = path.extname(filePath);
+            const content = filePath ? readFileSync(filePath) : spaShell;
+            const ext = filePath ? path.extname(filePath) : '.html';
             const mime = mimeTypes[ext] || 'application/octet-stream';
             res.writeHead(200, { 'Content-Type': mime });
             res.end(content);
@@ -206,22 +199,13 @@ async function prerender() {
             // Helmet canonical is insufficient. Require the exact route canonical.
             const FALLBACK_TITLE = 'English-Speaking Vets in Germany | Verified Expat Directory';
             const expectedCanonical = canonicalForRoute(route);
-            if (expectedCanonical) {
-                await page.waitForFunction(
-                    expected => {
-                        const canonical = document.querySelector('link[rel="canonical"][data-rh]');
-                        return canonical?.getAttribute('href') === expected;
-                    },
-                    { timeout: 10000 },
-                    expectedCanonical,
-                );
-            } else {
-                await page.waitForFunction(
-                    fallback => document.title !== fallback,
-                    { timeout: 10000 },
-                    FALLBACK_TITLE,
-                );
-            }
+            await page.waitForFunction(
+                isRouteMetadataReady,
+                { timeout: 10000 },
+                expectedCanonical,
+                FALLBACK_TITLE,
+                route === '/',
+            );
 
             // Extra breathing room for Helmet to flush all remaining head mutations
             // (og:title, og:description, canonical, JSON-LD scripts)

@@ -41,13 +41,13 @@ const getMetaContent = (name: string) => document.head
     ?.getAttribute('content');
 
 const getArticleSchema = () => Array.from(
-    document.head.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]'),
+    document.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]'),
 )
     .map((script) => JSON.parse(script.textContent || 'null'))
     .find((schema) => schema?.['@type'] === 'Article');
 
 const getStructuredData = (type: string) => Array.from(
-    document.head.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]'),
+    document.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]'),
 )
     .map((script) => JSON.parse(script.textContent || 'null'))
     .find((schema) => schema?.['@type'] === type);

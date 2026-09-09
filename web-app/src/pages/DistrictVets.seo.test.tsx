@@ -24,7 +24,7 @@ function renderDistrict(path: string) {
 
 function getStructuredData(type: string) {
     return Array.from(
-        document.head.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]'),
+        document.querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]'),
     )
         .map((script) => JSON.parse(script.textContent || 'null'))
         .find((schema) => schema?.['@type'] === type);

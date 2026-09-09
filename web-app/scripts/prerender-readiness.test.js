@@ -3,11 +3,13 @@ import {
     assertPrerenderComplete,
     canonicalForRoute,
     extractBlogRoutes,
+    isRouteMetadataReady,
     removePrerenderFallbackMetadata,
     renderPrerenderRoutes,
     resolvePrerenderConcurrency,
     resolvePrerenderDistDir,
     resolveGuideCatalogPath,
+    resolveStaticRequestPath,
     shouldKeepModulePreload,
 } from './prerender-readiness.js';
 
@@ -21,6 +23,29 @@ describe('prerender readiness', () => {
             'https://englishspeakinggermany.online/blog/eu-pet-passport-germany',
         );
         expect(canonicalForRoute('/404')).toBeNull();
+    });
+
+    it('recognizes React 19 metadata without relying on legacy data attributes', () => {
+        document.head.innerHTML = `
+            <title>Route title</title>
+            <link rel="canonical" href="https://englishspeakinggermany.online/vets/berlin">
+        `;
+
+        expect(isRouteMetadataReady(
+            'https://englishspeakinggermany.online/vets/berlin',
+            'Fallback title',
+        )).toBe(true);
+        expect(isRouteMetadataReady(
+            'https://englishspeakinggermany.online/vets/hamburg',
+            'Fallback title',
+        )).toBe(false);
+
+        document.title = 'Fallback title';
+        expect(isRouteMetadataReady(
+            'https://englishspeakinggermany.online/vets/berlin',
+            'Fallback title',
+            true,
+        )).toBe(false);
     });
 
     it('rejects failed or incomplete prerender runs', () => {
@@ -109,6 +134,30 @@ describe('prerender readiness', () => {
         expect(resolveGuideCatalogPath('/project/scripts')).toBe(
             '/project/src/content/guideCatalog.ts',
         );
+    });
+
+    it('uses the immutable SPA shell for routes that are not rendered yet', () => {
+        const existingPaths = new Set([
+            '/project/dist/assets/app.js',
+            '/project/dist/blog/rendered/index.html',
+        ]);
+        const exists = (candidate) => existingPaths.has(candidate);
+
+        expect(resolveStaticRequestPath('/project/dist', '/assets/app.js', exists)).toBe(
+            '/project/dist/assets/app.js',
+        );
+        expect(resolveStaticRequestPath('/project/dist', '/blog/rendered', exists)).toBe(
+            '/project/dist/blog/rendered/index.html',
+        );
+        expect(resolveStaticRequestPath('/project/dist', '/blog/not-rendered', exists)).toBeNull();
+    });
+
+    it('does not resolve requests outside the production output directory', () => {
+        const exists = () => true;
+
+        expect(resolveStaticRequestPath('/project/dist', '/../secret.txt', exists)).toBeNull();
+        expect(resolveStaticRequestPath('/project/dist', '/%2e%2e/secret.txt', exists)).toBeNull();
+        expect(resolveStaticRequestPath('/project/dist', '/%E0%A4%A', exists)).toBeNull();
     });
 
     it('extracts internal guide routes without treating schema URLs as routes', () => {
