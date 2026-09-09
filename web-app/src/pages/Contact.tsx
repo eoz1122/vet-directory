@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { sendGAEvent } from '../utils/analytics';
+import { normalizeContactFormTopic } from '../utils/analyticsDimensions';
 import { isReportIssueNavigationState } from '../utils/reportIssue';
 
 export default function Contact() {
@@ -12,7 +13,9 @@ export default function Contact() {
     const reportIssueState = isReportIssueNavigationState(location.state)
         ? location.state
         : null;
-    const initialTopic = reportIssueState?.topic || searchParams.get('topic') || 'general';
+    const initialTopic = normalizeContactFormTopic(
+        reportIssueState?.topic || searchParams.get('topic'),
+    );
 
     const [formData, setFormData] = useState({
         name: '',
@@ -59,9 +62,11 @@ export default function Contact() {
         setIsSubmitting(true);
         setSubmitError(null);
 
+        const normalizedTopic = normalizeContactFormTopic(formData.topic);
         const finalData = {
             ...formData,
-            _subject: `[The Pack] ${formData.topic.toUpperCase()} - ${formData.name}`,
+            topic: normalizedTopic,
+            _subject: `[The Pack] ${normalizedTopic.toUpperCase()} - ${formData.name}`,
             submittedAt: new Date().toISOString()
         };
 
@@ -86,9 +91,9 @@ export default function Contact() {
             // Track successful submission in GA
             sendGAEvent('contact_form_success', {
                 form_name: 'contact_form',
-                form_topic: formData.topic,
+                form_topic: normalizedTopic,
                 event_category: 'engagement',
-                event_label: `Contact Form - ${formData.topic}`
+                event_label: `Contact Form - ${normalizedTopic}`
             });
 
             setSubmitted(true);
@@ -99,7 +104,7 @@ export default function Contact() {
         } catch (err) {
             sendGAEvent('contact_form_error', {
                 form_name: 'contact_form',
-                form_topic: formData.topic,
+                form_topic: normalizedTopic,
                 event_category: 'engagement',
             });
             setSubmitError(err instanceof Error ? err.message : 'Something went wrong.');

@@ -8,10 +8,10 @@ import Contact from './Contact';
 vi.mock('../components/Header', () => ({ default: () => <header /> }));
 vi.mock('../components/Footer', () => ({ default: () => <footer /> }));
 
-function renderContact() {
+function renderContact(initialEntry = '/contact') {
     return render(
         <HelmetProvider>
-            <MemoryRouter initialEntries={['/contact']}>
+            <MemoryRouter initialEntries={[initialEntry]}>
                 <Contact />
             </MemoryRouter>
         </HelmetProvider>,
@@ -32,6 +32,7 @@ function completeRequiredFields() {
 
 describe('Contact analytics', () => {
     beforeEach(() => {
+        localStorage.setItem('cookie-consent', 'accepted');
         window.gtag = vi.fn();
         vi.stubGlobal('fetch', vi.fn());
     });
@@ -77,6 +78,13 @@ describe('Contact analytics', () => {
             form_topic: 'general',
             event_category: 'engagement',
         });
+    });
+
+    it('does not preserve an unsupported topic from the URL', () => {
+        renderContact('/contact?topic=private-query-value');
+
+        expect((screen.getByLabelText('I want to...') as HTMLSelectElement).value)
+            .toBe('general');
     });
 
     it('prefills a report from navigation state without requiring query parameters', async () => {

@@ -22,6 +22,7 @@ import {
     trackDirectoryNoResults,
     trackGuideDiscoveryClick,
 } from '../utils/analytics';
+import { normalizeDirectoryCity } from '../utils/analyticsDimensions';
 
 // Lazy load the Map component to reduce initial bundle size causing TBT
 const AppMap = lazy(() => import('../components/Map'));
@@ -34,6 +35,7 @@ const ITEMS_PER_PAGE = 10;
 const HOME_TITLE = 'English-Speaking Vets in Germany | Find Local Care';
 const HOME_DESCRIPTION = 'Find community-verified English-speaking vets in Germany. Browse local practices in Berlin, Hamburg, Munich, Frankfurt, Cologne and 30+ cities.';
 const verifiedVets = vets.filter((vet) => vet.community_status === 'Verified');
+const filterableCityNames = Array.from(new Set(vets.map((vet) => vet.city)));
 const cityDirectoryNames = Array.from(new Set(verifiedVets.map((vet) => vet.city)))
     .sort((left, right) => left.localeCompare(right, 'en'));
 const popularCities = [
@@ -65,7 +67,9 @@ const Home: React.FC = () => {
     const [searchParams] = useSearchParams();
 
     // Initialize state with URL params
-    const [selectedCity, setSelectedCity] = useState(searchParams.get('city') || 'All');
+    const [selectedCity, setSelectedCity] = useState(
+        normalizeDirectoryCity(searchParams.get('city'), filterableCityNames),
+    );
     const [searchTerm, setSearchTerm] = useState(searchParams.get('s') || searchParams.get('q') || '');
     const [showVerifiedOnly, setShowVerifiedOnly] = useState(true);
     const [showMobileOnly, setShowMobileOnly] = useState(false);
@@ -81,10 +85,13 @@ const Home: React.FC = () => {
 
     // Sync state with URL param during render to avoid cascading updates
     const cityParam = searchParams.get('city');
+    const normalizedCityParam = cityParam
+        ? normalizeDirectoryCity(cityParam, filterableCityNames)
+        : null;
     const queryParam = searchParams.get('s') || searchParams.get('q');
 
-    if (cityParam && cityParam !== selectedCity) {
-        setSelectedCity(cityParam);
+    if (normalizedCityParam && normalizedCityParam !== selectedCity) {
+        setSelectedCity(normalizedCityParam);
     }
 
     if (queryParam && queryParam !== searchTerm) {

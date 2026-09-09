@@ -31,6 +31,7 @@ export default function CookieConsent() {
     const handleAccept = () => {
         localStorage.setItem('cookie-consent', 'accepted');
         enableGA();
+        window.dispatchEvent(new Event('analytics-consent-granted'));
         setIsVisible(false);
     };
 

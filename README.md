@@ -6,7 +6,7 @@ A comprehensive directory of English-speaking veterinarians across Germany, buil
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22.12+
 - npm or yarn
 
 ### Local Development

@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import {
     extractPageLastModified,
@@ -37,8 +38,9 @@ describe('sitemap metadata', () => {
     });
 
     it('runs sitemap generation after prerendering', () => {
+        const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
         const packageJson = JSON.parse(
-            fs.readFileSync(path.resolve(process.cwd(), 'package.json'), 'utf8'),
+            fs.readFileSync(path.resolve(scriptDirectory, '../package.json'), 'utf8'),
         );
 
         expect(packageJson.scripts.postbuild).toBe(

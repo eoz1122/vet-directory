@@ -22,6 +22,7 @@ function NavigationHarness() {
 describe('GoogleAnalyticsTracker', () => {
     beforeEach(() => {
         vi.useFakeTimers();
+        localStorage.setItem('cookie-consent', 'accepted');
         window.gtag = vi.fn();
     });
 
@@ -61,5 +62,34 @@ describe('GoogleAnalyticsTracker', () => {
             page_path: '/contact?from=test',
             page_title: document.title,
         });
+    });
+
+    it('starts on consent and stops after consent is withdrawn', () => {
+        localStorage.setItem('cookie-consent', 'declined');
+
+        render(
+            <MemoryRouter initialEntries={['/vets/berlin']}>
+                <NavigationHarness />
+            </MemoryRouter>,
+        );
+
+        act(() => vi.runOnlyPendingTimers());
+        expect(window.gtag).not.toHaveBeenCalled();
+
+        localStorage.setItem('cookie-consent', 'accepted');
+        act(() => window.dispatchEvent(new Event('analytics-consent-granted')));
+        act(() => vi.runOnlyPendingTimers());
+
+        expect(window.gtag).toHaveBeenCalledTimes(1);
+        expect(window.gtag).toHaveBeenLastCalledWith('event', 'page_view', {
+            page_path: '/vets/berlin',
+            page_title: document.title,
+        });
+
+        localStorage.setItem('cookie-consent', 'declined');
+        fireEvent.click(document.querySelector('button') as HTMLButtonElement);
+        act(() => vi.runOnlyPendingTimers());
+
+        expect(window.gtag).toHaveBeenCalledTimes(1);
     });
 });

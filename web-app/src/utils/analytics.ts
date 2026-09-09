@@ -2,10 +2,22 @@ export const sendGAEvent = (
     eventName: string,
     eventParams?: Record<string, unknown>
 ) => {
+    if (!hasAnalyticsConsent()) return;
+
     if (typeof window.gtag === 'function') {
         window.gtag('event', eventName, eventParams);
     } else {
         console.warn('Google Analytics not initialized', { eventName, eventParams });
+    }
+};
+
+export const hasAnalyticsConsent = () => {
+    if (typeof window === 'undefined') return false;
+
+    try {
+        return window.localStorage.getItem('cookie-consent') === 'accepted';
+    } catch {
+        return false;
     }
 };
 

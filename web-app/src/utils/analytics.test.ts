@@ -1,11 +1,29 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
+    sendGAEvent,
     trackDirectoryFilterChange,
     trackDirectoryNoResults,
     trackGuideDiscoveryClick,
     trackVetPhoneClick,
     trackVetWebsiteClick,
 } from './analytics';
+
+beforeEach(() => {
+    localStorage.setItem('cookie-consent', 'accepted');
+});
+
+describe('analytics consent', () => {
+    it('suppresses events when analytics consent is absent or declined', () => {
+        window.gtag = vi.fn();
+
+        localStorage.removeItem('cookie-consent');
+        sendGAEvent('page_view');
+        localStorage.setItem('cookie-consent', 'declined');
+        sendGAEvent('directory_filter_change');
+
+        expect(window.gtag).not.toHaveBeenCalled();
+    });
+});
 
 describe('trackVetWebsiteClick', () => {
     beforeEach(() => {

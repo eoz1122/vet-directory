@@ -68,6 +68,7 @@ describe('VetCard accessibility', () => {
     it('tracks the practice identity when a visitor starts a phone call', () => {
         const gtag = vi.fn();
         (window as unknown as { gtag: unknown }).gtag = gtag;
+        localStorage.setItem('cookie-consent', 'accepted');
 
         render(
             <VetCard
