@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 import BlogSidebar from '../components/BlogSidebar';
+import AffiliateCallout from '../components/AffiliateCallout';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import RelatedPosts from '../components/RelatedPosts';
 import TableOfContents from '../components/TableOfContents';
+import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
 const TITLE = 'Dog Liability Insurance Germany: Rules & Checklist (2026)';
@@ -17,7 +19,7 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DESCRIPTION,
     URL,
     '2026-07-24',
-    '2026-07-24',
+    '2026-09-10',
 );
 
 const FAQ_ITEMS = [
@@ -128,7 +130,7 @@ export default function DogLiabilityInsuranceGermany() {
                             Dog Liability Insurance in Germany: Rules and Checklist (2026)
                         </h1>
                         <p className="mb-8 text-sm text-primary/55">
-                            Published and reviewed 24 July 2026
+                            Published and content reviewed 24 July 2026 · Affiliate links updated 10 September 2026
                         </p>
 
                         <TableOfContents items={TABLE_OF_CONTENTS} />
@@ -254,6 +256,16 @@ export default function DogLiabilityInsuranceGermany() {
                                     </section>
                                 ))}
                             </div>
+
+                            <AffiliateCallout
+                                ariaLabel="Sponsored AGILA dog-liability option"
+                                title="AGILA dog-liability option"
+                                description="AGILA offers dog-owner liability insurance in Germany. Check the current state or municipal requirements, insured people and dogs, coverage limits, exclusions, deductible, territory, and full policy wording before buying."
+                                href={AFFILIATE_LINKS.agila.liabilityGuide}
+                                linkLabel="Review AGILA dog-liability cover"
+                                provider="AGILA"
+                                trackingLocation="DogLiability_Agila"
+                            />
 
                             <h2 id="cost" className="mt-16 mb-6 scroll-mt-24 text-3xl font-bold text-primary">
                                 Price and quote checks

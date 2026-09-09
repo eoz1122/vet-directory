@@ -44,7 +44,7 @@ describe('Dog liability insurance guide', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2026-07-24');
-        expect(schema.dateModified).toBe('2026-07-24');
+        expect(schema.dateModified).toBe('2026-09-10');
     });
 
     it('uses primary legal sources and distinguishes state requirements', () => {

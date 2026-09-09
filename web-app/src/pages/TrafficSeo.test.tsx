@@ -1106,7 +1106,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-08-01');
+        expect(schema.dateModified).toBe('2026-09-10');
     });
 
     it('keeps the pet-insurance discovery card aligned with the comparison guide', () => {

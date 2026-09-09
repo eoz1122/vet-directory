@@ -19,7 +19,7 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DESCRIPTION,
     URL,
     '2025-01-01',
-    '2026-08-01',
+    '2026-09-10',
 );
 
 const FAQ_ITEMS = [
@@ -130,7 +130,7 @@ export default function PetInsuranceGermany() {
                             Pet Insurance in Germany: Dog &amp; Cat Guide (2026)
                         </h1>
                         <p className="text-sm text-primary/55 mb-8">
-                            Published 1 January 2025 · Reviewed 1 August 2026
+                            Published 1 January 2025 · Content reviewed 1 August 2026 · Affiliate links updated 10 September 2026
                         </p>
 
                         <TableOfContents items={TABLE_OF_CONTENTS} />
@@ -424,11 +424,15 @@ export default function PetInsuranceGermany() {
                             <h2 id="commercial-links" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 Commercial links
                             </h2>
-                            <div className="bg-white border border-primary/10 rounded-2xl p-7 my-8 not-prose">
+                            <section
+                                role="region"
+                                aria-label="Commercial insurance links"
+                                className="bg-white border border-primary/10 rounded-2xl p-7 my-8 not-prose"
+                            >
                                 <p className="text-sm leading-relaxed text-primary/75 mb-6">
                                     The links below are advertising or affiliate destinations, not provider rankings. We have not independently audited their policy wording, claim outcomes, pricing, exclusions, or language support. Check current documents and compare alternatives before buying. We may earn a commission at no extra cost to you.
                                 </p>
-                                <div className="grid sm:grid-cols-3 gap-3">
+                                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                                     <a
                                         href="https://www.awin1.com/cread.php?awinmid=14361&awinaffid=2707844&ued=https%3A%2F%2Fhelden.de%2Fprodukte%2Ftierversicherung%2Fhundehaftpflicht%2F"
                                         onClick={() => trackAffiliateClick('Helden', 'PetInsurance_CommercialLinks')}
@@ -459,8 +463,18 @@ export default function PetInsuranceGermany() {
                                     >
                                         Figo health link
                                     </a>
+                                    <a
+                                        href={AFFILIATE_LINKS.agila.insuranceCommercialLinks}
+                                        onClick={() => trackAffiliateClick('AGILA', 'PetInsurance_CommercialLinks')}
+                                        target="_blank"
+                                        rel="noopener noreferrer sponsored"
+                                        aria-label="AGILA commercial pet insurance link"
+                                        className="min-h-11 inline-flex items-center justify-center text-center bg-primary text-white font-bold px-4 py-3 rounded-xl hover:bg-primary/90"
+                                    >
+                                        AGILA insurance link
+                                    </a>
                                 </div>
-                            </div>
+                            </section>
 
                             <h2 id="sources" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 Sources and next steps

@@ -5,7 +5,8 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
-import { trackAffiliateClick } from '../utils/analytics';
+import AffiliateCallout from '../components/AffiliateCallout';
+import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
 const TITLE = "GPS Trackers for Cats & Dogs in Germany: An Honest Comparison";
@@ -65,7 +66,7 @@ export default function PetGpsTrackerGermany() {
                 <meta property="og:url" content={URL} />
                 <link rel="canonical" href={URL} />
                 <script type="application/ld+json">
-                    {JSON.stringify(generateArticleSchema(TITLE, DESCRIPTION, URL, "2026-07-16"))}
+                    {JSON.stringify(generateArticleSchema(TITLE, DESCRIPTION, URL, "2026-07-16", "2026-09-10"))}
                 </script>
                 <script type="application/ld+json">
                     {JSON.stringify(faqSchema)}
@@ -83,6 +84,9 @@ export default function PetGpsTrackerGermany() {
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             📡 GPS Trackers for Pets in Germany
                         </h1>
+                        <p className="mb-8 text-sm text-primary/55">
+                            Published 16 July 2026 · Affiliate links updated 10 September 2026
+                        </p>
 
                         <TableOfContents items={[
                             { id: 'why', label: 'Why Expat Pets Get Lost More' },
@@ -151,9 +155,19 @@ export default function PetGpsTrackerGermany() {
                                 Prices are typical 2026 street prices and entry subscription tiers (longer commitments are cheaper; Kippy requires a 4-month minimum). Check current offers before buying.
                             </p>
 
+                            <AffiliateCallout
+                                ariaLabel="Sponsored Kippy GPS tracker option"
+                                title="Kippy GPS tracker option"
+                                description="Kippy sells GPS and activity trackers for cats and dogs. Check the current device weight, pet compatibility, mobile coverage, subscription terms, returns policy, and total price before choosing."
+                                href={AFFILIATE_LINKS.kippy.gpsGuide}
+                                linkLabel="Check the current Kippy offer"
+                                provider="Kippy"
+                                trackingLocation="PetGps_KippyOffer"
+                            />
+
                             <h2 id="cats" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">The Outdoor Cat Question</h2>
                             <p>
-                                Germany is an outdoor-cat country, and many municipalities pair that freedom with obligations: registration, microchipping, and <Link to="/blog/neutering-cost-germany" className="text-accent-ink font-bold hover:underline">mandatory neutering rules</Link> for free-roaming cats. A tracker adds the missing piece: knowing your cat's actual territory. Most owners are surprised (a typical city cat roams far less than feared, but crosses more roads than hoped). For cats, weight decides everything: the <a href="https://tractive.com" target="_blank" rel="noopener noreferrer" className="text-accent-ink font-bold hover:underline">Tractive Cat Mini</a> (~25g) and the <a href="https://www.kippy.eu" onClick={() => trackAffiliateClick('Kippy', 'GpsTracker_Page')} target="_blank" rel="noopener noreferrer" className="text-accent-ink font-bold hover:underline">Kippy EVO</a> (~38g, for cats over 4kg) are the two practical choices.
+                                Germany is an outdoor-cat country, and many municipalities pair that freedom with obligations: registration, microchipping, and <Link to="/blog/neutering-cost-germany" className="text-accent-ink font-bold hover:underline">mandatory neutering rules</Link> for free-roaming cats. A tracker adds the missing piece: knowing your cat's actual territory. Most owners are surprised (a typical city cat roams far less than feared, but crosses more roads than hoped). For cats, weight decides everything: the <a href="https://tractive.com" target="_blank" rel="noopener noreferrer" className="text-accent-ink font-bold hover:underline">Tractive Cat Mini</a> (~25g) and Kippy EVO (~38g, for cats over 4kg) are the two practical choices.
                             </p>
 
                             <h2 id="safety" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">Safety Rules Nobody Mentions</h2>
