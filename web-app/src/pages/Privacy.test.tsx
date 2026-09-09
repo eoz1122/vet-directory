@@ -50,4 +50,16 @@ describe('Privacy affiliate disclosure', () => {
         expect(heading.className).toContain('sm:text-4xl');
         expect(screen.getByText('Datenschutzerklärung').getAttribute('lang')).toBe('de');
     });
+
+    it('states consent as the legal basis for Google Analytics', () => {
+        renderPrivacy();
+
+        const analyticsSection = screen.getByRole('heading', {
+            level: 2,
+            name: '7. Google Analytics',
+        }).closest('section');
+        expect(analyticsSection?.textContent).toMatch(/Art\. 6 Abs\. 1 lit\. a DSGVO/i);
+        expect(analyticsSection?.textContent).toMatch(/jederzeit.*widerrufen/i);
+        expect(analyticsSection?.textContent).not.toMatch(/berechtigtes Interesse/i);
+    });
 });

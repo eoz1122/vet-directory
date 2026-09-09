@@ -22,6 +22,12 @@ export default function CookieConsent() {
         }
     }, [enableGA]);
 
+    useEffect(() => {
+        const openSettings = () => setIsVisible(true);
+        window.addEventListener('open-cookie-settings', openSettings);
+        return () => window.removeEventListener('open-cookie-settings', openSettings);
+    }, []);
+
     const handleAccept = () => {
         localStorage.setItem('cookie-consent', 'accepted');
         enableGA();
@@ -52,8 +58,7 @@ export default function CookieConsent() {
                         <span aria-hidden="true">🍪</span> Cookie Settings
                     </h3>
                     <p className="text-sm opacity-90 leading-relaxed">
-                        We use cookies to understand how you find our vets and to improve your experience.
-                        By clicking "Accept", you agree to our use of analytics cookies.
+                        Analytics cookies help us understand how visitors use the directory. They are optional, and advertising storage remains disabled.
                         View our <Link to="/privacy" className="underline hover:text-accent transition-colors">Privacy Policy</Link> for more details.
                     </p>
                 </div>
@@ -63,13 +68,13 @@ export default function CookieConsent() {
                         onClick={handleDecline}
                         className="flex-1 md:flex-none px-6 py-3 text-sm font-semibold rounded-xl border border-white/20 hover:bg-white/10 transition-all active:scale-95"
                     >
-                        Decline
+                        Decline analytics
                     </button>
                     <button
                         onClick={handleAccept}
                         className="flex-1 md:flex-none px-8 py-3 text-sm font-bold rounded-xl bg-accent-ink text-white hover:bg-white hover:text-primary transition-all shadow-lg hover:shadow-accent/20 active:scale-95"
                     >
-                        Accept All
+                        Accept analytics
                     </button>
                 </div>
             </div>

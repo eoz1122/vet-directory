@@ -22,6 +22,13 @@ export default function Footer() {
                     <div className="w-full md:w-auto md:hidden"></div> {/* Break on mobile if needed */}
                     <Link to="/impressum" className={`${navigationLinkClass} opacity-80 font-normal`}>Impressum</Link>
                     <Link to="/privacy" className={`${navigationLinkClass} opacity-80 font-normal`}>Privacy</Link>
+                    <button
+                        type="button"
+                        onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
+                        className={`${navigationLinkClass} opacity-80 font-normal`}
+                    >
+                        Cookie settings
+                    </button>
                 </nav>
                 <p className="opacity-60 text-[10px] md:text-xs leading-relaxed max-w-2xl mx-auto italic">
                     <strong>Affiliate Disclosure:</strong> Some of the links on this website are affiliate links, meaning, at no additional cost to you, we may earn a commission if you click through and make a purchase. This helps us keep the directory free for everyone.
