@@ -635,8 +635,9 @@ describe('traffic-focused search metadata', () => {
         })).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
-            name: '3. United Kingdom: banned types and exemption evidence',
+            name: '3. Great Britain: banned types and exemption evidence',
         })).toBeTruthy();
+        expect(screen.getByText(/Northern Ireland follows separate guidance/i)).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
             name: '4. United States: health entry plus state and local checks',
@@ -645,9 +646,11 @@ describe('traffic-focused search metadata', () => {
             .toBe('https://www.gov.uk/control-dog-public/banned-dogs');
         expect(screen.getByRole('link', { name: 'UK pet-entry steps' }).getAttribute('href'))
             .toBe('https://www.gov.uk/bring-pet-to-great-britain');
+        expect(screen.getByRole('link', { name: 'Northern Ireland pet travel guidance' }).getAttribute('href'))
+            .toBe('https://www.gov.uk/taking-your-pet-abroad/travelling-to-northern-ireland');
         expect(screen.getByRole('link', { name: 'CDC dog-entry requirements' }).getAttribute('href'))
             .toBe('https://www.cdc.gov/importation/dogs/index.html');
-        expect(screen.getByRole('link', { name: 'USDA Germany pet travel steps' }).getAttribute('href'))
+        expect(screen.getByRole('link', { name: 'USDA travel from the US to Germany' }).getAttribute('href'))
             .toBe('https://www.aphis.usda.gov/pet-travel/us-to-another-country-export/pet-travel-us-germany');
         expect(screen.getByRole('link', { name: 'Germany federal import law' }).getAttribute('href'))
             .toBe('https://www.gesetze-im-internet.de/hundverbreinfg/__2.html');

@@ -8,5 +8,6 @@ describe('production SEO smoke coverage', () => {
         const script = readFileSync(scriptPath, 'utf8');
 
         expect(script).toContain('"/blog/moving-to-germany-with-restricted-dog"');
+        expect(script).toContain('"/blog/restricted-dog-laws-by-country"');
     });
 });

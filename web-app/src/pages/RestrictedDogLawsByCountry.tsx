@@ -18,6 +18,7 @@ const GERMANY_EXCEPTIONS_URL = 'https://www.gesetze-im-internet.de/hundverbreinf
 const GERMANY_CUSTOMS_URL = 'https://www.zoll.de/DE/Privatpersonen/Reisen/Reisen-nach-Deutschland-aus-einem-nicht-eu-Staat/Einschraenkungen/Gefaehrliche-Hunde/regelungen_bundeslaender.html';
 const UK_BANNED_DOGS_URL = 'https://www.gov.uk/control-dog-public/banned-dogs';
 const UK_PET_ENTRY_URL = 'https://www.gov.uk/bring-pet-to-great-britain';
+const NORTHERN_IRELAND_PET_ENTRY_URL = 'https://www.gov.uk/taking-your-pet-abroad/travelling-to-northern-ireland';
 const CDC_DOG_ENTRY_URL = 'https://www.cdc.gov/importation/dogs/index.html';
 const CDC_LAWS_URL = 'https://www.cdc.gov/importation/laws-regulations/index.html';
 const USDA_GERMANY_URL = 'https://www.aphis.usda.gov/pet-travel/us-to-another-country-export/pet-travel-us-germany';
@@ -33,7 +34,7 @@ const articleSchema = generateArticleSchema(
 const tableOfContents = [
     { id: 'start-with-destination', label: '1. Start with the destination and transit countries' },
     { id: 'germany', label: '2. Germany: federal import law plus state keeping rules' },
-    { id: 'united-kingdom', label: '3. United Kingdom: banned types and exemption evidence' },
+    { id: 'united-kingdom', label: '3. Great Britain: banned types and exemption evidence' },
     { id: 'united-states', label: '4. United States: health entry plus state and local checks' },
     { id: 'safe-workflow', label: '5. Build a safe pre-travel file' },
 ];
@@ -86,15 +87,17 @@ const comparisonCards = [
             { href: GERMANY_IMPORT_LAW_URL, label: 'Germany federal import law' },
             { href: GERMANY_EXCEPTIONS_URL, label: 'Germany exceptions regulation' },
             { href: GERMANY_CUSTOMS_URL, label: 'German Customs state overview' },
+            { href: USDA_GERMANY_URL, label: 'USDA travel from the US to Germany' },
         ],
     },
     {
-        title: 'United Kingdom',
+        title: 'Great Britain',
         tone: 'bg-blue-50 border-blue-200',
         summary: 'Great Britain uses banned dog types, judged by appearance rather than the name on a document. A banned dog cannot enter unless it already has a valid Certificate of Exemption, and entry paperwork is a separate step.',
         links: [
             { href: UK_BANNED_DOGS_URL, label: 'UK banned-dog rules' },
             { href: UK_PET_ENTRY_URL, label: 'UK pet-entry steps' },
+            { href: NORTHERN_IRELAND_PET_ENTRY_URL, label: 'Northern Ireland pet travel guidance' },
         ],
     },
     {
@@ -104,7 +107,6 @@ const comparisonCards = [
         links: [
             { href: CDC_DOG_ENTRY_URL, label: 'CDC dog-entry requirements' },
             { href: CDC_LAWS_URL, label: 'CDC laws and state-rule guidance' },
-            { href: USDA_GERMANY_URL, label: 'USDA Germany pet travel steps' },
         ],
     },
 ];
@@ -222,13 +224,13 @@ export default function RestrictedDogLawsByCountry() {
 
                             <section id="united-kingdom">
                                 <h2 className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                    3. United Kingdom: banned types and exemption evidence
+                                    3. Great Britain: banned types and exemption evidence
                                 </h2>
                                 <p>
-                                    Great Britain lists banned dog types, including Pit Bull Terrier, Japanese Tosa, Dogo Argentino, Fila Brasileiro and XL Bully. The official test is based on what the dog looks like, not only the breed or name shown in a document. A banned dog needs a valid Certificate of Exemption before entry, and the pet-travel document and approved-route rules still apply separately.
+                                    Great Britain lists banned dog types, including Pit Bull Terrier, Japanese Tosa, Dogo Argentino, Fila Brasileiro and XL Bully. The official test is based on what the dog looks like, not only the breed or name shown in a document. A banned dog needs a valid Certificate of Exemption before entry, and the pet-travel document and approved-route rules still apply separately. Northern Ireland follows separate guidance for pet travel, so do not apply the Great Britain route to an NI journey.
                                 </p>
                                 <div className="bg-blue-50 border border-blue-200 p-6 rounded-xl my-6 not-prose">
-                                    <h3 className="font-bold text-primary text-xl mb-2">UK decision to save</h3>
+                                    <h3 className="font-bold text-primary text-xl mb-2">Great Britain decision to save</h3>
                                     <p className="text-sm text-primary/80">Check the banned-type rules first. If an exemption exists, carry the certificate and confirm the current Great Britain pet-entry route before travel.</p>
                                     <SourceLinks links={comparisonCards[1].links} />
                                 </div>
