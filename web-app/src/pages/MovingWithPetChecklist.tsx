@@ -374,12 +374,20 @@ export default function MovingWithPetChecklist() {
                                     <p className="text-sm text-primary/75 mb-3">
                                         Germany has a separate federal import restriction for specific breeds and crosses, plus destination-state keeping rules.
                                     </p>
-                                    <Link
-                                        to="/blog/breed-restrictions-germany"
-                                        className="inline-flex min-h-11 items-center font-bold text-accent-ink underline underline-offset-4"
-                                    >
-                                        Germany breed-restriction guide
-                                    </Link>
+                                    <div className="flex flex-col items-start gap-1">
+                                        <Link
+                                            to="/blog/breed-restrictions-germany"
+                                            className="inline-flex min-h-11 items-center font-bold text-accent-ink underline underline-offset-4"
+                                        >
+                                            Germany breed-restriction guide
+                                        </Link>
+                                        <Link
+                                            to="/blog/moving-to-germany-with-restricted-dog"
+                                            className="inline-flex min-h-11 items-center font-bold text-accent-ink underline underline-offset-4"
+                                        >
+                                            Restricted-dog relocation checklist
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
 

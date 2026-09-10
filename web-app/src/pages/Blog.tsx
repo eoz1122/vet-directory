@@ -36,7 +36,7 @@ const GUIDE_SECTION_DEFINITIONS = [
         id: 'moving-paperwork',
         title: 'Moving and paperwork',
         description: 'Handle entry rules, registration, insurance, fees, and the paperwork that follows a move.',
-        categories: ['Bureaucracy', 'Report'],
+        categories: ['Bureaucracy', 'Report', 'Moving'],
     },
     {
         id: 'health-safety',

@@ -365,6 +365,19 @@ export default function BreedRestrictionsGermany() {
                                 </p>
                             </div>
 
+                            <div className="bg-accent/10 border border-accent/25 p-6 rounded-xl my-8 not-prose">
+                                <h3 className="font-bold text-primary mb-2">Planning a permanent move?</h3>
+                                <p className="text-sm text-primary/75 mb-3">
+                                    Work through the federal decision, origin-country paperwork, transit, carrier and destination authority in the correct order before paying for transport.
+                                </p>
+                                <Link
+                                    to="/blog/moving-to-germany-with-restricted-dog"
+                                    className="inline-flex min-h-11 items-center font-bold text-accent-ink underline underline-offset-4"
+                                >
+                                    Moving a restricted dog to Germany
+                                </Link>
+                            </div>
+
                             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 not-prose">
                                 <Link to="/vets/berlin" className="inline-flex min-h-11 items-center justify-center bg-accent text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-primary transition-colors">
                                     English-speaking vets in Berlin

@@ -168,4 +168,15 @@ describe('guide routes', () => {
             name: 'Emergency Vet Mainz: Live Daily Rota and 24/7 Fallback',
         })).toBeTruthy();
     });
+
+    it('routes the restricted-dog relocation guide', async () => {
+        window.history.pushState({}, '', '/blog/moving-to-germany-with-restricted-dog');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Moving to Germany With a Pit Bull or Restricted Dog (2026)',
+        })).toBeTruthy();
+    });
 });

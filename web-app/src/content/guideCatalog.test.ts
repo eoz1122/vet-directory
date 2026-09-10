@@ -78,6 +78,11 @@ describe('guide catalogue', () => {
             category: 'Emergency',
             topics: expect.arrayContaining(['emergency', 'mainz', 'vet-care']),
         }));
+        expect(GUIDE_CATALOG).toContainEqual(expect.objectContaining({
+            url: '/blog/moving-to-germany-with-restricted-dog',
+            category: 'Moving',
+            topics: expect.arrayContaining(['moving', 'travel', 'legal', 'dog']),
+        }));
     });
 
     it('prioritizes topical links before deterministic fallback links', () => {

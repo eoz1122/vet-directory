@@ -3,6 +3,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { GUIDE_CATALOG } from '../content/guideCatalog';
 import Blog from './Blog';
 
 vi.mock('../components/Header', () => ({ default: () => <header /> }));
@@ -60,15 +61,15 @@ describe('Blog guide discovery', () => {
         const sectionCounts = {
             'start-here': 3,
             'emergency-vet-care': 18,
-            'moving-paperwork': 8,
+            'moving-paperwork': 9,
             'health-safety': 10,
             'everyday-life': 9,
             'new-pet-essentials': 3,
         };
         const allGuideUrls = guideUrlsIn(document);
 
-        expect(allGuideUrls).toHaveLength(51);
-        expect(new Set(allGuideUrls).size).toBe(51);
+        expect(allGuideUrls).toHaveLength(GUIDE_CATALOG.length);
+        expect(new Set(allGuideUrls).size).toBe(GUIDE_CATALOG.length);
 
         Object.entries(sectionCounts).forEach(([sectionId, count]) => {
             const section = document.getElementById(sectionId);

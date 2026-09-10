@@ -21,6 +21,7 @@ import PetFoodGermany from './PetFoodGermany';
 import PetInsuranceGermany from './PetInsuranceGermany';
 import PublicTransportCologne from './PublicTransportCologne';
 import PublicTransportMunich from './PublicTransportMunich';
+import RestrictedDogMoveGermany from './RestrictedDogMoveGermany';
 import TickSeasonGermanyPets from './TickSeasonGermanyPets';
 import VetCostsGermany from './VetCostsGermany';
 
@@ -489,6 +490,8 @@ describe('traffic-focused search metadata', () => {
             .toBe('/vets/hamburg');
         expect(screen.getByRole('link', { name: 'English-speaking vets in Munich' }).getAttribute('href'))
             .toBe('/vets/munich');
+        expect(screen.getByRole('link', { name: 'Moving a restricted dog to Germany' }).getAttribute('href'))
+            .toBe('/blog/moving-to-germany-with-restricted-dog');
 
         const articleText = document.body.textContent ?? '';
         expect(articleText).toMatch(/Staffordshire Bull Terrier is covered by the federal import restriction/i);
@@ -516,6 +519,87 @@ describe('traffic-focused search metadata', () => {
         )).toBeTruthy();
     });
 
+    it('separates the legal and travel gates for moving a restricted dog to Germany', async () => {
+        renderPage(<RestrictedDogMoveGermany />);
+
+        await waitFor(() => {
+            expect(document.title).toBe(
+                'Moving to Germany With a Pit Bull: Restricted Dog Guide (2026)',
+            );
+        });
+
+        expect(getMetaContent('description')).toBe(
+            'Moving to Germany with a Pit Bull or restricted dog? Check federal import bans, exceptions, EU, UK and US paperwork, transit, airlines, and state rules.',
+        );
+        expect(document.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(
+            'https://englishspeakinggermany.online/blog/moving-to-germany-with-restricted-dog',
+        );
+        expect(screen.getByRole('heading', {
+            level: 1,
+            name: 'Moving to Germany With a Pit Bull or Restricted Dog (2026)',
+        })).toBeTruthy();
+        expect(screen.getByText('Last verified: 10 September 2026')).toBeTruthy();
+        expect(screen.getByText(/Reviewed periodically/i)).toBeTruthy();
+
+        const directAnswer = screen.getByText(
+            /moving one of the four federally named breeds permanently to Germany is generally prohibited/i,
+        );
+        const tableOfContents = screen.getByRole('navigation');
+        expect(directAnswer.compareDocumentPosition(tableOfContents) & Node.DOCUMENT_POSITION_FOLLOWING)
+            .toBeTruthy();
+
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: "1. Check Germany's federal breed gate before booking",
+        })).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: '2. Match your origin to the animal-health route',
+        })).toBeTruthy();
+        expect(screen.getByText('EU country or Northern Ireland')).toBeTruthy();
+        expect(screen.getByText('Great Britain')).toBeTruthy();
+        expect(screen.getByText('United States')).toBeTruthy();
+        expect(screen.getByText('Other non-EU country')).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: '3. Check every transit country and carrier separately',
+        })).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: '4. Get the destination decision in writing',
+        })).toBeTruthy();
+
+        expect(screen.getByRole('link', { name: 'Federal import restriction law' }).getAttribute('href'))
+            .toBe('https://www.gesetze-im-internet.de/hundverbreinfg/__2.html');
+        expect(screen.getByRole('link', { name: 'Federal exceptions regulation' }).getAttribute('href'))
+            .toBe('https://www.gesetze-im-internet.de/hundverbreinfvo/__2.html');
+        expect(screen.getByRole('link', { name: 'German Customs breed guidance' }).getAttribute('href'))
+            .toBe('https://www.zoll.de/DE/Privatpersonen/Reisen/Rueckkehr-aus-einem-Nicht-EU-Staat/Einschraenkungen/Gefaehrliche-Hunde/gefaehrliche_hunde.html');
+        expect(screen.getByRole('link', { name: 'EU pet travel rules' }).getAttribute('href'))
+            .toBe('https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm');
+        expect(screen.getByRole('link', { name: 'Great Britain animal health certificate' }).getAttribute('href'))
+            .toBe('https://www.gov.uk/taking-your-pet-abroad/getting-an-animal-health-certificate');
+        expect(screen.getByRole('link', { name: 'USDA Germany pet travel steps' }).getAttribute('href'))
+            .toBe('https://www.aphis.usda.gov/pet-travel/us-to-another-country-export/pet-travel-us-germany');
+        expect(screen.getByRole('link', { name: 'EU travellers’ points of entry' }).getAttribute('href'))
+            .toBe('https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/travellers-points-entry_en');
+        expect(screen.getByRole('link', { name: 'Germany pet entry checklist' }).getAttribute('href'))
+            .toBe('/blog/moving-to-germany-with-pet');
+        expect(screen.getByRole('link', { name: 'German breed rules explained' }).getAttribute('href'))
+            .toBe('/blog/breed-restrictions-germany');
+
+        const pageText = document.body.textContent ?? '';
+        expect(pageText).toMatch(/four-week visitor exception is not a permanent relocation route/i);
+        expect(pageText).toMatch(/airline acceptance does not make the import legal/i);
+        expect(pageText).toMatch(/do not book non-refundable transport/i);
+        expect(pageText).toMatch(/Rottweiler.*not one of the four breeds named in the first federal prohibition/is);
+
+        const articleSchema = getArticleSchema();
+        expect(articleSchema.datePublished).toBe('2026-09-10');
+        expect(articleSchema.dateModified).toBe('2026-09-10');
+        expect(getStructuredData('FAQPage').mainEntity).toHaveLength(5);
+    });
+
     it('separates the current EU, listed-country and titration routes for moving pets', async () => {
         renderPage(<MovingWithPetChecklist />);
 
@@ -536,6 +620,8 @@ describe('traffic-focused search metadata', () => {
             level: 2,
             name: '1. Start with the country your journey begins in',
         })).toBeTruthy();
+        expect(screen.getByRole('link', { name: 'Restricted-dog relocation checklist' }).getAttribute('href'))
+            .toBe('/blog/moving-to-germany-with-restricted-dog');
         expect(screen.getByText('EU country or Northern Ireland')).toBeTruthy();
         expect(screen.getByText('Listed non-EU country or territory')).toBeTruthy();
         expect(screen.getByText('Other non-EU country or territory')).toBeTruthy();

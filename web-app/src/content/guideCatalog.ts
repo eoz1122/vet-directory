@@ -161,6 +161,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['moving', 'travel', 'legal', 'dog', 'cat'],
     },
     {
+        url: '/blog/moving-to-germany-with-restricted-dog',
+        title: "Moving to Germany With a Pit Bull or Restricted Dog",
+        emoji: '🧭',
+        category: 'Moving',
+        desc: "Check the federal breed gate before booking, then verify exceptions, origin paperwork, transit, carrier acceptance and destination-state rules.",
+        topics: ['moving', 'travel', 'legal', 'dog'],
+    },
+    {
         url: '/blog/pet-friendly-apartments-germany',
         title: "Pet-Friendly Apartments in Berlin",
         emoji: '🏠',
