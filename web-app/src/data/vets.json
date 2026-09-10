@@ -5990,7 +5990,13 @@
         "Regularly serves tourists and expats"
       ]
     },
-    "community_status": "Verified"
+    "community_status": "Verified",
+    "pending_community_confirmations": [
+      {
+        "date": "2026-08-11",
+        "source": "site_button"
+      }
+    ]
   },
   {
     "id": "Internal-Potsdam-1",
@@ -6039,7 +6045,13 @@
         "Specialized team"
       ]
     },
-    "community_status": "Verified"
+    "community_status": "Verified",
+    "pending_community_confirmations": [
+      {
+        "date": "2026-08-16",
+        "source": "site_button"
+      }
+    ]
   },
   {
     "id": "Internal-Karlsruhe-1",
@@ -6299,7 +6311,13 @@
       ],
       "emergency_services": ""
     },
-    "community_status": "Verified"
+    "community_status": "Verified",
+    "pending_community_confirmations": [
+      {
+        "date": "2026-09-09",
+        "source": "site_button"
+      }
+    ]
   },
   {
     "id": "Duesseldorf-Niessen",
@@ -7592,7 +7610,13 @@
       ],
       "emergency_services": ""
     },
-    "community_status": "Verified"
+    "community_status": "Verified",
+    "pending_community_confirmations": [
+      {
+        "date": "2026-08-31",
+        "source": "site_button"
+      }
+    ]
   },
   {
     "id": "braunschweig-anicura",

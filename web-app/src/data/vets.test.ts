@@ -890,6 +890,27 @@ describe('public directory entry quality', () => {
     });
 
     it.each([
+        ['Internal-Rostock-1', '2026-08-11', '2025-01-01'],
+        ['Internal-Essen-1', '2026-08-16', '2025-01-01'],
+        ['karlsruhe-anicura', '2026-08-31', '2026-07-25'],
+        ['Duesseldorf-Beyer', '2026-09-09', '2026-06-24'],
+    ])(
+        'preserves the pending site confirmation for %s without promoting authoritative evidence',
+        (vetId, confirmationDate, lastScanned) => {
+            const practice = vetsData.find((vet) => vet.id === vetId);
+
+            expect(practice).toBeDefined();
+            expect(practice?.pending_community_confirmations).toContainEqual({
+                date: confirmationDate,
+                source: 'site_button',
+            });
+            expect(practice?.community_status).toBe('Verified');
+            expect(practice?.verification.status).toBe('Verified');
+            expect(practice?.verification.last_scanned).toBe(lastScanned);
+        },
+    );
+
+    it.each([
         ['Berlin-2', 'Berlin-105'],
         ['hofheim-tierklinik-24h', 'Frankfurt-50'],
         ['Internal-Dusseldorf-1', 'Duesseldorf-TKD'],
