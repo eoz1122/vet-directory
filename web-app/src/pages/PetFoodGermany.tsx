@@ -14,7 +14,6 @@ import { generateArticleSchema } from '../utils/schema';
 const TITLE = 'Best Dog Food in Germany (2026): Complete Food, Labels and Prices';
 const DESCRIPTION = 'Compare dog food in Germany using complete-food labels, FEDIAF guidance, prices, formats and WSAVA checks.';
 const URL = 'https://englishspeakinggermany.online/blog/best-dog-food-germany';
-const DINNER_FOR_DOGS_URL = 'https://tidd.ly/4au55tO';
 
 const SOURCE_URLS = {
     euLabelling: 'https://eur-lex.europa.eu/eli/reg/2009/767/oj/eng',
@@ -350,7 +349,7 @@ export default function PetFoodGermany() {
                                         Compare complete dog food at Zooplus
                                     </a>
                                     <a
-                                        href={DINNER_FOR_DOGS_URL}
+                                        href={AFFILIATE_LINKS.dinnerForDogs.dogFoodGuide}
                                         aria-label="Check Dinner for Dogs details (affiliate link)"
                                         onClick={() => trackAffiliateClick('DinnerForDogs', 'PetFood_Page')}
                                         target="_blank"

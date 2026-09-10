@@ -1663,3 +1663,17 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** TDD RED reproduced the old titles, descriptions, dates, missing national Munich route, missing direct-answer order and absent breadcrumb assertions. GREEN passes the focused emergency tests, the complete frontend suite with 454 tests across 75 files, ESLint and the production build. The build prerenders all 317 routes and writes identical 316-URL public and distribution sitemaps. Deployment `12b9da4` completed successfully: the live national, Berlin, Munich and Hamburg routes return HTTP 200 at 390px with one title, one canonical, Article and BreadcrumbList schema, periodic-review wording and no horizontal overflow; the national route places its direct answer before the contents and exposes the Munich route. The full SEO smoke test passes, `/api/health` returns `{"status":"ok"}`, and IndexNow accepted all 316 URLs.
 
 **Rollback:** Revert the four emergency page files, traffic SEO assertions and this decision entry to the prior deployment commit. This restores the previous metadata and review dates without changing the verified clinic data or directory dataset.
+
+## 2026-09-11T01:28:00+02:00 - Replace Dinner for Dogs short link with a confirmed Awin placement
+
+**Context:** Awin's current-month advertiser report shows five clicks and one pending sale worth EUR 0.26, with Zooplus generating the sale. Dinner for Dogs has one click and no sale. Its site placement used `https://tidd.ly/4au55tO`, which did not expose the joined Awin programme ID `11945`, so commission attribution could not be verified.
+
+**Decision:** Use the confirmed Awin programme `11945` and publisher `2707844` in a central `AFFILIATE_LINKS.dinnerForDogs.dogFoodGuide` placement with a unique `dog_food_dinner_for_dogs` click reference and the advertiser homepage as the destination. Keep the existing disclosure, sponsored rel attribute and click event on the dog-food guide.
+
+**Alternatives:** Keeping the short link was rejected because its network and attribution could not be confirmed. Removing the Dinner placement was rejected because the programme is joined and the guide has direct food-shopping intent.
+
+**Trade-offs:** The Awin redirect adds network tracking to the link and the advertiser currently shows a long average payment time and Exposure Level 2. The placement remains brand-neutral and does not imply a nutritional endorsement.
+
+**Verification:** TDD RED reproduced the untracked `tidd.ly` hostname; GREEN passes the new placement assertion and the existing affiliate integration tests. Full-suite, build, live deployment and click verification follow this change.
+
+**Rollback:** Restore the previous `DINNER_FOR_DOGS_URL` short link in `PetFoodGermany.tsx`, remove the central placement and its test, then redeploy the prior working commit `12b9da4` if the Awin destination misroutes or fails tracking.

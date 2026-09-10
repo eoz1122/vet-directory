@@ -7,6 +7,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { trackAffiliateClick } from '../utils/analytics';
 import DogLiabilityInsuranceGermany from './DogLiabilityInsuranceGermany';
+import PetFoodGermany from './PetFoodGermany';
 import PetGpsTrackerGermany from './PetGpsTrackerGermany';
 import PetInsuranceGermany from './PetInsuranceGermany';
 
@@ -131,5 +132,16 @@ describe('newly approved Awin programmes', () => {
         ).toBeTruthy();
         expect(screen.getByText(/affiliate links updated 10 September 2026/i)).toBeTruthy();
         expect(getArticleSchema().dateModified).toBe('2026-09-10');
+    });
+
+    it('uses a disclosed Awin placement for Dinner for Dogs', () => {
+        renderPage(<PetFoodGermany />);
+
+        const dinnerLink = screen.getByRole('link', {
+            name: 'Check Dinner for Dogs details (affiliate link)',
+        });
+        expectAwinLink(dinnerLink, '11945', 'dog_food_dinner_for_dogs');
+        expect(new URL(dinnerLink.getAttribute('href') || '').searchParams.get('ued'))
+            .toBe('https://www.dinner-for-dogs.com');
     });
 });

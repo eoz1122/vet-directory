@@ -17,4 +17,7 @@ export const AFFILIATE_LINKS = {
         insuranceCommercialLinks: 'https://www.awin1.com/cread.php?awinmid=9295&awinaffid=2707844&clickref=pet_insurance_agila_commercial_links&ued=https%3A%2F%2Fwww.agila.de%2F',
         liabilityGuide: 'https://www.awin1.com/cread.php?awinmid=9295&awinaffid=2707844&clickref=dog_liability_agila&ued=https%3A%2F%2Fwww.agila.de%2Fversicherungen%2Fhundeversicherung%2Fhundehaftpflicht%2Fhaftpflicht',
     },
+    dinnerForDogs: {
+        dogFoodGuide: 'https://www.awin1.com/cread.php?awinmid=11945&awinaffid=2707844&clickref=dog_food_dinner_for_dogs&ued=https%3A%2F%2Fwww.dinner-for-dogs.com',
+    },
 } as const;

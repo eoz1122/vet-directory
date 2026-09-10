@@ -972,8 +972,9 @@ describe('traffic-focused search metadata', () => {
         const dinnerForDogs = screen.getByRole('link', {
             name: 'Check Dinner for Dogs details (affiliate link)',
         });
-        expect(dinnerForDogs.getAttribute('href')).toBe('https://tidd.ly/4au55tO');
-        expect(dinnerForDogs.getAttribute('rel')).toContain('sponsored');
+        expectAwinPlacement(dinnerForDogs, '11945', 'dog_food_dinner_for_dogs');
+        expect(new URL(dinnerForDogs.getAttribute('href') || '').searchParams.get('ued'))
+            .toBe('https://www.dinner-for-dogs.com');
         const zooplus = screen.getByRole('link', {
             name: 'Compare complete dog food at Zooplus (affiliate link)',
         });
