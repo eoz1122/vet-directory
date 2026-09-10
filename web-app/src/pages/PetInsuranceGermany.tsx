@@ -10,8 +10,8 @@ import { trackAffiliateClick } from '../utils/analytics';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
-const TITLE = 'Pet Insurance in Germany: Dog & Cat Guide (2026)';
-const DESCRIPTION = 'Compare pet insurance in Germany for dogs and cats. Understand liability, health and surgery cover, exclusions, GOT reimbursement and policy limits.';
+const TITLE = 'Pet Insurance in Germany (2026): Dog, Cat, GOT and Liability Guide';
+const DESCRIPTION = 'Is pet insurance worth it in Germany? Compare dog liability, OP-only and health cover, GOT limits, exclusions and deductibles.';
 const URL = 'https://englishspeakinggermany.online/blog/pet-insurance-germany';
 
 const ARTICLE_SCHEMA = generateArticleSchema(
@@ -21,6 +21,16 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     '2025-01-01',
     '2026-09-10',
 );
+
+const BREADCRUMB_SCHEMA = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://englishspeakinggermany.online/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://englishspeakinggermany.online/blog' },
+        { '@type': 'ListItem', position: 3, name: 'Pet Insurance in Germany', item: URL },
+    ],
+};
 
 const FAQ_ITEMS = [
     {
@@ -63,6 +73,7 @@ const TABLE_OF_CONTENTS = [
     { id: 'decision', label: 'Insurance or emergency fund?' },
     { id: 'commercial-links', label: 'Commercial links' },
     { id: 'sources', label: 'Official sources' },
+    { id: 'faq', label: 'Frequently asked questions' },
 ];
 
 const POLICY_CHECKS = [
@@ -114,6 +125,9 @@ export default function PetInsuranceGermany() {
                 <script type="application/ld+json">
                     {JSON.stringify(FAQ_SCHEMA)}
                 </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(BREADCRUMB_SCHEMA)}
+                </script>
             </Helmet>
 
             <Header />
@@ -127,15 +141,19 @@ export default function PetInsuranceGermany() {
                             Insurance guide
                         </span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-5 leading-tight">
-                            Pet Insurance in Germany: Dog &amp; Cat Guide (2026)
+                            Pet Insurance in Germany (2026): Dog, Cat, GOT and Liability Guide
                         </h1>
                         <p className="text-sm text-primary/55 mb-8">
-                            Published 1 January 2025 · Content reviewed 1 August 2026 · Affiliate links updated 10 September 2026
+                            Published 1 January 2025 · Content reviewed periodically 10 September 2026 · Affiliate links updated 10 September 2026
                         </p>
 
-                        <TableOfContents items={TABLE_OF_CONTENTS} />
-
                         <div className="prose prose-lg text-primary/80 max-w-none">
+                            <p className="text-xl leading-relaxed text-primary mb-8">
+                                <strong>Is pet insurance worth it in Germany?</strong> There is no universal best policy. Dog liability and health cover solve different risks: liability can be required by state rules, while health or OP cover is optional and only reimburses eligible treatment under its GOT limits, deductibles, exclusions, and waiting periods.
+                            </p>
+
+                            <TableOfContents items={TABLE_OF_CONTENTS} />
+
                             <p className="border-l-4 border-accent pl-6 py-3 bg-accent/5 rounded-r-xl text-xl mb-8">
                                 Dog liability insurance is separate from pet health insurance. Liability pays eligible claims when a dog harms another person or their property. Health insurance helps with eligible veterinary treatment for your own dog or cat.
                             </p>
@@ -311,8 +329,13 @@ export default function PetInsuranceGermany() {
                                 German veterinarians calculate professional fees under the <strong>Gebührenordnung für Tierärztinnen und Tierärzte</strong>, usually shortened to GOT. The fee schedule lists base fees, but the final invoice can also include medication, materials, laboratory work, imaging, travel, and VAT.
                             </p>
 
-                            <div className="overflow-x-auto rounded-2xl border border-primary/10 my-8 not-prose">
-                                <table className="min-w-[640px] w-full text-left border-collapse">
+                            <div
+                                className="overflow-x-auto rounded-2xl border border-primary/10 my-8 not-prose"
+                                role="region"
+                                aria-label="GOT reimbursement comparison"
+                                tabIndex={0}
+                            >
+                                <table className="min-w-[520px] w-full text-left border-collapse text-sm">
                                     <thead className="bg-primary text-secondary">
                                         <tr>
                                             <th className="p-4 font-bold text-sm">Situation</th>
@@ -476,6 +499,22 @@ export default function PetInsuranceGermany() {
                                 </div>
                             </section>
 
+                            <section className="grid gap-4 md:grid-cols-3 my-10 not-prose" aria-labelledby="insurance-next-steps-heading">
+                                <h2 id="insurance-next-steps-heading" className="sr-only">Insurance next steps</h2>
+                                <Link to="/blog/vet-costs-germany" aria-label="Read the vet-cost guide" className="bg-white rounded-2xl border border-primary/10 p-5 hover:border-accent transition-colors">
+                                    <span className="font-bold text-primary">Read the vet-cost guide</span>
+                                    <span className="block text-sm text-primary/70 mt-2">Understand GOT rates and what a German invoice can include.</span>
+                                </Link>
+                                <Link to="/blog/dog-liability-insurance-germany" aria-label="Review dog liability rules" className="bg-white rounded-2xl border border-primary/10 p-5 hover:border-accent transition-colors">
+                                    <span className="font-bold text-primary">Review dog liability rules</span>
+                                    <span className="block text-sm text-primary/70 mt-2">Check state requirements separately from health cover.</span>
+                                </Link>
+                                <Link to="/" aria-label="Browse the Germany vet directory" className="bg-white rounded-2xl border border-primary/10 p-5 hover:border-accent transition-colors">
+                                    <span className="font-bold text-primary">Browse the Germany vet directory</span>
+                                    <span className="block text-sm text-primary/70 mt-2">Find English-language signals and confirm availability before booking.</span>
+                                </Link>
+                            </section>
+
                             <h2 id="sources" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 Sources and next steps
                             </h2>
@@ -523,7 +562,7 @@ export default function PetInsuranceGermany() {
                             </div>
                         </div>
 
-                        <h2 className="text-2xl font-bold text-primary mt-16 mb-6">
+                        <h2 id="faq" className="text-2xl font-bold text-primary mt-16 mb-6">
                             Frequently asked questions
                         </h2>
                         <div className="space-y-4 my-8 not-prose">

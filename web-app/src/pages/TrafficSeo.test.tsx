@@ -1210,20 +1210,24 @@ describe('traffic-focused search metadata', () => {
 
         await waitFor(() => {
             expect(document.title).toBe(
-                'Pet Insurance in Germany: Dog & Cat Guide (2026)',
+                'Pet Insurance in Germany (2026): Dog, Cat, GOT and Liability Guide',
             );
         });
 
         expect(getMetaContent('description')).toBe(
-            'Compare pet insurance in Germany for dogs and cats. Understand liability, health and surgery cover, exclusions, GOT reimbursement and policy limits.',
+            'Is pet insurance worth it in Germany? Compare dog liability, OP-only and health cover, GOT limits, exclusions and deductibles.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: 'Pet Insurance in Germany: Dog & Cat Guide (2026)',
+            name: 'Pet Insurance in Germany (2026): Dog, Cat, GOT and Liability Guide',
         })).toBeTruthy();
-        expect(screen.getByText(/Reviewed 1 August 2026/i)).toBeTruthy();
+        expect(screen.getByText(/Content reviewed periodically 10 September 2026/i)).toBeTruthy();
 
         const articleText = document.body.textContent || '';
+        expect(articleText).toMatch(/Is pet insurance worth it in Germany\?.*no universal best policy.*liability.*health cover/i);
+        const answer = screen.getByText(/Is pet insurance worth it in Germany\?/i);
+        const tableOfContents = screen.getByRole('navigation', { name: 'Table of Contents' });
+        expect(answer.compareDocumentPosition(tableOfContents) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
         expect(articleText).toMatch(/dog liability insurance.*separate.*pet health insurance/i);
         expect(articleText).toMatch(/requirement.*varies by federal state.*dog classification/i);
         expect(articleText).toMatch(/health insurance.*optional/i);
@@ -1251,8 +1255,23 @@ describe('traffic-focused search metadata', () => {
             .toBe('https://www.hamburg.de/politik-und-verwaltung/behoerden/bjv/themen/verbraucherschutz/tiere/hundegesetz/hundegesetz-53038');
         expect(screen.getByRole('link', { name: 'German vet costs and GOT guide' }).getAttribute('href'))
             .toBe('/blog/vet-costs-germany');
+        expect(screen.getByRole('link', { name: 'Read the vet-cost guide' }).getAttribute('href'))
+            .toBe('/blog/vet-costs-germany');
+        expect(screen.getByRole('link', { name: 'Review dog liability rules' }).getAttribute('href'))
+            .toBe('/blog/dog-liability-insurance-germany');
+        expect(screen.getByRole('link', { name: 'Browse the Germany vet directory' }).getAttribute('href'))
+            .toBe('/');
         expect(screen.getByRole('link', { name: 'English-speaking vets in Germany' }).getAttribute('href'))
             .toBe('/');
+
+        expect(screen.getByRole('heading', { level: 2, name: 'Frequently asked questions' }).id).toBe('faq');
+        expect(screen.getByRole('region', { name: 'GOT reimbursement comparison' })).toBeTruthy();
+        const breadcrumb = getStructuredData('BreadcrumbList');
+        expect(breadcrumb.itemListElement).toEqual([
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://englishspeakinggermany.online/' },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://englishspeakinggermany.online/blog' },
+            { '@type': 'ListItem', position: 3, name: 'Pet Insurance in Germany', item: 'https://englishspeakinggermany.online/blog/pet-insurance-germany' },
+        ]);
 
         const midArticleCallout = screen.getByRole('region', {
             name: 'Sponsored pet-insurance option',
