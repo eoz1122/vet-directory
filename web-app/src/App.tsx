@@ -14,6 +14,7 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const MovingWithPetChecklist = lazy(() => import('./pages/MovingWithPetChecklist'));
 const RestrictedDogMoveGermany = lazy(() => import('./pages/RestrictedDogMoveGermany'));
+const RestrictedDogLawsByCountry = lazy(() => import('./pages/RestrictedDogLawsByCountry'));
 const CatRegistrationGermany = lazy(() => import('./pages/CatRegistrationGermany'));
 const EUPetPassport = lazy(() => import('./pages/EUPetPassport'));
 const DogTaxGermany = lazy(() => import('./pages/DogTaxGermany'));
@@ -100,6 +101,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog/moving-to-germany-with-pet" element={<MovingWithPetChecklist />} />
             <Route path="/blog/moving-to-germany-with-restricted-dog" element={<RestrictedDogMoveGermany />} />
+            <Route path="/blog/restricted-dog-laws-by-country" element={<RestrictedDogLawsByCountry />} />
             <Route path="/blog/cat-registration-germany" element={<CatRegistrationGermany />} />
             <Route path="/blog/eu-pet-passport-germany" element={<EUPetPassport />} />
             <Route path="/blog/hundesteuer-dog-tax-germany" element={<DogTaxGermany />} />

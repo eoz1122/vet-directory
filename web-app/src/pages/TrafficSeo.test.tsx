@@ -22,6 +22,7 @@ import PetInsuranceGermany from './PetInsuranceGermany';
 import PublicTransportCologne from './PublicTransportCologne';
 import PublicTransportMunich from './PublicTransportMunich';
 import RestrictedDogMoveGermany from './RestrictedDogMoveGermany';
+import RestrictedDogLawsByCountry from './RestrictedDogLawsByCountry';
 import TickSeasonGermanyPets from './TickSeasonGermanyPets';
 import VetCostsGermany from './VetCostsGermany';
 
@@ -492,6 +493,8 @@ describe('traffic-focused search metadata', () => {
             .toBe('/vets/munich');
         expect(screen.getByRole('link', { name: 'Moving a restricted dog to Germany' }).getAttribute('href'))
             .toBe('/blog/moving-to-germany-with-restricted-dog');
+        expect(screen.getByRole('link', { name: 'Compare restricted-dog laws by country' }).getAttribute('href'))
+            .toBe('/blog/restricted-dog-laws-by-country');
 
         const articleText = document.body.textContent ?? '';
         expect(articleText).toMatch(/Staffordshire Bull Terrier is covered by the federal import restriction/i);
@@ -602,6 +605,73 @@ describe('traffic-focused search metadata', () => {
         expect(getStructuredData('FAQPage').mainEntity).toHaveLength(5);
     });
 
+    it('compares restricted-dog law checks for Germany, the UK and the US', async () => {
+        renderPage(<RestrictedDogLawsByCountry />);
+
+        await waitFor(() => {
+            expect(document.title).toBe(
+                'Restricted Dog Laws by Country: Germany, UK and US (2026)',
+            );
+        });
+
+        expect(getMetaContent('description')).toBe(
+            'Moving with a Pit Bull or other restricted dog? Compare Germany, UK and US breed-law checks, official sources and a safe pre-travel workflow.',
+        );
+        expect(document.querySelector('link[rel="canonical"]')?.getAttribute('href')).toBe(
+            'https://englishspeakinggermany.online/blog/restricted-dog-laws-by-country',
+        );
+        expect(screen.getByRole('heading', {
+            level: 1,
+            name: 'Restricted Dog Laws by Country: Germany, UK and US (2026)',
+        })).toBeTruthy();
+        expect(screen.getByText(/no single global banned-breed list/i)).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: '1. Start with the destination and every transit country',
+        })).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: '2. Germany: federal import law plus state keeping rules',
+        })).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: '3. United Kingdom: banned types and exemption evidence',
+        })).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: '4. United States: health entry plus state and local checks',
+        })).toBeTruthy();
+        expect(screen.getByRole('link', { name: 'UK banned-dog rules' }).getAttribute('href'))
+            .toBe('https://www.gov.uk/control-dog-public/banned-dogs');
+        expect(screen.getByRole('link', { name: 'UK pet-entry steps' }).getAttribute('href'))
+            .toBe('https://www.gov.uk/bring-pet-to-great-britain');
+        expect(screen.getByRole('link', { name: 'CDC dog-entry requirements' }).getAttribute('href'))
+            .toBe('https://www.cdc.gov/importation/dogs/index.html');
+        expect(screen.getByRole('link', { name: 'USDA Germany pet travel steps' }).getAttribute('href'))
+            .toBe('https://www.aphis.usda.gov/pet-travel/us-to-another-country-export/pet-travel-us-germany');
+        expect(screen.getByRole('link', { name: 'Germany federal import law' }).getAttribute('href'))
+            .toBe('https://www.gesetze-im-internet.de/hundverbreinfg/__2.html');
+        expect(screen.getByRole('link', { name: 'Germany restricted-dog relocation checklist' }).getAttribute('href'))
+            .toBe('/blog/moving-to-germany-with-restricted-dog');
+
+        const directAnswer = screen.getByText(/no single global banned-breed list/i);
+        const tableOfContents = screen.getByRole('navigation');
+        expect(directAnswer.compareDocumentPosition(tableOfContents) & Node.DOCUMENT_POSITION_FOLLOWING)
+            .toBeTruthy();
+        expect(screen.getByText(/Reviewed periodically/i)).toBeTruthy();
+
+        const pageText = document.body.textContent ?? '';
+        expect(pageText).toMatch(/XL Bully/i);
+        expect(pageText).toMatch(/CDC.*health.*microchip.*documentation/is);
+        expect(pageText).toMatch(/state or local rules/i);
+        expect(pageText).not.toMatch(/all pit bulls are legal in the United States/i);
+
+        const articleSchema = getArticleSchema();
+        expect(articleSchema.datePublished).toBe('2026-09-10');
+        expect(articleSchema.dateModified).toBe('2026-09-10');
+        expect(getStructuredData('FAQPage').mainEntity).toHaveLength(4);
+    });
+
     it('separates the current EU, listed-country and titration routes for moving pets', async () => {
         renderPage(<MovingWithPetChecklist />);
 
@@ -624,6 +694,8 @@ describe('traffic-focused search metadata', () => {
         })).toBeTruthy();
         expect(screen.getByRole('link', { name: 'Restricted-dog relocation checklist' }).getAttribute('href'))
             .toBe('/blog/moving-to-germany-with-restricted-dog');
+        expect(screen.getByRole('link', { name: 'Compare restricted-dog laws by country' }).getAttribute('href'))
+            .toBe('/blog/restricted-dog-laws-by-country');
         expect(screen.getByText('EU country or Northern Ireland')).toBeTruthy();
         expect(screen.getByText('Listed non-EU country or territory')).toBeTruthy();
         expect(screen.getByText('Other non-EU country or territory')).toBeTruthy();

@@ -169,6 +169,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['moving', 'travel', 'legal', 'dog'],
     },
     {
+        url: '/blog/restricted-dog-laws-by-country',
+        title: "Restricted Dog Laws by Country: Germany, UK and US",
+        emoji: '🌍',
+        category: 'Moving',
+        desc: "Compare official Germany, UK and US checks for restricted dogs, then build a written destination, transit and carrier file before booking.",
+        topics: ['moving', 'travel', 'legal', 'dog'],
+    },
+    {
         url: '/blog/pet-friendly-apartments-germany',
         title: "Pet-Friendly Apartments in Berlin",
         emoji: '🏠',

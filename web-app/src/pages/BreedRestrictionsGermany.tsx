@@ -376,6 +376,12 @@ export default function BreedRestrictionsGermany() {
                                 >
                                     Moving a restricted dog to Germany
                                 </Link>
+                                <Link
+                                    to="/blog/restricted-dog-laws-by-country"
+                                    className="inline-flex min-h-11 items-center font-bold text-accent-ink underline underline-offset-4 sm:ml-4"
+                                >
+                                    Compare restricted-dog laws by country
+                                </Link>
                             </div>
 
                             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 not-prose">

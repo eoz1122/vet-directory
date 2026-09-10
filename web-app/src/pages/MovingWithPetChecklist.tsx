@@ -387,6 +387,12 @@ export default function MovingWithPetChecklist() {
                                         >
                                             Restricted-dog relocation checklist
                                         </Link>
+                                        <Link
+                                            to="/blog/restricted-dog-laws-by-country"
+                                            className="inline-flex min-h-11 items-center font-bold text-accent-ink underline underline-offset-4 sm:ml-4"
+                                        >
+                                            Compare restricted-dog laws by country
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

@@ -179,4 +179,15 @@ describe('guide routes', () => {
             name: 'Moving to Germany With a Pit Bull or Restricted Dog (2026)',
         })).toBeTruthy();
     });
+
+    it('routes the international restricted-dog laws guide', async () => {
+        window.history.pushState({}, '', '/blog/restricted-dog-laws-by-country');
+
+        render(<App />);
+
+        expect(await screen.findByRole('heading', {
+            level: 1,
+            name: 'Restricted Dog Laws by Country: Germany, UK and US (2026)',
+        })).toBeTruthy();
+    });
 });

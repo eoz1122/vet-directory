@@ -83,6 +83,11 @@ describe('guide catalogue', () => {
             category: 'Moving',
             topics: expect.arrayContaining(['moving', 'travel', 'legal', 'dog']),
         }));
+        expect(GUIDE_CATALOG).toContainEqual(expect.objectContaining({
+            url: '/blog/restricted-dog-laws-by-country',
+            category: 'Moving',
+            topics: expect.arrayContaining(['moving', 'travel', 'legal', 'dog']),
+        }));
     });
 
     it('prioritizes topical links before deterministic fallback links', () => {
