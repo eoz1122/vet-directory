@@ -179,7 +179,7 @@ export default function RestrictedDogMoveGermany() {
                             Moving to Germany With a Pit Bull or Restricted Dog (2026)
                         </h1>
 
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm text-primary/60 mb-8">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm text-primary/80 mb-8">
                             <span>Last verified: 10 September 2026</span>
                             <span className="hidden sm:inline" aria-hidden="true">·</span>
                             <span className="italic">Reviewed periodically. Reconfirm every authority before booking.</span>

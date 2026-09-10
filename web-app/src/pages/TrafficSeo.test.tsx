@@ -538,7 +538,9 @@ describe('traffic-focused search metadata', () => {
             level: 1,
             name: 'Moving to Germany With a Pit Bull or Restricted Dog (2026)',
         })).toBeTruthy();
-        expect(screen.getByText('Last verified: 10 September 2026')).toBeTruthy();
+        const verificationMetadata = screen.getByText('Last verified: 10 September 2026');
+        expect(verificationMetadata).toBeTruthy();
+        expect(verificationMetadata.parentElement?.className).toContain('text-primary/80');
         expect(screen.getByText(/Reviewed periodically/i)).toBeTruthy();
 
         const directAnswer = screen.getByText(

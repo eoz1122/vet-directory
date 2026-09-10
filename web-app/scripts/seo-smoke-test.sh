@@ -23,6 +23,7 @@ PATHS=(
   "/blog"
   "/blog/best-dog-parks-berlin"
   "/blog/moving-to-germany-with-pet"
+  "/blog/moving-to-germany-with-restricted-dog"
   "/blog/public-transport-with-dogs-berlin"
   "/blog/pet-insurance-germany"
   "/blog/best-dog-food-germany"
