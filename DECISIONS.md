@@ -1674,6 +1674,6 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 
 **Trade-offs:** The Awin redirect adds network tracking to the link and the advertiser currently shows a long average payment time and Exposure Level 2. The placement remains brand-neutral and does not imply a nutritional endorsement.
 
-**Verification:** TDD RED reproduced the untracked `tidd.ly` hostname; GREEN passes the new placement assertion and the existing affiliate integration tests. Full-suite, build, live deployment and click verification follow this change.
+**Verification:** TDD RED reproduced the untracked `tidd.ly` hostname; GREEN passes the new placement assertion and the existing affiliate integration tests. The complete frontend suite passes 455 tests across 75 files, ESLint passes, and the production build prerenders all 317 routes with identical 316-URL sitemaps. Deployment `f540d84` completed successfully, IndexNow accepted all 316 URLs, `/api/health` returns `{"status":"ok"}`, and the live 390px dog-food page returns HTTP 200 with the Awin `11945` link, click reference `dog_food_dinner_for_dogs`, sponsored rel attribute and no horizontal overflow. Awin's current-month report remains at 5 clicks, 1 pending sale, EUR 0.26 commission, with Zooplus producing the sale.
 
 **Rollback:** Restore the previous `DINNER_FOR_DOGS_URL` short link in `PetFoodGermany.tsx`, remove the central placement and its test, then redeploy the prior working commit `12b9da4` if the Awin destination misroutes or fails tracking.
