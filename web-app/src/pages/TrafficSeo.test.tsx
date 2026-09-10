@@ -451,16 +451,24 @@ describe('traffic-focused search metadata', () => {
         renderPage(<BreedRestrictionsGermany />);
 
         await waitFor(() => {
-            expect(document.title).toBe('Banned Dog Breeds in Germany: State Rules (2026)');
+            expect(document.title).toBe('Are Pit Bulls Banned in Germany? Breed Rules (2026)');
         });
 
         expect(getMetaContent('description')).toBe(
-            'Which dog breeds are banned or restricted in Germany? Compare state rules, permits, muzzle requirements, and the Wesenstest before moving with your dog.',
+            'Are Pit Bulls banned in Germany? Federal law prohibits importing four named breeds and their crosses. Check exceptions, Rottweilers, and state rules.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: 'Banned and Restricted Dog Breeds in Germany (2026)',
+            name: 'Are Pit Bulls Banned in Germany? 2026 Rules',
         })).toBeTruthy();
+        expect(screen.getByText('Last verified: 10 September 2026')).toBeTruthy();
+        const directAnswer = screen.getByText(
+            /Federal law generally prohibits bringing Pit Bull Terriers.*into Germany/i,
+        );
+        const tableOfContents = screen.getByRole('navigation');
+        expect(directAnswer.compareDocumentPosition(tableOfContents) & Node.DOCUMENT_POSITION_FOLLOWING)
+            .toBeTruthy();
+        expect(screen.getByText('Are Rottweilers banned in Germany?')).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
             name: '1. Federal import rules and state keeping rules are separate',
@@ -493,14 +501,14 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2026-04-28');
-        expect(schema.dateModified).toBe('2026-07-24');
+        expect(schema.dateModified).toBe('2026-09-10');
     });
 
     it('aligns the breed-restrictions discovery card with the federal and state guide', () => {
         renderPage(<Blog />);
 
         const guideLink = screen.getByRole('link', {
-            name: /Banned Dog Breeds in Germany: Federal and State Rules/i,
+            name: /Are Pit Bulls Banned in Germany\? Breed Rules/i,
         });
         expect(guideLink.getAttribute('href')).toBe('/blog/breed-restrictions-germany');
         expect(screen.getByText(

@@ -370,7 +370,7 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
     },
     {
         url: '/blog/breed-restrictions-germany',
-        title: "Banned Dog Breeds in Germany: Federal and State Rules",
+        title: "Are Pit Bulls Banned in Germany? Breed Rules",
         emoji: '⚠️',
         category: 'Bureaucracy',
         desc: "Check the federal import ban, its limited exceptions, and verified Berlin, Hamburg and Bavaria keeping rules before travelling.",

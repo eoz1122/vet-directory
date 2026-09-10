@@ -7,11 +7,11 @@ import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
-const ARTICLE_TITLE = 'Banned Dog Breeds in Germany: State Rules (2026)';
-const ARTICLE_DESCRIPTION = 'Which dog breeds are banned or restricted in Germany? Compare state rules, permits, muzzle requirements, and the Wesenstest before moving with your dog.';
+const ARTICLE_TITLE = 'Are Pit Bulls Banned in Germany? Breed Rules (2026)';
+const ARTICLE_DESCRIPTION = 'Are Pit Bulls banned in Germany? Federal law prohibits importing four named breeds and their crosses. Check exceptions, Rottweilers, and state rules.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/breed-restrictions-germany';
 const DATE_PUBLISHED = '2026-04-28';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-09-10';
 
 const FEDERAL_IMPORT_LAW_URL = 'https://www.gesetze-im-internet.de/hundverbreinfg/__2.html';
 const FEDERAL_EXCEPTIONS_URL = 'https://www.gesetze-im-internet.de/hundverbreinfvo/__2.html';
@@ -125,10 +125,18 @@ const faqSchema = {
     mainEntity: [
         {
             '@type': 'Question',
-            name: 'Which dog breeds are banned from being brought into Germany?',
+            name: 'Are Pit Bulls banned in Germany?',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Federal law generally prohibits bringing Pitbull Terriers, American Staffordshire Terriers, Staffordshire Bull Terriers, Bull Terriers and their crosses into Germany. Further breeds may be affected when the destination state presumes they are dangerous. Limited statutory exceptions exist.',
+                text: 'Yes, for import. Federal law generally prohibits bringing Pitbull Terriers, American Staffordshire Terriers, Staffordshire Bull Terriers, Bull Terriers and their crosses into Germany. Keeping rules are separate, and limited statutory exceptions exist.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Are Rottweilers banned in Germany?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Rottweilers are not one of the four breeds named in the federal first-sentence import prohibition, but destination-state rules can still affect them. Bavaria applies a rebuttable category-two presumption, while Hamburg allows a possible exemption after a passed Wesenstest. Confirm the individual route with Customs and the destination authority.',
             },
         },
         {
@@ -190,22 +198,22 @@ export default function BreedRestrictionsGermany() {
                             Relocation and Dog-Law Guide
                         </span>
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            Banned and Restricted Dog Breeds in Germany (2026)
+                            Are Pit Bulls Banned in Germany? 2026 Rules
                         </h1>
 
                         <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm text-primary/60 mb-8">
-                            <span>Last verified: 24 July 2026</span>
+                            <span>Last verified: 10 September 2026</span>
                             <span className="hidden sm:inline" aria-hidden="true">·</span>
                             <span className="italic">Check the authorities again before every border crossing or move.</span>
                         </div>
 
+                        <p className="border-l-4 border-accent pl-6 py-3 mb-8 bg-accent/5 rounded-r-lg text-xl text-primary/80">
+                            Yes, for import. Federal law generally prohibits bringing Pit Bull Terriers, American Staffordshire Terriers, Staffordshire Bull Terriers, Bull Terriers, and their crosses into Germany. Keeping a dog already in Germany is governed separately by state and local rules, and limited federal exceptions exist.
+                        </p>
+
                         <TableOfContents items={tableOfContents} />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
-                            <p className="border-l-4 border-accent pl-6 py-3 bg-accent/5 rounded-r-lg text-xl">
-                                Germany has a federal rule for bringing certain dogs across the border and separate state rules for keeping dogs after arrival. You must clear both legal layers before travelling.
-                            </p>
-
                             <div className="bg-red-50 border border-red-200 p-5 rounded-xl my-6 not-prose">
                                 <p className="font-bold text-red-900 mb-2">Do not travel on an assumption</p>
                                 <p className="text-sm text-red-900/80">
