@@ -7,8 +7,8 @@ import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
-const TITLE = 'Vet Costs in Germany: GOT Fees Explained (2026)';
-const DESCRIPTION = 'Understand vet costs in Germany: GOT base fees, 1x-3x rates, emergency 2x-4x billing, invoice items, VAT and how to request an estimate.';
+const TITLE = 'Vet Costs in Germany (2026): GOT Fees, Prices and Estimates';
+const DESCRIPTION = 'How much does a vet cost in Germany? Understand GOT 1x-3x fees, emergency billing, VAT, invoice items and estimates.';
 const URL = 'https://englishspeakinggermany.online/blog/vet-costs-germany';
 
 const ARTICLE_SCHEMA = generateArticleSchema(
@@ -16,8 +16,18 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DESCRIPTION,
     URL,
     '2026-07-11',
-    '2026-07-24',
+    '2026-09-10',
 );
+
+const BREADCRUMB_SCHEMA = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://englishspeakinggermany.online/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://englishspeakinggermany.online/blog' },
+        { '@type': 'ListItem', position: 3, name: 'Vet Costs in Germany', item: URL },
+    ],
+};
 
 const FAQ_ITEMS = [
     {
@@ -64,6 +74,7 @@ const TABLE_OF_CONTENTS = [
     { id: 'estimate', label: 'Estimates and written agreements' },
     { id: 'control-costs', label: 'Practical cost controls' },
     { id: 'sources', label: 'Official sources' },
+    { id: 'faq', label: 'Frequently asked questions' },
 ];
 
 const INVOICE_ITEMS = [
@@ -140,6 +151,9 @@ export default function VetCostsGermany() {
                 <script type="application/ld+json">
                     {JSON.stringify(FAQ_SCHEMA)}
                 </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(BREADCRUMB_SCHEMA)}
+                </script>
             </Helmet>
 
             <Header />
@@ -153,15 +167,19 @@ export default function VetCostsGermany() {
                             Money and bureaucracy guide
                         </span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-5 leading-tight">
-                            Vet Costs in Germany: GOT Fees Explained (2026)
+                            Vet Costs in Germany (2026): GOT Fees, Prices and Estimates
                         </h1>
                         <p className="text-sm text-primary/55 mb-8">
-                            Published 11 July 2026 · Reviewed 24 July 2026
+                            Published 11 July 2026 · Reviewed 10 September 2026
                         </p>
 
-                        <TableOfContents items={TABLE_OF_CONTENTS} />
-
                         <div className="prose prose-lg text-primary/80 max-w-none">
+                            <p className="text-xl leading-relaxed text-primary mb-8">
+                                <strong>How much does a vet cost in Germany?</strong> A general examination has a GOT 1x base fee of €23.62 net for a dog, cat, or ferret, but the final bill depends on the selected rate, other services, medicine, materials, expenses, and VAT. Use this guide to understand the calculation and request an estimate before planned treatment.
+                            </p>
+
+                            <TableOfContents items={TABLE_OF_CONTENTS} />
+
                             <p className="border-l-4 border-accent pl-6 py-3 bg-accent/5 rounded-r-xl text-xl mb-8">
                                 The German veterinary fee schedule gives each service a base fee, but that is only one part of the invoice. GOT base fees are not fixed total prices.
                             </p>
@@ -225,8 +243,13 @@ export default function VetCostsGermany() {
                                 GOT schedule number 16 sets the 1x base fee for a general examination with consultation for a dog, cat, or ferret at <strong>€23.62 net</strong>.
                             </p>
 
-                            <div className="overflow-x-auto rounded-2xl border border-primary/10 my-8 not-prose">
-                                <table className="min-w-[640px] w-full text-left border-collapse">
+                            <div
+                                className="overflow-x-auto rounded-2xl border border-primary/10 my-8 not-prose"
+                                role="region"
+                                aria-label="GOT examination fee example"
+                                tabIndex={0}
+                            >
+                                <table className="min-w-[520px] w-full text-left border-collapse text-sm">
                                     <thead className="bg-primary text-secondary">
                                         <tr>
                                             <th className="p-4 font-bold text-sm">Rate</th>
@@ -344,6 +367,22 @@ export default function VetCostsGermany() {
                                 . Check the policy&apos;s GOT reimbursement ceiling, deductible, annual limit, waiting periods, and exclusions rather than assuming every veterinary invoice will be paid.
                             </p>
 
+                            <section className="grid gap-4 md:grid-cols-3 my-10 not-prose" aria-labelledby="next-steps-heading">
+                                <h2 id="next-steps-heading" className="sr-only">Next steps</h2>
+                                <Link to="/blog/pet-insurance-germany" aria-label="Compare pet insurance" className="bg-white rounded-2xl border border-primary/10 p-5 hover:border-accent transition-colors">
+                                    <span className="font-bold text-primary">Compare pet insurance</span>
+                                    <span className="block text-sm text-primary/70 mt-2">Review GOT limits, exclusions and deductibles before choosing cover.</span>
+                                </Link>
+                                <Link to="/guides/pet-emergency-germany" aria-label="Prepare for a pet emergency" className="bg-white rounded-2xl border border-primary/10 p-5 hover:border-accent transition-colors">
+                                    <span className="font-bold text-primary">Prepare for a pet emergency</span>
+                                    <span className="block text-sm text-primary/70 mt-2">Save warning signs, duty-service guidance and emergency questions.</span>
+                                </Link>
+                                <Link to="/" aria-label="Browse the Germany vet directory" className="bg-white rounded-2xl border border-primary/10 p-5 hover:border-accent transition-colors">
+                                    <span className="font-bold text-primary">Browse the Germany vet directory</span>
+                                    <span className="block text-sm text-primary/70 mt-2">Find English-language signals and confirm availability before booking.</span>
+                                </Link>
+                            </section>
+
                             <h2 id="sources" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 Official sources
                             </h2>
@@ -395,7 +434,7 @@ export default function VetCostsGermany() {
                                 </li>
                             </ul>
 
-                            <h2 className="text-3xl font-bold text-primary mt-16 mb-6">
+                            <h2 id="faq" className="text-3xl font-bold text-primary mt-16 mb-6">
                                 Frequently asked questions
                             </h2>
                             <div className="space-y-4 my-8 not-prose">

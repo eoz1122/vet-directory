@@ -1309,19 +1309,23 @@ describe('traffic-focused search metadata', () => {
 
         await waitFor(() => {
             expect(document.title).toBe(
-                'Vet Costs in Germany: GOT Fees Explained (2026)',
+                'Vet Costs in Germany (2026): GOT Fees, Prices and Estimates',
             );
         });
 
         expect(getMetaContent('description')).toBe(
-            'Understand vet costs in Germany: GOT base fees, 1x-3x rates, emergency 2x-4x billing, invoice items, VAT and how to request an estimate.',
+            'How much does a vet cost in Germany? Understand GOT 1x-3x fees, emergency billing, VAT, invoice items and estimates.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: 'Vet Costs in Germany: GOT Fees Explained (2026)',
+            name: 'Vet Costs in Germany (2026): GOT Fees, Prices and Estimates',
         })).toBeTruthy();
 
         const articleText = document.body.textContent || '';
+        expect(articleText).toMatch(/How much does a vet cost in Germany\?.*€23\.62 net.*selected rate.*VAT/i);
+        const answer = screen.getByText(/How much does a vet cost in Germany\?/i);
+        const tableOfContents = screen.getByRole('navigation', { name: 'Table of Contents' });
+        expect(answer.compareDocumentPosition(tableOfContents) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
         expect(articleText).toMatch(/base fees.*not fixed total prices/i);
         expect(articleText).toMatch(/ordinary.*one to three times.*GOT/i);
         expect(articleText).toMatch(/difficulty.*time.*timing.*value of the animal.*local circumstances/i);
@@ -1351,8 +1355,22 @@ describe('traffic-focused search metadata', () => {
             .toBe('/blog/pet-insurance-germany');
         expect(screen.getByRole('link', { name: 'Pet emergency guide' }).getAttribute('href'))
             .toBe('/guides/pet-emergency-germany');
+        expect(screen.getByRole('link', { name: 'Compare pet insurance' }).getAttribute('href'))
+            .toBe('/blog/pet-insurance-germany');
+        expect(screen.getByRole('link', { name: 'Prepare for a pet emergency' }).getAttribute('href'))
+            .toBe('/guides/pet-emergency-germany');
+        expect(screen.getByRole('link', { name: 'Browse the Germany vet directory' }).getAttribute('href'))
+            .toBe('/');
         expect(screen.getByRole('link', { name: 'English-speaking vets in Germany' }).getAttribute('href'))
             .toBe('/');
+
+        expect(screen.getByRole('heading', { level: 2, name: 'Frequently asked questions' }).id).toBe('faq');
+        const breadcrumb = getStructuredData('BreadcrumbList');
+        expect(breadcrumb.itemListElement).toEqual([
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://englishspeakinggermany.online/' },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://englishspeakinggermany.online/blog' },
+            { '@type': 'ListItem', position: 3, name: 'Vet Costs in Germany', item: 'https://englishspeakinggermany.online/blog/vet-costs-germany' },
+        ]);
 
         expect(articleText).not.toMatch(/1x-4x multiplier system/i);
         expect(articleText).not.toMatch(/routine visits at 1x to 2x/i);
@@ -1370,7 +1388,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2026-07-11');
-        expect(schema.dateModified).toBe('2026-07-24');
+        expect(schema.dateModified).toBe('2026-09-10');
     });
 
     it('keeps the vet-cost discovery card aligned with the statutory billing guide', () => {
