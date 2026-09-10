@@ -32,7 +32,7 @@ export default function TableOfContents({ items, className = '' }: TableOfConten
     return (
         <div className={`bg-white p-6 rounded-2xl border border-primary/5 shadow-sm mb-12 ${className}`}>
             <span className="block text-xs font-bold text-primary/40 uppercase tracking-widest mb-4">Table of Contents</span>
-            <nav className="space-y-3">
+            <nav aria-label="Table of Contents" className="space-y-3">
                 {items.map((item) => (
                     <a
                         key={item.id}

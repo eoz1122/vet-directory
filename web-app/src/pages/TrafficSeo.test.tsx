@@ -29,7 +29,7 @@ import VetCostsGermany from './VetCostsGermany';
 vi.mock('../components/Header', () => ({ default: () => <header /> }));
 vi.mock('../components/Footer', () => ({ default: () => <footer /> }));
 vi.mock('../components/BlogSidebar', () => ({ default: () => <aside /> }));
-vi.mock('../components/TableOfContents', () => ({ default: () => <nav /> }));
+vi.mock('../components/TableOfContents', () => ({ default: () => <nav aria-label="Table of Contents" /> }));
 vi.mock('../components/RelatedPosts', () => ({ default: () => null }));
 
 const renderPage = (page: ReactNode) => render(
@@ -894,17 +894,17 @@ describe('traffic-focused search metadata', () => {
         renderPage(<PetFoodGermany />);
 
         await waitFor(() => {
-            expect(document.title).toBe('Best Dog Food in Germany: How to Choose (2026)');
+            expect(document.title).toBe('Best Dog Food in Germany (2026): Complete Food, Labels and Prices');
         });
 
         expect(getMetaContent('description')).toBe(
-            'Compare dog food in Germany using EU label terms, FEDIAF guidance and WSAVA checks. Understand complete food, formats, raw-diet risks and vet diets.',
+            'Compare dog food in Germany using complete-food labels, FEDIAF guidance, prices, formats and WSAVA checks.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: 'Best Dog Food in Germany: How to Choose (2026)',
+            name: 'Best Dog Food in Germany (2026): Complete Food, Labels and Prices',
         })).toBeTruthy();
-        expect(screen.getByText('Reviewed August 1, 2026', { exact: false })).toBeTruthy();
+        expect(screen.getByText('Reviewed periodically. Last checked August 1, 2026', { exact: false })).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
             name: 'Choose Dog Food in 60 Seconds',
@@ -913,6 +913,19 @@ describe('traffic-focused search metadata', () => {
             level: 3,
             name: 'Value check: compare daily feeding cost',
         })).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 3,
+            name: 'Germany shopping checklist',
+        })).toBeTruthy();
+        expect(screen.getByRole('heading', {
+            level: 2,
+            name: 'Practical pet updates for Germany',
+        })).toBeTruthy();
+        expect(screen.getByRole('link', { name: 'vet-cost guide' }).getAttribute('href'))
+            .toBe('/blog/vet-costs-germany');
+        const directAnswer = screen.getByText(/There is no single best dog food or best format/i);
+        const tableOfContents = screen.getByRole('navigation', { name: 'Table of Contents' });
+        expect((directAnswer.compareDocumentPosition(tableOfContents)) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
 
         const articleText = document.body.textContent || '';
         expect(articleText).toMatch(/Alleinfuttermittel.*complete food/i);

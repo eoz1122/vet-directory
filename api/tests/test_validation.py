@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest  # type: ignore
 import main  # type: ignore
-from main import validate_contact_payload, validate_confirm_payload, sanitize  # type: ignore
+from main import validate_contact_payload, validate_confirm_payload, validate_newsletter_payload, sanitize  # type: ignore
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 def test_sanitize():
@@ -62,6 +62,72 @@ def test_contact_honeypot_rejected():
     sanitized, error = validate_contact_payload(data)
     assert sanitized is None
     assert error == "Spam detected."
+
+
+# --- newsletter opt-in ---
+
+def test_validate_newsletter_payload_requires_explicit_consent():
+    sanitized, error = validate_newsletter_payload({"email": "jane@example.com"})
+    assert sanitized is None
+    assert error == "Consent is required."
+
+
+def test_validate_newsletter_payload_normalizes_email_and_source():
+    sanitized, error = validate_newsletter_payload({
+        "email": " Jane@Example.COM ",
+        "source": "dog_food_guide",
+        "consent": True,
+    })
+    assert error is None
+    assert sanitized == {
+        "email": "jane@example.com",
+        "source": "dog_food_guide",
+    }
+
+
+def test_validate_newsletter_payload_rejects_honeypot_and_bad_source():
+    sanitized, error = validate_newsletter_payload({
+        "email": "jane@example.com",
+        "source": "unknown",
+        "consent": True,
+        "company": "bot",
+    })
+    assert sanitized is None
+    assert error == "Spam detected."
+
+    sanitized, error = validate_newsletter_payload({
+        "email": "jane@example.com",
+        "source": "unknown",
+        "consent": True,
+    })
+    assert sanitized is None
+    assert error == "Invalid source."
+
+
+def test_newsletter_endpoint_logs_and_notifies_admin(monkeypatch, tmp_path):
+    sent_messages = []
+    subscriber_log = tmp_path / "newsletter.jsonl"
+    monkeypatch.setattr(main, "NEWSLETTER_LOG", str(subscriber_log))
+    monkeypatch.setattr(
+        main,
+        "send_email",
+        lambda subject, body, **kwargs: sent_messages.append((subject, body, kwargs)),
+    )
+
+    response = main.app.test_client().post(
+        "/api/newsletter",
+        json={
+            "email": "jane@example.com",
+            "source": "site_footer",
+            "consent": True,
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.get_json() == {"success": True, "message": "Thanks for joining."}
+    assert "jane@example.com" in subscriber_log.read_text(encoding="utf-8")
+    assert sent_messages[0][0] == "[ESG] NEWSLETTER SIGNUP"
+    assert sent_messages[0][2] == {"reply_to": "jane@example.com"}
 
 # --- confirm-vet (community "speaks English" confirmation) ---
 
@@ -299,11 +365,14 @@ def test_nginx_rate_limits_write_endpoints_by_binary_client_ip():
 
     assert "limit_req_zone $binary_remote_addr zone=esv_contact_per_ip:10m rate=5r/m;" in site_config
     assert "limit_req_zone $binary_remote_addr zone=esv_confirm_per_ip:10m rate=10r/m;" in site_config
+    assert "limit_req_zone $binary_remote_addr zone=esv_newsletter_per_ip:10m rate=3r/m;" in site_config
     assert "location = /api/contact" in api_config
     assert "limit_req zone=esv_contact_per_ip burst=4 nodelay;" in api_config
     assert "location = /api/confirm-vet" in api_config
     assert "limit_req zone=esv_confirm_per_ip burst=9 nodelay;" in api_config
-    assert api_config.count("limit_req_status 429;") == 3
+    assert "location = /api/newsletter" in api_config
+    assert "limit_req zone=esv_newsletter_per_ip burst=2 nodelay;" in api_config
+    assert api_config.count("limit_req_status 429;") == 4
 
 
 def test_nginx_redirects_legacy_district_urls_to_canonical_slugs():

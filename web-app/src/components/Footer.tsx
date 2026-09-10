@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import NewsletterSignup from './NewsletterSignup';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -30,6 +31,7 @@ export default function Footer() {
                         Cookie settings
                     </button>
                 </nav>
+                <NewsletterSignup compact />
                 <p className="opacity-60 text-[10px] md:text-xs leading-relaxed max-w-2xl mx-auto italic">
                     <strong>Affiliate Disclosure:</strong> Some of the links on this website are affiliate links, meaning, at no additional cost to you, we may earn a commission if you click through and make a purchase. This helps us keep the directory free for everyone.
                 </p>

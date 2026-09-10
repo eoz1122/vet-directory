@@ -72,12 +72,15 @@ MAX_CSP_REPORT_BYTES = 16 * 1024
 MAX_CSP_DIRECTIVE_LEN = 100
 MAX_CSP_URI_LEN = 500
 MAX_VET_ID_LEN = 100
+MAX_NEWSLETTER_SOURCE_LEN = 100
 
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$")
 VET_ID_REGEX = re.compile(r"^[A-Za-z0-9._-]+$")
 
 ALLOWED_TOPICS = {"general", "submit_vet", "report_issue", "vet_owner"}
+ALLOWED_NEWSLETTER_SOURCES = {"site_footer", "dog_food_guide"}
 VALID_VET_IDS_PATH = Path(__file__).with_name("valid_vet_ids.json")
+NEWSLETTER_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "newsletter_subscribers.jsonl")
 
 
 def load_valid_vet_ids(path: str | Path = VALID_VET_IDS_PATH) -> frozenset[str]:
@@ -197,6 +200,34 @@ def validate_contact_payload(data: dict) -> tuple[dict | None, str | None]:
     return sanitized, None
 
 
+def validate_newsletter_payload(data: dict) -> tuple[dict | None, str | None]:
+    """Validate a double-purpose newsletter opt-in without storing extra profile data."""
+    if not data or not isinstance(data, dict):
+        return None, "No data provided."
+
+    if data.get("company"):
+        return None, "Spam detected."
+
+    raw_email = data.get("email", "")
+    email = raw_email.strip().lower() if isinstance(raw_email, str) else ""
+    source = sanitize(data.get("source", ""))
+
+    if not email:
+        return None, "Email is required."
+    if len(email) > MAX_EMAIL_LEN:
+        return None, f"Email must be under {MAX_EMAIL_LEN} characters."
+    if not EMAIL_REGEX.fullmatch(email):
+        return None, "Invalid email format."
+    if data.get("consent") is not True:
+        return None, "Consent is required."
+    if source not in ALLOWED_NEWSLETTER_SOURCES:
+        return None, "Invalid source."
+    if len(source) > MAX_NEWSLETTER_SOURCE_LEN:
+        return None, f"Source must be under {MAX_NEWSLETTER_SOURCE_LEN} characters."
+
+    return {"email": email, "source": source}, None
+
+
 def validate_confirm_payload(data: dict) -> tuple[dict | None, str | None]:
     """Validate a community 'speaks English' confirmation (one-click, anonymous).
 
@@ -251,6 +282,33 @@ def send_email(subject: str, body: str, reply_to: str | None = None) -> None:
     server.quit()
 
 
+def append_newsletter_subscriber(sanitized: dict, path: str | Path | None = None) -> bool:
+    """Append a minimal, admin-managed opt-in record and avoid duplicate addresses."""
+    target = Path(path or NEWSLETTER_LOG)
+    try:
+        email = sanitized.get("email", "")
+        if target.exists():
+            for line in target.read_text(encoding="utf-8").splitlines():
+                try:
+                    if json.loads(line).get("email") == email:
+                        return True
+                except (TypeError, json.JSONDecodeError):
+                    continue
+
+        record = {
+            "date": datetime.now(timezone.utc).isoformat(),
+            "email": email,
+            "source": sanitized.get("source", ""),
+            "consent": True,
+        }
+        with target.open("a", encoding="utf-8") as subscriber_file:
+            subscriber_file.write(json.dumps(record, ensure_ascii=False) + "\n")
+        return True
+    except Exception as error:
+        logger.error("Failed to append newsletter subscriber: %s", str(error))
+        return False
+
+
 @app.route("/api/contact", methods=["POST"])
 @limiter.limit("5 per minute")  # Strict limit on contact form submissions
 def contact():
@@ -300,6 +358,40 @@ def contact():
         logger.error("Failed to send contact email: %s", str(e))
         # Never leak internal error details to the client
         return jsonify({"error": "Failed to send message. Please try again later."}), 500
+
+
+@app.route("/api/newsletter", methods=["POST"])
+@limiter.limit("3 per minute")
+def newsletter():
+    """Record an explicit periodic-update opt-in and notify the admin."""
+    sanitized, error = validate_newsletter_payload(request.json)
+    if error:
+        if error == "Spam detected.":
+            return jsonify({"success": True})
+        return jsonify({"error": error}), 400
+
+    email = sanitized["email"]
+    source = sanitized["source"]
+    logged = append_newsletter_subscriber(sanitized)
+    email_sent = False
+    try:
+        send_email(
+            "[ESG] NEWSLETTER SIGNUP",
+            "A visitor opted in to periodic English-speaking pet updates.\n"
+            "---------------------------------------------------------------\n"
+            f"Email: {email}\n"
+            f"Source: {source}\n"
+            "Consent: explicit opt-in\n",
+            reply_to=email,
+        )
+        email_sent = True
+        logger.info("Newsletter signup received: source=%s", source)
+    except Exception as error:
+        logger.error("Failed to notify newsletter signup: %s", str(error))
+
+    if logged or email_sent:
+        return jsonify({"success": True, "message": "Thanks for joining."})
+    return jsonify({"error": "Could not record signup. Please try again later."}), 500
 
 
 # Machine-readable confirmation log: the source of truth swept weekly into

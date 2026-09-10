@@ -6,12 +6,13 @@ import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import AffiliateCallout from '../components/AffiliateCallout';
+import NewsletterSignup from '../components/NewsletterSignup';
 import { trackAffiliateClick } from '../utils/analytics';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
-const TITLE = 'Best Dog Food in Germany: How to Choose (2026)';
-const DESCRIPTION = 'Compare dog food in Germany using EU label terms, FEDIAF guidance and WSAVA checks. Understand complete food, formats, raw-diet risks and vet diets.';
+const TITLE = 'Best Dog Food in Germany (2026): Complete Food, Labels and Prices';
+const DESCRIPTION = 'Compare dog food in Germany using complete-food labels, FEDIAF guidance, prices, formats and WSAVA checks.';
 const URL = 'https://englishspeakinggermany.online/blog/best-dog-food-germany';
 const DINNER_FOR_DOGS_URL = 'https://tidd.ly/4au55tO';
 
@@ -148,17 +149,15 @@ export default function PetFoodGermany() {
                             Evidence-Based Nutrition Guide
                         </span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-4 leading-tight">
-                            Best Dog Food in Germany: How to Choose (2026)
+                            {TITLE}
                         </h1>
                         <p className="text-sm text-primary/60 mb-8">
-                            Reviewed August 1, 2026
+                            Reviewed periodically. Last checked August 1, 2026
                             <span aria-hidden="true"> • </span>
                             <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
                                 How we review guides
                             </Link>
                         </p>
-
-                        <TableOfContents items={TABLE_OF_CONTENTS} />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
                             <p className="border-l-4 border-accent pl-6 py-2 bg-accent/5 rounded-r-lg text-xl">
@@ -168,6 +167,10 @@ export default function PetFoodGermany() {
                             <p className="mt-6">
                                 This guide uses the EU feed-labelling regulation, the 2025 FEDIAF nutritional guidelines and WSAVA&apos;s veterinary nutrition tools. It does not rank brands or replace individual veterinary advice.
                             </p>
+
+                            <NewsletterSignup source="dog_food_guide" />
+
+                            <TableOfContents items={TABLE_OF_CONTENTS} />
 
                             <h2 id="how-to-choose" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 Choose Dog Food in 60 Seconds
@@ -257,6 +260,13 @@ export default function PetFoodGermany() {
                             <p>
                                 Price per kilogram alone can be misleading because foods differ in calorie density and recommended portions. Recalculate with the amount your dog actually needs after monitoring weight and body condition. Ask a veterinarian before adjusting a medical diet or feeding a dog with poor growth, unintended weight change or another health concern.
                             </p>
+
+                            <div className="my-10 rounded-2xl border border-primary/10 bg-primary/5 p-6 not-prose">
+                                <h3 className="text-xl font-bold text-primary">Germany shopping checklist</h3>
+                                <p className="mt-2 text-sm leading-relaxed text-primary/75">
+                                    Before you add a product to your basket, confirm the German label says Alleinfuttermittel, check the life stage and calorie guidance, and save the manufacturer contact details. For related decisions, compare our <Link to="/blog/vet-costs-germany" className="font-bold text-accent-ink hover:underline">vet-cost guide</Link>, <Link to="/blog/pet-insurance-germany" className="font-bold text-accent-ink hover:underline">pet-insurance guide</Link> and <Link to="/blog/pet-dental-care-germany" className="font-bold text-accent-ink hover:underline">dental-care guide</Link>.
+                                </p>
+                            </div>
 
                             <AffiliateCallout
                                 ariaLabel="Sponsored dog-food option"

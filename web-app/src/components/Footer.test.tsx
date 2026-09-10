@@ -18,6 +18,7 @@ describe('Footer', () => {
         for (const link of within(navigation).getAllByRole('link')) {
             expect(link.className).toContain('min-h-11');
         }
+        expect(screen.getByRole('heading', { name: 'Practical pet updates for Germany' })).toBeTruthy();
     });
 
     it('provides a persistent control for reopening cookie settings', () => {
