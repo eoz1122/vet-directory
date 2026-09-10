@@ -479,7 +479,7 @@ describe('traffic-focused search metadata', () => {
             level: 1,
             name: 'Are Pit Bulls Banned in Germany? 2026 Rules',
         })).toBeTruthy();
-        expect(screen.getByText('Last verified: 10 September 2026')).toBeTruthy();
+        expect(screen.getByText('Last verified periodically: 10 September 2026')).toBeTruthy();
         const directAnswer = screen.getByText(
             /Federal law generally prohibits bringing Pit Bull Terriers.*into Germany/i,
         );
@@ -1029,7 +1029,7 @@ describe('traffic-focused search metadata', () => {
             level: 1,
             name: 'Best Cat Food in Germany: How to Choose (2026)',
         })).toBeTruthy();
-        expect(screen.getByText('Reviewed August 1, 2026', { exact: false })).toBeTruthy();
+        expect(screen.getByText('Reviewed periodically. Last checked August 1, 2026', { exact: false })).toBeTruthy();
 
         const articleText = document.body.textContent || '';
         expect(articleText).toMatch(/Alleinfuttermittel.*complete food/i);

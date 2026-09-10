@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
+import ArticleHeader from '../components/ArticleHeader';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import AffiliateCallout from '../components/AffiliateCallout';
 import { trackAffiliateClick } from '../utils/analytics';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
@@ -105,7 +104,7 @@ const POLICY_CHECKS = [
 
 export default function PetInsuranceGermany() {
     return (
-        <div className="min-h-screen bg-secondary font-sans text-primary">
+        <ArticleLayout>
             <Helmet>
                 <title>{TITLE}</title>
                 <meta name="description" content={DESCRIPTION} />
@@ -130,22 +129,12 @@ export default function PetInsuranceGermany() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 min-w-0 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
-                            Insurance guide
-                        </span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-5 leading-tight">
-                            Pet Insurance in Germany (2026): Dog, Cat, GOT and Liability Guide
-                        </h1>
-                        <p className="text-sm text-primary/55 mb-8">
-                            Published 1 January 2025 · Content reviewed periodically 10 September 2026 · Affiliate links updated 10 September 2026
-                        </p>
+            <div className="article-content">
+                        <ArticleHeader
+                            eyebrow="Insurance guide"
+                            title="Pet Insurance in Germany (2026): Dog, Cat, GOT and Liability Guide"
+                            review="Published 1 January 2025 · Content reviewed periodically 10 September 2026 · Affiliate links updated 10 September 2026"
+                        />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
                             <p className="text-xl leading-relaxed text-primary mb-8">
@@ -578,11 +567,7 @@ export default function PetInsuranceGermany() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/pet-insurance-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
-        </div>
+            </div>
+        </ArticleLayout>
     );
 }

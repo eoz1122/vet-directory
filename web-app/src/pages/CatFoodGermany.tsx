@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { trackAffiliateClick } from '../utils/analytics';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
+import ArticleHeader from '../components/ArticleHeader';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import AffiliateCallout from '../components/AffiliateCallout';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
@@ -97,7 +96,7 @@ const ExternalSourceLink = ({
 
 export default function CatFoodGermany() {
     return (
-        <div className="min-h-screen bg-secondary font-sans text-primary">
+        <ArticleLayout>
             <Helmet>
                 <title>{TITLE}</title>
                 <meta name="description" content={DESCRIPTION} />
@@ -112,22 +111,12 @@ export default function CatFoodGermany() {
                 <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl min-w-0">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
-                            Evidence-Based Cat Nutrition Guide
-                        </span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-4 leading-tight">
-                            Best Cat Food in Germany: How to Choose (2026)
-                        </h1>
-                        <p className="text-sm text-primary/60 mb-8">
-                            Reviewed August 1, 2026
-                        </p>
+            <div className="article-content">
+                        <ArticleHeader
+                            eyebrow="Evidence-Based Cat Nutrition Guide"
+                            title="Best Cat Food in Germany: How to Choose (2026)"
+                            review="Reviewed periodically. Last checked August 1, 2026"
+                        />
 
                         <TableOfContents items={TABLE_OF_CONTENTS} />
 
@@ -323,11 +312,7 @@ export default function CatFoodGermany() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/best-cat-food-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
-        </div>
+            </div>
+        </ArticleLayout>
     );
 }

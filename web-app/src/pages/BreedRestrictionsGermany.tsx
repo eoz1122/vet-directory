@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
+import ArticleHeader from '../components/ArticleHeader';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
 const ARTICLE_TITLE = 'Are Pit Bulls Banned in Germany? Breed Rules (2026)';
@@ -168,7 +167,7 @@ const faqSchema = {
 
 export default function BreedRestrictionsGermany() {
     return (
-        <div className="min-h-screen bg-secondary font-sans text-primary">
+        <ArticleLayout>
             <Helmet>
                 <title>{ARTICLE_TITLE}</title>
                 <meta name="description" content={ARTICLE_DESCRIPTION} />
@@ -187,25 +186,18 @@ export default function BreedRestrictionsGermany() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
-                            Relocation and Dog-Law Guide
-                        </span>
-                        <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            Are Pit Bulls Banned in Germany? 2026 Rules
-                        </h1>
-
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm text-primary/60 mb-8">
-                            <span>Last verified: 10 September 2026</span>
-                            <span className="hidden sm:inline" aria-hidden="true">·</span>
-                            <span className="italic">Check the authorities again before every border crossing or move.</span>
-                        </div>
+            <div className="article-content">
+                        <ArticleHeader
+                            eyebrow="Relocation and Dog-Law Guide"
+                            title="Are Pit Bulls Banned in Germany? 2026 Rules"
+                            review={(
+                                <>
+                                    Last verified periodically: 10 September 2026
+                                    <span className="hidden sm:inline" aria-hidden="true"> · </span>
+                                    <span className="italic">Check the authorities again before every border crossing or move.</span>
+                                </>
+                            )}
+                        />
 
                         <p className="border-l-4 border-accent pl-6 py-3 mb-8 bg-accent/5 rounded-r-lg text-xl text-primary/80">
                             Yes, for import. Federal law generally prohibits bringing Pit Bull Terriers, American Staffordshire Terriers, Staffordshire Bull Terriers, Bull Terriers, and their crosses into Germany. Keeping a dog already in Germany is governed separately by state and local rules, and limited federal exceptions exist.
@@ -420,11 +412,7 @@ export default function BreedRestrictionsGermany() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/breed-restrictions-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
-        </div>
+            </div>
+        </ArticleLayout>
     );
 }

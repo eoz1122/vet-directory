@@ -1677,3 +1677,17 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** TDD RED reproduced the untracked `tidd.ly` hostname; GREEN passes the new placement assertion and the existing affiliate integration tests. The complete frontend suite passes 455 tests across 75 files, ESLint passes, and the production build prerenders all 317 routes with identical 316-URL sitemaps. Deployment `f540d84` completed successfully, IndexNow accepted all 316 URLs, `/api/health` returns `{"status":"ok"}`, and the live 390px dog-food page returns HTTP 200 with the Awin `11945` link, click reference `dog_food_dinner_for_dogs`, sponsored rel attribute and no horizontal overflow. Awin's current-month report remains at 5 clicks, 1 pending sale, EUR 0.26 commission, with Zooplus producing the sale.
 
 **Rollback:** Restore the previous `DINNER_FOR_DOGS_URL` short link in `PetFoodGermany.tsx`, remove the central placement and its test, then redeploy the prior working commit `12b9da4` if the Awin destination misroutes or fails tracking.
+
+## 2026-09-11T01:56:00+02:00 - Standardize priority article framing and newsletter readability
+
+**Context:** The footer newsletter used dark text on a dark surface, making the offer and consent copy difficult to read. The signup did not explain the post-submit state clearly. The five priority guides for food, costs, insurance and breed rules also carried diverging outer wrappers and review metadata, which made the site feel inconsistent even though their URLs and SEO content were separate.
+
+**Decision:** Add a reusable `ArticleLayout` with the shared header, sidebar, responsive main column and footer, plus a reusable `ArticleHeader` for the eyebrow, title and periodic-review metadata. Migrate the dog-food, cat-food, vet-cost, pet-insurance and breed-restrictions guides to those shared primitives while preserving their routes, article content, schema and affiliate disclosures. Add an explicit dark footer tone for the newsletter and replace the ambiguous success message with a clear subscribed state and manual-unsubscribe instruction.
+
+**Alternatives:** A full visual rewrite of every long-tail page was deferred because it would increase regression and maintenance risk before the shared system is proven. One-off color and spacing fixes on each page were rejected because they would preserve the structural drift. Automated email campaigns remain deferred until a newsletter provider and data-processing decision exist.
+
+**Trade-offs:** The shared frame improves hierarchy, mobile behavior and future maintenance, but the remaining long-tail guides still need to be migrated in later batches. The success state explains the current manual periodic-update workflow rather than implying automated campaigns. No subscriber data or email address is exposed to analytics.
+
+**Verification:** TDD RED reproduced the low-contrast footer state, unclear success copy and missing shared layout/header primitives. Focused GREEN passes the newsletter, layout, header and priority-guide assertions. Full-suite, lint, production-build, deployment and live 390px checks are recorded below when complete. The separate uncommitted `web-app/src/data/vets.json` remains excluded.
+
+**Rollback:** Revert the newsletter tone/message, shared article primitives, five migrated page wrappers, related tests and this decision entry, then redeploy the prior working commit `f540d84`. This restores the previous article frames without touching the directory dataset or affiliate registry.

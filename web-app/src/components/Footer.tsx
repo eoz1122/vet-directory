@@ -31,7 +31,7 @@ export default function Footer() {
                         Cookie settings
                     </button>
                 </nav>
-                <NewsletterSignup compact />
+                <NewsletterSignup compact tone="dark" />
                 <p className="opacity-60 text-[10px] md:text-xs leading-relaxed max-w-2xl mx-auto italic">
                     <strong>Affiliate Disclosure:</strong> Some of the links on this website are affiliate links, meaning, at no additional cost to you, we may earn a commission if you click through and make a purchase. This helps us keep the directory free for everyone.
                 </p>

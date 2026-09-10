@@ -23,7 +23,7 @@ describe('NewsletterSignup', () => {
         });
         fireEvent.click(screen.getByRole('button', { name: 'Get periodic updates' }));
 
-        expect((await screen.findByRole('status')).textContent).toContain('You are on the list.');
+        expect((await screen.findByRole('status')).textContent).toContain('You are subscribed.');
         expect(fetch).toHaveBeenCalledWith('/api/newsletter', expect.objectContaining({
             method: 'POST',
             body: JSON.stringify({
@@ -60,5 +60,14 @@ describe('NewsletterSignup', () => {
         }));
         const analyticsCalls = vi.mocked(window.gtag).mock.calls;
         expect(analyticsCalls.some((call) => JSON.stringify(call).includes('jane@example.com'))).toBe(false);
+    });
+
+    it('uses readable light text on the dark footer surface', () => {
+        render(<MemoryRouter><NewsletterSignup source="site_footer" tone="dark" /></MemoryRouter>);
+
+        expect(screen.getByRole('heading', { name: 'Practical pet updates for Germany' }).className)
+            .toContain('text-secondary');
+        expect(screen.getByText(/occasional English-language updates/i).className)
+            .toContain('text-secondary');
     });
 });

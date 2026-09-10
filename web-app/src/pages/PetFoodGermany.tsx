@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
+import ArticleHeader from '../components/ArticleHeader';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import AffiliateCallout from '../components/AffiliateCallout';
 import NewsletterSignup from '../components/NewsletterSignup';
 import { trackAffiliateClick } from '../utils/analytics';
@@ -122,7 +121,7 @@ const ExternalSourceLink = ({
 
 export default function PetFoodGermany() {
     return (
-        <div className="min-h-screen bg-secondary font-sans text-primary">
+        <ArticleLayout>
             <Helmet>
                 <title>{TITLE}</title>
                 <meta name="description" content={DESCRIPTION} />
@@ -137,26 +136,20 @@ export default function PetFoodGermany() {
                 <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl min-w-0">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
-                            Evidence-Based Nutrition Guide
-                        </span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-4 leading-tight">
-                            {TITLE}
-                        </h1>
-                        <p className="text-sm text-primary/60 mb-8">
-                            Reviewed periodically. Last checked August 1, 2026
-                            <span aria-hidden="true"> • </span>
-                            <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
-                                How we review guides
-                            </Link>
-                        </p>
+            <div className="article-content">
+                        <ArticleHeader
+                            eyebrow="Evidence-Based Nutrition Guide"
+                            title={TITLE}
+                            review={(
+                                <>
+                                    Reviewed periodically. Last checked August 1, 2026
+                                    <span aria-hidden="true"> • </span>
+                                    <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
+                                        How we review guides
+                                    </Link>
+                                </>
+                            )}
+                        />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
                             <p className="border-l-4 border-accent pl-6 py-2 bg-accent/5 rounded-r-lg text-xl">
@@ -407,11 +400,7 @@ export default function PetFoodGermany() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/best-dog-food-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
-        </div>
+            </div>
+        </ArticleLayout>
     );
 }

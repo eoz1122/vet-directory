@@ -7,11 +7,13 @@ type NewsletterSource = 'site_footer' | 'dog_food_guide';
 interface NewsletterSignupProps {
     source?: NewsletterSource;
     compact?: boolean;
+    tone?: 'light' | 'dark';
 }
 
 export default function NewsletterSignup({
     source = 'site_footer',
     compact = false,
+    tone = 'light',
 }: NewsletterSignupProps) {
     const inputId = useId();
     const resultRef = useRef<HTMLDivElement>(null);
@@ -66,22 +68,29 @@ export default function NewsletterSignup({
         }
     };
 
+    const isDark = tone === 'dark';
+    const sectionClass = isDark ? 'border-secondary/20 bg-secondary/5' : 'border-accent/20 bg-accent/5';
+    const headingClass = isDark ? 'text-secondary' : 'text-primary';
+    const bodyClass = isDark ? 'text-secondary/80' : 'text-primary/75';
+    const finePrintClass = isDark ? 'text-secondary/70' : 'text-primary/60';
+    const buttonClass = isDark ? 'bg-accent-ink text-white hover:bg-accent-dark' : 'bg-primary text-secondary hover:bg-black';
+
     return (
         <section
             aria-labelledby={`${inputId}-title`}
-            className={`not-prose rounded-2xl border border-accent/20 bg-accent/5 ${compact ? 'p-5' : 'p-6 md:p-8'}`}
+            className={`not-prose rounded-2xl border ${sectionClass} ${compact ? 'p-5' : 'p-6 md:p-8'}`}
         >
-            <p className="text-xs font-black uppercase tracking-[0.16em] text-accent-ink">Periodic updates</p>
-            <h2 id={`${inputId}-title`} className="mt-2 text-xl font-bold text-primary">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-accent">Periodic updates</p>
+            <h2 id={`${inputId}-title`} className={`mt-2 text-xl font-bold ${headingClass}`}>
                 Practical pet updates for Germany
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-primary/75">
+            <p className={`mt-2 text-sm leading-relaxed ${bodyClass}`}>
                 Get occasional English-language updates on vet access, pet care and rule changes. No spam. Reply to unsubscribe.
             </p>
 
             {status === 'success' ? (
                 <div ref={resultRef} role="status" tabIndex={-1} className="mt-5 rounded-xl bg-white p-4 text-sm font-bold text-green-800">
-                    You are on the list.
+                    You are subscribed. We will send occasional pet-care updates. Contact us if you want to unsubscribe.
                 </div>
             ) : (
                 <form className="mt-5" onSubmit={handleSubmit}>
@@ -101,7 +110,7 @@ export default function NewsletterSignup({
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="min-h-12 rounded-xl bg-primary px-5 py-3 font-bold text-secondary transition-colors hover:bg-black disabled:cursor-wait disabled:opacity-60"
+                            className={`min-h-12 rounded-xl px-5 py-3 font-bold transition-colors disabled:cursor-wait disabled:opacity-60 ${buttonClass}`}
                         >
                             {isSubmitting ? 'Joining...' : 'Get periodic updates'}
                         </button>
@@ -110,7 +119,7 @@ export default function NewsletterSignup({
                         Company
                         <input name="company" tabIndex={-1} autoComplete="off" />
                     </label>
-                    <p className="mt-3 text-xs leading-relaxed text-primary/60">
+                    <p className={`mt-3 text-xs leading-relaxed ${finePrintClass}`}>
                         By subscribing, you agree to receive these updates. See our <Link to="/privacy" className="font-bold underline">Privacy Policy</Link>.
                     </p>
                     {status === 'error' && (

@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
+import ArticleHeader from '../components/ArticleHeader';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
 const TITLE = 'Vet Costs in Germany (2026): GOT Fees, Prices and Estimates';
@@ -131,7 +130,7 @@ const COST_CONTROLS = [
 
 export default function VetCostsGermany() {
     return (
-        <div className="min-h-screen bg-secondary font-sans text-primary">
+        <ArticleLayout>
             <Helmet>
                 <title>{TITLE}</title>
                 <meta name="description" content={DESCRIPTION} />
@@ -156,22 +155,12 @@ export default function VetCostsGermany() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 min-w-0 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
-                            Money and bureaucracy guide
-                        </span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-5 leading-tight">
-                            Vet Costs in Germany (2026): GOT Fees, Prices and Estimates
-                        </h1>
-                        <p className="text-sm text-primary/55 mb-8">
-                            Published 11 July 2026 · Reviewed 10 September 2026
-                        </p>
+            <div className="article-content">
+                        <ArticleHeader
+                            eyebrow="Money and bureaucracy guide"
+                            title="Vet Costs in Germany (2026): GOT Fees, Prices and Estimates"
+                            review="Published 11 July 2026 · Reviewed periodically 10 September 2026"
+                        />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
                             <p className="text-xl leading-relaxed text-primary mb-8">
@@ -464,11 +453,7 @@ export default function VetCostsGermany() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/vet-costs-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
-        </div>
+            </div>
+        </ArticleLayout>
     );
 }
