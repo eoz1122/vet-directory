@@ -171,16 +171,16 @@ describe('traffic-focused search metadata', () => {
 
         await waitFor(() => {
             expect(document.title).toBe(
-                '24-Hour Emergency Vet Hamburg: What to Call (2026)',
+                'Emergency Vet Hamburg (2026): Duty Number, Hours and English Help',
             );
         });
 
         expect(getMetaContent('description')).toBe(
-            'Need emergency veterinary care in Hamburg? During official duty hours, call 040 434379 for the current practice. Check hours, GOT fees, and warning signs.',
+            'Need an emergency vet in Hamburg? Call the official duty number, check current hours, GOT fees, warning signs and English phrases.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: '24-Hour Emergency Vet Hamburg: What to Call (2026)',
+            name: 'Emergency Vet Hamburg (2026): Duty Number, Hours and English Help',
         })).toBeTruthy();
         expect(screen.getByRole('link', { name: 'Call Hamburg veterinary duty service' }).getAttribute('href'))
             .toBe('tel:+4940434379');
@@ -202,7 +202,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2026-06-02');
-        expect(schema.dateModified).toBe('2026-07-22');
+        expect(schema.dateModified).toBe('2026-09-10');
     });
 
     it('publishes verified Berlin emergency contacts without unsafe wait advice', async () => {
@@ -210,17 +210,24 @@ describe('traffic-focused search metadata', () => {
 
         await waitFor(() => {
             expect(document.title).toBe(
-                '24-Hour Emergency Vets in Berlin: English Help (2026)',
+                '24-Hour Emergency Vet Berlin (2026): Verified Clinics and English Help',
             );
         });
 
         expect(getMetaContent('description')).toBe(
-            'Find verified 24-hour emergency vets in Berlin, current phone numbers, urgent warning signs, official GOT fees, and English phrases for calling.',
+            'Need an emergency vet in Berlin? Find verified 24-hour clinics, phone numbers, warning signs, GOT fees and English call phrases.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: '24-Hour Emergency Vets in Berlin: English Help (2026)',
+            name: '24-Hour Emergency Vet Berlin (2026): Verified Clinics and English Help',
         })).toBeTruthy();
+        expect(getStructuredData('BreadcrumbList').itemListElement[2]).toEqual({
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Emergency Vet Berlin',
+            item: 'https://englishspeakinggermany.online/guides/emergency-vets-berlin',
+        });
+        expect(screen.getByText(/Call before travelling because capacity and arrangements can change/i)).toBeTruthy();
         expect(screen.getByRole('link', { name: 'Official Berlin 24-hour emergency list' }).getAttribute('href'))
             .toBe('https://tieraerztekammer-berlin.de/notdienst/');
         expect(screen.getByRole('link', { name: 'Official Berlin GOT information' }).getAttribute('href'))
@@ -249,7 +256,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2026-04-21');
-        expect(schema.dateModified).toBe('2026-07-22');
+        expect(schema.dateModified).toBe('2026-09-10');
     });
 
     it('publishes official Cologne emergency routes without promising English-speaking staff', async () => {
@@ -312,17 +319,24 @@ describe('traffic-focused search metadata', () => {
 
         await waitFor(() => {
             expect(document.title).toBe(
-                'Emergency Vet Germany: Night & Weekend Help (2026)',
+                'Emergency Vet Germany (2026): Night, Weekend and 24-Hour Help',
             );
         });
 
         expect(getMetaContent('description')).toBe(
-            'Find an emergency vet in Germany at night or on weekends. Use verified city services, call before travel, check warning signs, and understand official GOT fees.',
+            'Need an emergency vet in Germany? Find local night and weekend services, call before travelling, check warning signs and GOT fees.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: 'Emergency Vet in Germany: Night and Weekend Help (2026)',
+            name: 'Emergency Vet Germany (2026): Night, Weekend and 24-Hour Help',
         })).toBeTruthy();
+        expect(screen.getByText(/Where should you go for emergency vet care in Germany\?/i)).toBeTruthy();
+        expect(getStructuredData('BreadcrumbList').itemListElement[2]).toEqual({
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Emergency Vet Germany',
+            item: 'https://englishspeakinggermany.online/guides/pet-emergency-germany',
+        });
         expect(screen.getByRole('link', { name: 'Official German veterinary emergency guide' }).getAttribute('href'))
             .toBe('https://www.bundestieraerztekammer.de/presse/2019/08/notdienst-flyer.php');
         expect(screen.getByRole('link', { name: 'Federal GOT section 4' }).getAttribute('href'))
@@ -333,6 +347,8 @@ describe('traffic-focused search metadata', () => {
             .toBe('/guides/emergency-vets-berlin');
         expect(screen.getByRole('link', { name: 'Hamburg emergency duty guide' }).getAttribute('href'))
             .toBe('/blog/emergency-vet-hamburg-english');
+        expect(screen.getByRole('link', { name: 'Munich emergency vet guide' }).getAttribute('href'))
+            .toBe('/guides/emergency-vets-munich');
         expect(screen.getByRole('link', { name: 'Cologne emergency vet guide' }).getAttribute('href'))
             .toBe('/guides/emergency-vets-cologne');
         expect(screen.getByRole('link', { name: 'Ruhr emergency vet guide' }).getAttribute('href'))
@@ -377,7 +393,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-07-24');
+        expect(schema.dateModified).toBe('2026-09-10');
     });
 
     it('keeps the emergency discovery card aligned with the verified national guide', () => {
@@ -398,16 +414,16 @@ describe('traffic-focused search metadata', () => {
 
         await waitFor(() => {
             expect(document.title).toBe(
-                '24-Hour Emergency Vet Munich: LMU Guide (2026)',
+                '24-Hour Emergency Vet Munich (2026): LMU Location, Phone and Limits',
             );
         });
 
         expect(getMetaContent('description')).toBe(
-            'Need an emergency vet in Munich? LMU treats dogs and cats 24/7. Check where to go, current service limits, phone guidance, GOT fees and English information.',
+            'Need an emergency vet in Munich? Find the LMU 24-hour route, phone, service limits, GOT fees and English information.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: '24-Hour Emergency Vet Munich: LMU Guide (2026)',
+            name: '24-Hour Emergency Vet Munich (2026): LMU Location, Phone and Limits',
         })).toBeTruthy();
         expect(screen.getByRole('link', { name: 'Official LMU emergency information in English' }).getAttribute('href'))
             .toBe('https://www.vetmed.lmu.de/kleintierklinik/en/for-pet-owners/emergency/');
@@ -433,7 +449,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-07-24');
+        expect(schema.dateModified).toBe('2026-09-10');
     });
 
     it('keeps the Munich emergency discovery card aligned with the LMU guide', () => {

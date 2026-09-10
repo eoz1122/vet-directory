@@ -8,11 +8,11 @@ import BlogSidebar from '../components/BlogSidebar';
 import GuideDisclaimer from '../components/GuideDisclaimer';
 import { generateArticleSchema } from '../utils/schema';
 
-const ARTICLE_TITLE = 'Emergency Vet Germany: Night & Weekend Help (2026)';
-const ARTICLE_DESCRIPTION = 'Find an emergency vet in Germany at night or on weekends. Use verified city services, call before travel, check warning signs, and understand official GOT fees.';
+const ARTICLE_TITLE = 'Emergency Vet Germany (2026): Night, Weekend and 24-Hour Help';
+const ARTICLE_DESCRIPTION = 'Need an emergency vet in Germany? Find local night and weekend services, call before travelling, check warning signs and GOT fees.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/guides/pet-emergency-germany';
 const DATE_PUBLISHED = '2025-01-01';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-09-10';
 
 const articleSchema = generateArticleSchema(
     ARTICLE_TITLE,
@@ -21,6 +21,16 @@ const articleSchema = generateArticleSchema(
     DATE_PUBLISHED,
     DATE_MODIFIED,
 );
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://englishspeakinggermany.online/' },
+        { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://englishspeakinggermany.online/blog' },
+        { '@type': 'ListItem', position: 3, name: 'Emergency Vet Germany', item: ARTICLE_URL },
+    ],
+};
 
 const emergencySigns = [
     'Loss of consciousness or collapse',
@@ -68,6 +78,9 @@ export default function PetEmergencyGermany() {
                 <script type="application/ld+json">
                     {JSON.stringify(articleSchema)}
                 </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(breadcrumbSchema)}
+                </script>
             </Helmet>
 
             <Header />
@@ -81,16 +94,14 @@ export default function PetEmergencyGermany() {
                             Emergency Guide
                         </span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6 leading-tight">
-                            Emergency Vet in Germany: Night and Weekend Help (2026)
+                            {ARTICLE_TITLE}
                         </h1>
 
                         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-sm text-primary/60 mb-8">
-                            <span>Last verified: July 2026</span>
+                            <span>Last verified periodically: 10 September 2026</span>
                             <span className="hidden sm:inline" aria-hidden="true">·</span>
                             <span>Call the receiving practice before you travel.</span>
                         </div>
-
-                        <TableOfContents items={tableOfContents} />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
                             <div className="bg-red-50 border border-red-200 p-6 rounded-2xl my-8 not-prose">
@@ -108,6 +119,12 @@ export default function PetEmergencyGermany() {
                                 organised locally through veterinary clinics, practices, duty rosters, and state veterinary
                                 chambers. The correct contact can change by city, date, and time.
                             </p>
+
+                            <p className="text-xl leading-relaxed text-primary mb-8">
+                                <strong>Where should you go for emergency vet care in Germany?</strong> Call your regular vet or the local duty service first, then use the city guide for the place where you are physically located. Confirm the receiving practice, opening status, species accepted, and safest route before travelling when it is safe to do so.
+                            </p>
+
+                            <TableOfContents items={tableOfContents} />
 
                             <h2 id="find-help" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 How to find an emergency vet at night or on weekends
@@ -186,6 +203,14 @@ export default function PetEmergencyGermany() {
                                     <span className="text-sm text-primary/70">
                                         Official city duty line and a current 24-hour clinic.
                                     </span>
+                                </Link>
+                                <Link
+                                    to="/guides/emergency-vets-munich"
+                                    aria-label="Munich emergency vet guide"
+                                    className="block min-h-11 p-5 bg-white border border-primary/10 rounded-2xl hover:border-accent transition-colors"
+                                >
+                                    <span className="font-bold text-primary block mb-1">Munich emergency vet guide</span>
+                                    <span className="text-sm text-primary/70">LMU&apos;s 24-hour dog-and-cat route, service limits, phone and arrival guidance.</span>
                                 </Link>
                                 <Link
                                     to="/guides/emergency-vets-hannover"

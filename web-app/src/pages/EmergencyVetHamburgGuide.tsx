@@ -7,11 +7,11 @@ import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import { generateArticleSchema } from '../utils/schema';
 
-const TITLE = '24-Hour Emergency Vet Hamburg: What to Call (2026)';
-const DESCRIPTION = 'Need emergency veterinary care in Hamburg? During official duty hours, call 040 434379 for the current practice. Check hours, GOT fees, and warning signs.';
+const TITLE = 'Emergency Vet Hamburg (2026): Duty Number, Hours and English Help';
+const DESCRIPTION = 'Need an emergency vet in Hamburg? Call the official duty number, check current hours, GOT fees, warning signs and English phrases.';
 const URL = 'https://englishspeakinggermany.online/blog/emergency-vet-hamburg-english';
 const DATE_PUBLISHED = '2026-06-02';
-const DATE_MODIFIED = '2026-07-22';
+const DATE_MODIFIED = '2026-09-10';
 const DUTY_PHONE = '040 434379';
 const DUTY_PHONE_HREF = 'tel:+4940434379';
 const DUTY_SCHEDULE_URL = 'https://tieraerztekammer-hamburg.de/aktueller-notdienstplan';
@@ -24,6 +24,16 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DATE_PUBLISHED,
     DATE_MODIFIED,
 );
+
+const BREADCRUMB_SCHEMA = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://englishspeakinggermany.online/' },
+        { '@type': 'ListItem', position: 2, name: 'Emergency guides', item: 'https://englishspeakinggermany.online/guides/pet-emergency-germany' },
+        { '@type': 'ListItem', position: 3, name: 'Emergency Vet Hamburg', item: URL },
+    ],
+};
 
 const URGENT_WARNING_SIGNS = [
     'Difficulty breathing or blue/grey gums',
@@ -80,6 +90,7 @@ export default function EmergencyVetHamburgGuide() {
                 <meta property="og:url" content={URL} />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
                 <script type="application/ld+json">{JSON.stringify(ARTICLE_SCHEMA)}</script>
+                <script type="application/ld+json">{JSON.stringify(BREADCRUMB_SCHEMA)}</script>
             </Helmet>
 
             <Header />
@@ -100,7 +111,7 @@ export default function EmergencyVetHamburgGuide() {
                             {TITLE}
                         </h1>
                         <p className="mb-8 text-sm text-primary/60">
-                            Duty number, hours, and fees checked against official sources on 22 July 2026.
+                            Duty number, hours, and fees reviewed periodically against official sources on 10 September 2026.
                         </p>
 
                         <div className="bg-primary text-secondary rounded-2xl p-6 md:p-8 mb-10 shadow-lg">
@@ -126,6 +137,10 @@ export default function EmergencyVetHamburgGuide() {
                                 </a>
                             </div>
                         </div>
+
+                        <p className="text-xl leading-relaxed text-primary mb-8">
+                            <strong>Need an emergency vet in Hamburg?</strong> Call the official duty number first. The assigned practice rotates, so confirm the current location, opening status, species accepted, and safest route before travelling.
+                        </p>
 
                         <div className="bg-secondary/30 p-6 rounded-2xl mb-12 border border-primary/10">
                             <TableOfContents items={[

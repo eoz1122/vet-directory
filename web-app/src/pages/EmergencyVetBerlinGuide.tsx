@@ -7,11 +7,11 @@ import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
-const ARTICLE_TITLE = '24-Hour Emergency Vets in Berlin: English Help (2026)';
-const ARTICLE_DESCRIPTION = 'Find verified 24-hour emergency vets in Berlin, current phone numbers, urgent warning signs, official GOT fees, and English phrases for calling.';
+const ARTICLE_TITLE = '24-Hour Emergency Vet Berlin (2026): Verified Clinics and English Help';
+const ARTICLE_DESCRIPTION = 'Need an emergency vet in Berlin? Find verified 24-hour clinics, phone numbers, warning signs, GOT fees and English call phrases.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/guides/emergency-vets-berlin';
 const DATE_PUBLISHED = '2026-04-21';
-const DATE_MODIFIED = '2026-07-22';
+const DATE_MODIFIED = '2026-09-10';
 const BERLIN_EMERGENCY_LIST_URL = 'https://tieraerztekammer-berlin.de/notdienst/';
 const BERLIN_GOT_URL = 'https://tieraerztekammer-berlin.de/gebuehrenordnung-fuer-tieraerztinnen-und-tieraerzte-got/';
 const ARTICLE_SCHEMA = generateArticleSchema(
@@ -21,6 +21,16 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DATE_PUBLISHED,
     DATE_MODIFIED,
 );
+
+const BREADCRUMB_SCHEMA = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://englishspeakinggermany.online/' },
+        { '@type': 'ListItem', position: 2, name: 'Emergency guides', item: 'https://englishspeakinggermany.online/guides/pet-emergency-germany' },
+        { '@type': 'ListItem', position: 3, name: 'Emergency Vet Berlin', item: ARTICLE_URL },
+    ],
+};
 
 const EMERGENCY_CLINICS = [
     {
@@ -86,6 +96,9 @@ export default function EmergencyVetBerlinGuide() {
                 <script type="application/ld+json">
                     {JSON.stringify(ARTICLE_SCHEMA)}
                 </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(BREADCRUMB_SCHEMA)}
+                </script>
             </Helmet>
 
             <Header />
@@ -99,7 +112,11 @@ export default function EmergencyVetBerlinGuide() {
                         <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
                             {ARTICLE_TITLE}
                         </h1>
-                        <p className="mb-6 text-sm text-primary/60">Clinics, phone numbers, and fees checked against official sources on 22 July 2026.</p>
+                        <p className="mb-6 text-sm text-primary/60">Clinics, phone numbers, and fees reviewed periodically against official sources on 10 September 2026.</p>
+
+                        <p className="text-xl leading-relaxed text-primary mb-8">
+                            <strong>Need an emergency vet in Berlin?</strong> Call the receiving practice before travelling when it is safe to do so, confirm it can treat your animal, and use the official chamber list below for current 24-hour service details.
+                        </p>
 
                         <TableOfContents items={[
                             { id: 'what-counts', label: '1. What Counts as a Pet Emergency?' },

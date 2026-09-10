@@ -7,11 +7,11 @@ import RelatedPosts from '../components/RelatedPosts';
 import GuideDisclaimer from '../components/GuideDisclaimer';
 import { generateArticleSchema } from '../utils/schema';
 
-const ARTICLE_TITLE = '24-Hour Emergency Vet Munich: LMU Guide (2026)';
-const ARTICLE_DESCRIPTION = 'Need an emergency vet in Munich? LMU treats dogs and cats 24/7. Check where to go, current service limits, phone guidance, GOT fees and English information.';
+const ARTICLE_TITLE = '24-Hour Emergency Vet Munich (2026): LMU Location, Phone and Limits';
+const ARTICLE_DESCRIPTION = 'Need an emergency vet in Munich? Find the LMU 24-hour route, phone, service limits, GOT fees and English information.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/guides/emergency-vets-munich';
 const DATE_PUBLISHED = '2025-01-01';
-const DATE_MODIFIED = '2026-07-24';
+const DATE_MODIFIED = '2026-09-10';
 const LMU_EMERGENCY_ENGLISH = 'https://www.vetmed.lmu.de/kleintierklinik/en/for-pet-owners/emergency/';
 const LMU_EMERGENCY_GERMAN = 'https://www.vetmed.lmu.de/kleintierklinik/de/fuer-tierhalterinnen-und-tierhalter/notfaelle/';
 
@@ -22,6 +22,16 @@ const articleSchema = generateArticleSchema(
     DATE_PUBLISHED,
     DATE_MODIFIED,
 );
+
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://englishspeakinggermany.online/' },
+        { '@type': 'ListItem', position: 2, name: 'Emergency guides', item: 'https://englishspeakinggermany.online/guides/pet-emergency-germany' },
+        { '@type': 'ListItem', position: 3, name: 'Emergency Vet Munich', item: ARTICLE_URL },
+    ],
+};
 
 const arrivalSteps = [
     {
@@ -58,6 +68,9 @@ export default function PetEmergencyMunich() {
                 <script type="application/ld+json">
                     {JSON.stringify(articleSchema)}
                 </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(breadcrumbSchema)}
+                </script>
             </Helmet>
 
             <Header />
@@ -77,10 +90,14 @@ export default function PetEmergencyMunich() {
                             Munich Emergency Guide
                         </span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6 leading-tight">
-                            24-Hour Emergency Vet Munich: LMU Guide (2026)
+                            {ARTICLE_TITLE}
                         </h1>
                         <p className="text-sm text-primary/60 mb-8">
-                            LMU emergency access and service limits checked against the clinic’s English and German pages on 24 July 2026.
+                            LMU emergency access and service limits reviewed periodically against the clinic&apos;s English and German pages on 10 September 2026.
+                        </p>
+
+                        <p className="text-xl leading-relaxed text-primary mb-8">
+                            <strong>Need an emergency vet in Munich?</strong> For a life-threatening case, follow LMU&apos;s direct-arrival guidance. When it is safe, give short notice, confirm the current service limits, and bring your animal to the Small Animal Clinic.
                         </p>
 
                         <div className="bg-red-50 border border-red-200 p-6 rounded-2xl my-8 not-prose">
