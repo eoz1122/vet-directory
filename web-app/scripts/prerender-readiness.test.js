@@ -186,13 +186,17 @@ describe('prerender readiness', () => {
 
     it('removes fallback metadata while preserving route-specific Helmet metadata', () => {
         document.head.innerHTML = `
+            <title data-prerender-fallback>Homepage fallback title</title>
+            <title data-rh="true">Route title</title>
             <meta name="description" content="Homepage fallback" data-prerender-fallback>
             <meta property="og:title" content="Homepage fallback" data-prerender-fallback>
             <meta name="description" content="Route description" data-rh="true">
             <meta property="og:title" content="Route title" data-rh="true">
         `;
 
-        expect(removePrerenderFallbackMetadata(document)).toBe(2);
+        expect(removePrerenderFallbackMetadata(document)).toBe(3);
+        expect(document.head.querySelectorAll('title')).toHaveLength(1);
+        expect(document.head.querySelector('title')?.textContent).toBe('Route title');
         expect(document.head.querySelectorAll('meta[name="description"]')).toHaveLength(1);
         expect(document.head.querySelector('meta[name="description"]')?.getAttribute('content'))
             .toBe('Route description');

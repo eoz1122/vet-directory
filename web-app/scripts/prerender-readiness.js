@@ -1,7 +1,7 @@
 import path from 'node:path';
 
 const SITE_ORIGIN = 'https://englishspeakinggermany.online';
-export const PRERENDER_FALLBACK_SELECTOR = 'meta[data-prerender-fallback]';
+export const PRERENDER_FALLBACK_SELECTOR = '[data-prerender-fallback]';
 
 export function resolvePrerenderDistDir(scriptDirectory, overrideDirectory) {
     return path.resolve(overrideDirectory || path.join(scriptDirectory, '../dist'));
