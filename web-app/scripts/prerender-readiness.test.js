@@ -4,6 +4,7 @@ import {
     canonicalForRoute,
     extractBlogRoutes,
     isRouteMetadataReady,
+    markPrerenderRouteMetadata,
     removePrerenderFallbackMetadata,
     renderPrerenderRoutes,
     resolvePrerenderConcurrency,
@@ -203,5 +204,28 @@ describe('prerender readiness', () => {
         expect(document.head.querySelectorAll('meta[property="og:title"]')).toHaveLength(1);
         expect(document.head.querySelector('meta[property="og:title"]')?.getAttribute('content'))
             .toBe('Route title');
+    });
+
+    it('marks only route head metadata for client bootstrap cleanup', () => {
+        document.head.innerHTML = `
+            <title>Route title</title>
+            <meta name="description" content="Route description">
+            <meta name="keywords" content="route, words">
+            <meta property="og:title" content="Route title">
+            <meta name="twitter:title" content="Route title">
+            <link rel="canonical" href="https://example.com/route">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="google-adsense-account" content="ca-pub-example">
+            <link rel="stylesheet" href="/assets/index.css">
+        `;
+
+        expect(markPrerenderRouteMetadata(document)).toBe(6);
+        expect(document.head.querySelectorAll('[data-prerender-route]')).toHaveLength(6);
+        expect(document.head.querySelector('meta[name="viewport"]')?.hasAttribute('data-prerender-route'))
+            .toBe(false);
+        expect(document.head.querySelector('meta[name="google-adsense-account"]')?.hasAttribute('data-prerender-route'))
+            .toBe(false);
+        expect(document.head.querySelector('link[rel="stylesheet"]')?.hasAttribute('data-prerender-route'))
+            .toBe(false);
     });
 });

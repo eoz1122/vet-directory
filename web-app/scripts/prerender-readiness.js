@@ -151,3 +151,20 @@ export function removePrerenderFallbackMetadata(root) {
     fallbackMetadata.forEach((element) => element.remove());
     return fallbackMetadata.length;
 }
+
+export function markPrerenderRouteMetadata(root = document) {
+    const routeMetadata = Array.from(root.querySelectorAll([
+        'head title',
+        'head meta[name="description"]',
+        'head meta[name="keywords"]',
+        'head meta[name="robots"]',
+        'head meta[name^="twitter:"]',
+        'head meta[property^="og:"]',
+        'head link[rel="canonical"]',
+    ].join(', ')));
+
+    routeMetadata.forEach((element) => {
+        element.setAttribute('data-prerender-route', '');
+    });
+    return routeMetadata.length;
+}

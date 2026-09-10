@@ -16,6 +16,7 @@ import {
     canonicalForRoute,
     extractBlogRoutes,
     isRouteMetadataReady,
+    markPrerenderRouteMetadata,
     PRERENDER_FALLBACK_SELECTOR,
     renderPrerenderRoutes,
     resolveGuideCatalogPath,
@@ -261,6 +262,10 @@ async function prerender() {
                 //    Helmet has already emitted the route-specific replacements.
                 document.querySelectorAll(fallbackMetadataSelector).forEach(meta => meta.remove());
             }, preloadsToDrop, PRERENDER_FALLBACK_SELECTOR);
+
+            // React 19 hoists live metadata into <head>. Mark the static route
+            // copies so the client bootstrap can release them before mounting.
+            await page.evaluate(markPrerenderRouteMetadata);
 
             const html = await page.content();
 
