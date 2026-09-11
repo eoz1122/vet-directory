@@ -1702,6 +1702,6 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 
 **Trade-offs:** Cards occupy less vertical space and scan faster, while long practice names and evidence still wrap. The visual hierarchy remains unchanged: practice identity, evidence, contact actions, community confirmation and report path.
 
-**Verification:** TDD RED reproduced the larger card spacing. GREEN passes the new compact-spacing assertion and the full frontend suite. Lint, type-check and production prerender verification follow the deployment check. The separate uncommitted `web-app/src/data/vets.json` remains excluded.
+**Verification:** TDD RED reproduced the larger card spacing. GREEN passes 459 frontend tests across 77 files, ESLint and the type-check. The production build prerendered all 317 routes. Deployment `0713c79` completed successfully, served HTTP 200 and IndexNow accepted all 316 URLs. Live `/vets/berlin` checks at 390px and desktop width confirm compact cards, 44px website/action controls and no horizontal overflow. The separate uncommitted `web-app/src/data/vets.json` remains excluded.
 
 **Rollback:** Revert the compact card component, specialist-focus spacing, test and this decision entry, then redeploy the prior working commit `5f6cbdb`.
