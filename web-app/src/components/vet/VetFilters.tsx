@@ -93,11 +93,11 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
 
                 {!userLocation && (
                     <div className="space-y-3">
-                        <div className="flex flex-nowrap md:flex-wrap gap-2 pb-2 overflow-x-auto md:overflow-x-hidden no-scrollbar">
+                        <div className="flex flex-wrap gap-2 pb-2">
                             {/* "All" Button */}
                             <button
                                 onClick={() => handleCityChange('All')}
-                                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm inline-block text-center active:scale-90 ${selectedCity === 'All'
+                                className={`min-h-11 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm inline-flex items-center justify-center text-center active:scale-90 ${selectedCity === 'All'
                                     ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
                                     : 'bg-white border-primary/5 text-primary/80 hover:border-primary/20 hover:text-primary hover:bg-white/80'
                                     }`}
@@ -110,7 +110,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                                 <button
                                     key={city}
                                     onClick={() => handleCityChange(city)}
-                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm inline-block text-center active:scale-90 ${selectedCity === city
+                                    className={`min-h-11 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border shadow-sm inline-flex items-center justify-center text-center active:scale-90 ${selectedCity === city
                                         ? 'bg-primary text-secondary border-primary shadow-primary/20 scale-105'
                                         : 'bg-white border-primary/5 text-primary/80 hover:border-primary/20 hover:text-primary hover:bg-white/80'
                                         }`}
@@ -173,13 +173,13 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
             {/* Refine Section: collapsed by default on mobile so listings surface sooner */}
             <button
                 onClick={() => setShowRefine(!showRefine)}
-                className="md:hidden w-full flex items-center justify-between px-4 py-3 bg-white border border-primary/5 rounded-2xl text-xs font-bold text-primary/80 shadow-sm"
+                className="lg:hidden w-full flex items-center justify-between px-4 py-3 bg-white border border-primary/5 rounded-2xl text-xs font-bold text-primary/80 shadow-sm"
                 aria-expanded={showRefine}
             >
                 <span>🔍 Refine results</span>
                 <span className={`transition-transform ${showRefine ? 'rotate-180' : ''}`}>▾</span>
             </button>
-            <div className={`space-y-3 ${showRefine ? '' : 'hidden md:block'}`}>
+            <div className={`space-y-3 ${showRefine ? '' : 'hidden lg:block'}`}>
                 <label className="text-[10px] font-bold text-primary/80 uppercase tracking-widest px-1">
                     Refine Results
                 </label>
@@ -193,7 +193,7 @@ export const VetFilters: React.FC<VetFiltersProps> = ({
                     />
                     <svg className="w-4.5 h-4.5 text-primary/20 absolute left-4 top-1/2 -translate-y-1/2 transition-colors group-focus-within/filter:text-accent/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <div className="flex gap-2 flex-wrap md:flex-nowrap overflow-x-hidden pb-1 no-scrollbar">
+                <div className="flex gap-2 flex-wrap lg:flex-nowrap overflow-x-hidden pb-1 no-scrollbar">
                     <button
                         onClick={() => { setShowVerifiedOnly(!showVerifiedOnly); onResetPagination(); }}
                         className={`flex-1 md:flex-none px-4 py-3 rounded-2xl text-xs font-bold transition-all duration-200 border shadow-sm flex items-center justify-center gap-2 active:scale-95 ${showVerifiedOnly

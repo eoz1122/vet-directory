@@ -71,6 +71,25 @@ describe('Home WebSite structured data', () => {
         expect(mobileHomeLink.className).toContain('min-h-11');
     });
 
+    it('keeps the directory and map split for large desktops only', () => {
+        render(
+            <HelmetProvider>
+                <MemoryRouter initialEntries={['/']}>
+                    <Home />
+                </MemoryRouter>
+            </HelmetProvider>,
+        );
+
+        const layout = screen.getByRole('main').parentElement;
+        expect(layout?.className).toContain('xl:flex-row');
+        expect(layout?.className).not.toContain('lg:flex-row');
+        expect(screen.getByRole('main').className).toContain('xl:w-[38%]');
+        expect(document.querySelector('main + div')?.className).toContain('xl:block');
+        expect(document.querySelector('main + div')?.className).not.toContain('lg:block');
+        expect(screen.getByRole('link', { name: 'Directory home' }).closest('nav')?.className)
+            .toContain('xl:hidden');
+    });
+
     it('targets English-speaking vet searches with city paths and transparent trust copy', async () => {
         render(
             <HelmetProvider>

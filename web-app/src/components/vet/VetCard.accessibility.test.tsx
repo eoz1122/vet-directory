@@ -38,10 +38,14 @@ describe('VetCard accessibility', () => {
             />,
         );
 
-        expect(screen.getByRole('article').className).toContain('p-4');
-        expect(screen.getByText('Example Street 1, Berlin').className).toContain('p-3');
+        expect(screen.getByRole('article').className).toContain('p-3');
+        expect(screen.getByRole('article').className).toContain('xl:p-2.5');
+        expect(screen.getByText('Example Street 1, Berlin').className).toContain('p-2');
+        expect(screen.getByText('Example Street 1, Berlin').className).toContain('xl:mb-2');
         expect(screen.getByRole('link', { name: 'Visit Test Veterinary Clinic website' }).className)
             .toContain('min-h-11');
+        expect(screen.getByRole('button', { name: 'Show Test Veterinary Clinic on the directory map' }).className)
+            .toContain('py-2');
     });
 
     it('shows first-party website evidence without describing it as community confirmation', () => {

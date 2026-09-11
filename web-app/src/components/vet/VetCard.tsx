@@ -83,7 +83,7 @@ export const VetCard: React.FC<VetCardProps> = ({
     return (
         <article
             onClick={onSelect ? () => onSelect(vet) : undefined}
-            className={`group/card relative bg-white p-4 sm:p-5 rounded-3xl border transition-all duration-300 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_32px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 ${
+            className={`group/card relative bg-white p-3 xl:p-2.5 rounded-3xl border transition-all duration-300 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_32px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 ${
                 onSelect ? 'cursor-pointer' : ''
             } ${
                 isSelected
@@ -91,7 +91,7 @@ export const VetCard: React.FC<VetCardProps> = ({
                     : 'border-primary/5 hover:border-accent/20'
             }`}
         >
-            <div className="flex justify-between items-start gap-2 mb-3">
+            <div className="flex justify-between items-start gap-2 mb-2">
                 <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2 mb-1">
                         <span className="px-2 py-0.5 bg-primary/5 text-primary text-[9px] font-black uppercase tracking-widest rounded-full">
@@ -114,7 +114,7 @@ export const VetCard: React.FC<VetCardProps> = ({
                             )
                         )}
                     </div>
-                    <Heading className="text-base sm:text-lg font-black text-primary group-hover/card:text-accent-ink transition-colors leading-tight break-words">
+                    <Heading className="text-base font-black text-primary group-hover/card:text-accent-ink transition-colors leading-tight break-words">
                         {vet.practice_name}
                     </Heading>
                 </div>
@@ -138,7 +138,7 @@ export const VetCard: React.FC<VetCardProps> = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(event) => event.stopPropagation()}
-                    className="block text-[12px] text-primary/80 mb-4 font-medium leading-relaxed bg-secondary/30 p-3 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors hover:text-accent-ink hover:border-accent/30"
+                    className="block text-[12px] text-primary/80 mb-3 xl:mb-2 font-medium leading-relaxed bg-secondary/30 p-2 rounded-xl border border-primary/5 group-hover/card:bg-secondary/40 transition-colors hover:text-accent-ink hover:border-accent/30"
                 >
                     {vet.address}
                 </a>
@@ -147,7 +147,7 @@ export const VetCard: React.FC<VetCardProps> = ({
             <PracticeFocus practiceFocus={vet.practice_focus} />
 
             {evidenceSignal && (
-                <div className="space-y-1.5 mb-4">
+                <div className="space-y-1 mb-3">
                     <div className="flex gap-3 items-start group/signal">
                         <div className="mt-1 flex-shrink-0 w-4 h-4 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/20">
                             <svg className="w-2.5 h-2.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -243,7 +243,7 @@ export const VetCard: React.FC<VetCardProps> = ({
                             event.stopPropagation();
                             onSelect(vet);
                         }}
-                        className="hidden md:inline-flex min-h-11 min-w-11 px-3 py-3 items-center justify-center rounded-xl border border-primary/15 bg-white text-primary hover:border-accent/40 hover:text-accent-ink transition-colors"
+                        className="hidden lg:inline-flex min-h-11 min-w-11 px-3 py-2 items-center justify-center rounded-xl border border-primary/15 bg-white text-primary hover:border-accent/40 hover:text-accent-ink transition-colors"
                     >
                         ◎
                     </button>

@@ -1705,3 +1705,43 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** TDD RED reproduced the larger card spacing. GREEN passes 459 frontend tests across 77 files, ESLint and the type-check. The production build prerendered all 317 routes. Deployment `0713c79` completed successfully, served HTTP 200 and IndexNow accepted all 316 URLs. Live `/vets/berlin` checks at 390px and desktop width confirm compact cards, 44px website/action controls and no horizontal overflow. The separate uncommitted `web-app/src/data/vets.json` remains excluded.
 
 **Rollback:** Revert the compact card component, specialist-focus spacing, test and this decision entry, then redeploy the prior working commit `5f6cbdb`.
+
+## 2026-09-11T16:42:00+02:00 - Refine homepage desktop card density in local preview
+
+**Context:** The first compact-card release reduced mobile height, but the homepage desktop split view still appeared too tall because desktop padding remained larger and the hidden desktop map control had 50px line height, stretching the action row.
+
+**Decision:** Keep the mobile treatment and remove the desktop padding increase. Reduce the desktop map control to the same 44px action height so the website, map and selection controls align without shrinking their accessible touch targets.
+
+**Alternatives:** Reducing controls below 44px was rejected. Removing the map or reporting controls was rejected because they are core directory actions. A homepage-only duplicate card was rejected in favor of one shared card component.
+
+**Trade-offs:** The local homepage preview is denser on desktop and preserves the current mobile hierarchy. This refinement is intentionally not deployed until the user reviews the local version.
+
+**Verification:** TDD RED reproduced the desktop `py-3` map control and compact-spacing mismatch. GREEN passes 459 frontend tests across 77 files, ESLint and the type-check. Local homepage measurements show approximately 321px card height at 1440px width, 44px action controls and no horizontal overflow.
+
+**Rollback:** Revert the uncommitted desktop-density refinement and restore the deployed `0713c79` card behavior if the local preview is not preferred.
+
+## 2026-09-11T17:07:54+02:00 - Fix responsive directory layout in local preview
+
+**Context:** The responsive audit found that the split directory/map layout activated at 768px, leaving tablets with a 322-344px directory pane, clipped header navigation, and heavily wrapped vet names. Narrow city filters also overflowed horizontally, and the fresh-session cookie panel covered too much of the mobile viewport.
+
+**Decision:** Keep the directory single-column through tablet widths and activate the map split at the large breakpoint. Use a 38% directory / 62% map split on large desktops, wrap city filters with 44px minimum controls, keep the refine controls collapsed until large screens, and constrain the cookie panel to a compact, scrollable mobile bottom sheet. Preserve the shared compact VetCard treatment and hide map-only selection controls until the map is visible.
+
+**Alternatives:** Keeping the split at the medium breakpoint was rejected because it caused the observed tablet clipping. Hiding city filters was rejected because they are a primary discovery path. Shrinking controls below 44px was rejected for accessibility.
+
+**Trade-offs:** Tablet users see the full directory before the map appears on large screens. At very narrow widths, city filters use additional vertical space instead of hiding options off-screen. The responsive refinement remains local-only until the user reviews it.
+
+**Verification:** RED tests reproduced the medium-breakpoint split, nowrap city filters, and unconstrained cookie sheet. GREEN passes 461 frontend tests across 77 files, ESLint, TypeScript, the production build, and the 317-route prerender. Local viewport checks at 320, 390, 600, 767, 768, 820, 1024, 1440, and 1648px show no document-level horizontal overflow or clipped header links.
+
+**Rollback:** Revert the responsive changes in `Home.tsx`, `VetFilters.tsx`, `VetCard.tsx`, `CookieConsent.tsx`, their tests, and this entry, then restore the deployed `0713c79` behavior.
+
+## 2026-09-11T17:23:00+02:00 - Keep tablet directory full-width and tighten desktop cards locally
+
+**Context:** The follow-up local review showed that the medium-large tablet view still felt like an almost endless split-pane scroll, while narrowed desktop cards remained visually oversized.
+
+**Decision:** Move the map split and desktop header scaling to the extra-large breakpoint so widths through 1024px keep a full-width directory. Add a small extra-large card density treatment that preserves 44px controls while reducing desktop padding and non-essential vertical gaps.
+
+**Trade-offs:** The map begins at 1280px instead of 1024px, prioritizing readable listings on tablets. Desktop cards lose a small amount of whitespace but keep the same information hierarchy and touch targets. This remains local-only pending review.
+
+**Verification:** RED tests reproduced the old medium-large split and missing desktop-density classes. GREEN passes 461 frontend tests across 77 files, ESLint, TypeScript, the production build, and the 317-route prerender. Local checks show 768-1024px full-width cards at approximately 345px height and 1280-1440px split cards at approximately 350.5px height, with no horizontal overflow or clipped header links.
+
+**Rollback:** Revert the extra-large breakpoint and desktop-density changes in `Home.tsx`, `VetCard.tsx`, `ConfirmEnglish.tsx`, `PracticeFocus.tsx`, their tests, and this entry, then restore the prior local responsive state.

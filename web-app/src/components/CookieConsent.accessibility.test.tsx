@@ -20,7 +20,11 @@ describe('CookieConsent accessibility', () => {
         const acceptButton = screen.getByRole('button', { name: 'Accept analytics' });
         expect(acceptButton.className).toContain('bg-accent-ink');
         expect(acceptButton.className).toContain('text-white');
-        expect(screen.getByRole('region', { name: 'Cookie Settings' })).toBeTruthy();
+        const region = screen.getByRole('region', { name: 'Cookie Settings' });
+        expect(region).toBeTruthy();
+        expect(region.className).toContain('max-h-[45vh]');
+        expect(region.className).toContain('overflow-y-auto');
+        expect(acceptButton.className).toContain('min-h-11');
     });
 
     it('lets a visitor reopen settings and withdraw analytics consent', () => {

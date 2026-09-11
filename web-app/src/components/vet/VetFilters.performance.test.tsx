@@ -29,6 +29,25 @@ const baseProps = {
 };
 
 describe('VetFilters map loading', () => {
+    it('wraps city filters and preserves touch-friendly sizing at narrow widths', () => {
+        render(
+            <VetFilters
+                {...baseProps}
+                vets={[
+                    ...['Berlin', 'Hamburg', 'Frankfurt', 'Munich', 'Stuttgart', 'Cologne', 'Leipzig', 'Nuremberg', 'Dresden']
+                        .map((city) => ({ city })),
+                ] as never}
+                mapsEnabled={false}
+                onEnableMaps={vi.fn()}
+            />,
+        );
+
+        const berlinButton = screen.getByRole('button', { name: 'Berlin' });
+        expect(berlinButton.parentElement?.className).toContain('flex-wrap');
+        expect(berlinButton.parentElement?.className).not.toContain('flex-nowrap');
+        expect(berlinButton.className).toContain('min-h-11');
+    });
+
     it('uses an activation control instead of mounting the Maps SDK on mobile', () => {
         const onEnableMaps = vi.fn();
 

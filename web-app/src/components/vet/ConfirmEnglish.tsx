@@ -48,7 +48,7 @@ export function ConfirmEnglish({ vet }: { vet: Vet }) {
                 role="status"
                 aria-live="polite"
                 tabIndex={-1}
-                className="mt-3 min-h-11 text-[11px] font-bold text-green-700 flex items-center justify-center gap-1.5 bg-green-50 border border-green-200 rounded-lg px-3 py-2"
+                className="mt-2 xl:mt-1 min-h-11 text-[11px] font-bold text-green-700 flex items-center justify-center gap-1.5 bg-green-50 border border-green-200 rounded-lg px-3 py-2"
             >
                 <span>✓</span> Thanks! We'll review your confirmation.
             </div>
@@ -66,7 +66,7 @@ export function ConfirmEnglish({ vet }: { vet: Vet }) {
                     : `Confirm ${vet.practice_name} speaks English`}
             aria-disabled={state === 'sending'}
             aria-busy={state === 'sending'}
-            className="mt-3 min-h-11 w-full text-[11px] font-bold text-primary/80 border border-primary/10 rounded-lg px-3 py-2 flex items-center justify-center gap-1.5 transition-colors hover:text-green-700 hover:border-green-300 hover:bg-green-50 aria-disabled:opacity-50"
+            className="mt-2 xl:mt-1 min-h-11 w-full text-[11px] font-bold text-primary/80 border border-primary/10 rounded-lg px-3 py-2 flex items-center justify-center gap-1.5 transition-colors hover:text-green-700 hover:border-green-300 hover:bg-green-50 aria-disabled:opacity-50"
         >
             {state === 'sending'
                 ? 'Sending...'

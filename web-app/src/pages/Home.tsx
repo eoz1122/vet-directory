@@ -214,36 +214,36 @@ const Home: React.FC = () => {
                 </script>
             </Helmet>
 
-            <div className="min-h-screen flex flex-col md:flex-row bg-secondary">
-                <main className="md:w-[42%] lg:w-[40%] flex flex-col h-screen overflow-hidden border-r border-primary/5">
+            <div className="min-h-screen flex flex-col xl:flex-row bg-secondary">
+                <main className="xl:w-[38%] flex flex-col h-screen overflow-hidden border-r border-primary/5">
                     <header className="sticky top-0 z-10 bg-secondary backdrop-blur-xl border-b border-primary/5 p-6 space-y-5">
                         <Link to="/" className="flex items-center gap-5 group">
                             <div className="relative">
                                 <BrandLogo
                                     alt="EnglishSpeakingVets"
                                     priority
-                                    className="h-16 md:h-20 w-auto drop-shadow-sm transition-transform group-hover:scale-105"
+                                    className="h-16 xl:h-20 w-auto drop-shadow-sm transition-transform group-hover:scale-105"
                                 />
                                 <div className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-accent rounded-full border-2 border-white animate-pulse"></div>
                             </div>
                             <div className="flex flex-col leading-tight">
-                                <span className="text-primary font-black text-xl md:text-2xl uppercase tracking-tight">English Speaking</span>
-                                <span className="text-accent-ink font-black text-3xl md:text-4xl uppercase tracking-tighter">Vets</span>
+                                <span className="text-primary font-black text-xl xl:text-2xl uppercase tracking-tight">English Speaking</span>
+                                <span className="text-accent-ink font-black text-3xl xl:text-4xl uppercase tracking-tighter">Vets</span>
                             </div>
                         </Link>
 
-                        <h1 className="text-xl md:text-2xl font-black text-primary leading-tight">
+                        <h1 className="text-xl xl:text-2xl font-black text-primary leading-tight">
                             Find an English-Speaking Vet in Germany
                         </h1>
 
-                        <p className="text-sm md:text-base text-primary/80 font-medium leading-relaxed max-w-[95%]">
+                        <p className="text-sm xl:text-base text-primary/80 font-medium leading-relaxed max-w-[95%]">
                             Browse {directoryCounts.communityVerified} community-verified practices across {directoryCounts.cities} German cities. Confirm English availability when booking.{' '}
                             <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
                                 How we verify listings
                             </Link>
                         </p>
 
-                        <nav className="flex gap-6 text-xs md:text-sm font-bold uppercase tracking-widest text-primary pt-2">
+                        <nav className="flex gap-6 text-xs xl:text-sm font-bold uppercase tracking-widest text-primary pt-2">
                             <Link to="/blog" className="hover:text-accent transition-colors">Guides</Link>
                             <Link to="/about" className="hover:text-accent transition-colors">About</Link>
                             <Link to="/quality-promise" className="hover:text-accent transition-colors">Quality</Link>
@@ -379,7 +379,7 @@ const Home: React.FC = () => {
                     </div>
                 </main>
 
-                <div className="hidden md:block md:w-[58%] lg:w-[60%] h-screen relative bg-secondary/10">
+                <div className="hidden xl:block xl:w-[62%] h-screen relative bg-secondary/10">
                     {!desktopMapVisible ? null : !mapFeaturesEnabled ? (
                         <MapLoadingState />
                     ) : mapApiError ? (
@@ -412,7 +412,7 @@ const Home: React.FC = () => {
                 </div>
 
                 {/* Mobile Navigation */}
-                <nav className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-primary/95 backdrop-blur-xl border border-white/10 px-8 py-3 flex gap-8 rounded-full z-50 shadow-2xl safe-area-bottom text-secondary">
+                <nav className="xl:hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-primary/95 backdrop-blur-xl border border-white/10 px-8 py-3 flex gap-8 rounded-full z-50 shadow-2xl safe-area-bottom text-secondary">
                     <Link to="/" aria-label="Directory home" className="min-h-11 min-w-11 flex flex-col items-center justify-center hover:text-white transition-colors">
                         <svg className="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg><span className="text-[9px] font-bold uppercase tracking-widest">Home</span>
                     </Link>
