@@ -1745,3 +1745,13 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** RED tests reproduced the old medium-large split and missing desktop-density classes. GREEN passes 461 frontend tests across 77 files, ESLint, TypeScript, the production build, and the 317-route prerender. Local checks show 768-1024px full-width cards at approximately 345px height and 1280-1440px split cards at approximately 350.5px height, with no horizontal overflow or clipped header links.
 
 **Rollback:** Revert the extra-large breakpoint and desktop-density changes in `Home.tsx`, `VetCard.tsx`, `ConfirmEnglish.tsx`, `PracticeFocus.tsx`, their tests, and this entry, then restore the prior local responsive state.
+
+## 2026-09-11T17:34:15+02:00 - Deploy responsive directory refinement
+
+**Context:** The reviewed local responsive refinement was approved after tablet and desktop checks.
+
+**Deployment:** Commit `85a2f7e` was pushed to `main` and deployed successfully. The deployment prerendered 317 pages, generated a 316-URL sitemap, returned HTTP 200, and IndexNow accepted all 316 URLs.
+
+**Verification:** Live homepage checks at 1024px, 1280px, and 1440px show the intended full-width tablet directory, extra-large map split, card heights of approximately 345px to 350.5px, no clipped header links, and no document-level horizontal overflow.
+
+**Rollback:** Redeploy the previous known-good commit `0713c79` if the live responsive behavior needs to be reverted.
