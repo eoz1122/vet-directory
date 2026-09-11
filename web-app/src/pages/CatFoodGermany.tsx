@@ -6,6 +6,7 @@ import ArticleHeader from '../components/ArticleHeader';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import AffiliateCallout from '../components/AffiliateCallout';
+import NewsletterSignup from '../components/NewsletterSignup';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
@@ -115,10 +116,16 @@ export default function CatFoodGermany() {
                         <ArticleHeader
                             eyebrow="Evidence-Based Cat Nutrition Guide"
                             title="Best Cat Food in Germany: How to Choose (2026)"
-                            review="Reviewed periodically. Last checked August 1, 2026"
+                            review={(
+                                <>
+                                    Reviewed periodically. Last checked August 1, 2026
+                                    <span aria-hidden="true"> • </span>
+                                    <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
+                                        How we review guides
+                                    </Link>
+                                </>
+                            )}
                         />
-
-                        <TableOfContents items={TABLE_OF_CONTENTS} />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
                             <p className="border-l-4 border-accent pl-6 py-2 bg-accent/5 rounded-r-lg text-xl">
@@ -127,6 +134,10 @@ export default function CatFoodGermany() {
                             <p className="mt-6">
                                 This guide uses EU feed law, FEDIAF&apos;s 2025 nutritional reference, WSAVA&apos;s food-selection checklist, and Cornell Feline Health Center guidance. It does not rank brands or replace veterinary advice.
                             </p>
+
+                            <NewsletterSignup />
+
+                            <TableOfContents items={TABLE_OF_CONTENTS} />
 
                             <h2 id="label" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 1. Start With the German Label

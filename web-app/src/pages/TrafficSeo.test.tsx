@@ -1030,6 +1030,10 @@ describe('traffic-focused search metadata', () => {
             name: 'Best Cat Food in Germany: How to Choose (2026)',
         })).toBeTruthy();
         expect(screen.getByText('Reviewed periodically. Last checked August 1, 2026', { exact: false })).toBeTruthy();
+        const catNewsletter = screen.getByRole('heading', { name: 'Practical pet updates for Germany' });
+        const catContents = screen.getByRole('navigation', { name: /table of contents/i });
+        expect(catNewsletter).toBeTruthy();
+        expect(catNewsletter.compareDocumentPosition(catContents) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
 
         const articleText = document.body.textContent || '';
         expect(articleText).toMatch(/Alleinfuttermittel.*complete food/i);
