@@ -28,6 +28,22 @@ const vet: VetWithDistance = {
 };
 
 describe('VetCard accessibility', () => {
+    it('uses compact card spacing while keeping touch targets intact', () => {
+        render(
+            <VetCard
+                vet={vet}
+                isSelected={false}
+                onSelect={vi.fn()}
+                onReportIssue={vi.fn()}
+            />,
+        );
+
+        expect(screen.getByRole('article').className).toContain('p-4');
+        expect(screen.getByText('Example Street 1, Berlin').className).toContain('p-3');
+        expect(screen.getByRole('link', { name: 'Visit Test Veterinary Clinic website' }).className)
+            .toContain('min-h-11');
+    });
+
     it('shows first-party website evidence without describing it as community confirmation', () => {
         const officialVet = {
             ...vet,

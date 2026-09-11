@@ -1691,3 +1691,17 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** TDD RED reproduced the low-contrast footer state, unclear success copy and missing shared layout/header primitives. GREEN passes 458 frontend tests across 77 files and ESLint. The production build prerendered all 317 routes and wrote the expected 316-URL sitemaps. Deployment `5f6cbdb` completed successfully, served HTTP 200 and IndexNow accepted all 316 URLs. Live mobile checks at 390px confirm one title, one canonical, one H1, the shared article frame on all five priority guides, matching answer-to-newsletter-to-contents flow on both food guides, readable footer colors (`rgb(245, 235, 224)` heading text), and no horizontal overflow. The separate uncommitted `web-app/src/data/vets.json` remains excluded.
 
 **Rollback:** Revert the newsletter tone/message, shared article primitives, five migrated page wrappers, related tests and this decision entry, then redeploy the prior working commit `f540d84`. This restores the previous article frames without touching the directory dataset or affiliate registry.
+
+## 2026-09-11T16:03:00+02:00 - Compact directory listing cards without reducing accessibility
+
+**Context:** A mobile directory screenshot showed oversized listing cards with generous padding, a large title treatment and wide gaps between the address, evidence, actions and reporting row. User story: As a visitor comparing English-speaking vets, I want to scan more practices per screen while keeping every important action easy to tap.
+
+**Decision:** Reduce `VetCard` outer padding, radius, title scale, address padding, evidence spacing and action gaps. Keep primary links, map controls, confirmation and report controls at the existing minimum 44px touch target. Tighten the specialist-focus panel in the same way.
+
+**Alternatives:** Reducing touch targets or hiding verification and reporting controls was rejected because it would harm mobile accessibility and trust signals. A full card redesign was deferred until the compact treatment is validated on the live directory.
+
+**Trade-offs:** Cards occupy less vertical space and scan faster, while long practice names and evidence still wrap. The visual hierarchy remains unchanged: practice identity, evidence, contact actions, community confirmation and report path.
+
+**Verification:** TDD RED reproduced the larger card spacing. GREEN passes the new compact-spacing assertion and the full frontend suite. Lint, type-check and production prerender verification follow the deployment check. The separate uncommitted `web-app/src/data/vets.json` remains excluded.
+
+**Rollback:** Revert the compact card component, specialist-focus spacing, test and this decision entry, then redeploy the prior working commit `5f6cbdb`.
