@@ -1755,3 +1755,17 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Live homepage checks at 1024px, 1280px, and 1440px show the intended full-width tablet directory, extra-large map split, card heights of approximately 345px to 350.5px, no clipped header links, and no document-level horizontal overflow.
 
 **Rollback:** Redeploy the previous known-good commit `0713c79` if the live responsive behavior needs to be reverted.
+
+## 2026-09-12T18:04:34+02:00 - Search Console indexing and traffic audit
+
+**Context:** The post-deployment Search Console review was requested before spending the remaining URL-inspection or indexing quota.
+
+**Evidence:** The `/sitemap.xml` property entry was submitted and last read on 10 September 2026 with status **Success** and 316 discovered pages. The Pages report last updated 4 September 2026 and showed 271 indexed pages versus 274 not indexed. The not-indexed reasons were 98 alternative pages with a proper canonical, 75 pages with redirects, 57 crawled but currently not indexed, 19 discovered but currently not indexed, 16 excluded by `noindex`, 5 duplicates without a selected canonical, 2 soft 404s, 1 not found URL, and 1 redirect error. The first crawled-not-indexed examples included `/blog/pet-dental-care-germany`, `/blog/public-transport-dogs-hamburg`, and several district vet pages. Discovered-not-indexed examples included `/about`, `/blog/eu-pet-passport-germany`, `/blog/best-dog-parks-berlin`, `/blog/german-vet-survival-kit-phrases`, `/blog/pet-vaccination-costs-germany`, and `/blog/public-transport-with-dogs-frankfurt`.
+
+**Traffic opportunity:** For the last 28 days (14 August to 10 September 2026), Search Console reported 153 clicks, 20.4k impressions, 0.8% average CTR, and average position 10.7. The clearest page-level opportunities were `/blog/best-dog-food-germany` (6,406 impressions, 0.3% CTR, position 9.4), `/blog/breed-restrictions-germany` (2,854 impressions, 0.9% CTR, position 7.1), `/blog/vet-costs-germany` (1,284 impressions, 0.6% CTR, position 5.1), and `/blog/best-cat-food-germany` (1,436 impressions, 1.3% CTR, position 8.5).
+
+**Health checks:** HTTPS showed 0 non-HTTPS URLs and no critical issues. Manual actions and Security issues both showed no issues detected.
+
+**Decision:** Do not request indexing blindly while quota is constrained. Prioritize content and internal-link improvements on the four high-impression pages, then request inspection for the 19 discovered-not-indexed guide pages and the 57 crawled-not-indexed URLs in small batches after quota reset. Treat canonical, redirect, `noindex`, duplicate, soft-404, and the single 404 counts as mostly intentional until each URL is checked against the sitemap and canonical contract.
+
+**Rollback:** No production change was made by this audit. Any later content or metadata change should be verified locally before deployment and can be reverted through the normal Git deployment path.
