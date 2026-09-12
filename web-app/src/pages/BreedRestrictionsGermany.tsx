@@ -6,11 +6,11 @@ import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import { generateArticleSchema } from '../utils/schema';
 
-const ARTICLE_TITLE = 'Are Pit Bulls Banned in Germany? Breed Rules (2026)';
-const ARTICLE_DESCRIPTION = 'Are Pit Bulls banned in Germany? Federal law prohibits importing four named breeds and their crosses. Check exceptions, Rottweilers, and state rules.';
+const ARTICLE_TITLE = 'Banned Dog Breeds in Germany (2026): Pit Bull, Rottweiler & State Rules';
+const ARTICLE_DESCRIPTION = 'Which dog breeds are banned in Germany? Check Pit Bull and Rottweiler rules, federal import restrictions, state permits, exceptions and official sources.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/breed-restrictions-germany';
 const DATE_PUBLISHED = '2026-04-28';
-const DATE_MODIFIED = '2026-09-10';
+const DATE_MODIFIED = '2026-09-12';
 
 const FEDERAL_IMPORT_LAW_URL = 'https://www.gesetze-im-internet.de/hundverbreinfg/__2.html';
 const FEDERAL_EXCEPTIONS_URL = 'https://www.gesetze-im-internet.de/hundverbreinfvo/__2.html';
@@ -38,11 +38,12 @@ const federalImportBreeds = [
 ];
 
 const tableOfContents = [
-    { id: 'two-rule-layers', label: '1. Federal and State Rules' },
-    { id: 'federal-import-rule', label: '2. Federal Import Restriction' },
-    { id: 'limited-exceptions', label: '3. Limited Federal Exceptions' },
-    { id: 'state-examples', label: '4. Berlin, Hamburg and Bavaria' },
-    { id: 'moving-checklist', label: '5. Before You Travel' },
+    { id: 'quick-answer', label: '1. Quick Answer: Import vs Keeping' },
+    { id: 'two-rule-layers', label: '2. Federal and State Rules' },
+    { id: 'federal-import-rule', label: '3. Federal Import Restriction' },
+    { id: 'limited-exceptions', label: '4. Limited Federal Exceptions' },
+    { id: 'state-examples', label: '5. Berlin, Hamburg and Bavaria' },
+    { id: 'moving-checklist', label: '6. Before You Travel' },
 ];
 
 const officialSources = [
@@ -189,10 +190,10 @@ export default function BreedRestrictionsGermany() {
             <div className="article-content">
                         <ArticleHeader
                             eyebrow="Relocation and Dog-Law Guide"
-                            title="Are Pit Bulls Banned in Germany? 2026 Rules"
+                            title="Banned Dog Breeds in Germany: Pit Bull, Rottweiler and State Rules"
                             review={(
                                 <>
-                                    Last verified periodically: 10 September 2026
+                                    Last verified periodically: 12 September 2026
                                     <span className="hidden sm:inline" aria-hidden="true"> · </span>
                                     <span className="italic">Check the authorities again before every border crossing or move.</span>
                                 </>
@@ -204,6 +205,49 @@ export default function BreedRestrictionsGermany() {
                         </p>
 
                         <TableOfContents items={tableOfContents} />
+
+                        <nav
+                            aria-label="Related restricted-dog guides"
+                            className="not-prose flex flex-wrap items-center gap-2 mb-8"
+                        >
+                            <span className="text-sm font-bold text-primary mr-1">Next checks:</span>
+                            <Link
+                                to="/blog/moving-to-germany-with-restricted-dog"
+                                className="inline-flex min-h-11 items-center rounded-lg border border-primary/10 bg-white px-3 py-2 text-sm font-bold text-accent-ink hover:border-accent/40"
+                            >
+                                Moving to Germany with a restricted dog
+                            </Link>
+                            <Link
+                                to="/blog/restricted-dog-laws-by-country"
+                                className="inline-flex min-h-11 items-center rounded-lg border border-primary/10 bg-white px-3 py-2 text-sm font-bold text-accent-ink hover:border-accent/40"
+                            >
+                                Compare restricted-dog laws by country
+                            </Link>
+                        </nav>
+
+                        <section
+                            id="quick-answer"
+                            aria-labelledby="quick-answer-heading"
+                            className="not-prose mb-8 scroll-mt-24 rounded-xl border border-primary/10 bg-primary/5 p-5 md:p-6"
+                        >
+                            <h2 id="quick-answer-heading" className="text-2xl font-bold text-primary mb-4">
+                                1. Quick answer: import vs keeping
+                            </h2>
+                            <dl className="grid gap-4 md:grid-cols-3">
+                                <div className="rounded-lg bg-white p-4">
+                                    <dt className="text-xs font-bold uppercase tracking-wider text-accent-ink mb-2">Federal import gate</dt>
+                                    <dd className="text-sm text-primary/80">Pit Bull, American Staffordshire Terrier, Staffordshire Bull Terrier and Bull Terrier are generally prohibited for import, including named crosses.</dd>
+                                </div>
+                                <div className="rounded-lg bg-white p-4">
+                                    <dt className="text-xs font-bold uppercase tracking-wider text-accent-ink mb-2">Rottweiler</dt>
+                                    <dd className="text-sm text-primary/80">A Rottweiler is not one of the four federal import breeds, but state rules can require permits, tests or exemptions.</dd>
+                                </div>
+                                <div className="rounded-lg bg-white p-4">
+                                    <dt className="text-xs font-bold uppercase tracking-wider text-accent-ink mb-2">Keeping in Germany</dt>
+                                    <dd className="text-sm text-primary/80">The destination state and municipality apply separate keeping rules after the border-import question is answered.</dd>
+                                </div>
+                            </dl>
+                        </section>
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
                             <div className="bg-red-50 border border-red-200 p-5 rounded-xl my-6 not-prose">
@@ -231,7 +275,7 @@ export default function BreedRestrictionsGermany() {
                             </div>
 
                             <h2 id="two-rule-layers" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                1. Federal import rules and state keeping rules are separate
+                                2. Federal import rules and state keeping rules are separate
                             </h2>
                             <div className="grid md:grid-cols-2 gap-6 my-6 not-prose">
                                 <div className="bg-white border border-primary/10 p-6 rounded-xl">
@@ -255,7 +299,7 @@ export default function BreedRestrictionsGermany() {
                             </p>
 
                             <h2 id="federal-import-rule" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                2. The federal import restriction
+                                3. The federal import restriction
                             </h2>
                             <p>
                                 Section 2 of the federal law generally prohibits bringing the following breeds, their crosses with one another, and their crosses with other dogs into Germany:
@@ -273,7 +317,7 @@ export default function BreedRestrictionsGermany() {
                             </p>
 
                             <h2 id="limited-exceptions" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                3. Limited federal exceptions
+                                4. Limited federal exceptions
                             </h2>
                             <p>The federal exceptions regulation covers defined situations, including:</p>
                             <ul>
@@ -286,7 +330,7 @@ export default function BreedRestrictionsGermany() {
                             </p>
 
                             <h2 id="state-examples" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                4. Verified examples: Berlin, Hamburg and Bavaria
+                                5. Verified examples: Berlin, Hamburg and Bavaria
                             </h2>
                             <p>
                                 These examples show why one national quick-reference table is unsafe. The named breeds, legal categories, tests and permit effects differ materially.
@@ -334,7 +378,7 @@ export default function BreedRestrictionsGermany() {
                             </div>
 
                             <h2 id="moving-checklist" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                5. What to do before moving or travelling
+                                6. What to do before moving or travelling
                             </h2>
                             <div className="bg-white p-6 rounded-xl border border-primary/10 my-6 not-prose space-y-5">
                                 {movingChecklist.map((step, index) => (

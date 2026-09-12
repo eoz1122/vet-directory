@@ -1791,3 +1791,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** The live guide returns HTTP 200 and contains the updated title, description, periodic review marker, format-comparison table, internal guide links, and `dateModified` value. The live sitemap contains the dog-food URL with `<lastmod>2026-09-12</lastmod>`.
 
 **Rollback:** Redeploy the previous production commit `ebae7d2` if the guide change needs to be reverted.
+
+## 2026-09-12T23:51:20+02:00 - Improve breed-restrictions guide search conversion locally
+
+**Context:** Search Console showed `/blog/breed-restrictions-germany` receiving 2,854 impressions with a 0.9% CTR and average position 7.1 over the last 28 days. The page already covered the relevant law, but the opening did not give searchers a compact Pit Bull versus Rottweiler answer.
+
+**Decision:** Reframe the title and description around banned dog breeds, Pit Bull, Rottweiler and state rules. Add a quick-answer block separating federal import from state keeping, add a compact top-of-page path to the two related restricted-dog guides, and advance the review date to 12 September 2026. Preserve the official legal sources and the existing cautious wording.
+
+**Trade-offs:** The title is intentionally broader than the prior Pit Bull question to cover the high-impression Rottweiler and state-rule intent. The quick answer remains qualified and does not present state keeping rules as a nationwide ban.
+
+**Verification:** The focused conversion and traffic SEO tests pass (37 tests). Full tests, lint, TypeScript, production build, and local preview remain required before deployment.
+
+**Rollback:** Revert `BreedRestrictionsGermany.tsx`, its focused test, the updated traffic SEO expectations, the sitemap last-modified date, and this entry if the local preview is not preferred.

@@ -469,27 +469,27 @@ describe('traffic-focused search metadata', () => {
         renderPage(<BreedRestrictionsGermany />);
 
         await waitFor(() => {
-            expect(document.title).toBe('Are Pit Bulls Banned in Germany? Breed Rules (2026)');
+            expect(document.title).toBe('Banned Dog Breeds in Germany (2026): Pit Bull, Rottweiler & State Rules');
         });
 
         expect(getMetaContent('description')).toBe(
-            'Are Pit Bulls banned in Germany? Federal law prohibits importing four named breeds and their crosses. Check exceptions, Rottweilers, and state rules.',
+            'Which dog breeds are banned in Germany? Check Pit Bull and Rottweiler rules, federal import restrictions, state permits, exceptions and official sources.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: 'Are Pit Bulls Banned in Germany? 2026 Rules',
+            name: 'Banned Dog Breeds in Germany: Pit Bull, Rottweiler and State Rules',
         })).toBeTruthy();
-        expect(screen.getByText('Last verified periodically: 10 September 2026')).toBeTruthy();
+        expect(screen.getByText('Last verified periodically: 12 September 2026')).toBeTruthy();
         const directAnswer = screen.getByText(
             /Federal law generally prohibits bringing Pit Bull Terriers.*into Germany/i,
         );
-        const tableOfContents = screen.getByRole('navigation');
+        const tableOfContents = screen.getByRole('navigation', { name: 'Table of Contents' });
         expect(directAnswer.compareDocumentPosition(tableOfContents) & Node.DOCUMENT_POSITION_FOLLOWING)
             .toBeTruthy();
         expect(screen.getByText('Are Rottweilers banned in Germany?')).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
-            name: '1. Federal import rules and state keeping rules are separate',
+            name: '2. Federal import rules and state keeping rules are separate',
         })).toBeTruthy();
         expect(screen.getByRole('link', { name: 'Federal import restriction law' }).getAttribute('href'))
             .toBe('https://www.gesetze-im-internet.de/hundverbreinfg/__2.html');
@@ -509,7 +509,7 @@ describe('traffic-focused search metadata', () => {
             .toBe('/vets/munich');
         expect(screen.getByRole('link', { name: 'Moving a restricted dog to Germany' }).getAttribute('href'))
             .toBe('/blog/moving-to-germany-with-restricted-dog');
-        expect(screen.getByRole('link', { name: 'Compare restricted-dog laws by country' }).getAttribute('href'))
+        expect(screen.getAllByRole('link', { name: 'Compare restricted-dog laws by country' })[0].getAttribute('href'))
             .toBe('/blog/restricted-dog-laws-by-country');
 
         const articleText = document.body.textContent ?? '';
@@ -523,7 +523,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2026-04-28');
-        expect(schema.dateModified).toBe('2026-09-10');
+        expect(schema.dateModified).toBe('2026-09-12');
     });
 
     it('aligns the breed-restrictions discovery card with the federal and state guide', () => {
