@@ -10,8 +10,8 @@ import { trackAffiliateClick } from '../utils/analytics';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
-const TITLE = 'Best Dog Food in Germany (2026): Complete Food, Labels and Prices';
-const DESCRIPTION = 'Compare dog food in Germany using complete-food labels, FEDIAF guidance, prices, formats and WSAVA checks.';
+const TITLE = 'Best Dog Food in Germany (2026): How to Choose, Labels & Prices';
+const DESCRIPTION = 'Find the best dog food in Germany for your dog: compare complete-food labels, dry and wet formats, prices, manufacturer checks and raw-diet risks.';
 const URL = 'https://englishspeakinggermany.online/blog/best-dog-food-germany';
 
 const SOURCE_URLS = {
@@ -25,6 +25,7 @@ const TABLE_OF_CONTENTS = [
     { id: 'how-to-choose', label: '60-Second Checklist' },
     { id: 'label', label: 'Read the German Label' },
     { id: 'formats', label: 'Compare Food Formats' },
+    { id: 'format-comparison', label: 'Format Comparison' },
     { id: 'daily-cost', label: 'Compare Daily Cost' },
     { id: 'manufacturer', label: 'Check the Manufacturer' },
     { id: 'raw-homemade', label: 'Raw and Homemade Diets' },
@@ -58,6 +59,29 @@ const QUICK_CHECKS = [
     },
 ] as const;
 
+const FORMAT_COMPARISON = [
+    {
+        format: 'Dry food (Trockenfutter)',
+        bestFor: 'Easy storage and portioning',
+        check: 'Calorie density and water intake',
+    },
+    {
+        format: 'Wet food (Nassfutter)',
+        bestFor: 'Higher-moisture meals',
+        check: 'Complete versus complementary status',
+    },
+    {
+        format: 'Cooked or fresh food',
+        bestFor: 'Dogs suited to chilled or fresh meals',
+        check: 'Formulation, delivery and storage controls',
+    },
+    {
+        format: 'Raw or homemade food',
+        bestFor: 'Only with professional formulation',
+        check: 'Nutrient balance and food-hygiene risks',
+    },
+] as const;
+
 const FAQS = [
     {
         q: 'What is the best dog food in Germany?',
@@ -86,7 +110,7 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DESCRIPTION,
     URL,
     '2025-01-01',
-    '2026-08-01',
+    '2026-09-12',
 );
 
 const FAQ_SCHEMA = {
@@ -142,7 +166,7 @@ export default function PetFoodGermany() {
                             title={TITLE}
                             review={(
                                 <>
-                                    Reviewed periodically. Last checked August 1, 2026
+                                    Reviewed periodically. Last checked September 12, 2026
                                     <span aria-hidden="true"> • </span>
                                     <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
                                         How we review guides
@@ -163,6 +187,35 @@ export default function PetFoodGermany() {
                             <NewsletterSignup source="dog_food_guide" />
 
                             <TableOfContents items={TABLE_OF_CONTENTS} />
+
+                            <nav
+                                aria-label="Related dog-care guides"
+                                className="not-prose mb-12 rounded-2xl border border-primary/10 bg-secondary/60 p-5"
+                            >
+                                <p className="text-xs font-black uppercase tracking-[0.16em] text-accent-ink">
+                                    Planning the wider care budget?
+                                </p>
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                    <Link
+                                        to="/blog/vet-costs-germany"
+                                        className="rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-bold text-primary transition hover:border-accent hover:text-accent-ink"
+                                    >
+                                        Vet costs
+                                    </Link>
+                                    <Link
+                                        to="/blog/pet-insurance-germany"
+                                        className="rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-bold text-primary transition hover:border-accent hover:text-accent-ink"
+                                    >
+                                        Pet insurance
+                                    </Link>
+                                    <Link
+                                        to="/blog/first-vet-visit-germany"
+                                        className="rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-bold text-primary transition hover:border-accent hover:text-accent-ink"
+                                    >
+                                        First vet visit
+                                    </Link>
+                                </div>
+                            </nav>
 
                             <h2 id="how-to-choose" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">
                                 Choose Dog Food in 60 Seconds
@@ -216,6 +269,27 @@ export default function PetFoodGermany() {
                             <p>
                                 There is no single best format. Dry, wet and commercially cooked foods can all be suitable if they are complete for the correct life stage and produced with appropriate controls. Compare calorie density, moisture, portioning, storage, cost and the dog&apos;s needs rather than assuming one format is inherently superior.
                             </p>
+                            <div id="format-comparison" className="my-10 overflow-x-auto rounded-2xl border border-primary/10 bg-white not-prose shadow-sm scroll-mt-24">
+                                <table className="w-full min-w-[640px] text-left text-sm">
+                                    <caption className="sr-only">Dog food format comparison</caption>
+                                    <thead className="bg-primary text-secondary">
+                                        <tr>
+                                            <th scope="col" className="px-4 py-3 font-bold">Format</th>
+                                            <th scope="col" className="px-4 py-3 font-bold">Best for</th>
+                                            <th scope="col" className="px-4 py-3 font-bold">Check before buying</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-primary/10">
+                                        {FORMAT_COMPARISON.map((row) => (
+                                            <tr key={row.format}>
+                                                <th scope="row" className="px-4 py-3 font-bold text-primary align-top">{row.format}</th>
+                                                <td className="px-4 py-3 text-primary/75 align-top">{row.bestFor}</td>
+                                                <td className="px-4 py-3 text-primary/75 align-top">{row.check}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                             <div className="grid md:grid-cols-2 gap-6 my-10 not-prose">
                                 <div className="bg-white p-6 rounded-2xl border border-primary/5 shadow-sm">
                                     <h3 className="font-bold text-primary mb-2">Dry food (Trockenfutter)</h3>

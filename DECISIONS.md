@@ -1769,3 +1769,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Decision:** Do not request indexing blindly while quota is constrained. Prioritize content and internal-link improvements on the four high-impression pages, then request inspection for the 19 discovered-not-indexed guide pages and the 57 crawled-not-indexed URLs in small batches after quota reset. Treat canonical, redirect, `noindex`, duplicate, soft-404, and the single 404 counts as mostly intentional until each URL is checked against the sitemap and canonical contract.
 
 **Rollback:** No production change was made by this audit. Any later content or metadata change should be verified locally before deployment and can be reverted through the normal Git deployment path.
+
+## 2026-09-12T18:18:41+02:00 - Improve dog-food guide search conversion locally
+
+**Context:** Search Console showed `/blog/best-dog-food-germany` receiving 6,406 impressions with a 0.3% CTR and average position 9.4 over the last 28 days.
+
+**Decision:** Strengthen the page's search promise without making unsupported brand rankings. The title and description now lead with the user's comparison intent, the freshness marker and Article schema use the current review date, and the article adds a compact format-comparison table plus nearby links to vet costs, pet insurance and first-vet-visit guidance.
+
+**Trade-offs:** The guide remains evidence-based and does not call a product or format universally best. The table uses qualitative comparisons instead of unsupported price claims. The changes are local-only until the user reviews the preview.
+
+**Verification:** The focused conversion tests and existing SEO/affiliate tests pass. Full verification passes 463 frontend tests, ESLint, TypeScript, the production build, 317 prerendered routes and a 316-URL sitemap. The local prerender contains the updated title, description, review date, comparison table and internal guide navigation.
+
+**Rollback:** Revert `PetFoodGermany.tsx`, its focused test, the updated SEO expectations, the dog-food sitemap last-modified date, and this entry if the local review is not preferred.

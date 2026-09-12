@@ -910,17 +910,17 @@ describe('traffic-focused search metadata', () => {
         renderPage(<PetFoodGermany />);
 
         await waitFor(() => {
-            expect(document.title).toBe('Best Dog Food in Germany (2026): Complete Food, Labels and Prices');
+            expect(document.title).toBe('Best Dog Food in Germany (2026): How to Choose, Labels & Prices');
         });
 
         expect(getMetaContent('description')).toBe(
-            'Compare dog food in Germany using complete-food labels, FEDIAF guidance, prices, formats and WSAVA checks.',
+            'Find the best dog food in Germany for your dog: compare complete-food labels, dry and wet formats, prices, manufacturer checks and raw-diet risks.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
-            name: 'Best Dog Food in Germany (2026): Complete Food, Labels and Prices',
+            name: 'Best Dog Food in Germany (2026): How to Choose, Labels & Prices',
         })).toBeTruthy();
-        expect(screen.getByText('Reviewed periodically. Last checked August 1, 2026', { exact: false })).toBeTruthy();
+        expect(screen.getByText('Reviewed periodically. Last checked September 12, 2026', { exact: false })).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
             name: 'Choose Dog Food in 60 Seconds',
@@ -1002,7 +1002,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-08-01');
+        expect(schema.dateModified).toBe('2026-09-12');
     });
 
     it('keeps the dog-food discovery card aligned with the refreshed guide', () => {
