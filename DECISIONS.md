@@ -1781,3 +1781,13 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** The focused conversion tests and existing SEO/affiliate tests pass. Full verification passes 463 frontend tests, ESLint, TypeScript, the production build, 317 prerendered routes and a 316-URL sitemap. The local prerender contains the updated title, description, review date, comparison table and internal guide navigation.
 
 **Rollback:** Revert `PetFoodGermany.tsx`, its focused test, the updated SEO expectations, the dog-food sitemap last-modified date, and this entry if the local review is not preferred.
+
+## 2026-09-12T19:28:46+02:00 - Deploy dog-food guide search conversion improvement
+
+**Context:** The updated dog-food guide was reviewed in the local preview and approved for production.
+
+**Deployment:** Commit `bbfbf82efa78d45bfd167a297486e22fd7dc651e` was pushed to `main` and deployed through the existing VPS workflow. The deployment rendered 317 pages, generated a 316-URL sitemap, returned HTTP 200, and IndexNow accepted all 316 URLs.
+
+**Verification:** The live guide returns HTTP 200 and contains the updated title, description, periodic review marker, format-comparison table, internal guide links, and `dateModified` value. The live sitemap contains the dog-food URL with `<lastmod>2026-09-12</lastmod>`.
+
+**Rollback:** Redeploy the previous production commit `ebae7d2` if the guide change needs to be reverted.
