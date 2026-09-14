@@ -1803,3 +1803,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** The focused conversion and traffic SEO tests pass (37 tests). Full tests, lint, TypeScript, production build, and local preview remain required before deployment.
 
 **Rollback:** Revert `BreedRestrictionsGermany.tsx`, its focused test, the updated traffic SEO expectations, the sitemap last-modified date, and this entry if the local preview is not preferred.
+
+## 2026-09-14T23:40:00+02:00 - Standardize restricted-dog comparison guide locally
+
+**Context:** The Germany breed-restrictions guide now has a compact opening structure. The related international comparison guide should provide the same immediate orientation before readers work through country-specific sources.
+
+**Decision:** Add a country-by-country quick-answer panel, a consistent periodic verification marker, and top-of-page links to the Germany breed-restrictions and relocation guides. Renumber the table of contents and article sections so the page has one clear reading path.
+
+**Trade-offs:** The new cards summarize the existing article rather than adding new legal claims. Country rules remain qualified, and official source links stay in the detailed sections where the relevant context is explained.
+
+**Verification:** Focused conversion and traffic SEO tests pass. Full tests, lint, TypeScript, production build, local preview, and deployment checks remain required before production release.
+
+**Rollback:** Revert `RestrictedDogLawsByCountry.tsx`, its focused test, the updated traffic SEO expectations, and this entry if the local preview is not preferred.

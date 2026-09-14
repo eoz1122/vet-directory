@@ -565,7 +565,7 @@ describe('traffic-focused search metadata', () => {
         const directAnswer = screen.getByText(
             /moving one of the four federally named breeds permanently to Germany is generally prohibited/i,
         );
-        const tableOfContents = screen.getByRole('navigation');
+        const tableOfContents = screen.getByRole('navigation', { name: 'Table of Contents' });
         expect(directAnswer.compareDocumentPosition(tableOfContents) & Node.DOCUMENT_POSITION_FOLLOWING)
             .toBeTruthy();
 
@@ -643,20 +643,20 @@ describe('traffic-focused search metadata', () => {
         expect(screen.getByText(/no single global banned-breed list/i)).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
-            name: '1. Start with the destination and every transit country',
+            name: '2. Start with the destination and every transit country',
         })).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
-            name: '2. Germany: federal import law plus state keeping rules',
+            name: '3. Germany: federal import law plus state keeping rules',
         })).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
-            name: '3. Great Britain: banned types and exemption evidence',
+            name: '4. Great Britain: banned types and exemption evidence',
         })).toBeTruthy();
         expect(screen.getByText(/Northern Ireland follows separate guidance/i)).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
-            name: '4. United States: health entry plus state and local checks',
+            name: '5. United States: health entry plus state and local checks',
         })).toBeTruthy();
         expect(screen.getByRole('link', { name: 'UK banned-dog rules' }).getAttribute('href'))
             .toBe('https://www.gov.uk/control-dog-public/banned-dogs');
@@ -674,10 +674,10 @@ describe('traffic-focused search metadata', () => {
             .toBe('/blog/moving-to-germany-with-restricted-dog');
 
         const directAnswer = screen.getByText(/no single global banned-breed list/i);
-        const tableOfContents = screen.getByRole('navigation');
+        const tableOfContents = screen.getByRole('navigation', { name: 'Table of Contents' });
         expect(directAnswer.compareDocumentPosition(tableOfContents) & Node.DOCUMENT_POSITION_FOLLOWING)
             .toBeTruthy();
-        expect(screen.getByText(/Reviewed periodically/i)).toBeTruthy();
+        expect(screen.getByText('Last verified periodically: 14 September 2026')).toBeTruthy();
 
         const pageText = document.body.textContent ?? '';
         expect(pageText).toMatch(/XL Bully/i);
@@ -687,7 +687,7 @@ describe('traffic-focused search metadata', () => {
 
         const articleSchema = getArticleSchema();
         expect(articleSchema.datePublished).toBe('2026-09-10');
-        expect(articleSchema.dateModified).toBe('2026-09-10');
+        expect(articleSchema.dateModified).toBe('2026-09-14');
         expect(getStructuredData('FAQPage').mainEntity).toHaveLength(4);
     });
 

@@ -11,7 +11,7 @@ const ARTICLE_TITLE = 'Restricted Dog Laws by Country: Germany, UK and US (2026)
 const ARTICLE_DESCRIPTION = 'Moving with a Pit Bull or other restricted dog? Compare Germany, UK and US breed-law checks, official sources and a safe pre-travel workflow.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/restricted-dog-laws-by-country';
 const DATE_PUBLISHED = '2026-09-10';
-const DATE_MODIFIED = '2026-09-10';
+const DATE_MODIFIED = '2026-09-14';
 
 const GERMANY_IMPORT_LAW_URL = 'https://www.gesetze-im-internet.de/hundverbreinfg/__2.html';
 const GERMANY_EXCEPTIONS_URL = 'https://www.gesetze-im-internet.de/hundverbreinfvo/__2.html';
@@ -32,11 +32,30 @@ const articleSchema = generateArticleSchema(
 );
 
 const tableOfContents = [
-    { id: 'start-with-destination', label: '1. Start with the destination and transit countries' },
-    { id: 'germany', label: '2. Germany: federal import law plus state keeping rules' },
-    { id: 'united-kingdom', label: '3. Great Britain: banned types and exemption evidence' },
-    { id: 'united-states', label: '4. United States: health entry plus state and local checks' },
-    { id: 'safe-workflow', label: '5. Build a safe pre-travel file' },
+    { id: 'quick-answer', label: '1. Quick answer: country rules are not interchangeable' },
+    { id: 'start-with-destination', label: '2. Start with the destination and transit countries' },
+    { id: 'germany', label: '3. Germany: federal import law plus state keeping rules' },
+    { id: 'united-kingdom', label: '4. Great Britain: banned types and exemption evidence' },
+    { id: 'united-states', label: '5. United States: health entry plus state and local checks' },
+    { id: 'safe-workflow', label: '6. Build a safe pre-travel file' },
+];
+
+const quickAnswerCards = [
+    {
+        title: 'Germany',
+        text: 'Start with the federal import gate, then check the state and municipality where the dog will live. A passport or health certificate is not a breed-law approval.',
+        tone: 'border-green-200 bg-green-50',
+    },
+    {
+        title: 'Great Britain',
+        text: 'The banned-type test is based on appearance. Entry and any Certificate of Exemption are separate checks, and Northern Ireland follows different travel guidance.',
+        tone: 'border-blue-200 bg-blue-50',
+    },
+    {
+        title: 'United States',
+        text: 'CDC entry rules cover health and documentation. Breed, housing and insurance restrictions still require state, county and city checks.',
+        tone: 'border-orange-200 bg-orange-50',
+    },
 ];
 
 const faqSchema = {
@@ -181,21 +200,45 @@ export default function RestrictedDogLawsByCountry() {
                         </h1>
 
                         <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm text-primary/80 mb-8">
-                            <span>Last verified: 10 September 2026</span>
-                            <span className="hidden sm:inline" aria-hidden="true">·</span>
-                            <span className="italic">Reviewed periodically. Reconfirm every authority before booking.</span>
+                            <span>Last verified periodically: 14 September 2026</span>
                         </div>
 
                         <p className="border-l-4 border-accent pl-6 py-4 mb-8 bg-accent/5 rounded-r-lg text-xl text-primary/85">
                             There is no single global banned-breed list. Germany, the United Kingdom and the United States use different legal tests, definitions and authority layers. Check the destination and every transit country in writing before you book a restricted dog’s journey.
                         </p>
 
+                        <nav aria-label="Related restricted-dog guides" className="mb-8 rounded-xl border border-primary/10 bg-white p-4">
+                            <p className="text-xs font-bold uppercase tracking-wider text-accent-ink">Continue with a Germany-specific guide</p>
+                            <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+                                <Link className="underline decoration-accent/50 underline-offset-4" to="/blog/breed-restrictions-germany">
+                                    Banned dog breeds in Germany
+                                </Link>
+                                <Link className="underline decoration-accent/50 underline-offset-4" to="/blog/moving-to-germany-with-restricted-dog">
+                                    Moving to Germany with a restricted dog
+                                </Link>
+                            </div>
+                        </nav>
+
                         <TableOfContents items={tableOfContents} />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
+                            <section id="quick-answer">
+                                <h2 className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
+                                    1. Quick answer: country rules are not interchangeable
+                                </h2>
+                                <div className="grid gap-3 sm:grid-cols-3 not-prose">
+                                    {quickAnswerCards.map((card) => (
+                                        <div key={card.title} className={`rounded-xl border p-4 ${card.tone}`}>
+                                            <h3 className="font-bold text-primary text-lg mb-2">{card.title}</h3>
+                                            <p className="text-sm text-primary/80">{card.text}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+
                             <section id="start-with-destination">
                                 <h2 className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                    1. Start with the destination and every transit country
+                                    2. Start with the destination and every transit country
                                 </h2>
                                 <p>
                                     Breed laws are territorial. A dog can meet the animal-health rules for a journey and still be refused because the destination or a transit country applies a separate restriction. Record every place where the dog will enter, clear immigration or leave a secure transit area.
@@ -207,7 +250,7 @@ export default function RestrictedDogLawsByCountry() {
 
                             <section id="germany">
                                 <h2 className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                    2. Germany: federal import law plus state keeping rules
+                                    3. Germany: federal import law plus state keeping rules
                                 </h2>
                                 <p>
                                     Germany’s first federal prohibition covers Pit Bull Terrier, American Staffordshire Terrier, Staffordshire Bull Terrier, Bull Terrier and specified crosses. The same federal law also refers to additional dogs whose dangerousness is presumed under the law of the German state where the dog will be kept.
@@ -224,7 +267,7 @@ export default function RestrictedDogLawsByCountry() {
 
                             <section id="united-kingdom">
                                 <h2 className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                    3. Great Britain: banned types and exemption evidence
+                                    4. Great Britain: banned types and exemption evidence
                                 </h2>
                                 <p>
                                     Great Britain lists banned dog types, including Pit Bull Terrier, Japanese Tosa, Dogo Argentino, Fila Brasileiro and XL Bully. The official test is based on what the dog looks like, not only the breed or name shown in a document. A banned dog needs a valid Certificate of Exemption before entry, and the pet-travel document and approved-route rules still apply separately. Northern Ireland follows separate guidance for pet travel, so do not apply the Great Britain route to an NI journey.
@@ -238,7 +281,7 @@ export default function RestrictedDogLawsByCountry() {
 
                             <section id="united-states">
                                 <h2 className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                    4. United States: health entry plus state and local checks
+                                    5. United States: health entry plus state and local checks
                                 </h2>
                                 <p>
                                     The current CDC federal dog-entry pathway focuses on health, age, microchip and documentation, with additional requirements based on rabies risk and vaccination history. The CDC also directs travelers to comply with the destination state or territory’s regulations.
@@ -255,7 +298,7 @@ export default function RestrictedDogLawsByCountry() {
 
                             <section id="safe-workflow">
                                 <h2 className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
-                                    5. Build a safe pre-travel file
+                                    6. Build a safe pre-travel file
                                 </h2>
                                 <div className="grid gap-4 not-prose">
                                     {workflow.map((step) => (
