@@ -1395,9 +1395,10 @@ describe('traffic-focused search metadata', () => {
             .toBe('/blog/pet-insurance-germany');
         expect(screen.getByRole('link', { name: 'Pet emergency guide' }).getAttribute('href'))
             .toBe('/guides/pet-emergency-germany');
-        expect(screen.getByRole('link', { name: 'Compare pet insurance' }).getAttribute('href'))
+        const relatedGuidesNavigation = screen.getByRole('navigation', { name: 'Related vet-cost guides' });
+        expect(within(relatedGuidesNavigation).getByRole('link', { name: 'Compare pet insurance' }).getAttribute('href'))
             .toBe('/blog/pet-insurance-germany');
-        expect(screen.getByRole('link', { name: 'Prepare for a pet emergency' }).getAttribute('href'))
+        expect(within(relatedGuidesNavigation).getByRole('link', { name: 'Prepare for a pet emergency' }).getAttribute('href'))
             .toBe('/guides/pet-emergency-germany');
         expect(screen.getByRole('link', { name: 'Browse the Germany vet directory' }).getAttribute('href'))
             .toBe('/');
@@ -1428,7 +1429,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2026-07-11');
-        expect(schema.dateModified).toBe('2026-09-10');
+        expect(schema.dateModified).toBe('2026-09-15');
     });
 
     it('keeps the vet-cost discovery card aligned with the statutory billing guide', () => {

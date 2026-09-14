@@ -1815,3 +1815,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Focused conversion and traffic SEO tests pass. Full tests, lint, TypeScript, production build, local preview, and deployment checks remain required before production release.
 
 **Rollback:** Revert `RestrictedDogLawsByCountry.tsx`, its focused test, the updated traffic SEO expectations, and this entry if the local preview is not preferred.
+
+## 2026-09-15T00:17:00+02:00 - Improve vet-costs guide search conversion locally
+
+**Context:** Search Console showed `/blog/vet-costs-germany` receiving 1,284 impressions with a 0.6% CTR and average position 5.1 over the last 28 days.
+
+**Decision:** Add an immediate four-card cost summary, a consistent periodic verification marker, and top-of-page links to the pet insurance, first-vet-visit, and emergency guides. Keep the statutory fee explanation and existing official sources unchanged.
+
+**Trade-offs:** The cards summarize the existing GOT explanation without presenting a universal average bill or unsupported package price. The first-vet-visit link improves discovery but adds one more navigation element above the table of contents.
+
+**Verification:** Focused conversion and traffic SEO tests pass. Full tests, lint, TypeScript, production build, local responsive preview, and deployment checks remain required before production release.
+
+**Rollback:** Revert `VetCostsGermany.tsx`, its focused test, the updated traffic SEO expectation, the vet-costs sitemap last-modified date, and this entry if the local preview is not preferred.

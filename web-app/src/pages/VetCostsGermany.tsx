@@ -15,7 +15,7 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DESCRIPTION,
     URL,
     '2026-07-11',
-    '2026-09-10',
+    '2026-09-15',
 );
 
 const BREADCRUMB_SCHEMA = {
@@ -65,6 +65,7 @@ const FAQ_SCHEMA = {
 };
 
 const TABLE_OF_CONTENTS = [
+    { id: 'quick-answer', label: '1. Quick answer: what changes the final bill' },
     { id: 'got-basics', label: 'What the GOT regulates' },
     { id: 'ordinary-rates', label: 'Ordinary 1x to 3x rates' },
     { id: 'exam-example', label: 'A transparent exam example' },
@@ -74,6 +75,29 @@ const TABLE_OF_CONTENTS = [
     { id: 'control-costs', label: 'Practical cost controls' },
     { id: 'sources', label: 'Official sources' },
     { id: 'faq', label: 'Frequently asked questions' },
+];
+
+const QUICK_ANSWER_CARDS = [
+    {
+        title: 'Standard consultation',
+        text: 'GOT schedule number 16 lists a 1x base fee of €23.62 net for a general examination with consultation for a dog, cat or ferret.',
+        tone: 'border-green-200 bg-green-50',
+    },
+    {
+        title: 'Ordinary care',
+        text: 'Ordinary services generally use 1x to 3x the GOT base fee, selected per service and case factors.',
+        tone: 'border-blue-200 bg-blue-50',
+    },
+    {
+        title: 'Emergency care',
+        text: 'Qualifying emergency service generally uses 2x to 4x the rate and adds a €50 net emergency-service fee.',
+        tone: 'border-orange-200 bg-orange-50',
+    },
+    {
+        title: 'Final invoice',
+        text: 'VAT, medicine, materials, laboratory work and other expenses can sit outside the base fee.',
+        tone: 'border-primary/10 bg-white',
+    },
 ];
 
 const INVOICE_ITEMS = [
@@ -159,13 +183,36 @@ export default function VetCostsGermany() {
                         <ArticleHeader
                             eyebrow="Money and bureaucracy guide"
                             title="Vet Costs in Germany (2026): GOT Fees, Prices and Estimates"
-                            review="Published 11 July 2026 · Reviewed periodically 10 September 2026"
+                            review="Published 11 July 2026 · Last verified periodically 15 September 2026"
                         />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
                             <p className="text-xl leading-relaxed text-primary mb-8">
                                 <strong>How much does a vet cost in Germany?</strong> A general examination has a GOT 1x base fee of €23.62 net for a dog, cat, or ferret, but the final bill depends on the selected rate, other services, medicine, materials, expenses, and VAT. Use this guide to understand the calculation and request an estimate before planned treatment.
                             </p>
+
+                            <nav aria-label="Related vet-cost guides" className="mb-8 rounded-xl border border-primary/10 bg-white p-4 not-prose">
+                                <p className="text-xs font-bold uppercase tracking-wider text-accent-ink">Plan for the cost and the visit</p>
+                                <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+                                    <Link to="/blog/pet-insurance-germany" className="text-accent-ink hover:underline">Compare pet insurance</Link>
+                                    <Link to="/blog/first-vet-visit-germany" className="text-accent-ink hover:underline">Prepare for your first vet visit</Link>
+                                    <Link to="/guides/pet-emergency-germany" className="text-accent-ink hover:underline">Prepare for a pet emergency</Link>
+                                </div>
+                            </nav>
+
+                            <section id="quick-answer" className="mb-10 not-prose" aria-labelledby="quick-answer-heading">
+                                <h2 id="quick-answer-heading" className="text-3xl font-bold text-primary mt-10 mb-6 scroll-mt-24">
+                                    1. Quick answer: what changes the final bill
+                                </h2>
+                                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                                    {QUICK_ANSWER_CARDS.map((card) => (
+                                        <div key={card.title} className={`rounded-xl border p-4 ${card.tone}`}>
+                                            <h3 className="text-base font-bold text-primary mb-2">{card.title}</h3>
+                                            <p className="text-sm leading-relaxed text-primary/70">{card.text}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
 
                             <TableOfContents items={TABLE_OF_CONTENTS} />
 
