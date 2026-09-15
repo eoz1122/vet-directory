@@ -1839,3 +1839,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Focused conversion and traffic SEO tests pass. Full tests, lint, TypeScript, production build, local responsive preview, and deployment checks remain required before production release.
 
 **Rollback:** Revert `CatFoodGermany.tsx`, its focused test, the updated traffic SEO expectations, the cat-food sitemap last-modified date, and this entry if the local preview is not preferred.
+
+## 2026-09-15T08:04:00+02:00 - Reduce affiliate disclosure visual weight locally
+
+**Context:** The cat and dog food guides had large affiliate callouts and separate commercial-disclosure cards that were compliant but visually dominant, making the articles feel more promotional than editorial.
+
+**Decision:** Keep the full affiliate relationship and suitability wording visible, but move it into a compact two-tier sponsored callout and a muted disclosure strip. Add consistent region labels, smaller type, compact badges, and responsive button layouts across the shared callout plus the cat and dog purchase sections.
+
+**Trade-offs:** The disclosure remains visible and accessible, while the reduced type scale and lighter background make it less dominant. The shared callout change affects every guide that uses an affiliate placement, so local review is required before deployment.
+
+**Verification:** Focused affiliate and cat conversion tests pass (4 tests). Full tests pass (472 tests across 82 files), ESLint, TypeScript, production build, 317 prerendered routes, and a 316-URL sitemap generation pass. Local responsive visual review remains required before production release.
+
+**Rollback:** Revert `AffiliateCallout.tsx`, `AffiliateCallout.test.tsx`, `CatFoodGermany.tsx`, `CatFoodGermany.conversion.test.tsx`, `PetFoodGermany.tsx`, and this entry if the local visual review is not preferred.

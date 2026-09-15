@@ -399,19 +399,29 @@ export default function PetFoodGermany() {
                                 Supermarkets, drugstores, pet shops, online retailers and veterinary clinics all sell dog food. Veterinary clinics are the appropriate source for diets tied to a diagnosed condition. Wherever you shop, compare the exact product label and manufacturer rather than treating the retailer or price as proof of quality.
                             </p>
 
-                            <div className="bg-white p-6 md:p-8 rounded-3xl border border-primary/10 shadow-sm my-10 not-prose">
-                                <h3 className="text-xl font-bold text-primary mb-3">Commercial disclosure</h3>
-                                <p className="text-primary/70 leading-relaxed">
-                                    The two links below are affiliate links. We may earn a commission at no extra cost to you. We have not independently laboratory-tested or ranked these products or services, and inclusion is not a nutritional endorsement. Confirm complete-food status, life stage and suitability before buying.
-                                </p>
-                                <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                            <div
+                                role="region"
+                                aria-label="Commercial disclosure"
+                                className="my-10 rounded-2xl border border-primary/10 bg-secondary/40 p-5 not-prose md:p-6"
+                            >
+                                <div className="flex items-start gap-3">
+                                    <span aria-hidden="true" className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-primary/10 text-sm text-primary/70">↗</span>
+                                    <div className="min-w-0">
+                                        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                                            <h3 className="text-base font-bold text-primary">Commercial disclosure</h3>
+                                            <span className="text-xs font-bold uppercase tracking-wider text-primary/45">Affiliate links</span>
+                                        </div>
+                                        <p className="mt-2 text-sm leading-6 text-primary/70">
+                                            The two links below are affiliate links. We may earn a commission at no extra cost to you. We have not independently laboratory-tested or ranked these products or services, and inclusion is not a nutritional endorsement. Confirm complete-food status, life stage and suitability before buying.
+                                        </p>
+                                        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
                                     <a
                                         href={AFFILIATE_LINKS.zooplus.dogFoodWhereToBuy}
                                         aria-label="Compare complete dog food at Zooplus (affiliate link)"
                                         onClick={() => trackAffiliateClick('Zooplus', 'PetFood_WhereToBuy')}
                                         target="_blank"
                                         rel="noopener noreferrer sponsored"
-                                        className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-6 py-3 font-bold text-secondary transition-colors hover:bg-black"
+                                        className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-bold text-secondary transition-colors hover:bg-black"
                                     >
                                         Compare complete dog food at Zooplus
                                     </a>
@@ -421,10 +431,12 @@ export default function PetFoodGermany() {
                                         onClick={() => trackAffiliateClick('DinnerForDogs', 'PetFood_Page')}
                                         target="_blank"
                                         rel="noopener noreferrer sponsored"
-                                        className="inline-flex min-h-11 items-center justify-center rounded-xl border border-primary/20 px-6 py-3 font-bold text-primary transition-colors hover:bg-primary/5"
+                                        className="inline-flex min-h-11 items-center justify-center rounded-xl border border-primary/20 px-5 py-3 text-sm font-bold text-primary transition-colors hover:bg-primary/5"
                                     >
                                         Check Dinner for Dogs details
                                     </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 

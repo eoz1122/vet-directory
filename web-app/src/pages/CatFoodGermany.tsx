@@ -363,21 +363,33 @@ export default function CatFoodGermany() {
                             <p>
                                 Supermarkets, drugstores, pet shops, online retailers, and veterinary clinics all sell cat food. Veterinary clinics are the appropriate source for diets connected to a diagnosed condition. Wherever you shop, compare the exact product label and manufacturer rather than treating price or retailer as a quality guarantee.
                             </p>
-                            <div className="bg-white p-6 md:p-8 rounded-3xl border border-primary/10 shadow-sm my-10 not-prose">
-                                <h3 className="text-xl font-bold text-primary mb-3">Commercial disclosure</h3>
-                                <p className="text-primary/70 leading-relaxed">
-                                    The link below is an affiliate link. We may earn a commission at no extra cost to you. We have not independently laboratory-tested or ranked the products sold there, and inclusion is not a nutritional endorsement. Confirm complete-food status, life stage, calories, and suitability before buying.
-                                </p>
-                                <a
-                                    href={AFFILIATE_LINKS.zooplus.catFoodWhereToBuy}
-                                    aria-label="Zooplus cat-food affiliate link"
-                                    onClick={() => trackAffiliateClick('Zooplus', 'CatFood_WhereToBuy')}
-                                    target="_blank"
-                                    rel="noopener noreferrer sponsored"
-                                    className="mt-6 inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-6 py-3 font-bold text-secondary transition-colors hover:bg-black"
-                                >
-                                    Browse cat food on Zooplus
-                                </a>
+                            <div
+                                role="region"
+                                aria-label="Commercial disclosure"
+                                className="my-10 rounded-2xl border border-primary/10 bg-secondary/40 p-5 not-prose md:p-6"
+                            >
+                                <div className="flex items-start gap-3">
+                                    <span aria-hidden="true" className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-primary/10 text-sm text-primary/70">↗</span>
+                                    <div className="min-w-0">
+                                        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                                            <h3 className="text-base font-bold text-primary">Commercial disclosure</h3>
+                                            <span className="text-xs font-bold uppercase tracking-wider text-primary/45">Affiliate link</span>
+                                        </div>
+                                        <p className="mt-2 text-sm leading-6 text-primary/70">
+                                            The link below is an affiliate link. We may earn a commission at no extra cost to you. We have not independently laboratory-tested or ranked the products sold there, and inclusion is not a nutritional endorsement. Confirm complete-food status, life stage, calories, and suitability before buying.
+                                        </p>
+                                        <a
+                                            href={AFFILIATE_LINKS.zooplus.catFoodWhereToBuy}
+                                            aria-label="Zooplus cat-food affiliate link"
+                                            onClick={() => trackAffiliateClick('Zooplus', 'CatFood_WhereToBuy')}
+                                            target="_blank"
+                                            rel="noopener noreferrer sponsored"
+                                            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-bold text-secondary transition-colors hover:bg-black"
+                                        >
+                                            Browse cat food on Zooplus
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
 
                             <h2 id="sources" className="text-3xl font-bold text-primary mt-16 mb-6 scroll-mt-24">

@@ -44,4 +44,13 @@ describe('CatFoodGermany conversion structure', () => {
         expect(within(navigation).getByRole('link', { name: 'First vet visit' }).getAttribute('href'))
             .toBe('/blog/first-vet-visit-germany');
     });
+
+    it('keeps the purchase disclosure visible without making it the main visual block', () => {
+        renderPage();
+
+        const disclosure = screen.getByRole('region', { name: 'Commercial disclosure' });
+        expect(disclosure.className).toContain('bg-secondary/40');
+        expect(within(disclosure).getByText(/not independently laboratory-tested/i)).toBeTruthy();
+        expect(within(disclosure).getByRole('link', { name: 'Zooplus cat-food affiliate link' })).toBeTruthy();
+    });
 });

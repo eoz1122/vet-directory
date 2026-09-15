@@ -27,6 +27,8 @@ describe('AffiliateCallout', () => {
         );
 
         const callout = screen.getByRole('region', { name: 'Sponsored dog-food option' });
+        expect(callout.className).toContain('bg-secondary/60');
+        expect(screen.getByText('Sponsored option').className).toContain('rounded-full');
         expect(callout.textContent).toMatch(/advertising link/i);
         expect(callout.textContent).toMatch(/may earn a commission/i);
 
