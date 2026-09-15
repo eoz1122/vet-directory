@@ -1827,3 +1827,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Focused conversion and traffic SEO tests pass. Full tests, lint, TypeScript, production build, local responsive preview, and deployment checks remain required before production release.
 
 **Rollback:** Revert `VetCostsGermany.tsx`, its focused test, the updated traffic SEO expectation, the vet-costs sitemap last-modified date, and this entry if the local preview is not preferred.
+
+## 2026-09-15T07:48:00+02:00 - Improve cat-food guide search conversion locally
+
+**Context:** The cat-food guide remains a high-intent comparison page with room to improve click-through from search by answering the format and suitability question earlier.
+
+**Decision:** Add an immediate four-card choice summary, a compact wet/dry/mixed-format comparison table, a consistent periodic review date, and top-of-page links to vet-cost, insurance, and first-vet-visit guidance. Preserve the evidence-based wording and existing affiliate disclosures.
+
+**Trade-offs:** The page does not rank brands or claim one format is universally best. The additional table repeats a small amount of the existing wet-versus-dry explanation to make the comparison scannable without changing the medical guidance.
+
+**Verification:** Focused conversion and traffic SEO tests pass. Full tests, lint, TypeScript, production build, local responsive preview, and deployment checks remain required before production release.
+
+**Rollback:** Revert `CatFoodGermany.tsx`, its focused test, the updated traffic SEO expectations, the cat-food sitemap last-modified date, and this entry if the local preview is not preferred.
