@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import vetsData from './vets.json';
+import { filterDisplayableVets } from '../utils/activeVets';
 
 const expectedLeipzigPractices = [
     {
@@ -891,7 +892,6 @@ describe('public directory entry quality', () => {
 
     it.each([
         ['Internal-Rostock-1', '2026-08-11', '2025-01-01'],
-        ['Internal-Essen-1', '2026-08-16', '2025-01-01'],
         ['karlsruhe-anicura', '2026-08-31', '2026-07-25'],
         ['Duesseldorf-Beyer', '2026-09-09', '2026-06-24'],
     ])(
@@ -909,6 +909,14 @@ describe('public directory entry quality', () => {
             expect(practice?.verification.last_scanned).toBe(lastScanned);
         },
     );
+
+    it('records the reported Essen practice as permanently closed and hides it from public listings', () => {
+        const practice = vetsData.find((vet) => vet.id === 'Internal-Essen-1');
+
+        expect(practice).toBeDefined();
+        expect(practice?.verification.status).toBe('Permanently Closed');
+        expect(filterDisplayableVets(vetsData).some((vet) => vet.id === 'Internal-Essen-1')).toBe(false);
+    });
 
     it.each([
         ['Berlin-2', 'Berlin-105'],

@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import ArticleHeader from '../components/ArticleHeader';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
@@ -24,7 +25,8 @@ export default function GermanVetPhrases() {
                         "German Vet Survival Kit: Essential Phrases for Expats",
                         "Learn the essential German words and phrases for visiting the vet with your pet. From making appointments to describing symptoms like Durchfall.",
                         "https://englishspeakinggermany.online/blog/german-vet-survival-kit-phrases",
-                        "2025-01-01"
+                        "2025-01-01",
+                        "2026-09-15"
                     ))}
                 </script>
             </Helmet>
@@ -36,10 +38,11 @@ export default function GermanVetPhrases() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Expat Survival Kits</span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6 leading-tight">
-                            Our Story: Why I Learned <br />„Durchfall“ the Hard Way
-                        </h1>
+                        <ArticleHeader
+                            eyebrow="Expat Survival Kits"
+                            title="German Vet Survival Kit: Essential Phrases for Expats"
+                            review="Reviewed periodically. Last checked September 15, 2026"
+                        />
                         <p className="text-xl text-primary/70 mt-4 mb-8 font-serif italic border-l-4 border-accent pl-4">
                             "Stress can make your brain go blank. This is the cheat sheet I keep on my own fridge."
                         </p>

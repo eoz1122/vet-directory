@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import ArticleHeader from '../components/ArticleHeader';
 import AffiliateCallout from '../components/AffiliateCallout';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
@@ -66,7 +67,7 @@ export default function PetGpsTrackerGermany() {
                 <meta property="og:url" content={URL} />
                 <link rel="canonical" href={URL} />
                 <script type="application/ld+json">
-                    {JSON.stringify(generateArticleSchema(TITLE, DESCRIPTION, URL, "2026-07-16", "2026-09-10"))}
+                    {JSON.stringify(generateArticleSchema(TITLE, DESCRIPTION, URL, "2026-07-16", "2026-09-15"))}
                 </script>
                 <script type="application/ld+json">
                     {JSON.stringify(faqSchema)}
@@ -80,12 +81,13 @@ export default function PetGpsTrackerGermany() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Safety Guide</span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
-                            📡 GPS Trackers for Pets in Germany
-                        </h1>
+                        <ArticleHeader
+                            eyebrow="Safety Guide"
+                            title="📡 GPS Trackers for Pets in Germany"
+                            review="Reviewed periodically. Last checked September 15, 2026"
+                        />
                         <p className="mb-8 text-sm text-primary/55">
-                            Published 16 July 2026 · Affiliate links updated 10 September 2026
+                            Affiliate links updated 10 September 2026.
                         </p>
 
                         <TableOfContents items={[

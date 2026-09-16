@@ -70,7 +70,7 @@ describe('newly approved Awin programmes', () => {
         );
         expect(document.querySelector('a[href^="https://www.kippy.eu"]')).toBeNull();
         expect(screen.getByText(/affiliate links updated 10 September 2026/i)).toBeTruthy();
-        expect(getArticleSchema().dateModified).toBe('2026-09-10');
+        expect(getArticleSchema().dateModified).toBe('2026-09-15');
     });
 
     it('adds AGILA as a disclosed comparison destination on the insurance guide', () => {

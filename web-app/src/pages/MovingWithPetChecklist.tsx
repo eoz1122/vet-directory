@@ -5,13 +5,14 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import ArticleHeader from '../components/ArticleHeader';
 import { generateArticleSchema } from '../utils/schema';
 
 const ARTICLE_TITLE = 'Moving to Germany With a Dog or Cat: 2026 Entry Rules';
 const ARTICLE_DESCRIPTION = 'Bringing a dog or cat to Germany? Check microchip and rabies timing, EU passport or health certificate, blood-test rules, owner travel and breed restrictions.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/moving-to-germany-with-pet';
 const DATE_PUBLISHED = '2025-01-01';
-const DATE_MODIFIED = '2026-07-26';
+const DATE_MODIFIED = '2026-09-15';
 
 const EU_TRAVEL_RULES_URL = 'https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm';
 const NON_EU_ENTRY_URL = 'https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en';
@@ -169,18 +170,14 @@ export default function MovingWithPetChecklist() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
-                            2026 Pet Entry Guide
-                        </span>
-                        <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            Moving to Germany With a Dog or Cat: 2026 Entry Rules
-                        </h1>
-
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm text-primary/60 mb-8">
-                            <span>Last verified: 26 July 2026</span>
-                            <span className="hidden sm:inline" aria-hidden="true">·</span>
-                            <span className="italic">Rules below cover non-commercial movement of dogs, cats and ferrets.</span>
-                        </div>
+                        <ArticleHeader
+                            eyebrow="2026 Pet Entry Guide"
+                            title="Moving to Germany With a Dog or Cat: 2026 Entry Rules"
+                            review="Reviewed periodically. Last checked September 15, 2026"
+                        />
+                        <p className="mb-8 text-sm text-primary/60">
+                            Rules below cover non-commercial movement of dogs, cats and ferrets.
+                        </p>
 
                         <TableOfContents items={tableOfContents} />
 

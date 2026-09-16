@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import ArticleHeader from '../components/ArticleHeader';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
@@ -25,7 +26,8 @@ export default function PublicTransportBerlin() {
                         "The 2026 Guide to Taking Dogs on Public Transport in Berlin (BVG)",
                         "Is your dog a 'passenger' or 'luggage'? Learn the ticket rules, muzzle laws, and escalator dangers before you board.",
                         "https://englishspeakinggermany.online/blog/public-transport-with-dogs-berlin",
-                        "2025-01-01"
+                        "2025-01-01",
+                        "2026-09-15"
                     ))}
                 </script>
             </Helmet>
@@ -37,10 +39,11 @@ export default function PublicTransportBerlin() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Expat Survival Guide</span>
-                        <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            🚇 Public Transport with Dogs in Berlin (BVG): The 2026 Expat Survival Guide
-                        </h1>
+                        <ArticleHeader
+                            eyebrow="Expat Survival Guide"
+                            title="🚇 Public Transport with Dogs in Berlin (BVG): The 2026 Expat Survival Guide"
+                            review="Reviewed periodically. Last checked September 15, 2026"
+                        />
 
                         <TableOfContents items={[
                             { id: 'ticket-rules', label: '1. Ticket Rules: The "Dog Fare"' },

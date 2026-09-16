@@ -5,13 +5,14 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import RelatedPosts from '../components/RelatedPosts';
 import TableOfContents from '../components/TableOfContents';
+import ArticleHeader from '../components/ArticleHeader';
 import { generateArticleSchema } from '../utils/schema';
 
 const TITLE = 'Pet-Friendly Apartments in Berlin: 2026 Rental Guide';
 const DESCRIPTION = 'Looking for a pet-friendly apartment in Berlin? Find official listings, understand landlord consent, prepare a pet resume, and check German lease rules.';
 const URL = 'https://englishspeakinggermany.online/blog/pet-friendly-apartments-germany';
 const DATE_PUBLISHED = '2025-01-01';
-const DATE_MODIFIED = '2026-07-26';
+const DATE_MODIFIED = '2026-09-15';
 const BERLIN_STATE_LISTINGS_URL = 'https://www.inberlinwohnen.de/';
 const BERLIN_WBS_URL = 'https://www.berlin.de/sen/wohnen/service/wohnberechtigungsschein/';
 
@@ -169,15 +170,11 @@ export default function PetFriendlyApartments() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 min-w-0 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
-                            Housing guide
-                        </span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-5 leading-tight">
-                            Pet-Friendly Apartments in Berlin: 2026 Rental Guide
-                        </h1>
-                        <p className="text-sm text-primary/55 mb-8">
-                            Published 1 January 2025 · Reviewed 26 July 2026
-                        </p>
+                        <ArticleHeader
+                            eyebrow="Housing guide"
+                            title="Pet-Friendly Apartments in Berlin: 2026 Rental Guide"
+                            review="Reviewed periodically. Last checked September 15, 2026"
+                        />
 
                         <TableOfContents items={TABLE_OF_CONTENTS} />
 

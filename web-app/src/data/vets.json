@@ -6038,14 +6038,19 @@
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliche+Klinik+f%C3%BCr+Kleintiere+am+Stadtwald+Frankenstra%C3%9Fe+233%2C+45134+Essen"
     },
     "verification": {
-      "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "status": "Permanently Closed",
+      "last_scanned": "2026-09-16",
       "english_signals": [
-        "Ruhr metropolis",
-        "Specialized team"
-      ]
+        "Community report received 2026-09-15: the listed website redirects to a domain-parking page and the former Google Business location is marked permanently closed"
+      ],
+      "source_urls": [
+        "https://www.tierklinik-essen.de/",
+        "https://www.agila.de/hilfe-vor-ort/tierarztverzeichnis/frankfurt/praxis/tierklinik-am-stadtwald",
+        "https://tierarzt-im-netz.de/tierarzt/Frankfurt-am-Main/Tierklinik-am-Stadtwald-Frankfurt-GbR-Roger-Buehrer-und-Ulrich-Fassbinder"
+      ],
+      "evidence_type": "community"
     },
-    "community_status": "Verified",
+    "community_status": "Unverified",
     "pending_community_confirmations": [
       {
         "date": "2026-08-16",

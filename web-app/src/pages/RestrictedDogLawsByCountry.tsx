@@ -5,13 +5,14 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import ArticleHeader from '../components/ArticleHeader';
 import { generateArticleSchema } from '../utils/schema';
 
 const ARTICLE_TITLE = 'Restricted Dog Laws by Country: Germany, UK and US (2026)';
 const ARTICLE_DESCRIPTION = 'Moving with a Pit Bull or other restricted dog? Compare Germany, UK and US breed-law checks, official sources and a safe pre-travel workflow.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/restricted-dog-laws-by-country';
 const DATE_PUBLISHED = '2026-09-10';
-const DATE_MODIFIED = '2026-09-14';
+const DATE_MODIFIED = '2026-09-15';
 
 const GERMANY_IMPORT_LAW_URL = 'https://www.gesetze-im-internet.de/hundverbreinfg/__2.html';
 const GERMANY_EXCEPTIONS_URL = 'https://www.gesetze-im-internet.de/hundverbreinfvo/__2.html';
@@ -192,16 +193,11 @@ export default function RestrictedDogLawsByCountry() {
                     <BlogSidebar />
 
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
-                            International Restricted-Dog Guide
-                        </span>
-                        <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
-                            Restricted Dog Laws by Country: Germany, UK and US (2026)
-                        </h1>
-
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm text-primary/80 mb-8">
-                            <span>Last verified periodically: 14 September 2026</span>
-                        </div>
+                        <ArticleHeader
+                            eyebrow="International Restricted-Dog Guide"
+                            title="Restricted Dog Laws by Country: Germany, UK and US (2026)"
+                            review="Reviewed periodically. Last checked September 15, 2026"
+                        />
 
                         <p className="border-l-4 border-accent pl-6 py-4 mb-8 bg-accent/5 rounded-r-lg text-xl text-primary/85">
                             There is no single global banned-breed list. Germany, the United Kingdom and the United States use different legal tests, definitions and authority layers. Check the destination and every transit country in writing before you book a restricted dog’s journey.

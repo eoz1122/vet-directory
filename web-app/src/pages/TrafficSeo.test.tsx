@@ -152,7 +152,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-07-26');
+        expect(schema.dateModified).toBe('2026-09-15');
     });
 
     it('keeps the housing discovery card aligned with the verified guide', () => {
@@ -677,7 +677,7 @@ describe('traffic-focused search metadata', () => {
         const tableOfContents = screen.getByRole('navigation', { name: 'Table of Contents' });
         expect(directAnswer.compareDocumentPosition(tableOfContents) & Node.DOCUMENT_POSITION_FOLLOWING)
             .toBeTruthy();
-        expect(screen.getByText('Last verified periodically: 14 September 2026')).toBeTruthy();
+        expect(screen.getByText('Reviewed periodically. Last checked September 15, 2026')).toBeTruthy();
 
         const pageText = document.body.textContent ?? '';
         expect(pageText).toMatch(/XL Bully/i);
@@ -687,7 +687,7 @@ describe('traffic-focused search metadata', () => {
 
         const articleSchema = getArticleSchema();
         expect(articleSchema.datePublished).toBe('2026-09-10');
-        expect(articleSchema.dateModified).toBe('2026-09-14');
+        expect(articleSchema.dateModified).toBe('2026-09-15');
         expect(getStructuredData('FAQPage').mainEntity).toHaveLength(4);
     });
 
@@ -744,7 +744,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-07-26');
+        expect(schema.dateModified).toBe('2026-09-15');
     });
 
     it('aligns the moving-pet discovery card with the current entry guide', () => {

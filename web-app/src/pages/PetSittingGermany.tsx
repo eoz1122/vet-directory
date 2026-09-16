@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { trackAffiliateClick } from '../utils/analytics';
+import ArticleHeader from '../components/ArticleHeader';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import RelatedPosts from '../components/RelatedPosts';
@@ -25,7 +26,8 @@ export default function PetSittingGermany() {
                         "Pet Sitting in Germany (2026): Finding a Safe Home for Your Little Friends",
                         "A complete guide to finding pet sitters in Germany. Comparing Pawshake, Cat in a Flat, pensions, and community options for expats.",
                         "https://englishspeakinggermany.online/blog/pet-sitting-germany",
-                        "2025-01-01"
+                        "2025-01-01",
+                        "2026-09-15"
                     ))}
                 </script>
             </Helmet>
@@ -39,10 +41,11 @@ export default function PetSittingGermany() {
 
                     {/* Main Content */}
                     <article className="lg:flex-1 max-w-4xl">
-                        <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">Expat Guide</span>
-                        <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
-                            🏡 Pet Sitting in Germany (2026): Finding a Safe Home for Your Little Friends
-                        </h1>
+                        <ArticleHeader
+                            eyebrow="Expat Guide"
+                            title="🏡 Pet Sitting in Germany (2026): Finding a Safe Home for Your Little Friends"
+                            review="Reviewed periodically. Last checked September 15, 2026"
+                        />
 
                         <TableOfContents items={[
                             { id: 'options', label: '1. The Three Ways to Settle Your Pet' },

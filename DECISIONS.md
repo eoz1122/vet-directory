@@ -1851,3 +1851,39 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Focused affiliate and cat conversion tests pass (4 tests). Full tests pass (472 tests across 82 files), ESLint, TypeScript, production build, 317 prerendered routes, and a 316-URL sitemap generation pass. Local responsive visual review remains required before production release.
 
 **Rollback:** Revert `AffiliateCallout.tsx`, `AffiliateCallout.test.tsx`, `CatFoodGermany.tsx`, `CatFoodGermany.conversion.test.tsx`, `PetFoodGermany.tsx`, and this entry if the local visual review is not preferred.
+
+## 2026-09-15T09:01:00+02:00 - Standardize legacy guide introductions locally
+
+**Context:** The site had a shared `ArticleHeader`, but only a small subset of guides used it. Older guides therefore had inconsistent title spacing, category labels, and no visible periodic review marker.
+
+**Decision:** Migrate the German vet phrases, pet sitting, and Berlin public-transport guides to the shared header hierarchy and add the same periodic review marker used by the newer high-intent guides. Preserve the article body, table of contents, navigation, and source content.
+
+**Trade-offs:** This is the first migration batch rather than a risky all-at-once rewrite. It establishes the visual contract on three representative legacy guides before the remaining guides are migrated.
+
+**Verification:** New structure tests pass. Full tests pass (475 tests across 85 files), ESLint, TypeScript, production build, 317 prerendered routes, 316 sitemap URLs, and local responsive checks at 390px and 1440px with no horizontal overflow.
+
+**Rollback:** Revert `GermanVetPhrases.tsx`, `PetSittingGermany.tsx`, `PublicTransportBerlin.tsx`, their structure tests, and this entry if the local preview is not preferred.
+
+## 2026-09-15T09:14:00+02:00 - Extend legacy guide header migration locally
+
+**Context:** The first header migration established the shared title and review hierarchy on three legacy guides. Four additional high-value guides still used bespoke title and freshness blocks.
+
+**Decision:** Migrate the moving-pet entry guide, Berlin apartment guide, pet GPS guide, and international restricted-dog guide to `ArticleHeader`. Use the common periodic review marker, update their article-schema modification dates to 15 September 2026, and preserve guide-specific notes such as non-commercial travel scope and affiliate-link update context.
+
+**Trade-offs:** The pages now have a consistent opening rhythm and clearer freshness signal. The GPS guide keeps its separate affiliate-update note, and the moving-pet guide keeps its scope caveat below the shared header so the migration does not remove useful context.
+
+**Verification:** New structure tests pass. Full tests pass (479 tests across 86 files), ESLint, TypeScript, production build, 317 prerendered routes, 316 sitemap URLs, and local responsive checks at 390px and 1440px with no horizontal overflow across all seven migrated guides.
+
+**Rollback:** Revert the four migrated page files, the legacy header structure test, the updated existing expectations, the sitemap last-modified dates, and this entry if the local preview is not preferred.
+
+## 2026-09-16T09:20:00+02:00 - Close reported Essen practice listing
+
+**Context:** A reader reported that `Internal-Essen-1` was no longer operating. The listing pointed to `tierklinik-essen.de`, used an Essen address, and had not been scanned since January 2025.
+
+**Evidence:** The listed domain redirects to a domain-parking page. The supplied Google evidence marks the former Stadtwald location permanently closed, while independent veterinary directories identify the former practice at Waldfriedstraße 10 in Frankfurt rather than the listed Essen address.
+
+**Decision:** Set the record's verification status to `Permanently Closed`, retain the record and old contact fields for audit history, add the report and corroborating source URLs to the verification evidence, and set its community status to `Unverified`. The shared active-listing filter now excludes it from public city, district, and sitemap routes.
+
+**Verification:** Added a regression test confirming the record remains auditable but is excluded from display. Focused data and active-listing tests pass (156 tests), full tests pass (479 tests), lint and TypeScript pass, and the production build renders 316 pages with a 315-URL sitemap. Essen is no longer represented by this closed listing in generated routes.
+
+**Rollback:** Restore the `Internal-Essen-1` verification block and remove this entry and its regression-test change if the evidence is later disproved.

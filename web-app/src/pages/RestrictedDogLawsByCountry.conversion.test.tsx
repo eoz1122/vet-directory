@@ -28,7 +28,7 @@ describe('RestrictedDogLawsByCountry conversion structure', () => {
             name: '1. Quick answer: country rules are not interchangeable',
         })).toBeTruthy();
         expect(screen.getByText(/There is no single global banned-breed list/i)).toBeTruthy();
-        expect(screen.getByText('Last verified periodically: 14 September 2026')).toBeTruthy();
+        expect(screen.getByText('Reviewed periodically. Last checked September 15, 2026')).toBeTruthy();
         expect(screen.getByRole('heading', {
             level: 2,
             name: '2. Start with the destination and every transit country',
