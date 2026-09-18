@@ -516,6 +516,80 @@ const expectedNewFiluPractices = [
     },
 ] as const;
 
+const expectedCurrentOfficialRefreshes = [
+    {
+        id: 'Internal-6',
+        website: 'https://www.tiho-hannover.de/kliniken-institute/kliniken/klinik-fuer-kleintiere',
+        sourceUrl: 'https://www.tiho-hannover.de/kliniken-institute/kliniken/klinik-fuer-kleintiere',
+    },
+    {
+        id: 'Internal-1',
+        website: 'https://www.vetmed.lmu.de/kleintierklinik/',
+        sourceUrl: 'https://www.vetmed.lmu.de/kleintierklinik/',
+    },
+    {
+        id: 'Internal-Nuremberg-1',
+        website: 'https://www.tierklinik-nbg.de/',
+        sourceUrl: 'https://www.tierklinik-nbg.de/',
+    },
+    {
+        id: 'Internal-4',
+        website: 'https://www.tierklinik-ismaning.de/',
+        sourceUrl: 'https://www.tierklinik-ismaning.de/',
+    },
+] as const;
+
+const expectedNextOfficialRefreshes = [
+    {
+        id: 'Internal-Hamburg-1',
+        website: 'https://www.tierklinik-lademannbogen.de/',
+        sourceUrl: 'https://www.tierklinik-lademannbogen.de/',
+        address: 'Wilhelm-Stein-Weg 2, 22339 Hamburg',
+    },
+    {
+        id: 'Internal-Cologne-1',
+        website: 'https://koelner-tierklinik.de/',
+        sourceUrl: 'https://koelner-tierklinik.de/kontakt/',
+        address: 'Brühler Straße 183-185, 50968 Köln',
+    },
+    {
+        id: 'Internal-Bremen-1',
+        website: 'https://kleintierklinik-bremen.de/',
+        sourceUrl: 'https://kleintierklinik-bremen.de/',
+        address: 'Kaspar-Faber-Straße 4, 28355 Bremen',
+    },
+    {
+        id: 'Internal-Augsburg-1',
+        website: 'https://www.anicura.de/standorte/kleintierspezialisten-augsburg/',
+        sourceUrl: 'https://www.anicura.de/standorte/kleintierspezialisten-augsburg/',
+        address: 'Max-Josef-Metzger-Straße 9, 86157 Augsburg',
+    },
+    {
+        id: 'Internal-Giessen-1',
+        website: 'https://www.uni-giessen.de/de/fbz/fb10/institute_klinikum/klinikum/kleintierklinik',
+        sourceUrl: 'https://www.uni-giessen.de/de/fbz/fb10/institute_klinikum/klinikum/kleintierklinik/kontakt',
+        address: 'Frankfurter Straße 114, 35392 Gießen',
+        phone: '0641 9938536',
+        scanDate: '2026-09-18',
+    },
+    {
+        id: 'Internal-Luneburg-1',
+        website: 'https://www.tierklinik-lueneburg.de/',
+        sourceUrl: 'https://www.tierklinik-lueneburg.de/fuer-tierhalter.html',
+        address: 'Stadtkoppel 5c-9, 21337 Lüneburg',
+        phone: '04131 55125',
+        scanDate: '2026-09-18',
+    },
+    {
+        id: 'Internal-Heidelberg-1',
+        website: 'https://www.tierzentrum-heidelberg.de/',
+        sourceUrl: 'https://www.tierzentrum-heidelberg.de/kontakt/',
+        address: 'Baumschulenweg 10, 69124 Heidelberg',
+        phone: '06221 166800',
+        scanDate: '2026-09-18',
+    },
+] as const;
+
 describe('verified Leipzig English-speaking practices', () => {
     it.each(expectedLeipzigPractices)(
         'keeps $id backed by first-party language evidence',
@@ -820,6 +894,46 @@ describe('new filu locations with first-party English evidence', () => {
     );
 });
 
+describe('current official refresh queue', () => {
+    it.each(expectedCurrentOfficialRefreshes)(
+        'keeps $id backed by a current clinic-owned source without overstating English availability',
+        ({ id, website, sourceUrl }) => {
+            const practice = vetsData.find((vet) => vet.id === id);
+
+            expect(practice).toBeDefined();
+            expect(practice?.contact.website).toBe(website);
+            expect(practice?.verification.evidence_type).toBe('community');
+            expect(practice?.verification.source_urls).toContain(sourceUrl);
+            expect(practice?.verification.last_scanned).toBe('2026-09-16');
+            expect(practice?.verification.english_signals).toContain(
+                'Confirm English availability before booking',
+            );
+        },
+    );
+});
+
+describe('next official refresh queue', () => {
+    it.each(expectedNextOfficialRefreshes)(
+        'keeps $id aligned with a current clinic-owned source without overstating English availability',
+        ({ id, website, sourceUrl, address, ...expected }) => {
+            const practice = vetsData.find((vet) => vet.id === id);
+
+            expect(practice).toBeDefined();
+            expect(practice?.contact.website).toBe(website);
+            expect(practice?.address).toBe(address);
+            if ('phone' in expected) {
+                expect(practice?.contact.phone).toBe(expected.phone);
+            }
+            expect(practice?.verification.evidence_type).toBe('community');
+            expect(practice?.verification.source_urls).toContain(sourceUrl);
+            expect(practice?.verification.last_scanned).toBe(expected.scanDate ?? '2026-09-16');
+            expect(practice?.verification.english_signals).toContain(
+                'Confirm English availability before booking',
+            );
+        },
+    );
+});
+
 describe('Frankfurt directory data quality', () => {
     it.each([
         ['Frankfurt-55', 'Sachsenhausen-Nord'],
@@ -972,14 +1086,9 @@ describe('public directory entry quality', () => {
         'Hamburg-80',
         'Hamburg-84',
         'Hannover-New-1',
-        'Internal-6',
-        'Internal-Cologne-1',
         'Internal-Cologne-2',
-        'Internal-Giessen-1',
         'Internal-Ahlen-1',
-        'Internal-Heidelberg-1',
         'Internal-Hamburg-2',
-        'Internal-Nuremberg-1',
         'Internal-Regensburg-1',
         'Internal-Rostock-1',
         'Leipzig-Plenge',

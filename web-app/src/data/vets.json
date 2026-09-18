@@ -3574,17 +3574,20 @@
     },
     "contact": {
       "phone": "0511 9536200",
-      "website": null,
+      "website": "https://www.tiho-hannover.de/kliniken-institute/kliniken/klinik-fuer-kleintiere",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierklinik+Hannover+%28TiHo%29+B%C3%BCnteweg+9%2C+30559+Hannover"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-16",
       "english_signals": [
-        "University of Veterinary Medicine Hannover",
-        "World-renowned teaching institution",
-        "High English proficiency",
-        "University Clinic 24/7; Expert care"
+        "Current official TiHo clinic page confirms the active small-animal clinic and current Hannover contact details",
+        "University Clinic 24/7; Expert care",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.tiho-hannover.de/kliniken-institute/kliniken/klinik-fuer-kleintiere"
       ],
       "emergency_services": "24/7"
     },
@@ -3760,17 +3763,23 @@
     },
     "contact": {
       "phone": "089 21802650",
-      "website": "https://www.med.vetmed.uni-muenchen.de/index.html",
+      "website": "https://www.vetmed.lmu.de/kleintierklinik/",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Medizinische+Kleintierklinik+der+LMU+M%C3%BCnchen+Veterin%C3%A4rstra%C3%9Fe+13%2C+80539+M%C3%BCnchen"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-16",
       "english_signals": [
         "University Clinic",
         "International Research Staff",
         "High Probability of English",
-        "Confirmed via Google Review: \"English to accommodate my limited German.\""
+        "Confirmed via Google Review: \"English to accommodate my limited German.\"",
+        "Current official LMU clinic page confirms the active dogs-and-cats clinic and current Munich contact details",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.vetmed.lmu.de/kleintierklinik/"
       ],
       "emergency_services": "24/7"
     },
@@ -4103,16 +4112,22 @@
     },
     "contact": {
       "phone": "0911 643110",
-      "website": null,
+      "website": "https://www.tierklinik-nbg.de/",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+N%C3%BCrnberg+Hafen+Wertachstra%C3%9Fe+1%2C+90451+N%C3%BCrnberg"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-16",
       "english_signals": [
         "Referral Center",
         "Large Team",
-        "Staff fluent in English"
+        "Staff fluent in English",
+        "Current official Tierklinik Nürnberg Hafen site confirms the active clinic, current services, and contact details",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.tierklinik-nbg.de/"
       ]
     },
     "community_status": "Verified"
@@ -5629,10 +5644,16 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-16",
       "english_signals": [
         "Large 24/7 Clinic",
-        "Known to serve expat community in North Munich"
+        "Known to serve expat community in North Munich",
+        "Current official Tierklinik Ismaning site confirms the active clinic and current clinic information",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.tierklinik-ismaning.de/"
       ],
       "emergency_services": "24/7"
     },
@@ -5655,11 +5676,17 @@
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-16",
       "english_signals": [
         "Multi-specialty team",
         "Large 24/7 Clinic",
-        "Verified English Support"
+        "Verified English Support",
+        "Current official clinic site confirms the active Hamburg clinic, current address, and contact details",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.tierklinik-lademannbogen.de/"
       ]
     },
     "community_status": "Verified"
@@ -5720,22 +5747,28 @@
     "practice_name": "Tierklinik Kellerwessel",
     "city": "Cologne",
     "district": "Sülz",
-    "address": "Rennbahnstraße 20, 50935 Köln",
+    "address": "Brühler Straße 183-185, 50968 Köln",
     "coordinates": {
-      "lat": 50.9167,
-      "lng": 6.9167
+      "lat": 50.9017,
+      "lng": 6.95528
     },
     "contact": {
-      "phone": "0221 4744430",
-      "website": null,
-      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Kellerwessel+Rennbahnstra%C3%9Fe+20%2C+50935+K%C3%B6ln"
+      "phone": "0221 4745430",
+      "website": "https://koelner-tierklinik.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Kellerwessel+Br%C3%BChler+Stra%C3%9Fe+183-185%2C+50968+K%C3%B6ln"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-16",
       "english_signals": [
         "Large clinic",
-        "Emergency services"
+        "Emergency services",
+        "Current official clinic contact page confirms the active Cologne clinic, current address, and current emergency number",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://koelner-tierklinik.de/kontakt/"
       ]
     },
     "community_status": "Verified"
@@ -5796,49 +5829,61 @@
     "practice_name": "Klinik für Kleintiere (Chirurgie) - JLU Gießen",
     "city": "Gießen",
     "district": "Gießen",
-    "address": "Frankfurter Str. 108, 35392 Gießen",
+    "address": "Frankfurter Straße 114, 35392 Gießen",
     "coordinates": {
       "lat": 50.5786,
       "lng": 8.6631
     },
     "contact": {
-      "phone": "0641 9938535",
-      "website": null,
-      "google_maps": "https://www.google.com/maps/search/?api=1&query=Klinik+f%C3%BCr+Kleintiere+%28Chirurgie%29+-+JLU+Gie%C3%9Fen+Frankfurter+Str.+108%2C+35392+Gie%C3%9Fen"
+      "phone": "0641 9938536",
+      "website": "https://www.uni-giessen.de/de/fbz/fb10/institute_klinikum/klinikum/kleintierklinik",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Klinik+f%C3%BCr+Kleintiere+JLU+Gie%C3%9Fen+Frankfurter+Stra%C3%9Fe+114%2C+35392+Gie%C3%9Fen"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-18",
       "english_signals": [
         "University Hospital",
         "Close to Frankfurt",
-        "International Research"
+        "International Research",
+        "Current official JLU clinic pages confirm the active small-animal clinic, current appointment contacts, and current Gießen address",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.uni-giessen.de/de/fbz/fb10/institute_klinikum/klinikum/kleintierklinik/kontakt"
       ]
     },
     "community_status": "Verified"
   },
   {
     "id": "Internal-Heidelberg-1",
-    "practice_name": "Tierärztliche Klinik Dr. Maurer",
+    "practice_name": "Tierärztliches Zentrum an der Feuerwache Heidelberg",
     "city": "Heidelberg",
-    "district": "Wieblingen",
-    "address": "Edinger Riedweg 55, 69123 Heidelberg",
+    "district": "Kirchheim",
+    "address": "Baumschulenweg 10, 69124 Heidelberg",
     "coordinates": {
-      "lat": 49.4261,
-      "lng": 8.6385
+      "lat": 49.3970031,
+      "lng": 8.6697626
     },
     "contact": {
-      "phone": "06221 820700",
-      "website": null,
-      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliche+Klinik+Dr.+Maurer+Edinger+Riedweg+55%2C+69123+Heidelberg"
+      "phone": "06221 166800",
+      "website": "https://www.tierzentrum-heidelberg.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tier%C3%A4rztliches+Zentrum+an+der+Feuerwache+Heidelberg+Baumschulenweg+10%2C+69124+Heidelberg"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-18",
       "english_signals": [
-        "University City",
-        "High Expat Population",
-        "Referral Clinic"
+        "Specialist referral centre",
+        "Current official clinic site confirms the active Heidelberg centre, current address, and contact details",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.tierzentrum-heidelberg.de/",
+        "https://www.tierzentrum-heidelberg.de/kontakt/",
+        "https://www.tierzentrum-heidelberg.de/impressum/"
       ]
     },
     "community_status": "Verified"
@@ -5847,23 +5892,29 @@
     "id": "Internal-Bremen-1",
     "practice_name": "Tierklinik Bremen",
     "city": "Bremen",
-    "district": "Horn-Lehe",
-    "address": "Kaspar-Singer-Straße 2, 28359 Bremen",
+    "district": "Oberneuland",
+    "address": "Kaspar-Faber-Straße 4, 28355 Bremen",
     "coordinates": {
-      "lat": 53.1066,
-      "lng": 8.8753
+      "lat": 53.08425,
+      "lng": 8.90686
     },
     "contact": {
-      "phone": "0421 2220710",
-      "website": "https://www.tierklinik-bremen.de/",
-      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+Bremen+Kaspar-Singer-Stra%C3%9Fe+2%2C+28359+Bremen"
+      "phone": "0421 349509",
+      "website": "https://kleintierklinik-bremen.de/",
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Kleintierklinik+Bremen+Kaspar-Faber-Stra%C3%9Fe+4%2C+28355+Bremen"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-16",
       "english_signals": [
         "Major North-West Referral Center",
-        "Specialists on site"
+        "Specialists on site",
+        "Current official clinic site confirms the active Bremen clinic, current address, opening hours, and contact details",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://kleintierklinik-bremen.de/"
       ]
     },
     "community_status": "Verified"
@@ -5880,15 +5931,21 @@
     },
     "contact": {
       "phone": "0821 4559000",
-      "website": "https://www.anicura.de/kleintierspezialisten-augsburg/",
+      "website": "https://www.anicura.de/standorte/kleintierspezialisten-augsburg/",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=AniCura+Kleintierspezialisten+Augsburg+Max-Josef-Metzger-Stra%C3%9Fe+9%2C+86157+Augsburg"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-16",
       "english_signals": [
         "Part of AniCura Network",
-        "High concentration of Diplomates (Specialists)"
+        "High concentration of Diplomates (Specialists)",
+        "Current official AniCura location page confirms the active Augsburg referral centre, current address, opening hours, and emergency availability",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.anicura.de/standorte/kleintierspezialisten-augsburg/"
       ]
     },
     "community_status": "Verified"
@@ -5898,22 +5955,28 @@
     "practice_name": "Tierklinik Lüneburg",
     "city": "Lüneburg",
     "district": "Lüneburg",
-    "address": "Stadtkoppel 5c, 21337 Lüneburg",
+    "address": "Stadtkoppel 5c-9, 21337 Lüneburg",
     "coordinates": {
       "lat": 53.2625,
       "lng": 10.4283
     },
     "contact": {
-      "phone": "04131 85110",
+      "phone": "04131 55125",
       "website": "https://www.tierklinik-lueneburg.de/",
-      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+L%C3%BCneburg+Stadtkoppel+5c%2C+21337+L%C3%BCneburg"
+      "google_maps": "https://www.google.com/maps/search/?api=1&query=Tierklinik+L%C3%BCneburg+Stadtkoppel+5c-9%2C+21337+L%C3%BCneburg"
     },
     "verification": {
       "status": "Verified",
-      "last_scanned": "2025-01-01",
+      "last_scanned": "2026-09-18",
       "english_signals": [
         "Huge Referral Center for North Germany",
-        "Frequently treats pets of international residents"
+        "Frequently treats pets of international residents",
+        "The current official clinic site publishes an English admission form and current contact details",
+        "Confirm English availability before booking"
+      ],
+      "evidence_type": "community",
+      "source_urls": [
+        "https://www.tierklinik-lueneburg.de/fuer-tierhalter.html"
       ]
     },
     "community_status": "Verified"

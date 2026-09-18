@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 export interface CityEvidenceCounts {
     officialWebsite: number;
     governmentSource: number;
+    practiceConfirmed: number;
     communityConfirmed: number;
     communityListed: number;
 }
@@ -22,6 +23,11 @@ const evidenceDetails = [
         key: 'governmentSource' as const,
         label: 'Government source',
         description: 'A government veterinary resource identifies the practice as English-speaking.',
+    },
+    {
+        key: 'practiceConfirmed' as const,
+        label: 'Practice confirmed',
+        description: 'A practice representative has confirmed English-language service directly.',
     },
     {
         key: 'communityConfirmed' as const,

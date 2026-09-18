@@ -80,6 +80,18 @@ describe('getVerificationPresentation', () => {
         expect(presentation.description).not.toContain('Community members');
     });
 
+    it('labels direct practice confirmation separately from website and community evidence', () => {
+        const presentation = getVerificationPresentation(
+            makeVet('Verified', 'practice_confirmed'),
+        );
+
+        expect(isVetVerified(makeVet('Verified', 'practice_confirmed'))).toBe(true);
+        expect(presentation.badge).toBe('Practice Confirmed');
+        expect(presentation.title).toBe('Practice Confirmation');
+        expect(presentation.description).toContain('practice representative');
+        expect(presentation.description).not.toContain('Community members');
+    });
+
     it('does not upgrade a community-sourced lead', () => {
         const vet = makeVet('Community Sourced');
 

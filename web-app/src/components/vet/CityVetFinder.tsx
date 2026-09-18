@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import type { Vet } from '../../types/vet';
 import { VetCard } from './VetCard';
 
-type EvidenceFilter = 'all' | 'official_website' | 'government_source' | 'community';
+type EvidenceFilter = 'all' | 'official_website' | 'government_source' | 'practice_confirmed' | 'community';
 
 interface CityVetFinderProps {
     city: string;
@@ -130,6 +130,7 @@ export function CityVetFinder({ city, vets }: CityVetFinderProps) {
                             <option value="all">All evidence sources</option>
                             <option value="official_website">Official website</option>
                             <option value="government_source">Government source</option>
+                            <option value="practice_confirmed">Practice confirmed</option>
                             <option value="community">Community evidence</option>
                         </select>
                     </label>

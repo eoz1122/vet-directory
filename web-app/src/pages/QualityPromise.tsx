@@ -10,10 +10,10 @@ export default function QualityPromise() {
         <div className="min-h-screen bg-secondary font-sans text-primary">
             <Helmet>
                 <title>Our Quality Promise | EnglishSpeakingVets</title>
-                <meta name="description" content="How we verify English-speaking vets in Germany: community confirmations, English-language signals, and honest listings. Our quality standards explained." />
+                <meta name="description" content="How we verify English-speaking vets in Germany: practice confirmations, community reports, English-language signals, and honest listings. Our quality standards explained." />
                 <link rel="canonical" href="https://englishspeakinggermany.online/quality-promise" />
                 <meta property="og:title" content="Our Quality Promise | EnglishSpeakingVets" />
-                <meta property="og:description" content="How we verify English-speaking vets in Germany: community confirmations, English-language signals, and honest listings. Our quality standards explained." />
+                <meta property="og:description" content="How we verify English-speaking vets in Germany: practice confirmations, community reports, English-language signals, and honest listings. Our quality standards explained." />
                 <meta property="og:url" content="https://englishspeakinggermany.online/quality-promise" />
                 <meta property="og:image" content="https://englishspeakinggermany.online/logo.png" />
             </Helmet>
@@ -69,6 +69,9 @@ export default function QualityPromise() {
                     </h2>
                     <p className="text-primary/80">
                         A directory is only as good as its last update. We use periodic freshness checks to review contact details, location information, and evidence of English-language support.
+                    </p>
+                    <p className="text-primary/80">
+                        We keep evidence levels distinct: <strong>Practice Confirmed</strong> means a practice representative has confirmed English support directly, while <strong>Community Confirmed</strong> means a pet owner reported a real experience. Neither label guarantees that a particular clinician will be available at every appointment, so please confirm when booking.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-6 mt-4">

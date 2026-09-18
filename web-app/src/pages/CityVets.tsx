@@ -9,6 +9,7 @@ import { slugify, titleCaseSlug } from '../utils/url';
 import {
     isGovernmentSourceConfirmed,
     isOfficialWebsiteConfirmed,
+    isPracticeConfirmed,
     isVetVerified,
 } from '../utils/verifiedLabel';
 import { parseCityContent, type Block } from '../utils/cityMarkdown';
@@ -124,9 +125,11 @@ export default function CityVets() {
     const verifiedCount = cityVets.filter(isVetVerified).length;
     const officialWebsiteCount = cityVets.filter(isOfficialWebsiteConfirmed).length;
     const governmentSourceCount = cityVets.filter(isGovernmentSourceConfirmed).length;
+    const practiceConfirmedCount = cityVets.filter(isPracticeConfirmed).length;
     const communityConfirmedCount = verifiedCount -
         officialWebsiteCount -
-        governmentSourceCount;
+        governmentSourceCount -
+        practiceConfirmedCount;
     const communityListedCount = cityVets.length - verifiedCount;
     const evidenceSummary = [
         officialWebsiteCount
@@ -134,6 +137,9 @@ export default function CityVets() {
             : '',
         governmentSourceCount
             ? `${governmentSourceCount} ${governmentSourceCount === 1 ? 'is' : 'are'} confirmed by a government veterinary source`
+            : '',
+        practiceConfirmedCount
+            ? `${practiceConfirmedCount} ${practiceConfirmedCount === 1 ? 'is' : 'are'} confirmed directly by the practice`
             : '',
         communityConfirmedCount
             ? `${communityConfirmedCount} ${communityConfirmedCount === 1 ? 'is' : 'are'} community-confirmed`
@@ -144,8 +150,8 @@ export default function CityVets() {
     );
     const listingTitle = `${cityVets.length} English-Speaking ${cityVets.length === 1 ? 'Vet' : 'Vets'} in ${capitalizedCity}`;
     const listingDescription = verifiedCount === cityVets.length
-        ? `Browse ${cityVets.length} verified English-speaking veterinary ${cityVets.length === 1 ? 'practice' : 'practices'} in ${capitalizedCity}. Compare official website, government and community evidence, contact details, and emergency information.`
-        : `Browse ${cityVets.length} English-speaking veterinary practices in ${capitalizedCity}; ${officialWebsiteCount} have official website confirmation, ${governmentSourceCount} have government-source confirmation and ${communityConfirmedCount} are community-confirmed. Compare districts and confirm English when booking.`;
+        ? `Browse ${cityVets.length} verified English-speaking veterinary ${cityVets.length === 1 ? 'practice' : 'practices'} in ${capitalizedCity}. Compare official website, government, practice and community evidence, contact details, and emergency information.`
+        : `Browse ${cityVets.length} English-speaking veterinary practices in ${capitalizedCity}; ${officialWebsiteCount} have official website confirmation, ${governmentSourceCount} have government-source confirmation, ${practiceConfirmedCount} have direct practice confirmation and ${communityConfirmedCount} are community-confirmed. Compare districts and confirm English when booking.`;
 
     const summary = cityVets.length > 0 ? generateCitySummary(capitalizedCity, cityVets, vets) : null;
 
@@ -231,7 +237,7 @@ export default function CityVets() {
                     "@type": "Answer",
                     "text": verifiedCount === cityVets.length
                         ? `We list ${cityVets.length} English-speaking veterinary ${cityVets.length === 1 ? 'practice' : 'practices'} in ${capitalizedCity}. ${evidenceSummary}. Confirm who will be available in English when booking because staff availability can change.`
-                        : `We list ${cityVets.length} veterinary practices in ${capitalizedCity} with English-language signals. ${officialWebsiteCount} have official website confirmation, ${governmentSourceCount} have government-source confirmation, ${communityConfirmedCount} are community-confirmed and ${communityListedCount} are community-listed, so confirm English availability when booking.`
+                        : `We list ${cityVets.length} veterinary practices in ${capitalizedCity} with English-language signals. ${officialWebsiteCount} have official website confirmation, ${governmentSourceCount} have government-source confirmation, ${practiceConfirmedCount} have direct practice confirmation, ${communityConfirmedCount} are community-confirmed and ${communityListedCount} are community-listed, so confirm English availability when booking.`
                 }
             },
             {
@@ -239,7 +245,7 @@ export default function CityVets() {
                 "name": `How do I find a vet in ${capitalizedCity} as an expat?`,
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `Browse the ${capitalizedCity} directory by district and compare the evidence shown on each listing. Official Website means the practice advertises English service itself; Government Listed means a government veterinary source identifies the practice as English-speaking; Community Confirmed means pet owners have reported successful English communication. Confirm staff availability when booking.`
+                    "text": `Browse the ${capitalizedCity} directory by district and compare the evidence shown on each listing. Official Website means the practice advertises English service itself; Government Listed means a government veterinary source identifies the practice as English-speaking; Practice Confirmed means a practice representative confirmed English support directly; Community Confirmed means pet owners have reported successful English communication. Confirm staff availability when booking.`
                 }
             },
             ...(emergencyVets.length ? [{
@@ -299,6 +305,7 @@ export default function CityVets() {
                         counts={{
                             officialWebsite: officialWebsiteCount,
                             governmentSource: governmentSourceCount,
+                            practiceConfirmed: practiceConfirmedCount,
                             communityConfirmed: communityConfirmedCount,
                             communityListed: communityListedCount,
                         }}

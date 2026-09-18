@@ -3,6 +3,7 @@ import { calculateDistance } from './distance';
 import {
     isGovernmentSourceConfirmed,
     isOfficialWebsiteConfirmed,
+    isPracticeConfirmed,
     isVetVerified,
 } from './verifiedLabel';
 
@@ -31,14 +32,17 @@ export function generateCitySummary(city: string, cityVets: Vet[], allVets: Vet[
     const names = cityVets.map((v) => v.practice_name);
     const officialWebsiteConfirmed = cityVets.filter(isOfficialWebsiteConfirmed);
     const governmentConfirmed = cityVets.filter(isGovernmentSourceConfirmed);
+    const practiceConfirmed = cityVets.filter(isPracticeConfirmed);
     const communityConfirmed = cityVets.filter(
         (vet) => isVetVerified(vet) &&
             !isOfficialWebsiteConfirmed(vet) &&
-            !isGovernmentSourceConfirmed(vet),
+            !isGovernmentSourceConfirmed(vet) &&
+            !isPracticeConfirmed(vet),
     );
     const communitySourced = count -
         officialWebsiteConfirmed.length -
         governmentConfirmed.length -
+        practiceConfirmed.length -
         communityConfirmed.length;
     const withSite = cityVets.filter((v) => v.contact?.website).length;
     const emergency = cityVets.filter((v) => {
@@ -62,6 +66,11 @@ export function generateCitySummary(city: string, cityVets: Vet[], allVets: Vet[
     if (governmentConfirmed.length) {
         evidenceSummary.push(
             `${governmentConfirmed.length} ${governmentConfirmed.length === 1 ? 'is' : 'are'} confirmed by a government veterinary source`,
+        );
+    }
+    if (practiceConfirmed.length) {
+        evidenceSummary.push(
+            `${practiceConfirmed.length} ${practiceConfirmed.length === 1 ? 'is' : 'are'} confirmed directly by the practice`,
         );
     }
     if (communityConfirmed.length) {

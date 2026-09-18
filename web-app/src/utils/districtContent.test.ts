@@ -125,6 +125,23 @@ describe('generateDistrictContent', () => {
         expect(blob).not.toContain('official website');
     });
 
+    it('describes direct practice confirmation separately from community evidence', () => {
+        const practiceVet = mk({
+            practice_name: 'Practice Confirmed Vet',
+            verification: {
+                status: 'Verified',
+                last_scanned: '2026-07-26',
+                english_signals: ['Practice representative confirmed English service'],
+                evidence_type: 'practice_confirmed',
+            },
+        });
+        const c = generateDistrictContent('Westend', 'Frankfurt', [practiceVet], [practiceVet]);
+        const blob = `${c.intro} ${JSON.stringify(c.faqs)}`;
+
+        expect(blob).toContain('practice representative');
+        expect(blob).not.toContain('community-confirmed');
+    });
+
     it('does not label a mixed-evidence district as entirely community-sourced', () => {
         const officialVet = mk({
             practice_name: 'Official English Vet',

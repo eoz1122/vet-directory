@@ -128,4 +128,17 @@ describe('Contact analytics', () => {
             expect(message.value).toContain('ID: Berlin-16');
         });
     });
+
+    it('prefills a practice confirmation request with the listing identity', async () => {
+        renderContact('/contact?topic=vet_owner&vetId=test-vet&vetName=Test%20Veterinary%20Clinic');
+
+        await waitFor(() => {
+            expect((screen.getByLabelText('I want to...') as HTMLSelectElement).value)
+                .toBe('vet_owner');
+            const message = screen.getByLabelText('Message') as HTMLTextAreaElement;
+            expect(message.value).toContain('Practice: Test Veterinary Clinic');
+            expect(message.value).toContain('ID: test-vet');
+            expect(message.value).toContain('practice representative');
+        });
+    });
 });

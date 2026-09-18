@@ -50,6 +50,21 @@ describe('generateCitySummary', () => {
         expect(s.content).not.toContain('confirmed by its official website');
     });
 
+    it('describes direct practice confirmation separately from community reports', () => {
+        const practiceConfirmed = mk({
+            verification: {
+                status: 'Verified',
+                last_scanned: '2026-09-18',
+                english_signals: ['Practice representative confirmed English service'],
+                evidence_type: 'practice_confirmed',
+            },
+        });
+        const s = generateCitySummary('Hofheim', [practiceConfirmed], [practiceConfirmed]);
+
+        expect(s.content).toContain('confirmed directly by the practice');
+        expect(s.content).not.toContain('community-confirmed by pet owners');
+    });
+
     it('differs meaningfully between two cities (no shared boilerplate)', () => {
         const a = generateCitySummary('Hofheim', hofheim, [...hofheim, ...frankfurt]).content;
         const b = generateCitySummary('Frankfurt', frankfurt, [...hofheim, ...frankfurt]).content;

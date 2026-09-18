@@ -1887,3 +1887,60 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Added a regression test confirming the record remains auditable but is excluded from display. Focused data and active-listing tests pass (156 tests), full tests pass (479 tests), lint and TypeScript pass, and the production build renders 316 pages with a 315-URL sitemap. Essen is no longer represented by this closed listing in generated routes.
 
 **Rollback:** Restore the `Internal-Essen-1` verification block and remove this entry and its regression-test change if the evidence is later disproved.
+
+## 2026-09-16T10:05:40+02:00 - Refresh first stale clinic evidence batch locally
+
+**Context:** The quality queue identified older active records whose last scan was January 2025. Current official clinic sites confirm that four high-priority clinics remain active, but the pages reviewed do not by themselves prove English availability.
+
+**Decision:** Refresh `Internal-6` (TiHo Hannover), `Internal-1` (LMU Munich), `Internal-Nuremberg-1` (Tierklinik Nürnberg Hafen), and `Internal-4` (Tierklinik Ismaning) to the current scan date, link their current clinic-owned websites, and keep their evidence classification community-based. Add an explicit booking confirmation note rather than upgrading them to official English verification.
+
+**Trade-offs:** The directory now has current operational sources and contact links for these records, while the conservative evidence label avoids implying that an official clinic page explicitly guarantees English service.
+
+**Verification:** Added a focused data regression test for all four records. The focused test passes (4 tests), the full suite passes (481 tests across 86 files), lint and TypeScript pass, and the production build renders 316 routes with a 315-URL sitemap. This batch remains local and has not been deployed.
+
+**Rollback:** Revert the four targeted records, the focused regression test, and this entry if the source review is superseded or the local preview is not preferred.
+
+## 2026-09-18T15:22:57+02:00 - Refresh third stale clinic evidence batch locally
+
+**Context:** The next queue review found current first-party evidence for the JLU Gießen small-animal clinic and Tierklinik Lüneburg. Three neighboring records were not changed because the evidence was conflicting or insufficient: the Hamburg Sörensen record points to a Hamburg address while current clinic results point to Berlin, the Cologne Wichert record has no reliable first-party result, and the Heidelberg Dr. Maurer record appears to have moved or been rebranded.
+
+**Decision:** Refresh `Internal-Giessen-1` to the current JLU clinic address and appointment contact, and refresh `Internal-Luneburg-1` to the current clinic phone and address format. Add current official source URLs and keep both records community-confirmed with an explicit English booking check.
+
+**Trade-offs:** Two stale records are now operationally current without overstating language support. The three unresolved records remain visible for manual verification rather than being silently rewritten or removed.
+
+**Verification:** Added the two-record regression coverage. The focused test passes (6 tests including the prior four-record batch), the full suite passes (485 tests across 86 files), lint and TypeScript pass, and the production build renders 316 routes with a 315-URL sitemap. This third batch remains local and has not been deployed.
+
+**Rollback:** Revert the two targeted records, the focused regression-test additions, and this entry if the source review is superseded or the local preview is not preferred.
+
+## 2026-09-16T10:14:00+02:00 - Refresh second stale clinic evidence batch locally
+
+**Context:** The next oldest active records included four major clinics last scanned in January 2025. Official sources still identify the clinics, and two records had materially outdated contact details.
+
+**Decision:** Refresh `Internal-Hamburg-1` (Tierklinik Lademannbogen), `Internal-Cologne-1` (Tierklinik Köln-Süd/Kellerwessel), `Internal-Bremen-1` (Kleintierklinik Bremen), and `Internal-Augsburg-1` (AniCura Kleintierspezialisten Augsburg). Update current websites, contact details, addresses, coordinates, and district where the official source made the correction clear. Keep the evidence classification community-based and add the booking confirmation note.
+
+**Trade-offs:** The public directory now points to current clinic-owned destinations and no longer sends visitors to the stale Cologne or Bremen contact details. English availability remains explicitly conditional because the reviewed official pages do not guarantee English service.
+
+**Verification:** Added a focused regression test for all four records. The focused test passes (4 tests), the full suite passes (484 tests across 86 files), lint and TypeScript pass, and the production build renders 316 routes with a 315-URL sitemap. This second batch remains local and has not been deployed.
+
+**Rollback:** Revert the four targeted records, the focused regression test, and this entry if the source review is superseded or the local preview is not preferred.
+## 2026-09-18T16:04:00+02:00 - Refresh Heidelberg clinic successor record locally
+
+**Context:** The Heidelberg audit record for Tierärztliche Klinik Dr. Maurer still pointed to Edinger Riedweg 55 with no website and a 2025 scan date. Current first-party pages identify the active practice as Tierärztliches Zentrum an der Feuerwache Heidelberg at Baumschulenweg 10, with telephone 06221 166800 and current opening and emergency information.
+
+**Decision:** Update `Internal-Heidelberg-1` to the current clinic name, address, coordinates, telephone number and official website. Keep the listing community-evidenced and retain the booking confirmation language because the official pages do not independently verify English service. Record the official contact, home and imprint pages as source URLs and scan the record on 2026-09-18.
+
+**Verification:** The focused queue test passes for all seven refreshed records. The remaining Hamburg Sörensen and Cologne Wichert records are intentionally not changed because available evidence does not prove a current English-speaking practice at their stored locations.
+
+**Rollback:** Restore the prior `Internal-Heidelberg-1` fields in `web-app/src/data/vets.json` and remove this decision entry. No deployment was performed.
+
+## 2026-09-18T19:40:00+02:00 - Separate patient and practice confirmation evidence locally
+
+**Context:** The directory's one-click English confirmation flow did not distinguish a pet owner's report from a confirmation supplied by the practice itself.
+
+**Decision:** Keep the one-click action explicitly patient-based and label its result as community evidence. Add a separate practice-representative contact path that pre-fills the listing identity and asks for an official practice contact or page. Support a distinct `Practice Confirmed` evidence label and explain the difference in city summaries, evidence panels and the Quality Promise.
+
+**Trade-offs:** Practice confirmation requires human review before the public data is promoted, so it is slower than the anonymous patient report. The distinction prevents a community report from being presented as a clinic endorsement while still giving practices a clear correction route.
+
+**Verification:** Targeted confirmation, city-summary, district and directory-filter tests pass (28 tests). The full suite passes (490 tests across 86 files), ESLint and TypeScript pass, and the production build renders 316 pages with a 315-URL sitemap. This change is local only and has not been deployed.
+
+**Rollback:** Revert the confirmation component, practice contact prefill and evidence-presentation changes, their tests, and this entry if the two-tier workflow is not preferred.

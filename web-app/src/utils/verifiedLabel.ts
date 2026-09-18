@@ -14,8 +14,8 @@ export function formatVerifiedLabel(lastScanned: string | undefined, now: Date =
 }
 
 export interface VerificationPresentation {
-    badge: 'Official Website' | 'Government Listed' | 'Community Confirmed' | 'Community Listed';
-    title: 'Official Website Confirmed' | 'Government Source Confirmed' | 'Community Confirmed' | 'Confirmation Needed';
+    badge: 'Official Website' | 'Practice Confirmed' | 'Government Listed' | 'Community Confirmed' | 'Community Listed';
+    title: 'Official Website Confirmed' | 'Practice Confirmation' | 'Government Source Confirmed' | 'Community Confirmed' | 'Confirmation Needed';
     description: string;
     verified: boolean;
 }
@@ -28,9 +28,14 @@ export function isGovernmentSourceConfirmed(vet: Vet): boolean {
     return vet.verification?.evidence_type === 'government_source';
 }
 
+export function isPracticeConfirmed(vet: Vet): boolean {
+    return vet.verification?.evidence_type === 'practice_confirmed';
+}
+
 export function isVetVerified(vet: Vet): boolean {
     return isOfficialWebsiteConfirmed(vet) ||
         isGovernmentSourceConfirmed(vet) ||
+        isPracticeConfirmed(vet) ||
         vet.community_status === 'Verified' ||
         vet.verification?.status === 'Verified';
 }
@@ -50,6 +55,15 @@ export function getVerificationPresentation(vet: Vet): VerificationPresentation 
             badge: 'Government Listed',
             title: 'Government Source Confirmed',
             description: 'A government veterinary resource identifies this practice as English-speaking. Confirm staff availability when booking because personnel and source details can change.',
+            verified: true,
+        };
+    }
+
+    if (isPracticeConfirmed(vet)) {
+        return {
+            badge: 'Practice Confirmed',
+            title: 'Practice Confirmation',
+            description: 'A practice representative has confirmed English-language service directly. Confirm which clinician will be available when booking.',
             verified: true,
         };
     }

@@ -135,6 +135,26 @@ describe('CityVetFinder', () => {
         expect(screen.getByText('No practices match these filters.')).toBeTruthy();
     });
 
+    it('filters directly practice-confirmed listings separately', () => {
+        const practiceConfirmed: Vet = {
+            ...berlinVets[0],
+            id: 'practice-confirmed-neukoelln',
+            practice_name: 'Neukölln Practice Confirmation',
+            verification: {
+                ...berlinVets[0].verification,
+                evidence_type: 'practice_confirmed',
+            },
+        };
+        render(<CityVetFinder city="Berlin" vets={[...berlinVets, practiceConfirmed]} />);
+
+        fireEvent.change(screen.getByRole('combobox', { name: 'Filter by evidence source' }), {
+            target: { value: 'practice_confirmed' },
+        });
+
+        expect(within(getResults()).getAllByRole('article')).toHaveLength(1);
+        expect(screen.getByText('Neukölln Practice Confirmation')).toBeTruthy();
+    });
+
     it('resets every active filter in one action', () => {
         render(<CityVetFinder city="Berlin" vets={berlinVets} />);
 

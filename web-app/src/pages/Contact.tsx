@@ -54,6 +54,14 @@ export default function Contact() {
                 message: `[REPORT] ${reason}\nPractice: ${vetName}\nID: ${vetId}\n\nDetails: `
             }));
         }
+        if (topic === 'vet_owner' && vetName) {
+            setFormData(prev => ({
+                ...prev,
+                topic: 'vet_owner',
+                vetName,
+                message: `[PRACTICE CONFIRMATION]\nPractice: ${vetName}\nID: ${vetId}\n\nI am a practice representative. Please confirm that this practice provides English-language support, including the official practice email or website and any limits on availability.\n`
+            }));
+        }
     }, [reportIssueState, searchParams]);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -206,7 +214,7 @@ export default function Contact() {
                                     <option value="general">Ask a General Question</option>
                                     <option value="submit_vet">Submit a New Vet Recommendation</option>
                                     <option value="report_issue">Report an Issue / Correction</option>
-                                    <option value="vet_owner">Claim/Update My Practice (Vet Owner)</option>
+                                    <option value="vet_owner">Confirm English Support (Practice)</option>
                                 </select>
                             </div>
 
@@ -239,10 +247,17 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            {/* Dynamic Fields for Vet Submission */}
-                            {formData.topic === 'submit_vet' && (
+                            {/* Dynamic Fields for Vet Submission or Practice Confirmation */}
+                            {(formData.topic === 'submit_vet' || formData.topic === 'vet_owner') && (
                                 <div className="p-6 bg-primary/5 rounded-xl space-y-4 border border-primary/5 animate-fade-in">
-                                    <h4 className="font-bold text-accent text-sm uppercase tracking-wider mb-2">Practice Details</h4>
+                                    <h4 className="font-bold text-accent text-sm uppercase tracking-wider mb-2">
+                                        {formData.topic === 'vet_owner' ? 'Practice confirmation' : 'Practice details'}
+                                    </h4>
+                                    {formData.topic === 'vet_owner' && (
+                                        <p className="text-sm leading-relaxed text-primary/70">
+                                            Practice representatives can confirm English support directly. Please use an official practice email or include a link to the relevant practice page. We review this evidence before changing the public label.
+                                        </p>
+                                    )}
 
                                     <div>
                                         <label htmlFor="vetName" className="block text-sm font-bold text-primary mb-2">Practice Name</label>
@@ -250,7 +265,7 @@ export default function Contact() {
                                             type="text"
                                             id="vetName"
                                             name="vetName"
-                                            required={formData.topic === 'submit_vet'}
+                                            required={formData.topic === 'submit_vet' || formData.topic === 'vet_owner'}
                                             value={formData.vetName}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 bg-white border border-primary/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50"
@@ -323,7 +338,7 @@ export default function Contact() {
                                     )}
 
                                     <div>
-                                        <label htmlFor="vetWebsite" className="block text-sm font-bold text-primary mb-2">Website (Optional)</label>
+                                        <label htmlFor="vetWebsite" className="block text-sm font-bold text-primary mb-2">Official website (Optional)</label>
                                         <input
                                             type="url"
                                             id="vetWebsite"
@@ -339,11 +354,12 @@ export default function Contact() {
 
                             <div>
                                 <label htmlFor="message" className="block text-sm font-bold text-primary mb-2">
-                                    {formData.topic === 'submit_vet' ? "Why do you recommend them?" : "Message"}
+                                    {formData.topic === 'submit_vet' ? "Why do you recommend them?" : formData.topic === 'vet_owner' ? "Confirmation details" : "Message"}
                                 </label>
                                 <textarea
                                     id="message"
                                     name="message"
+                                    aria-label={formData.topic === 'vet_owner' ? 'Message' : undefined}
                                     required
                                     rows={5}
                                     value={formData.message}
@@ -352,6 +368,7 @@ export default function Contact() {
                                     placeholder={
                                         formData.topic === 'submit_vet' ? "Tell us about your experience! Did they speak clear English? Were they kind to your pet?" :
                                             formData.topic === 'report_issue' ? "Let us know which clinic needs updating and what the correct info is." :
+                                                formData.topic === 'vet_owner' ? "Tell us which official practice contact can confirm English support and any booking limitations." :
                                                 "How can we help?"
                                     }
                                 ></textarea>

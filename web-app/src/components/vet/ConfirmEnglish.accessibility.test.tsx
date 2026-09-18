@@ -32,7 +32,7 @@ describe('ConfirmEnglish accessibility', () => {
 
         render(<ConfirmEnglish vet={vet} />);
         const button = screen.getByRole('button', {
-            name: 'Confirm Test Veterinary Clinic speaks English',
+            name: 'I visited Test Veterinary Clinic and English was available',
         });
         button.focus();
         fireEvent.click(button);
@@ -54,11 +54,13 @@ describe('ConfirmEnglish accessibility', () => {
         render(<ConfirmEnglish vet={vet} />);
 
         fireEvent.click(screen.getByRole('button', {
-            name: 'Confirm Test Veterinary Clinic speaks English',
+            name: 'I visited Test Veterinary Clinic and English was available',
         }));
 
         const status = await screen.findByRole('status');
         await waitFor(() => expect(document.activeElement).toBe(status));
         expect(status.textContent).toContain("Thanks! We'll review your confirmation.");
+        expect(screen.getByRole('link', { name: 'Practice representative? Confirm directly' })
+            .getAttribute('href')).toBe('/contact?topic=vet_owner&vetId=test-vet&vetName=Test%20Veterinary%20Clinic');
     });
 });
