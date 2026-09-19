@@ -6,7 +6,7 @@ import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import ArticleHeader from '../components/ArticleHeader';
-import AffiliateCallout from '../components/AffiliateCallout';
+import AffiliateBanner from '../components/AffiliateBanner';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
@@ -423,14 +423,15 @@ export default function MovingWithPetChecklist() {
                                 </Link>
                             </div>
 
-                            <AffiliateCallout
+                            <AffiliateBanner
                                 ariaLabel="Sponsored Hund unterwegs dog-supplies option"
                                 description="Hund unterwegs sells dog supplies for German households. It is a retailer recommendation, not a veterinary or travel-authority endorsement. Check the product details, delivery terms and suitability for your dog before ordering."
-                                href={AFFILIATE_LINKS.hundUnterwegs.movingGuide}
+                                eyebrow="Practical supplies for the move"
+                                href={AFFILIATE_LINKS.hundUnterwegs.movingBanner}
                                 linkLabel="Browse Hund unterwegs dog supplies"
                                 provider="Hund unterwegs"
                                 title="Preparing your dog for the move?"
-                                trackingLocation="HundUnterwegs_MovingGuide"
+                                trackingLocation="HundUnterwegs_MovingBanner"
                             />
 
                             <div className="not-prose">

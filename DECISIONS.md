@@ -1954,3 +1954,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Focused affiliate, structural, programme-integration and dog-food conversion tests pass (11 tests across 4 files). Full tests, lint, TypeScript and the production build remain to be run. This change is local only and has not been deployed.
 
 **Rollback:** Remove the three Hund unterwegs entries from `web-app/src/utils/affiliateLinks.ts`, remove the three placements and their focused expectations, and delete this decision entry.
+
+## 2026-09-19T16:41:20+02:00 - Test one responsive Hund unterwegs HTML5-style banner locally
+
+**Context:** Awin offers creative assets for the approved Hund unterwegs programme, but the creative page requested a fresh login during implementation. Embedding an unverified third-party asset would make the test opaque and could introduce unwanted dimensions or loading behaviour.
+
+**Decision:** Use a small first-party HTML5/CSS banner component for one controlled placement on the moving-with-pets guide. It uses the approved Awin destination with a dedicated `hund_unterwegs_moving_banner` clickref, opens in a new tab, includes `rel="sponsored"`, and keeps the advertising disclosure outside the clickable area. Replace the larger moving-guide callout rather than stacking a second ad.
+
+**Trade-offs:** The banner is a controlled visual test rather than the advertiser's uploaded creative, so it avoids external asset and layout risk but does not yet test Awin's native HTML5 creative. The homepage and vet cards remain unchanged.
+
+**Verification:** The component and moving-guide affiliate tests pass (2 tests). Full tests, lint, TypeScript and production build remain to be run. This change is local only and has not been deployed.
+
+**Rollback:** Restore the moving-guide `AffiliateCallout`, remove `AffiliateBanner.tsx` and its test, remove the dedicated banner clickref, and delete this decision entry.

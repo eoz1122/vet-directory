@@ -21,7 +21,7 @@ export const AFFILIATE_LINKS = {
         dogFoodGuide: 'https://www.awin1.com/cread.php?awinmid=11945&awinaffid=2707844&clickref=dog_food_dinner_for_dogs&ued=https%3A%2F%2Fwww.dinner-for-dogs.com',
     },
     hundUnterwegs: {
-        movingGuide: 'https://www.awin1.com/cread.php?awinmid=22115&awinaffid=2707844&clickref=hund_unterwegs_moving_guide&ued=https%3A%2F%2Fhund-unterwegs.de%2F',
+        movingBanner: 'https://www.awin1.com/cread.php?awinmid=22115&awinaffid=2707844&clickref=hund_unterwegs_moving_banner&ued=https%3A%2F%2Fhund-unterwegs.de%2F',
         transportGuide: 'https://www.awin1.com/cread.php?awinmid=22115&awinaffid=2707844&clickref=hund_unterwegs_transport_guide&ued=https%3A%2F%2Fhund-unterwegs.de%2F',
         dogFoodGuide: 'https://www.awin1.com/cread.php?awinmid=22115&awinaffid=2707844&clickref=hund_unterwegs_dog_food_guide&ued=https%3A%2F%2Fhund-unterwegs.de%2F',
     },

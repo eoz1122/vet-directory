@@ -33,7 +33,7 @@ describe('Moving with pets affiliate placement', () => {
         expect(url.hostname).toBe('www.awin1.com');
         expect(url.searchParams.get('awinmid')).toBe('22115');
         expect(url.searchParams.get('awinaffid')).toBe('2707844');
-        expect(url.searchParams.get('clickref')).toBe('hund_unterwegs_moving_guide');
+        expect(url.searchParams.get('clickref')).toBe('hund_unterwegs_moving_banner');
         expect(url.searchParams.get('ued')).toBe('https://hund-unterwegs.de/');
         expect(link.getAttribute('rel')).toContain('sponsored');
     });
