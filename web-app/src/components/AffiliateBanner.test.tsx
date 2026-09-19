@@ -20,6 +20,7 @@ describe('AffiliateBanner', () => {
                 description="Check practical dog supplies before your move."
                 eyebrow="Move with confidence"
                 href="https://www.awin1.com/cread.php?awinmid=22115&awinaffid=2707844&clickref=hund_unterwegs_moving_banner"
+                id="preview-banner"
                 linkLabel="Browse dog supplies"
                 provider="Hund unterwegs"
                 title="Ready for the journey?"
@@ -31,6 +32,7 @@ describe('AffiliateBanner', () => {
         const link = screen.getByRole('link', { name: 'Browse dog supplies' });
 
         expect(region.getAttribute('data-testid')).toBe('affiliate-banner');
+        expect(region.id).toBe('preview-banner');
         expect(region.textContent).toMatch(/advertising link/i);
         expect(region.textContent).toMatch(/may earn a commission/i);
         expect(link.getAttribute('rel')).toContain('sponsored');

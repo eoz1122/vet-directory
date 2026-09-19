@@ -428,6 +428,7 @@ export default function MovingWithPetChecklist() {
                                 description="Hund unterwegs sells dog supplies for German households. It is a retailer recommendation, not a veterinary or travel-authority endorsement. Check the product details, delivery terms and suitability for your dog before ordering."
                                 eyebrow="Practical supplies for the move"
                                 href={AFFILIATE_LINKS.hundUnterwegs.movingBanner}
+                                id="hund-unterwegs-banner"
                                 linkLabel="Browse Hund unterwegs dog supplies"
                                 provider="Hund unterwegs"
                                 title="Preparing your dog for the move?"

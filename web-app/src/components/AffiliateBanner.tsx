@@ -5,6 +5,7 @@ type AffiliateBannerProps = {
     description: string;
     eyebrow: string;
     href: string;
+    id?: string;
     linkLabel: string;
     provider: string;
     title: string;
@@ -16,6 +17,7 @@ export default function AffiliateBanner({
     description,
     eyebrow,
     href,
+    id,
     linkLabel,
     provider,
     title,
@@ -26,6 +28,7 @@ export default function AffiliateBanner({
             role="region"
             aria-label={ariaLabel}
             data-testid="affiliate-banner"
+            id={id}
             className="not-prose my-10 overflow-hidden rounded-2xl border border-accent/30 bg-primary text-secondary shadow-sm"
         >
             <a
