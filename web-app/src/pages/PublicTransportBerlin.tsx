@@ -6,6 +6,8 @@ import Footer from '../components/Footer';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
+import AffiliateCallout from '../components/AffiliateCallout';
+import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
 export default function PublicTransportBerlin() {
@@ -209,6 +211,16 @@ export default function PublicTransportBerlin() {
                                     </Link>
                                 </div>
                             </div>
+
+                            <AffiliateCallout
+                                ariaLabel="Sponsored Hund unterwegs transport option"
+                                description="Find practical dog-walking and travel supplies from Hund unterwegs. This is an advertising link, not a recommendation that a product will make public transport safe or replace BVG rules. Check the item details and current terms before ordering."
+                                href={AFFILIATE_LINKS.hundUnterwegs.transportGuide}
+                                linkLabel="Browse dog travel supplies"
+                                provider="Hund unterwegs"
+                                title="Need practical supplies for travelling with your dog?"
+                                trackingLocation="HundUnterwegs_TransportGuide"
+                            />
 
                             <p className="text-sm italic opacity-70 not-prose">
                                 🔗 Heading north? Hamburg’s rules are completely different (and much cheaper).

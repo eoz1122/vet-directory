@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
@@ -42,5 +42,25 @@ describe('PetFoodGermany conversion structure', () => {
         expect(screen.getByRole('link', { name: 'Vet costs' }).getAttribute('href')).toBe('/blog/vet-costs-germany');
         expect(screen.getByRole('link', { name: 'Pet insurance' }).getAttribute('href')).toBe('/blog/pet-insurance-germany');
         expect(screen.getByRole('link', { name: 'First vet visit' }).getAttribute('href')).toBe('/blog/first-vet-visit-germany');
+    });
+
+    it('labels the Hund unterwegs dog-supplies placement as sponsored', () => {
+        renderPage();
+
+        const disclosure = screen.getByRole('region', {
+            name: 'Commercial disclosure',
+        });
+        const link = within(disclosure).getByRole('link', {
+            name: 'Browse Hund unterwegs dog supplies (affiliate link)',
+        });
+        const url = new URL(link.getAttribute('href') || '');
+
+        expect(within(disclosure).getAllByText(/affiliate links/i).length).toBeGreaterThan(0);
+        expect(url.hostname).toBe('www.awin1.com');
+        expect(url.searchParams.get('awinmid')).toBe('22115');
+        expect(url.searchParams.get('awinaffid')).toBe('2707844');
+        expect(url.searchParams.get('clickref')).toBe('hund_unterwegs_dog_food_guide');
+        expect(url.searchParams.get('ued')).toBe('https://hund-unterwegs.de/');
+        expect(link.getAttribute('rel')).toContain('sponsored');
     });
 });

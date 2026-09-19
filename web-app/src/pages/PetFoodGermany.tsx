@@ -412,7 +412,7 @@ export default function PetFoodGermany() {
                                             <span className="text-xs font-bold uppercase tracking-wider text-primary/45">Affiliate links</span>
                                         </div>
                                         <p className="mt-2 text-sm leading-6 text-primary/70">
-                                            The two links below are affiliate links. We may earn a commission at no extra cost to you. We have not independently laboratory-tested or ranked these products or services, and inclusion is not a nutritional endorsement. Confirm complete-food status, life stage and suitability before buying.
+                                            The links below are affiliate links. We may earn a commission at no extra cost to you. We have not independently laboratory-tested or ranked these products or services, and inclusion is not a nutritional endorsement. Confirm complete-food status, life stage and suitability before buying.
                                         </p>
                                         <div className="mt-4 flex flex-col gap-3 sm:flex-row">
                                     <a
@@ -434,6 +434,16 @@ export default function PetFoodGermany() {
                                         className="inline-flex min-h-11 items-center justify-center rounded-xl border border-primary/20 px-5 py-3 text-sm font-bold text-primary transition-colors hover:bg-primary/5"
                                     >
                                         Check Dinner for Dogs details
+                                    </a>
+                                    <a
+                                        href={AFFILIATE_LINKS.hundUnterwegs.dogFoodGuide}
+                                        aria-label="Browse Hund unterwegs dog supplies (affiliate link)"
+                                        onClick={() => trackAffiliateClick('HundUnterwegs', 'PetFood_Page')}
+                                        target="_blank"
+                                        rel="noopener noreferrer sponsored"
+                                        className="inline-flex min-h-11 items-center justify-center rounded-xl border border-primary/20 px-5 py-3 text-sm font-bold text-primary transition-colors hover:bg-primary/5"
+                                    >
+                                        Browse Hund unterwegs dog supplies
                                     </a>
                                         </div>
                                     </div>

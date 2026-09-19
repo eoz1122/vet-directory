@@ -24,4 +24,28 @@ describe('PublicTransportBerlin guide structure', () => {
         expect(screen.getByRole('heading', { level: 1, name: /Public Transport with Dogs in Berlin/i })).toBeTruthy();
         expect(screen.getByText('Reviewed periodically. Last checked September 15, 2026', { exact: false })).toBeTruthy();
     });
+
+    it('adds a disclosed Hund unterwegs travel-supplies option', () => {
+        render(
+            <HelmetProvider>
+                <MemoryRouter>
+                    <PublicTransportBerlin />
+                </MemoryRouter>
+            </HelmetProvider>,
+        );
+
+        const callout = screen.getByRole('region', {
+            name: 'Sponsored Hund unterwegs transport option',
+        });
+        const link = screen.getByRole('link', { name: 'Browse dog travel supplies' });
+        const url = new URL(link.getAttribute('href') || '');
+
+        expect(url.hostname).toBe('www.awin1.com');
+        expect(url.searchParams.get('awinmid')).toBe('22115');
+        expect(url.searchParams.get('awinaffid')).toBe('2707844');
+        expect(url.searchParams.get('clickref')).toBe('hund_unterwegs_transport_guide');
+        expect(url.searchParams.get('ued')).toBe('https://hund-unterwegs.de/');
+        expect(link.getAttribute('rel')).toContain('sponsored');
+        expect(callout.textContent).toMatch(/advertising link/i);
+    });
 });

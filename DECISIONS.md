@@ -1944,3 +1944,13 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Targeted confirmation, city-summary, district and directory-filter tests pass (28 tests). The full suite passes (490 tests across 86 files), ESLint and TypeScript pass, and the production build renders 316 pages with a 315-URL sitemap. This change is local only and has not been deployed.
 
 **Rollback:** Revert the confirmation component, practice contact prefill and evidence-presentation changes, their tests, and this entry if the two-tier workflow is not preferred.
+
+## 2026-09-19T13:09:22+02:00 - Add Hund unterwegs placements to relevant dog guides locally
+
+**Context:** Awin approved the Hund unterwegs DE partner programme (AID 22115) on 2026-09-16. Its profile reports a 10% commission, Germany targeting, a 30-day cookie and no product feed.
+
+**Decision:** Add clearly disclosed sponsored Hund unterwegs links to the moving-with-pets checklist, Berlin public-transport guide and dog-food shopping section. Each placement uses a distinct Awin clickref, a direct destination to `https://hund-unterwegs.de/`, and `rel="sponsored"`. The links are recommendations for practical dog supplies only and do not imply veterinary, travel-authority or product-quality endorsement.
+
+**Verification:** Focused affiliate, structural, programme-integration and dog-food conversion tests pass (11 tests across 4 files). Full tests, lint, TypeScript and the production build remain to be run. This change is local only and has not been deployed.
+
+**Rollback:** Remove the three Hund unterwegs entries from `web-app/src/utils/affiliateLinks.ts`, remove the three placements and their focused expectations, and delete this decision entry.

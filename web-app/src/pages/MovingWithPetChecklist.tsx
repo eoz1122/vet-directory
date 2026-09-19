@@ -6,6 +6,8 @@ import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import BlogSidebar from '../components/BlogSidebar';
 import ArticleHeader from '../components/ArticleHeader';
+import AffiliateCallout from '../components/AffiliateCallout';
+import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
 const ARTICLE_TITLE = 'Moving to Germany With a Dog or Cat: 2026 Entry Rules';
@@ -420,6 +422,16 @@ export default function MovingWithPetChecklist() {
                                     Pet-friendly apartments in Berlin guide
                                 </Link>
                             </div>
+
+                            <AffiliateCallout
+                                ariaLabel="Sponsored Hund unterwegs dog-supplies option"
+                                description="Hund unterwegs sells dog supplies for German households. It is a retailer recommendation, not a veterinary or travel-authority endorsement. Check the product details, delivery terms and suitability for your dog before ordering."
+                                href={AFFILIATE_LINKS.hundUnterwegs.movingGuide}
+                                linkLabel="Browse Hund unterwegs dog supplies"
+                                provider="Hund unterwegs"
+                                title="Preparing your dog for the move?"
+                                trackingLocation="HundUnterwegs_MovingGuide"
+                            />
 
                             <div className="not-prose">
                                 <Link
