@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
     assertPrerenderComplete,
@@ -15,6 +17,13 @@ import {
 } from './prerender-readiness.js';
 
 describe('prerender readiness', () => {
+    it('prerenders single-practice district pages so their noindex head is emitted', () => {
+        const prerenderSource = fs.readFileSync(path.join(process.cwd(), 'scripts/prerender.js'), 'utf8');
+
+        expect(prerenderSource).toContain('districtRoutes.push(`/vets/${key}`);');
+        expect(prerenderSource).not.toContain('if (districtListingCount >= MIN_INDEXABLE_DISTRICT_LISTINGS)');
+    });
+
     it('requires the canonical that belongs to the route', () => {
         expect(canonicalForRoute('/')).toBe('https://englishspeakinggermany.online');
         expect(canonicalForRoute('/vets/berlin/tempelhof')).toBe(

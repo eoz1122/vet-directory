@@ -1988,3 +1988,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Added a deployment reliability test for cleanup ordering and the generated-output list. The focused deployment test passes 4/4. A second deployment is required to remove the stale live files from the first rollout.
 
 **Rollback:** Restore the previous copy-only block in `deploy.sh` if the cleanup ever targets an unexpected generated entry. Re-run the deployment reliability test before deploying again.
+
+## 2026-09-22T16:45:00+02:00 - Prerender noindex district routes for reliable head delivery
+
+**Context:** The VPS kept a stale static copy of a removed district route while the first cleanup fix was still propagating. A client-only `noindex` tag would not be reliable on a stale or directly fetched HTML file.
+
+**Decision:** Prerender every active district route, including single-practice districts, while the page itself emits `noindex` and the sitemap continues to include only districts with at least two practices. This guarantees the thin-page directive is present in the static HTML and lets the deployment copy overwrite any legacy route file. The route remains accessible to visitors without being promoted for search indexing.
+
+**Trade-offs:** The build renders more directory pages, but the extra static output is small compared with the reliability gained for crawler-visible metadata. The sitemap and indexability policy remain unchanged.
+
+**Verification:** The prerender readiness contract and deployment reliability tests pass. A production build and a follow-up deploy are required to confirm the live static head.
+
+**Rollback:** Restore the count filter in `web-app/scripts/prerender.js` only if build time becomes operationally unacceptable, but retain the deployment cleanup and verify that stale route files are removed.

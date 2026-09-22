@@ -51,8 +51,6 @@ function sanitizeSlug(text) {
         .replace(/^-+|-+$/g, '');     // trim leading/trailing hyphens
 }
 
-const MIN_INDEXABLE_DISTRICT_LISTINGS = 2;
-
 // ─── Route Collection ───
 
 function getStaticRoutes() {
@@ -102,17 +100,11 @@ function getVetRoutes() {
                 const citySlug = sanitizeSlug(vet.city);
                 const districtSlug = sanitizeSlug(vet.district);
                 if (citySlug === districtSlug) return;
-                const key = `${citySlug}/${districtSlug}`;
-                if (!seenDistricts.has(key)) {
-                    seenDistricts.add(key);
-                    const districtListingCount = vets.filter(v =>
-                        sanitizeSlug(v.city) === citySlug &&
-                        sanitizeSlug(v.district) === districtSlug
-                    ).length;
-                    if (districtListingCount >= MIN_INDEXABLE_DISTRICT_LISTINGS) {
-                        districtRoutes.push(`/vets/${key}`);
-                    }
-                }
+                 const key = `${citySlug}/${districtSlug}`;
+                 if (!seenDistricts.has(key)) {
+                     seenDistricts.add(key);
+                    districtRoutes.push(`/vets/${key}`);
+                 }
             }
         });
 
