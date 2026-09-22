@@ -84,6 +84,16 @@ bash "${successRecorderPath}"
         expect(successRecorder).toBeGreaterThan(healthCheckFailure);
     });
 
+    it('removes stale generated output before copying the new build', () => {
+        const deploySource = fs.readFileSync(deployScriptPath, 'utf8');
+        const cleanupMarker = deploySource.indexOf('Removing previous generated output');
+        const copyMarker = deploySource.indexOf('cp -r web-app/dist/* .');
+
+        expect(cleanupMarker).toBeGreaterThan(-1);
+        expect(copyMarker).toBeGreaterThan(cleanupMarker);
+        expect(deploySource).toContain('find web-app/dist -mindepth 1 -maxdepth 1 -print0');
+    });
+
     it('deploys when the checked-out commit matches remote but the success marker is stale', () => {
         const firstRun = runPoller(repositoryDirectory, markerPath);
 

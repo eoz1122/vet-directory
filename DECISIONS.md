@@ -1978,3 +1978,13 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** The focused remediation tests pass, the full Vitest suite exits green, ESLint and TypeScript pass, and the production build renders 153 pages with a 152-URL sitemap. Leipzig-Plagwitz is not prerendered or present in the sitemap, while the guide hub contains the editorial-standard section. Changes are local only and have not been deployed.
 
 **Rollback:** Restore the prior district route and sitemap inclusion logic, remove the editorial-standard and shared-header additions, restore the longer disclaimer, and delete this decision entry. Re-run the full test suite and production build before redeploying.
+
+## 2026-09-22T16:35:00+02:00 - Remove stale generated routes during VPS copy
+
+**Context:** The first AdSense remediation deploy produced the new 152-URL sitemap, but the VPS copy step used `cp -r` without removing old generated route directories. A previously prerendered single-practice page therefore remained live even though it was no longer in the new build output.
+
+**Decision:** Before copying `web-app/dist`, remove only the top-level entries present in that current build. This avoids unsafe `rsync --delete` behaviour against the checked-out source tree while ensuring removed prerendered routes cannot survive on the nginx document root.
+
+**Verification:** Added a deployment reliability test for cleanup ordering and the generated-output list. The focused deployment test passes 4/4. A second deployment is required to remove the stale live files from the first rollout.
+
+**Rollback:** Restore the previous copy-only block in `deploy.sh` if the cleanup ever targets an unexpected generated entry. Re-run the deployment reliability test before deploying again.

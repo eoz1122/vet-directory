@@ -62,6 +62,14 @@ sudo -n systemctl restart vet-api 2>/dev/null || echo "⚠️  vet-api restart s
 # 6. Copy prerendered output to the nginx-served root
 echo "🚀 Copying build output to nginx root..."
 cd ..
+# The nginx root also contains the checked-out source tree, so a blanket
+# rsync --delete would be unsafe. Remove only the top-level entries produced by
+# the current build first, which prevents removed routes from surviving a copy.
+echo "🧹 Removing previous generated output..."
+while IFS= read -r -d '' generated_path; do
+    generated_name="${generated_path#web-app/dist/}"
+    rm -rf -- "${generated_name}"
+done < <(find web-app/dist -mindepth 1 -maxdepth 1 -print0)
 cp -r web-app/dist/* .
 
 # 7. Verify the live site actually serves after the swap (fail loud, not silent).
