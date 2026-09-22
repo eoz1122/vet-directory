@@ -1966,3 +1966,15 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** The component and moving-guide affiliate tests pass (2 tests). Full tests, lint, TypeScript and production build remain to be run. This change is local only and has not been deployed.
 
 **Rollback:** Restore the moving-guide `AffiliateCallout`, remove `AffiliateBanner.tsx` and its test, remove the dedicated banner clickref, and delete this decision entry.
+
+## 2026-09-22T15:45:00+02:00 - Strengthen AdSense value signals and reduce thin directory indexing
+
+**Context:** AdSense rejected the site for low-value content. The audit found many district routes containing only one practice, alongside guide pages that needed a clearer editorial standard and less dominant commercial framing.
+
+**Decision:** Treat a district route as indexable only when it contains at least two practices. Single-practice district pages remain accessible for direct visitors, but receive `noindex`, are excluded from prerendering and are removed from the sitemap until they offer a meaningful local comparison. Add a visible editorial-standard section to the guide hub, an editorial-review signal to shared guide headers, and a shorter periodic-freshness disclaimer with a direct outdated-detail report path. Keep the sponsored partner placement after the complete editorial guide hierarchy so commercial content does not lead the resource hub.
+
+**Trade-offs:** The sitemap falls from 315 to 152 URLs and removes 170 thin district routes from indexable output. This deliberately reduces crawlable surface while the directory earns more practices and stronger local evidence. Direct route access remains available through the SPA and city navigation. The threshold can be revisited when single-practice districts gain a second independently useful listing.
+
+**Verification:** The focused remediation tests pass, the full Vitest suite exits green, ESLint and TypeScript pass, and the production build renders 153 pages with a 152-URL sitemap. Leipzig-Plagwitz is not prerendered or present in the sitemap, while the guide hub contains the editorial-standard section. Changes are local only and have not been deployed.
+
+**Rollback:** Restore the prior district route and sitemap inclusion logic, remove the editorial-standard and shared-header additions, restore the longer disclaimer, and delete this decision entry. Re-run the full test suite and production build before redeploying.

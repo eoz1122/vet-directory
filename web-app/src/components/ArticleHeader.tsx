@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 interface ArticleHeaderProps {
     eyebrow: string;
@@ -18,6 +19,12 @@ export default function ArticleHeader({ eyebrow, title, review }: ArticleHeaderP
             </h1>
             <p className="text-sm leading-relaxed text-primary/60">
                 {review}
+            </p>
+            <p className="mt-2 text-xs leading-relaxed text-primary/50">
+                Editorial review by the EnglishSpeakingVets team.{' '}
+                <Link to="/quality-promise" className="font-bold text-accent-ink underline underline-offset-2">
+                    How we review guides
+                </Link>
             </p>
         </header>
     );

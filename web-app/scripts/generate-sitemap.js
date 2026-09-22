@@ -28,6 +28,8 @@ function sanitizeSlug(text) {
         .replace(/^-+|-+$/g, '');     // trim leading/trailing hyphens
 }
 
+const MIN_INDEXABLE_DISTRICT_LISTINGS = 2;
+
 // 1. Static Routes (with proper priority tiering)
 const staticRoutes = [
     { url: '/', changefreq: 'weekly', priority: 1.0 },
@@ -128,12 +130,14 @@ function getVetRoutes() {
                         return (v.verification.last_scanned > latest) ? v.verification.last_scanned : latest;
                     }, '2024-01-01');
 
-                    districtRoutes.push({
-                        url: `/vets/${key}`,
-                        changefreq: 'weekly',
-                        priority: 0.7, // District pages - medium priority
-                        lastmod: latestScan
-                    });
+                    if (districtVets.length >= MIN_INDEXABLE_DISTRICT_LISTINGS) {
+                        districtRoutes.push({
+                            url: `/vets/${key}`,
+                            changefreq: 'weekly',
+                            priority: 0.7, // District pages - medium priority
+                            lastmod: latestScan
+                        });
+                    }
                 }
             }
         });

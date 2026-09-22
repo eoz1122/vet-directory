@@ -10,6 +10,7 @@ import { isVetVerified } from '../utils/verifiedLabel';
 import { generateDistrictContent } from '../utils/districtContent';
 import type { Vet } from '../types/vet';
 import { VetCard } from '../components/vet/VetCard';
+import { shouldIndexDistrict } from '../utils/directoryIndexPolicy';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
 
@@ -278,12 +279,15 @@ export default function DistrictVets() {
         : DISTRICT_CONTENT[districtSpace] || listingContent;
     const [introParagraph, ...detailParagraphs] = content.content.split(/\n\s*\n/);
     const canonicalUrl = `https://englishspeakinggermany.online/vets/${cityKey}/${districtSlug}`;
-    const collectionLd = generateDistrictCollectionSchema(
-        districtVetsAll,
-        content.title,
-        content.description,
-        canonicalUrl,
-    );
+    const indexableDistrict = shouldIndexDistrict(count);
+    const collectionLd = indexableDistrict
+        ? generateDistrictCollectionSchema(
+            districtVetsAll,
+            content.title,
+            content.description,
+            canonicalUrl,
+        )
+        : null;
 
     // JSON-LD Structured Data
     const breadcrumbLd = {
@@ -327,7 +331,7 @@ export default function DistrictVets() {
                 <title>{content.title}</title>
                 <meta name="description" content={content.description} />
                 <link rel="canonical" href={canonicalUrl} />
-                {districtVets.length === 0 && <meta name="robots" content="noindex" />}
+                {!indexableDistrict && <meta name="robots" content="noindex" />}
                 <meta property="og:title" content={`${content.title} | EnglishSpeakingVets`} />
                 <meta property="og:description" content={content.description} />
                 <meta property="og:type" content="website" />

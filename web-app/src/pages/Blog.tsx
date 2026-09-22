@@ -186,6 +186,31 @@ export default function Blog() {
                     </p>
                 </section>
 
+                <section
+                    aria-label="Editorial standards"
+                    className="mx-auto mb-10 max-w-4xl rounded-2xl border border-primary/10 bg-white/70 p-5 text-left shadow-sm md:mb-14 md:p-7"
+                >
+                    <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                        <div>
+                            <p className="text-xs font-black uppercase tracking-[0.18em] text-accent">
+                                Editorial standard
+                            </p>
+                            <h2 className="mt-2 text-2xl font-bold tracking-tight text-primary">
+                                Guides built for decisions, not just clicks
+                            </h2>
+                            <p className="mt-3 max-w-3xl leading-relaxed text-primary/70">
+                                We combine official German sources, practical context for international pet owners, and periodic freshness checks. Community reports and commercial links are labelled separately so you can judge the evidence before acting.
+                            </p>
+                        </div>
+                        <Link
+                            to="/quality-promise"
+                            className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-bold text-secondary transition-colors hover:bg-primary/90"
+                        >
+                            Read our Quality Promise
+                        </Link>
+                    </div>
+                </section>
+
                 <nav
                     aria-label="Guide topics"
                     className="mb-12 flex flex-wrap justify-center gap-2 md:mb-16"
@@ -219,6 +244,26 @@ export default function Blog() {
                         ))}
                     </div>
                 </section>
+
+                <div className="space-y-14 md:space-y-20">
+                    {GUIDE_SECTIONS.map((section) => (
+                        <section key={section.id} id={section.id} className="scroll-mt-24">
+                            <div className="mb-6 max-w-3xl">
+                                <h2 className="text-2xl font-bold tracking-tight text-primary md:text-3xl">
+                                    {section.title}
+                                </h2>
+                                <p className="mt-2 leading-relaxed text-primary/70">
+                                    {section.description}
+                                </p>
+                            </div>
+                            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
+                                {section.posts.map((post) => (
+                                    <GuideCard key={post.url} post={post} />
+                                ))}
+                            </div>
+                        </section>
+                    ))}
+                </div>
 
                 <a
                     href={AFFILIATE_LINKS.figo.blogHubBanner}
@@ -256,26 +301,6 @@ export default function Blog() {
                         </div>
                     </div>
                 </a>
-
-                <div className="space-y-14 md:space-y-20">
-                    {GUIDE_SECTIONS.map((section) => (
-                        <section key={section.id} id={section.id} className="scroll-mt-24">
-                            <div className="mb-6 max-w-3xl">
-                                <h2 className="text-2xl font-bold tracking-tight text-primary md:text-3xl">
-                                    {section.title}
-                                </h2>
-                                <p className="mt-2 leading-relaxed text-primary/70">
-                                    {section.description}
-                                </p>
-                            </div>
-                            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
-                                {section.posts.map((post) => (
-                                    <GuideCard key={post.url} post={post} />
-                                ))}
-                            </div>
-                        </section>
-                    ))}
-                </div>
             </main>
 
             <Footer />

@@ -15,5 +15,8 @@ describe('ArticleHeader', () => {
         expect(screen.getByText('Evidence-based guide').className).toContain('uppercase');
         expect(screen.getByRole('heading', { level: 1, name: 'Example title' }).className).toContain('text-4xl');
         expect(screen.getByText('Reviewed periodically').className).toContain('text-sm');
+        expect(screen.getAllByRole('link', { name: 'How we review guides' })).toHaveLength(1);
+        expect(screen.getByRole('link', { name: 'How we review guides' }).getAttribute('href'))
+            .toBe('/quality-promise');
     });
 });

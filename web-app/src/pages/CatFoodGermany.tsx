@@ -162,10 +162,6 @@ export default function CatFoodGermany() {
                             review={(
                                 <>
                                     Reviewed periodically. Last checked September 15, 2026
-                                    <span aria-hidden="true"> • </span>
-                                    <Link to="/quality-promise" className="font-bold text-accent-ink hover:underline">
-                                        How we review guides
-                                    </Link>
                                 </>
                             )}
                         />

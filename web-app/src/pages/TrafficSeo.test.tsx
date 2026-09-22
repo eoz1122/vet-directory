@@ -81,7 +81,7 @@ describe('traffic-focused search metadata', () => {
         });
 
         const visibleGuides = Array.from(
-            document.querySelectorAll<HTMLAnchorElement>('main a[href^="/"]'),
+            document.querySelectorAll<HTMLAnchorElement>('main a[data-guide-url]'),
         ).map((link) => ({
             name: link.querySelector('h3')?.textContent?.trim(),
             description: link.querySelector('p')?.textContent?.trim(),

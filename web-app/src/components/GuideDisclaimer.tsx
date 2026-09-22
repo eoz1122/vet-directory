@@ -14,8 +14,9 @@ export default function GuideDisclaimer() {
                     The information provided here should not delay seeking professional care.
                 </p>
                 <p className="text-xs text-primary/50 pt-2 border-t border-primary/10">
-                    This content was created with AI assistance and verified by our editorial team. Clinic information is regularly updated,
-                    but we recommend confirming details directly with the veterinary practice before visiting.
+                    We review source links and clinic details periodically, but details can change between reviews.
+                    Please confirm current information directly with the veterinary practice before visiting or booking.
+                    If you spot an outdated detail, <a href="/contact?topic=report_issue" className="font-bold underline underline-offset-2">report an outdated detail</a>.
                 </p>
             </div>
         </div>

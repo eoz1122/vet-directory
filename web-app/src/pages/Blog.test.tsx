@@ -55,6 +55,15 @@ describe('Blog guide discovery', () => {
         ]);
     });
 
+    it('explains the editorial standard before commercial links', () => {
+        renderBlog();
+
+        const standards = screen.getByRole('region', { name: 'Editorial standards' });
+        expect(within(standards).getByText(/official German sources/i)).toBeTruthy();
+        expect(within(standards).getByRole('link', { name: 'Read our Quality Promise' }).getAttribute('href'))
+            .toBe('/quality-promise');
+    });
+
     it('shows every guide once in the approved task-based hierarchy', () => {
         renderBlog();
 
@@ -93,6 +102,10 @@ describe('Blog guide discovery', () => {
         expect(startHere).toBeTruthy();
         expect(
             (startHere?.compareDocumentPosition(sponsoredOffer) ?? 0)
+            & Node.DOCUMENT_POSITION_FOLLOWING,
+        ).toBeTruthy();
+        expect(
+            (document.getElementById('new-pet-essentials')?.compareDocumentPosition(sponsoredOffer) ?? 0)
             & Node.DOCUMENT_POSITION_FOLLOWING,
         ).toBeTruthy();
         expect(within(sponsoredOffer).getByText('Sponsored partner')).toBeTruthy();

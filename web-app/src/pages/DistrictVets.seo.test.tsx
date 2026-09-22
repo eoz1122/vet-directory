@@ -81,36 +81,15 @@ describe('DistrictVets search and trust contract', () => {
         expect(screen.getByText('English availability: confirm when booking')).toBeTruthy();
     });
 
-    it('describes every visible Plagwitz practice as a positioned collection item', async () => {
+    it('keeps a single-practice district out of the index until it has more local depth', async () => {
         renderDistrict('/vets/leipzig/plagwitz');
 
         await waitFor(() => {
-            expect(getStructuredData('CollectionPage')).toBeTruthy();
+            expect(document.head.querySelector('meta[name="robots"]')?.getAttribute('content'))
+                .toBe('noindex');
         });
 
-        const collection = getStructuredData('CollectionPage');
-        expect(collection.name).toBe('1 English-Speaking Vet in Plagwitz, Leipzig');
-        expect(collection.url).toBe(
-            'https://englishspeakinggermany.online/vets/leipzig/plagwitz',
-        );
-        expect(collection.mainEntity['@type']).toBe('ItemList');
-        expect(collection.mainEntity.numberOfItems).toBe(1);
-        expect(collection.mainEntity.itemListElement).toEqual([
-            {
-                '@type': 'ListItem',
-                position: 1,
-                item: {
-                    '@type': 'VeterinaryCare',
-                    name: 'Tierarztpraxis Plagwitz',
-                    address: {
-                        '@type': 'PostalAddress',
-                        streetAddress: 'Zschochersche Str. 82, 04229 Leipzig',
-                        addressLocality: 'Leipzig',
-                        addressCountry: 'DE',
-                    },
-                },
-            },
-        ]);
+        expect(getStructuredData('CollectionPage')).toBeUndefined();
     });
 
     it('does not publish a practice collection for an empty district', async () => {
