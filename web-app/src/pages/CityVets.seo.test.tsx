@@ -190,6 +190,29 @@ describe('CityVets search and trust contract', () => {
         })).toBeTruthy();
     });
 
+    it('links only to districts with enough listings for a useful district page', () => {
+        renderCity('/vets/berlin');
+
+        const districtSection = screen.getByRole('heading', {
+            level: 2,
+            name: 'Browse Berlin by district',
+        }).closest('section');
+
+        expect(districtSection).toBeTruthy();
+        expect(within(districtSection as HTMLElement).getByRole('link', {
+            name: /Charlottenburg \(5\)/i,
+        })).toBeTruthy();
+        expect(within(districtSection as HTMLElement).getByText(/Single-practice areas/i)).toBeTruthy();
+        expect(within(districtSection as HTMLElement).getByText(/Weißensee/i)).toBeTruthy();
+        expect(within(districtSection as HTMLElement).queryByRole('link', {
+            name: /Weißensee \(1\)/i,
+        })).toBeNull();
+
+        expect(screen.queryByRole('link', {
+            name: /English-speaking vets in Weißensee/i,
+        })).toBeNull();
+    });
+
     it('links Cologne readers to both local practical guides', () => {
         renderCity('/vets/cologne');
 

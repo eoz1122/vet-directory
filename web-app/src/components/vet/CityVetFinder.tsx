@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react';
 
 import type { Vet } from '../../types/vet';
 import { VetCard } from './VetCard';
+import { shouldIndexDistrict } from '../../utils/directoryIndexPolicy';
+import { slugify } from '../../utils/url';
 
 type EvidenceFilter = 'all' | 'official_website' | 'government_source' | 'practice_confirmed' | 'community';
 
@@ -42,6 +44,20 @@ export function CityVetFinder({ city, vets }: CityVetFinderProps) {
         )).sort((left, right) => left.localeCompare(right, 'en')),
         [vets],
     );
+
+    const indexableDistricts = useMemo(() => {
+        const counts = new Map<string, number>();
+        for (const vet of vets) {
+            if (!vet.district || vet.district === 'Unknown') continue;
+            const key = slugify(vet.district);
+            counts.set(key, (counts.get(key) ?? 0) + 1);
+        }
+        return new Set(
+            [...counts.entries()]
+                .filter(([, count]) => shouldIndexDistrict(count))
+                .map(([district]) => district),
+        );
+    }, [vets]);
 
     const normalizedSearchTerm = searchTerm.trim().toLocaleLowerCase();
     const filteredVets = useMemo(
@@ -198,7 +214,9 @@ export function CityVetFinder({ city, vets }: CityVetFinderProps) {
                             vet={vet}
                             analyticsLocation="CityVets_Page"
                             headingLevel={3}
-                            linkDistrict
+                            linkDistrict={Boolean(
+                                vet.district && indexableDistricts.has(slugify(vet.district)),
+                            )}
                         />
                     </div>
                 ))}

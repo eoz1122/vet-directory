@@ -90,6 +90,10 @@ describe('DistrictVets search and trust contract', () => {
         });
 
         expect(getStructuredData('CollectionPage')).toBeUndefined();
+        expect(screen.getByRole('region', { name: 'Plan your visit' })).toBeTruthy();
+        expect(screen.getByText(/Ask whether an English-speaking team member is available/i)).toBeTruthy();
+        expect(screen.getByRole('link', { name: 'Browse all vets in Leipzig' }).getAttribute('href'))
+            .toBe('/vets/leipzig');
     });
 
     it('does not publish a practice collection for an empty district', async () => {

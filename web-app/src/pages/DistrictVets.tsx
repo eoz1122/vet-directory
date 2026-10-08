@@ -10,9 +10,12 @@ import { isVetVerified } from '../utils/verifiedLabel';
 import { generateDistrictContent } from '../utils/districtContent';
 import type { Vet } from '../types/vet';
 import { VetCard } from '../components/vet/VetCard';
+import { NearbyCityLinks } from '../components/vet/NearbyCityLinks';
 import { shouldIndexDistrict } from '../utils/directoryIndexPolicy';
+import { buildNearbyCityMap } from '../utils/nearbyCities';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
+const nearbyCitiesByCity = buildNearbyCityMap(vets);
 
 interface DistrictContent {
     title: string;
@@ -262,6 +265,7 @@ export default function DistrictVets() {
     const vetNames = districtVetsAll.slice(0, 3).map(v => v.practice_name).join(', ');
     const count = districtVetsAll.length;
     const verifiedCount = districtVetsAll.filter(isVetVerified).length;
+    const nearbyCities = nearbyCitiesByCity.get(cityDisplay) ?? [];
 
     const listingContent: DistrictContent = {
         title: count > 0
@@ -451,6 +455,51 @@ export default function DistrictVets() {
                         </div>
                     )}
                 </section>
+
+                {!indexableDistrict && count > 0 && (
+                    <>
+                        <section
+                            aria-labelledby="district-visit-planning-heading"
+                            className="mt-10 rounded-3xl border border-primary/10 bg-white/60 p-6 md:p-8"
+                        >
+                            <h2
+                                id="district-visit-planning-heading"
+                                className="text-2xl font-bold text-primary"
+                            >
+                                Plan your visit
+                            </h2>
+                            <p className="mt-3 max-w-3xl leading-relaxed text-primary/75">
+                                Only one practice is currently listed in {districtDisplay}. Use the city directory to compare more local options, then confirm the details below directly with the practice.
+                            </p>
+                            <ul className="mt-5 grid gap-3 text-sm leading-relaxed text-primary/75 md:grid-cols-3">
+                                <li className="rounded-2xl bg-secondary/60 p-4">
+                                    Check the evidence label and the English-language signal on the listing.
+                                </li>
+                                <li className="rounded-2xl bg-secondary/60 p-4">
+                                    Ask whether an English-speaking team member is available and whether the practice is accepting new patients.
+                                </li>
+                                <li className="rounded-2xl bg-secondary/60 p-4">
+                                    Confirm services, opening hours, emergency arrangements, and the current address before travelling.
+                                </li>
+                            </ul>
+                            <div className="mt-6 flex flex-wrap gap-3">
+                                <Link
+                                    to={`/vets/${cityKey}`}
+                                    className="inline-flex min-h-11 items-center rounded-xl bg-primary px-5 py-3 text-sm font-bold text-secondary transition-colors hover:bg-primary/90"
+                                >
+                                    Browse all vets in {cityDisplay}
+                                </Link>
+                                <Link
+                                    to="/quality-promise"
+                                    className="inline-flex min-h-11 items-center rounded-xl border border-primary/15 bg-white px-5 py-3 text-sm font-bold text-primary transition-colors hover:border-accent/40 hover:text-accent-ink"
+                                >
+                                    How our evidence labels work
+                                </Link>
+                            </div>
+                        </section>
+                        <NearbyCityLinks currentCity={cityDisplay} cities={nearbyCities} />
+                    </>
+                )}
 
                 {generated.faqs.length > 0 && (
                     <section className="mt-12">

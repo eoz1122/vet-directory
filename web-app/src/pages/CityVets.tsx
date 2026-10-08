@@ -19,6 +19,7 @@ import { NearbyCityLinks } from '../components/vet/NearbyCityLinks';
 import { CityVetFinder } from '../components/vet/CityVetFinder';
 import { CityEvidenceOverview } from '../components/vet/CityEvidenceOverview';
 import { buildNearbyCityMap } from '../utils/nearbyCities';
+import { shouldIndexDistrict } from '../utils/directoryIndexPolicy';
 
 const vets = filterDisplayableVets(vetsData as Vet[]);
 const nearbyCitiesByCity = buildNearbyCityMap(vets);
@@ -312,7 +313,7 @@ export default function CityVets() {
                     />
                 )}
 
-                {/* District index: gives every district page a crawlable inbound link */}
+                {/* Link only to district pages with enough listings to stand on their own. */}
                 {(() => {
                     const districtCounts = new Map<string, { name: string; count: number }>();
                     cityVets.forEach((v: Vet) => {
@@ -324,13 +325,23 @@ export default function CityVets() {
                         else districtCounts.set(dSlug, { name: v.district, count: 1 });
                     });
                     if (districtCounts.size < 2) return null;
+                    const sortedDistricts = [...districtCounts.entries()]
+                        .sort((a, b) => b[1].count - a[1].count || a[1].name.localeCompare(b[1].name));
+                    const indexableDistricts = sortedDistricts.filter(([, district]) =>
+                        shouldIndexDistrict(district.count),
+                    );
+                    const singlePracticeDistricts = sortedDistricts.filter(([, district]) =>
+                        !shouldIndexDistrict(district.count),
+                    );
                     return (
                         <section className="mb-10">
-                            <h2 className="text-xl font-bold text-primary mb-4">Browse {capitalizedCity} by district</h2>
-                            <div className="flex flex-wrap gap-2">
-                                {[...districtCounts.entries()]
-                                    .sort((a, b) => b[1].count - a[1].count || a[1].name.localeCompare(b[1].name))
-                                    .map(([dSlug, d]) => (
+                            <h2 className="text-xl font-bold text-primary mb-2">Browse {capitalizedCity} by district</h2>
+                            <p className="mb-4 text-sm leading-relaxed text-primary/70">
+                                District pages are available where we have at least two listed practices to compare.
+                            </p>
+                            {indexableDistricts.length > 0 && (
+                                <div className="flex flex-wrap gap-2">
+                                    {indexableDistricts.map(([dSlug, d]) => (
                                         <Link
                                             key={dSlug}
                                             to={`/vets/${cityKey}/${dSlug}`}
@@ -340,7 +351,19 @@ export default function CityVets() {
                                             {d.name} <span className="text-primary/40 font-normal">({d.count})</span>
                                         </Link>
                                     ))}
-                            </div>
+                                </div>
+                            )}
+                            {singlePracticeDistricts.length > 0 && (
+                                <div className="mt-5 rounded-2xl border border-primary/10 bg-white/50 p-4">
+                                    <h3 className="text-sm font-bold text-primary">Single-practice areas</h3>
+                                    <p className="mt-1 text-xs leading-relaxed text-primary/65">
+                                        These areas currently have one listing, so use the city filters and confirm details directly with the practice.
+                                    </p>
+                                    <p className="mt-2 text-xs font-semibold text-primary/75">
+                                        {singlePracticeDistricts.map(([, district]) => `${district.name} (${district.count})`).join(' · ')}
+                                    </p>
+                                </div>
+                            )}
                         </section>
                     );
                 })()}

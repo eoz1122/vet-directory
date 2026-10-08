@@ -2000,3 +2000,27 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** The prerender readiness contract and deployment reliability tests pass. A production build and a follow-up deploy are required to confirm the live static head.
 
 **Rollback:** Restore the count filter in `web-app/scripts/prerender.js` only if build time becomes operationally unacceptable, but retain the deployment cleanup and verify that stale route files are removed.
+
+## 2026-09-24T21:02:00+02:00 - Add visitor guidance to single-practice district pages
+
+**Context:** Single-practice district pages remain useful for direct visitors, but they do not yet provide enough local comparison to justify indexing. Visitors still need a clear next step and practical booking guidance.
+
+**Decision:** Keep these pages `noindex` while adding a compact “Plan your visit” section with evidence review, English-team availability, new-patient acceptance, service and emergency checks, plus links to the city directory, evidence standards, and nearby city directories. The section is shown only when a district has one active practice, so multi-practice pages keep their existing layout.
+
+**Trade-offs:** Single-practice pages become more useful without expanding their indexable footprint. Nearby links use the existing verified city-centre calculation, so a district may show no nearby cards when the dataset lacks usable verified coordinates.
+
+**Verification:** The district SEO test passes with the new support section and the existing noindex/structured-data assertions. Full tests, lint, TypeScript, and the production build remain to be run. This change is local only and has not been deployed.
+
+**Rollback:** Remove the conditional support section and nearby-city imports from `web-app/src/pages/DistrictVets.tsx`, remove its test assertions, and delete this decision entry.
+
+## 2026-10-08T13:28:34+02:00 - Keep low-depth district routes out of internal discovery
+
+**Context:** Single-practice district routes are intentionally `noindex`, but city pages and listing cards still linked to them as if they were comparable directory pages. That created doorway-style internal navigation and weakened the distinction between useful city directories and thin district routes.
+
+**Decision:** Use the shared district index policy for city navigation and city listing cards. Link only to districts with at least two practices, while showing single-practice areas as plain, non-linking context with a reminder to use city filters and confirm details directly.
+
+**Trade-offs:** Single-practice districts remain reachable by direct URL and retain their booking guidance, but they receive fewer internal links until enough local listings exist. Multi-practice districts keep their comparison pages and crawlable navigation.
+
+**Verification:** Added a regression test for Berlin district navigation and card labels. The focused CityVets suite passes (27 tests), the full Vitest suite passes (501 tests), ESLint passes, TypeScript/build passes, and the production build generates 316 prerendered pages with a 152-URL sitemap. This change is local only and has not been deployed.
+
+**Rollback:** Restore the prior all-district link rendering in `web-app/src/pages/CityVets.tsx` and `web-app/src/components/vet/CityVetFinder.tsx`, remove the regression test, and delete this decision entry.
