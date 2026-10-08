@@ -2024,3 +2024,13 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Added a regression test for Berlin district navigation and card labels. The focused CityVets suite passes (27 tests), the full Vitest suite passes (501 tests), ESLint passes, TypeScript/build passes, and the production build generates 316 prerendered pages with a 152-URL sitemap. This change is local only and has not been deployed.
 
 **Rollback:** Restore the prior all-district link rendering in `web-app/src/pages/CityVets.tsx` and `web-app/src/components/vet/CityVetFinder.tsx`, remove the regression test, and delete this decision entry.
+
+## 2026-10-08T13:38:00+02:00 - Deploy directory quality improvements
+
+**Context:** The verified low-depth district navigation changes were pushed after local tests and production build verification.
+
+**Decision:** Deploy commit `9632e30` through the VPS pull-based deployment and retain the 152-URL sitemap and static `noindex` output for single-practice district routes.
+
+**Verification:** Live Leipzig-Plagwitz returns HTTP 200 with `Plan your visit` and `noindex`; live Berlin exposes multi-practice district links and the non-linking `Single-practice areas` context; the live sitemap contains 152 URLs; `robots.txt` points to the sitemap; and `ads.txt` returns the expected AdSense publisher line.
+
+**Rollback:** Revert commit `9632e30`, push the revert to `main`, and allow the VPS pull timer to deploy it. Recheck the live district head and sitemap after rollback.
