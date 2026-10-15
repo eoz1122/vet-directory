@@ -54,6 +54,17 @@ export const trackVetPhoneClick = (vetId: string, city: string, location: string
     });
 };
 
+// A confirmation click is an anonymous signal, not proof that a practice is
+// verified. Keep it separate from outbound contact intent for abuse analysis.
+export const trackConfirmEnglishClick = (vetId: string, city: string) => {
+    sendGAEvent('confirm_english_click', {
+        vet_id: vetId,
+        city,
+        event_category: 'directory',
+        event_label: vetId,
+    });
+};
+
 // Map engagement: answers "does anyone actually use the map?" for the
 // keep-vs-demote decision on the landing page.
 export const trackMapPinClick = (vetId: string, city: string) => {

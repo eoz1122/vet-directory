@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import fcntl
 from datetime import datetime, timezone
 import smtplib
 import logging
@@ -80,7 +81,17 @@ VET_ID_REGEX = re.compile(r"^[A-Za-z0-9._-]+$")
 ALLOWED_TOPICS = {"general", "submit_vet", "report_issue", "vet_owner"}
 ALLOWED_NEWSLETTER_SOURCES = {"site_footer", "dog_food_guide"}
 VALID_VET_IDS_PATH = Path(__file__).with_name("valid_vet_ids.json")
+CANONICAL_VETS_PATH = Path(__file__).resolve().parents[1] / "web-app" / "src" / "data" / "vets.json"
 NEWSLETTER_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "newsletter_subscribers.jsonl")
+CONFIRMATION_NOTIFY_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "confirmation_notifications.jsonl")
+MAX_CONFIRMATION_EMAILS_PER_HOUR = int(os.getenv("MAX_CONFIRMATION_EMAILS_PER_HOUR", "5"))
+
+# Confirmation names are copied into email subjects, so reject common SQLi and
+# time-delay probes before they can reach SMTP or the human review queue.
+SUSPICIOUS_CONFIRMATION_RE = re.compile(
+    r"(?i)(?:dbms_pipe|pg_sleep|waitfor\s+delay|sleep\s*\(|sysdate|xor\s*\(|"
+    r"(?:union|select)\s+|(?:or|and)\s+\d+\s*=|--|/\*|\*/)",
+)
 
 
 def load_valid_vet_ids(path: str | Path = VALID_VET_IDS_PATH) -> frozenset[str]:
@@ -107,6 +118,48 @@ def load_valid_vet_ids(path: str | Path = VALID_VET_IDS_PATH) -> frozenset[str]:
 
 
 VALID_VET_IDS = load_valid_vet_ids()
+
+
+def load_active_vets(path: str | Path = CANONICAL_VETS_PATH) -> dict[str, dict[str, str]]:
+    """Load active practice names and cities from the canonical directory data."""
+    catalog_path = Path(path)
+    try:
+        catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        raise RuntimeError("Could not load canonical vet catalog.") from error
+
+    if not isinstance(catalog, list) or not catalog:
+        raise RuntimeError("Invalid canonical vet catalog structure.")
+
+    active: dict[str, dict[str, str]] = {}
+    for vet in catalog:
+        if not isinstance(vet, dict):
+            raise RuntimeError("Invalid canonical vet catalog entry.")
+        vet_id = vet.get("id")
+        name = vet.get("practice_name")
+        city = vet.get("city")
+        status = vet.get("verification", {}).get("status") if isinstance(vet.get("verification"), dict) else None
+        if status == "Permanently Closed":
+            continue
+        if (
+            not isinstance(vet_id, str)
+            or not VET_ID_REGEX.fullmatch(vet_id)
+            or not isinstance(name, str)
+            or not name.strip()
+            or not isinstance(city, str)
+            or not city.strip()
+        ):
+            raise RuntimeError("Invalid canonical vet catalog entry.")
+        if vet_id in active:
+            raise RuntimeError("Duplicate canonical vet catalog ID.")
+        active[vet_id] = {"practice_name": name.strip(), "city": city.strip()}
+
+    if not active:
+        raise RuntimeError("Canonical vet catalog contains no active practices.")
+    return active
+
+
+ACTIVE_VETS = load_active_vets()
 
 
 def sanitize_csp_text(value: object, max_length: int) -> str:
@@ -240,7 +293,12 @@ def validate_confirm_payload(data: dict) -> tuple[dict | None, str | None]:
     if data.get("company"):
         return None, "Spam detected."
 
-    vet_name = sanitize(data.get("vetName", ""))
+    raw_vet_name = data.get("vetName", "")
+    raw_vet_city = data.get("vetCity", "")
+    if SUSPICIOUS_CONFIRMATION_RE.search(str(raw_vet_name)) or SUSPICIOUS_CONFIRMATION_RE.search(str(raw_vet_city)):
+        return None, "Invalid confirmation."
+
+    vet_name = sanitize(raw_vet_name)
     if not vet_name:
         return None, "vetName is required."
     if len(vet_name) > 200:
@@ -254,13 +312,20 @@ def validate_confirm_payload(data: dict) -> tuple[dict | None, str | None]:
         return None, f"vetId must be {MAX_VET_ID_LEN} characters or fewer."
     if not VET_ID_REGEX.fullmatch(vet_id):
         return None, "vetId has an invalid format."
-    if vet_id not in VALID_VET_IDS:
+    canonical = ACTIVE_VETS.get(vet_id)
+    if canonical is None or vet_id not in VALID_VET_IDS:
         return None, "vetId does not identify an active practice."
 
+    vet_city = sanitize(raw_vet_city)
+    canonical_name = sanitize(canonical["practice_name"])
+    canonical_city = sanitize(canonical["city"])
+    if vet_name != canonical_name or (vet_city and vet_city != canonical_city):
+        return None, "Confirmation does not match the selected practice."
+
     return {
-        "vetName": vet_name,
+        "vetName": canonical_name,
         "vetId": vet_id,
-        "vetCity": sanitize(data.get("vetCity", ""))[:100],
+        "vetCity": canonical_city[:100],
     }, None
 
 
@@ -400,8 +465,9 @@ def newsletter():
 CONFIRMATIONS_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "confirmations.jsonl")
 
 
-def append_confirmation(sanitized: dict, path: str = CONFIRMATIONS_LOG) -> bool:
-    """Append one confirmation as a JSONL line. Best-effort: never raises."""
+def append_confirmation(sanitized: dict, path: str | Path = CONFIRMATIONS_LOG) -> str:
+    """Append one confirmation, deduplicating the same practice for one UTC day."""
+    target = Path(path)
     try:
         record = {
             "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
@@ -409,16 +475,66 @@ def append_confirmation(sanitized: dict, path: str = CONFIRMATIONS_LOG) -> bool:
             "vetName": sanitized.get("vetName", ""),
             "vetCity": sanitized.get("vetCity", ""),
         }
-        with open(path, "a", encoding="utf-8") as f:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with target.open("a+", encoding="utf-8") as f:
+            fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+            f.seek(0)
+            for line in f:
+                try:
+                    previous = json.loads(line)
+                except (TypeError, json.JSONDecodeError):
+                    continue
+                if previous.get("date") == record["date"] and previous.get("vetId") == record["vetId"]:
+                    return "duplicate"
+            f.seek(0, os.SEEK_END)
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
-        return True
+            f.flush()
+            os.fsync(f.fileno())
+            return "created"
     except Exception as e:
         logger.error("Failed to append confirmation log: %s", str(e))
+        return "failed"
+
+
+def reserve_confirmation_notification(vet_id: str, path: str | Path = CONFIRMATION_NOTIFY_LOG) -> bool:
+    """Reserve a bounded confirmation email slot without leaking raw client data."""
+    target = Path(path)
+    now = datetime.now(timezone.utc)
+    try:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with target.open("a+", encoding="utf-8") as f:
+            fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+            f.seek(0)
+            recent: list[dict] = []
+            for line in f:
+                try:
+                    record = json.loads(line)
+                    timestamp = datetime.fromisoformat(record.get("timestamp", ""))
+                except (TypeError, ValueError, json.JSONDecodeError):
+                    continue
+                if (now - timestamp).total_seconds() < 86400:
+                    recent.append(record)
+            if any(record.get("vetId") == vet_id for record in recent):
+                return False
+            hourly_count = sum(
+                (now - datetime.fromisoformat(record["timestamp"])).total_seconds() < 3600
+                for record in recent
+            )
+            if hourly_count >= MAX_CONFIRMATION_EMAILS_PER_HOUR:
+                logger.warning("Confirmation email budget exhausted; suppressing vet=%s", vet_id)
+                return False
+            f.seek(0, os.SEEK_END)
+            f.write(json.dumps({"timestamp": now.isoformat(), "vetId": vet_id}) + "\n")
+            f.flush()
+            os.fsync(f.fileno())
+            return True
+    except Exception as e:
+        logger.error("Failed to reserve confirmation email notification: %s", str(e))
         return False
 
 
 @app.route("/api/confirm-vet", methods=["POST"])
-@limiter.limit("10 per minute")
+@limiter.limit("3 per minute")
 def confirm_vet():
     """Record a community confirmation that a practice speaks English (emails admin)."""
     sanitized, error = validate_confirm_payload(request.json)
@@ -427,6 +543,11 @@ def confirm_vet():
         if error == "Spam detected.":
             return jsonify({"success": True})
         return jsonify({"error": error}), 400
+
+    # A browser fetch from the live site or local dev server includes Origin.
+    # Requiring it blocks the direct POST pattern used by the current bot burst.
+    if request.headers.get("Origin") not in ALLOWED_ORIGINS:
+        return jsonify({"error": "Invalid request origin."}), 403
 
     subject = f"[ESG] CONFIRM ENGLISH - {sanitized['vetName']}"[:MAX_SUBJECT_LEN]
     email_body = f"""
@@ -440,17 +561,19 @@ def confirm_vet():
     Do not change community_status, verification status, or last_scanned automatically.
     """
     logged = append_confirmation(sanitized)
+    recorded = logged in ("created", "duplicate", True)
 
     email_sent = False
-    try:
-        send_email(subject, email_body)
-        email_sent = True
-        logger.info("Confirm-vet email sent: vet=%s id=%s", sanitized["vetName"], sanitized["vetId"])
-    except Exception as e:
-        # Notification only - the JSONL log above is the record of truth.
-        logger.error("Failed to send confirm-vet email: %s", str(e))
+    if logged in ("created", True) and reserve_confirmation_notification(sanitized["vetId"]):
+        try:
+            send_email(subject, email_body)
+            email_sent = True
+            logger.info("Confirm-vet email sent: vet=%s id=%s", sanitized["vetName"], sanitized["vetId"])
+        except Exception as e:
+            # Notification only - the JSONL log above is the record of truth.
+            logger.error("Failed to send confirm-vet email: %s", str(e))
 
-    if logged or email_sent:
+    if recorded or email_sent:
         return jsonify({"success": True, "message": "Thanks for confirming!"})
     return jsonify({"error": "Could not record confirmation. Please try again later."}), 500
 

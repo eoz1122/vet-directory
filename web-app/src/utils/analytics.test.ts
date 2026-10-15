@@ -4,6 +4,7 @@ import {
     trackDirectoryFilterChange,
     trackDirectoryNoResults,
     trackGuideDiscoveryClick,
+    trackConfirmEnglishClick,
     trackVetPhoneClick,
     trackVetWebsiteClick,
 } from './analytics';
@@ -87,6 +88,24 @@ describe('trackVetPhoneClick', () => {
     it('does not throw when gtag is missing', () => {
         (window as unknown as { gtag: unknown }).gtag = undefined;
         expect(() => trackVetPhoneClick('x', 'y', 'z')).not.toThrow();
+    });
+});
+
+describe('trackConfirmEnglishClick', () => {
+    beforeEach(() => {
+        (window as unknown as { gtag: unknown }).gtag = vi.fn();
+    });
+
+    it('sends an anonymous confirmation click event', () => {
+        trackConfirmEnglishClick('Berlin-5', 'Berlin');
+        const gtag = (window as unknown as { gtag: ReturnType<typeof vi.fn> }).gtag;
+
+        expect(gtag).toHaveBeenCalledWith('event', 'confirm_english_click', {
+            vet_id: 'Berlin-5',
+            city: 'Berlin',
+            event_category: 'directory',
+            event_label: 'Berlin-5',
+        });
     });
 });
 

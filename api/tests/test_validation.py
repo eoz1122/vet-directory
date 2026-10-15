@@ -132,12 +132,12 @@ def test_newsletter_endpoint_logs_and_notifies_admin(monkeypatch, tmp_path):
 # --- confirm-vet (community "speaks English" confirmation) ---
 
 def test_validate_confirm_payload_valid():
-    data = {"vetName": "Tierklinik Berlin", "vetId": "Internal-4", "vetCity": "Berlin"}
+    data = {"vetName": "Tierklinik Ismaning", "vetId": "Internal-4", "vetCity": "Ismaning"}
     sanitized, error = validate_confirm_payload(data)
     assert error is None
-    assert sanitized["vetName"] == "Tierklinik Berlin"
+    assert sanitized["vetName"] == "Tierklinik Ismaning"
     assert sanitized["vetId"] == "Internal-4"
-    assert sanitized["vetCity"] == "Berlin"
+    assert sanitized["vetCity"] == "Ismaning"
 
 def test_validate_confirm_payload_requires_vetname():
     sanitized, error = validate_confirm_payload({"vetCity": "Berlin"})
@@ -151,11 +151,32 @@ def test_validate_confirm_payload_honeypot():
 
 def test_validate_confirm_payload_sanitizes_xss():
     sanitized, error = validate_confirm_payload({
-        "vetName": "<script>evil</script>Clinic",
+        "vetName": "<b>Berlin English Vet (Tierarztpraxis an den Allee-Arcaden)</b>",
         "vetId": "Berlin-1",
     })
     assert error is None
     assert "<script>" not in sanitized["vetName"]
+
+
+def test_validate_confirm_payload_rejects_client_data_that_does_not_match_id():
+    sanitized, error = validate_confirm_payload({
+        "vetName": "Tierklinik Ismaning",
+        "vetCity": "Attacker City",
+        "vetId": "Internal-4",
+    })
+
+    assert sanitized is None
+    assert error == "Confirmation does not match the selected practice."
+
+
+def test_validate_confirm_payload_rejects_injection_shaped_names():
+    sanitized, error = validate_confirm_payload({
+        "vetName": "Tierklinik Ismaning' OR 1=(SELECT PG_SLEEP(15))--",
+        "vetId": "Internal-4",
+    })
+
+    assert sanitized is None
+    assert error == "Invalid confirmation."
 
 def test_validate_confirm_payload_length_limit():
     sanitized, error = validate_confirm_payload({"vetName": "x" * 201})
@@ -230,6 +251,7 @@ def test_confirm_endpoint_rejects_invalid_id_before_side_effects(monkeypatch, ve
 def test_confirm_endpoint_requests_human_review_without_promotion(monkeypatch):
     sent_messages = []
     monkeypatch.setattr(main, "append_confirmation", lambda *_args, **_kwargs: True)
+    monkeypatch.setattr(main, "reserve_confirmation_notification", lambda *_args, **_kwargs: True)
     monkeypatch.setattr(
         main,
         "send_email",
@@ -238,17 +260,55 @@ def test_confirm_endpoint_requests_human_review_without_promotion(monkeypatch):
 
     response = main.app.test_client().post(
         "/api/confirm-vet",
+        environ_base={"REMOTE_ADDR": "203.0.113.10"},
         json={
-            "vetName": "Practice Berlin-1",
+            "vetName": "Berlin English Vet (Tierarztpraxis an den Allee-Arcaden)",
             "vetId": "Berlin-1",
             "vetCity": "Berlin",
         },
+        headers={"Origin": "https://englishspeakinggermany.online"},
     )
 
     assert response.status_code == 200
     assert len(sent_messages) == 1
     assert "Pending human review" in sent_messages[0][1]
     assert "bump community_status / last_scanned" not in sent_messages[0][1]
+
+
+def test_confirm_endpoint_rejects_requests_without_a_site_origin():
+    response = main.app.test_client().post(
+        "/api/confirm-vet",
+        environ_base={"REMOTE_ADDR": "203.0.113.11"},
+        json={
+            "vetName": "Berlin English Vet (Tierarztpraxis an den Allee-Arcaden)",
+            "vetId": "Berlin-1",
+            "vetCity": "Berlin",
+        },
+    )
+
+    assert response.status_code == 403
+
+
+def test_append_confirmation_deduplicates_same_practice_for_the_day(tmp_path):
+    path = tmp_path / "confirmations.jsonl"
+    payload = {
+        "vetId": "Berlin-1",
+        "vetName": "Berlin English Vet (Tierarztpraxis an den Allee-Arcaden)",
+        "vetCity": "Berlin",
+    }
+
+    assert main.append_confirmation(payload, path) == "created"
+    assert main.append_confirmation(payload, path) == "duplicate"
+    assert len(path.read_text(encoding="utf-8").splitlines()) == 1
+
+
+def test_confirmation_notification_reservation_caps_burst(tmp_path, monkeypatch):
+    path = tmp_path / "confirmation-notifications.jsonl"
+    monkeypatch.setattr(main, "MAX_CONFIRMATION_EMAILS_PER_HOUR", 2)
+
+    assert main.reserve_confirmation_notification("Berlin-1", path) is True
+    assert main.reserve_confirmation_notification("Berlin-2", path) is True
+    assert main.reserve_confirmation_notification("Berlin-3", path) is False
 
 
 def test_valid_vet_id_manifest_matches_active_canonical_dataset():
@@ -364,12 +424,12 @@ def test_nginx_rate_limits_write_endpoints_by_binary_client_ip():
     api_config = (repository_root / "api" / "nginx_vet_api.conf").read_text(encoding="utf-8")
 
     assert "limit_req_zone $binary_remote_addr zone=esv_contact_per_ip:10m rate=5r/m;" in site_config
-    assert "limit_req_zone $binary_remote_addr zone=esv_confirm_per_ip:10m rate=10r/m;" in site_config
+    assert "limit_req_zone $binary_remote_addr zone=esv_confirm_per_ip:10m rate=3r/m;" in site_config
     assert "limit_req_zone $binary_remote_addr zone=esv_newsletter_per_ip:10m rate=3r/m;" in site_config
     assert "location = /api/contact" in api_config
     assert "limit_req zone=esv_contact_per_ip burst=4 nodelay;" in api_config
     assert "location = /api/confirm-vet" in api_config
-    assert "limit_req zone=esv_confirm_per_ip burst=9 nodelay;" in api_config
+    assert "limit_req zone=esv_confirm_per_ip burst=2 nodelay;" in api_config
     assert "location = /api/newsletter" in api_config
     assert "limit_req zone=esv_newsletter_per_ip burst=2 nodelay;" in api_config
     assert api_config.count("limit_req_status 429;") == 4

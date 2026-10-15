@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import type { Vet } from '../../types/vet';
+import { trackConfirmEnglishClick } from '../../utils/analytics';
 
 // Nginx routes /api/* to the Flask app in production; localhost in dev.
 const API_URL = import.meta.env.DEV
@@ -26,6 +27,7 @@ export function ConfirmEnglish({ vet }: { vet: Vet }) {
         e.stopPropagation();
         if (state === 'sending' || state === 'done') return;
         setState('sending');
+        trackConfirmEnglishClick(vet.id, vet.city);
         try {
             const res = await fetch(API_URL, {
                 method: 'POST',

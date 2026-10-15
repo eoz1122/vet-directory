@@ -4,6 +4,14 @@ This document records the major architectural choices, conventions, and security
 
 As per the Global AI Directives, every entry here prevents logic drift and serves as the source of truth for AI agents and human developers. Every entry MUST include an ISO 8601 timestamp in its heading.
 
+## 2026-10-16T01:30:00+02:00 - Abuse controls for anonymous English confirmations
+
+**Context:** A burst of confirmation emails included SQL-injection and time-delay payloads, while GA4 showed no matching traffic. The public confirmation endpoint could be called directly and trusted client-supplied practice names.
+
+**Decision:** Treat the canonical `vetId` as the only identity source. The API now derives the practice name and city from the active catalog, rejects suspicious payloads and mismatched client data, requires an allowed site `Origin`, deduplicates one confirmation per practice per UTC day, and caps confirmation notification emails to a small hourly budget. Nginx also reduces the per-IP confirmation rate. The frontend records confirmation clicks as a separate anonymous analytics event, but the event is never treated as verification evidence.
+
+**Trade-off:** Some legitimate repeat confirmations may be suppressed from email, but every accepted record remains in the server-side JSONL log for human review. This protects the mailbox and Resend quota without automatically changing listing status.
+
 ---
 
 ## 2026-03-18T02:00:00+01:00 — Project Initialization Constraints
