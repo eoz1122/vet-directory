@@ -289,6 +289,32 @@ def test_confirm_endpoint_rejects_requests_without_a_site_origin():
     assert response.status_code == 403
 
 
+def test_confirm_endpoint_kill_switch_records_without_sending_email(monkeypatch):
+    sent_messages = []
+    monkeypatch.setattr(main, "CONFIRMATION_EMAILS_ENABLED", False)
+    monkeypatch.setattr(main, "append_confirmation", lambda *_args, **_kwargs: "created")
+    monkeypatch.setattr(
+        main,
+        "send_email",
+        lambda *args, **kwargs: sent_messages.append((args, kwargs)),
+    )
+
+    response = main.app.test_client().post(
+        "/api/confirm-vet",
+        environ_base={"REMOTE_ADDR": "203.0.113.12"},
+        json={
+            "vetName": "Berlin English Vet (Tierarztpraxis an den Allee-Arcaden)",
+            "vetId": "Berlin-1",
+            "vetCity": "Berlin",
+        },
+        headers={"Origin": "https://englishspeakinggermany.online"},
+    )
+
+    assert response.status_code == 200
+    assert response.get_json()["success"] is True
+    assert sent_messages == []
+
+
 def test_append_confirmation_deduplicates_same_practice_for_the_day(tmp_path):
     path = tmp_path / "confirmations.jsonl"
     payload = {

@@ -85,6 +85,12 @@ CANONICAL_VETS_PATH = Path(__file__).resolve().parents[1] / "web-app" / "src" / 
 NEWSLETTER_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "newsletter_subscribers.jsonl")
 CONFIRMATION_NOTIFY_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "confirmation_notifications.jsonl")
 MAX_CONFIRMATION_EMAILS_PER_HOUR = int(os.getenv("MAX_CONFIRMATION_EMAILS_PER_HOUR", "5"))
+CONFIRMATION_EMAILS_ENABLED = os.getenv("CONFIRMATION_EMAILS_ENABLED", "true").strip().lower() in {
+    "1",
+    "true",
+    "yes",
+    "on",
+}
 
 # Confirmation names are copied into email subjects, so reject common SQLi and
 # time-delay probes before they can reach SMTP or the human review queue.
@@ -564,7 +570,9 @@ def confirm_vet():
     recorded = logged in ("created", "duplicate", True)
 
     email_sent = False
-    if logged in ("created", True) and reserve_confirmation_notification(sanitized["vetId"]):
+    if not CONFIRMATION_EMAILS_ENABLED:
+        logger.info("Confirm-vet email kill switch active; notification suppressed for vet=%s", sanitized["vetId"])
+    elif logged in ("created", True) and reserve_confirmation_notification(sanitized["vetId"]):
         try:
             send_email(subject, email_body)
             email_sent = True

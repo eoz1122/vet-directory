@@ -12,6 +12,14 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 
 **Trade-off:** Some legitimate repeat confirmations may be suppressed from email, but every accepted record remains in the server-side JSONL log for human review. This protects the mailbox and Resend quota without automatically changing listing status.
 
+## 2026-10-16T02:10:00+02:00 - Temporary confirmation-email kill switch
+
+**Context:** The retained confirmation backlog contains a concentrated automated burst. The site must continue recording submissions for review without adding any further mailbox noise during adjudication.
+
+**Decision:** Add an environment-controlled `CONFIRMATION_EMAILS_ENABLED` switch. When disabled, valid submissions are still recorded and returned as successful, but no confirmation notification is reserved or sent. Production is set to disabled during the backlog review; re-enabling requires an explicit environment change and API restart.
+
+**Rollback:** Set `CONFIRMATION_EMAILS_ENABLED=true` in the API environment and restart `vet-api`. The previous capped-notification behavior remains in the deployed application.
+
 ---
 
 ## 2026-03-18T02:00:00+01:00 — Project Initialization Constraints
