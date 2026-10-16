@@ -2050,3 +2050,13 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Live Leipzig-Plagwitz returns HTTP 200 with `Plan your visit` and `noindex`; live Berlin exposes multi-practice district links and the non-linking `Single-practice areas` context; the live sitemap contains 152 URLs; `robots.txt` points to the sitemap; and `ads.txt` returns the expected AdSense publisher line.
 
 **Rollback:** Revert commit `9632e30`, push the revert to `main`, and allow the VPS pull timer to deploy it. Recheck the live district head and sitemap after rollback.
+
+## 2026-10-16T03:05:00+02:00 - Manual adjudication queue for community confirmations
+
+**Context:** The confirmation log contains 155 records for 41 unique practice IDs. Automated promotion is intentionally disabled, and the production confirmation-email kill switch remains off while the submissions are reviewed.
+
+**Decision:** Create a dated review queue at `data/processing/confirmation_review_2026-10-16.md`. Treat repetition as a priority signal only, reject the seven suspicious payload-like submissions tied to `erfurt-kleintierpraxis-dichterviertel` as untrusted attack traffic, and require an official practice source or attributable patient/vet evidence before any directory status changes. Do not alter `community_status`, verification status, or `last_scanned` during triage.
+
+**Verification:** The report contains all 40 active-candidate IDs, submission counts, catalog source URLs, and official-site reachability notes. The `vetzentrum-koeln.de` entry is flagged because its TLS certificate is expired. No catalog data or production configuration was changed.
+
+**Rollback:** Delete the generated review report and this decision entry if the queue is superseded. No runtime rollback is needed because the review is read-only.
