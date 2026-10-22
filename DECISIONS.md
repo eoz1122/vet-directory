@@ -2051,6 +2051,18 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 
 **Rollback:** Revert commit `9632e30`, push the revert to `main`, and allow the VPS pull timer to deploy it. Recheck the live district head and sitemap after rollback.
 
+## 2026-10-22T20:00:00+02:00 - Hostinger PHP vulnerability alert assessed
+
+**Context:** Hostinger reported critical PHP vulnerabilities and recommended checking VPS PHP versions. The EnglishSpeakingGermany VPS runs Nginx serving the static site and a Python Gunicorn API.
+
+**Decision:** Treat the PHP alert as non-applicable to this site. The VPS has no PHP binary or installed PHP packages, no PHP-FPM or Apache service, no Nginx FastCGI/PHP route, no deployed PHP application files outside a dependency fixture, and `/index.php`, `/info.php`, and `/phpinfo.php` return 404. Do not install PHP or run a PHP upgrade.
+
+**Follow-up:** The VPS currently reports 81 general Ubuntu/Docker/Python package upgrades, while unattended-upgrades is enabled and active. Handle that as a separate maintenance window with a snapshot, staged upgrade, service checks, and rollback plan. No package changes were made during this assessment.
+
+**Verification:** Read-only SSH checks confirmed Ubuntu 24.04.4 LTS, active `nginx` and `vet-api` services, no PHP packages, no PHP listener, and no exposed PHP endpoints. No reboot is currently required.
+
+**Rollback:** No runtime change was made. If the future general maintenance upgrade causes an issue, restore the VPS snapshot and restart the affected service from the recorded pre-upgrade state.
+
 ## 2026-10-16T03:05:00+02:00 - Manual adjudication queue for community confirmations
 
 **Context:** The confirmation log contains 155 records for 41 unique practice IDs. Automated promotion is intentionally disabled, and the production confirmation-email kill switch remains off while the submissions are reviewed.
