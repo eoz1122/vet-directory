@@ -4,6 +4,16 @@ This document records the major architectural choices, conventions, and security
 
 As per the Global AI Directives, every entry here prevents logic drift and serves as the source of truth for AI agents and human developers. Every entry MUST include an ISO 8601 timestamp in its heading.
 
+## 2026-11-09T12:35:00+01:00 - Isolate the deployment Node runtime
+
+**Context:** Ali approved deployment of the audit release. The shared VPS uses Node 20, below this site's supported runtime. Its other projects must remain unchanged.
+
+**Decision:** Install official Node 22.23.4 under the site's user-owned runtime directory and set PATH only for `esv-deploy.service` through the operator-installed `deploy/esv-node-runtime.conf` drop-in. The archive checksum was verified against the official Node distribution SHA256 list before extraction. Do not replace `/usr/bin/node` or alter other services.
+
+**Verification:** The regression test first failed because the drop-in was absent. The isolated binary reports v22.23.4; the global binary remains v20.20.2. Full release activation and live verification follow the one-time security rollout gate.
+
+**Rollback:** Remove only the site's systemd runtime drop-in and reload systemd configuration if the service override is faulty. Preserve the isolated installation until it is no longer referenced. The prior application baseline is `e4dbb4726a05aa8f4f7e874e33d43a9c2cdb210e`, with a private operator backup at `/var/backups/esv/20261109T112753Z`. Retain public-root isolation when rolling back application output.
+
 ## 2026-11-09T04:06:00+01:00 - Close the independent review findings before rollout
 
 **Decision:** Replace the text-match migration gate with a root-owned read-only

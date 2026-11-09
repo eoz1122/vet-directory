@@ -2,9 +2,9 @@
 
 ## Status and rollback baseline
 
-Prepared locally on 2026-11-09. Not applied to the VPS. The previous working
+Approved for operator rollout on 2026-11-09. The previous working
 application commit is `e4dbb4726a05aa8f4f7e874e33d43a9c2cdb210e`.
-Do not push this change to main until Ali approves the local preview.
+Record successful activation only after the live gates below pass.
 
 ## One-time migration, after preview approval
 
@@ -13,6 +13,11 @@ Do not push this change to main until Ali approves the local preview.
 2. On the VPS, prepare the approved checkout. Run the frontend tests, lint,
    production build and API tests. Install the matching Puppeteer browser if the
    build runtime requests it. Check the prerender and sitemap totals.
+   On this shared VPS, use the site-only Node 22.23.4 installation. Install
+   `deploy/esv-node-runtime.conf` as the root-owned
+   `/etc/systemd/system/esv-deploy.service.d/runtime.conf`, then run
+   `systemctl daemon-reload`. Use the same PATH for manual build commands;
+   do not change the global Node binary or other services.
 3. Run `api/venv/bin/python deploy/publish-static.py` from the repository root.
    Verify `public-site/index.html` and representative generated routes exist.
    Verify the public `esv-release-id.txt` identity is present too.
