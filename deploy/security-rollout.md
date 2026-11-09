@@ -10,14 +10,15 @@ Record successful activation only after the live gates below pass.
 
 1. Pause `esv-deploy.timer` and verify no deploy is running. Retain the current
    active Nginx configuration as a timestamped backup outside the public root.
-2. On the VPS, prepare the approved checkout. Run the frontend tests, lint,
-   production build and API tests. Install the matching Puppeteer browser if the
-   build runtime requests it. Check the prerender and sitemap totals.
-   On this shared VPS, use the site-only Node 22.23.4 installation. Install
+2. On the VPS, prepare the approved checkout. Before any npm command,
+   use the site-only Node 22.23.4 installation. Install
    `deploy/esv-node-runtime.conf` as the root-owned
    `/etc/systemd/system/esv-deploy.service.d/runtime.conf`, then run
    `systemctl daemon-reload`. Use the same PATH for manual build commands;
-   do not change the global Node binary or other services.
+   do not change the global Node binary or other services. Confirm `node --version`
+   resolves to v22.23.4 in that manual environment, then run the frontend tests,
+   lint, production build and API tests. Install the matching Puppeteer browser
+   if the build runtime requests it. Check the prerender and sitemap totals.
 3. Run `api/venv/bin/python deploy/publish-static.py` from the repository root.
    Verify `public-site/index.html` and representative generated routes exist.
    Verify the public `esv-release-id.txt` identity is present too.
