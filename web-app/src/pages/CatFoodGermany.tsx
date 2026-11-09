@@ -11,7 +11,7 @@ import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
 
 const TITLE = 'Best Cat Food in Germany: How to Choose (2026)';
-const DESCRIPTION = 'Compare cat food in Germany using EU label terms, wet and dry formats, kitten needs, taurine guidance and manufacturer quality checks.';
+const DESCRIPTION = 'Best cat food in Germany? Compare complete-food labels, wet vs dry formats, kitten needs, taurine and quality checks.';
 const URL = 'https://englishspeakinggermany.online/blog/best-cat-food-germany';
 
 const SOURCE_URLS = {

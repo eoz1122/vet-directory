@@ -101,10 +101,10 @@ describe('Home WebSite structured data', () => {
 
         await waitFor(() => {
             expect(document.title).toBe(
-                'English-Speaking Vets in Germany | Find Local Care',
+                'English-Speaking Vets in Berlin & Germany | Verified Directory',
             );
             expect(document.head.querySelector('meta[name="description"]')?.getAttribute('content')).toBe(
-                'Find community-verified English-speaking vets in Germany. Browse local practices in Berlin, Hamburg, Munich, Frankfurt, Cologne and 30+ cities.',
+                'Find a community-verified English-speaking vet in Berlin, Hamburg, Munich, Frankfurt and 30+ German cities. Filter local practices and emergency care before booking.',
             );
         });
 
@@ -201,6 +201,7 @@ describe('Home WebSite structured data', () => {
 
         const section = screen.getByRole('region', { name: 'Essential pet guides' });
         const expectedPaths = [
+            '/blog/english-speaking-vet-berlin',
             '/blog/pet-friendly-apartments-germany',
             '/blog/vet-costs-germany',
             '/guides/emergency-vets-munich',

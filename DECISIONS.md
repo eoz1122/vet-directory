@@ -2072,3 +2072,13 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** The report contains all 40 active-candidate IDs, submission counts, catalog source URLs, and official-site reachability notes. The `vetzentrum-koeln.de` entry is flagged because its TLS certificate is expired. No catalog data or production configuration was changed.
 
 **Rollback:** Delete the generated review report and this decision entry if the queue is superseded. No runtime rollback is needed because the review is read-only.
+
+## 2026-11-09T01:40:00+01:00 - CTR refresh and Berlin vet guide
+
+**Context:** Search Console shows meaningful impressions but weak click-through on the directory homepage, breed restrictions guide, and cat-food guide. The last genuinely new editorial content was published on 2026-09-10, so the site needed a fresh, evidence-backed page and stronger task-based internal links.
+
+**Decision:** Add the `/blog/english-speaking-vet-berlin` guide with current directory counts, explicit evidence labels, booking questions, official Berlin emergency and licensing links, and a clear distinction between community evidence and verification. Refresh high-impression titles and descriptions, add homepage and breed-guide links to the new page, and include it in the blog catalog/sidebar so sitemap and prerender generation discover it automatically.
+
+**Verification:** Focused tests passed before the change was finalized, then the full Vitest suite passed with 91 files and 503 tests. ESLint passed. The production build passed, prerendered 317 pages, and generated a 153-URL sitemap containing the new guide with `lastmod` 2026-11-09. The local preview was checked for the homepage, new Berlin guide, and cat-food guide at `http://localhost:5173/`.
+
+**Rollback:** Revert the feature commit that contains the guide and metadata changes, regenerate the build, and preserve the pre-existing uncommitted `web-app/src/data/vets.json` changes. No deployment has been performed for this decision.

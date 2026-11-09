@@ -7,7 +7,7 @@ import RelatedPosts from '../components/RelatedPosts';
 import { generateArticleSchema } from '../utils/schema';
 
 const ARTICLE_TITLE = 'Banned Dog Breeds in Germany (2026): Pit Bull, Rottweiler & State Rules';
-const ARTICLE_DESCRIPTION = 'Which dog breeds are banned in Germany? Check Pit Bull and Rottweiler rules, federal import restrictions, state permits, exceptions and official sources.';
+const ARTICLE_DESCRIPTION = 'Are Pit Bulls or Rottweilers banned in Germany? Check the federal import rule, state permits, exceptions and the official steps before travel.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/breed-restrictions-germany';
 const DATE_PUBLISHED = '2026-04-28';
 const DATE_MODIFIED = '2026-09-12';
@@ -222,6 +222,12 @@ export default function BreedRestrictionsGermany() {
                                 className="inline-flex min-h-11 items-center rounded-lg border border-primary/10 bg-white px-3 py-2 text-sm font-bold text-accent-ink hover:border-accent/40"
                             >
                                 Compare restricted-dog laws by country
+                            </Link>
+                            <Link
+                                to="/blog/english-speaking-vet-berlin"
+                                className="inline-flex min-h-11 items-center rounded-lg border border-primary/10 bg-white px-3 py-2 text-sm font-bold text-accent-ink hover:border-accent/40"
+                            >
+                                Find an English-speaking vet in Berlin
                             </Link>
                         </nav>
 

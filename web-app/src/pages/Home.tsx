@@ -32,8 +32,8 @@ const GoogleMapsProvider = lazy(() => import('../components/GoogleMapsProvider')
 const vets = filterDisplayableVets(vetsData as Vet[]);
 const directoryCounts = getVetDirectoryCounts(vetsData as Vet[]);
 const ITEMS_PER_PAGE = 10;
-const HOME_TITLE = 'English-Speaking Vets in Germany | Find Local Care';
-const HOME_DESCRIPTION = 'Find community-verified English-speaking vets in Germany. Browse local practices in Berlin, Hamburg, Munich, Frankfurt, Cologne and 30+ cities.';
+const HOME_TITLE = 'English-Speaking Vets in Berlin & Germany | Verified Directory';
+const HOME_DESCRIPTION = 'Find a community-verified English-speaking vet in Berlin, Hamburg, Munich, Frankfurt and 30+ German cities. Filter local practices and emergency care before booking.';
 const verifiedVets = vets.filter((vet) => vet.community_status === 'Verified');
 const filterableCityNames = Array.from(new Set(vets.map((vet) => vet.city)));
 const cityDirectoryNames = Array.from(new Set(verifiedVets.map((vet) => vet.city)))
@@ -46,6 +46,7 @@ const popularCities = [
     { name: 'Cologne', path: '/vets/cologne' },
 ];
 const essentialGuideLinks = [
+    { emoji: '🩺', title: 'English-Speaking Vets in Berlin', link: '/blog/english-speaking-vet-berlin' },
     { emoji: '🏠', title: 'Pet-Friendly Apartments Berlin', link: '/blog/pet-friendly-apartments-germany' },
     { emoji: '🧾', title: 'Vet Costs & GOT Fees', link: '/blog/vet-costs-germany' },
     { emoji: '🚑', title: 'Emergency Vets in Munich', link: '/guides/emergency-vets-munich' },

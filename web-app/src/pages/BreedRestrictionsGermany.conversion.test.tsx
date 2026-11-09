@@ -30,7 +30,7 @@ describe('BreedRestrictionsGermany conversion structure', () => {
             'Banned Dog Breeds in Germany (2026): Pit Bull, Rottweiler & State Rules',
         );
         expect(getMetaContent('description')).toBe(
-            'Which dog breeds are banned in Germany? Check Pit Bull and Rottweiler rules, federal import restrictions, state permits, exceptions and official sources.',
+            'Are Pit Bulls or Rottweilers banned in Germany? Check the federal import rule, state permits, exceptions and the official steps before travel.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
@@ -59,5 +59,8 @@ describe('BreedRestrictionsGermany conversion structure', () => {
         expect(within(navigation).getByRole('link', {
             name: 'Compare restricted-dog laws by country',
         }).getAttribute('href')).toBe('/blog/restricted-dog-laws-by-country');
+        expect(within(navigation).getByRole('link', {
+            name: 'Find an English-speaking vet in Berlin',
+        }).getAttribute('href')).toBe('/blog/english-speaking-vet-berlin');
     });
 });

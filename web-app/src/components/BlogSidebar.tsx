@@ -5,6 +5,7 @@ const SIDEBAR_GUIDE_URLS = [
     '/blog/moving-to-germany-with-pet',
     '/guides/pet-emergency-germany',
     '/guides/emergency-vets-berlin',
+    '/blog/english-speaking-vet-berlin',
     '/blog/first-vet-visit-germany',
     '/blog/pet-insurance-germany',
     '/blog/dog-liability-insurance-germany',

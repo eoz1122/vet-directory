@@ -153,6 +153,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['living', 'travel', 'dog', 'cat'],
     },
     {
+        url: '/blog/english-speaking-vet-berlin',
+        title: 'English-Speaking Vets in Berlin: How to Find and Book',
+        emoji: '🩺',
+        category: 'Vet Care',
+        desc: 'Use current Berlin listings, evidence labels, booking questions and the official veterinary emergency number when you need care in English.',
+        topics: ['vet-care', 'emergency', 'berlin', 'dog', 'cat'],
+    },
+    {
         url: '/blog/moving-to-germany-with-pet',
         title: "Moving to Germany With a Dog or Cat",
         emoji: '🐕',

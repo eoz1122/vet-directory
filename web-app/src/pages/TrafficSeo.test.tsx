@@ -473,7 +473,7 @@ describe('traffic-focused search metadata', () => {
         });
 
         expect(getMetaContent('description')).toBe(
-            'Which dog breeds are banned in Germany? Check Pit Bull and Rottweiler rules, federal import restrictions, state permits, exceptions and official sources.',
+            'Are Pit Bulls or Rottweilers banned in Germany? Check the federal import rule, state permits, exceptions and the official steps before travel.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
@@ -1023,7 +1023,7 @@ describe('traffic-focused search metadata', () => {
         });
 
         expect(getMetaContent('description')).toBe(
-            'Compare cat food in Germany using EU label terms, wet and dry formats, kitten needs, taurine guidance and manufacturer quality checks.',
+            'Best cat food in Germany? Compare complete-food labels, wet vs dry formats, kitten needs, taurine and quality checks.',
         );
         expect(screen.getByRole('heading', {
             level: 1,
