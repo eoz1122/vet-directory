@@ -15,7 +15,7 @@ const ARTICLE_SCHEMA = generateArticleSchema(
     DESCRIPTION,
     URL,
     '2026-07-11',
-    '2026-09-15',
+    '2026-11-09',
 );
 
 const BREADCRUMB_SCHEMA = {
@@ -183,7 +183,7 @@ export default function VetCostsGermany() {
                         <ArticleHeader
                             eyebrow="Money and bureaucracy guide"
                             title="Vet Costs in Germany (2026): GOT Fees, Prices and Estimates"
-                            review="Published 11 July 2026 · Last verified periodically 15 September 2026"
+                            review="Published 11 July 2026 · Periodic review: cost examples checked 9 November 2026"
                         />
 
                         <div className="prose prose-lg text-primary/80 max-w-none">
@@ -197,8 +197,25 @@ export default function VetCostsGermany() {
                                     <Link to="/blog/pet-insurance-germany" className="text-accent-ink hover:underline">Compare pet insurance</Link>
                                     <Link to="/blog/first-vet-visit-germany" className="text-accent-ink hover:underline">Prepare for your first vet visit</Link>
                                     <Link to="/guides/pet-emergency-germany" className="text-accent-ink hover:underline">Prepare for a pet emergency</Link>
+                                    <Link to="/blog/pet-vaccination-costs-germany" className="inline-flex min-h-11 items-center text-accent-ink hover:underline">Vaccination cost guide</Link>
+                                    <Link to="/blog/neutering-cost-germany" className="inline-flex min-h-11 items-center text-accent-ink hover:underline">Neutering cost guide</Link>
                                 </div>
                             </nav>
+
+                            <section aria-labelledby="exam-price-heading" className="not-prose mb-8 rounded-2xl border border-primary/10 bg-white p-5 sm:p-6">
+                                <h2 id="exam-price-heading" className="text-xl font-bold text-primary">What the examination line can cost</h2>
+                                <p className="mt-2 text-sm leading-relaxed text-primary/75">For a dog, cat or ferret, GOT item 16 is €23.62 net at 1x. With 19% VAT, the ordinary 1x to 3x examination range works out as:</p>
+                                <dl className="mt-4 grid grid-cols-3 gap-2">
+                                    {[['1x', '€28.11'], ['2x', '€56.22'], ['3x', '€84.32']].map(([rate, amount]) => (
+                                        <div key={rate} className="min-w-0 rounded-xl bg-primary/5 p-3">
+                                            <dt className="text-xs font-bold text-primary/70">{rate} incl. VAT</dt>
+                                            <dd className="mt-1 text-lg font-black text-primary sm:text-2xl">{amount}</dd>
+                                        </div>
+                                    ))}
+                                </dl>
+                                <p className="mt-4 text-sm leading-relaxed text-primary/75"><strong>Examination only, not a complete visit price.</strong> Tests, treatment, medicines and other items are additional when needed. Emergency billing follows the separate rules below.</p>
+                                <a href="https://www.gesetze-im-internet.de/got_2022/anlage.html" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 items-center text-sm font-bold text-accent-ink underline underline-offset-4">Check GOT examination item 16</a>
+                            </section>
 
                             <section id="quick-answer" className="mb-10 not-prose" aria-labelledby="quick-answer-heading">
                                 <h2 id="quick-answer-heading" className="text-3xl font-bold text-primary mt-10 mb-6 scroll-mt-24">

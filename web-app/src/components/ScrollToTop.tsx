@@ -21,7 +21,8 @@ function scrollToTarget(targetId: string) {
         return false;
     }
 
-    const top = target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+    const sectionMargin = Number.parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - Math.max(HEADER_OFFSET, sectionMargin);
     window.scrollTo({
         top: Math.max(0, top),
         behavior: 'auto',

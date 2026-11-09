@@ -18,11 +18,11 @@ afterEach(() => cleanup());
 
 describe('legacy guide headers', () => {
     it.each([
-        [MovingWithPetChecklist, /Moving to Germany With a Dog or Cat/i],
-        [PetFriendlyApartments, /Pet-Friendly Apartments in Berlin/i],
-        [PetGpsTrackerGermany, /GPS Trackers for Pets in Germany/i],
-        [RestrictedDogLawsByCountry, /Restricted Dog Laws by Country/i],
-    ])('uses the shared review marker for %s', (Page, title) => {
+        [MovingWithPetChecklist, /Moving to Germany With a Dog or Cat/i, 'Reviewed periodically. Planning sequence and certificate guidance checked 9 November 2026'],
+        [PetFriendlyApartments, /Pet-Friendly Apartments in Berlin/i, 'Reviewed periodically. Last checked September 15, 2026'],
+        [PetGpsTrackerGermany, /GPS Trackers for Pets in Germany/i, 'Reviewed periodically. Last checked September 15, 2026'],
+        [RestrictedDogLawsByCountry, /Restricted Dog Laws by Country/i, 'Reviewed periodically. Last checked September 15, 2026'],
+    ])('uses the shared review marker for %s', (Page, title, review) => {
         render(
             <HelmetProvider>
                 <MemoryRouter>
@@ -32,6 +32,6 @@ describe('legacy guide headers', () => {
         );
 
         expect(screen.getByRole('heading', { level: 1, name: title })).toBeTruthy();
-        expect(screen.getByText('Reviewed periodically. Last checked September 15, 2026', { exact: false })).toBeTruthy();
+        expect(screen.getByText(review, { exact: false })).toBeTruthy();
     });
 });

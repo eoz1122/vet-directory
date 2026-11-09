@@ -735,7 +735,7 @@ describe('traffic-focused search metadata', () => {
 
         const articleText = document.body.textContent ?? '';
         expect(articleText).toMatch(/Germany does not accept a young dog, cat or ferret that is not yet fully protected against rabies/i);
-        expect(articleText).toMatch(/Annex IV certificates issued before 1 October 2026 remain valid/i);
+        expect(articleText).toMatch(/For a certificate issued now, use the current model/i);
         expect(articleText).toMatch(/does not automatically make the movement commercial/i);
         expect(articleText).not.toMatch(/This waiting period is non-negotiable/i);
         expect(articleText).not.toMatch(/Arrive even one day early/i);
@@ -744,7 +744,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2025-01-01');
-        expect(schema.dateModified).toBe('2026-09-15');
+        expect(schema.dateModified).toBe('2026-11-09');
     });
 
     it('aligns the moving-pet discovery card with the current entry guide', () => {
@@ -1429,7 +1429,7 @@ describe('traffic-focused search metadata', () => {
 
         const schema = getArticleSchema();
         expect(schema.datePublished).toBe('2026-07-11');
-        expect(schema.dateModified).toBe('2026-09-15');
+        expect(schema.dateModified).toBe('2026-11-09');
     });
 
     it('keeps the vet-cost discovery card aligned with the statutory billing guide', () => {

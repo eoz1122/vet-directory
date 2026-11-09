@@ -96,4 +96,18 @@ describe('ScrollToTop', () => {
             });
         });
     });
+
+    it('honours a larger per-section scroll margin for sticky-header clearance', async () => {
+        render(
+            <MemoryRouter initialEntries={['/vets/stuttgart#local-booking-notes']}>
+                <ScrollToTop />
+                <section id="local-booking-notes" style={{ scrollMarginTop: '160px' }} ref={element => {
+                    if (element) element.getBoundingClientRect = () => ({ top: 420 } as DOMRect);
+                }} />
+            </MemoryRouter>,
+        );
+        await waitFor(() => {
+            expect(window.scrollTo).toHaveBeenCalledWith({ behavior: 'auto', top: 460 });
+        });
+    });
 });

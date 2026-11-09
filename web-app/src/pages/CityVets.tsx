@@ -18,6 +18,8 @@ import type { Vet } from '../types/vet';
 import { NearbyCityLinks } from '../components/vet/NearbyCityLinks';
 import { CityVetFinder } from '../components/vet/CityVetFinder';
 import { CityEvidenceOverview } from '../components/vet/CityEvidenceOverview';
+import { LocalCityCare } from '../components/vet/LocalCityCare';
+import { LOCAL_CITY_CARE } from '../content/localCityCare';
 import { buildNearbyCityMap } from '../utils/nearbyCities';
 import { shouldIndexDistrict } from '../utils/directoryIndexPolicy';
 
@@ -109,6 +111,8 @@ const EVIDENCE_FIRST_CITIES = new Set([
     'Munich',
     'Cologne',
     'Frankfurt',
+    'Stuttgart',
+    'Leipzig',
 ]);
 
 export default function CityVets() {
@@ -298,6 +302,13 @@ export default function CityVets() {
                         {renderBlocks(parseCityContent(cityData.content).slice(0, 1))}
                     </div>
 
+                    {LOCAL_CITY_CARE[capitalizedCity] && (
+                        <nav aria-label={`${capitalizedCity} page sections`} className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold text-accent-ink">
+                            <Link to="#city-practices" className="inline-flex min-h-11 items-center underline underline-offset-4">Jump to {capitalizedCity} practices</Link>
+                            <Link to="#local-booking-notes" className="inline-flex min-h-11 items-center underline underline-offset-4">Local booking notes and sources</Link>
+                        </nav>
+                    )}
+
                 </section>
 
                 {EVIDENCE_FIRST_CITIES.has(capitalizedCity) && (
@@ -373,7 +384,9 @@ export default function CityVets() {
                     cities={nearbyCities}
                 />
 
-                <section>
+                <LocalCityCare city={capitalizedCity} />
+
+                <section id="city-practices" className="scroll-mt-24">
                     <h2 className="text-2xl font-bold text-primary mb-6">
                         {cityVets.length} {cityVets.length === 1 ? 'Practice' : 'Practices'} Listed in {capitalizedCity}
                     </h2>
@@ -388,7 +401,7 @@ export default function CityVets() {
                     </div>
                     {CITY_CONFIG[capitalizedCity]?.guides.length > 0 && (
                         <div className="mt-8 flex flex-wrap gap-3">
-                            {CITY_CONFIG[capitalizedCity].guides.map((guide) => (
+                            {CITY_CONFIG[capitalizedCity].guides.filter(guide => guide.href !== LOCAL_CITY_CARE[capitalizedCity]?.emergencyGuide).map((guide) => (
                                 <Link
                                     key={guide.href}
                                     to={guide.href}

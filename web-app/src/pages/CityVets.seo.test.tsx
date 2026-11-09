@@ -29,6 +29,8 @@ describe('CityVets search and trust contract', () => {
         ['munich', 'Munich', 5, 21, 0],
         ['cologne', 'Cologne', 1, 5, 0],
         ['frankfurt', 'Frankfurt', 5, 24, 0],
+        ['stuttgart', 'Stuttgart', 2, 15, 0],
+        ['leipzig', 'Leipzig', 4, 9, 0],
     ])(
         'shows a scannable evidence and booking guide for %s',
         (slug, city, officialCount, communityCount, pendingCount) => {
@@ -70,9 +72,28 @@ describe('CityVets search and trust contract', () => {
         expect(screen.getAllByText('Official Website')).toHaveLength(4);
         expect(screen.getAllByText('Official Website Confirmed')).toHaveLength(4);
         expect(screen.getByText(/4 are confirmed by their official websites/i)).toBeTruthy();
-        expect(screen.queryByRole('region', {
+        expect(screen.getByRole('region', {
             name: 'How we verify Leipzig listings',
-        })).toBeNull();
+        })).toBeTruthy();
+    });
+
+    it.each([
+        ['stuttgart', 'Stuttgart', 'Kleintierpraxis Dr. Ernst', 'https://www.kleintierpraxis-ernst.de/en/home/'],
+        ['leipzig', 'Leipzig', 'Tierarztpraxis Leutzsch', 'https://tierarztpraxis-leutzsch.de/pages/team.php'],
+    ])('adds sourced local booking guidance for %s without changing listing evidence', (slug, city, practice, source) => {
+        renderCity(`/vets/${slug}`);
+        const local = screen.getByRole('region', { name: `Local booking notes for ${city}` });
+        expect(local.className).toContain('scroll-mt-40');
+        expect(within(local).getByText(practice, { exact: true })).toBeTruthy();
+        expect(within(local).getAllByRole('link').some(link => link.getAttribute('href') === source)).toBe(true);
+        expect(local.textContent).toMatch(/9 November 2026/);
+        expect(local.textContent).toMatch(/not a ranking/i);
+        expect(within(local).getByRole('link', { name: `Emergency vet help in ${city}` }).getAttribute('href'))
+            .toBe(`/guides/emergency-vets-${slug}`);
+        expect(screen.getByRole('link', { name: `Jump to ${city} practices` }).getAttribute('href'))
+            .toBe(`/vets/${slug}#city-practices`);
+        expect(document.getElementById('city-practices')).toBeTruthy();
+        expect(local.compareDocumentPosition(document.getElementById('city-practices') as HTMLElement) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     });
 
     it('uses a live listing count and leads with evidence-derived Berlin copy', async () => {

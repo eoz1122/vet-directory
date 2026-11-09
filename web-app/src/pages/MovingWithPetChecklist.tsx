@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import ArticleHeader from '../components/ArticleHeader';
 import AffiliateBanner from '../components/AffiliateBanner';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
@@ -14,7 +12,7 @@ const ARTICLE_TITLE = 'Moving to Germany With a Dog or Cat: 2026 Entry Rules';
 const ARTICLE_DESCRIPTION = 'Bringing a dog or cat to Germany? Check microchip and rabies timing, EU passport or health certificate, blood-test rules, owner travel and breed restrictions.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/moving-to-germany-with-pet';
 const DATE_PUBLISHED = '2025-01-01';
-const DATE_MODIFIED = '2026-09-15';
+const DATE_MODIFIED = '2026-11-09';
 
 const EU_TRAVEL_RULES_URL = 'https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm';
 const NON_EU_ENTRY_URL = 'https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en';
@@ -105,6 +103,13 @@ const checklist = [
     },
 ];
 
+const preparationSteps = [
+    { title: 'Before booking transport', text: 'Confirm origin, transit, ownership and the correct entry route with the competent authority. Check the official country list and your carrier separately.' },
+    { title: 'Complete the health timetable', text: 'Check identification and rabies validity. A primary vaccination normally needs 21 days; when titration is required, plan the blood sample at least 90 days before certificate issue.' },
+    { title: 'Arrange the right documents', text: 'For non-EU certificate entry, coordinate the official issue or endorsement within the 10-day entry window, subject to the sea-travel extension. Do not order an old certificate model.' },
+    { title: 'Prepare for arrival', text: 'Keep the original documents accessible for the entry check and arrange everyday care at your destination. Local registration and housing checks are separate from travel clearance.' },
+];
+
 const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -146,7 +151,7 @@ const faqSchema = {
 
 export default function MovingWithPetChecklist() {
     return (
-        <div className="min-h-screen bg-secondary font-sans text-primary">
+        <ArticleLayout>
             <Helmet>
                 <title>{ARTICLE_TITLE}</title>
                 <meta name="description" content={ARTICLE_DESCRIPTION} />
@@ -165,21 +170,28 @@ export default function MovingWithPetChecklist() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl">
+                    <div className="article-content">
                         <ArticleHeader
                             eyebrow="2026 Pet Entry Guide"
                             title="Moving to Germany With a Dog or Cat: 2026 Entry Rules"
-                            review="Reviewed periodically. Last checked September 15, 2026"
+                            review="Reviewed periodically. Planning sequence and certificate guidance checked 9 November 2026"
                         />
                         <p className="mb-8 text-sm text-primary/60">
                             Rules below cover non-commercial movement of dogs, cats and ferrets.
                         </p>
+
+                        <section aria-labelledby="move-plan-heading" className="mb-8 rounded-2xl border border-primary/10 bg-white p-5 sm:p-6">
+                            <h2 id="move-plan-heading" className="text-xl font-bold text-primary">Plan your move in the right order</h2>
+                            <ol className="mt-4 grid gap-4 sm:grid-cols-2">
+                                {preparationSteps.map((step, index) => (
+                                    <li key={step.title} className="min-w-0 border-l-2 border-accent/40 pl-3">
+                                        <h3 className="font-bold text-primary">{index + 1}. {step.title}</h3>
+                                        <p className="mt-1 text-sm leading-relaxed text-primary/75">{step.text}</p>
+                                    </li>
+                                ))}
+                            </ol>
+                            <p className="mt-4 text-sm text-primary/70">Use the route-specific requirements below; this sequence is not an entry clearance.</p>
+                        </section>
 
                         <TableOfContents items={tableOfContents} />
 
@@ -293,7 +305,7 @@ export default function MovingWithPetChecklist() {
                                 Under the current 2026 rules, the non-EU animal health certificate uses the model linked by the European Commission and is generally valid for 10 days from official issue to the entry identity and document check. Sea travel can extend that period by the voyage duration.
                             </p>
                             <p>
-                                There is a live certificate transition: Annex IV certificates issued before 1 October 2026 remain valid for non-commercial entry under the Commission’s transition rule. Use the model supplied by the competent authority on the actual issue date rather than downloading an old form from an article.
+                                For a certificate issued now, use the current model supplied by the competent authority. The Commission limits the legacy Annex IV model to certificates issued before 1 October 2026; that is not an option for a newly issued certificate. Check the actual issue and entry dates with the official veterinarian.
                             </p>
 
                             <h2 id="titration" className="text-2xl font-bold text-primary mt-12 mb-4 scroll-mt-24">
@@ -423,6 +435,17 @@ export default function MovingWithPetChecklist() {
                                 </Link>
                             </div>
 
+                            <section aria-labelledby="arrival-care-heading" className="not-prose my-8 rounded-2xl border border-primary/10 bg-white p-5 sm:p-6">
+                                <h2 id="arrival-care-heading" className="text-xl font-bold text-primary">After arrival: organise everyday care</h2>
+                                <p className="mt-2 text-sm leading-relaxed text-primary/75">These tasks do not replace border-entry requirements. Arrange a local vet, bring existing medical records, check dog registration and tax where you live, and confirm any housing consent separately.</p>
+                                <nav aria-label="Care after moving" className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm font-bold text-accent-ink">
+                                    <Link to="/vets/stuttgart" className="inline-flex min-h-11 items-center underline underline-offset-4">Find a vet in Stuttgart</Link>
+                                    <Link to="/vets/leipzig" className="inline-flex min-h-11 items-center underline underline-offset-4">Find a vet in Leipzig</Link>
+                                    <Link to="/blog/first-vet-visit-germany" className="inline-flex min-h-11 items-center underline underline-offset-4">Prepare your first appointment</Link>
+                                    <Link to="/blog/hundesteuer-dog-tax-germany" className="inline-flex min-h-11 items-center underline underline-offset-4">Dog registration and tax guide</Link>
+                                </nav>
+                            </section>
+
                             <AffiliateBanner
                                 ariaLabel="Sponsored Hund unterwegs dog-supplies option"
                                 description="Hund unterwegs sells dog supplies for German households. It is a retailer recommendation, not a veterinary or travel-authority endorsement. Check the product details, delivery terms and suitability for your dog before ordering."
@@ -461,11 +484,7 @@ export default function MovingWithPetChecklist() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/moving-to-germany-with-pet" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
-        </div>
+                    </div>
+        </ArticleLayout>
     );
 }
