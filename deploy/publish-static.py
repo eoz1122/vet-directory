@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import shutil
 import tempfile
+import uuid
 
 
 def replace_link(link: Path, target: Path) -> None:
@@ -39,6 +40,9 @@ def publish(project_root: Path) -> Path:
     release = Path(tempfile.mkdtemp(prefix='release-', dir=releases))
     try:
         shutil.copytree(build, release, dirs_exist_ok=True)
+        # A public, non-secret identity proves Nginx serves this symlink, not
+        # an old source-root copy or an un-reloaded configuration.
+        (release / 'esv-release-id.txt').write_text(uuid.uuid4().hex + '\n', encoding='ascii')
         if previous:
             replace_link(root / 'previous-public-site', previous)
         replace_link(current, release)

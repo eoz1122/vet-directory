@@ -20,6 +20,18 @@ const vet: Vet = {
 };
 
 describe('ConfirmEnglish accessibility', () => {
+    it('submits the hidden anti-spam field and a bounded request signal', async () => {
+        vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ success: true }) } as Response);
+        const { container } = render(<ConfirmEnglish vet={vet} />);
+        const input = container.querySelector('input[name="company"]');
+        expect(input).not.toBeNull();
+        fireEvent.change(input!, { target: { value: 'filled-by-bot' } });
+        fireEvent.click(screen.getByRole('button', { name: 'I visited Test Veterinary Clinic and English was available' }));
+        await waitFor(() => expect(fetch).toHaveBeenCalled());
+        const options = vi.mocked(fetch).mock.calls[0][1]!;
+        expect(options.signal).toBeInstanceOf(AbortSignal);
+        expect(JSON.parse(options.body as string).company).toBe('filled-by-bot');
+    });
     beforeEach(() => {
         vi.stubGlobal('fetch', vi.fn());
     });
@@ -50,7 +62,7 @@ describe('ConfirmEnglish accessibility', () => {
     });
 
     it('announces success and moves focus to the completed status', async () => {
-        vi.mocked(fetch).mockResolvedValue({ ok: true } as Response);
+        vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ success: true }) } as Response);
         render(<ConfirmEnglish vet={vet} />);
 
         fireEvent.click(screen.getByRole('button', {

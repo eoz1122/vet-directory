@@ -28,10 +28,27 @@ echo "🚀 Starting Deployment..."
 
 # A source-root server would otherwise keep serving the old files after release
 # publishing. Require the reviewed, one-time Nginx migration before auto-deploys.
-if ! grep -Fq 'root /home/englishspeaking/englishspeakinggermany.online/public-site;' /etc/nginx/sites-available/englishspeakinggermany.online; then
+if ! sudo -n /usr/local/sbin/esv-validate-public-root; then
     echo 'Public-root migration is required. Follow deploy/security-rollout.md before deploying.'
     exit 1
 fi
+
+verify_private_paths() {
+    for private_path in /.git/config /.env /web-app/vets-database-internal.csv /api/main.py; do
+        status=$(curl -sS -o /dev/null -w '%{http_code}' --head --max-time 10 "https://englishspeakinggermany.online${private_path}") || return 1
+        case "$status" in 403|404) ;; *) echo 'Private-path live check failed.'; return 1 ;; esac
+    done
+}
+verify_private_paths
+
+verify_public_release() {
+    local expected_release actual_release
+    IFS= read -r expected_release < public-site/esv-release-id.txt || return 1
+    [[ "$expected_release" =~ ^[0-9a-f]{32}$ ]] || return 1
+    actual_release=$(curl -fsS --max-time 10 https://englishspeakinggermany.online/esv-release-id.txt) || return 1
+    [ "$actual_release" = "$expected_release" ]
+}
+verify_public_release || { echo 'Nginx is not serving the current public release.'; exit 1; }
 
 # 1. Pull latest code (forcing reset to prevent generated files like sitemap from blocking)
 echo "📥 Pulling from GitHub..."
@@ -67,15 +84,17 @@ fi
 source venv/bin/activate
 pip install -r requirements-dev.txt --quiet
 python -m pytest -q tests
-python -m pytest -q ../deploy/test_publish_static.py ../scripts/maintenance
-
-# Restart the API so backend code changes take effect (gunicorn does not auto-reload).
-sudo -n systemctl restart vet-api
+python -m pytest -q ../deploy ../scripts/maintenance
 
 # 6. Publish build output only. Nginx must point at the public-site symlink.
 echo "🚀 Publishing isolated static release..."
 cd ..
 python deploy/publish-static.py
+verify_public_release || { echo 'Static publication could not be verified; API not restarted.'; exit 1; }
+
+# Only restart the API after a successful static publication.
+sudo -n systemctl restart vet-api
+verify_private_paths
 
 # 7. Verify the live site actually serves after the swap (fail loud, not silent).
 echo "🔎 Verifying live site responds..."

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import type { Vet } from '../../types/vet';
 import { trackConfirmEnglishClick } from '../../utils/analytics';
+import { postJson } from '../../utils/postJson';
 
 // Nginx routes /api/* to the Flask app in production; localhost in dev.
 const API_URL = import.meta.env.DEV
@@ -16,6 +17,7 @@ type State = 'idle' | 'sending' | 'done' | 'error';
 export function ConfirmEnglish({ vet }: { vet: Vet }) {
     const [state, setState] = useState<State>('idle');
     const successRef = useRef<HTMLDivElement>(null);
+    const honeypotRef = useRef<HTMLInputElement>(null);
     const practiceConfirmationHref = `/contact?topic=vet_owner&vetId=${encodeURIComponent(vet.id)}&vetName=${encodeURIComponent(vet.practice_name)}`;
 
     useEffect(() => {
@@ -29,16 +31,13 @@ export function ConfirmEnglish({ vet }: { vet: Vet }) {
         setState('sending');
         trackConfirmEnglishClick(vet.id, vet.city);
         try {
-            const res = await fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
+            await postJson(API_URL, {
                     vetId: vet.id,
                     vetName: vet.practice_name,
                     vetCity: vet.city,
-                }),
+                    company: honeypotRef.current?.value ?? '',
             });
-            setState(res.ok ? 'done' : 'error');
+            setState('done');
         } catch {
             setState('error');
         }
@@ -69,6 +68,10 @@ export function ConfirmEnglish({ vet }: { vet: Vet }) {
 
     return (
         <div className="mt-2 xl:mt-1 space-y-2">
+            <label aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+                Company
+                <input ref={honeypotRef} name="company" tabIndex={-1} autoComplete="off" />
+            </label>
             <button
                 type="button"
                 onClick={confirm}

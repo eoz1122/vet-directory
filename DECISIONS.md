@@ -4,6 +4,23 @@ This document records the major architectural choices, conventions, and security
 
 As per the Global AI Directives, every entry here prevents logic drift and serves as the source of truth for AI agents and human developers. Every entry MUST include an ISO 8601 timestamp in its heading.
 
+## 2026-11-09T04:06:00+01:00 - Close the independent review findings before rollout
+
+**Decision:** Replace the text-match migration gate with a root-owned read-only
+helper that captures `nginx -T`, parses target TLS server blocks and included
+locations, and fails closed on conflicting roots/aliases or missing hostnames.
+Never print the complete configuration dump. Also require live private-path HEAD
+checks and a matching public release identity before and after publishing. The
+identity detects a still-running source-root configuration after an on-disk edit.
+The helper must be installed by the operator
+with a narrowly scoped sudo grant; an unprepared VPS cannot auto-deploy this change.
+
+Publish static output before restarting the API so a publication failure leaves
+the running API alone. Bring confirmation buttons under the same bounded JSON
+request helper and actual hidden-field handling as other forms. Preserve manual
+review and all evidence labels. These corrections address the P1 and P2 findings
+against the first frozen implementation head, `39c68a0`.
+
 ## 2026-11-09T03:44:00+01:00 - Audit remediation with an explicit preview and release gate
 
 **Decision:** Prepare all changes locally and do not push or deploy before Ali's

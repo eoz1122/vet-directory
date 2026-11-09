@@ -15,12 +15,21 @@ Do not push this change to main until Ali approves the local preview.
    build runtime requests it. Check the prerender and sitemap totals.
 3. Run `api/venv/bin/python deploy/publish-static.py` from the repository root.
    Verify `public-site/index.html` and representative generated routes exist.
+   Verify the public `esv-release-id.txt` identity is present too.
    This publishes build output only; it does not copy source or runtime logs.
-4. Install the reviewed `web-app/nginx_site.conf` and
+4. As the operator, install `deploy/validate-public-root.py` as root-owned,
+   non-deploy-user-writable `/usr/local/sbin/esv-validate-public-root` (mode 0755).
+   Permit the deploy user to sudo only this helper, alongside the existing narrow
+   `systemctl restart vet-api` permission. The helper runs `nginx -T`, validates
+   the target TLS blocks and included locations, and never prints the config dump.
+   Install the reviewed `web-app/nginx_site.conf` and
    `api/nginx_vet_api.conf`. Confirm certificate paths and other local settings
    match the saved live configuration. Run `sudo nginx -t` before reloading.
-5. Reload Nginx, restart `vet-api`, and verify the homepage, hashed assets,
+5. Reload Nginx, run the validation helper, then verify the homepage, hashed assets,
    sitemap, `/api/health`, directory filters and consent controls.
+   Check that the live `/esv-release-id.txt` equals the identity in `public-site`;
+   this catches configuration edits that have not actually been reloaded.
+   The deployment pipeline now publishes successfully before restarting `vet-api`.
 6. Confirm GET and HEAD both return 404 for `/.git/config`, `/.env`,
    `/web-app/vets-database-internal.csv`, `/api/newsletter_subscribers.jsonl`,
    `/api/confirmations.jsonl`, source scripts and unknown API routes. Do not

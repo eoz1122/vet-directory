@@ -2,6 +2,7 @@ import importlib.util
 from pathlib import Path
 
 import pytest
+import re
 
 spec = importlib.util.spec_from_file_location('publish_static', Path(__file__).with_name('publish-static.py'))
 publisher = importlib.util.module_from_spec(spec)
@@ -18,6 +19,7 @@ def test_publish_excludes_checkout_and_retains_previous_release(tmp_path):
     first = (tmp_path / 'public-site').resolve()
     assert (first / 'index.html').read_text() == 'first'
     assert not (first / '.git').exists()
+    assert re.fullmatch(r'[0-9a-f]{32}\n', (first / 'esv-release-id.txt').read_text())
     (build / 'index.html').write_text('second')
     publisher.publish(tmp_path)
     assert (tmp_path / 'previous-public-site').resolve() == first

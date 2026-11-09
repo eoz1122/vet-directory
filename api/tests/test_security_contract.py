@@ -21,6 +21,11 @@ def test_deployment_runs_tests_before_publishing_a_release():
     assert script.index('python -m pytest') < script.index('python deploy/publish-static.py')
     assert 'cp -r web-app/dist/* .' not in script
     assert 'Public-root migration is required' in script
+    assert 'sudo -n /usr/local/sbin/esv-validate-public-root' in script
+    assert 'grep -Fq' not in script
+    assert 'esv-release-id.txt' in script
+    assert 'verify_public_release' in script
+    assert script.index('python deploy/publish-static.py') < script.index('systemctl restart vet-api')
 
 
 def test_ci_checks_frontend_backend_and_supply_chain():
