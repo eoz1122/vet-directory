@@ -4,6 +4,18 @@ This document records the major architectural choices, conventions, and security
 
 As per the Global AI Directives, every entry here prevents logic drift and serves as the source of truth for AI agents and human developers. Every entry MUST include an ISO 8601 timestamp in its heading.
 
+## 2026-11-09T17:39:00+01:00 - Attribute site access without recording query strings
+
+**Context:** Ali requested the Maps-key restriction check and dedicated access logging before a Cologne traffic investigation. Shared historical logs lacked the requested hostname, complicating attribution. A 1 November burst of 3,454 successful Git-object requests matches this repository and its compressed object sizes; the source-serving route is now blocked. A targeted scan of 1,373 downloaded text blobs found no matching server-secret patterns, not an exhaustive forensic clearance.
+
+**Decision:** Add a site-specific JSON access log for both HTTP and HTTPS at `/var/log/nginx/englishspeaking.access.log`. Record the configured server name, requested host, client IP, original path without its query, method, status, response bytes and duration. Escape JSON and omit query strings, bodies, referrers and user-agent text. Derive the path from immutable `$request_uri` rather than `$uri`, which changes during internal 404 handling. Preserve the existing shared Nginx log rotation: daily, 14 rotations, compression, and mode 0640 owned by www-data:adm. Do not modify other vhosts or broaden filesystem access.
+
+**Maps check:** Matched the deployed key to the Cloud Console credential using a value-free fingerprint. It has the Websites application restriction for `englishspeakinggermany.online` and an explicit 10-API allowlist. No unrestricted key was found. The API list is broader than the current app appears to require; leave it unchanged until usage and geocoding dependencies are reviewed. No key rotation or permission change was made.
+
+**Verification:** All three new logging contract tests failed before implementation. The focused logging/redirect/runtime/deploy suite then passed 11 tests and lint passed. Operator activation additionally requires Nginx syntax validation, the public-root helper, live original-path/query-redaction probes, and a non-mutating logrotate check. Application bundles and the API process remain unchanged.
+
+**Rollback:** Restore the timestamped operator backup of the site's Nginx configuration, run `nginx -t`, and gracefully reload. Keep generated security logs as operational records under existing rotation; do not erase evidence during rollback. Previous deployed source is `c24446e5c63f9f7ce2fdc90bbdc24b5b948b99ec`. Preserve the pre-existing dirty vet catalog.
+
 ## 2026-11-09T15:20:00+01:00 - Restore the www alias with canonical HTTPS
 
 **Context:** Ali requested the missing www DNS alias. The authoritative zone had no www record, the existing certificate covered only the apex, and HTTP www returned 404.
