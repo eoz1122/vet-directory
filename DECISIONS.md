@@ -4,6 +4,16 @@ This document records the major architectural choices, conventions, and security
 
 As per the Global AI Directives, every entry here prevents logic drift and serves as the source of truth for AI agents and human developers. Every entry MUST include an ISO 8601 timestamp in its heading.
 
+## 2026-11-09T15:20:00+01:00 - Restore the www alias with canonical HTTPS
+
+**Context:** Ali requested the missing www DNS alias. The authoritative zone had no www record, the existing certificate covered only the apex, and HTTP www returned 404.
+
+**Decision:** Add only a Hostinger CNAME `www` pointing to `englishspeakinggermany.online`, TTL 300. Expand the existing Let's Encrypt certificate to both hostnames. Keep the isolated public root and security controls unchanged; redirect HTTPS www and both HTTP hostnames to the fixed apex HTTPS URL, preserving the request path and query string. Do not change email records, nameservers, global services or other VPS projects.
+
+**Verification:** Hostinger shows the saved CNAME and the authoritative nameserver returns it. Certificate issuance succeeded for both hostnames, expiring 2027-02-07, with the existing renewal mechanism retained. Both redirect regression tests failed before the Nginx blueprint change; the focused redirect/runtime/deploy suite then passed all eight tests. Operator activation requires Nginx syntax validation, the public-root helper, and live TLS/redirect/security probes before resuming the deployment timer. No application bundle rebuild is needed because frontend and API implementation bytes are unchanged.
+
+**Rollback:** Remove only the newly added www CNAME if required, and restore `/var/backups/esv/www-20261109T1420/nginx-site.conf` followed by `nginx -t` and a graceful reload. Keep the expanded certificate, which remains valid for the apex. Prior deployed application source is `bcf97847f04748128383b7766a2ab5d850834d53`; this change does not replace its public static release or API process.
+
 ## 2026-11-09T12:35:00+01:00 - Isolate the deployment Node runtime
 
 **Context:** Ali approved deployment of the audit release. The shared VPS uses Node 20, below this site's supported runtime. Its other projects must remain unchanged.
