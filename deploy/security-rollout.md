@@ -22,8 +22,13 @@ Do not push this change to main until Ali approves the local preview.
    Permit the deploy user to sudo only this helper, alongside the existing narrow
    `systemctl restart vet-api` permission. The helper runs `nginx -T`, validates
    the target TLS blocks and included locations, and never prints the config dump.
-   Install the reviewed `web-app/nginx_site.conf` and
-   `api/nginx_vet_api.conf`. Confirm certificate paths and other local settings
+   Install the reviewed `web-app/nginx_site.conf` as the root-owned server config.
+   Copy the approved committed `api/nginx_vet_api.conf` into root-owned
+   `/etc/nginx/snippets/esv-api.conf` (mode 0644, not deploy-user-writable).
+   Do not point Nginx at a mutable checkout file or copy unreviewed working-tree
+   changes into the privileged control plane. Both the snippet and its parent
+   directory must be operator-owned and non-writable by the deploy account.
+   Confirm certificate paths and other local settings
    match the saved live configuration. Run `sudo nginx -t` before reloading.
 5. Reload Nginx, run the validation helper, then verify the homepage, hashed assets,
    sitemap, `/api/health`, directory filters and consent controls.

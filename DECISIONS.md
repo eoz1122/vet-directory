@@ -21,6 +21,15 @@ request helper and actual hidden-field handling as other forms. Preserve manual
 review and all evidence labels. These corrections address the P1 and P2 findings
 against the first frozen implementation head, `39c68a0`.
 
+## 2026-11-09T04:15:00+01:00 - Operator-owned API proxy configuration
+
+**Decision:** Close the focused follow-up's remaining P2 trust-boundary finding
+by loading the API location rules from `/etc/nginx/snippets/esv-api.conf`, not
+from the deploy-user-writable checkout. The operator must install the approved
+committed blueprint as a root-owned, non-deploy-user-writable file in an
+operator-owned directory. Keep the server config and validation helper protected
+the same way. Routine application publishing must not rewrite proxy settings.
+
 ## 2026-11-09T03:44:00+01:00 - Audit remediation with an explicit preview and release gate
 
 **Decision:** Prepare all changes locally and do not push or deploy before Ali's

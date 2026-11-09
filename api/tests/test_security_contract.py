@@ -6,6 +6,8 @@ ROOT = Path(__file__).resolve().parents[2]
 def test_nginx_serves_only_a_public_release_and_denies_private_paths():
     config = (ROOT / 'web-app/nginx_site.conf').read_text()
     assert 'root /home/englishspeaking/englishspeakinggermany.online/public-site;' in config
+    assert 'include /etc/nginx/snippets/esv-api.conf;' in config
+    assert 'include /home/englishspeaking/englishspeakinggermany.online/api/' not in config
     assert 'location ~ /\\.(?!well-known(?:/|$))' in config
     assert 'location ~* ^/(?:api|web-app|deploy|scripts|site-releases)(?:/|$)' in config
     assert 'location ~* \\.(?:csv|jsonl|log|bak|py|sh|toml|ya?ml|md)$' in config
