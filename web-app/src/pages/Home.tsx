@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { is24HourEmergency } from '../utils/emergency';
 // import AppMap from '../components/Map'; // Removed direct import
 import Footer from '../components/Footer';
 import BrandLogo from '../components/BrandLogo';
@@ -108,7 +109,7 @@ const Home: React.FC = () => {
             (vet.district || "").toLowerCase().includes(searchTerm.toLowerCase());
         const matchesVerification = !showVerifiedOnly || (vet.community_status === 'Verified');
         const matchesMobile = !showMobileOnly || (vet.address && (vet.address.includes("Mobile Service") || vet.address.includes("Home Visits") || vet.address === 'Unknown'));
-        const matchesEmergency = !showEmergencyOnly || (vet.verification?.emergency_services === '24/7');
+        const matchesEmergency = !showEmergencyOnly || is24HourEmergency(vet.verification?.emergency_services);
 
         // Distance filter
         let matchesDistance = true;

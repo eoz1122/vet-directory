@@ -9,6 +9,7 @@ import { ConfirmEnglish } from './ConfirmEnglish';
 import { PracticeFocus } from './PracticeFocus';
 import ReportIssueLink from './ReportIssueLink';
 import { VerificationBadge } from './VerificationBadge';
+import { is24HourEmergency } from '../../utils/emergency';
 
 interface VetCardProps {
     vet: VetWithDistance;
@@ -70,7 +71,7 @@ export const VetCard: React.FC<VetCardProps> = ({
     const hasWebsite = Boolean(vet.contact?.website);
     const hasPhone = Boolean(vet.contact?.phone);
     const hasDirectContact = hasWebsite || hasPhone;
-    const isEmergency24h = vet.verification?.emergency_services === '24/7';
+    const isEmergency24h = is24HourEmergency(vet.verification?.emergency_services);
     const mapUrl = vet.contact?.google_maps ||
         `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
             `${vet.practice_name} ${mobileAddress ? vet.city : vet.address || vet.city}`,
@@ -158,7 +159,7 @@ export const VetCard: React.FC<VetCardProps> = ({
                             {evidenceSignal}
                         </p>
                     </div>
-                    {vet.verification?.emergency_services === '24/7' && (
+                    {isEmergency24h && (
                         <div className="flex gap-3 items-start">
                             <div className="mt-1 flex-shrink-0 w-4 h-4 bg-red-100 rounded-full flex items-center justify-center">
                                 <span className="text-[10px]" aria-hidden="true">🚑</span>

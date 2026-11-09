@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
-import BlogSidebar from '../components/BlogSidebar';
 import AffiliateCallout from '../components/AffiliateCallout';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import ArticleLayout from '../components/ArticleLayout';
 import RelatedPosts from '../components/RelatedPosts';
 import TableOfContents from '../components/TableOfContents';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
@@ -116,13 +114,7 @@ export default function DogLiabilityInsuranceGermany() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="mx-auto mb-12 max-w-7xl p-5 sm:p-6 md:p-12">
-                <div className="flex flex-col gap-12 lg:flex-row">
-                    <BlogSidebar />
-
-                    <article className="min-w-0 max-w-4xl lg:flex-1">
+            <ArticleLayout>
                         <span className="text-sm font-bold uppercase tracking-wider text-accent-ink">
                             Insurance and dog law
                         </span>
@@ -321,11 +313,7 @@ export default function DogLiabilityInsuranceGermany() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/dog-liability-insurance-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

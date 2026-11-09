@@ -83,6 +83,7 @@ export default function AppMap({ vets, selectedCity, selectedVet, onSelectVet }:
                     <AdvancedMarker
                         key={vet.id}
                         position={vet.coordinates}
+                        title={`${vet.practice_name}, ${vet.city}`}
                         onClick={() => {
                             trackMapPinClick(vet.id, vet.city);
                             onSelectVet(vet);

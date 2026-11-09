@@ -17,10 +17,10 @@ export default function ArticleHeader({ eyebrow, title, review }: ArticleHeaderP
             <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-4 leading-tight">
                 {title}
             </h1>
-            <p className="text-sm leading-relaxed text-primary/60">
+            <p className="text-sm leading-relaxed text-primary/80">
                 {review}
             </p>
-            <p className="mt-2 text-xs leading-relaxed text-primary/50">
+            <p className="mt-2 text-xs leading-relaxed text-primary/80">
                 Editorial review by the EnglishSpeakingVets team.{' '}
                 <Link to="/quality-promise" className="font-bold text-accent-ink underline underline-offset-2">
                     How we review guides

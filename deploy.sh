@@ -26,6 +26,13 @@ fi
 
 echo "🚀 Starting Deployment..."
 
+# A source-root server would otherwise keep serving the old files after release
+# publishing. Require the reviewed, one-time Nginx migration before auto-deploys.
+if ! grep -Fq 'root /home/englishspeaking/englishspeakinggermany.online/public-site;' /etc/nginx/sites-available/englishspeakinggermany.online; then
+    echo 'Public-root migration is required. Follow deploy/security-rollout.md before deploying.'
+    exit 1
+fi
+
 # 1. Pull latest code (forcing reset to prevent generated files like sitemap from blocking)
 echo "📥 Pulling from GitHub..."
 git fetch origin main
@@ -35,6 +42,10 @@ git reset --hard origin/main
 echo "📦 Installing dependencies..."
 cd web-app
 npm ci --silent
+
+# Reject regressions before touching the live release.
+npm run test
+npm run lint
 
 # 3. Ensure Puppeteer Chrome is present (required for the prerender step)
 #    No-op if already installed, safe to run on every deploy.
@@ -54,23 +65,17 @@ if [ ! -d "venv" ]; then
     python3 -m venv venv
 fi
 source venv/bin/activate
-pip install -r requirements.txt --quiet
+pip install -r requirements-dev.txt --quiet
+python -m pytest -q tests
+python -m pytest -q ../deploy/test_publish_static.py ../scripts/maintenance
 
 # Restart the API so backend code changes take effect (gunicorn does not auto-reload).
-sudo -n systemctl restart vet-api 2>/dev/null || echo "⚠️  vet-api restart skipped (run 'systemctl restart vet-api' manually if the API changed)"
+sudo -n systemctl restart vet-api
 
-# 6. Copy prerendered output to the nginx-served root
-echo "🚀 Copying build output to nginx root..."
+# 6. Publish build output only. Nginx must point at the public-site symlink.
+echo "🚀 Publishing isolated static release..."
 cd ..
-# The nginx root also contains the checked-out source tree, so a blanket
-# rsync --delete would be unsafe. Remove only the top-level entries produced by
-# the current build first, which prevents removed routes from surviving a copy.
-echo "🧹 Removing previous generated output..."
-while IFS= read -r -d '' generated_path; do
-    generated_name="${generated_path#web-app/dist/}"
-    rm -rf -- "${generated_name}"
-done < <(find web-app/dist -mindepth 1 -maxdepth 1 -print0)
-cp -r web-app/dist/* .
+python deploy/publish-static.py
 
 # 7. Verify the live site actually serves after the swap (fail loud, not silent).
 echo "🔎 Verifying live site responds..."

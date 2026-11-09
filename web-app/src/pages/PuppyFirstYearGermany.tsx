@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { trackAffiliateClick } from '../utils/analytics';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
 const TITLE = "Your Puppy's First Year in Germany: Timeline & Costs";
@@ -72,13 +70,7 @@ export default function PuppyFirstYearGermany() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl">
+            <ArticleLayout>
                         <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">New Pet Guide</span>
                         <h1 className="text-4xl md:text-5xl font-bold text-primary mt-2 mb-8 leading-tight">
                             🐶 Your Puppy's First Year in Germany
@@ -216,11 +208,7 @@ export default function PuppyFirstYearGermany() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/puppy-first-year-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

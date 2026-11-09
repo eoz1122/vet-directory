@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { sendGAEvent } from '../utils/analytics';
 import { normalizeContactFormTopic } from '../utils/analyticsDimensions';
 import { isReportIssueNavigationState } from '../utils/reportIssue';
+import { postJson } from '../utils/postJson';
 
 export default function Contact() {
     const location = useLocation();
@@ -73,6 +74,7 @@ export default function Contact() {
         const normalizedTopic = normalizeContactFormTopic(formData.topic);
         const finalData = {
             ...formData,
+            company: new FormData(e.currentTarget as HTMLFormElement).get('company')?.toString() ?? '',
             topic: normalizedTopic,
             _subject: `[The Pack] ${normalizedTopic.toUpperCase()} - ${formData.name}`,
             submittedAt: new Date().toISOString()
@@ -84,17 +86,7 @@ export default function Contact() {
             // In production, Nginx will route /api/contact to the Flask app
             const API_URL = import.meta.env.DEV ? 'http://localhost:5000/api/contact' : '/api/contact';
 
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(finalData)
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.error || 'Failed to send message.');
-            }
+            await postJson(API_URL, finalData);
 
             // Track successful submission in GA
             sendGAEvent('contact_form_success', {
@@ -201,6 +193,10 @@ export default function Contact() {
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} aria-busy={isSubmitting} className="space-y-6">
+                            <label aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+                                Company
+                                <input name="company" tabIndex={-1} autoComplete="off" />
+                            </label>
 
                             <div>
                                 <label htmlFor="topic" className="block text-sm font-bold text-primary mb-2">I want to...</label>

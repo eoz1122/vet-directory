@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import ArticleHeader from '../components/ArticleHeader';
 import { generateArticleSchema } from '../utils/schema';
 
@@ -186,13 +184,7 @@ export default function RestrictedDogLawsByCountry() {
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl">
+            <ArticleLayout>
                         <ArticleHeader
                             eyebrow="International Restricted-Dog Guide"
                             title="Restricted Dog Laws by Country: Germany, UK and US (2026)"
@@ -316,11 +308,7 @@ export default function RestrictedDogLawsByCountry() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/restricted-dog-laws-by-country" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

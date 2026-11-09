@@ -11,6 +11,11 @@ __pycache__/
 # The dist/ folder is generated on the VPS by running `npm run build`
 # We do NOT commit it to git — the deploy.sh script builds it on the server.
 dist/
+public-site
+public-site.next
+previous-public-site
+previous-public-site.next
+site-releases/
 
 # ─── Internal / Sensitive Data ─────────────────────────────────────────────────
 # Internal CSV export — contains all vet data for internal use only

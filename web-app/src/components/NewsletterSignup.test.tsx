@@ -5,6 +5,15 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import NewsletterSignup from './NewsletterSignup';
 
 describe('NewsletterSignup', () => {
+    it('submits the actual hidden anti-spam field', async () => {
+        vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ success: true }) } as Response);
+        const { container } = render(<MemoryRouter><NewsletterSignup /></MemoryRouter>);
+        fireEvent.change(screen.getByLabelText('Email address'), { target: { value: 'jane@example.com' } });
+        fireEvent.change(container.querySelector('input[name="company"]')!, { target: { value: 'bot-filled' } });
+        fireEvent.click(screen.getByRole('button', { name: 'Get periodic updates' }));
+        await waitFor(() => expect(fetch).toHaveBeenCalled());
+        expect(JSON.parse(vi.mocked(fetch).mock.calls[0][1]!.body as string).company).toBe('bot-filled');
+    });
     beforeEach(() => {
         localStorage.setItem('cookie-consent', 'accepted');
         window.gtag = vi.fn();

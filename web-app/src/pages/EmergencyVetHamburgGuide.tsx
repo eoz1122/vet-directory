@@ -1,8 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import BlogSidebar from '../components/BlogSidebar';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import { generateArticleSchema } from '../utils/schema';
@@ -93,17 +91,7 @@ export default function EmergencyVetHamburgGuide() {
                 <script type="application/ld+json">{JSON.stringify(BREADCRUMB_SCHEMA)}</script>
             </Helmet>
 
-            <Header />
-
-            <main className="flex-grow container mx-auto px-4 py-8 md:py-12 mt-16 max-w-7xl">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <div className="hidden lg:block lg:w-1/4">
-                        <div className="sticky top-24">
-                            <BlogSidebar />
-                        </div>
-                    </div>
-
-                    <article className="lg:w-3/4 max-w-4xl">
+            <ArticleLayout>
                         <div className="mb-4 text-sm font-bold text-accent uppercase tracking-wider">
                             EMERGENCY GUIDE
                         </div>
@@ -296,11 +284,7 @@ export default function EmergencyVetHamburgGuide() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/emergency-vet-hamburg-english" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

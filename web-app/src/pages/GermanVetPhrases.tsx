@@ -1,10 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 import ArticleHeader from '../components/ArticleHeader';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
 export default function GermanVetPhrases() {
@@ -31,13 +29,7 @@ export default function GermanVetPhrases() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl">
+            <ArticleLayout>
                         <ArticleHeader
                             eyebrow="Expat Survival Kits"
                             title="German Vet Survival Kit: Essential Phrases for Expats"
@@ -178,11 +170,7 @@ export default function GermanVetPhrases() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/german-vet-survival-kit-phrases" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

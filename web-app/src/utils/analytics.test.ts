@@ -14,6 +14,17 @@ beforeEach(() => {
 });
 
 describe('analytics consent', () => {
+    it('strips personal query strings from locations on non-page-view events', () => {
+        window.gtag = vi.fn();
+        window.history.replaceState({}, '', '/contact?email=private@example.test');
+        try {
+            sendGAEvent('contact_form_success');
+            expect(JSON.stringify(vi.mocked(window.gtag).mock.calls)).not.toContain('private');
+            expect(vi.mocked(window.gtag).mock.calls[0][2]).toEqual(expect.objectContaining({
+                page_location: window.location.origin + '/contact',
+            }));
+        } finally { window.history.replaceState({}, '', '/'); }
+    });
     it('suppresses events when analytics consent is absent or declined', () => {
         window.gtag = vi.fn();
 

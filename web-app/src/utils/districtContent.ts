@@ -1,4 +1,5 @@
 import type { Vet } from '../types/vet';
+import { hasEmergencyCare } from './emergency';
 import {
     isGovernmentSourceConfirmed,
     isOfficialWebsiteConfirmed,
@@ -50,12 +51,12 @@ export function generateDistrictContent(
         .map(v => v.practice_name);
     const verifiedNames = [...officialNames, ...governmentNames, ...practiceConfirmedNames, ...communityConfirmedNames];
     const emergencyNames = vets
-        .filter(v => v.verification?.emergency_services)
+        .filter(v => hasEmergencyCare(v.verification?.emergency_services))
         .map(v => v.practice_name);
     // Emergency clinics elsewhere in the same city (so we never promise a resource
     // that does not exist when a small district/region has no 24/7 cover).
     const nearbyEmergencyNames = cityVets
-        .filter(v => v.verification?.emergency_services)
+        .filter(v => hasEmergencyCare(v.verification?.emergency_services))
         .map(v => v.practice_name)
         .filter(n => !emergencyNames.includes(n));
 

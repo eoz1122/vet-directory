@@ -4,6 +4,7 @@ import type { Vet } from '../../types/vet';
 import { VetCard } from './VetCard';
 import { shouldIndexDistrict } from '../../utils/directoryIndexPolicy';
 import { slugify } from '../../utils/url';
+import { is24HourEmergency } from '../../utils/emergency';
 
 type EvidenceFilter = 'all' | 'official_website' | 'government_source' | 'practice_confirmed' | 'community';
 
@@ -65,7 +66,7 @@ export function CityVetFinder({ city, vets }: CityVetFinderProps) {
             includesSearchTerm(vet, normalizedSearchTerm) &&
             (district === ALL_DISTRICTS || vet.district === district) &&
             matchesEvidence(vet, evidence) &&
-            (!emergencyOnly || vet.verification.emergency_services === '24/7'),
+            (!emergencyOnly || is24HourEmergency(vet.verification.emergency_services)),
         ),
         [district, emergencyOnly, evidence, normalizedSearchTerm, vets],
     );

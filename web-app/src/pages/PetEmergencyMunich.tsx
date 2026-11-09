@@ -1,8 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import BlogSidebar from '../components/BlogSidebar';
+import ArticleLayout from '../components/ArticleLayout';
 import RelatedPosts from '../components/RelatedPosts';
 import GuideDisclaimer from '../components/GuideDisclaimer';
 import { generateArticleSchema } from '../utils/schema';
@@ -73,13 +71,7 @@ export default function PetEmergencyMunich() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl prose prose-lg prose-forest text-primary/80">
+            <ArticleLayout>
                         <nav className="text-sm text-accent-ink font-bold mb-6">
                             <Link to="/guides/pet-emergency-germany" className="hover:text-primary transition-colors">
                                 ← Germany emergency guide
@@ -209,11 +201,7 @@ export default function PetEmergencyMunich() {
 
                         <GuideDisclaimer />
                         <RelatedPosts currentPath="/guides/emergency-vets-munich" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

@@ -49,6 +49,7 @@ describe('maintenance script safety', () => {
             const source = fs.readFileSync(path.join(scriptsRoot, name), 'utf8');
 
             expect(source).toContain("&& !v.canonical_listing_id");
+            expect(source).toContain('listingAliases.json');
         },
     );
 });

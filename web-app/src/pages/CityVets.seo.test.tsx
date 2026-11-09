@@ -29,7 +29,7 @@ describe('CityVets search and trust contract', () => {
         ['munich', 'Munich', 5, 21, 0],
         ['cologne', 'Cologne', 1, 5, 0],
         ['frankfurt', 'Frankfurt', 5, 24, 0],
-        ['stuttgart', 'Stuttgart', 2, 15, 0],
+        ['stuttgart', 'Stuttgart', 2, 13, 0],
         ['leipzig', 'Leipzig', 4, 9, 0],
     ])(
         'shows a scannable evidence and booking guide for %s',

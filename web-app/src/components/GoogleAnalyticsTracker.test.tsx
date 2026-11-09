@@ -20,6 +20,18 @@ function NavigationHarness() {
 }
 
 describe('GoogleAnalyticsTracker', () => {
+    it('does not load the live Google tag unconditionally in local previews', () => {
+        const html = readFileSync(resolve(process.cwd(), 'index.html'), 'utf8');
+        expect(html).not.toContain('<script async src="https://www.googletagmanager.com');
+        expect(html).toContain("['englishspeakinggermany.online', 'www.englishspeakinggermany.online'].includes(window.location.hostname)");
+    });
+    it('does not send query-string personal data in page views', () => {
+        render(<MemoryRouter initialEntries={['/contact?email=private@example.test&message=private']}><GoogleAnalyticsTracker /></MemoryRouter>);
+        act(() => vi.runOnlyPendingTimers());
+        const calls = JSON.stringify(vi.mocked(window.gtag).mock.calls);
+        expect(calls).not.toContain('private');
+        expect(calls).toContain('page_location');
+    });
     beforeEach(() => {
         vi.useFakeTimers();
         localStorage.setItem('cookie-consent', 'accepted');
@@ -50,6 +62,7 @@ describe('GoogleAnalyticsTracker', () => {
         expect(window.gtag).toHaveBeenCalledTimes(1);
         expect(window.gtag).toHaveBeenLastCalledWith('event', 'page_view', {
             page_path: '/vets/berlin',
+            page_location: window.location.origin + '/vets/berlin',
             page_title: document.title,
         });
 
@@ -59,7 +72,8 @@ describe('GoogleAnalyticsTracker', () => {
 
         expect(window.gtag).toHaveBeenCalledTimes(2);
         expect(window.gtag).toHaveBeenLastCalledWith('event', 'page_view', {
-            page_path: '/contact?from=test',
+            page_path: '/contact',
+            page_location: window.location.origin + '/contact',
             page_title: document.title,
         });
     });
@@ -83,6 +97,7 @@ describe('GoogleAnalyticsTracker', () => {
         expect(window.gtag).toHaveBeenCalledTimes(1);
         expect(window.gtag).toHaveBeenLastCalledWith('event', 'page_view', {
             page_path: '/vets/berlin',
+            page_location: window.location.origin + '/vets/berlin',
             page_title: document.title,
         });
 

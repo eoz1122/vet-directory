@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ArticleHeader from '../components/ArticleHeader';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import AffiliateCallout from '../components/AffiliateCallout';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
 import { generateArticleSchema } from '../utils/schema';
@@ -34,13 +32,7 @@ export default function PublicTransportBerlin() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl">
+            <ArticleLayout>
                         <ArticleHeader
                             eyebrow="Expat Survival Guide"
                             title="🚇 Public Transport with Dogs in Berlin (BVG): The 2026 Expat Survival Guide"
@@ -229,11 +221,7 @@ export default function PublicTransportBerlin() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/public-transport-with-dogs-berlin" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

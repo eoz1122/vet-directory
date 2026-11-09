@@ -1,10 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
-import BlogSidebar from '../components/BlogSidebar';
-import Footer from '../components/Footer';
 import GuideDisclaimer from '../components/GuideDisclaimer';
-import Header from '../components/Header';
+import ArticleLayout from '../components/ArticleLayout';
 import RelatedPosts from '../components/RelatedPosts';
 import TableOfContents from '../components/TableOfContents';
 import { generateArticleSchema } from '../utils/schema';
@@ -87,17 +85,7 @@ export default function EmergencyVetNurembergGuide() {
                 <script type="application/ld+json">{JSON.stringify(ARTICLE_SCHEMA)}</script>
             </Helmet>
 
-            <Header />
-
-            <main className="mx-auto mb-12 max-w-7xl p-5 sm:p-6 md:p-12">
-                <div className="flex flex-col gap-12 lg:flex-row">
-                    <div className="hidden lg:block lg:w-1/4">
-                        <div className="sticky top-24">
-                            <BlogSidebar />
-                        </div>
-                    </div>
-
-                    <article className="max-w-4xl lg:w-3/4">
+            <ArticleLayout>
                         <span className="text-sm font-bold uppercase tracking-wider text-accent-ink">
                             Emergency Guide
                         </span>
@@ -333,11 +321,7 @@ export default function EmergencyVetNurembergGuide() {
                         </div>
 
                         <RelatedPosts currentPath="/guides/emergency-vets-nuremberg" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

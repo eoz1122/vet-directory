@@ -5,7 +5,11 @@ export const sendGAEvent = (
     if (!hasAnalyticsConsent()) return;
 
     if (typeof window.gtag === 'function') {
-        window.gtag('event', eventName, eventParams);
+        const safeParams = window.location.search || window.location.hash ? {
+            ...eventParams,
+            page_location: window.location.origin + window.location.pathname,
+        } : eventParams;
+        window.gtag('event', eventName, safeParams);
     } else {
         console.warn('Google Analytics not initialized', { eventName, eventParams });
     }

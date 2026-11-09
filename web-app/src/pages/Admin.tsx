@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import type { Vet } from '../types/vet';
 import vetsData from '../data/vets.json';
+import { is24HourEmergency } from '../utils/emergency';
 
 // Admin access code from environment - never hardcode secrets in source
 const ACCESS_CODE = import.meta.env.VITE_ADMIN_CODE || '';
@@ -156,7 +157,7 @@ const Admin: React.FC = () => {
                     <div className="bg-white p-4 rounded-xl border border-primary/5 shadow-sm">
                         <span className="text-[10px] uppercase tracking-widest text-primary/40 font-bold">Emergency 24/7</span>
                         <p className="text-2xl font-black text-red-500">
-                            {vets.filter(v => v.verification?.emergency_services === '24/7').length}
+                            {vets.filter(v => is24HourEmergency(v.verification?.emergency_services)).length}
                         </p>
                     </div>
                     <div className="bg-white p-4 rounded-xl border border-primary/5 shadow-sm">

@@ -1,10 +1,18 @@
 import { useState, useEffect, useCallback, useId } from 'react';
 import { Link } from 'react-router-dom';
 
+function readConsent() {
+    try { return localStorage.getItem('cookie-consent'); } catch { return null; }
+}
+
+function storeConsent(value: string) {
+    try { localStorage.setItem('cookie-consent', value); return true; } catch { return false; }
+}
+
 export default function CookieConsent() {
     const titleId = useId();
     const [isVisible, setIsVisible] = useState(
-        () => localStorage.getItem('cookie-consent') === null
+        () => readConsent() === null
     );
 
     const enableGA = useCallback(() => {
@@ -16,7 +24,7 @@ export default function CookieConsent() {
     }, []);
 
     useEffect(() => {
-        const consent = localStorage.getItem('cookie-consent');
+        const consent = readConsent();
         if (consent === 'accepted') {
             enableGA();
         }
@@ -29,8 +37,9 @@ export default function CookieConsent() {
     }, []);
 
     const handleAccept = () => {
-        const wasAlreadyAccepted = localStorage.getItem('cookie-consent') === 'accepted';
-        localStorage.setItem('cookie-consent', 'accepted');
+        const wasAlreadyAccepted = readConsent() === 'accepted';
+        // If storage is blocked, keep optional analytics denied.
+        if (!storeConsent('accepted')) { setIsVisible(false); return; }
         enableGA();
         if (!wasAlreadyAccepted) {
             window.dispatchEvent(new Event('analytics-consent-granted'));
@@ -39,7 +48,7 @@ export default function CookieConsent() {
     };
 
     const handleDecline = () => {
-        localStorage.setItem('cookie-consent', 'declined');
+        storeConsent('declined');
         if (typeof window.gtag === 'function') {
             window.gtag('consent', 'update', {
                 'analytics_storage': 'denied'

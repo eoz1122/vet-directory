@@ -5,6 +5,15 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import CookieConsent from './CookieConsent';
 
 describe('CookieConsent accessibility', () => {
+    it('keeps the site usable when browser storage is blocked', () => {
+        const get = vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => { throw new DOMException('Blocked', 'SecurityError'); });
+        const set = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new DOMException('Blocked', 'SecurityError'); });
+        try {
+            render(<MemoryRouter><CookieConsent /></MemoryRouter>);
+            fireEvent.click(screen.getByRole('button', { name: 'Decline analytics' }));
+            expect(screen.queryByRole('region', { name: 'Cookie Settings' })).toBeNull();
+        } finally { get.mockRestore(); set.mockRestore(); }
+    });
     beforeEach(() => {
         localStorage.removeItem('cookie-consent');
         window.gtag = vi.fn();

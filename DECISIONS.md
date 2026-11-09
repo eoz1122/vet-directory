@@ -4,6 +4,39 @@ This document records the major architectural choices, conventions, and security
 
 As per the Global AI Directives, every entry here prevents logic drift and serves as the source of truth for AI agents and human developers. Every entry MUST include an ISO 8601 timestamp in its heading.
 
+## 2026-11-09T03:44:00+01:00 - Audit remediation with an explicit preview and release gate
+
+**Decision:** Prepare all changes locally and do not push or deploy before Ali's
+preview approval. Isolate generated frontend releases behind a `public-site`
+symlink instead of serving the checkout. Block dot paths, source directories,
+private file types and unspecified API routes. Require tests and lint before
+release publishing, retain a prior release, and require the one-time Nginx
+migration before automated deployment. See `deploy/security-rollout.md`.
+
+**Directory accuracy:** Use one emergency-availability classifier for filters,
+cards and summaries. Descriptive 24/7 clinic labels count; telephone-only,
+appointment-only and negative/referral information must not promise a 24-hour
+clinic. Keep reviewed duplicate aliases in a separate map so original records
+and existing pending confirmations remain untouched; combine evidence on the
+canonical public listing without changing review dates.
+
+**Forms and privacy:** Use bounded browser requests, actual honeypot values,
+typed server validation, locked newsletter deduplication and a shared public
+email budget. A failed contact delivery can be retried; duplicate successful
+messages do not produce another email. Remove query strings from analytics
+locations. Preserve manual review of confirmations and admin-managed updates.
+
+**Presentation and dependencies:** Move the remaining 46 legacy guide frames to
+ArticleLayout without rewriting their content or URLs. Increase muted-text
+contrast and remove the extra web monospace family. Update vulnerable packages
+within supported ranges; apply a tested minimatch 11.0.1 override only inside
+the typescript-eslint lint dependency tree.
+
+**Rollback and limits:** The prior live application baseline is `e4dbb47`.
+Nginx and VPS changes are not validated by a Vite preview; applying them requires
+operator access, a saved configuration, `nginx -t`, reload and live checks.
+Never restore the source-root exposure as a rollback strategy.
+
 ## 2026-10-16T01:30:00+02:00 - Abuse controls for anonymous English confirmations
 
 **Context:** A burst of confirmation emails included SQL-injection and time-delay payloads, while GA4 showed no matching traffic. The public confirmation endpoint could be called directly and trusted client-supplied practice names.

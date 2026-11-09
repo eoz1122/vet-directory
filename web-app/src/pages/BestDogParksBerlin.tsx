@@ -1,9 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import BlogSidebar from '../components/BlogSidebar';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import { generateArticleSchema } from '../utils/schema';
@@ -31,17 +29,7 @@ const BestDogParksBerlin: React.FC = () => {
                 <script type="application/ld+json">{JSON.stringify(schema)}</script>
             </Helmet>
 
-            <Header />
-
-            <main className="flex-grow container mx-auto px-4 py-8 md:py-12 mt-16 max-w-7xl">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <div className="hidden lg:block lg:w-1/4">
-                        <div className="sticky top-24">
-                            <BlogSidebar />
-                        </div>
-                    </div>
-
-                    <div className="lg:w-3/4 max-w-4xl">
+            <ArticleLayout>
                         <div className="mb-4 text-sm font-bold text-accent uppercase tracking-wider">
                             CITY LIVING
                         </div>
@@ -161,11 +149,7 @@ const BestDogParksBerlin: React.FC = () => {
 
                         <hr className="my-12 border-primary/10" />
                         <RelatedPosts currentPath="/blog/best-dog-parks-berlin" />
-                    </div>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 };

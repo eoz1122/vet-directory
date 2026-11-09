@@ -22,6 +22,21 @@ function makeVet(id: string, status: string): Vet {
 }
 
 describe('filterDisplayableVets', () => {
+    it('merges reviewed duplicate evidence without modifying original records', () => {
+        const older = makeVet('Stuttgart-New-1', 'Verified');
+        older.verification.english_signals = ['English confirmed by a visitor'];
+        older.verification.source_urls = ['https://older.example'];
+        const current = makeVet('stuttgart-anicura-plieningen', 'Verified');
+        current.verification.evidence_type = 'official_website';
+        current.verification.source_urls = ['https://current.example'];
+        const result = filterDisplayableVets([older, current]);
+        expect(result).toHaveLength(1);
+        expect(result[0].id).toBe(current.id);
+        expect(result[0].verification.english_signals).toContain('English confirmed by a visitor');
+        expect(result[0].verification.source_urls).toEqual(['https://current.example', 'https://older.example']);
+        expect(result[0].verification.evidence_type).toBe('official_website');
+        expect(older.verification.status).toBe('Verified');
+    });
     it('excludes permanently closed practices', () => {
         const vets = [makeVet('a', 'Verified'), makeVet('b', 'Permanently Closed'), makeVet('c', 'Verified')];
         const result = filterDisplayableVets(vets);

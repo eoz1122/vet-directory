@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import ArticleHeader from '../components/ArticleHeader';
 import AffiliateCallout from '../components/AffiliateCallout';
 import { AFFILIATE_LINKS } from '../utils/affiliateLinks';
@@ -74,13 +72,7 @@ export default function PetGpsTrackerGermany() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl">
+            <ArticleLayout>
                         <ArticleHeader
                             eyebrow="Safety Guide"
                             title="📡 GPS Trackers for Pets in Germany"
@@ -208,11 +200,7 @@ export default function PetGpsTrackerGermany() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/pet-gps-tracker-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

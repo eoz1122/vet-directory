@@ -1,0 +1,30 @@
+name: Quality and security checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web-app/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: npm ci
+        working-directory: web-app
+      - run: npm run test
+        working-directory: web-app
+      - run: npm run lint
+        working-directory: web-app
+      - run: npm audit --audit-level=moderate
+        working-directory: web-app
+      - run: npm run build
+        working-directory: web-app
+      - run: pip install -r api/requirements-dev.txt
+      - run: python -m pytest -q tests ../deploy/test_publish_static.py ../scripts/maintenance
+        working-directory: api

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "test": "vitest run",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -47,6 +48,9 @@
     "vitest": "^4.1.0"
   },
   "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.1"
+    },
     "react-helmet-async": {
       "react": "^19.0.0",
       "react-dom": "^19.0.0"

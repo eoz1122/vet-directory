@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { hasEmergencyCare } from '../utils/emergency';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -151,7 +152,7 @@ export default function CityVets() {
             : '',
     ].filter(Boolean).join('; ');
     const emergencyVets = cityVets.filter(
-        vet => Boolean(vet.verification?.emergency_services?.trim()),
+        vet => hasEmergencyCare(vet.verification?.emergency_services),
     );
     const listingTitle = `${cityVets.length} English-Speaking ${cityVets.length === 1 ? 'Vet' : 'Vets'} in ${capitalizedCity}`;
     const listingDescription = verifiedCount === cityVets.length

@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { sendGAEvent } from '../utils/analytics';
+import { postJson } from '../utils/postJson';
 
 type NewsletterSource = 'site_footer' | 'dog_food_guide';
 
@@ -29,24 +30,19 @@ export default function NewsletterSignup({
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (isSubmitting) return;
+        const company = new FormData(event.currentTarget).get('company')?.toString() ?? '';
 
         setIsSubmitting(true);
         setStatus('idle');
         setErrorMessage('');
 
         try {
-            const response = await fetch('/api/newsletter', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
+            await postJson('/api/newsletter', {
                     email: email.trim(),
                     source,
                     consent: true,
-                    company: '',
-                }),
+                    company,
             });
-            const data = await response.json();
-            if (!response.ok) throw new Error(data.error || 'Please try again.');
 
             setEmail('');
             setStatus('success');

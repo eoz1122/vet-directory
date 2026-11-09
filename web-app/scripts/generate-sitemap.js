@@ -13,6 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Configuration
 const OUTPUT_FILES = resolveSitemapOutputPaths(__dirname);
 const VETS_DATA_PATH = path.resolve(__dirname, '../src/data/vets.json');
+const reviewedAliases = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/data/listingAliases.json'), 'utf8'));
 const BLOG_FILE_PATH = resolveGuideCatalogPath(__dirname);
 const DIST_DIRECTORY = path.resolve(__dirname, '../dist');
 
@@ -84,7 +85,7 @@ function getVetRoutes() {
         // Mirror the app's display filter (src/utils/activeVets.ts): closed
         // practices and canonical aliases must not create or sustain routes.
         const vets = allVets.filter(v =>
-            v.verification?.status !== 'Permanently Closed' && !v.canonical_listing_id
+            v.verification?.status !== 'Permanently Closed' && !v.canonical_listing_id && !reviewedAliases[v.id]
         );
 
         // Cities

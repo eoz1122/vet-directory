@@ -25,6 +25,26 @@ def test_validate_contact_payload_valid():
     assert sanitized["email"] == "jane@example.com"
     assert sanitized["message"] == "Hello world"
 
+
+@pytest.mark.parametrize('field,value', [('email', None), ('email', 42), ('topic', []), ('topic', {})])
+def test_contact_rejects_non_string_fields(field, value):
+    data = {'name': 'Visitor', 'email': 'v@example.test', 'topic': 'general', 'message': 'Hi'}
+    data[field] = value
+    sanitized, error = validate_contact_payload(data)
+    assert sanitized is None
+    assert error
+
+
+def test_duplicate_newsletter_does_not_send_another_email(monkeypatch, tmp_path):
+    sent = []
+    monkeypatch.setattr(main, 'NEWSLETTER_LOG', str(tmp_path / 'subscribers.jsonl'))
+    monkeypatch.setattr(main, 'send_email', lambda *a, **kw: sent.append(a))
+    payload = {'email': 'unique@example.test', 'source': 'site_footer', 'consent': True}
+    client = main.app.test_client()
+    assert client.post('/api/newsletter', json=payload).status_code == 200
+    assert client.post('/api/newsletter', json=payload).status_code == 200
+    assert len(sent) == 1
+
 def test_validate_contact_payload_missing_fields():
     # Missing name
     data = {"email": "jane@example.com", "message": "Hello"}
@@ -486,7 +506,11 @@ def test_nginx_redirects_legacy_district_urls_to_canonical_slugs():
             )
             assert expected in site_config
 
-        assert f"<loc>{base_url}{canonical_path}</loc>" in sitemap
+        # A redirect target remains valid even when a single-listing district is
+        # intentionally excluded from the sitemap by the indexing policy.
+        city_path = '/'.join(canonical_path.split('/')[:3])
+        assert (f"<loc>{base_url}{canonical_path}</loc>" in sitemap
+                or f"<loc>{base_url}{city_path}</loc>" in sitemap)
         assert f"<loc>{base_url}{legacy_path}</loc>" not in sitemap
 
     assert (
@@ -685,13 +709,13 @@ def test_csp_report_rejects_oversized_payloads():
     assert response.status_code == 413
 
 
-def test_nginx_configures_report_only_csp_and_bounded_reporting():
+def test_nginx_enforces_csp_and_keeps_bounded_reporting():
     repository_root = Path(__file__).resolve().parents[2]
     site_config = (repository_root / "web-app" / "nginx_site.conf").read_text(encoding="utf-8")
     api_config = (repository_root / "api" / "nginx_vet_api.conf").read_text(encoding="utf-8")
     vite_config = (repository_root / "web-app" / "vite.config.ts").read_text(encoding="utf-8")
 
-    assert "add_header Content-Security-Policy-Report-Only" in site_config
+    assert "add_header Content-Security-Policy " in site_config
     for directive in (
         "default-src 'self'",
         "base-uri 'self'",
@@ -708,7 +732,7 @@ def test_nginx_configures_report_only_csp_and_bounded_reporting():
     assert "limit_req zone=esv_csp_report_per_ip burst=14 nodelay;" in api_config
     assert "limit_req_status 429;" in api_config
 
-    assert "Content-Security-Policy-Report-Only" in vite_config
+    assert "Content-Security-Policy'" in vite_config
     assert "report-uri /api/csp-report" in vite_config
     assert "process.env.VITE_API_PROXY_TARGET" in vite_config
     assert "'http://localhost:5000'" in vite_config

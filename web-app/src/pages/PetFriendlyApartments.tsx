@@ -1,8 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import BlogSidebar from '../components/BlogSidebar';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import ArticleLayout from '../components/ArticleLayout';
 import RelatedPosts from '../components/RelatedPosts';
 import TableOfContents from '../components/TableOfContents';
 import ArticleHeader from '../components/ArticleHeader';
@@ -163,13 +161,7 @@ export default function PetFriendlyApartments() {
                 <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 min-w-0 max-w-4xl">
+            <ArticleLayout>
                         <ArticleHeader
                             eyebrow="Housing guide"
                             title="Pet-Friendly Apartments in Berlin: 2026 Rental Guide"
@@ -457,11 +449,7 @@ export default function PetFriendlyApartments() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/pet-friendly-apartments-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

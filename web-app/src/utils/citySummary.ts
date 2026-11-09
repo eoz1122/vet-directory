@@ -1,5 +1,6 @@
 import type { Vet } from '../types/vet';
 import { calculateDistance } from './distance';
+import { hasEmergencyCare } from './emergency';
 import {
     isGovernmentSourceConfirmed,
     isOfficialWebsiteConfirmed,
@@ -45,10 +46,7 @@ export function generateCitySummary(city: string, cityVets: Vet[], allVets: Vet[
         practiceConfirmed.length -
         communityConfirmed.length;
     const withSite = cityVets.filter((v) => v.contact?.website).length;
-    const emergency = cityVets.filter((v) => {
-        const e = (v.verification as { emergency_services?: string }).emergency_services;
-        return e && String(e).trim();
-    });
+    const emergency = cityVets.filter((v) => hasEmergencyCare(v.verification.emergency_services));
     const districts = [...new Set(cityVets.map((v) => v.district).filter((d) => d && d !== 'Unknown' && d !== city))];
     const mobile = cityVets.filter((v) => /mobile|home visit/i.test(v.address || '') || /mobil/i.test(v.practice_name));
 

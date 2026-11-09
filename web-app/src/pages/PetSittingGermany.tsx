@@ -2,10 +2,8 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { trackAffiliateClick } from '../utils/analytics';
 import ArticleHeader from '../components/ArticleHeader';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import TableOfContents from '../components/TableOfContents';
 import { generateArticleSchema } from '../utils/schema';
 
@@ -32,15 +30,7 @@ export default function PetSittingGermany() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    {/* Left Sidebar */}
-                    <BlogSidebar />
-
-                    {/* Main Content */}
-                    <article className="lg:flex-1 max-w-4xl">
+            <ArticleLayout>
                         <ArticleHeader
                             eyebrow="Expat Guide"
                             title="🏡 Pet Sitting in Germany (2026): Finding a Safe Home for Your Little Friends"
@@ -167,11 +157,7 @@ export default function PetSittingGermany() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/pet-sitting-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

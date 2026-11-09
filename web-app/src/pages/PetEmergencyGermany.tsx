@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import GuideDisclaimer from '../components/GuideDisclaimer';
 import { generateArticleSchema } from '../utils/schema';
 
@@ -83,13 +81,7 @@ export default function PetEmergencyGermany() {
                 </script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto p-6 md:p-12 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <BlogSidebar />
-
-                    <article className="lg:flex-1 max-w-4xl prose prose-lg prose-forest text-primary/80">
+            <ArticleLayout>
                         <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
                             Emergency Guide
                         </span>
@@ -427,11 +419,7 @@ export default function PetEmergencyGermany() {
 
                         <GuideDisclaimer />
                         <RelatedPosts currentPath="/guides/pet-emergency-germany" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

@@ -20,6 +20,10 @@ const frankfurt = Array.from({ length: 8 }, (_, i) =>
 );
 
 describe('generateCitySummary', () => {
+    it('does not list a practice as emergency care when the stored value is No', () => {
+        const vet = mk({ verification: { ...hofheim[0].verification, emergency_services: 'No' } });
+        expect(generateCitySummary('Hofheim', [vet], [vet]).content).not.toContain('For urgent care,');
+    });
     it('produces city-specific prose naming real practices and counts', () => {
         const s = generateCitySummary('Hofheim', hofheim, [...hofheim, ...frankfurt]);
         expect(s.content).toContain('Hofheim');

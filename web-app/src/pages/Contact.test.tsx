@@ -31,6 +31,17 @@ function completeRequiredFields() {
 }
 
 describe('Contact analytics', () => {
+    it('submits the actual hidden anti-spam field', async () => {
+        vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ success: true }) } as Response);
+        const { container } = renderContact();
+        completeRequiredFields();
+        const hidden = container.querySelector('input[name="company"]');
+        expect(hidden).not.toBeNull();
+        fireEvent.change(hidden!, { target: { value: 'bot-filled' } });
+        fireEvent.click(screen.getByRole('button', { name: 'Send Message' }));
+        await waitFor(() => expect(fetch).toHaveBeenCalled());
+        expect(JSON.parse(vi.mocked(fetch).mock.calls[0][1]!.body as string).company).toBe('bot-filled');
+    });
     beforeEach(() => {
         localStorage.setItem('cookie-consent', 'accepted');
         window.gtag = vi.fn();

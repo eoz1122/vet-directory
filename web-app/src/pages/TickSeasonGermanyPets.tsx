@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import BlogSidebar from '../components/BlogSidebar';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import { generateArticleSchema } from '../utils/schema';
@@ -107,17 +105,7 @@ export default function TickSeasonGermanyPets() {
                 <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
             </Helmet>
 
-            <Header />
-
-            <main className="flex-grow container mx-auto px-4 py-8 md:py-12 mt-16 max-w-7xl">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <div className="hidden lg:block lg:w-1/4">
-                        <div className="sticky top-24">
-                            <BlogSidebar />
-                        </div>
-                    </div>
-
-                    <article className="lg:w-3/4 max-w-4xl min-w-0">
+            <ArticleLayout>
                         <div className="mb-4 text-sm font-bold text-accent-ink uppercase tracking-wider">
                             Evidence-Based Pet Health Guide
                         </div>
@@ -300,11 +288,7 @@ export default function TickSeasonGermanyPets() {
 
                         <hr className="my-12 border-primary/10" />
                         <RelatedPosts currentPath="/blog/tick-season-germany-pets" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

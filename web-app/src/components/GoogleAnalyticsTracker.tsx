@@ -8,7 +8,8 @@ export default function GoogleAnalyticsTracker() {
     useEffect(() => {
         const sendPageView = () => {
             sendGAEvent('page_view', {
-                page_path: pathname + search,
+                page_path: pathname,
+                page_location: window.location.origin + pathname,
                 page_title: document.title,
             });
         };

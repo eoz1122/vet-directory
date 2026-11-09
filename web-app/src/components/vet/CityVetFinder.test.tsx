@@ -83,6 +83,14 @@ function getResults() {
 }
 
 describe('CityVetFinder', () => {
+    it('includes descriptive 24/7 clinic labels in emergency results', () => {
+        render(<CityVetFinder city="Berlin" vets={[{
+            ...berlinVets[1],
+            verification: { ...berlinVets[1].verification, emergency_services: '24/7 Emergency Care' },
+        }]} />);
+        fireEvent.click(screen.getByRole('button', { name: 'Show only 24-hour emergency practices' }));
+        expect(within(getResults()).getAllByRole('article')).toHaveLength(1);
+    });
     it('shows every city listing initially and exposes an accessible result count', () => {
         render(<CityVetFinder city="Berlin" vets={berlinVets} />);
 

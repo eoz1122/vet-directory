@@ -29,6 +29,7 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST_DIR = resolvePrerenderDistDir(__dirname, process.env.PRERENDER_DIST_DIR);
 const VETS_DATA_PATH = path.resolve(__dirname, '../src/data/vets.json');
+const reviewedAliases = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/data/listingAliases.json'), 'utf8'));
 const BLOG_FILE_PATH = resolveGuideCatalogPath(__dirname);
 
 // Port for the local preview server
@@ -87,6 +88,7 @@ function getVetRoutes() {
         // practices and canonical aliases must not create or sustain routes.
         const vets = allVets.filter(v =>
             v.verification?.status !== 'Permanently Closed' && !v.canonical_listing_id
+                && !reviewedAliases[v.id]
         );
 
         const cities = [...new Set(vets.map(v => v.city))];

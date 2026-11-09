@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import ArticleLayout from '../components/ArticleLayout';
 import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
-import BlogSidebar from '../components/BlogSidebar';
 import { generateArticleSchema } from '../utils/schema';
 
 const ARTICLE_TITLE = 'German Dog Etiquette: Leash Rules & Phrases (2026)';
@@ -117,17 +115,7 @@ export default function GermanDogEtiquette() {
                 <script type="application/ld+json">{JSON.stringify(ARTICLE_SCHEMA)}</script>
             </Helmet>
 
-            <Header />
-
-            <main className="max-w-7xl mx-auto px-6 py-10 md:p-12 mt-16 mb-12">
-                <div className="flex flex-col lg:flex-row gap-12">
-                    <div className="hidden lg:block lg:w-1/4">
-                        <div className="sticky top-24">
-                            <BlogSidebar />
-                        </div>
-                    </div>
-
-                    <article className="lg:flex-1 max-w-4xl">
+            <ArticleLayout>
                         <span className="text-accent-ink font-bold tracking-wider text-sm uppercase">
                             Living in Germany Guide
                         </span>
@@ -343,11 +331,7 @@ export default function GermanDogEtiquette() {
                         </div>
 
                         <RelatedPosts currentPath="/blog/german-dog-etiquette-rules" />
-                    </article>
-                </div>
-            </main>
-
-            <Footer />
+            </ArticleLayout>
         </div>
     );
 }

@@ -2,6 +2,7 @@ import os
 import re
 import json
 import fcntl
+import hashlib
 from datetime import datetime, timezone
 import smtplib
 import logging
@@ -17,6 +18,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from dotenv import load_dotenv
 from werkzeug.middleware.proxy_fix import ProxyFix
+from submission_guard import notification_slot
 
 # Load environment variables
 load_dotenv()
@@ -84,6 +86,8 @@ VALID_VET_IDS_PATH = Path(__file__).with_name("valid_vet_ids.json")
 CANONICAL_VETS_PATH = Path(__file__).resolve().parents[1] / "web-app" / "src" / "data" / "vets.json"
 NEWSLETTER_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "newsletter_subscribers.jsonl")
 CONFIRMATION_NOTIFY_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "confirmation_notifications.jsonl")
+PUBLIC_NOTIFICATION_LOG = Path(__file__).with_name('public_notifications.jsonl')
+MAX_PUBLIC_EMAILS_PER_HOUR = int(os.getenv('MAX_PUBLIC_EMAILS_PER_HOUR', '10'))
 MAX_CONFIRMATION_EMAILS_PER_HOUR = int(os.getenv("MAX_CONFIRMATION_EMAILS_PER_HOUR", "5"))
 CONFIRMATION_EMAILS_ENABLED = os.getenv("CONFIRMATION_EMAILS_ENABLED", "true").strip().lower() in {
     "1",
@@ -211,6 +215,8 @@ def validate_contact_payload(data: dict) -> tuple[dict | None, str | None]:
         return None, "Spam detected."
 
     name = sanitize(data.get("name", ""))
+    if not isinstance(data.get('email', ''), str) or not isinstance(data.get('topic', ''), str):
+        return None, 'Email and topic must be text.'
     email = data.get("email", "").strip()
     topic = data.get("topic", "").strip()
     message = sanitize(data.get("message", ""))
@@ -353,31 +359,35 @@ def send_email(subject: str, body: str, reply_to: str | None = None) -> None:
     server.quit()
 
 
-def append_newsletter_subscriber(sanitized: dict, path: str | Path | None = None) -> bool:
+def append_newsletter_subscriber(sanitized: dict, path: str | Path | None = None) -> str:
     """Append a minimal, admin-managed opt-in record and avoid duplicate addresses."""
     target = Path(path or NEWSLETTER_LOG)
     try:
         email = sanitized.get("email", "")
-        if target.exists():
-            for line in target.read_text(encoding="utf-8").splitlines():
+        with target.open('a+', encoding='utf-8') as subscriber_file:
+            fcntl.flock(subscriber_file.fileno(), fcntl.LOCK_EX)
+            subscriber_file.seek(0)
+            for line in subscriber_file.read().splitlines():
                 try:
                     if json.loads(line).get("email") == email:
-                        return True
+                        return 'duplicate'
                 except (TypeError, json.JSONDecodeError):
                     continue
 
-        record = {
-            "date": datetime.now(timezone.utc).isoformat(),
-            "email": email,
-            "source": sanitized.get("source", ""),
-            "consent": True,
-        }
-        with target.open("a", encoding="utf-8") as subscriber_file:
+            record = {
+                "date": datetime.now(timezone.utc).isoformat(),
+                "email": email,
+                "source": sanitized.get("source", ""),
+                "consent": True,
+            }
+            subscriber_file.seek(0, os.SEEK_END)
             subscriber_file.write(json.dumps(record, ensure_ascii=False) + "\n")
-        return True
+            subscriber_file.flush()
+            os.fsync(subscriber_file.fileno())
+        return 'created'
     except Exception as error:
         logger.error("Failed to append newsletter subscriber: %s", str(error))
-        return False
+        return 'error'
 
 
 @app.route("/api/contact", methods=["POST"])
@@ -422,8 +432,13 @@ def contact():
     """
 
     try:
-        send_email(subject, email_body, reply_to=email)
-        logger.info("Contact email sent: topic=%s from=%s", topic, email)
+        key = hashlib.sha256(json.dumps(sanitized, sort_keys=True).encode()).hexdigest()
+        with notification_slot(PUBLIC_NOTIFICATION_LOG, key, MAX_PUBLIC_EMAILS_PER_HOUR) as state:
+            if state == 'limited':
+                return jsonify({'error': 'Too many messages. Please try again later.'}), 429
+            if state == 'ready':
+                send_email(subject, email_body, reply_to=email)
+        logger.info("Contact submission accepted: topic=%s", topic)
         return jsonify({"success": True, "message": "Email sent successfully"})
     except Exception as e:
         logger.error("Failed to send contact email: %s", str(e))
@@ -444,23 +459,24 @@ def newsletter():
     email = sanitized["email"]
     source = sanitized["source"]
     logged = append_newsletter_subscriber(sanitized)
+    if logged == 'duplicate':
+        return jsonify({"success": True, "message": "Thanks for joining."})
     email_sent = False
     try:
-        send_email(
-            "[ESG] NEWSLETTER SIGNUP",
-            "A visitor opted in to periodic English-speaking pet updates.\n"
-            "---------------------------------------------------------------\n"
-            f"Email: {email}\n"
-            f"Source: {source}\n"
-            "Consent: explicit opt-in\n",
-            reply_to=email,
-        )
-        email_sent = True
+        key = hashlib.sha256(('newsletter:' + email).encode()).hexdigest()
+        with notification_slot(PUBLIC_NOTIFICATION_LOG, key, MAX_PUBLIC_EMAILS_PER_HOUR) as state:
+            if state == 'ready':
+                send_email(
+                    '[ESG] NEWSLETTER SIGNUP',
+                    f'Periodic-update opt-in\nEmail: {email}\nSource: {source}\nConsent: explicit opt-in\n',
+                    reply_to=email,
+                )
+                email_sent = True
         logger.info("Newsletter signup received: source=%s", source)
     except Exception as error:
         logger.error("Failed to notify newsletter signup: %s", str(error))
 
-    if logged or email_sent:
+    if logged == 'created' or email_sent:
         return jsonify({"success": True, "message": "Thanks for joining."})
     return jsonify({"error": "Could not record signup. Please try again later."}), 500
 

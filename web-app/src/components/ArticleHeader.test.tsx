@@ -5,6 +5,11 @@ import { describe, expect, it } from 'vitest';
 import ArticleHeader from './ArticleHeader';
 
 describe('ArticleHeader', () => {
+    it('does not fade small review metadata below readable contrast', () => {
+        render(<MemoryRouter><ArticleHeader eyebrow="Guide" title="Title" review="Reviewed periodically" /></MemoryRouter>);
+        expect(screen.getByText('Reviewed periodically').className).toContain('text-primary/80');
+        expect(screen.getByText(/Editorial review by/).className).toContain('text-primary/80');
+    });
     it('renders a consistent eyebrow, title and review metadata hierarchy', () => {
         render(
             <MemoryRouter>
