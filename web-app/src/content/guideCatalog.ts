@@ -161,6 +161,14 @@ export const GUIDE_CATALOG: GuideCatalogEntry[] = [
         topics: ['vet-care', 'emergency', 'berlin', 'dog', 'cat'],
     },
     {
+        url: '/blog/english-speaking-vet-hamburg',
+        title: 'English-Speaking Vets in Hamburg: How to Find and Book',
+        emoji: '🩺',
+        category: 'Vet Care',
+        desc: 'Compare current Hamburg listings, confirm English and new-patient availability, and keep the official veterinary emergency number ready.',
+        topics: ['vet-care', 'emergency', 'hamburg', 'dog', 'cat'],
+    },
+    {
         url: '/blog/moving-to-germany-with-pet',
         title: "Moving to Germany With a Dog or Cat",
         emoji: '🐕',

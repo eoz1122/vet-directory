@@ -2082,3 +2082,13 @@ As per the Global AI Directives, every entry here prevents logic drift and serve
 **Verification:** Focused tests passed before the change was finalized, then the full Vitest suite passed with 91 files and 503 tests. ESLint passed. The production build passed, prerendered 317 pages, and generated a 153-URL sitemap containing the new guide with `lastmod` 2026-11-09. The local preview was checked for the homepage, new Berlin guide, and cat-food guide at `http://localhost:5173/`.
 
 **Rollback:** Revert the feature commit that contains the guide and metadata changes, regenerate the build, and preserve the pre-existing uncommitted `web-app/src/data/vets.json` changes. No deployment has been performed for this decision.
+
+## 2026-11-09T02:35:00+01:00 - Hamburg guide and high-impression CTR refinement
+
+**Context:** Search Console showed the breed-restrictions page at roughly 1,158 impressions, average position 7.9, and 0.3% CTR. Its highest-impression queries used direct questions such as “are pitbulls allowed in Germany” and “are rottweilers banned in Germany,” but the title led with a generic banned-breeds phrase. Hamburg also had current official veterinary emergency information suitable for a city guide.
+
+**Decision:** Add `/blog/english-speaking-vet-hamburg` using the evidence-labelled city-guide structure, dynamic directory counts, Hamburg Veterinary Chamber emergency number and rotating duty rota links, and booking questions about English support and new-patient acceptance. Rewrite the breed-guide title and description around the high-impression questions, and add Hamburg to homepage, blog catalog, sidebar, route, sitemap, and internal discovery links.
+
+**Verification:** Targeted RED tests were observed before implementation. The final Vitest suite passed with 92 files and 504 tests; ESLint passed; the production build prerendered 318 pages and generated a 154-URL sitemap. Local preview confirmed the Hamburg guide title, H1, description, directory link, and responsive article layout.
+
+**Rollback:** Revert the feature commit, regenerate the build, and preserve the pre-existing uncommitted `web-app/src/data/vets.json` changes. No indexing request is part of this code rollback.

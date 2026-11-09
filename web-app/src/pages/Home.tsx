@@ -47,6 +47,7 @@ const popularCities = [
 ];
 const essentialGuideLinks = [
     { emoji: '🩺', title: 'English-Speaking Vets in Berlin', link: '/blog/english-speaking-vet-berlin' },
+    { emoji: '🩺', title: 'English-Speaking Vets in Hamburg', link: '/blog/english-speaking-vet-hamburg' },
     { emoji: '🏠', title: 'Pet-Friendly Apartments Berlin', link: '/blog/pet-friendly-apartments-germany' },
     { emoji: '🧾', title: 'Vet Costs & GOT Fees', link: '/blog/vet-costs-germany' },
     { emoji: '🚑', title: 'Emergency Vets in Munich', link: '/guides/emergency-vets-munich' },

@@ -69,7 +69,7 @@ describe('Blog guide discovery', () => {
 
         const sectionCounts = {
             'start-here': 3,
-            'emergency-vet-care': 19,
+            'emergency-vet-care': 20,
             'moving-paperwork': 10,
             'health-safety': 10,
             'everyday-life': 9,

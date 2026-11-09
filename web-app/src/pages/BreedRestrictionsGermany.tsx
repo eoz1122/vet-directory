@@ -6,8 +6,8 @@ import TableOfContents from '../components/TableOfContents';
 import RelatedPosts from '../components/RelatedPosts';
 import { generateArticleSchema } from '../utils/schema';
 
-const ARTICLE_TITLE = 'Banned Dog Breeds in Germany (2026): Pit Bull, Rottweiler & State Rules';
-const ARTICLE_DESCRIPTION = 'Are Pit Bulls or Rottweilers banned in Germany? Check the federal import rule, state permits, exceptions and the official steps before travel.';
+const ARTICLE_TITLE = 'Are Pit Bulls Banned in Germany? 2026 Rules for Pit Bulls & Rottweilers';
+const ARTICLE_DESCRIPTION = 'Are Pit Bulls allowed in Germany? Check import restrictions, Rottweiler rules, state permits, exceptions and the official steps before travel.';
 const ARTICLE_URL = 'https://englishspeakinggermany.online/blog/breed-restrictions-germany';
 const DATE_PUBLISHED = '2026-04-28';
 const DATE_MODIFIED = '2026-09-12';

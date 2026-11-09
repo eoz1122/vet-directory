@@ -202,6 +202,7 @@ describe('Home WebSite structured data', () => {
         const section = screen.getByRole('region', { name: 'Essential pet guides' });
         const expectedPaths = [
             '/blog/english-speaking-vet-berlin',
+            '/blog/english-speaking-vet-hamburg',
             '/blog/pet-friendly-apartments-germany',
             '/blog/vet-costs-germany',
             '/guides/emergency-vets-munich',
